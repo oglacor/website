@@ -27,8 +27,17 @@
       <a href="<?= site_url('docs') ?>" class="<?= ($activeNav ?? '') === 'docs' ? 'active' : '' ?>">Docs</a>
     </div>
     <div class="nav-cta">
-      <a href="<?= site_url('login') ?>" class="btn btn-ghost btn-sm">Log In</a>
-      <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
+      <?php if (session()->get('user_id')): ?>
+        <?php if (session()->get('user_role') === 'admin'): ?>
+          <a href="<?= site_url('admin') ?>" class="btn btn-ghost btn-sm">Admin</a>
+        <?php else: ?>
+          <a href="<?= site_url('account') ?>" class="btn btn-ghost btn-sm">Account</a>
+        <?php endif; ?>
+        <a href="<?= site_url('logout') ?>" class="btn btn-primary btn-sm">Log Out</a>
+      <?php else: ?>
+        <a href="<?= site_url('login') ?>" class="btn btn-ghost btn-sm">Log In</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
+      <?php endif; ?>
     </div>
   </nav>
 </header>

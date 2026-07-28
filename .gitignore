@@ -60,6 +60,10 @@ Vagrantfile
 /writable/uploads/*
 !/writable/uploads/index.html
 
+# Admin-uploaded blog images — keep the folder, ignore the files
+/public/assets/uploads/blog/*
+!/public/assets/uploads/blog/.gitkeep
+
 /writable/debugbar/*
 !/writable/debugbar/index.html
 

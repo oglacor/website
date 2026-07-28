@@ -2,15 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Libraries\ResendMailer;
 use App\Models\WaitlistSignupModel;
 
 class Waitlist extends BaseController
 {
-    /**
-     * Handles the hero waitlist form POST. Stores the signup; the actual
-     * Resend "welcome" email send is a follow-up piece (needs the admin
-     * settings screen for the API key first) - see project notes.
-     */
     public function store()
     {
         $model = new WaitlistSignupModel();
@@ -28,6 +24,17 @@ class Waitlist extends BaseController
             'source' => 'homepage_hero',
             'status' => 'subscribed',
         ]);
+
+        // Best-effort welcome email — signup succeeds regardless of whether
+        // Resend is configured yet (see /admin/settings).
+        $mailer = new ResendMailer();
+        if ($mailer->isConfigured()) {
+            $mailer->send(
+                $email,
+                "You're on the BLUERABBIT waitlist",
+                '<p>Thanks for joining — we\'ll email you the moment early access opens. In the meantime, keep an eye on <a href="' . site_url('blog') . '">the blog</a> for updates.</p>'
+            );
+        }
 
         return redirect()->to(site_url('/') . '#waitlist-hero')
             ->with('waitlist_success', "You're on the list — we'll email you the moment early access opens.");

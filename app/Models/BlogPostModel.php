@@ -20,6 +20,7 @@ class BlogPostModel extends Model
     protected $updatedField  = 'updated_at';
 
     protected $validationRules = [
+        'id'    => 'permit_empty|is_natural',
         'title' => 'required|min_length[3]|max_length[255]',
         'slug'  => 'required|alpha_dash|max_length[255]|is_unique[blog_posts.slug,id,{id}]',
         'body'  => 'required',
