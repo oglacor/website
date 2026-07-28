@@ -8,6 +8,91 @@ tested" below).
 See `WEBSITE_PROJECT_BRIEF.md` for full context/decisions and `CLAUDE.md` for the
 operating rules — this file is just the state snapshot.
 
+## Follow-up session (same day) — docs content, real brand assets, error pages, email templates
+
+- **Full how-to documentation written** — replaced the 3 short stub docs pages with 13 real
+  pages: 7 in `user` (Getting Started, XP/BLOO/EP, Journey Map, Quests & Steps, Achievements
+  & Guilds, Item Shop & Backpack, Product Overview) and 6 in `setup` (Setting Up Your Org,
+  Building Your First Adventure, Enrolling Players & Roles, Adventure Templates & Cohorts,
+  Billing & Plans, Stats Dashboard). All content pulled from the same `blue/blue` research as
+  the product/solutions pages — no invented mechanics.
+- **`docs_pages.body` is now trusted admin-authored HTML** (headings, lists, links), same
+  pattern as `blog_posts.body` — `docs/show.php` no longer runs it through `nl2br(esc())`.
+  `DocsPageSeeder` is now upsert-by-slug so re-running it after an edit actually refreshes
+  content instead of skipping.
+- **Real brand assets wired in** — Bernardo pasted the logo files inline in chat, which this
+  environment has no way to save to disk directly, but they turned out to match files already
+  in the read-only `blue/blue` sibling project almost exactly (including the true two-tone
+  vector `rabbit-logo.svg`), so those were copied in instead: `public/assets/img/rabbit-logo.svg`,
+  `logo-wordmark.png` (full-res wordmark), `logo-wordmark-email.png` (480px, ~9KB, resized
+  specifically for email — the full-res one is 140KB, over Gmail's ~102KB clip threshold), and
+  `favicon-32/180/512.png` (rasterized directly from the SVG polygon data at high res then
+  cropped to a tight bounding box — the source PNG's own bounding box was unreliable, spanning
+  almost the full 6001px canvas width for reasons unclear, so don't reuse that auto-crop
+  approach on other assets without checking the result). Favicon + Open Graph/Twitter meta
+  tags wired into `layouts/main.php` and all three error views.
+- **404/400/500 error pages restyled** to match the site (dark HUD theme, rabbit mark, real
+  copy) — `app/Views/errors/html/error_404.php`, `error_400.php`, `production.php`. Note:
+  CI4's `ExceptionHandler` only serves these HTML views when the request's `Accept` header
+  contains `text/html` — a bare `curl` (default `Accept: */*`) gets a JSON debug response
+  instead, which looks like a bug but isn't. Real browsers always send `text/html`.
+- **Branded HTML email template** — `app/Views/emails/layout.php`, a table-based template
+  (dark header with the wordmark logo, white body, footer with Site/Docs/Contact links and an
+  unsubscribe link). `ResendMailer::send()` now wraps every email in this template
+  automatically — callers just pass the inner body HTML, same as before.
+- **Real unsubscribe flow** — `GET /unsubscribe?email=...` (query string, not a path segment
+  — see bug note below), sets `waitlist_signups.status = 'unsubscribed'`. Linked from every
+  email footer.
+- **One more real bug found:** a `/unsubscribe/{email}` path-segment route fails even with
+  `rawurlencode()` — CI4's router decodes the URI *before* running `checkDisallowedChars()`,
+  and `@` isn't in `Config\App::$permittedURIChars`, so it 400s regardless of encoding. Fixed
+  by moving the email to a query string instead (`?email=...`), which isn't subject to that
+  check. If you ever need an unusual character in a URL, it's a query string, not a path
+  segment.
+
+**Still not done:** client logos (waiting on Bernardo — 6 points he's working through),
+Enterprise plan specifics, case studies/testimonials, legal pages (Privacy/Terms still link to
+`#`), About/company page, more blog posts (waiting on a DB export from the live
+bluerabbit.io/blog to pull real posts from). Hexad player types explicitly skipped per
+Bernardo — deprioritized, "lost a bit of its fervor."
+
+## Follow-up — real 2026 brand assets replace the guessed-from-sibling-project ones
+
+The logos pulled from `blue/blue` in the previous entry were **stale** — Bernardo updated
+the brand this year and `blue/blue`'s assets hadn't caught up. He uploaded the real current
+kit directly into `public/assets/img/`: `cooper.png` / `cooper-black.png` / `cooper-white.png`
+/ `cooper-white.svg` (icon only, 3 color variants — note **`cooper.svg`, the non-white SVG
+variant, was never actually added** despite being mentioned, only `cooper-white.svg`
+exists), `favicon.png` / `favicon.svg`, `logo-full.png` / `logo-full-black.png` /
+`logo-full-white.png` / `logo-full-for-dark-bg.png` / `logo-full-for-dark-bg.svg` /
+`logo-full.svg` (full wordmark + icon), `name.png` / `name-black.png` / `name-white.png`
+(wordmark text only, no icon — not currently used anywhere), `Google-Email-image.png`
+(unused — likely meant for a Gmail/BIMI sender-logo setup, which is a separate DNS-level
+feature, out of scope here).
+
+- **Nav + footer logo** now `<img>` tags pointing at `logo-full-for-dark-bg.svg` (vector,
+  white lettering — reads correctly against the site's dark header). Replaced the old
+  hand-traced inline-SVG `partials/rabbit_icon.php` + separate `<span>BLUE<b>RABBIT</b></span>`
+  text markup entirely — that partial is now deleted, not just unused.
+- **Every other icon-only spot** (homepage/product hero visual, all three error pages) now
+  uses `cooper-white.svg` instead of the old recolorable inline partial. This trades away the
+  old per-context recoloring (cyan/yellow/red per error type) for consistency with the real
+  asset — the error type is still conveyed by the eyebrow/heading text, so this reads fine.
+- **Favicon** now genuinely Bernardo's `favicon.svg`/`favicon.png` (previously a
+  favicon I'd rasterized myself from the stale SVG's polygon data — deleted, along with the
+  old `rabbit-logo.svg`, `logo-wordmark.png`, `logo-wordmark-email.png`).
+- **Email header logo** regenerated from the *real* `logo-full-for-dark-bg.png` — resized to
+  480px/9KB (`logo-full-for-dark-bg-email.png`) for the same Gmail-clip-threshold reason as
+  before. `ResendMailer` updated to point at it.
+- **Important open question, not resolved:** the real `logo-full.svg`/`logo-full-for-dark-bg.svg`
+  use a refreshed blue palette — `#3798f3` / `#0c3ea9` / `#2a77dd` — which does **not** match
+  `site.css`'s `--cyan: #1cc2eb` and related tokens (sourced from the *old*
+  `bluerabbit\wp-content\themes\bluerabbit\css\_variables.scss`, per the original brief,
+  which is itself now stale). The whole site's buttons/panels/borders/accents still run on
+  the old palette. Did not touch this — recoloring the entire design system is a bigger call
+  than a logo swap and needs Bernardo's decision on whether/how far to carry the 2026 refresh
+  before doing it.
+
 ## Done, tested, and working
 
 Everything from the priority list in the brief is now built:

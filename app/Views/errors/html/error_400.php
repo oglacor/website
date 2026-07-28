@@ -1,84 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title><?= lang('Errors.badRequest') ?></title>
-
-    <style>
-        div.logo {
-            height: 200px;
-            width: 155px;
-            display: inline-block;
-            opacity: 0.08;
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            margin-left: -73px;
-        }
-        body {
-            height: 100%;
-            background: #fafafa;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: #777;
-            font-weight: 300;
-        }
-        h1 {
-            font-weight: lighter;
-            letter-spacing: normal;
-            font-size: 3rem;
-            margin-top: 0;
-            margin-bottom: 0;
-            color: #222;
-        }
-        .wrap {
-            max-width: 1024px;
-            margin: 5rem auto;
-            padding: 2rem;
-            background: #fff;
-            text-align: center;
-            border: 1px solid #efefef;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-        pre {
-            white-space: normal;
-            margin-top: 1.5rem;
-        }
-        code {
-            background: #fafafa;
-            border: 1px solid #efefef;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            display: block;
-        }
-        p {
-            margin-top: 1.5rem;
-        }
-        .footer {
-            margin-top: 2rem;
-            border-top: 1px solid #efefef;
-            padding: 1em 2em 0 2em;
-            font-size: 85%;
-            color: #999;
-        }
-        a:active,
-        a:link,
-        a:visited {
-            color: #dd4814;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bad Request — BLUERABBIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<?= base_url('assets/css/site.css') ?>">
+<link rel="icon" type="image/svg+xml" href="<?= base_url('assets/img/favicon.svg') ?>">
+<link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.png') ?>">
 </head>
 <body>
-<div class="wrap">
-    <h1>400</h1>
 
-    <p>
-        <?php if (ENVIRONMENT !== 'production') : ?>
-            <?= nl2br(esc($message)) ?>
-        <?php else : ?>
-            <?= lang('Errors.sorryBadRequest') ?>
-        <?php endif; ?>
+<header>
+  <nav>
+    <a href="<?= site_url('/') ?>" class="logo">
+      <img src="<?= base_url('assets/img/logo-full-for-dark-bg.svg') ?>" alt="BLUERABBIT">
+    </a>
+  </nav>
+</header>
+
+<section class="hero" style="padding:120px 0; text-align:center;">
+  <div class="wrap" style="max-width:640px;">
+    <div class="hero-visual" style="aspect-ratio:1/1; max-width:220px; margin:0 auto 40px;">
+      <div class="hex-ring"></div>
+      <div class="core"><img src="<?= base_url('assets/img/cooper-white.svg') ?>" alt=""></div>
+    </div>
+    <span class="eyebrow">Error 400</span>
+    <h1 style="font-size:38px;">That request didn't check out.</h1>
+    <p class="lede" style="margin:0 auto 34px;">
+      <?php if (ENVIRONMENT !== 'production') : ?>
+        <?= nl2br(esc($message)) ?>
+      <?php else : ?>
+        Something about that request wasn't right — often a stale form or an expired session. Try again from the previous page.
+      <?php endif; ?>
     </p>
-</div>
+    <div class="cta-row" style="justify-content:center;">
+      <a href="<?= site_url('/') ?>" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>

@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= esc($title ?? 'BLUERABBIT') ?></title>
 <meta name="description" content="<?= esc($metaDescription ?? "BLUERABBIT is a gamification platform for corporate L&D, onboarding, and bootcamps.") ?>">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/svg+xml" href="<?= base_url('assets/img/favicon.svg') ?>">
+<link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.png') ?>">
+<link rel="apple-touch-icon" href="<?= base_url('assets/img/favicon.png') ?>">
+<meta property="og:title" content="<?= esc($title ?? 'BLUERABBIT') ?>">
+<meta property="og:description" content="<?= esc($metaDescription ?? "BLUERABBIT is a gamification platform for corporate L&D, onboarding, and bootcamps.") ?>">
+<meta property="og:image" content="<?= base_url('assets/img/logo-full.png') ?>">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('assets/css/site.css') ?>">
@@ -16,8 +23,7 @@
 <header>
   <nav>
     <a href="<?= site_url('/') ?>" class="logo">
-      <?= view('partials/rabbit_icon', ['fill' => '#1cc2eb']) ?>
-      <span>BLUE<b>RABBIT</b></span>
+      <img src="<?= base_url('assets/img/logo-full-for-dark-bg.svg') ?>" alt="BLUERABBIT">
     </a>
     <div class="nav-links">
       <a href="<?= site_url('product') ?>" class="<?= ($activeNav ?? '') === 'product' ? 'active' : '' ?>">Product</a>
@@ -49,8 +55,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">
-          <?= view('partials/rabbit_icon', ['fill' => '#1cc2eb', 'size' => 26]) ?>
-          <span>BLUE<b>RABBIT</b></span>
+          <img src="<?= base_url('assets/img/logo-full-for-dark-bg.svg') ?>" alt="BLUERABBIT">
         </div>
         <p>A gamification platform for teams who'd rather build a journey than a slide deck.</p>
       </div>

@@ -28,11 +28,25 @@ class ResendMailer
         return $this->apiKey !== '';
     }
 
-    public function send(string $to, string $subject, string $html): array
+    /**
+     * @param string $bodyHtml Trusted HTML for the email body — gets wrapped in the
+     *                         branded header/footer template (logo, unsubscribe link).
+     */
+    public function send(string $to, string $subject, string $bodyHtml, bool $includeUnsubscribe = true): array
     {
         if (! $this->isConfigured()) {
             return ['success' => false, 'error' => 'Resend API key not configured yet — set it in Admin → Settings.'];
         }
+
+        $html = view('emails/layout', [
+            'subject'        => $subject,
+            'bodyHtml'       => $bodyHtml,
+            'logoUrl'        => base_url('assets/img/logo-full-for-dark-bg-email.png'),
+            'siteUrl'        => site_url('/'),
+            'docsUrl'        => site_url('docs'),
+            'contactUrl'     => site_url('contact'),
+            'unsubscribeUrl' => $includeUnsubscribe ? site_url('unsubscribe') . '?email=' . rawurlencode($to) : '',
+        ]);
 
         try {
             $response = Services::curlrequest()->request('POST', 'https://api.resend.com/emails', [

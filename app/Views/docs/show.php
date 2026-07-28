@@ -7,7 +7,7 @@
   <div class="meta"><?= esc(ucfirst($doc['section'])) ?> Docs</div>
   <h1><?= esc($doc['title']) ?></h1>
   <div class="content">
-    <?= nl2br(esc($doc['body'])) ?>
+    <?= $doc['body'] /* trusted admin-authored HTML, same pattern as blog posts */ ?>
   </div>
 </div>
 

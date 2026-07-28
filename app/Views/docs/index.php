@@ -11,14 +11,15 @@
 <div class="wrap" style="padding-bottom:100px;">
   <div class="content-section" style="padding-top:0;">
     <div class="section-head">
-      <span class="eyebrow">Using The Platform</span>
-      <h2>End-User &amp; Onboarding</h2>
+      <span class="eyebrow">For Players</span>
+      <h2>Using the Platform</h2>
+      <p>How to enroll, progress through an Adventure, and understand the reward systems as a player.</p>
     </div>
-    <?php if (empty($userDocs) && empty($setupDocs)): ?>
-      <div class="empty-state panel">Docs content is being written — check back soon.</div>
+    <?php if (empty($userDocs)): ?>
+      <div class="empty-state panel">Player docs are being written — check back soon.</div>
     <?php else: ?>
       <div class="feature-grid">
-        <?php foreach (array_merge($userDocs, $setupDocs) as $doc): ?>
+        <?php foreach ($userDocs as $doc): ?>
           <a href="<?= site_url('docs/' . $doc['slug']) ?>" class="feature-card panel cyan">
             <div class="feature-icon">&#9636;</div>
             <h3><?= esc($doc['title']) ?></h3>
@@ -29,7 +30,28 @@
     <?php endif; ?>
   </div>
 
-  <div class="split" style="margin-top:20px;">
+  <div class="content-section alt">
+    <div class="section-head">
+      <span class="eyebrow">For Game Masters &amp; Org Admins</span>
+      <h2>Building &amp; Running Adventures</h2>
+      <p>Setting up your organization and billing, then a full Game Master manual — designing quests, steps, rewards, guilds, the item shop, branching, and more — plus a worked example that builds a real Adventure end to end.</p>
+    </div>
+    <?php if (empty($setupDocs)): ?>
+      <div class="empty-state panel">Setup docs are being written — check back soon.</div>
+    <?php else: ?>
+      <div class="feature-grid">
+        <?php foreach ($setupDocs as $doc): ?>
+          <a href="<?= site_url('docs/' . $doc['slug']) ?>" class="feature-card panel green">
+            <div class="feature-icon">&#9670;</div>
+            <h3><?= esc($doc['title']) ?></h3>
+            <p><?= esc(mb_strimwidth(strip_tags($doc['body']), 0, 130, '…')) ?></p>
+          </a>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <div class="split" style="margin-top:60px;">
     <div class="split-card panel">
       <span class="tag tag-locked">Admin Only</span>
       <h3>Architecture &amp; API</h3>

@@ -39,4 +39,21 @@ class Waitlist extends BaseController
         return redirect()->to(site_url('/') . '#waitlist-hero')
             ->with('waitlist_success', "You're on the list — we'll email you the moment early access opens.");
     }
+
+    public function unsubscribe(): string
+    {
+        $email  = (string) $this->request->getGet('email');
+        $model  = new WaitlistSignupModel();
+        $signup = $email !== '' ? $model->findByEmail($email) : null;
+
+        if ($signup && $signup['status'] !== 'unsubscribed') {
+            $model->update($signup['id'], ['status' => 'unsubscribed']);
+        }
+
+        return view('pages/unsubscribed', [
+            'title'     => 'Unsubscribed — BLUERABBIT',
+            'activeNav' => '',
+            'email'     => $email,
+        ]);
+    }
 }

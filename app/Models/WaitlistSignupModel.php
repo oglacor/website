@@ -23,4 +23,9 @@ class WaitlistSignupModel extends Model
             'is_unique' => "You're already on the list — we'll be in touch.",
         ],
     ];
+
+    public function findByEmail(string $email)
+    {
+        return $this->where('email', $email)->first();
+    }
 }

@@ -45,7 +45,7 @@
     </div>
     <div class="hero-visual" style="aspect-ratio:1/1;">
       <div class="hex-ring"></div>
-      <div class="core"><?= view('partials/rabbit_icon', ['fill' => '#90f3fe', 'size' => 180]) ?></div>
+      <div class="core"><img src="<?= base_url('assets/img/cooper-white.svg') ?>" alt=""></div>
     </div>
   </div>
 </div>

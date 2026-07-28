@@ -39,7 +39,7 @@
     </div>
     <div class="hero-visual">
       <div class="hex-ring"></div>
-      <div class="core"><?= view('partials/rabbit_icon', ['fill' => '#90f3fe', 'size' => 220]) ?></div>
+      <div class="core"><img src="<?= base_url('assets/img/cooper-white.svg') ?>" alt=""></div>
       <div class="hero-badge badge-1"><span class="dot" style="background:#1cc2eb;"></span> A.I. Content Engine</div>
       <div class="hero-badge badge-2"><span class="dot" style="background:#24da98;"></span> Rebuilt From The Core</div>
       <div class="hero-badge badge-3"><span class="dot" style="background:#f7cb15;"></span> Engagement &times; Infinity</div>

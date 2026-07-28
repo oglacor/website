@@ -21,6 +21,7 @@ $routes->get('blog', 'Blog::index');
 $routes->get('blog/(:segment)', 'Blog::show/$1');
 
 $routes->post('waitlist', 'Waitlist::store');
+$routes->get('unsubscribe', 'Waitlist::unsubscribe');
 
 // -----------------------------------------------------------------
 // Docs — public hub + per-page routes; /docs/developer is gated and

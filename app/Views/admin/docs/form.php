@@ -25,7 +25,7 @@
         <input type="text" id="slug" name="slug" value="<?= esc($doc['slug'] ?? '') ?>" placeholder="getting-started">
       </div>
       <div class="form-field">
-        <label for="body">Body</label>
+        <label for="body">Body (HTML supported — h2/h3, p, ul/ol, strong, code)</label>
         <textarea id="body" name="body" style="min-height:340px;" required><?= esc($doc['body'] ?? '') ?></textarea>
       </div>
     </div>
