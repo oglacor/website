@@ -68,4 +68,6 @@
   </div>
 </form>
 
+<?= view('partials/tinymce_editor', ['selector' => '#body']) ?>
+
 <?= $this->endSection() ?>

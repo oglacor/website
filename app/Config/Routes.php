@@ -49,6 +49,8 @@ $routes->group('account', ['filter' => 'auth'], static function ($routes) {
 $routes->group('admin', ['filter' => 'auth:admin'], static function ($routes) {
     $routes->get('/', 'Admin\Dashboard::index');
 
+    $routes->post('upload-image', 'Admin\UploadController::image');
+
     $routes->get('blog', 'Admin\BlogController::index');
     $routes->get('blog/new', 'Admin\BlogController::new');
     $routes->post('blog', 'Admin\BlogController::create');

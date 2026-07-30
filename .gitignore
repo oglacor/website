@@ -64,6 +64,10 @@ Vagrantfile
 /public/assets/uploads/blog/*
 !/public/assets/uploads/blog/.gitkeep
 
+# TinyMCE-uploaded content images (blog/docs rich text bodies)
+/public/assets/uploads/content/*
+!/public/assets/uploads/content/.gitkeep
+
 /writable/debugbar/*
 !/writable/debugbar/index.html
 
