@@ -41,7 +41,7 @@
         <?php endif; ?>
         <a href="<?= site_url('logout') ?>" class="btn btn-primary btn-sm">Log Out</a>
       <?php else: ?>
-        <a href="<?= site_url('login') ?>" class="btn btn-ghost btn-sm">Log In</a>
+        <a href="<?= PLAY_APP_URL ?>" class="btn btn-ghost btn-sm">Log In</a>
         <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
       <?php endif; ?>
     </div>
@@ -64,7 +64,7 @@
         <a href="<?= site_url('product') ?>">Overview</a>
         <a href="<?= site_url('solutions') ?>">How It Works</a>
         <a href="<?= site_url('pricing') ?>">Pricing</a>
-        <a href="<?= site_url('get-started') ?>">Open CI4 Beta</a>
+        <a href="<?= PLAY_APP_URL ?>">Get Started</a>
       </div>
       <div class="footer-col">
         <h5>Resources</h5>
@@ -75,8 +75,8 @@
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="<?= site_url('login') ?>">Log In</a>
-        <a href="<?= site_url('get-started') ?>">Get Started</a>
+        <a href="<?= PLAY_APP_URL ?>">Log In</a>
+        <a href="<?= PLAY_APP_URL ?>">Get Started</a>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
       </div>

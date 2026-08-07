@@ -19,7 +19,7 @@
         <li>Up to 3 Adventures</li>
         <li>50MB of storage</li>
       </ul>
-      <a href="<?= site_url('get-started') ?>" class="btn btn-ghost btn-block">Get Started Free</a>
+      <a href="<?= PLAY_APP_URL ?>" class="btn btn-ghost btn-block">Get Started Free</a>
     </div>
 
     <div class="price-card panel featured">
@@ -31,7 +31,7 @@
         <li>Unlimited Adventures</li>
         <li>Everything in Basic</li>
       </ul>
-      <a href="<?= site_url('get-started') ?>" class="btn btn-primary btn-block">Start Free Trial</a>
+      <a href="<?= PLAY_APP_URL ?>" class="btn btn-primary btn-block">Start Free Trial</a>
     </div>
 
     <div class="price-card panel">
@@ -55,7 +55,7 @@
     <h2>Start free. Upgrade when you need to.</h2>
     <p>No credit card required for Basic — Pro comes with a 30-day trial.</p>
     <div class="cta-row">
-      <a href="<?= site_url('get-started') ?>" class="btn btn-primary">Create Your Account</a>
+      <a href="<?= PLAY_APP_URL ?>" class="btn btn-primary">Create Your Account</a>
       <a href="<?= site_url('product') ?>" class="btn btn-ghost">See What's Included</a>
     </div>
   </div>

@@ -77,8 +77,6 @@
       <p>Full technical reference for the CI4 core — routes, models, and the data layer.</p>
       <?php if (session()->get('user_role') === 'admin'): ?>
         <a href="<?= site_url('docs/developer') ?>" class="btn btn-primary btn-sm">Open Developer Docs &rarr;</a>
-      <?php else: ?>
-        <a href="<?= site_url('login') ?>" class="btn btn-ghost btn-sm">Log In &rarr;</a>
       <?php endif; ?>
     </div>
   </div>

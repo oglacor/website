@@ -254,3 +254,41 @@ one of the 49 pages hits 200 with zero PHP warnings; a direct DB-level regex che
 confirmed every internal `/docs/...` cross-link across all 49 pages' bodies resolves to a
 real slug (no broken links); the hub's new 3-way card split (11 cyan / 35 green / 3 purple)
 verified by exact count.
+
+## Follow-up — real BLUERABBIT accounts live at play.bluerabbit.io, not here
+
+Important clarification from Bernardo: **this site's own auth (`users` table, `/login`,
+`/admin`) is only ever for admins/collaborators managing the blog/docs CMS.** Real
+player/GM BLUERABBIT accounts are a completely separate system, live at
+`https://play.bluerabbit.io` (the CI4 port being deployed there now). Every public-facing
+"Log In" / "Get Started" CTA on this site was, until now, wrongly pointing at this site's
+own local auth — fixed:
+
+- Added a single constant, `PLAY_APP_URL` (`app/Config/Constants.php`), rather than
+  hardcoding `https://play.bluerabbit.io` in six-plus places. If the real app ever moves to
+  a different URL, that's the only line to change.
+- Nav "Log In" (logged-out state), footer "Log In"/"Get Started"/"Open CI4 Beta" (renamed
+  to "Get Started"), and all three pricing-page CTAs ("Get Started Free," "Start Free
+  Trial," "Create Your Account") now point to `PLAY_APP_URL` instead of this site's
+  `/login`/`/get-started`.
+- The one remaining visible pointer to this site's *own* `/login` — a "Log In" prompt on
+  the public docs page inviting a logged-out visitor to unlock the gated Architecture & API
+  section — was removed entirely per Bernardo's explicit request ("remove any login links
+  from visibility, I'll type in a manual url"). The admin still reaches it by typing
+  `/login` or `/admin` directly; `AuthFilter` still correctly redirects an unauthenticated
+  `/admin` visit to the local `/login` (verified — this must stay local, it's the actual
+  auth gate for the CMS, not a user-facing CTA).
+- Deliberately left untouched: `Auth.php`'s internal redirects, `AuthFilter.php`'s gate
+  redirect, and the mutual login↔register cross-links on the `auth/login.php` /
+  `auth/register.php` pages themselves — all of that is internal navigation within the
+  local admin-auth system, not a public marketing CTA, so it correctly keeps pointing at
+  this site's own routes.
+- Also deleted `app/Views/pages/docs.php` — discovered while auditing every `/login`
+  reference that this was dead code, orphaned since `Pages::docs()` was replaced by the
+  dedicated `Docs` controller earlier in the build; nothing referenced it anymore.
+
+**Not yet decided:** whether `/get-started`'s local registration form (still fully
+functional, just unlinked) should eventually be removed outright, or whether it's worth
+keeping around for some other purpose (e.g., adding a second admin/collaborator account
+without DB access). Left as-is for now since Bernardo only confirmed removing it from
+visibility, not deleting the capability.

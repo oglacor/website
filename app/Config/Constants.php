@@ -26,6 +26,19 @@ defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
 defined('COMPOSER_PATH') || define('COMPOSER_PATH', ROOTPATH . 'vendor/autoload.php');
 
 /*
+ | --------------------------------------------------------------------------
+ | The Real BLUERABBIT App
+ | --------------------------------------------------------------------------
+ |
+ | This marketing site has its own, separate auth (for admins/collaborators
+ | managing the blog/docs CMS only — see CLAUDE.md hard rule #1). Actual
+ | player/GM BLUERABBIT accounts live on the real app, not here. Every
+ | "Log In" / "Get Started" CTA meant for a real BLUERABBIT user should
+ | point here, not to this site's own /login or /get-started.
+ */
+defined('PLAY_APP_URL') || define('PLAY_APP_URL', 'https://play.bluerabbit.io');
+
+/*
  |--------------------------------------------------------------------------
  | Timing Constants
  |--------------------------------------------------------------------------
