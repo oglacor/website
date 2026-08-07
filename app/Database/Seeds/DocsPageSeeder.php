@@ -839,6 +839,316 @@ HTML,
 <p>In Launch Week, two campaigns go out: a kickoff welcome the Sunday before Monday's start, and a Week Two nudge to anyone who hasn't opened the Path-choice step yet by Wednesday of Week One.</p>
 HTML,
             ],
+
+            // ---------------------------------------------------------
+            // User docs — Player account, journal & support (new)
+            // ---------------------------------------------------------
+            [
+                'title'      => 'Your Account: Profile, Player Type & Privacy',
+                'slug'       => 'your-account-profile-and-privacy',
+                'section'    => 'user',
+                'sort_order' => 7,
+                'body'       => <<<'HTML'
+<p>Everything about you as a person — separate from any one Adventure — lives under <strong>My Account</strong>, reachable from your avatar in the header.</p>
+
+<h2>Profile</h2>
+<p>Upload a profile picture, edit your first/last name and email, and write a short bio. Your username/nickname is shown but not editable here. You can also set your interface Language and add optional Company Name, Website, and LinkedIn fields — useful if your organization uses BLUERABBIT for professional networking-style cohorts, not just training.</p>
+<p>You'll also see a <strong>Player Level</strong> here that's different from any single Adventure's level — it's an average across every Adventure you're enrolled in, a rough sense of your overall experience on the platform.</p>
+
+<h2>Player Type (Hexad Quiz)</h2>
+<p>A short personality-style quiz (based on the Hexad player-type model) sorts you into a dominant type — Free Spirit, Achiever, Philanthropist, Socialiser, Player, or Disruptor — each with a short description of what motivates that type. Take it once from your Profile tab; retake it any time with "Test Again" if you want an updated read. It's informational, not something that gates content — think of it as understanding your own play style, not a requirement.</p>
+
+<h2>Privacy: Anonymize Me</h2>
+<p>If you want out, the <strong>Anonymize Me</strong> tool (in the Account tab, double-confirmed before it runs) scrambles your name, photo, and email to random values while keeping your stats and history intact under that now-anonymous identity. It logs you out permanently — this isn't a "hide my profile" toggle, it's a one-way action for anyone who wants their personal data removed while leaving the underlying Adventure data (like completion stats) alone. If your organization doesn't offer this option, it's been turned off by your GM or organization admin.</p>
+HTML,
+            ],
+            [
+                'title'      => 'My Work: Your Personal Journal & Progress History',
+                'slug'       => 'my-work-journal-and-history',
+                'section'    => 'user',
+                'sort_order' => 8,
+                'body'       => <<<'HTML'
+<p><strong>My Work</strong> is your full record inside one Adventure — everything you've done, answered, and earned, in one place. Your GM can also view this for any of their players (read-only) if they need to check in on someone's progress.</p>
+
+<h2>Overview</h2>
+<p>Your XP/BLOO/EP at a glance, plus an <strong>Engagement</strong> gauge that scores how active you've been recently — On Fire, Active, Moderate, Cooling Off, or Dormant — based on how recently you logged in and completed something. You'll also see your rank badge, leaderboard position, and simple charts of your XP over time and what kinds of quests you've completed most.</p>
+
+<h2>Milestones</h2>
+<p>Every quest in the Adventure, with a plain-language reason for its current state if it's not available yet — which prerequisite you're missing, what level you need, or when it opens.</p>
+
+<h2>My Answers</h2>
+<p>Every open-text answer you've ever submitted, together with its grade if it's been reviewed. Useful for revisiting your own work, or checking whether something you submitted a while ago has been graded yet.</p>
+
+<h2>Challenges</h2>
+<p>A full history of every quiz you've attempted — pass/fail, your percentage, and a question-by-question breakdown of exactly which answer you picked and whether it was correct. Good for actually learning from a quiz you didn't ace the first time.</p>
+
+<h2>Achievements</h2>
+<p>Everything you've earned so far, next to everything still available — a checklist view of the Adventure's full achievement set.</p>
+
+<h2>Reset (Demo Adventures Only)</h2>
+<p>If you're in an Adventure your GM has flagged as a demo, you'll see a self-service Reset option here to wipe your own progress and start over — not available on real, live Adventures.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Getting Help: Support Requests & Live Chat',
+                'slug'       => 'getting-help-support-and-chat',
+                'section'    => 'user',
+                'sort_order' => 9,
+                'body'       => <<<'HTML'
+<p>Stuck, or found something that looks broken? Two separate ways to get help, depending on what you need.</p>
+
+<h2>Contact Admin (My Requests)</h2>
+<p>The "Contact Admin" form (in the footer, on most pages) sends a subject and message straight to your Adventure's GM as a trackable request — not a live chat, more like a support ticket. Check <strong>My Requests</strong> to see everything you've sent and its status: Pending, Resolved, or Dismissed. Good for anything specific to your Adventure — a grading question, a technical issue, a request to be moved to a different Guild.</p>
+
+<h2>Cooper — Live AI Chat</h2>
+<p>Some Adventures have <strong>Cooper</strong>, an AI chat assistant, available as a button in the taskbar. It opens a chat panel for quick questions without waiting on a human reply — handy for "how do I..." questions you'd rather not write a full support ticket for. Not every Adventure has this enabled; if you don't see the button, your GM hasn't turned it on for this one.</p>
+
+<h2>Guided Tours</h2>
+<p>The first time you visit the Journey Map, a Quest, a Challenge, or a Mission, a short guided walkthrough may pop up automatically to orient you. If you skipped it and want it back, look for a "Start Tutorial" option in the header on those pages.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Certificates & Secrets and Clues',
+                'slug'       => 'certificates-and-secrets-and-clues',
+                'section'    => 'user',
+                'sort_order' => 10,
+                'body'       => <<<'HTML'
+<h2>Certificate of Participation</h2>
+<p>If your GM has enabled it, you can generate a printable certificate showing your name, level, rank badge, and XP/BLOO/EP stats, styled with the Adventure's dates and your GM's signature. You can choose to show or hide your rank and stats before printing or exporting it — useful for something you actually want to share (like completing a training program) versus a quick personal keepsake.</p>
+
+<h2>Secrets and Clues</h2>
+<p>Some quests carry a hidden "success message" — a bit of story or narrative payoff your GM wrote for finishing that quest, written specifically to be a) hidden until then and b) worth savoring once. Every one you've unlocked gets collected on your <strong>Secrets and Clues</strong> page — a personal scrapbook of the story content you've earned, separate from the quests themselves and worth a look if you want the narrative in one place rather than scattered across the Journey Map.</p>
+HTML,
+            ],
+
+            // ---------------------------------------------------------
+            // Setup docs — the full Adventure Settings reference (new)
+            // ---------------------------------------------------------
+            [
+                'title'      => 'The Complete Adventure Settings Reference',
+                'slug'       => 'complete-adventure-settings-reference',
+                'section'    => 'setup',
+                'sort_order' => 28,
+                'body'       => <<<'HTML'
+<p>Your Adventure's settings screen is genuinely large — this page walks the tabs that don't get their own dedicated doc elsewhere. See <a href="/docs/customizing-currencies-ranks-and-rewards">Customizing Currencies, Ranks &amp; Rewards</a>, <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>, <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>, and <a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a> for the rest.</p>
+
+<h2>General</h2>
+<p>Name, enrollment link, badge image, and highlight color for the Adventure. Privacy is either Public (anyone with the link can join) or Invite-only. If you're an admin, you'll also see an Adventure Type field — Normal, or Template if this Adventure exists purely to spin off child Adventures from (see <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Scaling Cohorts</a>).</p>
+
+<h2>Time Mechanics</h2>
+<p>Set the Adventure's time zone from a searchable list (with a live clock so you can confirm you picked the right one), then decide how locked milestones behave: never hide them, hide until their start date, hide after their deadline passes, or both. You can also choose whether the schedule view shows the full calendar or just today's sessions.</p>
+
+<h2>Resource Mechanics</h2>
+<p>Pick a grading scale — none, straight percentage, or letter grades (A/A-/B+... down to F) — and decide when XP/BLOO/EP rewards actually land: immediately on submission, or held until a GM grades the answer. The "hold until graded" option is worth using for anything you don't want players to game by submitting garbage just to collect the reward instantly.</p>
+
+<h2>Adventure Intro</h2>
+<p>A rich-text welcome message shown the first time a player logs in — your chance to set the tone before they see the Journey Map at all.</p>
+
+<h2>Certificate Settings</h2>
+<p>If you're offering a <a href="/docs/certificates-and-secrets-and-clues">Certificate of Participation</a>, set the start/end dates it should display, upload a logo, and upload a signature image players will see on their generated certificate.</p>
+
+<h2>Reset Settings (Existing Adventures Only)</h2>
+<p>A set of double-confirmed admin utility buttons: reset every player's "seen the intro" flag, reset everyone back a level, or reset all Guilds. These affect every enrolled player at once — use them for genuine resets (like reusing an Adventure for a new cohort), not casually.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Customizing Currencies, Ranks & Rewards',
+                'slug'       => 'customizing-currencies-ranks-and-rewards',
+                'section'    => 'setup',
+                'sort_order' => 29,
+                'body'       => <<<'HTML'
+<p>The companion how-to for <a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a> — this is where you actually change what those three currencies are called, and what happens as players level up.</p>
+
+<h2>Renaming XP, BLOO & EP</h2>
+<p>In your Adventure's Core Mechanics settings, each currency has both a Long label and a Short label you can rename independently — for example, relabeling XP as "Skill Points" (long) / "SP" (short) to fit a corporate training theme, or BLOO as "Guild Coin" for a more game-like Adventure. The mechanics underneath never change, only what players see them called. You can also rename what a "Player" is called across the Adventure — "Explorer," "Recruit," whatever fits your theme.</p>
+
+<h2>Adventure Ranks</h2>
+<p>Build a table of rank thresholds — each one triggered by a condition (most often "reaches Level N") and tied to an Achievement that gets auto-awarded the moment a player crosses it. This is how you turn a raw level number into something that feels like a real title or milestone — Level 5 becomes "Bronze Explorer," Level 15 becomes "Guild Master," each with its own badge.</p>
+
+<h2>A Practical Approach</h2>
+<p>Don't rename everything on day one. Start with the default XP/BLOO/EP labels, run a small pilot group through the Adventure, and only rename things once you've confirmed the mechanics feel right — renaming is cheap and reversible, but re-tuning reward math after players are mid-Adventure is a much bigger disruption.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Managing Your Player Roster',
+                'slug'       => 'managing-your-player-roster',
+                'section'    => 'setup',
+                'sort_order' => 30,
+                'body'       => <<<'HTML'
+<p>Companion to <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a> — this covers the day-to-day tools for managing a roster once people are already in.</p>
+
+<h2>The Enrolled Players Tab</h2>
+<p>A searchable, filterable table of everyone in the Adventure — filter by role (Player/GM/NPC), switch someone's role inline without re-inviting them, remove a player entirely, or trigger a password reset for them directly (see below).</p>
+
+<h2>Adding Players</h2>
+<p>Add people one at a time, or bulk-import via CSV. The CSV import expects an Email column (the only required one) plus optional Nickname, Password, First/Last Name, Language, and a Guild column — if the Guild named in a row doesn't exist yet, it's created automatically rather than failing the import. Nine additional workforce-metadata columns (see Player Meta below) can ride along in the same file.</p>
+
+<h2>Resetting a Player's Password</h2>
+<p>If your organization allows it, GMs (and NPCs, who have the same read access as a GM) can reset any enrolled player's password directly from this tab — you'll be asked to re-enter your own password first, as a safeguard against someone walking up to an unlocked session and resetting accounts. If you don't see this option, your organization has this feature turned off; ask your platform admin.</p>
+
+<h2>Player Meta Manager</h2>
+<p>For organizations tracking workforce data alongside gameplay — Department, Region, Job Title, Business Pillar, Cluster, whatever fields matter to you — the Player Meta Manager lets you bulk-edit these per player via CSV upload-with-preview, or edit rows inline. Export the full list back out as CSV any time, which is also the easiest way to build a segmented report outside the platform (in a spreadsheet tool, for instance).</p>
+HTML,
+            ],
+            [
+                'title'      => 'Setting Up AI Grading & Gift Card Rewards',
+                'slug'       => 'setting-up-ai-grading-and-gift-cards',
+                'section'    => 'setup',
+                'sort_order' => 31,
+                'body'       => <<<'HTML'
+<p>The concept of AI-assisted grading is covered in <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a> — this page is the actual settings walkthrough for turning both integrations on.</p>
+
+<h2>Connecting Your Claude API Key</h2>
+<p>Open your Adventure's A.I. Content Validation tab. If your plan includes this feature, you'll see a password-masked field for your Claude API key:</p>
+<ol>
+  <li>Go to <code>console.anthropic.com</code> and sign in (or create an account).</li>
+  <li>Navigate to Settings → API Keys.</li>
+  <li>Create a new key and copy it — you won't be able to see it again after you leave that page, so copy it immediately.</li>
+  <li>Paste it into the Claude API Key field in your Adventure settings and save.</li>
+</ol>
+<p>Once connected, open-text steps can be validated automatically — typically well under a cent per validation, so cost isn't a real concern even at scale. Leaving the field blank on a re-save keeps your existing key rather than clearing it, so you don't need to re-enter it every time you touch other settings on the same tab.</p>
+
+<h2>Setting Up Gift Card Rewards (Tremendous)</h2>
+<p>If your plan includes it, the Tremendous tab lets you connect a Tremendous.com account so Item Shop purchases can trigger a real, emailed gift card instead of just an in-Adventure item:</p>
+<ol>
+  <li>Paste your Tremendous API key into the field provided, then use "Test Connection" to confirm it's valid before going further.</li>
+  <li>Choose Sandbox mode while you're testing — it behaves identically but doesn't send real money or real gift cards. Switch to Production only when you're ready to reward players for real.</li>
+  <li>Set your currency (EUR/USD/GBP), funding source, and optionally a Campaign ID if Tremendous requires one for your account.</li>
+</ol>
+<p>Every gift-card send is logged with its status (sent, pending, failed, duplicate blocked), so you can always audit what actually went out.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Customizing Your Taskbar & Adventure Branding',
+                'slug'       => 'customizing-taskbar-and-branding',
+                'section'    => 'setup',
+                'sort_order' => 32,
+                'body'       => <<<'HTML'
+<h2>Quick Links (Taskbar)</h2>
+<p>The taskbar shortcut buttons players see are configurable per Adventure. Toggle the built-ins on or off — Journey, Magic Code entry, Item Shop, Feedback, and the Cooper AI chat widget (which needs its own support-chat "slug" configured to work) — and add up to three fully custom buttons of your own, each with a label, a URL, an icon, and a color. Good for linking out to an external resource, a company intranet page, or a scheduling link without making players hunt for it.</p>
+
+<h2>Images</h2>
+<p>Override the background image for any major section of your Adventure independently — Journey, Item Shop, Backpack, Guilds, Schedule, Blog, Lore, Wall, and Leaderboard all accept their own background. Anything you don't override falls back to the platform's default for that section, so you can re-theme just the parts that matter to you (like the Journey Map) and leave the rest alone.</p>
+
+<h2>A Note on Theming</h2>
+<p>None of this changes layout or functionality — it's purely visual. If you're running the same Adventure for multiple cohorts via a Template (see <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Scaling Cohorts</a>), branding set on a child Adventure doesn't affect the template or other children, so you can theme each cohort differently if you want to.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Reviewing & Grading Submissions in Bulk',
+                'slug'       => 'reviewing-and-grading-submissions-in-bulk',
+                'section'    => 'setup',
+                'sort_order' => 33,
+                'body'       => <<<'HTML'
+<p>For grading at real scale — a full cohort's worth of open-text answers on one quest — the review screen has a few tools worth knowing beyond grading one submission at a time.</p>
+
+<h2>The CSV Round-Trip</h2>
+<p>Download every submission for a milestone as a CSV, grade and comment on them offline in whatever spreadsheet tool you prefer, then re-upload the file to apply everything at once. Much faster than clicking through submissions one by one when you've got dozens or hundreds to get through.</p>
+
+<h2>Pending Validation Reminders</h2>
+<p>Export a CSV of exactly which players still have ungraded submissions waiting — built specifically to feed into an <a href="/docs/email-campaigns-to-players-concept">email campaign</a> nudging graders (or players) about what's outstanding.</p>
+
+<h2>Grading Scale</h2>
+<p>Depending on what you set in <a href="/docs/complete-adventure-settings-reference">Resource Mechanics</a>, you'll grade on a straight percentage or on letter grades (A through F). Whichever you choose, it's applied consistently across the review screen.</p>
+
+<h2>Manual "Validate with A.I."</h2>
+<p>Even on a quest with AI grading already enabled, you can trigger a manual AI validation on any individual submission as a spot-check — separate from the automatic validation that ran when the player submitted it. Useful for a second opinion on a borderline case before you commit to a grade.</p>
+HTML,
+            ],
+            [
+                'title'      => 'GM Toolkit: Duplicator, Reports & Bulk Actions',
+                'slug'       => 'gm-toolkit-duplicator-reports-and-bulk-actions',
+                'section'    => 'setup',
+                'sort_order' => 34,
+                'body'       => <<<'HTML'
+<h2>Duplicator</h2>
+<p>Copy quests, achievements, Tabis, items, encounters, and speakers from one Adventure into another — or into the same one. Pick what to copy from a checklist, choose the target Adventure, and confirm a summary before anything actually copies. This is the fast path for reusing content without starting from a blank Journey Map every time, and it's different from the Template/child-Adventure model (see <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Scaling Cohorts</a>) — Duplicator is a one-time copy, Templates stay linked for ongoing cohort spin-offs.</p>
+
+<h2>Adventure Report (PDF)</h2>
+<p>A printable, cover-paged report distinct from the <a href="/docs/stats-dashboard-guide">Stats Dashboard</a> — it walks through every quest with a completion chart and the full text of every player's submitted answer for that quest. Good for a shareable end-of-program summary, not for day-to-day monitoring.</p>
+
+<h2>Milestone Funnel</h2>
+<p>A drop-off funnel chart reachable from the Stats page, filterable by Tabi or by Level, showing where players are actually stalling out — alongside context stats like how many are enrolled, have logged in, and were active in the last 7 days. The fastest way to spot one specific quest that's quietly losing everyone.</p>
+
+<h2>Bulk Create (Admin Only)</h2>
+<p>For platform admins: mass-generate a batch of near-identical achievements at once — shared prefix name, badge, and rewards, just varied per recipient — useful for something like stamping out dozens of "completion certificate" achievements across a large cohort in one action instead of building each by hand.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Managing Player Support Requests',
+                'slug'       => 'managing-player-support-requests',
+                'section'    => 'setup',
+                'sort_order' => 35,
+                'body'       => <<<'HTML'
+<p>The GM-side counterpart to players' <a href="/docs/getting-help-support-and-chat">Contact Admin requests</a>. Every message a player sends lands in your Adventure's Player Requests inbox — searchable, and filterable by status: All, Pending, Read, Resolved, or Dismissed.</p>
+<p>Treat this like any support queue: triage first (skim what's new), respond or resolve directly with the player through whatever channel makes sense (in person, email, or a quick fix to their progress if that's what they're asking about), then mark it Resolved or Dismissed so your Pending list stays a true "still needs attention" list rather than a graveyard of old tickets.</p>
+HTML,
+            ],
+
+            // ---------------------------------------------------------
+            // Setup docs — Enterprise: Organizations & platform settings
+            // ---------------------------------------------------------
+            [
+                'title'      => 'Organizations: Managing Multiple Adventures at Scale (Enterprise)',
+                'slug'       => 'organizations-managing-multiple-adventures',
+                'section'    => 'setup',
+                'sort_order' => 36,
+                'body'       => <<<'HTML'
+<p><strong>Enterprise.</strong> An Organization groups several Adventures under one account — built for a customer running more than one cohort, program, or department, who wants one place to see and manage all of it rather than jumping between separate Adventures.</p>
+
+<h2>Setting Up Your Organization</h2>
+<p>General settings cover your Organization's name, logo, brand color, and an About section. From there, everything else in this doc happens under three more tabs.</p>
+
+<h2>Players</h2>
+<p>A live search-and-add tool for building your Organization's player roster, plus CSV bulk import for larger lists. The fastest option if you're consolidating an existing Adventure into your Organization is <strong>Bulk Add from Adventure</strong> — it copies an entire Adventure's roster (players, GMs, NPCs, and the owner) into the Organization in one action, rather than re-adding everyone by hand.</p>
+
+<h2>Adventures</h2>
+<p>Search for and attach existing Adventures to your Organization, complete with their enrollment links — this is how multiple separately-built Adventures end up under one umbrella view.</p>
+
+<h2>Stats — Cross-Adventure Analytics</h2>
+<p>This is the real payoff of Organizations: analytics that span every attached Adventure at once, not just one at a time. Unique players and Adventure counts org-wide; a breakdown table you can segment by any Player Meta field (Business Pillar, Country, whatever you've configured — see <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>); an overall Engagement gauge and a five-factor Engagement breakdown; per-Adventure engagement and progress comparisons side by side; a date-ranged Daily Active Users chart; and a workforce demographics view. If you're reporting up to leadership on a multi-department rollout, this is the view built for that conversation.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Platform Settings & White-Label Branding (Enterprise)',
+                'slug'       => 'platform-settings-and-white-label-branding',
+                'section'    => 'setup',
+                'sort_order' => 37,
+                'body'       => <<<'HTML'
+<p><strong>Enterprise.</strong> Beyond a single Adventure's settings, there's a platform-wide settings console for organizations that want to shape how BLUERABBIT looks and behaves across every Adventure they run — reachable only to platform admins, not regular GMs.</p>
+
+<h2>Custom Labels — White-Labeling Your Instance</h2>
+<p>Rename every player-facing section platform-wide, not just per Adventure: Journey, Item Shop, Backpack, Guilds, Leaderboard, Blog, Resources, Achievements, and more can all be relabeled to match your organization's own vocabulary. Combined with per-Adventure currency renaming (see <a href="/docs/customizing-currencies-ranks-and-rewards">Customizing Currencies, Ranks &amp; Rewards</a>), this is how an Enterprise customer makes BLUERABBIT feel like part of their own brand rather than a generic third-party tool.</p>
+
+<h2>Platform-Wide Branding</h2>
+<p>Set default logos, background images, and a favicon that apply across every Adventure unless a specific Adventure overrides them (see <a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a> for per-Adventure overrides). Set once at the platform level, inherited everywhere.</p>
+
+<h2>Sponsors Directory</h2>
+<p>A global directory of sponsor logos and levels, available to attach to the Event Schedule (see <a href="/docs/event-schedule-concept">The Event Schedule</a>) across any Adventure — useful if the same set of sponsors backs multiple programs you run.</p>
+
+<h2>Who Can Access This</h2>
+<p>This console is intentionally restricted to platform admins — a regular GM managing one Adventure won't see it, and shouldn't need to. If you're an Enterprise customer and don't have access yet, that's a setup step for your account, not something missing from the product.</p>
+HTML,
+            ],
+            [
+                'title'      => 'How Plan Tiers Actually Differ (Enterprise)',
+                'slug'       => 'understanding-plans-basic-pro-enterprise',
+                'section'    => 'setup',
+                'sort_order' => 38,
+                'body'       => <<<'HTML'
+<p>Pricing and plan limits are covered in <a href="/docs/billing-and-plans">Billing &amp; Plans</a>. This page is about what actually changes in practice as you move up tiers.</p>
+
+<h2>Basic → Pro: The Clear Line</h2>
+<p>This one's simple and enforced: Basic caps you at 200 players and 3 Adventures; Pro removes both caps entirely. If you're bumping into either limit, Pro is a self-serve upgrade — no sales conversation required, just a subscription.</p>
+
+<h2>Pro → Enterprise: Less About Feature Toggles, More About Scale</h2>
+<p>Be honest with yourself about what you actually need here. Enterprise isn't a long checklist of exclusive features locked away from Pro customers — it's built around running <strong>multiple Adventures as one managed account</strong> via <a href="/docs/organizations-managing-multiple-adventures">Organizations</a>, plus the setup work that comes with that at real scale: custom Player Meta fields for HR/roster data, cross-Adventure reporting, and (if you want it) <a href="/docs/platform-settings-and-white-label-branding">white-label branding</a> across everything you run.</p>
+<p>Practically, Enterprise is <strong>sales-assisted rather than self-serve</strong> — there's no "Subscribe" button on the pricing page for it, because onboarding an Enterprise account usually involves setting up Organizations, importing rosters, and configuring branding together with our team rather than flipping a switch. <a href="/contact">Reach out</a> if you think this is where you're headed.</p>
+
+<h2>What This Means For You Right Now</h2>
+<p>If you're running one Adventure, Basic or Pro covers you completely. The moment you're coordinating more than one Adventure under a single paying relationship — multiple departments, multiple cohorts, multiple locations — that's the actual signal to talk to us about Enterprise, not a specific feature you're missing.</p>
+HTML,
+            ],
         ];
 
         foreach ($pages as $page) {

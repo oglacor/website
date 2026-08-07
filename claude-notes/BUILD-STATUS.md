@@ -198,5 +198,59 @@ HTTP level rather than visually — worth a manual look before calling this full
 2. **CRM phase** (`/admin/customers`) — explicitly out of scope, not started.
 3. Password reset / forgot-password flow for the site's own auth — wasn't in the original
    priority list, flagging in case it's wanted before this goes live with real users.
-4. Docs page content is only 5 seeded starter pages — real, comprehensive documentation
-   still needs writing (the CMS to write it in now exists at `/admin/docs`).
+4. ~~Docs page content is only 5 seeded starter pages~~ — resolved, see follow-up below.
+   49 pages now cover the real product in depth.
+
+## Follow-up — full Player/GM/Enterprise documentation (49 docs pages total)
+
+Docs content went from 34 pages (mostly conceptual/GM-design-focused, written from
+`BLUERABBIT_PROJECT_BRIEF.md`) to 49, adding 15 pages written from a fresh, targeted audit
+of the **live WordPress app** (`bluerabbit\wp-content\themes\bluerabbit`) and the CI4 port
+(`blue\blue`) specifically hunting for gaps — real player account features and the
+Config/Enterprise surface neither prior research pass had covered. Same mechanism as
+before: `app/Database/Seeds/DocsPageSeeder.php`, upsert-by-slug, applied via
+`php spark db:seed DocsPageSeeder`.
+
+**New player pages (user section, now 11 total):** Your Account (Profile/Hexad quiz/
+Anonymize-Me privacy tool), My Work (personal journal — Overview/Milestones/My Answers/
+Challenges/Achievements/Reset tabs), Getting Help (support requests + the Cooper AI chat
+widget), Certificates & Secrets and Clues.
+
+**New GM pages (setup section, now 35 non-Enterprise + 3 Enterprise = 38 total):**
+Complete Adventure Settings Reference, Customizing Currencies/Ranks/Rewards, Managing Your
+Player Roster (incl. CSV bulk import + Player Meta Manager), Setting Up AI Grading & Gift
+Card Rewards (the actual Claude API key + Tremendous walkthroughs — the earlier "Grading &
+AI-Assisted Feedback" page was conceptual, this is the settings-screen how-to), Customizing
+Your Taskbar & Branding, Reviewing & Grading Submissions in Bulk (CSV round-trip), GM
+Toolkit (Duplicator/PDF Report/Milestone Funnel/Bulk Create), Managing Player Support
+Requests.
+
+**New Enterprise pages (3, visually split out on the `/docs` hub into their own purple-
+accented section rather than buried in the GM grid):** Organizations (multi-Adventure
+account management — General/Players/Adventures/Stats tabs, cross-Adventure analytics),
+Platform Settings & White-Label Branding (Custom Labels, platform-wide branding, Sponsors
+directory), How Plan Tiers Actually Differ.
+
+**Deliberate honesty call on Enterprise positioning:** the CI4 research found that
+plan-tier feature gating (Basic vs. Pro vs. Enterprise) is **not actually enforced** in the
+running CI4 app as of this writing — every feature value is identical across plans in the
+live `blue` dev DB except `max_players` for God Mode. Rather than invent a feature-matrix
+that doesn't exist, the "How Plan Tiers Actually Differ" page frames Enterprise honestly as
+a **sales-assisted, Organizations-centric tier** (multi-Adventure account management +
+custom Player Meta/HR fields + optional white-labeling), not a checklist of exclusive
+toggles. Worth knowing if a future session is tempted to write a Basic/Pro/Enterprise
+feature-comparison table — the code doesn't back one up yet.
+
+**The `docs_pages.section` schema decision, flagged as open in the first GM-manual
+handoff, was resolved without a migration:** Enterprise pages stay in `section = 'setup'`
+(no new column value), split out purely at the view layer — `Docs::index()` filters
+`setupDocs` by whether the title ends in the literal string `(Enterprise)` and passes a
+separate `enterpriseDocs` array to the view. Cheap, no schema change, easy to extend by
+just suffixing a title. If this convention feels too fragile as Enterprise content grows
+further, revisit widening `section`'s `in_list` validation instead.
+
+**Verified:** `php -l` clean on the seeder and the two edited controller/view files; every
+one of the 49 pages hits 200 with zero PHP warnings; a direct DB-level regex check
+confirmed every internal `/docs/...` cross-link across all 49 pages' bodies resolves to a
+real slug (no broken links); the hub's new 3-way card split (11 cyan / 35 green / 3 purple)
+verified by exact count.

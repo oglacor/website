@@ -34,7 +34,7 @@
     <div class="section-head">
       <span class="eyebrow">For Game Masters &amp; Org Admins</span>
       <h2>Building &amp; Running Adventures</h2>
-      <p>Setting up your organization and billing, then a full Game Master manual — designing quests, steps, rewards, guilds, the item shop, branching, and more — plus a worked example that builds a real Adventure end to end.</p>
+      <p>Setting up your organization and billing, then a full Game Master manual — designing quests, steps, rewards, guilds, the item shop, branching, roster management, AI grading, and more — plus a worked example that builds a real Adventure end to end.</p>
     </div>
     <?php if (empty($setupDocs)): ?>
       <div class="empty-state panel">Setup docs are being written — check back soon.</div>
@@ -50,6 +50,25 @@
       </div>
     <?php endif; ?>
   </div>
+
+  <?php if (! empty($enterpriseDocs)): ?>
+    <div class="content-section" style="padding-bottom:0;">
+      <div class="section-head">
+        <span class="eyebrow">Scaling Up</span>
+        <h2>Enterprise &amp; Organizations</h2>
+        <p>Running more than one Adventure under one account — multi-Adventure Organizations, platform-wide branding, and how the plan tiers actually differ in practice.</p>
+      </div>
+      <div class="feature-grid">
+        <?php foreach ($enterpriseDocs as $doc): ?>
+          <a href="<?= site_url('docs/' . $doc['slug']) ?>" class="feature-card panel purple">
+            <div class="feature-icon">&#9672;</div>
+            <h3><?= esc(str_replace(' (Enterprise)', '', $doc['title'])) ?></h3>
+            <p><?= esc(mb_strimwidth(strip_tags($doc['body']), 0, 130, '…')) ?></p>
+          </a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  <?php endif; ?>
 
   <div class="split" style="margin-top:60px;">
     <div class="split-card panel">

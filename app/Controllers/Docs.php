@@ -9,13 +9,21 @@ class Docs extends BaseController
 {
     public function index(): string
     {
-        $model = new DocsPageModel();
+        $model   = new DocsPageModel();
+        $setup   = $model->publishedBySection('setup');
+
+        // Enterprise-tagged pages get their own section on the hub rather than
+        // being buried in the same grid as day-to-day GM topics — a title-suffix
+        // convention rather than a schema change, since it's purely a display split.
+        $enterprise = array_values(array_filter($setup, static fn ($doc) => str_ends_with($doc['title'], '(Enterprise)')));
+        $setupDocs  = array_values(array_filter($setup, static fn ($doc) => ! str_ends_with($doc['title'], '(Enterprise)')));
 
         return view('docs/index', [
-            'title'     => 'Documentation — BLUERABBIT',
-            'activeNav' => 'docs',
-            'userDocs'  => $model->publishedBySection('user'),
-            'setupDocs' => $model->publishedBySection('setup'),
+            'title'         => 'Documentation — BLUERABBIT',
+            'activeNav'     => 'docs',
+            'userDocs'      => $model->publishedBySection('user'),
+            'setupDocs'     => $setupDocs,
+            'enterpriseDocs'=> $enterprise,
         ]);
     }
 
