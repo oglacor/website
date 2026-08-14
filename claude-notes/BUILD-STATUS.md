@@ -6,7 +6,8 @@ working end-to-end via HTTP-level testing against a real database (see "How this
 tested" below).
 
 See `WEBSITE_PROJECT_BRIEF.md` for full context/decisions and `CLAUDE.md` for the
-operating rules — this file is just the state snapshot.
+operating rules — this file is just the state snapshot. Going live / moving the install
+from `new.bluerabbit.io` to the apex is its own runbook: `claude-notes/DEPLOY.md`.
 
 ## Follow-up session (same day) — docs content, real brand assets, error pages, email templates
 
