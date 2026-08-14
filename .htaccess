@@ -1,0 +1,21 @@
+# Hardening for shared hosting where this repo sits INSIDE the web root
+# (e.g. public_html/website) because the primary domain's document root is
+# locked to public_html and can't be pointed at public/ directly.
+#
+# Normally CI4 relies on only public/ being web-reachable. When the whole repo
+# is reachable, these rules restore that boundary: everything except public/ is
+# refused, whether it's reached directly or via the rewrite in public_html/.htaccess.
+#
+# Harmless when the document root IS set correctly to public/ — this file simply
+# never gets consulted. Also harmless locally under XAMPP.
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^(app|system|tests|vendor|writable|claude-notes|\.git)(/|$) - [F,L]
+</IfModule>
+
+<FilesMatch "^(\.env.*|composer\.(json|lock)|spark|preload\.php|phpunit\.dist\.xml|\.git.*|LICENSE|.*\.md)$">
+	Require all denied
+</FilesMatch>
+
+Options -Indexes

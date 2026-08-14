@@ -54,23 +54,51 @@ mkdir ~/public_html
 Server-side move, instant, nothing transferred. `~/wp-old` is your rollback.
 
 **2.3 Point the apex at the CI4 `public/` folder.**
-cPanel → *Domains* → `bluerabbit.io` → set the document root to:
-```
-/home/<cpanel-user>/apps/website/public
-```
-If cPanel won't let you edit the *primary* domain's document root (some builds only allow
-it for addon/alias domains), the fallback is still not an upload — symlink or move
-server-side instead:
-```
-rmdir ~/public_html && ln -s ~/apps/website/public ~/public_html
-```
-Some hosts disable symlink following (`Options -FollowSymLinks`); if that 403s, move the
-clone so that `public/` *is* `public_html` and keep the app root one level up.
 
-**2.4 Reissue SSL for the apex.**
-cPanel → *SSL/TLS Status* → tick `bluerabbit.io` and `www.bluerabbit.io` → *Run AutoSSL*.
-Wait for both to go green before testing — the forced-HTTPS rule in `public/.htaccess`
-will otherwise redirect into a cert error.
+*Preferred:* cPanel → *Domains* → `bluerabbit.io` → *Manage* → set **Document Root** to
+`public_html/website/public`. In cPanel v92+/Jupiter this is editable for the primary
+domain too, not just subdomains — check before assuming otherwise. If the host has
+greyed it out, a support ticket gets it changed in WHM in under a minute. This is the
+correct fix: nothing outside `public/` is ever web-reachable.
+
+*Fallback, if the docroot is genuinely locked to `public_html`:* rewrite into the repo
+instead. Create `public_html/.htaccess` (outside the repo, one-time manual file):
+```apache
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/website/public/
+RewriteRule ^(.*)$ website/public/$1 [L]
+```
+This works, but it leaves the whole repo reachable at `bluerabbit.io/website/...` —
+`app/`, `writable/`, `.env`. The repo-root `.htaccess` (committed) closes that back off;
+it refuses everything except `public/`. Both files are required for this layout — the
+outer one routes, the inner one protects.
+
+After wiring it up, confirm the boundary actually holds:
+```
+curl -I https://bluerabbit.io/website/.env         # expect 403
+curl -I https://bluerabbit.io/website/app/         # expect 403
+curl -I https://bluerabbit.io/website/writable/    # expect 403
+```
+If any of those return 200, stop and fix it before the site goes public — `.env` holds
+the DB password and the Resend key.
+
+**2.4 SSL, with Cloudflare in front.**
+
+Cloudflare's SSL/TLS mode must be **Full (strict)**. On *Flexible*, Cloudflare talks to
+the origin over plain HTTP, the origin sees no HTTPS, and the forced-HTTPS rule in
+`public/.htaccess` redirects forever — the classic infinite redirect loop. (The rule
+already checks `X-Forwarded-Proto`, which Cloudflare sets, so *Full* works; but *Flexible*
+is still wrong and should be changed regardless.)
+
+Full (strict) needs a valid cert on the origin. Either:
+- cPanel → *SSL/TLS Status* → run **AutoSSL** for `bluerabbit.io` + `www`. Let's Encrypt
+  validation can fail while the record is proxied — set the DNS record to *DNS only*
+  (grey cloud) in Cloudflare, issue, then re-enable the proxy; or
+- generate a **Cloudflare Origin Certificate** (15-year, Cloudflare-signed) and install it
+  in cPanel → *SSL/TLS* → *Install an SSL Certificate*. Simpler when the domain stays
+  proxied permanently.
+
+Either way, wait until the origin actually serves HTTPS before testing.
 
 **2.5 Update `.env`** — see Part 3. This is the only code-side change the move requires;
 nothing in the app hardcodes the hostname.
