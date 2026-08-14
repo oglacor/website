@@ -296,6 +296,16 @@ HTML,
 <h2>Managing Your Subscription</h2>
 <p>Upgrades, downgrades, and invoices are all handled from your account's billing screen inside the app. Changing plans doesn't affect your existing Adventures or player data either way.</p>
 
+<h2>Billing History</h2>
+<p>The Billing tab of My Account now carries a full <strong>Billing History</strong> table — every payment with its date, amount, and status, plus links to view the invoice or download it as a PDF. Those go to Stripe's own hosted invoice pages, so they're the real documents your finance team needs, not a summary we've re-typed.</p>
+<p>This sits separately from the in-game Transactions tab further down the same screen. One is real money; the other is BLOO and item purchases inside an Adventure. They're deliberately not merged.</p>
+<p>If your account has been billing for a while, note that history is recorded from the point this feature went live — payments from before then may not be listed. <a href="/contact">Ask us</a> if you need an older invoice and we'll retrieve it.</p>
+
+<h2>When Something Goes Wrong With a Payment</h2>
+<p>If a card is declined, <strong>we email you</strong> rather than leaving you to discover it. Your billing screen also shows a clear past-due banner while the account is in that state, so the problem is visible the moment you log in.</p>
+<p>You'll also get a heads-up email roughly three days before a free trial converts into its first real charge — no silent conversions.</p>
+<p>Refunds issued by our team appear in your Billing History automatically.</p>
+
 <h2>Questions About Billing</h2>
 <p>Something not adding up, or need an invoice for procurement? <a href="/contact">Reach out</a> and we'll sort it out directly.</p>
 HTML,
@@ -858,6 +868,10 @@ HTML,
 <h2>Player Type (Hexad Quiz)</h2>
 <p>A short personality-style quiz (based on the Hexad player-type model) sorts you into a dominant type — Free Spirit, Achiever, Philanthropist, Socialiser, Player, or Disruptor — each with a short description of what motivates that type. Take it once from your Profile tab; retake it any time with "Test Again" if you want an updated read. It's informational, not something that gates content — think of it as understanding your own play style, not a requirement.</p>
 
+<h2>Staying Signed In</h2>
+<p>Sessions last <strong>30 days</strong>. Log in once and you'll stay signed in for a month of ordinary use, rather than being kicked out after a couple of hours.</p>
+<p>This is deliberate: most people work through an Adventure across weeks, not in one sitting, and being asked to log in again every time you came back was friction with no security benefit. If you're on a shared or public computer, log out explicitly when you're done — the long session is convenience for your own device.</p>
+
 <h2>Privacy: Anonymize Me</h2>
 <p>If you want out, the <strong>Anonymize Me</strong> tool (in the Account tab, double-confirmed before it runs) scrambles your name, photo, and email to random values while keeping your stats and history intact under that now-anonymous identity. It logs you out permanently — this isn't a "hide my profile" toggle, it's a one-way action for anyone who wants their personal data removed while leaving the underlying Adventure data (like completion stats) alone. If your organization doesn't offer this option, it's been turned off by your GM or organization admin.</p>
 HTML,
@@ -1147,6 +1161,282 @@ HTML,
 
 <h2>What This Means For You Right Now</h2>
 <p>If you're running one Adventure, Basic or Pro covers you completely. The moment you're coordinating more than one Adventure under a single paying relationship — multiple departments, multiple cohorts, multiple locations — that's the actual signal to talk to us about Enterprise, not a specific feature you're missing.</p>
+HTML,
+            ],
+            // ---------------------------------------------------------
+            // The Garden — relational progression. Added 2026-08-14 from the
+            // CI4 app's own verified build notes (GARDEN_PROJECT_BRIEF.md +
+            // the dated CLAUDE.md entries), documenting only what has actually
+            // shipped. Anything still undecided is called out as such rather
+            // than described as if it works.
+            // ---------------------------------------------------------
+            [
+                'title'      => 'The Garden — An Overview',
+                'slug'       => 'the-garden-overview',
+                'section'    => 'user',
+                'sort_order' => 11,
+                'body'       => <<<'HTML'
+<p>BLUERABBIT has two play areas, not one. The <a href="/docs/journey-map-guide">Journey</a> is your <em>individual</em> progression — quests, XP, levels, achievements. The <strong>Garden</strong> is your <em>relational</em> progression: a living picture of who you actually work with, and how much you nourish those relationships.</p>
+<p>Where the Journey answers "how am I growing?", the Garden answers "who am I growing with?"</p>
+
+<h2>What You See</h2>
+<p>Your Garden shows everyone in your Adventure as a hexagonal node — guildmates, other members, NPCs, and your Game Masters — arranged around you at the centre. Each Adventure has its own Garden, exactly like it has its own Journey Map.</p>
+<p>Two things make the picture meaningful:</p>
+<ul>
+  <li><strong>Colour tells you what someone is best at.</strong> A person's node takes the colour of their <em>master skill</em> — whichever skill they've earned the most in. People who share a master skill share a colour, so clusters of expertise become visible at a glance.</li>
+  <li><strong>Nodes wither when you neglect them.</strong> Someone you interacted with today shows in full colour. The longer it's been since you had any contact, the more their node drains of colour, until eventually it's fully grey. This isn't decoration — it's the entire point. Relationships that aren't maintained visibly fade.</li>
+</ul>
+<p>Your own node at the centre never fades.</p>
+
+<h2>The Panels</h2>
+<p>The Garden screen is deliberately mostly empty canvas. Everything else lives in small buttons along the bottom-right — Tasks, Missions, Help, Rewards, and Messages. Click one and its panel opens.</p>
+<p>Panels are yours to arrange: drag any panel by its header to move it, and minimise it back to the dock when you're done. The layout is remembered per Adventure, so it'll be exactly where you left it next time. If you're brand new, everything starts minimised so you get the full view first.</p>
+
+<h2>How The Journey Feeds The Garden</h2>
+<p>The two halves aren't separate games. Completing quests and earning achievements can grant <a href="/docs/skills-and-blooms-explained">Skills</a>, and Skills are what the Garden runs on — they set your colour, they're what people recognise you for, and they're what help requests get tagged with.</p>
+
+<h2>Where To Go Next</h2>
+<ul>
+  <li><a href="/docs/skills-and-blooms-explained">Skills &amp; Blooms Explained</a> — the currency underneath all of it</li>
+  <li><a href="/docs/giving-blooms-endorsements-and-gifts">Giving Blooms</a> — the two ways to recognise someone</li>
+  <li><a href="/docs/help-requests-and-messages">Help Requests &amp; Messages</a> — asking for and giving help</li>
+  <li><a href="/docs/garden-missions">Garden Missions</a> — relational goals worth Blooms</li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Skills & Blooms Explained',
+                'slug'       => 'skills-and-blooms-explained',
+                'section'    => 'user',
+                'sort_order' => 12,
+                'body'       => <<<'HTML'
+<p>Skills and Blooms are the two ideas the whole Garden rests on. They're simpler than they first look, because they're really the same thing seen from two directions.</p>
+
+<h2>Skills</h2>
+<p>Every Adventure has its own catalogue of Skills, set up by your Game Master. A Skill can be a broad competency ("Communication and Listening", "Problem Solving") or a narrow capability gate ("Mentor"). Each one has its own colour and icon, and most carry a short description — hover a skill chip on someone's profile to read it.</p>
+<p>You hold a <strong>level</strong> in each Skill. That level is simply a count: <strong>one Bloom received in a Skill equals one level in it</strong>. No weighting, no decay, no complicated formula. Twenty Blooms in Resilience means level 20 in Resilience.</p>
+<p>Your highest Skill is your <strong>master skill</strong>, and it sets your node's colour in the Garden. If two Skills are tied at the top, you choose which one represents you from your own profile drawer.</p>
+
+<h2>Blooms</h2>
+<p>Blooms are recognition made countable. A Bloom is never abstract — it's always awarded <em>in a specific Skill</em>, which is why receiving them builds a real picture of what you're known for rather than a single meaningless score.</p>
+<p>Blooms reach you from several directions:</p>
+<ul>
+  <li><strong>From other players</strong> — endorsements and gifts (see <a href="/docs/giving-blooms-endorsements-and-gifts">Giving Blooms</a>)</li>
+  <li><strong>From the Journey</strong> — quests and achievements can be configured to award Skills on completion</li>
+  <li><strong>From Garden Missions</strong> — relational goals pay out in Blooms</li>
+  <li><strong>From your Game Master</strong> — direct grants, for recognising things the system can't see by itself</li>
+</ul>
+<p>Every single grant is recorded permanently, with its source and who sent it. Nothing about your Skill level is guesswork.</p>
+
+<h2>Why It's Built This Way</h2>
+<p>Because it's the honest version. A generic "points" score tells you someone is active. A Skill level tells you what they're actually good at, who thought so, and when — and it makes the Garden's colours mean something real rather than being a palette.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Giving Blooms — Endorsements and Gifts',
+                'slug'       => 'giving-blooms-endorsements-and-gifts',
+                'section'    => 'user',
+                'sort_order' => 13,
+                'body'       => <<<'HTML'
+<p>There are two distinct ways to recognise another player, and they're deliberately different from each other. Click anyone's node in the Garden to open their drawer, and you'll find both.</p>
+
+<h2>Award Blooms (Endorsement)</h2>
+<p>Pick a Skill, award the Blooms. This is your everyday recognition — "Maria genuinely helped me with this."</p>
+<ul>
+  <li>Worth <strong>2 points</strong> in the Skill you choose</li>
+  <li>You can endorse <strong>the same person for the same Skill once every 24 hours</strong></li>
+  <li>Beyond that limit there's no overall cap — you're not spending a finite resource</li>
+</ul>
+<p>The cooldown is per person <em>per Skill</em>. You can endorse the same colleague for a different Skill on the same day, and you can endorse as many different people as you like.</p>
+
+<h2>Gift a Bloom</h2>
+<p>Gifts are the scarce version, and scarcity is the point.</p>
+<ul>
+  <li>You start with <strong>20 Blooms to give</strong>, per Adventure</li>
+  <li>Each gift is worth <strong>1 point</strong> in a Skill you choose</li>
+  <li>They go <strong>one at a time</strong> — there's no way to hand over a batch</li>
+  <li>Every gift asks you to confirm first, because it can't be undone</li>
+  <li>You can't gift to yourself</li>
+</ul>
+<p>Your remaining balance shows on your own profile drawer and next to the Gift button. When you run out, the button is replaced by a plain note that you're out for now.</p>
+<p>The Gift controls carry an amber accent throughout, specifically so you never confuse a limited gift with an unlimited endorsement at a glance.</p>
+
+<h2>Running Out</h2>
+<p>Twenty is intended to make you think about who deserves one. Because they're finite, a gifted Bloom carries weight an endorsement doesn't — you gave up something to send it.</p>
+<p><strong>How gift Blooms are replenished is still being decided.</strong> Right now there's no automatic refill on a timer or from completing anything. Your Game Master can reset or top up your balance manually, and that's the only route today. When a refill rule is settled, this page will say so.</p>
+
+<h2>Which Should You Use?</h2>
+<p>Endorse freely — it's the low-friction way to keep recognition flowing, and the 24-hour cooldown already stops it becoming noise. Save gifts for the moments that genuinely stood out.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Help Requests and Messages',
+                'slug'       => 'help-requests-and-messages',
+                'section'    => 'user',
+                'sort_order' => 14,
+                'body'       => <<<'HTML'
+<p>The Garden isn't only about recognising work that already happened — it's built to get people talking in the first place.</p>
+
+<h2>Asking For Help</h2>
+<p>Post a help request and say what you're stuck on. Every request is <strong>tagged with a Skill</strong> — that's required, not optional, and it's what lets the right people find it instead of it disappearing into a general feed.</p>
+<p>Requests are visible on the Help board, where anyone in your Adventure can read and reply. When someone's answer actually solves it, mark the request solved. That closes the thread and records who helped.</p>
+
+<h2>Answering Someone Else</h2>
+<p>The Help board is the fastest way to be useful to people you haven't met yet. Browse open requests, find one tagged with a Skill you hold, and reply.</p>
+<p>Helping is recorded as a real interaction, which means it counts toward <a href="/docs/garden-missions">Garden Missions</a> and refreshes your connection with that person — their node returns to full colour in your Garden. And the person you helped can endorse you for it.</p>
+
+<h2>Direct Messages</h2>
+<p>You can message anyone in your Adventure one-to-one, from the Messages panel in the dock or from their profile drawer. Conversations are private between the two of you and scoped to the Adventure you're both in.</p>
+<p>Unread messages show a badge on the dock button so you're not hunting for them.</p>
+
+<h2>Everything Counts As Contact</h2>
+<p>Messages, help given, endorsements, gifts, and wall posts are all logged as interactions. This is what drives the withering described in <a href="/docs/the-garden-overview">The Garden Overview</a> — any real contact with someone brings their node back to life. There's no way to "keep a relationship warm" without actually interacting, which is intentional.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Garden Missions',
+                'slug'       => 'garden-missions',
+                'section'    => 'user',
+                'sort_order' => 15,
+                'body'       => <<<'HTML'
+<p>Garden Missions are relational goals — nudges to do the social things you might otherwise put off. They're separate from Journey quests, and they pay out in <a href="/docs/skills-and-blooms-explained">Blooms</a>.</p>
+
+<h2>What They Look Like</h2>
+<p>A Mission sets a target over a window of time. Your Game Master authors them, so the exact wording is theirs, but they're built from a fixed set of rule types:</p>
+<ul>
+  <li><strong>Endorsements given</strong> — recognise a number of different people</li>
+  <li><strong>Help given</strong> — answer other players' help requests</li>
+  <li><strong>Connections created</strong> — reach people you haven't interacted with before</li>
+  <li><strong>Re-engagement</strong> — reconnect with people you've drifted from</li>
+</ul>
+<p>That last one pairs directly with the withering: the Garden shows you a faded node, and a re-engagement Mission gives you a concrete reason to do something about it.</p>
+
+<h2>Tracking and Rewards</h2>
+<p>Open the Missions panel from the dock to see what's active and how far along you are. Progress is measured against your real interaction history — you don't tick anything off manually, it counts what you actually did.</p>
+<p>Completing a Mission awards Blooms, and can award them in a specific Skill your Game Master chooses.</p>
+
+<h2>Finding Someone To Help</h2>
+<p>Help-matching works off live supply and demand rather than a fixed list: open help requests tagged with Skills you actually hold. That means the people the Garden points you toward are people you're genuinely positioned to help.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Setting Up Your Skills Catalog',
+                'slug'       => 'setting-up-your-skills-catalog',
+                'section'    => 'setup',
+                'sort_order' => 39,
+                'body'       => <<<'HTML'
+<p>Skills are per-Adventure and entirely yours to define. Everything in the <a href="/docs/the-garden-overview">Garden</a> — node colours, help request tags, endorsements, Mission rewards — runs off this catalogue, so it's worth setting up deliberately before players arrive.</p>
+<p>You'll find it on the <strong>Manage Skills</strong> tab of your Adventure.</p>
+
+<h2>What Each Skill Carries</h2>
+<ul>
+  <li><strong>Name</strong> — what players see. Use their language, not internal jargon.</li>
+  <li><strong>Description</strong> — a short explanation of what the Skill actually means. This surfaces as a tooltip on skill chips in the Garden, so it's genuinely read by players, not just admin reference.</li>
+  <li><strong>Colour</strong> — drives the node colour of every player whose master skill this is. Pick visibly distinct colours; this is what makes clusters legible.</li>
+  <li><strong>Icon</strong> — the visual shorthand.</li>
+  <li><strong>Max level</strong> — the ceiling. A broad competency might use 40; a binary capability gate uses 1.</li>
+  <li><strong>Endorsable</strong> — whether players can award Blooms in this Skill to each other. Turn this <em>off</em> for gate Skills you want earned only through the Journey.</li>
+</ul>
+
+<h2>Designing a Good Catalogue</h2>
+<p><strong>Write real descriptions.</strong> A Skill called "Resilience" with no explanation means whatever each player assumes. A sentence of definition makes endorsements consistent across your whole roster.</p>
+<p><strong>Keep it to competencies people can recognise in each other.</strong> If a player can't tell whether a colleague demonstrated it, they won't endorse it, and the Skill stays dead.</p>
+<p><strong>Use the endorsable flag properly.</strong> Broad competencies should be endorsable — that's the Garden working. Gate Skills like "Mentor", which unlock capabilities, should not be, or players can hand each other the keys.</p>
+<p><strong>Give distinct colours.</strong> Twelve Skills in twelve shades of blue produces a Garden nobody can read.</p>
+
+<h2>Renaming Rather Than Deleting</h2>
+<p>If you're reworking a catalogue that's already in use, <strong>rename existing Skills instead of deleting and recreating them</strong>. Every Bloom ever awarded is tied to the Skill it was granted in — rename it and that history follows into the new name; delete it and you orphan real recognition players earned.</p>
+
+<h2>Wiring Skills Into the Journey</h2>
+<p>Quests and achievements can both award Skills on completion — set the Skill reward when authoring them, alongside the existing XP, item, and achievement rewards. This is what connects individual progression to relational progression, and it's worth doing for your milestone content at minimum. See <a href="/docs/designing-quests-types-rewards-and-unlocks">Designing Quests</a>.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Personalising Text with Player Tokens',
+                'slug'       => 'personalising-text-with-player-tokens',
+                'section'    => 'setup',
+                'sort_order' => 41,
+                'body'       => <<<'HTML'
+<p>You can drop a player's own details straight into the text you author, so a dialogue step reads "Nice work, Sam — you're level 6" rather than something generic. These are called <strong>tokens</strong>.</p>
+
+<h2>The Syntax</h2>
+<p>Write the token in double curly braces:</p>
+<ul>
+  <li><code>{{ player.nickname }}</code> — inserts the player's nickname</li>
+  <li><code>{{ player.nickname | Explorer }}</code> — inserts "Explorer" instead if that player has no nickname set</li>
+</ul>
+<p>Spaces inside the braces are optional — <code>{{player.nickname}}</code> works identically. <strong>Always use the fallback form</strong> for anything a player might not have filled in; a sentence that reads "Welcome back, !" is worse than one that says "Welcome back, Explorer!"</p>
+
+<h2>What You Can Reference</h2>
+<p>Tokens are grouped into five families:</p>
+<ul>
+  <li><strong><code>player.*</code></strong> — the player's own profile: nickname, name, email, and the rest of their details.</li>
+  <li><strong><code>progress.*</code></strong> — live numbers for this Adventure: <code>level</code>, <code>xp</code>, <code>bloo</code>, <code>ep</code>, <code>tnl</code> (XP to next level), <code>gpa</code>, <code>completed</code>, <code>total</code>, and <code>percent</code>.</li>
+  <li><strong><code>guild.*</code></strong> — their guild's <code>name</code>, <code>code</code>, <code>members</code>, <code>capacity</code>, and <code>xp</code>.</li>
+  <li><strong><code>meta.*</code></strong> — any custom profile field you've configured for the Adventure. Add a field and it's immediately usable in your text, with no development work.</li>
+  <li><strong><code>adventure.*</code></strong> — the Adventure's own <code>title</code> and <code>id</code>.</li>
+</ul>
+<p>Sensitive fields — passwords, secret codes, payment identifiers, API keys — are deliberately excluded and can never be rendered by a token, no matter how you spell it.</p>
+
+<h2>Where Tokens Work</h2>
+<ul>
+  <li>Step content, across every step type — dialogue, open text, puzzles, branch choices, and the rest</li>
+  <li>Item descriptions, in the Item Shop and in a player's backpack</li>
+  <li>Challenge success messages</li>
+</ul>
+
+<h2>Worked Examples</h2>
+<ul>
+  <li><code>Welcome back, {{ player.nickname | Explorer }}.</code></li>
+  <li><code>You're level {{ progress.level }} with {{ progress.tnl }} XP to the next one.</code></li>
+  <li><code>{{ guild.name | Your guild }} has {{ guild.members }} members.</code></li>
+  <li><code>You've finished {{ progress.completed }} of {{ progress.total }} quests ({{ progress.percent }}%).</code></li>
+</ul>
+
+<h2>If You Migrated From the WordPress Version</h2>
+<p>The old <code>[player_data field="..."]</code> shortcode still resolves, so existing content keeps working — you don't have to rewrite anything to migrate. New content should use the <code>{{ }}</code> form, which reaches progress, guild, meta, and adventure values the old shortcode never could.</p>
+<p>If you previously saw the literal text <code>[player_data field="player_nickname"]</code> appearing to players instead of their name, that's fixed — those steps now render the real value.</p>
+
+<h2>A Note on Safety</h2>
+<p>Token values are escaped automatically when they're inserted. A player whose nickname contains stray characters or markup can't break your page layout or inject anything into it — you can use tokens freely in any text without worrying about what someone typed into their profile.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Running the Garden as a GM',
+                'slug'       => 'running-the-garden-as-a-gm',
+                'section'    => 'setup',
+                'sort_order' => 40,
+                'body'       => <<<'HTML'
+<p>Once your <a href="/docs/setting-up-your-skills-catalog">Skills catalogue</a> exists, the Garden largely runs itself — players endorse, gift, ask for help, and answer each other. This page covers the levers you hold.</p>
+
+<h2>Authoring Garden Missions</h2>
+<p>Missions are relational goals you write, built from four rule types — <strong>endorsements given</strong>, <strong>help given</strong>, <strong>connections created</strong>, and <strong>re-engagement</strong> — each with a target count and a time window. Rewards are paid in Blooms, optionally into a specific Skill.</p>
+<p>Progress evaluates against players' real interaction history automatically, so you're not marking anything off by hand.</p>
+<p>A practical starting set: one low-target endorsement Mission to teach the mechanic, one help-given Mission to seed the Help board, and one re-engagement Mission a few weeks in, once there's actually drift to correct. Missions that ask for more social effort than your cohort's size supports will just sit there uncompleted.</p>
+<p><em>Note:</em> gifting isn't currently available as a Mission rule type — a "gift 3 Blooms" Mission can't be authored yet, though gifts are fully logged.</p>
+
+<h2>Gift Bloom Balances</h2>
+<p>Every player starts with 20 giftable Blooms per Adventure, created automatically the first time they open their Garden — there's no roster setup step.</p>
+<p>From a player's drawer you can <strong>reset or top up their balance</strong> to any amount. This is currently the <em>only</em> way gift Blooms are replenished — there's no automatic refill rule yet, by design, because the right rule hasn't been settled. If you're running a long Adventure, plan on a periodic manual top-up, or brief players that their 20 are meant to last.</p>
+
+<h2>Granting Skills Directly</h2>
+<p>You can award Skill points to any player directly from their drawer. Use this for things the system genuinely can't observe — excellent work in a workshop, leadership during a live event, contributions that happened off-platform.</p>
+<p>Direct grants are recorded with you as the source, exactly like any other grant, so the audit trail stays honest.</p>
+
+<h2>What To Watch</h2>
+<ul>
+  <li><strong>A grey Garden</strong> means people aren't interacting at all — usually a sign the Adventure needs a reason for them to, not that the Garden is broken.</li>
+  <li><strong>One colour dominating</strong> means your catalogue is too narrow, or one Skill is far easier to earn than the rest.</li>
+  <li><strong>An empty Help board</strong> usually means nobody's been shown it. Seed it with a Mission.</li>
+  <li><strong>Endorsements clustering inside guilds</strong> is normal early on. Connection and re-engagement Missions are the tool for breaking cliques open.</li>
+</ul>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/setting-up-your-skills-catalog">Setting Up Your Skills Catalog</a></li>
+  <li><a href="/docs/managing-your-player-roster">Managing Your Player Roster</a></li>
+  <li><a href="/docs/gm-toolkit-duplicator-reports-and-bulk-actions">GM Toolkit</a></li>
+</ul>
 HTML,
             ],
         ];

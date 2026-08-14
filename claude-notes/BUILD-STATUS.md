@@ -293,3 +293,61 @@ functional, just unlinked) should eventually be removed outright, or whether it'
 keeping around for some other purpose (e.g., adding a second admin/collaborator account
 without DB access). Left as-is for now since Bernardo only confirmed removing it from
 visibility, not deleting the capability.
+
+---
+
+## 2026-08-14 — Privacy policy, Garden docs, and the past week's app features
+
+**Privacy policy** — new `app/Views/pages/privacy.php`, `Pages::privacy()`, `/privacy` route,
+and the footer's dead `href="#"` swapped for the real link. Written against what this site
+actually collects (waitlist email + source; contact name/email/subject/message; site account
+name/email/password hash; `ci_session`; server logs) and the processors it actually uses
+(Resend, Cloudflare, the host, jsDelivr for admin-only TinyMCE). Explicitly states there is no
+analytics or tracking, because there genuinely isn't any. **Carries a NEEDS LEGAL REVIEW block
+at the top of the file** — the legal entity name, address, jurisdiction, and concrete retention
+windows are unconfirmed placeholders. The footer's **Terms** link is still `href="#"` — not in
+scope for this pass, still dead.
+
+**Docs — the Garden (7 new pages).** The website had zero Garden coverage. Sourced from the CI4
+app's own `GARDEN_PROJECT_BRIEF.md` and its dated `CLAUDE.md` entries, which are written as
+verified-live build notes, then cross-checked against the real routes/controllers.
+- user: `the-garden-overview`, `skills-and-blooms-explained`,
+  `giving-blooms-endorsements-and-gifts`, `help-requests-and-messages`, `garden-missions`
+- setup: `setting-up-your-skills-catalog`, `running-the-garden-as-a-gm`
+
+**Docs — the rest of the week's app changes.**
+- New `personalising-text-with-player-tokens` (setup) — the `{{ player.* }}` / `progress.*` /
+  `guild.*` / `meta.*` / `adventure.*` token system that replaced WP's `[player_data]` shortcode.
+  Legacy shortcodes still resolve, so migration is not forced — documented as such.
+- `billing-and-plans` — added Billing History, past-due banner, failed-payment and
+  trial-ending emails, refund reflection. Notes honestly that history predating the feature
+  may be missing (the backfill command was never built — needs real Stripe keys).
+- `your-account-profile-and-privacy` — added the 30-day session length.
+
+**Marketing** — `pages/product.php` gained a Garden section between Journey Map and
+Quests & Steps, leading on the withering mechanic. Section `alt` classes on the two following
+sections were flipped to preserve the page's strict plain/alt alternation.
+
+### Accuracy discipline used here
+Only shipped behaviour was documented. Verified directly in the CI4 source rather than assumed:
+endorsements grant **2** points with a 24h cooldown scoped per *(giver, recipient, skill)*
+(`GardenController.php:296`), gifts grant **1** from a finite 20-per-adventure allowance, and DMs
+are real (`MessageController`), not just designed. Things deliberately written as unresolved
+rather than glossed: **gift-Bloom replenishment has no automatic rule yet** (GM manual top-up is
+the only path), and `gift_bloom` is not yet an authorable Mission rule type.
+
+**Deliberately NOT documented — needs Bernardo's confirmation.** Cloudflare Turnstile was built
+complete on 2026-08-09 but shipped **inert pending real keys**, which Bernardo was obtaining the
+next day. Whether it is live now is unknown from the code alone, so no doc claims players will
+see a login challenge. Confirm and add if it's on.
+
+### Verified
+`php -l` clean on all six changed PHP files. `php spark db:seed DocsPageSeeder` ran clean
+(it upserts by slug, so it is safe to re-run). All 15 affected routes return 200 over real HTTP
+via `php spark serve`, with rendered-content assertions rather than status codes alone (privacy
+body text present, footer link resolving, product page's Garden copy present, all three new doc
+titles listed on the `/docs` hub). Zero new errors in `writable/logs/` — the single CRITICAL in
+today's log is a pre-existing cache-permission entry from 03:00, unrelated.
+
+**To deploy:** `git pull` on the server, then `php spark db:seed DocsPageSeeder` — the docs live
+in the database, so a pull alone will not update them.

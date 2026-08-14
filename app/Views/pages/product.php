@@ -51,6 +51,22 @@
 </div>
 
 <div class="content-section">
+  <div class="wrap two-col">
+    <div class="hero-visual" style="aspect-ratio:1/1;">
+      <div class="hex-ring"></div>
+      <div class="core"><img src="<?= base_url('assets/img/cooper-white.svg') ?>" alt=""></div>
+    </div>
+    <div>
+      <span class="eyebrow">The Garden</span>
+      <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">Progression isn't only individual</h2>
+      <p style="color:var(--muted); font-size:15px; margin-bottom:20px;">The Journey tracks how a player grows. The <strong>Garden</strong> tracks who they grow with — a second play area where every colleague in the adventure appears as a living node, coloured by what they're best at.</p>
+      <p style="color:var(--muted); font-size:15px; margin-bottom:20px;">Here's the part that makes it work: <strong>neglected relationships visibly wither.</strong> Someone you spoke to today shows in full colour. Leave a connection alone and it drains away to grey. Nobody has to be told their network is going stale — they can see it.</p>
+      <p style="color:var(--muted); font-size:15px;">Players recognise each other with Blooms tied to specific skills, ask for and give help, and get nudged toward the people they've drifted from. It turns soft skills into something you can actually observe happening — and measure.</p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section alt">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Quests &amp; Steps</span>
@@ -92,7 +108,7 @@
   </div>
 </div>
 
-<div class="content-section alt">
+<div class="content-section">
   <div class="wrap two-col">
     <div>
       <span class="eyebrow">Items &amp; Backpack</span>

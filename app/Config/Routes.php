@@ -8,6 +8,7 @@ $routes->get('/', 'Home::index');
 $routes->get('product', 'Pages::product');
 $routes->get('solutions', 'Pages::solutions');
 $routes->get('pricing', 'Pages::pricing');
+$routes->get('privacy', 'Pages::privacy');
 $routes->get('contact', 'Pages::contact');
 $routes->post('contact', 'Pages::contactSubmit');
 

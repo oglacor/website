@@ -30,6 +30,14 @@ class Pages extends BaseController
         ]);
     }
 
+    public function privacy(): string
+    {
+        return view('pages/privacy', [
+            'title'     => 'Privacy Policy — BLUERABBIT',
+            'activeNav' => '',
+        ]);
+    }
+
     public function contact(): string
     {
         return view('pages/contact', [

@@ -11,10 +11,19 @@ The public bluerabbit.io — marketing site, blog, docs. A standalone CodeIgnite
 its own database and its own auth. It is **not** the BLUERABBIT product app.
 
 Two sibling folders exist purely as read-only reference — do not edit anything in them:
-- `C:\xampp\htdocs\bluerabbit\wp-content\themes\bluerabbit` — live WP app (brand assets,
-  actual product behavior)
-- `C:\xampp\htdocs\blue\blue` — CI4 migration of the app (pull real plan/pricing/feature
-  data from here, especially `BLUERABBIT_PROJECT_BRIEF.md` and the Stripe/plan tables)
+- `C:\xampp\htdocs\br1\wp-content\themes\bluerabbit` — live WP app (brand assets, actual
+  product behavior)
+- `C:\xampp\htdocs\blue` — CI4 migration of the app (pull real plan/pricing/feature data
+  from here, especially `BLUERABBIT_PROJECT_BRIEF.md`, `GARDEN_PROJECT_BRIEF.md`, and the
+  Stripe/plan tables). It is a git repo — `git log` in it is the fastest way to find what
+  shipped recently, and its `CLAUDE.md` carries dated, verified-live build notes per
+  feature. Trust those notes over the brief for "what actually works": the briefs describe
+  intended design, including plenty that was never built.
+
+  Paths corrected 2026-08-14 — these were previously documented as
+  `C:\xampp\htdocs\bluerabbit\...` and `C:\xampp\htdocs\blue\blue`, neither of which
+  exists. Older entries in `claude-notes/BUILD-STATUS.md` still cite the old paths; they're
+  historical records, left as written.
 
 ## Hard rules — do not violate these
 

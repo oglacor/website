@@ -77,7 +77,7 @@
         <h5>Company</h5>
         <a href="<?= PLAY_APP_URL ?>">Log In</a>
         <a href="<?= PLAY_APP_URL ?>">Get Started</a>
-        <a href="#">Privacy</a>
+        <a href="<?= site_url('privacy') ?>">Privacy</a>
         <a href="#">Terms</a>
       </div>
     </div>
