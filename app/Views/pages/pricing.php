@@ -27,9 +27,10 @@
       <div class="plan-price">$8<small>/mo</small></div>
       <div class="plan-note">or $80/yr (2 months free) &middot; 30-day free trial</div>
       <ul>
-        <li>Unlimited players per Adventure</li>
+        <li>40 players per Adventure</li>
         <li>Unlimited Adventures</li>
-        <li>Everything in Basic</li>
+        <li>Up to 200 players</li>
+        <li>100MB of storage</li>
       </ul>
       <a href="<?= PLAY_APP_URL ?>" class="btn btn-primary btn-block">Start Free Trial</a>
     </div>
