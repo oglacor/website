@@ -79,6 +79,8 @@
         <a href="<?= PLAY_APP_URL ?>">Get Started</a>
         <a href="<?= site_url('privacy') ?>">Privacy</a>
         <a href="#">Terms</a>
+        <?php /* GDPR: withdrawing consent must be as easy as giving it. */ ?>
+        <button type="button" class="cookie-reopen" data-cookie-settings>Cookie Settings</button>
       </div>
     </div>
     <div class="footer-bottom">
@@ -87,6 +89,8 @@
     </div>
   </div>
 </footer>
+
+<?= view('partials/cookie_notice') ?>
 
 </body>
 </html>

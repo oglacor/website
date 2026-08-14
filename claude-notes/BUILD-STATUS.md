@@ -351,3 +351,51 @@ today's log is a pre-existing cache-permission entry from 03:00, unrelated.
 
 **To deploy:** `git pull` on the server, then `php spark db:seed DocsPageSeeder` — the docs live
 in the database, so a pull alone will not update them.
+
+## 2026-08-14 — GDPR cookie consent panel
+
+New `app/Views/partials/cookie_notice.php`, rendered from `layouts/main.php` just before
+`</body>`. `layouts/admin.php` extends `layouts/main`, so this covers every page on the site
+including admin — no second include needed.
+
+**Built as real consent, not a notice bar, because analytics is coming.** Bernardo confirmed
+analytics is planned "soon". An explain-only bar is fine for a site with nothing but essential
+cookies, but becomes non-compliant the moment a tracking script ships, so the gating mechanism
+is in place from day one rather than retrofitted under pressure later.
+
+What makes it GDPR-shaped, deliberately:
+- **Nothing non-essential runs before an explicit choice.** No implied consent — ignoring,
+  scrolling past, or dismissing all count as "no". `has()` returns true only on an explicit yes.
+- **Accept and Reject are equally prominent** — same size, same weight, side by side. A quiet
+  Reject next to a loud Accept is a dark pattern regulators name specifically. There's a comment
+  on the CSS rule saying so, because this is exactly the kind of thing a later "make the CTA pop"
+  tweak breaks without realising.
+- **Withdrawal is as easy as consent** — a "Cookie Settings" button in the footer reopens the
+  panel on any page.
+- **Consent expires.** The cookie is versioned (`v`) and timestamped, set for 12 months. Bump
+  `CONSENT_VERSION` to force everyone to re-decide after a material change.
+- **Revoking cleans up.** Withdrawing analytics consent deletes `_ga`/`_gid`/`_gat` on both host
+  and dot-domain. Nothing sets these yet — it exists so the cleanup is already correct on the day
+  analytics is switched on.
+
+**THE ONE THING TO GET RIGHT WHEN ADDING ANALYTICS.** Do not put the tag in the layout. Use:
+`brConsent.onGranted('analytics', function () { /* inject tag */ })` — it fires immediately if
+consent already exists, otherwise queues until it's given. A tag loaded outside that callback
+defeats the whole mechanism and puts the site in breach on ship day. This is documented in a
+header comment in the partial itself, where whoever adds the tag will actually be looking.
+
+Privacy policy gained a matching **Cookies** section (essential vs analytics, the "we do not
+currently run analytics" statement, and how to change your mind).
+
+### Verified
+`php -l` clean on all three touched PHP files; `node --check` clean on the extracted script.
+Logic exercised against a DOM/cookie stub rather than assumed, since there's no browser here —
+12 assertions covering: panel opens only with no stored decision, `has()` false before any choice,
+queued callbacks do **not** run on reject, do run on accept, late registration fires immediately,
+withdrawal flips it back, `_ga` cleanup fires, and the cookie carries `path=/`, `SameSite=Lax`,
+a 12-month expiry, `Secure` on https and correctly **omits** `Secure` on http so local dev works.
+All five public routes still 200 with the panel, both buttons, and the footer link present in
+the rendered HTML.
+
+**Not covered:** real browser interaction (click physics, focus order, mobile layout) — same
+no-browser limitation flagged throughout this file. Worth one manual look before it matters.

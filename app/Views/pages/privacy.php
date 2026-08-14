@@ -52,7 +52,15 @@
       <li>No selling, renting, or trading your personal information. Not to anyone, for any price.</li>
       <li>No profiling or automated decision-making about you.</li>
     </ul>
-    <p>The only cookie this site sets is the session cookie described above, which is strictly necessary to keep you logged in.</p>
+    <h2>Cookies</h2>
+    <p>We keep this short because there genuinely isn't much to say.</p>
+    <ul>
+      <li><strong>Essential (always on).</strong> A session cookie that keeps you signed in, a cookie recording your choice below, and a security cookie set by Cloudflare that distinguishes real visitors from bots. These are strictly necessary for the site to function, so they don't require consent and can't be switched off — but they carry no advertising data and are not used to profile you.</li>
+      <li><strong>Analytics (your choice).</strong> Anonymous statistics about which pages are read. <strong>We do not currently run analytics of any kind.</strong> If we introduce it, it will only ever load for people who have actively agreed — your choice is recorded in advance and honoured automatically.</li>
+    </ul>
+    <p>We use no advertising cookies, no retargeting pixels, and no third-party trackers.</p>
+    <p><strong>Changing your mind.</strong> Use the <em>Cookie Settings</em> link in the footer of any page to review or change your choice at any time. Withdrawing is exactly as easy as agreeing was, and takes effect immediately. We also ask again after twelve months rather than treating an old answer as permanent.</p>
+    <p>Declining analytics costs you nothing — every part of this site works identically either way.</p>
 
     <h2>Why we use it</h2>
     <ul>
