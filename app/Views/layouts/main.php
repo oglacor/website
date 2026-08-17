@@ -41,7 +41,6 @@
         <?php endif; ?>
         <a href="<?= site_url('logout') ?>" class="btn btn-primary btn-sm">Log Out</a>
       <?php else: ?>
-        <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-ghost btn-sm">Join Waitlist</a>
         <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
       <?php endif; ?>
     </div>
