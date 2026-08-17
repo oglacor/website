@@ -74,7 +74,7 @@
     <h2>Bring your own content — we'll gamify the delivery.</h2>
     <p>Join the waitlist to get early access when the rebuilt core opens up.</p>
     <div class="cta-row">
-      <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary">Get On The Waitlist</a>
+      <a href="<?= site_url('/') ?>#waitlist-hero-anchor" class="btn btn-primary">Get On The Waitlist</a>
       <a href="<?= site_url('contact') ?>" class="btn btn-ghost">Talk To Us</a>
     </div>
   </div>

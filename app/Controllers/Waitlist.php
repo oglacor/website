@@ -16,7 +16,7 @@ class Waitlist extends BaseController
             $this->request->getPost('cf-turnstile-response'),
             $this->request->getIPAddress()
         )) {
-            return redirect()->to(site_url('/') . '#waitlist-hero')
+            return redirect()->to(site_url('/') . '#waitlist-hero-anchor')
                 ->withInput()
                 ->with('waitlist_error', "We couldn't verify that you're human — please try again.");
         }
@@ -24,7 +24,7 @@ class Waitlist extends BaseController
         $email = $this->request->getPost('email');
 
         if (! $model->validate(['email' => $email])) {
-            return redirect()->to(site_url('/') . '#waitlist-hero')
+            return redirect()->to(site_url('/') . '#waitlist-hero-anchor')
                 ->withInput()
                 ->with('waitlist_error', $model->errors()['email'] ?? 'That email address doesn\'t look right.');
         }
@@ -46,7 +46,7 @@ class Waitlist extends BaseController
             );
         }
 
-        return redirect()->to(site_url('/') . '#waitlist-hero')
+        return redirect()->to(site_url('/') . '#waitlist-hero-anchor')
             ->with('waitlist_success', "You're on the list — we'll email you the moment early access opens.");
     }
 

@@ -41,7 +41,7 @@
         <?php endif; ?>
         <a href="<?= site_url('logout') ?>" class="btn btn-primary btn-sm">Log Out</a>
       <?php else: ?>
-        <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero-anchor" class="btn btn-primary btn-sm">Join Waitlist</a>
       <?php endif; ?>
     </div>
   </nav>
@@ -69,12 +69,12 @@
         <h5>Resources</h5>
         <a href="<?= site_url('blog') ?>">Blog</a>
         <a href="<?= site_url('docs') ?>">Documentation</a>
-        <a href="<?= site_url('/') ?>#waitlist-hero">Waitlist</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero-anchor">Waitlist</a>
         <a href="<?= site_url('contact') ?>">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="<?= site_url('/') ?>#waitlist-hero">Get On The Waitlist</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero-anchor">Get On The Waitlist</a>
         <a href="<?= PLAY_APP_URL ?>">Get Started</a>
         <a href="<?= site_url('privacy') ?>">Privacy</a>
         <a href="#">Terms</a>

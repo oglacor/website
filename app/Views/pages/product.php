@@ -128,7 +128,7 @@
     <h2>See it running on your content.</h2>
     <p>Join the waitlist to be first in line when the rebuilt core opens up.</p>
     <div class="cta-row">
-      <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary">Get On The Waitlist</a>
+      <a href="<?= site_url('/') ?>#waitlist-hero-anchor" class="btn btn-primary">Get On The Waitlist</a>
       <a href="<?= site_url('solutions') ?>" class="btn btn-ghost">See Use Cases</a>
     </div>
   </div>

@@ -4,7 +4,7 @@
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div  id="waitlist-hero-anchor">
       <span class="eyebrow">Relaunching Soon</span>
       <h1>BLUERABBIT is making a <span class="accent">comeback</span> &mdash; on steroids.</h1>
       <p class="lede">Rebuilt faster and more powerful than ever. New features, new capabilities, full A.I. integration, and new tools built to drive engagement to infinity. Get on the list before we flip the switch.</p>
@@ -20,7 +20,6 @@
           <form action="<?= site_url('waitlist') ?>" method="post">
             <?= csrf_field() ?>
             <input type="email" name="email" placeholder="you@company.com" value="<?= esc(old('email')) ?>" required>
-            <?= view('partials/turnstile_widget', ['action' => 'waitlist']) ?>
             <button type="submit" class="btn btn-primary">Notify Me</button>
           </form>
           <?php if (session()->getFlashdata('waitlist_error')): ?>
@@ -150,7 +149,7 @@
           <li>Stripe billing on the open CI4 core <span class="k">NEW</span></li>
           <li>10x faster journey &amp; stats rendering <span class="k">NEW</span></li>
         </ul>
-        <a href="#waitlist-hero" class="btn btn-primary btn-sm">Get On The Waitlist &uarr;</a>
+        <a href="#waitlist-hero-anchor" class="btn btn-primary btn-sm">Get On The Waitlist &uarr;</a>
       </div>
     </div>
   </div>
@@ -187,7 +186,7 @@
     <h2>The comeback starts with you.</h2>
     <p>Be first in line when BLUERABBIT relaunches &mdash; faster, smarter, and built to drive engagement to infinity.</p>
     <div class="cta-row">
-      <a href="#waitlist-hero" class="btn btn-primary">Get On The Waitlist</a>
+      <a href="#waitlist-hero-anchor" class="btn btn-primary">Get On The Waitlist</a>
       <a href="<?= site_url('docs') ?>" class="btn btn-ghost">Read the Docs</a>
     </div>
   </div>
