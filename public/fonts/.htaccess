@@ -1,0 +1,41 @@
+# Publicly cross-origin-readable font files.
+#
+# This directory must live INSIDE the document root (public/), not at
+# public_html/fonts. Since the apex document root points at the CI4 public/
+# folder, anything above it is simply not web-reachable — which is why a
+# correct CORS header on public_html/fonts had no effect: nothing was ever
+# served from there to attach it to.
+#
+# CI4's public/.htaccess only rewrites to index.php when the request is NOT a
+# real file or directory, so real font files here are served directly by Apache
+# and never touch the framework.
+
+<IfModule mod_headers.c>
+    # "always" rather than a bare "set" on purpose: a plain `Header set` does
+    # not apply to 304 Not Modified. On a repeat visit the browser revalidates,
+    # gets a 304 with no CORS header, and the font fails to load cross-origin —
+    # a bug that only ever shows up on the SECOND page view, which makes it
+    # miserable to track down.
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, OPTIONS"
+
+    # Fonts are static. Cache hard.
+    # NOTE: with immutable, a browser will not re-fetch for a year even if the
+    # file changes. Give a revised font a NEW filename rather than overwriting
+    # one in place, or returning visitors keep the old one.
+    Header always set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>
+
+<IfModule mod_mime.c>
+    # Some shared hosts still serve .woff2 as application/octet-stream, which
+    # some browsers refuse to use as a font. Declaring them costs nothing.
+    AddType font/woff2                    .woff2
+    AddType font/woff                     .woff
+    AddType font/ttf                      .ttf
+    AddType font/otf                      .otf
+    AddType image/svg+xml                 .svg
+    AddType application/vnd.ms-fontobject .eot
+</IfModule>
+
+# Serve the files, but don't publish a browsable index of them.
+Options -Indexes
