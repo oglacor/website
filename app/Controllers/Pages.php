@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Turnstile;
 use App\Models\ContactMessageModel;
 
 class Pages extends BaseController
@@ -49,6 +50,15 @@ class Pages extends BaseController
     public function contactSubmit()
     {
         $model = new ContactMessageModel();
+
+        if (! (new Turnstile())->verify(
+            $this->request->getPost('cf-turnstile-response'),
+            $this->request->getIPAddress()
+        )) {
+            return redirect()->to(site_url('contact'))
+                ->withInput()
+                ->with('contact_error', "We couldn't verify that you're human — please try again.");
+        }
 
         $data = [
             'name'    => (string) $this->request->getPost('name'),

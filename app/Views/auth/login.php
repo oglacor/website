@@ -23,6 +23,7 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
         </div>
+        <?= view('partials/turnstile_widget', ['action' => 'login']) ?>
         <button type="submit" class="btn btn-primary btn-block">Log In</button>
       </form>
 

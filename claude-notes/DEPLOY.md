@@ -138,7 +138,25 @@ database.default.DBDriver = MySQLi
 database.default.port = 3306
 
 resend.apiKey = <key>
+
+# Cloudflare Turnstile. BOTH must be set or the feature stays inert (no widget,
+# no verification) — which is the safe default, not a silent failure.
+# The site key is public and ships in page HTML. The secret is NOT and is a
+# DIFFERENT value; grab it from Turnstile > your widget > Settings.
+turnstile.siteKey   = 0x4AAAAAABg4oQP79arMKbIf
+turnstile.secretKey = <the SECRET key — NOT the site key>
 ```
+
+**Verify Turnstile after setting it**, because a wrong secret rejects every
+submission on the site — waitlist, contact, login and register all at once:
+```
+curl -s -X POST https://challenges.cloudflare.com/turnstile/v0/siteverify \
+     -d "secret=<your secret>" -d "response=test"
+```
+`invalid-input-response` means the secret is **good** (it reached Cloudflare and
+only the dummy token was rejected). `invalid-input-secret` means the secret is
+**wrong** — fix it before going further. A wrong secret also logs a CRITICAL line
+naming the problem in `writable/logs/`.
 
 Then, in the app root on the server:
 ```

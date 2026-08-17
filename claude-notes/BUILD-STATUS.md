@@ -399,3 +399,58 @@ the rendered HTML.
 
 **Not covered:** real browser interaction (click physics, focus order, mobile layout) — same
 no-browser limitation flagged throughout this file. Worth one manual look before it matters.
+
+## 2026-08-17 — Cloudflare Turnstile (this site's own, built from scratch)
+
+**Turnstile had never been on this site.** The 2026-08-09 Turnstile work lives in the CI4
+product app (`C:\xampp\htdocs\blue`) — a different codebase. Nothing was shared or reused;
+this is a fresh implementation for the marketing site.
+
+- `app/Config/Turnstile.php` — `siteKey`/`secretKey` populated from `.env`, never hardcoded.
+- `app/Libraries/Turnstile.php` — plain cURL to Cloudflare's siteverify, matching
+  `ResendMailer`'s no-HTTP-client-dependency convention.
+- `app/Views/partials/turnstile_widget.php` — renders the widget div, or nothing when unconfigured.
+- Wired into all four public POST forms, each with its own `data-action` so Cloudflare's
+  analytics can tell them apart: **waitlist, contact, login, register**.
+
+**api.js is emitted once from `layouts/main.php`, not per widget** — Cloudflare warns against
+double-loading it, and a `static` guard inside a view partial can't reliably dedupe across
+renders (first attempt did that; it was replaced before shipping).
+
+**Failure behaviour is deliberately asymmetric**, documented in the library docblock:
+unconfigured → inert/pass; Cloudflare unreachable → pass + CRITICAL log; real negative verdict
+(missing, forged, expired, replayed token) → **reject**. Letting a Cloudflare outage take down
+the waitlist and contact forms was judged worse than the narrow bypass window. That trade lives
+in one place and every caller just consumes a bool.
+
+### The keys — ACTION NEEDED
+Bernardo supplied `0x4AAAAAABg4oQP79arMKbIf` as **both** site key and secret. Verified against
+Cloudflare directly — that value as a secret returns `{"error-codes":["invalid-input-secret"]}`.
+It is a site key only. **The real secret is still outstanding**, and deploying with the
+duplicate would reject every submission on all four forms simultaneously. Local `.env` is
+therefore left BLANK (inert) rather than half-configured, so localhost keeps working.
+
+### Verified
+`php -l` clean on all 11 touched/new files. Exercised live over real HTTP in both states:
+- **Inert** (no keys): all pages 200, zero widget divs, zero api.js tags, forms still submit.
+- **Configured** (Cloudflare's published dummy keys): exactly 1 widget div and exactly 1 api.js
+  tag per page, correct site key rendered, and the right `data-action` on each of the four forms.
+- **Round trip, always-PASS secret** (`1x0000…AA`): waitlist POST succeeded and the row genuinely
+  landed in `waitlist_signups`.
+- **Round trip, always-FAIL secret** (`2x0000…AA`): waitlist POST correctly blocked, **no row
+  inserted**. Contact form likewise blocked.
+- **Missing token entirely**: correctly blocked without even calling Cloudflare.
+- Test rows deleted afterwards; `.env` restored to blank.
+
+**Not verified:** the `invalid-input-secret` CRITICAL branch didn't fire under the always-fail
+key (Cloudflare returns `invalid-input-response` for that one), so that specific log line is
+reasoned-through rather than observed — though the underlying Cloudflare response was confirmed
+by hand, which is what the branch keys off. Also untested: real browser interaction with the
+widget itself, same standing no-browser limitation as elsewhere in this file.
+
+### Separately noticed, NOT fixed — flagged for a decision
+**The CSRF filter is commented out globally** in `app/Config/Filters.php` (~line 78), so every
+public POST on this live site is currently forgeable cross-site, even though the forms all
+render `csrf_field()`. This is the same gap the CI4 app found and fixed in its own overnight
+audit. Out of scope for a Turnstile pass, but it is a real live-site issue and wants its own
+piece of work.

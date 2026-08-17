@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\ResendMailer;
+use App\Libraries\Turnstile;
 use App\Models\WaitlistSignupModel;
 
 class Waitlist extends BaseController
@@ -10,6 +11,15 @@ class Waitlist extends BaseController
     public function store()
     {
         $model = new WaitlistSignupModel();
+
+        if (! (new Turnstile())->verify(
+            $this->request->getPost('cf-turnstile-response'),
+            $this->request->getIPAddress()
+        )) {
+            return redirect()->to(site_url('/') . '#waitlist-hero')
+                ->withInput()
+                ->with('waitlist_error', "We couldn't verify that you're human — please try again.");
+        }
 
         $email = $this->request->getPost('email');
 

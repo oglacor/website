@@ -36,6 +36,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="How can we help?" required><?= esc(old('message')) ?></textarea>
         </div>
+        <?= view('partials/turnstile_widget', ['action' => 'contact']) ?>
         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
       </form>
     </div>

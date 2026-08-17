@@ -27,6 +27,7 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="At least 8 characters" minlength="8" required>
         </div>
+        <?= view('partials/turnstile_widget', ['action' => 'register']) ?>
         <button type="submit" class="btn btn-primary btn-block">Create Account</button>
       </form>
 

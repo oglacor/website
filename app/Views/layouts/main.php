@@ -41,7 +41,7 @@
         <?php endif; ?>
         <a href="<?= site_url('logout') ?>" class="btn btn-primary btn-sm">Log Out</a>
       <?php else: ?>
-        <a href="<?= PLAY_APP_URL ?>" class="btn btn-ghost btn-sm">Log In</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-ghost btn-sm">Join Waitlist</a>
         <a href="<?= site_url('/') ?>#waitlist-hero" class="btn btn-primary btn-sm">Join Waitlist</a>
       <?php endif; ?>
     </div>
@@ -75,7 +75,7 @@
       </div>
       <div class="footer-col">
         <h5>Company</h5>
-        <a href="<?= PLAY_APP_URL ?>">Log In</a>
+        <a href="<?= site_url('/') ?>#waitlist-hero">Get On The Waitlist</a>
         <a href="<?= PLAY_APP_URL ?>">Get Started</a>
         <a href="<?= site_url('privacy') ?>">Privacy</a>
         <a href="#">Terms</a>
@@ -91,6 +91,12 @@
 </footer>
 
 <?= view('partials/cookie_notice') ?>
+
+<?php /* Loaded once per page, never per widget — Cloudflare warns against
+         double-loading api.js. Renders nothing when keys aren't configured. */ ?>
+<?php if ((new \App\Libraries\Turnstile())->isConfigured()): ?>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 
 </body>
 </html>

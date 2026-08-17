@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Turnstile;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -22,6 +23,15 @@ class Auth extends BaseController
     {
         $email    = (string) $this->request->getPost('email');
         $password = (string) $this->request->getPost('password');
+
+        if (! (new Turnstile())->verify(
+            $this->request->getPost('cf-turnstile-response'),
+            $this->request->getIPAddress()
+        )) {
+            return redirect()->to(site_url('login'))
+                ->withInput()
+                ->with('auth_error', "We couldn't verify that you're human — please try again.");
+        }
 
         $model = new UserModel();
         $user  = $model->findByEmail($email);
@@ -66,6 +76,15 @@ class Auth extends BaseController
         $name     = (string) $this->request->getPost('name');
         $email    = (string) $this->request->getPost('email');
         $password = (string) $this->request->getPost('password');
+
+        if (! (new Turnstile())->verify(
+            $this->request->getPost('cf-turnstile-response'),
+            $this->request->getIPAddress()
+        )) {
+            return redirect()->to(site_url('get-started'))
+                ->withInput()
+                ->with('auth_error', "We couldn't verify that you're human — please try again.");
+        }
 
         if (strlen($password) < 8) {
             return redirect()->to(site_url('get-started'))
