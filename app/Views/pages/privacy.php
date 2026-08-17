@@ -55,7 +55,7 @@
     <h2>Cookies</h2>
     <p>We keep this short because there genuinely isn't much to say.</p>
     <ul>
-      <li><strong>Essential (always on).</strong> A session cookie that keeps you signed in, a cookie recording your choice below, and a security cookie set by Cloudflare that distinguishes real visitors from bots. These are strictly necessary for the site to function, so they don't require consent and can't be switched off — but they carry no advertising data and are not used to profile you.</li>
+      <li><strong>Essential (always on).</strong> A session cookie that keeps you signed in, a security token that protects our forms from being submitted by other sites on your behalf, a cookie recording your choice below, and a cookie set by Cloudflare that distinguishes real visitors from bots. These are strictly necessary for the site to function, so they don't require consent and can't be switched off — but they carry no advertising data and are not used to profile you.</li>
       <li><strong>Analytics (your choice).</strong> Anonymous statistics about which pages are read. <strong>We do not currently run analytics of any kind.</strong> If we introduce it, it will only ever load for people who have actively agreed — your choice is recorded in advance and honoured automatically.</li>
     </ul>
     <p>We use no advertising cookies, no retargeting pixels, and no third-party trackers.</p>

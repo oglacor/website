@@ -26,8 +26,6 @@
         <?= view('partials/turnstile_widget', ['action' => 'login']) ?>
         <button type="submit" class="btn btn-primary btn-block">Log In</button>
       </form>
-
-      <p class="form-note">Don't have an account? <a href="<?= site_url('get-started') ?>">Get started</a></p>
     </div>
   </div>
 </section>

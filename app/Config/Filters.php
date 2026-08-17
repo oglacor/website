@@ -72,15 +72,36 @@ class Filters extends BaseFilters
      *     after: array<string, array{except: list<string>|string}>|list<string>
      * }
      */
+    /**
+     * Enabled 2026-08-17. These were the stock CI4 commented-out defaults,
+     * which left every state-changing POST on a live site forgeable.
+     *
+     * 'csrf'         — rejects POST/PUT/DELETE without a valid token. Every
+     *                  form in app/Views already rendered csrf_field(), and
+     *                  the TinyMCE uploader already posts the token, so this
+     *                  was safe to switch on without touching a single form.
+     *                  NOTE: this works only because Config\Security's
+     *                  $regenerate is false — see the comment there.
+     * 'invalidchars' — rejects input containing invalid UTF-8 or control
+     *                  characters, which is the shape most encoding-confusion
+     *                  and null-byte tricks arrive in.
+     * 'secureheaders'— adds X-Frame-Options, X-Content-Type-Options: nosniff,
+     *                  Referrer-Policy and friends. `nosniff` matters here
+     *                  specifically: it stops a browser second-guessing the
+     *                  Content-Type of anything served out of the uploads
+     *                  directory.
+     *
+     * 'honeypot' is deliberately still off — Cloudflare Turnstile now covers
+     * the public forms, and stacking a second bot trap adds a hidden field to
+     * every form for no additional protection.
+     */
     public array $globals = [
         'before' => [
-            // 'honeypot',
-            // 'csrf',
-            // 'invalidchars',
+            'csrf',
+            'invalidchars',
         ],
         'after' => [
-            // 'honeypot',
-            // 'secureheaders',
+            'secureheaders',
         ],
     ];
 

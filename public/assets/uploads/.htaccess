@@ -1,0 +1,36 @@
+# Defence in depth for user-uploaded files.
+#
+# UploadController already refuses anything that isn't a real image and picks
+# the stored extension itself from a whitelist, so nothing executable should
+# ever land here. This file exists so that if that check is ever bypassed,
+# weakened, or a future upload path forgets it, the uploaded file still cannot
+# be executed — it is served as an inert download at worst.
+#
+# Do not "tidy" this away because the directory only contains images today.
+# That is exactly the assumption it protects against.
+
+# Kill any handler that could execute a file in here.
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# php_flag is unavailable under PHP-FPM/CGI, which is how most shared hosts
+# (including cPanel) run PHP — so also strip the handlers by name.
+<IfModule mod_mime.c>
+    RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .cgi .pl .py .sh
+    RemoveType    .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .cgi .pl .py .sh
+    AddType text/plain .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .cgi .pl .py .sh
+</IfModule>
+
+# And refuse to serve them at all.
+<FilesMatch "\.(php|phtml|php[3-8]|phps|pht|cgi|pl|py|sh|htaccess)$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes -ExecCGI

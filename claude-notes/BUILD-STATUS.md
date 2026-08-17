@@ -454,3 +454,72 @@ public POST on this live site is currently forgeable cross-site, even though the
 render `csrf_field()`. This is the same gap the CI4 app found and fixed in its own overnight
 audit. Out of scope for a Turnstile pass, but it is a real live-site issue and wants its own
 piece of work.
+
+## 2026-08-17 — CSRF enabled, and a real RCE found and closed
+
+Bernardo asked for the CSRF filter, "configured to protect us from injections... AND ANY
+VULNERABLE FIELD". Worth recording plainly for the next session: **CSRF does not protect
+against injection.** They are separate attacks with separate fixes. CSRF stops a third-party
+site making an already-logged-in browser submit a request; injection is untrusted input
+reaching an interpreter. Both were addressed, but as two pieces of work, not one.
+
+### CSRF
+Enabled `csrf` + `invalidchars` (before) and `secureheaders` (after) in `Config\Filters::$globals`
+— all three were stock CI4 commented-out defaults, so every state-changing POST on a live site
+was forgeable. Every form in `app/Views` already rendered `csrf_field()` and the TinyMCE
+uploader already posted the token, so **not one form needed changing**.
+
+`Config\Security::$regenerate` flipped `true` → `false`, and this is load-bearing, not cosmetic.
+With per-request rotation the TinyMCE uploader — which reads the token out of the form's hidden
+input — works for the *first* image and 403s on every one after, because the DOM still holds the
+spent token. Multiple tabs and back-button resubmits break identically. `false` gives one token
+per `$expires` window (2h), which is a standard supported CI4 mode.
+
+### The actual security hole: arbitrary file upload → RCE in `Admin\UploadController`
+Found while auditing "any vulnerable field". The old code checked
+`str_starts_with($file->getClientMimeType(), 'image/')` and saved under `getRandomName()`:
+
+1. `getClientMimeType()` is the browser's own Content-Type header — attacker sets `image/png`.
+2. `getRandomName()` takes its extension from `guessExtension()`, which uses the **real**
+   finfo-detected type. PHP source detects as `text/x-php`, which is in CI4's own
+   `mimes['php']` list (`vendor/.../app/Config/Mimes.php:115`), so `guessExtensionFromType()`
+   *keeps* the proposed `.php`.
+3. Result landed in web-served `public/assets/uploads/content/` as `.php`. **Remote code
+   execution**, gated only by admin auth — which is precisely why the missing CSRF filter
+   mattered so much: one CSRF against a logged-in admin was a path to code execution.
+
+Fixed by trusting nothing from the request: real `getMimeType()` checked against an explicit
+allowlist, `getimagesize()` confirming it parses as a real image, a 5MB cap, and **the stored
+extension chosen from our own map** rather than from anything uploaded. Filename is
+`bin2hex(random_bytes(16))` — no user input reaches it. SVG deliberately excluded (XML that can
+carry `<script>` = stored XSS from our own origin).
+
+Added `public/assets/uploads/.htaccess` as a second layer — disables the PHP engine, strips
+executable handlers by name (`php_flag` doesn't work under PHP-FPM/CGI, which is how cPanel runs
+PHP) and denies serving those extensions outright. Do not delete it because the folder only
+holds images today; that is the assumption it exists to protect against.
+
+### Injection audit — findings
+- **SQL injection: not present.** No raw `query()`/`simpleQuery()` anywhere in `app/`. Everything
+  goes through Model/Query Builder, which parameterises. The only `$this->db->` calls are seeders
+  with literal values.
+- **XSS:** the three unescaped outputs (`blog/show.php`, `docs/show.php`, `emails/layout.php`)
+  are all admin-authored HTML, deliberate and already documented. No *visitor*-supplied value is
+  rendered unescaped anywhere — contact messages are only counted on the dashboard, never
+  displayed, so there is no stored-XSS path from the public forms today. **If a contact-message
+  viewer is ever built, it must `esc()`** — that is the moment this becomes a real hole.
+- Mass assignment already mitigated: every model declares `$allowedFields` explicitly.
+
+### Verified live over HTTP
+All pages still 200. POST with no token → **403**. POST with a valid token → 303 + row genuinely
+inserted. **Same token reused across 3 sequential POSTs → all 303**, proving `regenerate=false`
+works and TinyMCE multi-upload won't break. Security headers confirmed present on GET
+(`X-Frame-Options`, `nosniff`, `Referrer-Policy`, ...) — note they don't appear on `HEAD`, so
+`curl -I` misleadingly shows nothing. Upload: logged in as a real admin and **ran the actual
+exploit** — PHP payload with spoofed `Content-Type: image/png` → rejected, nothing written to
+disk; a genuine 1x1 PNG → accepted and stored as `<random>.png`. Test rows and the uploaded test
+file removed afterwards.
+
+**Still not done:** the admin password is still `ChangeMe123!` and `/login` is public. The CSRF
+fix makes an admin session harder to abuse; it does nothing about a guessable password that is
+published in this repo.

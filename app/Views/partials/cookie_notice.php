@@ -38,9 +38,10 @@
   <ul class="cookie-list">
     <li>
       <strong>Essential — always on</strong>
-      A session cookie that keeps you signed in, and a security cookie set by Cloudflare to
-      tell real visitors from bots. The site cannot work without these, so they aren't
-      optional and never carry advertising data.
+      A session cookie that keeps you signed in, a security token that stops other sites
+      submitting our forms as you, and a cookie set by Cloudflare to tell real visitors from
+      bots. The site cannot work without these, so they aren't optional and never carry
+      advertising data.
     </li>
     <li>
       <strong>Analytics — your choice</strong>
