@@ -523,3 +523,65 @@ file removed afterwards.
 **Still not done:** the admin password is still `ChangeMe123!` and `/login` is public. The CSRF
 fix makes an admin session harder to abuse; it does nothing about a guessable password that is
 published in this repo.
+
+## 2026-08-17 — Password recovery UI
+
+Forgot-password / reset flow, this site's own accounts only (the app's are separate).
+
+- Migration `2026-08-17-000001_CreatePasswordResets` — new `password_resets` table. A separate
+  table, not columns on `users`, so issuing/expiring/auditing a reset never touches the account
+  row and tokens can be revoked wholesale.
+- `PasswordResetModel` — `issueFor()` / `findValid()` / `consume()` / `revokeAllFor()`.
+  Named that way on purpose: `get()`/`set()` are reserved by CI4's base Model (rule 8).
+- `Auth::forgotForm/forgot/resetForm/reset`, routes, and `auth/forgot.php` + `auth/reset.php`.
+- Login page gained a "Forgot your password?" link **and** an `auth_success` flash block — it
+  only rendered `auth_error` before, so the post-reset confirmation had nowhere to display.
+
+### Security decisions
+- **Only the SHA-256 of the token is stored.** The raw token exists solely in the emailed link.
+  A dumped/backed-up/replicated table cannot reset anyone's password.
+- **No user enumeration.** Every outcome — unknown address, malformed address, disabled account,
+  real account — returns the identical success message. Verified live: real vs unknown email
+  produce byte-identical responses while only the real one creates a token row.
+- **Disabled accounts get the message but no email**, so a reset isn't a way back into an
+  account someone deliberately closed.
+- Single-use (`used_at`) and 60-minute expiry, both enforced inside `findValid()` rather than in
+  the controller so no caller can skip one. Requesting a new link revokes outstanding ones.
+- Validation failures (short password, mismatch) **do not** burn the token — verified.
+- Turnstile on the forgot form; CSRF applies automatically via the global filter.
+- Reset email passes `includeUnsubscribe: false` — a security email must not carry a waitlist
+  unsubscribe link, which would silently drop the person off the list.
+- Logs CRITICAL if a reset is requested while Resend is unconfigured, since the user would
+  otherwise see success while no email could possibly send.
+
+### A real bug caught in testing, worth remembering
+The first implementation ended with `session()->destroy()` then
+`redirect()->with('auth_success', ...)`. **The flash never renders** — `with()` writes into the
+session that was just torn down. Proven, not assumed: swapped `destroy()` back in and the
+confirmation disappeared; swapped the fix in and it returned. Now uses
+`session()->remove([...])` + `regenerate(true)`, which signs this browser out while leaving a
+live session to carry the message.
+
+Related correction to an over-claim in the first draft: this signs out **this browser only**.
+With file-based sessions another device stays logged in until its own session expires. Real
+revocation would need per-user session tracking or an AuthFilter check against a
+password-changed timestamp. Neither exists; the UI no longer claims otherwise.
+
+### Testing gotchas that cost time here — read before debugging this flow
+1. **`curl -L` follows the redirect to `app.baseURL`'s host**, i.e. `localhost` (XAMPP:80), not
+   the `spark serve` port. The session cookie doesn't travel, so flashes look broken when they
+   aren't. Follow redirects manually against the test port.
+2. **MySQL `NOW()` and PHP `date()` are not the same clock here** — MySQL runs local, CI4 sets
+   PHP to UTC. The app is internally consistent (PHP time on both write and compare), but any
+   token seeded by hand with `NOW()` will look expired. Seed with `gmdate()`.
+
+### Verified
+`php -l` clean on all eight touched/new files. Full flow live over HTTP: forgot form 200;
+enumeration-identical responses with only one token created; valid link renders the form, bogus
+link redirects away; mismatched-confirm and too-short both rejected **without** consuming the
+token; valid reset changes the password, old password stops working, token marked used, reusing
+the link redirects away; login with the new password succeeds and reaches `/account`; the
+confirmation renders on the login page; `/account` 302s after reset. `php spark migrate --all`
+run against a **freshly created empty database** — all seven migrations clean — plus a
+`migrate:rollback` to confirm `down()` works. Scratch DB dropped, `.env` restored, test user and
+all its token rows deleted.

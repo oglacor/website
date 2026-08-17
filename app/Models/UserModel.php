@@ -45,4 +45,16 @@ class UserModel extends Model
             'status'        => 'active',
         ]);
     }
+
+    /**
+     * Replaces a user's password. Kept here rather than in the controller so
+     * hashing happens in exactly one place and can never be forgotten by a
+     * future caller.
+     */
+    public function updatePassword(int $id, string $password): bool
+    {
+        return (bool) $this->update($id, [
+            'password_hash' => password_hash($password, PASSWORD_DEFAULT),
+        ]);
+    }
 }

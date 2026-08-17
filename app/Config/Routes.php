@@ -17,6 +17,14 @@ $routes->post('login', 'Auth::login');
 $routes->get('get-started', 'Auth::registerForm');
 $routes->post('get-started', 'Auth::register');
 $routes->get('logout', 'Auth::logout');
+$routes->get('forgot-password', 'Auth::forgotForm');
+$routes->post('forgot-password', 'Auth::forgot');
+// Token travels as a query string, not a path segment — same reason as
+// /unsubscribe (see BUILD-STATUS): CI4 decodes the URI before checking it
+// against $permittedURIChars, so path segments are the fragile place to put
+// generated values.
+$routes->get('reset-password', 'Auth::resetForm');
+$routes->post('reset-password', 'Auth::reset');
 
 $routes->get('blog', 'Blog::index');
 $routes->get('blog/(:segment)', 'Blog::show/$1');
