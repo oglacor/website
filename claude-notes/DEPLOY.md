@@ -33,8 +33,35 @@ every future push cheap.
 5. `chmod -R 775 writable/` (or 755 if the host runs PHP as your user).
 
 From then on a deploy is: `git push` locally → cPanel Git Version Control → **Update from
-Remote**, or just `git pull` in that directory over SSH. Add `composer install` only when
-`composer.lock` changed, and re-run migrations when a migration was added.
+Remote**, or just `git pull` in that directory over SSH.
+
+### Every deploy — a pull alone is usually NOT enough
+
+Git only moves files. Anything that lives in the database has its own step, and skipping it
+produces errors that look like broken code but aren't. Run this after every pull:
+
+```bash
+cd ~/public_html/website
+git pull
+
+php spark migrate          # if any app/Database/Migrations/ file is new
+php spark db:seed DocsPageSeeder   # if docs content changed (upserts by slug, safe to re-run)
+composer install --no-dev -o       # only if composer.lock changed
+php spark cache:clear
+```
+
+Not sure what's outstanding? `php spark migrate:status` lists every migration and whether it
+has run.
+
+**This has already bitten once.** The `password_resets` table was added on 2026-08-17; the
+code deployed, the migration didn't, and the reset page died with
+`Table 'bluerabb_br_website.password_resets' doesn't exist`. The code was fine — the table
+simply wasn't there yet. If you see a "table doesn't exist" error after a deploy, run
+`php spark migrate` before debugging anything else.
+
+If `php spark` complains about the PHP version, cPanel's default `php` CLI is often older
+than the 8.1+ this framework needs. Check `php -v`, and call the EasyApache binary directly
+if so: `/opt/cpanel/ea-php82/root/usr/bin/php spark migrate`.
 
 ---
 
