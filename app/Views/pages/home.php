@@ -81,8 +81,8 @@
       </div>
       <div class="feature-card panel green">
         <div class="feature-icon">&#9635;</div>
-        <h3>Quests, Challenges &amp; Steps</h3>
-        <p>20+ step types &mdash; dialogue, puzzles, SCORM, branching choices, quizzes &mdash; built from reusable step primitives.</p>
+        <h3>Milestones, Challenges &amp; Steps</h3>
+        <p>23 step types &mdash; dialogue, video, puzzles, SCORM, uploads, branching choices &mdash; built from reusable primitives.</p>
       </div>
       <div class="feature-card panel cyan">
         <div class="feature-icon">&#9636;</div>
@@ -108,7 +108,7 @@
       <div class="step panel">
         <span class="num">01</span>
         <h3>Design the journey</h3>
-        <p>Build quests, steps, and rewards in the builder &mdash; or start from a template adventure.</p>
+        <p>Build milestones, steps, and rewards in the builder &mdash; or start from a template adventure.</p>
       </div>
       <div class="step panel">
         <span class="num">02</span>

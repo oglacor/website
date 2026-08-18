@@ -34,7 +34,7 @@
     <div class="section-head">
       <span class="eyebrow">For Game Masters &amp; Org Admins</span>
       <h2>Building &amp; Running Adventures</h2>
-      <p>Setting up your organization and billing, then a full Game Master manual — designing quests, steps, rewards, guilds, the item shop, branching, roster management, AI grading, and more — plus a worked example that builds a real Adventure end to end.</p>
+      <p>Setting up your organization and billing, then a full Game Master manual — designing milestones, steps, rewards, guilds, the item shop, branching, roster management, AI grading, and more — plus a worked example that builds a real Adventure end to end.</p>
     </div>
     <?php if (empty($setupDocs)): ?>
       <div class="empty-state panel">Setup docs are being written — check back soon.</div>

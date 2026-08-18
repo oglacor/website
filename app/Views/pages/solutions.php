@@ -16,7 +16,7 @@
         <h3>Training That Doesn't Feel Like Training</h3>
         <p>Turn a slide-deck curriculum into a journey map with real milestones, badges, and a leaderboard your team actually checks.</p>
         <ul>
-          <li>Quizzes, surveys &amp; SCORM in one flow</li>
+          <li>Quizzes, polls &amp; SCORM in one flow</li>
           <li>Completion analytics per team</li>
           <li>Guilds for department-level competition</li>
         </ul>
@@ -34,9 +34,9 @@
       <div class="usecase-card panel purple">
         <span class="eyebrow">Bootcamps &amp; Events</span>
         <h3>Cohort-Based, Live, or Both</h3>
-        <p>QR quick-complete quests fit in-person sessions perfectly, while the built-in schedule system (sessions, speakers, sponsors) handles the event side.</p>
+        <p>QR quick-complete milestones fit in-person sessions perfectly, while the built-in schedule system (sessions, speakers, sponsors) handles the event side.</p>
         <ul>
-          <li>QR-code quest completion</li>
+          <li>QR-code milestone completion</li>
           <li>Session/speaker/sponsor scheduling</li>
           <li>Real-time leaderboard for live cohorts</li>
         </ul>
@@ -50,7 +50,7 @@
     <div>
       <span class="eyebrow">Scale Without Rebuilding</span>
       <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">One template, many cohorts</h2>
-      <p style="color:var(--muted); font-size:15px;">An Adventure can be marked as a template — every child Adventure spun off from it inherits the quests, steps, and rewards, so a new onboarding class or training round takes minutes to launch, not weeks to rebuild.</p>
+      <p style="color:var(--muted); font-size:15px;">An Adventure can be marked as a template — every child Adventure spun off from it inherits the milestones, steps, and rewards, so a new onboarding class or training round takes minutes to launch, not weeks to rebuild.</p>
     </div>
     <div>
       <span class="eyebrow">Events, Not Just Async Learning</span>

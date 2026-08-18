@@ -585,3 +585,167 @@ confirmation renders on the login page; `/account` 302s after reset. `php spark 
 run against a **freshly created empty database** — all seven migrations clean — plus a
 `migrate:rollback` to confirm `down()` works. Scratch DB dropped, `.env` restored, test user and
 all its token rows deleted.
+
+## Domain-model correction pass — Quests became Milestones (2026-08-17)
+
+Bernardo flagged that the GM manual described a product that no longer exists. Corrected
+against the **real** builder source rather than the briefs: `page-new-quest.php` /
+`step-form.php` in the WP theme and `app/Views/quests/new.php` /
+`app/Views/partials/step-form.php` + `partials/step-play/*` in the CI4 app. The briefs
+describe intended design, including a lot that was never built — the step-type list in the
+old docs was one of those.
+
+### What changed conceptually
+- **Quest → Milestone** everywhere. The two things you place on a Journey Map are now a
+  **Milestone** (provide knowledge) and a **Challenge** (test knowledge). That framing
+  ("decide if you want to provide knowledge or test knowledge") is Bernardo's and now opens
+  the design pages.
+- **Blockers, Surveys and Socials removed entirely.** Blockers were dropped from the product
+  2026-06-30; Surveys became step types rather than a content type; Social was never real.
+  All three are gone from the docs and the marketing pages.
+- **"Mission" is now Garden-only.** The Garden pages (Garden Missions, Running the Garden as
+  a GM) already used the term correctly and were left untouched. Nothing outside the Garden
+  refers to a Mission any more — the old "read-only Mission quest type" is gone.
+- **Step library rewritten from the actual builder.** The old docs listed 13 types, several
+  invented (`path-choice`, "Gallery — display-only") and ten real ones missing. There are
+  **23** in the CI4 builder, in five groups: Deliver (4), Validate (7), Collect (6), Flow (1),
+  Special (5). WP has two more — Gallery and Jump to Step — that the CI4 rebuild deliberately
+  does not implement, so they are **not** documented. See the open question below.
+
+### Pages
+Renamed (old slugs added to the seeder's delete list, so a re-seed clears them):
+
+| was | is |
+| --- | --- |
+| `completing-quests-and-steps` | `completing-milestones-and-steps` |
+| `designing-quests-types-rewards-and-unlocks` | `designing-milestones-rewards-and-unlocks` |
+| `random-encounters-and-blockers` | `random-encounters` |
+| `challenges-and-surveys-concept` | `challenges-concept` |
+| `how-to-build-a-challenge-or-survey` | `how-to-build-a-challenge` |
+
+New: **`how-to-build-a-milestone-step-by-step`** (setup, sort_order 8) — the authoring flow
+end to end: decide Milestone vs Challenge → create and save the shell → build the Steps →
+requirements and rewards → update → group into a Tabi or place in the Journey Builder →
+repeat. Every setup page from sort_order 8 up was shifted by one to make room.
+
+Also rewritten in place: the Full Step Library, the Step Type Quick Reference, the worked
+example, the Launch Week running example, and the grading page (which still described the
+`mech_min_words`/`links`/`images` quest-level requirements removed from the app 2026-07-17).
+
+`app/Views/pages/{home,product,solutions}.php` and `app/Views/docs/index.php` updated to
+match — product.php's "Five quest types, a dozen step primitives" became "Two content types,
+23 step primitives".
+
+### Verified
+`php -l` clean on all five touched files. `php spark db:seed DocsPageSeeder` re-run against
+the real DB: 63 rows, the five retired slugs gone, the six new/renamed pages present with the
+right sort_orders. Every internal `/docs/...` cross-link in the seeder resolves to a real slug
+(checked programmatically, not by eye — one dead link to the old designing-quests slug was
+found this way and fixed). All twelve changed/new routes return 200 over HTTP and all five
+retired slugs return 404. Rendered HTML of the step library confirmed to list exactly the 23
+real types in their five groups.
+
+### Gotcha worth knowing for future content passes
+`app/Views/**` is **CRLF**; `app/Database/Seeds/DocsPageSeeder.php` is **LF**. Multi-line
+literal find-and-replace across the views silently matches nothing unless you normalise line
+endings first — and Git Bash's `cat -A`/`grep` here do *not* show the `\r`, so it looks like
+the file is LF when it isn't. Check with PHP (`substr_count($s, "\r\n")`), not `cat -A`.
+
+### Open question, not decided
+WP's builder has two step types the CI4 rebuild omits — **Gallery** (its picker calls
+`wp.media()` directly; never adapted to the Media Manager) and **Jump to Step** (needs the
+step-button sub-builder UI; the backend exists, the view does not). Docs currently describe
+23 types, i.e. the CI4 set. If either ships before relaunch the step library and quick
+reference both need the entry added and the count changed.
+
+## Tasks vs Missions — the Garden's two mechanics, explained as a pair (2026-08-17, same day)
+
+Bernardo's framing, now carried verbatim in intent everywhere both words appear:
+
+> Tasks are mechanics that help the player improve itself, Missions are mechanics to improve
+> the garden. On one side I improve my skills and level by becoming better, on the other I
+> reach out to others to connect and make my garden better. **Helping me is a task, helping
+> others is a mission.**
+
+The docs had no Tasks page at all — the word appeared exactly **once** in the entire docs set,
+in a list of Garden dock buttons. Missions were described only as "relational goals", with
+nothing to contrast them against, so the distinction that makes both mechanics make sense was
+invisible.
+
+- **New page `garden-tasks`** (user, sort_order 15; every user page from 15 up shifted by one).
+  Written from `TaskModel` rather than the brief: recurrence (once / unlimited / timed with a
+  live cooldown ring), the five completion triggers (mark done, QR scan, finish any Milestone,
+  finish a specific Milestone, daily login), and the reward split — XP/BLOO as Journey
+  currency, plus optionally Blooms into one specific Skill, which is the bit that ties a Task
+  back to the Garden.
+- **`garden-missions`** now opens on the contrast instead of the mechanics, and links to Tasks.
+- **`the-garden-overview`** introduces the pair where the dock is first described.
+- **`running-the-garden-as-a-gm`** gets a "Tasks or Missions?" section on the authoring side,
+  with the test that actually decides it: *if a player could complete it alone, it should have
+  been a Task.*
+
+Worth noting the code already agreed — `TaskModel`'s own docblock says Tasks are "not the same
+thing as Missions ... which grow relationships rather than an individual." The docs were the
+only place the distinction had gone missing.
+
+**Deliberately not touched:** the four Mission rule types (endorsements given / help given /
+connections created / re-engagement). Whether those match `GardenMissionModel` is still open
+(CONTENT-QUESTIONS D2) and answering it isn't this change's job.
+
+### Verified
+`php -l` clean, seeder re-run (59 rows: 42 setup + 17 user), no duplicate `sort_order` within
+either section (checked in the DB, not just the source), every internal `/docs/` link still
+resolves, all four Garden routes 200, and the pairing confirmed present in the rendered HTML.
+
+## Mission rule types settled — and a real spec/build gap it exposed (2026-08-17, same day)
+
+Bernardo's ruling, verbatim in intent:
+
+> When a user posts a type of help needed in a specific sector, THAT is what a mission is.
+> When the system tells the user "help 5 other players that need leadership help" that is a
+> mission. Improve 5 connections. Bring ten new players into your network.
+> **Help given, connections created, and reconnecting with others ARE rule types.
+> Endorsements given ARE NOT** — "running out of gift blooms is not something I want the
+> users to do in exchange of anything."
+
+So the three kinds are **help given**, **connections created**, and **reconnection**.
+Endorsing and gifting are deliberately excluded — not a missing feature, a decision: they
+should happen because a player means them, and gift Blooms are a limited personal balance, so
+paying someone to spend them turns a gesture into a transaction.
+
+### How this got written, and why the split matters
+Two of the three rule types **cannot be authored today**, so writing them into one flat list
+would have repeated the exact failure this whole content pass exists to fix — documenting the
+brief as though it were the build. Split instead:
+
+- **`garden-missions` (player-facing)** describes what a Mission *asks of you* — help people,
+  build connections, reconnect. True regardless of which dropdown exists, and it's the framing
+  Bernardo gave, so it can ship now. Also gained a "Where Missions Come From" section (a
+  player's help request in a Skill is what a Mission is made of) and an explicit "What Isn't a
+  Mission" answering the endorsement question before a player asks it.
+- **`running-the-garden-as-a-gm` (authoring-facing)** is where a GM goes looking for the
+  control, so that page carries the build reality: the three kinds worth writing, and an
+  explicit **"Do not author endorsement or gifting Missions"** section, since *"Endorse
+  someone"* is still sitting in the builder's dropdown and nothing stops a GM picking it.
+
+### The gap, stated plainly
+`partials/mission-manager-row.php` offers exactly four auto-tracked rules — **Send a message
+(`dm`) / Help someone (`help_given`) / Endorse someone (`endorsement`) / Post on the Wall
+(`wall_post`)** — plus `manual`. Against the ruling:
+
+| Bernardo's rule | Built? |
+| --- | --- |
+| Help given | yes (`help_given`) |
+| Connections created | **no** |
+| Reconnection | **no** |
+| Endorsements given | built, but must not be used — should come out of the dropdown |
+| (Send a message / Post on the Wall) | built, not named in the ruling — status unclear |
+
+Help-matching Missions generated from live help-request supply and demand — the thing Bernardo
+described as the *definition* of a Mission — are explicitly listed as not started in the
+`blue` repo's own CLAUDE.md. That's the single biggest gap between the docs and the app right
+now.
+
+### Verified
+`php -l` clean, seeder re-run, both pages 200, no stale "endorsements given" copy anywhere in
+the seeder, all internal links still resolve.
