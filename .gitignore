@@ -68,6 +68,12 @@ Vagrantfile
 /public/assets/uploads/content/*
 !/public/assets/uploads/content/.gitkeep
 
+# Legacy WP blog import. The .sql is the full old WordPress database (users, password
+# hashes, comments, wp_options), so it must never be committed; archive it privately.
+# missing.txt is written by copy-uploads.ps1/.sh on each run.
+/wp-import/*.sql
+/wp-import/missing.txt
+
 /writable/debugbar/*
 !/writable/debugbar/index.html
 

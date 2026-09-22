@@ -890,3 +890,51 @@ answered. Still open: A2 ("Survey Choice" label), A3, B1 naming, C1, C2, D3d, E1
 
 **To deploy:** `git pull` on the server, then `php spark db:seed DocsPageSeeder`. Docs live in
 the database, so a pull alone changes only the marketing pages.
+
+## 2026-09-22 — Legacy WP blog import committed (not yet run anywhere)
+
+`WpBlogImportSeeder` and `wp-import/` (built 2026-08-25, see `wp-import/README.md`) are now in
+git. It imports 61 published posts from the old bluerabbit.io WordPress site with their
+original 2016–2022 dates. It hasn't been run on the dev DB or on production.
+
+### Fixed before committing
+- **Image paths only worked on localhost.** `wp-posts.json` hard-codes
+  `/website/public/assets/uploads/...`, but production serves from the domain root
+  (`app.baseURL = 'https://bluerabbit.io/'`, DEPLOY.md). The seeder now rewrites that prefix to
+  this environment's `base_url('assets/')` path at run time:
+  - Body images become `/assets/...` in production and stay `/website/public/assets/...`
+    locally.
+  - `featured_image` is stored relative (`assets/uploads/...`), matching
+    `Admin\BlogController`'s convention.
+- **The media had never been copied**: 0 of 147 files were present locally. Added
+  `wp-import/copy-uploads.sh`, a Linux twin of the PowerShell script, because the old site's
+  uploads live on the server (`~/public_html` or `~/wp-old`), not on this machine.
+- **`wp-import/789556_home_br.sql` is gitignored** and deliberately not committed. It's the
+  whole old WP database: users with password hashes, commenter emails and IPs, and
+  `wp_options`. Archive it privately.
+- The README now warns that a re-run overwrites the 61 posts completely, including later
+  `/admin/blog` edits.
+
+### Run order (per environment)
+1. `bash wp-import/copy-uploads.sh <old wp-content/uploads>` on Linux, or `copy-uploads.ps1` on
+   Windows. It must report `Missing: 0` before the old site is deleted.
+2. `php spark db:seed WpBlogImportSeeder`. On a DB holding just the 3 `BlogPostSeeder` samples,
+   the expected output is `61 inserted, 0 updated … 64 rows`.
+
+### Verified
+- Seeded twice: `61 inserted, 0 updated`, then `0 inserted, 61 updated`.
+- Paths correct for localhost; all 41 featured images converted to the relative form; the
+  original publish dates preserved in `published_at`, `created_at` and `updated_at`.
+- `/blog` and a post both 200 with no PHP errors; pagination runs from the newest imported
+  post down to the 2016 one.
+- The production rewrite was checked against `https://bluerabbit.io/` and
+  `https://new.bluerabbit.io/` (both give `/assets/uploads/...`).
+- `copy-uploads.sh` was tested against a fake uploads folder, including the missing-source
+  error.
+
+**Testing gotcha, and a real mistake made here:** overriding the DB for spark with a
+`database.default.database` environment variable does **not** work on this XAMPP.
+`variables_order` has no `E`, so `$_ENV` starts empty, DotEnv fills it from `.env`, and CI4
+reads `$_ENV` first. The "scratch DB" test therefore ran against the dev DB. The 61 rows it
+added were deleted by slug afterwards, and the dev DB is back to its original 3 posts. For a
+real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-reset session did.
