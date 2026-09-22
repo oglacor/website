@@ -34,10 +34,10 @@
       <div class="usecase-card panel purple">
         <span class="eyebrow">Bootcamps &amp; Events</span>
         <h3>Cohort-Based, Live, or Both</h3>
-        <p>QR quick-complete milestones fit in-person sessions perfectly, while the built-in schedule system (sessions, speakers, sponsors) handles the event side.</p>
+        <p>QR check-ins fit in-person sessions perfectly &mdash; a badge scanned at the door, a repeatable check-in at every station &mdash; while the built-in schedule (sessions and speakers) handles the event side.</p>
         <ul>
-          <li>QR-code milestone completion</li>
-          <li>Session/speaker/sponsor scheduling</li>
+          <li>QR check-ins for badges and tasks</li>
+          <li>Session &amp; speaker scheduling</li>
           <li>Real-time leaderboard for live cohorts</li>
         </ul>
       </div>
@@ -50,12 +50,12 @@
     <div>
       <span class="eyebrow">Scale Without Rebuilding</span>
       <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">One template, many cohorts</h2>
-      <p style="color:var(--muted); font-size:15px;">An Adventure can be marked as a template — every child Adventure spun off from it inherits the milestones, steps, and rewards, so a new onboarding class or training round takes minutes to launch, not weeks to rebuild.</p>
+      <p style="color:var(--muted); font-size:15px;">An Adventure can be marked as a template — every cohort built from it reads the same milestones, steps, and rewards live, so improving the template improves every cohort at once, and a new onboarding class or training round takes minutes to launch, not weeks to rebuild.</p>
     </div>
     <div>
       <span class="eyebrow">Events, Not Just Async Learning</span>
       <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">Live conference gamification</h2>
-      <p style="color:var(--muted); font-size:15px;">Sessions, speakers, and sponsors are first-class objects alongside the LMS-style features — the same platform that runs a 12-week onboarding program can run a two-day live event.</p>
+      <p style="color:var(--muted); font-size:15px;">Sessions and speakers are first-class objects alongside the LMS-style features — the same platform that runs a 12-week onboarding program can run a two-day live event.</p>
     </div>
   </div>
 </div>

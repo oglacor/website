@@ -749,3 +749,144 @@ now.
 ### Verified
 `php -l` clean, seeder re-run, both pages 200, no stale "endorsements given" copy anywhere in
 the seeder, all internal links still resolve.
+
+## 2026-09-21 — Docs synced to the CI4 app (the CI4-DOCS-SYNC-2026-09-20 brief)
+
+Acted on `claude-notes/CI4-DOCS-SYNC-2026-09-20.md`, written by the `blue` session on 2026-09-20
+against `blue@741da91`. `blue` had moved on 19 commits by the time this ran; the pass was
+checked against **`blue@6e5a454`**, and those 19 commits override the brief where they disagree
+(details below). `git log 6e5a454..HEAD` in `blue` was empty at commit time.
+
+### What changed
+- **`DocsPageSeeder.php` rewritten: 59 pages became 76.** That's 20 user pages, 55 setup pages
+  (5 of them Enterprise) and 1 developer page. Every existing page was updated, and none was
+  retired, so the delete list didn't grow. `random-encounters` was rewritten in place and kept its
+  slug.
+- **17 new pages:**
+  - user: `finding-your-way-around`, `encounters-the-card-draw`, `your-profile-results`
+  - setup: `journey-builder-design-palette`, `tabi-editor`, `evolving-tabis-scene-builder`,
+    `speakers-and-dialogue-cast`, `profile-tests`, `posts-and-resources`,
+    `conditions-when-things-unlock`, `certificates-authoring`, `consequences`,
+    `case-study-and-video-reporting`, `activity-logs`
+  - Enterprise: `user-management-and-access-levels`, `security-and-single-sign-on`
+  - developer (gated): `self-hosting-and-deployment`, the first page in that section
+- **Sort order reorganised into logical runs**, rather than the order pages happened to be added.
+  - setup: getting set up 1–5, designing the journey 6–8, milestones & steps 9–17, game
+    systems 18–26, live & events 27–31, communication 32–35, Garden 36–37, grading &
+    reporting 38–43, running an adventure 44–48, examples 49–50, Enterprise 51–55
+  - user: orientation first, then the Journey, then the Garden
+  - The hub is still a flat grid, so `docs/index.php` is unchanged.
+- **AI milestone review** (brief N10) was folded into the three grading pages, not given a page
+  of its own.
+- **Marketing pages:**
+  - `pages/pricing.php` rewritten. It uses the confirmed caps, and the self-contradicting Pro card
+    and the false "always matches the app's billing" hero are both gone.
+  - `pages/product.php`:
+    - 23 → 28 step types; a new Encounters / Profile Tests section; Items & Stats flipped to
+      `alt` to keep the alternation.
+    - Stale claims fixed: BLOO unlocking milestones early, EP gating "Objectives" and "starting
+      at 100", a per-adventure XP threshold table, and "Achievement, Path, and Rank" (it's
+      Badge, Path, Rank).
+    - The milestone QR quick-complete card became "QR Check-Ins" (achievement and task codes),
+      because CI4 can't display a milestone's QR code.
+  - `pages/home.php`: 23 → 28.
+  - `pages/solutions.php`: sponsors removed, QR copy fixed, and templates described as live
+    content sharing.
+
+### Bernardo's answers (2026-09-21), applied everywhere
+1. **Plans:**
+   - Basic: 90 players, 3 Adventures, 50MB.
+   - Pro: 250 players, 20 Adventures, 200MB, at $8/mo or $80/yr with a 30-day trial (both
+     confirmed).
+   - Enterprise: no limits.
+   - **The player cap is across the account, not per adventure.**
+   - Only storage is enforced (`blue` abeda89). The docs state the player and Adventure caps
+     but say nothing about what happens when you hit them.
+2. **Mission rules: "Endorse someone" and "Gift a Bloom" are now allowed.** This reverses the
+   2026-08-17 ruling, so the "don't author these" warning is gone. Reconnection still isn't a rule.
+3. **Organizations page:** documents what exists (General / Players / Adventures) plus a
+   clearly labelled "On the roadmap" list (cross-adventure Stats, bulk add, removing people).
+4. **Microsoft Teams is never mentioned.** It's a Unilever-era WP leftover. Support is the
+   deadline extension form, Cooper, the support email, and up to three custom quick links per
+   adventure.
+5. **Taskbar:** documented as it is today (the OPTIONS Start menu, plus the top-left Menu button
+   from 09-15). **The Classic navigation switch is also documented**, at Bernardo's explicit
+   request. It exists in WP (`classic_nav`, `page-new-adventure.php`) but **not yet in CI4**; he
+   said it will be added. Until it is, the docs describe a setting play.bluerabbit.io doesn't have.
+6. **Turnstile is live** on play.bluerabbit.io (the widget renders on /login). **SSO is built
+   but off** (`/sso/*` returns 404), so it's documented as "available on request" for Enterprise.
+7. **Gift Bloom refill:** no automatic rule. Existing wording kept.
+8. **The self-hosting developer page:** yes, so it was added.
+
+### Post-snapshot `blue` commits that overrode the brief
+- New cohorts get the template's missions and tasks automatically, plus an Admin Tools
+  Missions & Tasks page (6bfcc1f). The brief said "use the Duplicator".
+- Journal Skills / Skill History tabs (ed4978f).
+- Player Records (93adaa6).
+- The "next milestone" button is removed (ab9e731).
+- Survey answer limit (c8fb04f).
+- AI checks run without a rubric, a cohort inherits its template's key, and there's a Test Key
+  button (07b96e9).
+- Cooper character / persona (6e5a454).
+- Storage limits (abeda89).
+- Journey layers panel, and milestones and milestone-holding Tabis are locked to Base
+  (458f8b5 / 3edf549 / 5f9c2ba).
+
+### How it was built, and what to know if you touch it again
+Seven research-and-write passes each owned a feature area and verified against `blue`'s code
+and dated CLAUDE.md entries, not the briefs. Their fragments were reviewed in full, then
+assembled (sorted by section and sort_order) into the seeder. Several of the brief's claims
+turned out wrong on inspection, and the docs follow the code instead:
+- Steps open in a centred window, not a side drawer.
+- "Hidden" isn't a status the builder offers.
+- Tour seen-state is per account, except the Journey tour, which is per adventure.
+- Custom Labels and Default Journey View are platform settings, not per-adventure ones.
+- A cohort reads its settings, quick links and images from the template.
+- Task "conditions" are a completion trigger, not a gate.
+- "Ways to help" lists all open requests, with your own skills first.
+- The token button is labelled "Insert player data".
+- The per-milestone reset is admin-only.
+
+**The agents also found ~50 bugs and oddities in `blue`.** They're written up for a `blue`
+session in **`claude-notes/BLUE-FINDINGS-FROM-DOCS-SYNC-2026-09-21.md`**, including the
+Microsoft Teams string and hard-coded LaunchPad copy ("The Business", "Coins", "Work a shift").
+Section 3 of that file lists the **docs sentences that exist only because of a bug**: attempt
+limits, blank item stock, Hide Certificates, GM feedback visibility, the mission credit
+direction, Endorsable, and the milestone QR display. Remove each sentence when its fix lands.
+
+`CONTENT-QUESTIONS.md`: closed A1, A4, A5, B2, B3, B4, C3, D3b and D3c; B1 and D3a are partly
+answered. Still open: A2 ("Survey Choice" label), A3, B1 naming, C1, C2, D3d, E1, E2.
+
+### Verified
+- `php -l` clean on the seeder and all four views.
+- Line endings: the seeder is pure LF, and the four views are pure CRLF. Checked with PHP
+  `substr_count`, not Git Bash.
+- `php spark db:seed DocsPageSeeder` run twice on the dev DB: 59 → 76 rows, and the second run
+  added none.
+- In the DB: 20 / 55 / 1 rows per section, no duplicate `sort_order` in any section, no empty
+  titles or bodies, all rows published.
+- **Every internal link resolves.** All 487 hrefs across 76 bodies were checked against the DB:
+  0 broken `/docs/` links, and the only other targets are `/product`, `/solutions`, `/pricing`
+  and `/contact`.
+- Retired-term grep is clean. The only hits are legitimate:
+  - the new HEXAD Profile Test
+  - Tremendous's "Duplicate Blocked" status
+  - "demonstrations"/"demoted"
+  - two deliberate "used to be…" pointers (Certificate Settings, Adventure Intro)
+  - literal app labels ("Side quest", the Journal's "Quests" tab, "Attach to Quest")
+- **HTTP via `php spark serve`:**
+  - All 75 public doc pages return 200, each with its own title rendered and no PHP errors.
+  - The hub splits 20 / 50 / 5.
+  - The developer page 404s on the public route and 302s logged out on `/docs/developer/...`.
+  - As the local admin, the developer page is 200 with its content, and the developer hub
+    lists it.
+  - `/pricing`, `/product`, `/solutions` and `/` have content assertions both ways (new copy
+    present, stale copy absent).
+- **Visual check:** headless-Edge screenshots of `/pricing`, `/product` and
+  `/docs/random-encounters` all rendered correctly, including the new product section and the
+  nested lists.
+- **Not done:** `migrate --all` on a clean DB. No migration was touched. The seeder's insert
+  path was exercised by the 17 new rows.
+
+**To deploy:** `git pull` on the server, then `php spark db:seed DocsPageSeeder`. Docs live in
+the database, so a pull alone changes only the marketing pages.

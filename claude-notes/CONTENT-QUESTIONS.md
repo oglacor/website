@@ -20,7 +20,9 @@ calls WordPress's own media library directly and was never adapted) and **Jump t
 backend exists, the builder UI was never built). The docs currently say 23 and describe only
 the CI4 set. Ship both / ship one / neither?
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** Jump to Step now ships in CI4; Gallery still
+> doesn't. The builder has 28 types in 6 groups (Profile group and Encounter Choice added too).
+> Step library and quick reference updated.
 
 **A2. The word "Survey" is still in three step names.**
 Surveys are dead as a content type, but the builder still labels three COLLECT steps
@@ -44,13 +46,17 @@ setting (lenient / standard / strict) in WP. Questions: is the API key customer-
 Adventure, or do you provide it? Is strictness shipping? And is "AI-assisted feedback" the
 phrase you want, or something else?
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** Strictness ships per step (lenient / standard /
+> strict) with a private reviewer context. The key is per adventure, stored encrypted, and a
+> cohort inherits its template's. There is a Test Key button. The phrase question is still yours.
 
 **A5. Choose Avatar — where do the avatars come from?**
 The CI4 code notes there's no admin UI yet for creating avatar choices, so the step currently
 renders an empty state. Is that shipping? If yes, how does a GM add avatars?
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** GMs define the avatars on the step (Add avatar).
+> Caveat found in this sync: the JS posts `player_picture` but the controller reads `picture`,
+> so picking one may blank the player's picture. Needs a live check in `blue`.
 
 ---
 
@@ -60,25 +66,33 @@ renders an empty state. Is that shipping? If yes, how does a GM add avatars?
 It's the setting that drops a player straight into a Milestone on arrival instead of making
 them find it on the map. "Autoload" is a developer word. Keep it, or is there a better one?
 
->
+> **PARTLY ANSWERED (2026-09-21 sync).** Autoload works now, with a defined priority (an open
+> encounter, then a fresh hand, then autoload; unplayable milestones are skipped). The naming
+> question still stands. The builder label is still "Autoload?".
 
 **B2. Grading modes — still completion / percentage / letter grades?**
 The old docs claimed all three, plus "when rewards land" (immediately vs. after grading).
 Still true?
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** Scale is None / Percentage / GPA (letters), set
+> per adventure. Assign Resources is Before or After Grading; After Grading scales BLOO by the
+> grade and is enforced for challenges too.
 
 **B3. Pay-BLOO-to-skip-a-deadline — still real?**
 The old docs described spending BLOO to get past a deadline or an unlock cost early. I kept
 it. Confirm it still works, or I'll cut it.
 
->
+> **ANSWERED (2026-09-21 sync).** Cut. Deadline Cost and Unlock Cost were removed from the
+> product on 2026-08-30. Note: `ProgressionModel` still carries the old cost-gate logic
+> (`milestone-unlock` / `milestone-deadline-cost` templates), so any leftover cost value would
+> lock a milestone behind a purchase that no longer works. Worth a `blue` cleanup.
 
 **B4. Can a Challenge contain Steps?**
 I've written Challenge as purely a question bank, and Milestone as the thing built from Steps.
 If a Challenge can also carry Steps, the "how to build a Challenge" page needs a section.
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** No. A Challenge is a question bank (Questions
+> tab), with no steps. The docs describe it that way.
 
 ---
 
@@ -102,7 +116,10 @@ vocabulary you want customers using, or has it moved?
 Random pop-up quizzes gated by EP. I kept the page (minus the Blockers half). It's now the
 only "surprise" mechanic left in the docs, so if it's also dead the page should go entirely.
 
->
+> **ANSWERED BY THE BUILD (2026-09-21 sync).** Very much alive, and rebuilt from scratch as card
+> draws with a real economy (groups, crises/opportunities, Encounter Choice, debt). The
+> `random-encounters` page was rewritten, and new `encounters-the-card-draw` and `consequences`
+> pages were added.
 
 ---
 
@@ -171,19 +188,25 @@ dropdown and nothing stops a GM picking it.
 **D3a.** Are "connections created" and "reconnection" being built for relaunch? If they're
 further out, the player page should soften to the two that work rather than promise three.
 
->
+> **PARTLY ANSWERED (2026-09-21 sync).** "Make a connection" now exists as a rule; reconnection
+> still doesn't. Docs say so.
 
 **D3b.** Should "Endorse someone" be removed from the builder's dropdown in the `blue` repo?
 Same class of fix as the `survey`/`social` cleanup you're already doing — the docs now say
 don't use it, which is weaker than it not being there.
 
->
+> **ANSWERED 2026-09-21 — Bernardo reversed the 2026-08-17 ruling.** "Endorse someone" and
+> "Gift a Bloom" are now allowed as ordinary mission rules. The "don't author these" warning was
+> removed from the GM page, and the player page no longer excludes them.
 
 **D3c.** **Send a message** and **Post on the Wall** are built and auto-tracked but you didn't
 name either. Are they legitimate Mission rules (a DM is arguably how a connection gets made),
 or leftovers to drop alongside endorsements?
 
->
+> **ANSWERED 2026-09-21** by the same ruling. All eight rules in the builder are documented as
+> legitimate: Send a message, Help someone, Endorse someone, Ask for help, Get one of your
+> requests solved, Gift a Bloom, Post on the Wall, Make a connection. (Bug noted: "Get one of
+> your requests solved" credits the helper, not the asker. The docs carry a caveat.)
 
 **D3d.** You said the defining case is a player posting a help request in a Skill, and the
 system pointing others at it. The `blue` CLAUDE.md lists that supply/demand generation as
