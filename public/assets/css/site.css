@@ -391,3 +391,54 @@ footer{padding:64px 0 32px; border-top:1px solid var(--border);}
 @media (max-width: 880px){
   .cookie-panel{left:12px; right:12px; bottom:12px; width:auto; padding:20px 18px;}
 }
+
+/* ---------------------------------------------------------------
+   AI at Work FAQ (/resources/ai-at-work)
+   Native <details>/<summary> so answers stay in the HTML for search
+   engines and work with no JS. Tag colours reuse the brand tokens:
+   green = settled fact, purple = still-open question.
+   --------------------------------------------------------------- */
+.faq{padding:0 0 100px; max-width:880px;}
+.faq-intro{padding:26px 28px; margin-bottom:12px;}
+.faq-intro p{color:var(--muted); font-size:16px; line-height:1.7; margin-bottom:16px;}
+.faq-legend{display:flex; flex-wrap:wrap; gap:10px 24px; font-size:13.5px; color:var(--muted-2); margin-bottom:18px;}
+.faq-legend span{display:inline-flex; align-items:center; gap:8px;}
+.faq-toc{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+.faq-toc a{font-family:var(--condensed); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.5px; padding:6px 12px; border:1px solid var(--border-mid); border-radius:var(--radius-sm); color:var(--cyan-text); background:rgba(28,194,235,.06); transition:.15s;}
+.faq-toc a:hover{border-color:var(--border-hi); background:rgba(28,194,235,.14);}
+.faq-byline{font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--cyan-text); font-family:var(--condensed); font-weight:600;}
+.faq-tag{font-family:var(--condensed); font-weight:700; font-size:11.5px; letter-spacing:1px; text-transform:uppercase; padding:3px 9px; border-radius:4px; white-space:nowrap; border:1px solid;}
+.faq-tag.is-settled{color:var(--green); border-color:rgba(36,218,152,.45); background:rgba(36,218,152,.08);}
+.faq-tag.is-open{color:#c99af2; border-color:rgba(159,64,226,.55); background:rgba(159,64,226,.12);}
+.faq-section{margin-top:56px; scroll-margin-top:90px;}
+.faq-section h2{font-family:var(--condensed); font-weight:700; font-size:25px; text-transform:uppercase; letter-spacing:.5px; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border-mid);}
+.faq-item{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius-sm); margin-bottom:10px; transition:border-color .15s;}
+.faq-item[open]{border-color:var(--border-hi);}
+.faq-item summary{list-style:none; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:16px 20px;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary h3{font-family:var(--body); font-size:16.5px; font-weight:600; line-height:1.4; color:var(--white);}
+.faq-item summary:hover h3{color:var(--cyan-text);}
+.faq-item summary:focus-visible{outline:2px solid var(--cyan); outline-offset:2px;}
+.faq-a{padding:0 20px 20px; max-width:700px; color:var(--muted); font-size:15.5px; line-height:1.7;}
+.faq-a p, .faq-a ul, .faq-a ol, .faq-table{margin-bottom:14px;}
+.faq-a ul, .faq-a ol{padding-left:22px;}
+.faq-a li{margin-bottom:6px;}
+.faq-a li::marker{color:var(--cyan-text);}
+.faq-a strong{color:var(--white);}
+.faq-a a, .faq-sources a{color:var(--cyan-text); text-decoration:underline; text-underline-offset:3px;}
+.faq-bottom{color:var(--white); font-weight:600; border-left:2px solid var(--cyan); padding-left:14px;}
+.faq-src{font-size:13px; color:var(--muted-2);}
+.faq-a > :last-child{margin-bottom:0;}
+.faq-table{overflow-x:auto;}
+.faq-table table{width:100%; border-collapse:collapse; font-size:14px;}
+.faq-table th{font-family:var(--condensed); font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--cyan-text); text-align:left; padding:8px 10px; border-bottom:1px solid var(--border-mid);}
+.faq-table td{padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top;}
+.faq-table td.num{white-space:nowrap; font-variant-numeric:tabular-nums; color:var(--white);}
+.faq-sources{margin-top:56px; padding-top:20px; border-top:1px solid var(--border); font-size:13.5px; color:var(--muted-2);}
+.faq-sources h2{font-family:var(--condensed); font-size:15px; text-transform:uppercase; letter-spacing:1px; color:var(--cyan-text); margin-bottom:10px;}
+.faq-sources ul{padding-left:20px;}
+.faq-sources li{margin-bottom:5px;}
+@media (max-width: 880px){
+  .faq-item summary{flex-direction:column; gap:8px;}
+  .faq-intro{padding:22px 20px;}
+}

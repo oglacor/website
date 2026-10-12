@@ -39,6 +39,15 @@ class Pages extends BaseController
         ]);
     }
 
+    public function aiAtWork(): string
+    {
+        return view('pages/ai_at_work', [
+            'title'           => 'AI at Work: Straight Answers — BLUERABBIT',
+            'metaDescription' => 'Straight, sourced answers to the questions people ask about using AI at work: accuracy, how it works, jobs, agents and how to use it well.',
+            'activeNav'       => '',
+        ]);
+    }
+
     public function contact(): string
     {
         return view('pages/contact', [

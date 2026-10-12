@@ -138,3 +138,6 @@ _modules/*
 
 /results/
 /phpunit.xml
+
+# Git Bash / MSYS crash dumps
+*.stackdump

@@ -938,3 +938,22 @@ original 2016–2022 dates. It hasn't been run on the dev DB or on production.
 reads `$_ENV` first. The "scratch DB" test therefore ran against the dev DB. The 61 rows it
 added were deleted by slug afterwards, and the dev DB is back to its original 3 posts. For a
 real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-reset session did.
+
+## 2026-10-11 — Public "AI at Work" FAQ resource page
+
+- **New page:** `/resources/ai-at-work` → `Pages::aiAtWork` → `app/Views/pages/ai_at_work.php`.
+  Public, no auth. 26 Q&As in six sections (Accuracy & trust, How AI works, Your data,
+  Jobs & careers, Agents & the future, Using it well), each tagged **Settled** or **Still open**.
+- **Markup:** native `<details>/<summary>` accordions, so answers are in the HTML (crawlable,
+  work without JS). FAQPage JSON-LD for 8 core questions is pushed into the layout's `head`
+  section — keep it in sync if the visible answers change.
+- **Styling:** new `.faq*` block appended to the end of `site.css`, built from existing tokens;
+  intro card uses the shared `.panel` HUD shape. Gotcha: the global `nav{}` rule (padding,
+  max-width, space-between) hits *any* `<nav>` element, so the in-page topic links use
+  `<div role="navigation">` instead — do the same for any future in-content nav.
+- **Footer:** "AI at Work FAQ" link added under Resources in `layouts/main.php`.
+- **Content is dated (October 2026).** Hallucination rates (Vectara), METR task-length figures
+  and the Stanford "Canaries" employment numbers move every few months — re-check sources
+  listed at the bottom of the page before relying on them.
+- Verified: route returns the page with layout, 26 items render, JSON-LD present, footer link
+  present, no horizontal overflow. Committed 2026-10-11 (verified again: 200, 26 items, JSON-LD, footer link).

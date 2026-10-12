@@ -69,6 +69,7 @@
         <h5>Resources</h5>
         <a href="<?= site_url('blog') ?>">Blog</a>
         <a href="<?= site_url('docs') ?>">Documentation</a>
+        <a href="<?= site_url('resources/ai-at-work') ?>">AI at Work FAQ</a>
         <a href="<?= site_url('/') ?>#waitlist-hero-anchor">Waitlist</a>
         <a href="<?= site_url('contact') ?>">Contact</a>
       </div>
