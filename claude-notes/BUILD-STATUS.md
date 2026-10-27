@@ -957,3 +957,45 @@ real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-res
   listed at the bottom of the page before relying on them.
 - Verified: route returns the page with layout, 26 items render, JSON-LD present, footer link
   present, no horizontal overflow. Committed 2026-10-11 (verified again: 200, 26 items, JSON-LD, footer link).
+
+## 2026-10-27 — Docs re-sync to the CI4 app (blue@dbb5c05), 76 pages -> 77 + content updates
+
+- **Caught up on everything player/GM-visible shipped in `blue` since the last sync**
+  (2026-09-21, `blue@6e5a454`) — 75 commits, read via `docs/claude/log/*.md` (its dated,
+  per-session build log; `blue`'s CLAUDE.md was split into `docs/claude/` topic files and a log
+  directory sometime after our last sync, so that's the new source of truth over raw git log).
+  Two parallel research forks digested the log entries (09-24→10-07 and 10-17→10-27), each
+  extracting only end-user-visible changes (skipping internal bug fixes, refactors, deploy/ops
+  notes, and anything explicitly deferred/parked) and drafting ready-to-paste copy in the site's
+  voice. The three LaunchQuest entries (10-22) are a specific client build, not a generic
+  platform feature — deliberately not documented here.
+- **One new page**: `automatic-emails-and-audience-rules` ("Automatic Emails & Audience Rules",
+  GM-facing) — the new rule-based automatic email system (audience conditions, pace schedule,
+  ask-first vs. auto-send, one-email-a-day cap, player opt-out, new merge tags).
+- **~25 existing pages updated in place** (same upsert-by-slug pattern, no retired slugs this
+  round). Highlights: the Journey Builder page grew substantially (Layers-panel editing,
+  free-form resize, the Fixed layer, opacity/rotation/animation, achievement-based show/hide,
+  named elements + Glide buttons + "Link to this spot", feed widgets, nav links expanded to 24
+  sections); Stats dashboard (pane navigation, Download PDF, grade-source order, the Rubric
+  pass/fail system, segment-by-any-field leaderboards, new Challenge/SCORM report tabs);
+  Email Campaigns (cohort-scoped sending, live console, Dry Run, On-behalf-of, Send Log tabs,
+  the expanded 18-tag merge system); Evolving Tabis (Background Tabi type, free layer
+  repositioning); Tabi Editor (full-page piece editor, List view); Adventure Templates (a
+  cohort's own full admin toolbar, Cohort Settings); Managing Your Player Roster (staff role
+  switching from Manage Players, Recalculate All Players, adventure-specific CSV template);
+  Posts & Resources (news front page, locked-but-visible gating, journey-element-opens-post);
+  plus smaller, honest one-line additions (collectible-card item/achievement views, SCORM
+  upload progress bar, QR code troubleshooting, Duplicator grouping, the Validation Queue,
+  branching-Tabi completion fix, My Adventures' tarot-card hand UI, Organizations' tightened
+  edit permissions, Rubric-gated certificates, avatar-upload reliability).
+- **`complete-adventure-settings-reference` left untouched, deliberately**: the source log
+  described a reorganized nine-pane settings layout (search box, autosave, per-adventure label
+  overrides, an Options Highlight toggle). Bernardo confirmed (2026-10-27) that reorg was
+  reverted on the product side — "a HUGE problem" — so every trace of it was removed from this
+  page rather than left as a dangling, inaccurate description. The page still documents the
+  existing General/Cooper/Reset/Ranks/Players/Features/A.I./Tremendous/Quick Links/Images
+  structure, unchanged from before this sync.
+- **Verified**: `php -l` clean, `php spark db:seed DocsPageSeeder` ran clean (79 total docs rows:
+  77 from this seeder + 2 pre-existing `developer`-section pages from elsewhere), smoke-tested
+  6 updated slugs + the new page + the `/docs` hub via `php spark serve` — all 200, new page's
+  title renders correctly.

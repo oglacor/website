@@ -9,8 +9,9 @@ use CodeIgniter\Database\Seeder;
  * this after an edit actually refreshes content instead of silently
  * skipping — unlike BlogPostSeeder, which is insert-only.
  *
- * Last synced to the CI4 app (blue) on 2026-09-21, against blue@6e5a454.
- * See claude-notes/CI4-DOCS-SYNC-2026-09-20.md for the brief that drove it.
+ * Last synced to the CI4 app (blue) on 2026-10-27, against blue@dbb5c05
+ * (previous sync: 2026-09-21, blue@6e5a454). See claude-notes/BUILD-STATUS.md
+ * for what changed in this pass.
  */
 class DocsPageSeeder extends Seeder
 {
@@ -79,7 +80,7 @@ HTML,
 <p>Starting your own organization? New accounts start on the <strong>Basic</strong> plan: free, with up to 90 players and 3 Adventures across your whole account and 50MB of file storage. Upgrade to Pro whenever you need more room. See <a href="/docs/setting-up-your-organization">Setting Up Your Organization</a> for the full setup, and <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for the plans.</p>
 
 <h2>2. Join an Adventure</h2>
-<p>An <strong>Adventure</strong> is a single learning journey: an onboarding program, a training course, a live bootcamp. You join one when a Game Master enrolls you, or when you open an enrollment link they've shared while you're signed in. Your Adventures are listed under <strong>My Adventures</strong>.</p>
+<p>An <strong>Adventure</strong> is a single learning journey: an onboarding program, a training course, a live bootcamp. You join one when a Game Master enrolls you, or when you open an enrollment link they've shared while you're signed in. Your Adventures are listed under <strong>My Adventures</strong> — shown as a fanned-out hand of cards, one per Adventure, each in its own colour and artwork. Flip through with the scroll wheel, a drag or swipe, or the arrow keys (press <strong>/</strong> to search by name). Click the front card and it opens a dossier: your level, progress, XP/BLOO/EP, leaderboard place, and a button to <strong>Play</strong> or <strong>Enrol</strong>. If you're an owner, GM or admin on that Adventure, the dossier also gives you <strong>Manage</strong>, <strong>Settings</strong>, <strong>Copy enrolment link</strong> and <strong>Trash</strong>, so you can jump straight into running it without leaving the screen.</p>
 <p>Inside each Adventure you hold one role:</p>
 <ul>
   <li><strong>Player</strong> — you play the Adventure. Most people are players.</li>
@@ -156,7 +157,7 @@ HTML,
 
 <h2>Posts and Resources</h2>
 <p>Two menu entries are for reading rather than playing. <strong>Posts</strong> are articles and notices from your GM; <strong>Resources</strong> are reference material — articles, and files or links to download. Open one and it reads like a page, with a <strong>Download</strong> button when there's a file behind it. They don't sit on the Journey and don't count toward your progress.</p>
-<p>Some are held back the way milestones are: until you reach a level, until a date, or unless you're on a particular path. Those either stay out of the list until then or tell you why when you open them.</p>
+<p>Some are held back the way milestones are: until you reach a level, until a date, or unless you're on a particular path. A post gated by level shows up in the list as locked, with the level you need, instead of being left out entirely — so you always know there's more ahead. The others either stay out of the list until then or tell you why when you open them.</p>
 
 <h2>Related</h2>
 <ul>
@@ -270,6 +271,7 @@ HTML,
   <li>If you're in the middle of an <a href="/docs/encounters-the-card-draw">encounter</a>, you go straight back to it until it's finished. If a fresh hand of cards has just been dealt, you see the cards over the map first.</li>
   <li>If your GM has set a milestone to open automatically and you can play it, you're taken into it.</li>
   <li>If you chose the Garden as your starting point, your first visit in a session lands you there (see <a href="/docs/finding-your-way-around">Finding Your Way Around</a>).</li>
+  <li>If a Game Master shares a link with you (in an email, an announcement, or a post), opening it can glide your map straight to a specific landmark, Tabi or milestone instead of you having to find it yourself. Your zoom level stays as it was, and the camera eases smoothly into place.</li>
 </ul>
 
 <h2>Related</h2>
@@ -430,6 +432,7 @@ HTML,
   <li><strong>From your Game Master</strong>, by hand.</li>
 </ul>
 <p>However it arrives, you get the same celebration panel. If someone else's action earned it for you (a Game Master grading your work, say), the panel is waiting for you on your next page.</p>
+<p>Open an achievement you've earned for a closer look and it presents itself as a collectible card — artwork, name and description laid out like a trading card rather than a plain icon and tooltip. A nice way to show off a rare one.</p>
 
 <h2>The Badge on Your Certificate</h2>
 <p>Once you hold a certificate, its showcase cell has a <strong>Badge shown on it</strong> picker. Choose any badge or rank you hold, or leave it on <strong>My current rank</strong>. Paths aren't offered: a path is where you are, not something you won.</p>
@@ -491,6 +494,7 @@ HTML,
 <p>Items reach your Backpack in three ways: you buy them, a milestone awards one when you finish it, or you pick one up on a Find Item step. Your Game Master can also buy an item for you, paid from your own BLOO.</p>
 <p><strong>Consumables</strong> have a <strong>Use</strong> button. It asks you to confirm, then marks the item as redeemed and it leaves your Backpack. Nothing is ever used automatically. If you use one by mistake, ask your Game Master: only staff can return a used item to your Backpack.</p>
 <p>Keys, Tabi pieces and Rewards have no button. You hold them; you don't spend them.</p>
+<p>Open an item for a closer look and it gets the same treatment as achievements: laid out as a collectible card instead of a plain icon.</p>
 
 <h2>The Tabis Page</h2>
 <p>Each Tabi with collectible pieces has its own board. Pieces you hold are shown in full colour and the rest stay greyed out, so you can see the shape of what's missing. Click a piece to see who collected it and when.</p>
@@ -535,6 +539,7 @@ HTML,
 
 <h2>Secrets and Clues</h2>
 <p>Some milestones carry a hidden "success message" — a bit of story or narrative payoff your GM wrote for finishing that milestone, written specifically to be a) hidden until then and b) worth savoring once. Every one you've unlocked gets collected on your <strong>Secrets and Clues</strong> page — a personal scrapbook of the story content you've earned, separate from the milestones themselves and worth a look if you want the narrative in one place rather than scattered across the Journey Map.</p>
+<p>These stay genuinely hidden until you've earned them — even a Game Master previewing or drafting the milestone doesn't get an early look at the secret.</p>
 
 <h2>Related</h2>
 <ul>
@@ -603,7 +608,7 @@ HTML,
 <p>The Journal is your full record inside one Adventure: how far you've come, what you've handed in, how your quizzes went, your skills and your profile results. It's called <strong>Journal</strong> in the menu and the page itself is headed <strong>My Work</strong>. Your organization can rename it, so it may carry a different name for you.</p>
 
 <h2>Journey Progress</h2>
-<p>A <strong>Journey Progress</strong> panel sits above the tabs, so it stays in view whichever tab is open. It shows your overall percentage, a progress bar and "X of Y milestones". It's the same number as the Journey Map's progress widget, and the same one any "complete N% of the journey" unlock checks. It rounds down, so it never says 100% while a milestone is left.</p>
+<p>A <strong>Journey Progress</strong> panel sits above the tabs, so it stays in view whichever tab is open. It shows your overall percentage, a progress bar and "X of Y milestones". It's the same number as the Journey Map's progress widget, and the same one any "complete N% of the journey" unlock checks. It rounds down, so it never says 100% while a milestone is left. A <strong>Download PDF</strong> button nearby gives you a clean, printable copy of your progress, skills and overview to keep or share.</p>
 
 <h2>The Tabs</h2>
 <p>Each section is its own tab. The open tab is kept in the page address, so refreshing or sharing the link brings you back to the same one.</p>
@@ -613,6 +618,7 @@ HTML,
   <li><strong>Quests</strong></li>
   <li><strong>Challenges</strong></li>
   <li><strong>Profiles</strong> — only when the Adventure measures a profile.</li>
+  <li><strong>Rubric</strong> — only when your Adventure has set up Graduation Criteria.</li>
 </ul>
 
 <h2>Skills</h2>
@@ -633,13 +639,16 @@ HTML,
 </ul>
 
 <h2>Quests</h2>
-<p>The milestones you've handed in. The tab still uses the app's older word for them. Each row shows the milestone's level and rewards, with a <strong>View</strong> button, and an <strong>Edit</strong> button while it hasn't been graded yet. Once it's graded, it's marked <strong>Graded</strong>.</p>
+<p>The milestones you've handed in. The tab still uses the app's older word for them. Each row shows the milestone's level and rewards, with a <strong>View</strong> button, and an <strong>Edit</strong> button while it hasn't been graded yet. Once it's graded, it's marked <strong>Graded</strong>. Each row also labels what kind of milestone it is — required, optional, or specific to a path — so a count on your Overview never looks mysterious.</p>
 
 <h2>Challenges</h2>
 <p>Every quiz attempt you've made: pass or fail, your grade and the date. Click an attempt to see each question, the answer you picked, and whether it was right. It's a good way to learn from a quiz you didn't ace the first time.</p>
 
 <h2>Profiles</h2>
 <p>If the Adventure measures a profile, this tab holds your sheet for each one, building up as you answer. See <a href="/docs/your-profile-results">Your Profile Results</a>.</p>
+
+<h2>Rubric</h2>
+<p>If your Adventure has Graduation Criteria set up, this tab shows exactly where you stand against each one — <strong>met</strong>, <strong>at risk</strong>, <strong>out of reach</strong>, or still <strong>pending</strong> — and why. See <a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a> for how a Game Master builds a rubric.</p>
 
 <h2>Who Else Can See It</h2>
 <p>Your GM can open any player's Journal to check how they're getting on. There's no self-service reset any more. If you need to run a milestone again from scratch, ask your GM: an administrator can clear your record of that one milestone.</p>
@@ -660,10 +669,10 @@ HTML,
                 'sort_order' => 12,
                 'body'       => <<<'HTML'
 <p>Everything about you as a person, separate from any one Adventure, lives on <strong>My Account</strong>. Open it from your profile panel (click your picture in the top-right corner, then the pencil icon), or from <strong>My Account</strong> in the menu on your Adventures page.</p>
-<p>The page has five sections, listed down the left side (across the top on a narrow screen): <strong>Profile</strong>, <strong>Security</strong>, <strong>Billing</strong>, <strong>Transactions</strong> and <strong>Danger Zone</strong>.</p>
+<p>The page has six sections, listed down the left side (across the top on a narrow screen): <strong>Profile</strong>, <strong>Security</strong>, <strong>Billing</strong>, <strong>Emails</strong>, <strong>Transactions</strong> and <strong>Danger Zone</strong>.</p>
 
 <h2>Profile</h2>
-<p>Upload a profile picture, edit your first and last name, choose your interface language (U.S. English or Español), and fill in the optional Company Name, Website URL and LinkedIn URL fields and a short bio. Your nickname is shown but can't be changed here. Your email is shown too, and its <strong>Change</strong> button takes you to Security, because changing it needs a confirmation. Changes save as you make them, and there's a <strong>Save</strong> button at the bottom as well.</p>
+<p>Upload a profile picture, edit your first and last name, choose your interface language (U.S. English or Español), and fill in the optional Company Name, Website URL and LinkedIn URL fields and a short bio. Your nickname is shown but can't be changed here. Your email is shown too, and its <strong>Change</strong> button takes you to Security, because changing it needs a confirmation. Changes save as you make them, and there's a <strong>Save</strong> button at the bottom as well. Choosing a new profile picture now reliably replaces the old one.</p>
 <p>You'll also see a <strong>Player Level</strong> that's different from any single Adventure's level: it's the average across every Adventure you're enrolled in.</p>
 <p>Looking for your personality-test results? They live inside the Adventure that measured them, on your Journal's Profiles tab. See <a href="/docs/your-profile-results">Your Profile Results</a>.</p>
 
@@ -678,6 +687,9 @@ HTML,
 <p>No subscription? The panel names the plan your account is actually on, such as Basic, with a <strong>View plans &amp; upgrade</strong> button that opens Subscription &amp; Billing.</p>
 <p>Underneath is <strong>Your storage</strong>: a meter showing how much of your plan's file storage you've used and how much is left. It counts the files you upload (pictures, video, audio, your submission uploads and any SCORM packages you add) across every Adventure. If you're ever over your allowance, for example after moving to a smaller plan, you keep everything you've stored but can't upload more until you delete files or upgrade. Administrators have no storage limit.</p>
 <p><strong>Billing History</strong> lists every payment with its date, amount and status, with <strong>View</strong> and <strong>PDF</strong> links to the invoice itself. See <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for what each plan includes.</p>
+
+<h2>Emails</h2>
+<p>A switch for every Adventure you're seated in. Game Masters can set up automatic emails that nudge or congratulate players on their own — a reminder if you've gone quiet, a note when you earn an achievement. Turning an Adventure's switch off stops that Adventure's automatic emails; a campaign a Game Master sends by hand is unaffected. If an Adventure has no automatic emails configured yet, the switch is still there, just quiet.</p>
 
 <h2>Transactions</h2>
 <p>Your in-game purchase and spending history across every Adventure you've played: the date, the Adventure, the item or kind of transaction, and the amount. This is BLOO and items, not real money. Real payments are under Billing.</p>
@@ -798,9 +810,10 @@ HTML,
   <li><strong>Help</strong>: ask for help, and see ways to help others.</li>
   <li><strong>Connections</strong>: requests and the people you're connected to.</li>
   <li><strong>Rewards</strong>: Blooms waiting for you to claim.</li>
-  <li><strong>Messages</strong>: your direct messages.</li>
+  <li><strong>Messages</strong>: your direct messages, in a bigger, easier-to-navigate window with a clear back button to your conversation list.</li>
+  <li><strong>My Skills</strong>: your skill radar at a glance, linking through to the full picture in your Journal.</li>
 </ul>
-<p>Business, Tasks, Missions, Help and Connections open as floating panels. Drag a panel by its header to move it, and press <strong>−</strong> to minimise it back to the dock. Your layout is remembered for each adventure on the browser you're using. Rewards, Messages and any help request you open appear as windows on top of everything else. Badges on the dock buttons show counts, such as unread messages and rewards to claim.</p>
+<p>Business, Tasks, Missions, Help and Connections open as floating panels, and can no longer wander off the edge of your screen if you resize your browser window. Drag a panel by its header to move it, and press <strong>−</strong> to minimise it back to the dock. Your layout is remembered for each adventure on the browser you're using. Rewards, Messages and any help request you open appear as windows on top of everything else. Badges on the dock buttons show counts, such as unread messages and rewards to claim.</p>
 
 <h2>Tasks and Missions</h2>
 <p>Two of those panels are the Garden's core mechanics, and they do opposite jobs:</p>
@@ -808,7 +821,7 @@ HTML,
   <li><strong><a href="/docs/garden-tasks">Tasks</a> improve you.</strong> Build a habit, practise something, do the work, and your own skills and level grow.</li>
   <li><strong><a href="/docs/garden-missions">Missions</a> improve your Garden.</strong> Reach out to other people, and the relationships around you get healthier.</li>
 </ul>
-<p>The way to remember it: <em>helping yourself is a Task. Helping someone else is a Mission.</em></p>
+<p>The way to remember it: <em>helping yourself is a Task. Helping someone else is a Mission.</em> Both show as simple one-line rows — click one to open a clear card with exactly what to do on one side and what you'll earn on the other.</p>
 
 <h2>Rewards You Claim</h2>
 <p>Some Blooms land the moment they're earned: endorsements, gifts, asking for help, and Task rewards. Others wait in <strong>Rewards</strong> until you collect them: a finished Mission, help of yours that someone approved, and Blooms your Game Master awarded to a group. Open Rewards and press <strong>Claim</strong>. Nothing is added to your skills until you do.</p>
@@ -964,6 +977,7 @@ HTML,
   <li>If they approve it, it's marked "Approved — earned Blooms" and a reward appears in your <strong>Rewards</strong>: press <strong>Claim</strong> to collect your 2 Blooms.</li>
 </ul>
 <p>Offering help is real contact with that person, so their hexagon returns to full colour. It also counts toward any <a href="/docs/garden-missions">Mission</a> that asks you to help someone, as soon as you post it.</p>
+<p><strong>Ways to help</strong> leads with who's asking and what skill they need, so you can scan the list quickly — click one and it opens as a full card explaining the request on one side and what helping earns you on the other, the same clear layout Tasks and Missions use. Clicking on a teammate opens their drawer with <strong>Message</strong> and <strong>Connect</strong> (or <strong>Accept</strong> / <strong>Connected</strong>) front and centre, followed by their skills, ways to recognise them, what they need help with, and their recent posts.</p>
 
 <h2>The Help Board</h2>
 <p>Follow <strong>Open the Help Board</strong> from the Help panel for the full page: your own requests with their replies, and every open request in the adventure. Some cards carry a "Matches one of your top skills" badge.</p>
@@ -1309,7 +1323,8 @@ HTML,
 <p>Save your Claude API key once, on the template's A.I. tab, and every cohort uses it. A cohort's A.I. tab says when it's using the template's key; save a key there only if that cohort should use a different one. <strong>Test Key</strong> makes one real call and tells you whose key answered. Cooper uses the same key when an Adventure has one, so its conversations in every cohort are billed to it too. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
 
 <h2>Running a Cohort Day to Day</h2>
-<p>Inside a cohort, the Admin Tools menu is deliberately short, because everything in it is about this cohort's people: <strong>Players</strong>, <strong>Achievements</strong>, <strong>Manage Players</strong>, <strong>Player Records</strong>, <strong>Missions &amp; Tasks</strong> and the <strong>Player Meta Manager</strong>. <strong>Template Settings</strong>, in the Adventure Navigation section, opens the template's Adventure Settings.</p>
+<p>A cohort carries a full admin toolbar of its own — Stats, Players, Player Requests, Manage Guilds, Missions &amp; Tasks, Email Notifications, Transactions, and Activity — scoped entirely to that cohort's own players and content. A GM who only runs one cohort never has to touch the template to do their job: <strong>Players</strong>, <strong>Achievements</strong>, <strong>Manage Players</strong>, <strong>Player Records</strong>, <strong>Missions &amp; Tasks</strong> and the <strong>Player Meta Manager</strong>. <strong>Template Settings</strong>, in the Adventure Navigation section, opens the template's Adventure Settings.</p>
+<p><strong>Cohort Settings</strong> opens when you edit a cohort directly, and it only lets you change what that cohort actually owns: its dates, time zone, labels, grading rules, Cooper's character, resets, its players, and (if configured) its A.I. key. Everything that lives on the template — the reward ladder (Ranks), Features, Quick Links and Images — shows as read-only with a "From the template" note and a link to the template if you're allowed to edit it there.</p>
 
 <h2>An Independent Copy Instead</h2>
 <p>If you want a copy that <em>doesn't</em> follow the template, say a one-off variant you're going to change heavily, use <strong>Duplicate</strong> on Manage Adventures. You get a full, independent Adventure with its own milestones, achievements, items, guilds and Tabis, every reference between them remapped, and no player data. Editing the copy never touches the original, and editing the original never touches the copy. Duplicate the template itself rather than one of its cohorts: a cohort's content lives on the template, so a copy made from the cohort would come out without it.</p>
@@ -1395,6 +1410,7 @@ HTML,
   <li><strong>Add Text</strong> — real words on the map, with an optional link. Text stays sharp at any zoom and can be edited later, so use it rather than pictures of words.</li>
   <li><strong>Add Task</strong> — pick one of the adventure's tasks by name and it lands as a hexagon bound to that task. Only there when Tasks is switched on.</li>
   <li><strong>Add Widget</strong> — a live panel that shows each player their own information.</li>
+  <li><strong>Add Point</strong> — an invisible marker you can drop anywhere on the map purely as a destination, useful for a spot that doesn't need its own graphic. See "Naming Elements and Gliding to a Place" below.</li>
   <li><strong>Active Tabis</strong> — tick which Tabis appear on the map as chapters.</li>
   <li><strong>Nav Links</strong> — a button that takes players to another part of the adventure.</li>
   <li><strong>Working layer</strong> and <strong>Layers</strong> — for working with depth, below.</li>
@@ -1431,19 +1447,33 @@ HTML,
 <p>A text object has its words, an optional link, a font and a size. The three fonts are <strong>Normal</strong>, <strong>Normal Condensed</strong> and <strong>Special</strong>. Size is in pixels, from 8 to 200; leave it blank for the default of 28. Enter starts a new line, and the text saves when you click away (or press Ctrl+Enter, Cmd+Enter on a Mac). Resizing a text object sets where it wraps; its height is whatever the words need.</p>
 
 <h2>Nav Links</h2>
-<p>Put a button to the <strong>Item Shop</strong>, <strong>Magic Code</strong> (which opens the code box), <strong>Achievements</strong> or the player's <strong>Journal</strong> right where it belongs in the story, instead of leaving players to find it in the menu. The first three are offered only when those features are on, and each uses your platform's own name for that section.</p>
+<p>Put a button to any of the adventure's player-facing sections right where it belongs in the story, instead of leaving players to find it in the menu — not just the Item Shop, Magic Code and Journal, but any of the 24 sections the platform offers: the Journal, Achievements, Leaderboard, Item Shop, Backpack, Tabis, the Garden, Tasks, Missions, Guilds, Help Board, Wall, Posts, Resources, the Event Schedule, Speakers, Cooper, My Account and more. Each option is offered only when that feature is actually on, and each uses your platform's own name for that section.</p>
+
+<h2>Posts &amp; Resources Feed Widgets</h2>
+<p>Two widgets put your news feed right on the map: a <strong>Posts feed</strong> and a <strong>Resources feed</strong>. Point either one at a single post or resource to show it in place, or leave it open to show the newest items as a scrollable list — handy for in-world instructions or announcements players read without leaving the Journey.</p>
 
 <h2>Arranging Things</h2>
-<p>Hover over an object and its control bar appears above it.</p>
+<p>Hover over an object and its control bar appears above it. Double-click any element to open it in the Layers panel docked at the side instead, where the map stays fully visible while you work.</p>
 <ul>
   <li><strong>Move</strong> — drag the object. Positions save when you let go; there's no Save button.</li>
-  <li><strong>Size</strong> — drag the corner handle. Milestones keep their hexagon shape as they grow; Tabis also resize from their right and bottom edges.</li>
-  <li><strong>Rotate</strong> — graphics, text, widgets, nav links and task hexagons have a rotate handle to drag.</li>
+  <li><strong>Size</strong> — drag the corner handle. Most elements resize freely now, rather than being locked to their original proportions; hold Shift to keep the proportions. Milestones and task hexagons always keep their shape. <strong>Reset Size</strong> on any image returns it to its natural size.</li>
+  <li><strong>Rotate</strong> — graphics, text, widgets, nav links and task hexagons have a rotate handle to drag, with a one-click <strong>Reset</strong> back to zero.</li>
+  <li><strong>Opacity and colour</strong> — graphics and text can be faded, even down to fully invisible (handy for an invisible clickable "hotspot" over a piece of background art), and text can take its own colour.</li>
+  <li><strong>Animation</strong> — give any graphic a slow spin, clockwise or counter-clockwise, as a simple way to draw the eye to something on the map.</li>
   <li><strong>Stacking</strong> — <strong>Bring forward</strong> and <strong>Send back</strong> decide what draws on top. The number between them is the object's position within its depth, counting from 1.</li>
   <li><strong>Type</strong> — on a placed graphic, widget, nav link or task hexagon, the dropdown switches it to another of those kinds without losing its place.</li>
   <li><strong>Duplicate</strong> and <strong>Remove</strong>.</li>
   <li><strong>Locked with Tabi</strong> — tie an object to a Tabi and, while that Tabi is still locked for a player, the object shows greyed out and can't be clicked. Useful for a signpost or shortcut that belongs to a chapter. The picker appears once the adventure has Tabis.</li>
+  <li><strong>Shown from level / Hidden from level</strong> — show or hide any element, not just milestones, once a player reaches a given level. Set either or both to make something appear for a window of levels only. If an element has a level rule, a small tag on it says so directly in the builder, so you're never left guessing why a test player can't see something.</li>
 </ul>
+
+<h2>Showing or Hiding by Achievement</h2>
+<p>Beyond the level rule, any element you place on the map — a graphic, a Tabi, a milestone node — can also be shown only to players holding a specific achievement, or hidden from players holding a different one. Combine it with the level rule freely; both apply together. As a GM or admin, you'll still see a hidden element yourself, dimmed, with a plain-language note explaining why ("Shown from level 2; only to holders of Pilot"). Players never see it at all. This is also the recommended way to build "staff-only" content on the map: give your staff an achievement and gate the content to holders of it, rather than needing a separate staff flag.</p>
+
+<h2>Naming Elements and Gliding to a Place</h2>
+<p>Every element you place can now have a real name (shown in pickers and layer lists), instead of just a filename or a snippet of its text. Give your important landmarks a name once, and renaming your content later won't change it.</p>
+<p>A <strong>Point</strong> (see the Palette, above) is an invisible marker you can drop anywhere on the map purely as a destination. A <strong>Glide button</strong> — or any graphic or text element — can be set to glide the camera smoothly to any named point, Tabi, milestone, or other element on the map when clicked, instead of opening a link or a post.</p>
+<p>Every placed element, Tabi and milestone also has a <strong>Link to this spot</strong> button that copies a direct URL — opening that link (or typing it in) glides a player's map straight to that location when they land on the journey. Handy for pointing players at something specific from an email or announcement. One thing to keep in mind: if the destination is hidden from a player by a level or achievement rule, the glide link simply does nothing for them — give the button or link the same visibility rule as its destination if you want it to always work.</p>
 
 <h2>Depth</h2>
 <p>Everything on the map sits at one of four depths, and each moves at its own speed when a player pans or zooms — that's what gives the map its parallax:</p>
@@ -1454,6 +1484,7 @@ HTML,
   <li><strong>Front</strong> (Foreground) — moves slightly faster than the map, for things nearer than the milestones.</li>
 </ul>
 <p>Behind all four, the grid backdrop drifts slowest of all.</p>
+<p>A fifth option, <strong>Fixed</strong>, pins an element to the screen itself rather than the map — it stays in the same corner or edge as players pan and zoom around, instead of scrolling away. Useful for a decoration, button or link you want always on screen, like a persistent call-to-action.</p>
 <p>Graphics, text, widgets, nav links and task hexagons have a <strong>Depth</strong> row in their bar: press Deep, Back, Base or Front to move the object there, and it lands at the bottom of that depth's stack. Anything a player needs to click — a linked graphic or text, a widget, a nav link, a task hexagon — has to stay on Base, because the other depths are decoration only.</p>
 <ul>
   <li><strong>A milestone is always on Base</strong>, whatever you do. It has no depth buttons.</li>
@@ -1489,7 +1520,7 @@ HTML,
 <p>A <strong>Tabi</strong> is a chapter of the journey. It's either a tile on the map that opens onto a group of milestones, or a collectable picture players assemble from pieces — never both. The Tabi editor is where you set up every part of one.</p>
 
 <h2>Opening It</h2>
-<p>Go to <strong>Manage Content</strong> and open the <strong>Tabis</strong> tab. <strong>Add Tabi</strong> creates a new one, and each row's <strong>Edit Tabi</strong> opens the editor. The row also has <strong>Prerequisites</strong>, <strong>Evolving Scene</strong> (straight to the Scene Builder) and <strong>Trash</strong>. When the adventure has no Tabis yet, the Journey Builder's Active Tabis menu and the empty journey both link to creating one.</p>
+<p>Go to <strong>Manage Content</strong> and open the <strong>Tabis</strong> tab. <strong>Add Tabi</strong> creates a new one, and each row's <strong>Edit Tabi</strong> opens the editor. The row also has <strong>Prerequisites</strong>, <strong>Evolving Scene</strong> (straight to the Scene Builder) and <strong>Trash</strong>. When the adventure has no Tabis yet, the Journey Builder's Active Tabis menu and the empty journey both link to creating one. Switch the Tabis tab to <strong>List view</strong> and every Tabi lays out as its own stage, row by row — a faster way to scan a long chapter list or jump straight to a specific Tabi's pieces and milestones than hunting across the map.</p>
 <p>A brand-new Tabi shows only its settings: prerequisites, milestones, pieces and the scene all attach to a Tabi that exists, so give it a name and press <strong>Create Tabi</strong> first. After that the editor's tabs are <strong>Settings</strong>, <strong>Prerequisites</strong>, <strong>Milestones</strong>, <strong>Pieces</strong> and <strong>Scene</strong>, and <strong>Update Tabi</strong> saves the settings.</p>
 
 <h2>Settings</h2>
@@ -1520,7 +1551,7 @@ HTML,
 <p>When a player opens a chapter, it starts with a progress bar: the milestones they've finished out of the chapter's total. To point that bar at a badge, create an achievement with a <strong>Complete This Tabi</strong> condition for this Tabi. The bar then reads <em>Working towards</em> with the achievement's name and artwork, and <em>Stage complete</em> when they get there, while the achievement itself is awarded by its condition. Without one, the bar reads <em>Progress towards this stage</em>. See <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a>.</p>
 
 <h2>Pieces</h2>
-<p>A collectable Tabi is built from <strong>pieces</strong>: items of the <strong>Tabi Piece</strong> type that point at this Tabi. <strong>New piece</strong> opens the item editor — set the type to Tabi Piece and choose this Tabi. Pieces can be sold in the Item Shop, where each is labelled as part of its Tabi, or handed out as rewards. Once there are pieces, <strong>Arrange pieces</strong> opens the piece editor, where you drag, resize, rotate and stack them into the finished picture. Players see their collection on the <strong>Tabis</strong> page of the Item Shop section, and can click a piece they've collected to examine it. See <a href="/docs/item-shop-building-an-economy">Building an Item Shop Economy</a>.</p>
+<p>A collectable Tabi is built from <strong>pieces</strong>: items of the <strong>Tabi Piece</strong> type that point at this Tabi. <strong>New piece</strong> opens the item editor — set the type to Tabi Piece and choose this Tabi. Pieces can be sold in the Item Shop, where each is labelled as part of its Tabi, or handed out as rewards. Once there are pieces, <strong>Arrange pieces</strong> opens the piece editor as its own full page, built on the same pan-and-zoom canvas as the Journey Builder: drag, resize, rotate, flip and stack pieces freely, add new pieces directly from the editor, and save everything in one batch when you're done. Players see their collection on the <strong>Tabis</strong> page of the Item Shop section, and can click a piece they've collected to examine it. See <a href="/docs/item-shop-building-an-economy">Building an Item Shop Economy</a>.</p>
 
 <h2>Scene</h2>
 <p>The <strong>Scene</strong> tab holds the Tabi's evolving artwork — the table of what grows, and when — with <strong>Open Scene Builder</strong> to place the art inside the Tabi's frame. That's covered in <a href="/docs/evolving-tabis-scene-builder">Evolving Tabis &amp; the Scene Builder</a>.</p>
@@ -1588,7 +1619,7 @@ HTML,
 <ul>
   <li><strong>The frame is the Tabi.</strong> All of a scene's artwork lives inside the Tabi's frame and is clipped to it, exactly as it is on the map and in the chapter's panel.</li>
   <li><strong>Drag the label above the frame</strong> to move the Tabi on the journey, and <strong>drag an edge</strong> to resize it. Both change the real Tabi. Resizing doesn't move or scale the artwork; whatever falls past the new edge is clipped.</li>
-  <li><strong>Click a piece of artwork</strong> to select it, then drag it, resize it, or turn it with its rotate handle. The selection bar holds <strong>Artwork</strong> (swap the image), <strong>Send back</strong> and <strong>Bring forward</strong> with its layer number, <strong>Edit row</strong> and <strong>Remove</strong>.</li>
+  <li><strong>Click a piece of artwork</strong> to select it, then drag it freely within the frame — it no longer has to stay boxed inside the Tabi's edges, just keep a small grip visible — resize it (even past the frame's edge if you need to), or turn it with its rotate handle. The selection bar holds <strong>Artwork</strong> (swap the image), <strong>Send back</strong> and <strong>Bring forward</strong> with its layer number, <strong>Edit row</strong> and <strong>Remove</strong>.</li>
   <li>The toolbar has <strong>Edit the table</strong>, <strong>Find this Tabi</strong>, toggles for <strong>Journey</strong> (the placeholders), <strong>Tabi image</strong> and <strong>Ghost inactive</strong>, and <strong>Back to Tabis</strong>.</li>
 </ul>
 <p>Artwork whose image can't be found shows a placeholder instead of vanishing, so you can select it and choose new artwork.</p>
@@ -1599,12 +1630,17 @@ HTML,
 <h2>Scene Settings</h2>
 <p>Two settings in the same panel apply to the whole scene:</p>
 <ul>
-  <li><strong>Show on the journey map</strong> — <strong>No</strong> by default, which means the scene only appears inside the chapter's panel when a player opens it. Set it to <strong>Yes</strong> to draw the scene over the Tabi on the map as well.</li>
+  <li><strong>Show on the journey map</strong> — <strong>No</strong> by default, which means the scene only appears inside the chapter's panel when a player opens it. Set it to <strong>Yes</strong> to draw the scene over the Tabi on the map as well. Remember this one when you build a new scene — it shows inside the Tabi's window right away either way, but won't appear on the Journey map until you flip it. It only applies to Tabis marked as chapters, since those are the ones that draw on the map at all.</li>
   <li><strong>Whole-scene mood</strong> — <strong>None</strong>, or <strong>Fade when the player is away</strong>, which desaturates the whole scene the longer it's been since the player's last visit.</li>
 </ul>
 
 <h2>What Players See</h2>
 <p>When a player opens the chapter, the scene is shown full size, with a <strong>Next:</strong> line underneath naming what grows it next — "Reach level 5", for example. The scene stays hidden while the chapter is locked, so it can't give away what's inside. On the map, if you've turned it on, the scene sits over the Tabi's tile at the Tabi's depth. Staff see a scene as far as their own account has reached, not fully grown, so use the preview to check the later steps.</p>
+
+<h2>Background Tabis</h2>
+<p>A Tabi doesn't have to be a clickable spot on the map. In the Tabi Editor's "Chapter on the journey map" setting, you can mark one as a <strong>Journey Background</strong> instead of a chapter or a collectable. A background Tabi has no node on the map at all — instead, its Scene Builder art fills the entire screen behind the journey, scaled to cover and centred, and evolves the same way any Scene Builder art does as the player progresses.</p>
+<p>A couple of rules to know: a Tabi can only become a background if it isn't already holding milestones or pieces — clear those out first. Once it's a background, its Scene Builder frame has no node on the map, can't be moved, and can't be switched on or off the map individually — the background either shows or it doesn't, based on its own visibility rule.</p>
+<p>Scene Builder tracks on a background Tabi also gained a new condition: <strong>An achievement is held</strong> — show a particular layer only to players who've earned a specific achievement.</p>
 
 <h2>Related</h2>
 <ul>
@@ -1980,6 +2016,7 @@ HTML,
   <li>how many lines they speak (the number of steps that name them), or "No lines yet"</li>
   <li><strong>Edit</strong> for everything else about the speaker, <strong>View</strong> for their public speaker page, and <strong>Trash</strong></li>
 </ul>
+<p>Click a speaker's thumbnail right in this list to open the Media Manager and swap their picture directly — no need to go into Edit just to change a photo.</p>
 <p>The toolbar searches the cast, filters to <strong>With dialogue</strong> or <strong>Not used yet</strong> or by status, and sorts by name or by lines of dialogue.</p>
 <p><strong>Trashing a speaker doesn't silence them.</strong> Lines that already name them keep speaking; the speaker just stops being offered on new steps. The Trash button's tooltip tells you how many lines that affects, and trashed speakers sit in their own Trashed section with Restore and Delete Forever.</p>
 
@@ -2223,13 +2260,16 @@ HTML,
 <h2>How a Resource Becomes a Download</h2>
 <p>A resource with the <strong>Resource</strong> style and a <strong>File or Link</strong> is a download: its card's button reads <strong>Download</strong> and opens the file or link in a new tab, and its reading page carries a Download button above the content. With no file or link — or with the <strong>Article</strong> style — it's an article, and <strong>Read</strong> opens the reading page. The Resources page shows them as a grid of cards, each with the start of its content.</p>
 
+<h2>The Posts Front Page</h2>
+<p>Posts have a proper front page now — a news-feed style list of everything published, rather than a bare list — and opening one gives a rebuilt, cleaner article view. A Game Master can also link a graphic or text element placed on the Journey Map directly to a Post: clicking it opens the article in an overlay window right there on the map, without leaving the journey. See <a href="/docs/journey-builder-design-palette">The Journey Builder</a>.</p>
+
 <h2>The Reading View</h2>
 <p>Posts and resources open on the same kind of page: the image and headline in the chosen style, the level and path as badges, the date it was posted, then the content. A <strong>Back to Posts</strong> (or Resources) link returns to the list. GMs also get <strong>Edit</strong> and <strong>All Posts</strong> buttons at the foot of the page. Manage Content's Journey tab lists posts and resources alongside milestones, each labelled with its type and with a View link.</p>
 
 <h2>Who Can Read What</h2>
 <p>Posts and resources are gated the way milestones are:</p>
 <ul>
-  <li><strong>Level</strong> — the list only shows what a player's level has reached. Opened directly before then, the page says <em>You need to be Level N to open this post.</em></li>
+  <li><strong>Level</strong> — a post gated to a level a player hasn't reached yet is listed as locked, with the level they need, rather than simply left out — so players always know there's more ahead. Opened directly before then, the page says <em>You need to be Level N to open this post.</em></li>
   <li><strong>Start date</strong> (Posts) — before it, the page says the post isn't available yet and gives the date. If the adventure hides milestones by date (any option other than <strong>Never</strong> in its time settings), future posts are also left out of the list until then.</li>
   <li><strong>Path</strong> — a post or resource set to one path doesn't appear for players on another, and they can't open it at all.</li>
 </ul>
@@ -2362,6 +2402,9 @@ HTML,
 <h2>Designing a Believable Fork</h2>
 <p>The best branches are ones where both paths feel intentional, not like one is the "real" content and the other a stub. If you don't have time to build both sides of a fork fully, it's usually better to cut it to a single path than ship a branch that's obviously thinner on one side. Players notice.</p>
 
+<h2>Branching Tabis</h2>
+<p>A Tabi tied to one branch of a path now tracks completion correctly for the players who chose it — finishing all of its milestones marks it complete the same way a regular Tabi does. In a Tabi's detail window, players no longer see empty placeholder rows for milestones that belong to a branch they didn't take; those rows simply don't appear for them. As a Game Master, you still see every path's milestones, with the ones outside a player's chosen branch shown faded.</p>
+
 <h2>Related</h2>
 <ul>
   <li><a href="/docs/conditions-when-things-unlock">Conditions — When Things Unlock</a></li>
@@ -2474,6 +2517,9 @@ HTML,
 <p>A certificate with no conditions is <strong>open from the start</strong>: every player can print it right away. Add conditions and it stays locked until the player meets <strong>all</strong> of them. There's no separate "available immediately" switch; the condition list is the only answer. Clear the list and save, and a gated certificate becomes open again.</p>
 <p>Certificates use the same Conditions engine as achievements and tasks: level, XP, journey percentage, milestones or Tabis completed, a specific milestone or Tabi, purchases, items used, achievements held, guild level and size, and Blooms. Counters can look at a rolling time window. See <a href="/docs/conditions-when-things-unlock">Conditions: When Things Unlock</a> for the full list.</p>
 <p>Players see a locked certificate on their Achievements page with what's missing and, where it can tell, where they stand: <em>"Reach level 9 — you're at level 5"</em>. That sentence comes from the same engine that evaluates the rule, so the hint and the gate can't disagree. The certificate page itself refuses to open a certificate a player hasn't unlocked, so sharing the link doesn't get around the conditions.</p>
+
+<h2>Requiring Rubric Criteria</h2>
+<p>A certificate can require specific <strong>Rubric criteria</strong> (see <a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a>) instead of, or alongside, the Conditions engine. A player only qualifies once every required criterion reads "met," which lets you build graduated certificates — a "Graduation" certificate needing two lighter criteria, and a tougher "Distinction" certificate needing those plus a third.</p>
 
 <h2>Guild Certificates</h2>
 <p>Set <strong>Awarded to</strong> to Their guild and the certificate is made out to the team. It reads "Awarded to the team" with the guild's name, and prints the guild's numbers plus its member count. Those numbers are <strong>worked out live from the members</strong> when the certificate is opened: totals for XP, BLOO and energy, and the members' average for level, so one strong member can't speak for everyone. Players who aren't in a guild aren't shown guild certificates at all, rather than seeing one locked forever.</p>
@@ -2862,6 +2908,7 @@ HTML,
   <li><strong>The cooldown holds.</strong> A scan before the cooldown is up shows "Not ready yet" with a countdown, so scanning the same poster twice doesn't pay twice.</li>
 </ul>
 <p>See <a href="/docs/running-the-garden-as-a-gm">Running the Garden as a GM</a> for everything else a task can do, and <a href="/docs/garden-tasks">Garden Tasks</a> for the player's side.</p>
+<p><strong>Troubleshooting a missing QR code:</strong> if a task's QR code doesn't appear, open Manage Content → Tasks once — that's enough to generate it. A task you've duplicated or copied into a new cohort always gets its own fresh code, so one group's printed code is guaranteed never to work for another group's copy of the same task.</p>
 
 <h2>Milestone QR Codes: Quick-Complete</h2>
 <p>A milestone can also be completed by a scan. It completes the milestone outright for the player who scans it and pays its XP and BLOO, plus any item or achievement reward, skipping level requirements, conditions, start dates and deadlines. It's the one completion path in BLUERABBIT deliberately built to skip the rest of the system. The milestone has to be published, a second scan only says it's already completed, and the completion screen offers <strong>Back to the journey</strong>.</p>
@@ -3010,7 +3057,7 @@ HTML,
 <ol>
   <li>Export your course from its authoring tool as a <strong>SCORM 1.2</strong> package (a single <code>.zip</code> file). Check the export settings: BLUERABBIT supports 1.2 only, and a package exported to a later SCORM version won't be able to report completion here.</li>
   <li>Open the milestone, add a step, and set its <strong>Step Type</strong> to <strong>SCORM Package</strong> (in the Validate group).</li>
-  <li>Choose the <code>.zip</code> and press <strong>Upload</strong>. The package is unpacked and checked straight away. Once it's installed, the panel shows a check mark with the package's launch address, and the button becomes <strong>Replace</strong>.</li>
+  <li>Choose the <code>.zip</code> and press <strong>Upload</strong>. A progress bar shows the transfer so you can tell a large package is still working rather than wondering if the page has stalled. The package is unpacked and checked straight away. Once it's installed, the panel shows a check mark with the package's launch address, and the button becomes <strong>Replace</strong>.</li>
   <li>Set the step's rewards (XP, BLOO, EP, an item or an achievement) as you would on any other step, then press <strong>Update Step</strong>.</li>
   <li>Play through the step yourself before players reach it. Packages vary in how reliably they report completion, so one real click-through to the end is worth it. Do it again after every replacement.</li>
 </ol>
@@ -3093,19 +3140,24 @@ HTML,
 <p>A campaign is a one-time email to some or all of the people enrolled in an Adventure, written once and personalised for each recipient with merge tags. You write and send it from <strong>Admin Tools → Email Notifications</strong>. Email has to be set up for the platform first: until a platform admin connects an email service in Sys Config, the page says <em>Email isn't configured yet</em>.</p>
 
 <h2>Who Receives It</h2>
-<p>Either <strong>All enrolled players</strong>, meaning everyone enrolled in the Adventure who has an email address (GMs and NPCs included), or <strong>Selected players</strong>, picked by hand from a searchable grid of avatar cards. There's no audience based on activity, such as "hasn't logged in lately", and no guild audience. For those, hand-pick the people.</p>
+<p>Either <strong>All enrolled players</strong>, meaning everyone enrolled in the Adventure who has an email address (GMs and NPCs included), or <strong>Selected players</strong>, picked by hand from a searchable grid of avatar cards. There's no audience based on activity, such as "hasn't logged in lately", and no guild audience from here — for those, see <a href="/docs/personalising-text-with-player-tokens">Automatic Emails &amp; Audience Rules</a> below, or hand-pick the people.</p>
+<p>Email Notifications works from inside a cohort too, and lists that cohort's own players — its campaigns, send log and CSV exports are entirely its own. You don't need to go through the template to reach a cohort's roster.</p>
+<p>Want BLUERABBIT to email the right players automatically, on a schedule, without you composing anything? See <a href="/docs/automatic-emails-and-audience-rules">Automatic Emails &amp; Audience Rules</a>.</p>
 
 <h2>Merge Tags</h2>
+<p>Click the tag buttons above the compose box to insert one, or type it directly:</p>
 <ul>
-  <li><code>{{name}}</code> — the recipient's name</li>
-  <li><code>{{adventure_name}}</code> — the Adventure's title</li>
-  <li><code>{{site_name}}</code> — the platform's name</li>
+  <li><strong>Player</strong> — <code>{{name}}</code>, <code>{{first_name}}</code>, <code>{{last_name}}</code>, <code>{{email}}</code></li>
+  <li><strong>Progress</strong> — <code>{{level}}</code>, <code>{{xp}}</code>, <code>{{bloo}}</code>, <code>{{ep}}</code>, <code>{{completion}}</code>, <code>{{rank}}</code>, <code>{{latest_achievement}}</code></li>
+  <li><strong>Guild</strong> — <code>{{guild_name}}</code>, <code>{{members}}</code></li>
+  <li><strong>Adventure</strong> — <code>{{adventure_title}}</code>, <code>{{start_date}}</code>, <code>{{end_date}}</code>, <code>{{today}}</code>, <code>{{site_name}}</code></li>
 </ul>
-<p>They work in the message, not the subject line. These three are the only ones: the tokens you use in step content, like <code>{{ player.nickname }}</code>, don't apply to email. See <a href="/docs/personalising-text-with-player-tokens">Personalising Text with Player Tokens</a>.</p>
+<p>Write <code>{{tag | fallback text}}</code> to show something else when a value is blank — handy for a player who hasn't earned an achievement yet. Misspell a tag and BLUERABBIT tells you before the campaign sends, rather than mailing it out broken. Preview and "View the email" always show a real player's numbers, so you see exactly what a recipient will get. These tags work in the message, not the subject line, and they're separate from the <code>{{ player.nickname }}</code>-style tokens used in step content — see <a href="/docs/personalising-text-with-player-tokens">Personalising Text with Player Tokens</a>.</p>
 
 <h2>Delivery You Can Trust</h2>
-<p>Pressing Send locks in the exact recipient list, then delivers it from your browser <strong>ten at a time</strong> with a live progress bar. What's still pending is worked out from what has actually been sent, so nothing is lost if the tab closes or the connection drops. The campaign waits under <strong>Unfinished Campaigns</strong> with a <strong>Resume Sending</strong> button that picks up exactly where it stopped, and nobody receives it twice.</p>
-<p>A message that fails on a temporary error is retried automatically. Anything that still fails can go again with <strong>Retry failed</strong>, which never re-sends to people who already got it. Every campaign is listed under <strong>Past Campaigns</strong> with how many were delivered and how many failed, and the <strong>Send Log</strong> shows each email's status.</p>
+<p>Pressing Send opens a live console that prints every address as it goes out, a few at a time. What's still pending is worked out from what has actually been sent, so nothing is lost if the tab closes or the connection drops — you can close the tab and come back, and BLUERABBIT picks up exactly where it stopped, so nobody is ever emailed twice. The campaign also waits under <strong>Unfinished Campaigns</strong> with a <strong>Resume Sending</strong> button.</p>
+<p><strong>Dry Run</strong> walks through the whole send without actually emailing anyone, so you can check your recipient list and content first. <strong>On behalf of</strong> lets you choose who the campaign appears to come from (name and reply-to), picked from a fixed list rather than typed freely.</p>
+<p>A message that fails on a temporary error is retried automatically. Anything that still fails can go again with <strong>Retry failed</strong>, which never re-sends to people who already got it. Every campaign is listed under <strong>Past Campaigns</strong>, and the <strong>Send Log</strong> shows Target / Sent / Failed / Missing counts, with tabs to see exactly who's in each group, a CSV export per tab, and "View the email" for any recipient.</p>
 
 <h2>Good Use Cases</h2>
 <ul>
@@ -3129,13 +3181,45 @@ HTML,
                 'body'       => <<<'HTML'
 <ol>
   <li>Open <strong>Admin Tools → Email Notifications</strong>. The header shows how many eligible recipients the Adventure has.</li>
-  <li>Write a <strong>Subject</strong> and your <strong>Message</strong>. Personalise the message with <code>{{name}}</code>, <code>{{adventure_name}}</code> and <code>{{site_name}}</code>.</li>
+  <li>Write a <strong>Subject</strong> and your <strong>Message</strong>. Personalise it with the tag buttons above the compose box, and choose who it's sent <strong>On behalf of</strong>.</li>
   <li>Choose <strong>Recipients</strong>: <em>All enrolled players</em>, or <em>Selected players</em>. For a selection, search by name or email and click cards to select them; <strong>Select all shown</strong> and <strong>Clear</strong> help with large groups. Your selection holds as you page through.</li>
-  <li>Press <strong>Preview</strong>. The email opens in a new tab in the platform's email template, with your own name in place of <code>{{name}}</code>. There's no test send, so this is your one real look before it goes out.</li>
-  <li>Press <strong>Send</strong> and confirm. Keep the tab open while the progress bar runs; it counts how many have been processed, sent and failed.</li>
+  <li>Press <strong>Preview</strong>. The email opens in a new tab in the platform's email template, with your own name in place of the player tags. There's no test send, so this is your one real look before it goes out.</li>
+  <li>Not sure yet? Press <strong>Dry Run</strong> first — it walks through the whole send without emailing anyone, so you can double-check the recipient list and content.</li>
+  <li>Press <strong>Send</strong> and confirm. Keep the tab open while the live console runs; it prints each address as it's processed, sent or failed.</li>
   <li>If the tab closed or the connection dropped, come back and press <strong>Resume Sending</strong> under Unfinished Campaigns. If anything failed, press <strong>Retry failed</strong>.</li>
 </ol>
 <p>In Launch Week, two campaigns go out: a kickoff welcome the Sunday before Monday's start, and a Week Two nudge on Wednesday of Week One, sent to a hand-picked set of players who haven't made their Path choice yet.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Automatic Emails & Audience Rules',
+                'slug'       => 'automatic-emails-and-audience-rules',
+                'section'    => 'setup',
+                'sort_order' => 34,
+                'body'       => <<<'HTML'
+<p>Beyond one-off campaigns, you can set up <strong>rules</strong> that watch your players and email the right ones automatically — "remind anyone who hasn't logged in for 5 days," "congratulate anyone who just earned the Pilot achievement," "nudge anyone falling behind pace." A rule lives on your Adventure's template, so every cohort you run from it uses the same rule.</p>
+
+<h2>Who a Rule Matches</h2>
+<p>Pick from guild membership, a profile answer, an achievement or path, an item held, a milestone completed, level, XP, percent of the journey finished, days since last visit, or whether a player is behind the pace schedule or behind their guild. Combine several conditions with "match all" or "match any."</p>
+
+<h2>The Pace Schedule</h2>
+<p>Set simple checkpoints like "by the end of week 2, players should be at level 5 and 40% done." Nobody counts as behind until that week has actually passed.</p>
+
+<h2>Sends by Itself, or Asks First</h2>
+<p>You choose per rule. A rule that asks first builds today's list and waits for a GM to approve it before anything goes out; a new rule always starts in ask-first mode. A player who matches several rules on the same day only gets <strong>one automatic email</strong>, so nobody's inbox gets flooded.</p>
+
+<h2>Players Can Turn These Off</h2>
+<p>Every automatic email includes an unsubscribe link, and players can also switch automatic emails on or off per Adventure from <strong>My Account → Emails</strong>. This never affects a campaign you send by hand.</p>
+
+<h2>New Merge Tags for Rules</h2>
+<p><code>{{expected_level}}</code> and <code>{{expected_completion}}</code> (from the pace schedule) and <code>{{guild_completion}}</code> (the player's guildmates' average progress) are available alongside the usual set. See <a href="/docs/personalising-text-with-player-tokens">Personalising Text with Player Tokens</a>.</p>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/email-campaigns-to-players-concept">Email Campaigns to Your Players</a></li>
+  <li><a href="/docs/how-to-send-an-email-campaign">How to Send an Email Campaign</a></li>
+  <li><a href="/docs/your-account-profile-and-privacy">Your Account: Profile, Security &amp; Privacy</a> — the player's opt-out</li>
+</ul>
 HTML,
             ],
             [
@@ -3449,6 +3533,9 @@ HTML,
                 'body'       => <<<'HTML'
 <p>For grading at real scale — a full cohort's worth of answers on one milestone — the review screen has two tools beyond grading one card at a time: <strong>Validate All with A.I.</strong>, and a CSV round-trip for grading in a spreadsheet. The basics of the review screen are in <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</p>
 
+<h2>The Validation Queue</h2>
+<p>Manage Content's <strong>Validation</strong> tab is your one-stop review queue: every milestone across the whole Adventure that needs a GM's eyes, laid out in journey order and split into Submitted, Pending, Unanswered, Graded and Validated. Open any row to jump straight into reviewing it, instead of hunting milestone by milestone to find what's waiting on you.</p>
+
 <h2>Validate All with A.I.</h2>
 <p>On a milestone with Validate on, in an Adventure with a Claude key, the review screen has an <strong>A.I. Review</strong> panel showing how many submissions the A.I. has decided so far. <strong>Validate All with A.I.</strong> shows you a plan before anything is spent:</p>
 <ul>
@@ -3590,6 +3677,9 @@ HTML,
                 'body'       => <<<'HTML'
 <p>Stats is where you see how a whole cohort is doing: who's active, where people stall, what they earn and buy, and how long they actually spend. Open it from <strong>Stats</strong> in the Admin Tools menu (NPCs find it under Surveillance). GMs, NPCs and admins see the full dashboard. Only players are counted, so staff testing the Adventure don't skew the numbers.</p>
 
+<h2>Finding Your Way Around Stats</h2>
+<p>Stats is organized into focused panes you switch between — Overview, Engagement, Rubric, Achievements, Encounters, Profiles, Item purchases, Cooper and Players — instead of one long page you scroll through. Only the panes for features you've actually turned on appear. A <strong>Download PDF</strong> button turns the whole report (except the full player roster, which is too long for a PDF) into a clean, print-ready document with a cover page and table of contents.</p>
+
 <h2>Adventure Dashboard</h2>
 <p>Four headline figures: Total Players, Active in the last 7 days, average XP against the XP available, and overall Completion.</p>
 
@@ -3620,6 +3710,23 @@ HTML,
   <li><strong>Profiles</strong> — shown when Profile Tests is switched on. For each profile: traits, questions, how many players have a reading, their average answers, and the most common headline. The detail shows the cohort average per trait and what people came out as. See <a href="/docs/profile-tests">Profile Tests</a>.</li>
   <li><strong>Item Purchases</strong> — purchases and total BLOO spent per item. The detail lists each purchase by player, date and amount.</li>
 </ul>
+
+<h2>Challenge and SCORM Reports</h2>
+<p>Manage Content also has two dedicated reporting tabs, shown whenever your adventure actually has that kind of content:</p>
+<ul>
+  <li><strong>Challenges</strong> — every quiz you've built, with attempts, completions, pass rate and average grade at a glance. Open the full report to see every player's best attempt (or drill into any individual attempt), question by question, plus a breakdown by question across all players. Exportable as CSV.</li>
+  <li><strong>SCORM</strong> — every package you've uploaded, with how many players started it, finished it, haven't finished it, or completed the milestone it's attached to. Opens a per-player report, including players who never opened the package at all. Also CSV-exportable.</li>
+</ul>
+<p>Both tabs' summary tiles re-total themselves as you filter or search — type part of a title and the counts update to match just what's showing.</p>
+
+<h2>Where a Grade Comes From</h2>
+<p>A milestone's score follows one clear order: a reviewer's manual grade first, then a challenge's best attempt, then the average of its required scored steps, and finally plain completion. You'll always see which of these produced the number on a player's row.</p>
+
+<h2>The Rubric — Pass/Fail Criteria</h2>
+<p>Turn on <strong>Graduation Criteria</strong> in Features to build a rubric: plain-language rules like "70% average across all stages" or "no more than 2 stages below 70%." Each criterion shows as <strong>met</strong>, <strong>at risk</strong>, <strong>out of reach</strong>, or <strong>pending</strong> for every player. Tie criteria to a certificate — a "Graduation" certificate might require two criteria, a "Distinction" certificate three — and players see exactly where they stand in their Journal's Rubric tab, with an "On track for" column on your roster. See <a href="/docs/certificates-authoring">Authoring Certificates</a>.</p>
+
+<h2>Leaderboards by Any Field</h2>
+<p>Rank players by any profile field you collect — department, location, cohort, whatever you asked in a Profile Test or set up in Player Meta — rather than a fixed set of categories. It opens on whichever field actually has the most groups to compare, so you're not staring at a two-row table.</p>
 
 <h2>Players</h2>
 <p>The full roster, searchable across everyone rather than just the page you're on, and sortable by XP, BLOO, completion and last active. Click a player to load their personal dashboard in the panel below: the same Overview they see in their own Journal, with their engagement, charts, milestone and Tabi progress, achievements and guild.</p>
@@ -3847,9 +3954,14 @@ HTML,
 
 <h2>Changing Roles</h2>
 <p>Roles are switched on the <strong>Players</strong> section of Adventure Settings, where each row has a Player / GM / NPC switch. Making someone a GM asks for a second click, and the GM option only appears when your platform allows more than one Game Master. The owner's row can't be changed, and a GM has to be switched back to Player before they can be removed.</p>
+<p>Manage Players also lists everyone enrolled, including GMs and NPCs, with a role filter, and lets you switch anyone's role directly from their row — the same protections apply: the owner's role can't be changed or removed, and a lone GM can't be removed (switch them to Player first).</p>
+
+<h2>Recalculate All Players</h2>
+<p>If scores look stale after a bulk action, <strong>Recalculate All Players</strong> (on Manage Players) walks every player's progress again in small batches, with a live console and a summary of any player it couldn't process and why. It only ever touches players, never staff.</p>
 
 <h2>The Players Spreadsheet</h2>
 <p><strong>Admin Tools → Players</strong> shows the whole roster as one sortable table: level, XP, BLOO, GPA (when the Adventure grades), last login, your Player Meta fields, and a column for each milestone and achievement. It lists players only until you press <strong>Show GMs &amp; NPCs</strong>. <strong>Export CSV</strong> downloads it, with email addresses included even though they aren't shown on screen.</p>
+<p>Importing a roster from scratch? Download a CSV template built for this specific Adventure — it already includes any custom Player Meta fields you've set up — along with a short guide on what each column should contain.</p>
 
 <h2>Player Meta: Your Own Profile Fields</h2>
 <p>Player Meta is a catalogue of fields <em>you</em> define for this Adventure: department, region, job title, grade, homeroom, whatever your program needs. Nothing is fixed, and another Adventure's fields never appear in yours. Manage it on <strong>Admin Tools → Player Meta Manager</strong>.</p>
@@ -3955,7 +4067,7 @@ HTML,
 <p>The tools a GM reaches for once an Adventure is built: copying content, copying whole Adventures, fixing one player's run of a milestone, managing records, and finding things fast.</p>
 
 <h2>Duplicator</h2>
-<p><strong>Admin Tools → Duplicator</strong> copies content from this Adventure into another one, or into itself. It lists milestones with all their steps, challenges with their questions, posts, resources, achievements, Tabis, items, encounters, speakers, tasks, guilds and missions. Tick what you want (each section has <strong>All</strong> and <strong>None</strong>, and the header counts what's selected), choose the target under <strong>Duplicate into</strong> in the bar at the bottom, and press <strong>Duplicate Selected</strong>. A confirmation names the destination and counts what's going before anything copies.</p>
+<p><strong>Admin Tools → Duplicator</strong> copies content from this Adventure into another one, or into itself. Its milestone picker is grouped by Tabi (chapter), with a search box and type filter chips above it — much faster to find exactly what you want to copy when an Adventure has hundreds of milestones. It lists milestones with all their steps, challenges with their questions, posts, resources, achievements, Tabis, items, encounters, speakers, tasks, guilds and missions. Tick what you want (each section has <strong>All</strong> and <strong>None</strong>, and the header counts what's selected), choose the target under <strong>Duplicate into</strong> in the bar at the bottom, and press <strong>Duplicate Selected</strong>. A confirmation names the destination and counts what's going before anything copies.</p>
 <p>Copies are independent: new ids, no player data, and nothing in the source changes. A few things are adjusted on the way:</p>
 <ul>
   <li><strong>Guilds</strong> arrive empty. Members and XP aren't copied, and each guild gets a new join code.</li>
@@ -4132,6 +4244,9 @@ HTML,
 <h2>Adventures</h2>
 <p>Search for an Adventure and attach it to the Organization, or remove one. The search only offers Adventures that aren't in any Organization yet, so there's no way to steal another client's Adventure by accident. Each attached Adventure is listed with its enrollment link.</p>
 
+<h2>A Change to Who Can Edit an Organization</h2>
+<p>An Organization Owner can see everything in their Organization — its players, its adventures, its stats — but adding a player, attaching an adventure, or removing one is now an action only a platform Admin can take. If you're an Owner and need a change made, reach out to your BLUERABBIT admin or support.</p>
+
 <h2>On the Roadmap</h2>
 <p>These are planned but <strong>not available yet</strong>, so don't plan a rollout around them:</p>
 <ul>
@@ -4238,6 +4353,7 @@ HTML,
   <li><strong>An access level</strong> is account-wide and set here. It decides what someone can do on the platform as a whole.</li>
   <li><strong>An Adventure role</strong> (player, GM or NPC) is per Adventure, set on that Adventure's Manage Players screen. It decides what someone can do inside that one Adventure. See <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>.</li>
 </ul>
+<p>One specific case worth knowing: owning an Organization gives full visibility into it, but membership changes — adding players or adventures, removing adventures — are admin-only, regardless of role within the Organization. See <a href="/docs/organizations-managing-multiple-adventures">Organizations: Managing Multiple Adventures</a>.</p>
 <p>The access levels are:</p>
 <ul>
   <li><strong>God</strong>: full platform-wide access, including Sys Config and this page.</li>
