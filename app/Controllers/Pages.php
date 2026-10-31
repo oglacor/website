@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Legal;
 use App\Libraries\Turnstile;
 use App\Models\ContactMessageModel;
 
@@ -31,11 +32,29 @@ class Pages extends BaseController
         ]);
     }
 
+    public function terms(): string
+    {
+        return $this->legalPage('terms', 'Terms of Service');
+    }
+
     public function privacy(): string
     {
-        return view('pages/privacy', [
-            'title'     => 'Privacy Policy — BLUERABBIT',
+        return $this->legalPage('privacy', 'Privacy Policy');
+    }
+
+    public function refunds(): string
+    {
+        return $this->legalPage('refunds', 'Refund Policy');
+    }
+
+    private function legalPage(string $which, string $heading): string
+    {
+        return view('pages/' . $which, [
+            'title'     => $heading . ' — BLUERABBIT',
             'activeNav' => '',
+            'heading'   => $heading,
+            'which'     => $which,
+            'legal'     => Legal::details(),
         ]);
     }
 

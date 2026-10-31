@@ -77,8 +77,9 @@
         <h5>Company</h5>
         <a href="<?= site_url('/') ?>#waitlist-hero-anchor">Get On The Waitlist</a>
         <a href="<?= PLAY_APP_URL ?>">Get Started</a>
+        <a href="<?= site_url('terms') ?>">Terms</a>
         <a href="<?= site_url('privacy') ?>">Privacy</a>
-        <a href="#">Terms</a>
+        <a href="<?= site_url('refunds') ?>">Refunds</a>
         <?php /* GDPR: withdrawing consent must be as easy as giving it. */ ?>
         <button type="button" class="cookie-reopen" data-cookie-settings>Cookie Settings</button>
       </div>

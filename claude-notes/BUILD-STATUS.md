@@ -999,3 +999,32 @@ real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-res
   77 from this seeder + 2 pre-existing `developer`-section pages from elsewhere), smoke-tested
   6 updated slugs + the new page + the `/docs` hub via `php spark serve` — all 200, new page's
   title renders correctly.
+
+## 2026-10-30 — Legal pages: /terms, /privacy, /refunds (for the public launch)
+
+- **Ask (Bernardo, 2026-10-30):** put the app's new Terms, Privacy Policy and Refund Policy on
+  bluerabbit.io. The app (`blue@ae9227f`, Sprint 2) shows them at play.bluerabbit.io/terms etc.
+  and records who agreed to which version at sign-up and checkout.
+- **Routes:** `terms`, `privacy`, `refunds` -> `Pages::terms|privacy|refunds` -> one private
+  `legalPage()`; views `app/Views/pages/{terms,privacy,refunds}.php`, the hero and three-tab strip
+  in `partials/legal_nav.php` (a `<div role="navigation">`, per the `nav{}` gotcha above).
+  Footer "Terms" was `href="#"`; now Terms, Privacy, Refunds.
+- **Terms and Refunds are copies of the app's** (`blue` app/Views/legal/). Only links differ:
+  account pages point into the app at `PLAY_APP_URL`. **Change both repos together** and bump
+  `App\Libraries\Legal::VERSION` in both (`2026-10-30` now).
+- **Privacy was rewritten as one policy for both sites:** Part 1 the app (same facts as the app's
+  own /privacy), Part 2 this website (the 2026-08-14 text, unchanged in substance), then shared
+  sections. The old page said the app was "governed separately"; it no longer is.
+- **The business named** comes from Admin -> Settings -> **Legal** (new: `legal_entity_name`,
+  `legal_entity_address`, `legal_contact_email`, `legal_jurisdiction` in `site_settings`, no
+  migration needed). Blank prints "the operator of BLUERABBIT"; a blank email links /contact.
+  Use the same values as the app's Sys Config -> Legal.
+- **Lawyer review planned for January 2027.** Each view carries a NEEDS LEGAL REVIEW comment.
+- **Fixed on the way:** `.blog-post{padding:60px 0 100px}` overrode `.wrap`'s 32px side gutter
+  (same specificity, later in the file), so blog posts, docs pages and the old privacy page ran
+  edge to edge on phones. Now top/bottom padding only.
+- **Verified** in Chromium: 32 checks (three pages 200 signed out, the active tab, version line,
+  neutral wording and /contact fallback while settings are blank, footer links, links into the
+  app, no JS errors, no page scroll and a side gutter at 390px; Admin Settings saves the four
+  fields without touching the Resend ones, and all three pages then show the company, law,
+  address and mailto). Disposable admin and settings rows removed afterwards.
