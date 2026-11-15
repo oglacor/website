@@ -3,8 +3,10 @@
  * Turkish translation of pages/refunds.php (version 2026-10-30), shown
  * inside pages/legal/page.php at /tr/refunds.
  *
- * MACHINE TRANSLATION by an AI (Claude), 2026-11-15. NOT REVIEWED by a lawyer
- * or by a native speaker: NEEDS LEGAL AND NATIVE REVIEW BEFORE IT IS RELIED ON.
+ * MACHINE TRANSLATION by an AI (Claude), 2026-11-15, NOT REVIEWED by a lawyer
+ * or by a native speaker. Gauden approved publishing it before review on
+ * 2026-11-15; the legal and native review is still to follow. The page tells
+ * its reader it is an unreviewed A.I. translation.
  * It reuses the app's own translated words where the English is the app's.
  * The English is the reference text; change this whenever it changes.
  *

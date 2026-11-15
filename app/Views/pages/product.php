@@ -86,8 +86,8 @@
       </div>
       <div class="feature-card panel purple">
         <div class="feature-icon">&#10022;</div>
-        <h3>AI-Assisted Grading</h3>
-        <p>Open-text steps can be checked by Claude against your private rubric, at the strictness you set — instant feedback players revise against, plus Validate All for a whole cohort with the cost shown up front.</p>
+        <h3>AI Grading &amp; Cooper</h3>
+        <p>Open-text steps can be checked by Claude against your private rubric, at the strictness you set — instant feedback players revise against, plus Validate All for a whole cohort with the cost shown up front. And on every plan, Cooper, an A.I. guide players can ask about the Adventure, whenever a Claude API key is set.</p>
       </div>
       <div class="feature-card panel green">
         <div class="feature-icon">&#9889;</div>

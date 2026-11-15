@@ -1104,13 +1104,15 @@ decide the waitlist goes without Turnstile. Left as is because the removal looke
 
 ### Questions for Gauden
 Legal and launch:
-1. **Publish the translations before their review?** They go live with the next deploy. The app's
-   handover README said "do not publish one before that review". Each page says it is a machine
-   translation and that the English is "the reference text": that phrase is for the lawyer to
-   confirm too.
-2. The legal business details (Admin -> Settings -> Legal) are blank on this site; the governing
-   law value is printed inside every language's sentence, so it needs a form that reads in all.
+1. ~~Publish the translations before their review?~~ **Answered 2026-11-15: yes, Gauden approved
+   publishing them at the next deploy, before review**; the legal and native review is still to
+   follow. Each page keeps the "unreviewed A.I. translation, the English is the reference" notice
+   (the phrase is still for the lawyer to confirm).
+2. The legal business details (Admin -> Settings -> Legal) are blank on this site: **Gauden** fills
+   them in himself. The governing law value is printed inside every language's sentence, so it
+   needs a form that reads in all.
 3. Is the site at the apex yet? The app's legal links default to `https://bluerabbit.io/...`.
+   **Still open** (being explained to Gauden).
 4. When public sign-up opens, the header and product page CTAs still say "Join Waitlist".
 5. The app can now send a player's language: `Legal::url()` plus `?lang=<player_lang>`.
 
@@ -1119,28 +1121,68 @@ Facts to confirm (from the research agents):
    look, Menu, Help & Cooper, Emails, Connections, Players, Danger zone) that the 2026-10-27 sync
    was told had been reverted. The pages now describe the panes. Confirm.
 7. Plan caps: the pages keep 90/3/50MB and 250/20/200MB; only storage is enforced in the app.
-8. Is Play now (guests) live on play.bluerabbit.io? Mention that Launch Week is playable there?
-9. Which public plans include Cooper, and is there a platform Cooper key on play.bluerabbit.io?
-10. Is the automatic-email scheduled sender running on play.bluerabbit.io?
+8. ~~Is Play now (guests) live on play.bluerabbit.io?~~ **Yes** (hedges removed). Mention that
+   Launch Week is playable there? Still open.
+9. ~~Which public plans include Cooper?~~ **Every plan**, whenever a Claude key is set (applied;
+   see the follow-up below for the account-key point).
+10. ~~Is the automatic-email scheduled sender running?~~ **Not yet** (not urgent): the pages now
+    describe Run now, not scheduled sending.
 11. Is Turnstile on for the hosted app (the pages say so)? Does play.bluerabbit.io keep the New
     view as its default?
-12. Stripe's portal has no monthly/yearly switch. Intended?
+12. ~~Stripe's portal has no monthly/yearly switch.~~ **Not built yet** (billing setup not
+    finished); no page promises it.
 13. Enterprise: which rules will a new corporate server run (Organizations' Stats tab and Remove
     Player depend on it)? Is presenting Custom Labels and Images as the white-label branding right?
 
 Wording to approve on public pages:
-14. Sign-ins recorded with network address and browser, kept 12 months; emails in English "for
-    now"; refunds of unused yearly months made by the team on request, ending the plan at once;
-    drand named on the Prize Draws page; "not offered on the self-serve platform, on any plan" for
-    Enterprise features; the guest page saying Cooper doesn't talk to guests.
+14. **Approved as written (2026-11-15):** sign-ins recorded with network address and browser, kept
+    12 months; emails in English "for now"; refunds of unused yearly months made by the team on
+    request; drand named on the Prize Draws page. Still to approve: "not offered on the self-serve
+    platform, on any plan" for Enterprise features; the guest page saying Cooper doesn't talk to
+    guests.
 
 App product questions (details in the findings file):
-15. Buying a missed deadline or an unlock with BLOO has no price field, so it is left out of the
-    docs.
+15. Buying a missed deadline or an unlock with BLOO: the app's F4 (`blue@02f0157`) adds the
+    milestone Unlock cost / Deadline cost fields, but their save lands in a later commit. Still left
+    out of the docs until the lead says so.
 16. The Classic menu has no Garden rows.
 17. "Choose Nickname" (the step type menu) vs "Choose Display Name" (everywhere else).
-18. Milestone QR codes and magic links inside cohorts point at the template (the docs carry a
-    caveat).
+18. ~~Milestone QR codes inside cohorts~~ fixed in the app's F4 (`blue@02f0157`), docs updated.
+    Achievement Magic Links and unique-code links in a cohort still point at the template (the docs
+    keep that caveat).
 19. Magic codes skip an achievement's Max Players.
 20. A guild's "Auto-assign on login" is ignored.
 21. Three editor fields do nothing (left out of the docs).
+
+### Follow-up, same day: Gauden's answers and the app's F4 applied
+
+- **Legal translations**: publishing approved by Gauden on 2026-11-15, before review; the
+  notes advising against publishing before review are gone (here, `LEGAL-TRANSLATIONS.md`, the views' header
+  comments, Start Here). The notice on each translated page stays. Business details: Gauden.
+- **Play now is live** on play.bluerabbit.io: getting-started, playing-as-a-guest and the
+  developer page say so without a hedge.
+- **Cooper is on every plan** and works whenever a Claude key is set: complete-adventure-settings-
+  reference, setting-up-ai-grading-and-gift-cards, understanding-plans-basic-pro-enterprise, the
+  pricing page (Basic and Pro cards, the note under them), the product page (the AI card), and the
+  developer pages. **For Gauden, a fact to check:** the app has no account-level key. Cooper uses the
+  Adventure's own key (or its template's), else the platform-wide key in Sys Config -> Cooper, which
+  only a platform administrator sets. So on play.bluerabbit.io a customer's key goes on their
+  Adventure (Connections); "your account's key as the fallback" exists only where the customer runs
+  their own platform. The pages say "your Adventure's key, or else the platform's".
+- **Automatic emails** (the scheduled sender is not running yet; "Run now" sends from the GM's
+  browser without it): automatic-emails-and-audience-rules rewritten around Run now (the schedule
+  settings described as what applies once scheduled sending is on); reworded in
+  email-campaigns-to-players-concept, announcements-keeping-an-adventure-alive,
+  worked-example-two-week-onboarding-adventure (two places) and meet-launch-week-example-adventure.
+  Left as they are: notifications and your-account-profile-and-privacy (they describe an email
+  arriving and the opt-out, true of Run now sends too).
+- **Stripe**: billing-and-plans says monthly or yearly is chosen at subscribe time and moving an
+  existing subscription between them isn't self-serve yet. No page promised the switch.
+- **The app's F4 (`blue@02f0157`)**: a blank Stock on a consumable or gift card now saves as
+  unlimited (item-shop-building-an-economy); a milestone's QR code serves the template and every
+  cohort and counts where the player plays (adventure-templates-and-cohorts,
+  qr-codes-live-and-hybrid-events, completing-milestones-and-steps). The two caveats are removed
+  from `BLUE-FINDINGS-FROM-DOCS-SYNC-2026-11-15.md` too. The new milestone Unlock / Deadline cost
+  fields are not documented yet (their save lands later).
+- Verified: `php -l`; seeded (92 rows, second run adds none); 694+ links resolve; content check;
+  every changed page 200 with its title; Edge headless over the changed pages at 390 and 1440.

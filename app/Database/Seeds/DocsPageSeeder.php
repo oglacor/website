@@ -101,7 +101,7 @@ HTML,
 <p>Starting your own organization? New accounts start on the <strong>Basic</strong> plan: free, with up to 90 players and 3 Adventures across your whole account and 50MB of file storage. Upgrade to Pro whenever you need more room. See <a href="/docs/setting-up-your-organization">Setting Up Your Organization</a> for the full setup, and <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for the plans.</p>
 
 <h2>2. Or Just Press Play Now</h2>
-<p>Some BLUERABBIT sites run an open demo. Where they do, the sign-in page has a <strong>Play now</strong> button above the form that drops you straight into the demo adventure on a guest account, with no sign-up. Guests can play, but some things are kept for real accounts. See <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
+<p>BLUERABBIT runs an open demo at play.bluerabbit.io: its sign-in page has a <strong>Play now</strong> button above the form that drops you straight into the demo adventure on a guest account, with no sign-up. Guests can play, but some things are kept for real accounts. See <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
 
 <h2>3. Join an Adventure</h2>
 <p>An <strong>Adventure</strong> is a single learning journey: an onboarding program, a training course, a live bootcamp. You join one when a Game Master enrolls you, or when you open an enrollment link they've shared. If you open an enrollment link, a magic link or a QR code while you're signed out, BLUERABBIT keeps it while you sign in or sign up, then takes you straight to it.</p>
@@ -139,7 +139,7 @@ HTML,
                 'section'    => 'user',
                 'sort_order' => 2,
                 'body'       => <<<'HTML'
-<p>Some BLUERABBIT sites run an open demo that anyone can play without signing up. Where one is running, the sign-in page has a <strong>Play now</strong> button above the form, with the line <em>No sign-up. You get a guest account in this browser.</em></p>
+<p>BLUERABBIT runs an open demo at play.bluerabbit.io that anyone can play without signing up. Its sign-in page has a <strong>Play now</strong> button above the form, with the line <em>No sign-up. You get a guest account in this browser.</em></p>
 
 <h2>Starting</h2>
 <p>Press <strong>Play now</strong>. You may be asked to complete a quick Cloudflare check that you're human first. BLUERABBIT then makes a guest account with a made-up name (something like "Swift Comet 48"), enrolls it in the demo adventure as a player, puts it in a guild if the adventure has guilds, and takes you straight onto the journey.</p>
@@ -520,7 +520,7 @@ HTML,
 <p>Every answer you give is kept. Your Journal's <strong>My Answers</strong> tab, and the <strong>Your answer</strong> link on a secret you unlocked, open a milestone's read-back: each step that asked you something, the question, and what you answered. See <a href="/docs/my-work-journal-and-history">The Journal</a>.</p>
 
 <h2>Quick-Complete via QR Code</h2>
-<p>Some Milestones carry a scannable QR code that completes them directly, bypassing the normal prerequisite chain entirely. You'll typically see this at in-person events or bootcamp sessions: scan, done, move to the next station. You need to be logged in and enrolled in the adventure; if you scan while signed out, BLUERABBIT keeps the code while you sign in and then records it. Each cohort of an adventure has its own code, so a scan always counts in the one you're in, and scanning the same code again doesn't pay out twice.</p>
+<p>Some Milestones carry a scannable QR code that completes them directly, bypassing the normal prerequisite chain entirely. You'll typically see this at in-person events or bootcamp sessions: scan, done, move to the next station. You need to be logged in and enrolled in the adventure; if you scan while signed out, BLUERABBIT keeps the code while you sign in and then records it. A scan always counts in the adventure you're playing (a cohort shares its template's milestone codes), and scanning the same code again doesn't pay out twice.</p>
 
 <h2>Related</h2>
 <ul>
@@ -1734,7 +1734,7 @@ HTML,
 <p>Achievements are edited on the template, but who holds one is the cohort's. A cohort's Manage Content has its own <strong>Achievements</strong> tab for that: open an achievement to see the players in this cohort who hold it, remove one with a two-click Remove, give it to someone with <strong>Add</strong>, or upload a CSV of email addresses. A player on another path of the same branch is shown with the path they're on and a two-click <strong>Move here</strong>. Nothing reloads. <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a> covers the rest.</p>
 
 <h2>QR Codes and Magic Links</h2>
-<p>Achievements live on the template, but their QR codes are made per cohort, so a printed code credits the cohort it was made for. To get a cohort's QR code, open the achievement from inside that cohort; the editor tells you which Adventure the code redeems into. A milestone's QR code doesn't work this way: it always counts in the template, so for a cohort use an achievement or task code. A typed magic code works in every cohort and credits whichever Adventure the player redeems it in, but the editor's <strong>Magic Link</strong> and unique-code links point at the template, so in a cohort share the typed code or the cohort's QR instead. See <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes — Live &amp; Hybrid Event Checkpoints</a>.</p>
+<p>Achievements live on the template, but their QR codes are made per cohort, so a printed code credits the cohort it was made for. To get a cohort's QR code, open the achievement from inside that cohort; the editor tells you which Adventure the code redeems into. A milestone's QR code is simpler still: one printed code serves the template and every cohort, and a scan counts in the cohort the player is playing. A typed magic code works in every cohort and credits whichever Adventure the player redeems it in, but the editor's <strong>Magic Link</strong> and unique-code links point at the template, so in a cohort share the typed code or the cohort's QR instead. See <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes — Live &amp; Hybrid Event Checkpoints</a>.</p>
 
 <h2>The A.I. Key</h2>
 <p>Save your Claude API key once, on the template's <strong>Connections</strong> pane, and every cohort uses it. A cohort's Connections pane says when it's using the template's key; save a key there only if that cohort should use a different one. <strong>Test Key</strong> makes one real call and tells you whose key answered. Cooper uses the same key when an Adventure has one, so its conversations in every cohort are billed to it too. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
@@ -1789,7 +1789,7 @@ HTML,
 <p>You agree to the Terms of Service and the Privacy Policy when you create your account: the sign-up form has a box for it, and the account isn't created without it. Before you subscribe, the <strong>Subscription &amp; Billing</strong> page shows the trial and refund rules in plain words, with a second box: <em>I agree to the Terms of Service, including the refund policy.</em> Checkout won't open until it's ticked. The app keeps which version of the Terms you agreed to, and when.</p>
 
 <h2>Upgrading and Your Pro Trial</h2>
-<p>Plans are on the <strong>Subscription &amp; Billing</strong> page in the app (the <strong>View plans &amp; upgrade</strong> button on the Billing tab of My Account takes you there). Each plan card has a <strong>Monthly</strong> / <strong>Yearly</strong> switch and a <strong>Subscribe</strong> button that takes you to a secure Stripe checkout. Your current plan is marked <strong>Your current plan</strong>.</p>
+<p>Plans are on the <strong>Subscription &amp; Billing</strong> page in the app (the <strong>View plans &amp; upgrade</strong> button on the Billing tab of My Account takes you there). Each plan card has a <strong>Monthly</strong> / <strong>Yearly</strong> choice and a <strong>Subscribe</strong> button that takes you to a secure Stripe checkout. Choose monthly or yearly when you subscribe: moving an existing subscription from one to the other isn't something you can do yourself yet. Your current plan is marked <strong>Your current plan</strong>.</p>
 <p>First-time Pro subscribers get a <strong>30-day free trial</strong>:</p>
 <ul>
   <li><strong>A card is required up front.</strong> Stripe asks for it when the trial starts, whichever interval you pick.</li>
@@ -3228,7 +3228,7 @@ HTML,
 <p>Which fields appear depends on the type:</p>
 <ul>
   <li><strong>Cost</strong> (in BLOO) and <strong>Level</strong>, the level a player needs to buy it: for everything sold: consumables, keys, Tabi pieces and gift cards.</li>
-  <li><strong>Stock</strong>: how many the shop can sell, for consumables, Tabi pieces and gift cards. For a Tabi piece, blank means unlimited. For consumables and gift cards, <strong>set a number</strong>: despite the "Unlimited" placeholder, a blank stock saves as 0 and the item shows as Sold Out. Enter 99999 or more and the shop shows it as unlimited (∞).</li>
+  <li><strong>Stock</strong>: how many the shop can sell, for consumables, Tabi pieces and gift cards. Leave it blank for unlimited, and the shop shows ∞.</li>
   <li><strong>Max per player</strong>: for consumables and gift cards; leave it at 0 for no limit. Keys, Rewards and Tabi pieces are always one per player.</li>
   <li><strong>Display in shop</strong>: Visible or Hidden, for consumables, Tabi pieces and gift cards. A hidden item is kept out of the shop, for things you only want handed out by a Find Item step or by you.</li>
   <li><strong>Group</strong>: a colour category for consumables and gift cards, shown as a badge in the shop. When an item is in a group, its Max per player counts everything the player holds from that group, so you can cap "any two potions" rather than two of each.</li>
@@ -3513,7 +3513,7 @@ HTML,
 <p>Because it skips everything, it's not the tool for anything you actually want gated. Reserve it for milestones where "being physically present and scanning" is the whole point.</p>
 
 <h2>One Code Per Cohort</h2>
-<p>A QR code belongs to the adventure it was made in, so each cohort of a template has its own. An achievement lives on the template, but its QR code is made per cohort: open the achievement from inside the cohort you're printing for, and the editor tells you which adventure the code redeems into. A milestone's code is the exception: the one the milestone builder downloads always counts in the milestone's own adventure, so it works on an adventure that isn't a template, but not for a template's cohorts, whose players aren't enrolled in the template. For a cohort, use an achievement or task code. Tasks belong to each cohort too. A cohort's copy of a QR task starts without a code, so open it on that cohort's Tasks tab and save it to issue one. Printing one cohort's code for another sends every scan to the wrong adventure.</p>
+<p>A QR code belongs to the adventure it was made in, so each cohort of a template has its own. An achievement lives on the template, but its QR code is made per cohort: open the achievement from inside the cohort you're printing for, and the editor tells you which adventure the code redeems into. A milestone's code is the exception: the one the milestone builder downloads serves the template and all its cohorts, and each scan counts in the cohort the player is playing, so one printed code covers every cohort. Tasks belong to each cohort too. A cohort's copy of a QR task starts without a code, so open it on that cohort's Tasks tab and save it to issue one. Printing one cohort's code for another sends every scan to the wrong adventure.</p>
 
 <h2>Before the Event</h2>
 <ul>
@@ -3714,7 +3714,7 @@ HTML,
 
 <h2>Keeping Momentum Between Sessions</h2>
 <p>Self-paced Adventures lose momentum fastest in the gap between live sessions or milestones. A short post timed to land a few days after a deadline, or right as a new chapter opens, does more for completion rates than almost any content change: it's a nudge, not a rebuild.</p>
-<p>A Wall post waits for players until they next log in. For people who aren't coming back on their own, send an <a href="/docs/email-campaigns-to-players-concept">email campaign</a> as well, or let an <a href="/docs/automatic-emails-and-audience-rules">automatic email</a> nudge whoever has been away for a few days.</p>
+<p>A Wall post waits for players until they next log in. For people who aren't coming back on their own, send an <a href="/docs/email-campaigns-to-players-concept">email campaign</a> as well, or keep an <a href="/docs/automatic-emails-and-audience-rules">automatic email rule</a> that finds whoever has been away for a few days, ready to send with <strong>Run now</strong>.</p>
 
 <h2>A Simple Cadence That Works</h2>
 <p>For a multi-week program: one announcement at kickoff, one at the midpoint calling out standings, and one heading into the final stretch. Add ad hoc ones for anything time-sensitive, but a predictable, light cadence beats either silence or noise.</p>
@@ -3748,7 +3748,7 @@ HTML,
   <li><strong>Players matching rules</strong>: a guild, a profile field, an achievement, an item, a milestone, progress and more, the same rules automatic emails use. Who gets it is worked out when you press Send, and the count shows before you do. <strong>Use as a selection</strong> turns today's matches into a list you can adjust by hand.</li>
 </ul>
 <p>Email Notifications works from inside a cohort too, and lists that cohort's own players: its campaigns, send log and CSV exports are entirely its own. You don't need to go through the template to reach a cohort's roster.</p>
-<p>Want BLUERABBIT to email the right players automatically, on a schedule, without you composing anything? See <a href="/docs/automatic-emails-and-audience-rules">Automatic Emails &amp; Audience Rules</a>. Need to chase the players who still owe you work on one milestone? The review pages have their own <a href="/docs/reviewing-and-grading-submissions-in-bulk">Remind players</a>.</p>
+<p>Want a reusable email that finds the right players and writes itself, ready to send with one press of <strong>Run now</strong>? See <a href="/docs/automatic-emails-and-audience-rules">Automatic Emails &amp; Audience Rules</a>. Need to chase the players who still owe you work on one milestone? The review pages have their own <a href="/docs/reviewing-and-grading-submissions-in-bulk">Remind players</a>.</p>
 
 <h2>Merge Tags</h2>
 <p>Click a tag to put it where the cursor is, in the message or the subject, or type it directly:</p>
@@ -3822,7 +3822,7 @@ HTML,
                 'section'    => 'setup',
                 'sort_order' => 36,
                 'body'       => <<<'HTML'
-<p>Beyond one-off campaigns, you can set up <strong>rules</strong> that watch your players and email the right ones automatically: "remind anyone who hasn't logged in for 5 days," "congratulate anyone who just earned the Pilot achievement," "nudge anyone falling behind pace." They're on the <strong>Automatic</strong> tab of Email Notifications. A rule lives on your Adventure's template, so every cohort you run from it uses the same rule for its own players; the tab's <strong>Where the rules run</strong> lists those cohorts.</p>
+<p>Beyond one-off campaigns, you can set up <strong>rules</strong> that find the right players and write their email for you: "remind anyone who hasn't logged in for 5 days," "congratulate anyone who just earned the Pilot achievement," "nudge anyone falling behind pace." They're on the <strong>Automatic</strong> tab of Email Notifications. A rule lives on your Adventure's template, so every cohort you run from it uses the same rule for its own players; the tab's <strong>Where the rules run</strong> lists those cohorts.</p>
 
 <h2>Who a Rule Matches</h2>
 <p>Pick from guild membership, a profile field, an achievement or path, an item held, a milestone completed, level, XP, how much of the journey is completed, the last visit, the pace schedule, or how a player compares with their guild. Each condition can be negated ("is not"), and you combine several with "every rule below" or "any rule below". Each condition shows how many players it alone lets through, and the rule shows how many match right now. Staff are left out unless you tick <strong>Include GMs and NPCs</strong>. Who matches is worked out again every day, so people come and go from the list as they progress.</p>
@@ -3831,17 +3831,12 @@ HTML,
 <h2>The Pace Schedule</h2>
 <p>Set simple checkpoints like "by the end of week 2, players should be at level 5 and 40% done." Weeks count from the Adventure's start date, and nobody counts as behind until that week has actually passed. The schedule belongs to the template.</p>
 
-<h2>When It Sends</h2>
-<ul>
-  <li><strong>Checked daily from</strong> an hour you choose, in the Adventure's time zone.</li>
-  <li><strong>At most once every</strong> N days per player; 0 means each player gets it only once, ever.</li>
-  <li>An optional <strong>First day</strong> and <strong>Last day</strong>. A cohort whose course has ended stops getting them anyway.</li>
-</ul>
-<p>A player who matches several rules on the same day only gets <strong>one automatic email</strong>, so nobody's inbox gets flooded. <strong>Run now</strong> runs a rule straight away rather than waiting for its hour; it still runs only once that day.</p>
-<p>Rules only send when the platform's automatic sender runs. The Automatic tab says when it last ran; if it never has, ask your administrator to switch it on.</p>
+<h2>When It Sends: Run Now</h2>
+<p><strong>Today, a rule sends when you press Run now.</strong> Sending on a daily schedule isn't switched on for the hosted platform yet, so a rule never goes out on its own: open the Automatic tab when you want it, press <strong>Who gets it today</strong> to see the list, then <strong>Run now</strong>. The email is made for today's matches and sent from your browser, line by line, like any campaign. A rule runs only once a day for each cohort.</p>
+<p>Each rule also keeps the settings it will use once scheduled sending is on: the hour it is <strong>checked daily from</strong> (in the Adventure's time zone), <strong>at most once every</strong> N days per player (0 means each player gets it only once, ever), and an optional <strong>First day</strong> and <strong>Last day</strong>. The "once every N days" limit already applies when you run a rule by hand, and a player who matches several rules on the same day gets only <strong>one automatic email</strong>, so nobody's inbox gets flooded.</p>
 
-<h2>Sends by Itself, or Asks First</h2>
-<p>You choose per rule. A rule that <strong>asks first</strong> builds today's list and waits under <strong>Waiting for approval</strong>, showing who is on it and the email itself. <strong>Approve &amp; send</strong> sends it; <strong>Turn down</strong> sends nothing, and the rule tries again tomorrow. A new rule always starts in ask-first mode; switch it to <strong>Send by itself</strong> once you trust what it sends. Each rule can be switched off without deleting it, and deleting one keeps everything it already sent in the Send Log.</p>
+<h2>Sends Straight Away, or Asks First</h2>
+<p>You choose per rule. When you run a rule that <strong>asks first</strong>, it builds today's list and waits under <strong>Waiting for approval</strong>, showing who is on it and the email itself. <strong>Approve &amp; send</strong> sends it; <strong>Turn down</strong> sends nothing. A rule set to <strong>Send by itself</strong> sends as soon as you run it. A new rule always starts in ask-first mode; switch it once you trust what it sends. Each rule can be switched off without deleting it, and deleting one keeps everything it already sent in the Send Log.</p>
 <p><strong>What ran here</strong> lists, day by day, what each rule matched, how many were on the list and what happened.</p>
 
 <h2>Players Can Turn These Off</h2>
@@ -4286,6 +4281,7 @@ HTML,
   <li>Press <strong>Test Key</strong>.</li>
 </ol>
 <p>The key is <strong>stored encrypted</strong>. The page never shows it back: once a key is saved, the box only says so. Leaving the box blank keeps it, pasting a new key replaces the old one, and <strong>Remove Key</strong> deletes it.</p>
+<p><strong>Cooper is on every plan</strong>, Basic included, and works whenever a key is set: your Adventure's own key here, or else the platform's key. For teams BLUERABBIT sets up and runs directly, we add the key for you.</p>
 <p>Text validation runs on Claude Haiku at well under a cent per check; Cooper costs roughly a cent per player question. For bulk runs, Validate All shows you an estimate before it spends anything and a running total afterwards.</p>
 
 <h2>Test Key</h2>
@@ -4594,7 +4590,7 @@ HTML,
 <p>See <a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a>.</p>
 
 <h2>Help &amp; Cooper</h2>
-<p><strong>Cooper</strong>: the switch for Cooper, the A.I. guide players can ask about this Adventure. It also needs a Claude key (Connections, or the platform's) and a plan that includes it.</p>
+<p><strong>Cooper</strong>: the switch for Cooper, the A.I. guide players can ask about this Adventure. Cooper is on every plan. It runs on a Claude API key: the Adventure's own (Connections, below), or else the platform's, so it works whenever a key is set.</p>
 <p><strong>Cooper Context</strong> is the Adventure's knowledge base for Cooper. <strong>Players never see it.</strong> Use it for everything Cooper can't work out from the Adventure itself: what the program is for, who the players are, house rules, dates, who to contact, and the words your organization actually uses. Cooper reads it on every conversation and treats it as authoritative. Write for the assistant, not for the player, and don't put answers, codes or solutions here. Cooper reads the first 100,000 characters.</p>
 <p><strong>Cooper's Character</strong> gives the assistant a different name, face and voice for this Adventure:</p>
 <ul>
@@ -5008,7 +5004,7 @@ HTML,
   <li>A Branch Choice into Engineering / Sales / Operations tracks</li>
   <li>An event schedule for orientation day, and a QR code at the door that awards an "Attended Orientation" badge</li>
   <li>A "Launch-Ready" certificate that unlocks when its conditions are met</li>
-  <li>Announcements at kickoff and at the Week Two handoff, plus two email campaigns and a pace schedule behind an automatic nudge</li>
+  <li>Announcements at kickoff and at the Week Two handoff, plus two email campaigns and a pace schedule behind an email rule for anyone falling behind</li>
   <li>A roster loaded from one CSV file, with each new hire's department as a Player Meta field the Stats page can break results down by</li>
 </ul>
 
@@ -5054,13 +5050,13 @@ HTML,
 <p>Wednesday of Week One is an in-person orientation day. Its three sessions (a welcome talk, a benefits walkthrough and a team lunch) go on the <a href="/docs/event-schedule-concept">Event Schedule</a> with their rooms, so the schedule doubles as the day's agenda. Attendance is an "Attended Orientation" achievement whose QR code is printed at the door: scan on the way in, badge earned, no submission required. The GM asks everyone to log in on their phone the day before, because a scan from a logged-out phone has to be repeated after signing in. See <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes</a>.</p>
 
 <h2>Keeping It Alive Week Two</h2>
-<p>The GM posts an <a href="/docs/announcements-keeping-an-adventure-alive">announcement</a> on the Wall the day Week Two opens, and a second one midway through calling out the department leaderboard standings. Two <a href="/docs/how-to-send-an-email-campaign">email campaigns</a> go out as well: a kickoff welcome the Sunday before, and a Week Two nudge to the new hires who haven't chosen their track yet. A pace schedule ("by the end of week 1, level 3 and 50% of the journey") sits behind one <a href="/docs/automatic-emails-and-audience-rules">automatic email</a> that nudges anyone who falls behind; it asks the GM before each send. Open Text steps in Week Two have A.I. Validation on, so each answer is checked before the new hire continues and HR is reviewing already-revised answers instead of first drafts (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>).</p>
+<p>The GM posts an <a href="/docs/announcements-keeping-an-adventure-alive">announcement</a> on the Wall the day Week Two opens, and a second one midway through calling out the department leaderboard standings. Two <a href="/docs/how-to-send-an-email-campaign">email campaigns</a> go out as well: a kickoff welcome the Sunday before, and a Week Two nudge to the new hires who haven't chosen their track yet. A pace schedule ("by the end of week 1, level 3 and 50% of the journey") sits behind one <a href="/docs/automatic-emails-and-audience-rules">automatic email rule</a> that finds anyone who falls behind; the GM runs it with <strong>Run now</strong> and approves each send. Open Text steps in Week Two have A.I. Validation on, so each answer is checked before the new hire continues and HR is reviewing already-revised answers instead of first drafts (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>).</p>
 
 <h2>The Finish Line: A Certificate</h2>
 <p>Onboarding should end with something a new hire can keep. A "Launch-Ready" certificate, created on Manage Content's <strong>Certificates</strong> tab, carries the company logo and the Head of People's signature, and it unlocks on two conditions: <strong>Complete This Tabi</strong> set to Week One, and <strong>Level</strong> set to the level that awards the Launch-Ready rank. Until both are met it sits locked on each new hire's Achievements page, listing exactly what's still missing ("Reach level 6 — you're at level 4"). Once they are, it opens, ready to print. See <a href="/docs/certificates-authoring">Certificates for GMs</a> and <a href="/docs/conditions-when-things-unlock">Conditions</a>.</p>
 
 <h2>What Shipped</h2>
-<p>Two Tabis, roughly a dozen Milestones plus two Challenges, around a dozen different Step types, a rank ladder, three guilds, a small shop, one branch, a profile test spread across Week One, an orientation-day schedule with one QR check-in, a certificate gated by conditions, two announcements, two email campaigns and one automatic nudge: built and published before the Monday start date, ready to hand off to HR without a single line of code.</p>
+<p>Two Tabis, roughly a dozen Milestones plus two Challenges, around a dozen different Step types, a rank ladder, three guilds, a small shop, one branch, a profile test spread across Week One, an orientation-day schedule with one QR check-in, a certificate gated by conditions, two announcements, two email campaigns and one email rule for anyone falling behind: built and published before the Monday start date, ready to hand off to HR without a single line of code.</p>
 
 <h2>Related</h2>
 <ul>
@@ -5274,7 +5270,7 @@ HTML,
 </ul>
 <p>Pro raises all three caps; Enterprise removes them. If you're outgrowing Basic, Pro is a self-serve upgrade from Subscription &amp; Billing in the app. No sales conversation is needed.</p>
 <p>Storage is counted per account. See <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for exactly what counts toward it.</p>
-<p>Everything you build with is the same on Basic and Pro: the Journey Builder, every step type, Challenges, the Item Shop, Guilds, the Garden, Stats and its segments, custom player data fields, email campaigns, CSV uploads and every language. Pro gives you more room for it, not a different product.</p>
+<p>Everything you build with is the same on Basic and Pro: the Journey Builder, every step type, Challenges, the Item Shop, Guilds, the Garden, Stats and its segments, custom player data fields, email campaigns, CSV uploads, every language, and Cooper, the A.I. assistant (it runs on a Claude API key you add to your Adventure; see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>). Pro gives you more room for it, not a different product.</p>
 
 <h2>Pro to Enterprise: Scale, and a Few Features Only Enterprise Has</h2>
 <p>Enterprise is built around running <strong>many Adventures as one managed relationship</strong>, and the setup work that comes with that at real scale. A handful of features exist only on Enterprise. They are not offered on the self-serve platform, on any plan:</p>
@@ -5480,7 +5476,7 @@ HTML,
   <li><code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> are the only copies: the app answers its own <code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> with a permanent redirect to the addresses in its Sys Config, Legal pane (default <code>https://bluerabbit.io/terms</code> and so on). This site must answer at those addresses.</li>
   <li>The app records the Terms version each person agrees to at sign-up and checkout. When the Terms change in substance, bump <code>App\Libraries\Legal::VERSION</code> here and the app's own <code>Legal::VERSION</code> together (both <code>2026-10-30</code>).</li>
   <li>The business named on them (legal name, address, contact email, governing law) comes from <em>Admin &rarr; Settings &rarr; Legal</em>. Blank fields print neutral wording, so the pages work before they are filled in.</li>
-  <li><strong>Translations</strong>: German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish and Simplified Chinese, at <code>/de/terms</code>, <code>/es/privacy</code> and so on, with a language strip on every legal page. <code>/terms?lang=es_MX</code> (the app's own locale names work) forwards to the translation, so the app can send its player's language. <strong>Every translation was made by an AI and has not been reviewed by a lawyer or a native speaker</strong>; each one says so above its text and links the English, the reference. A lawyer's review of the English is planned for January 2027. Notes for the reviewers, and how to hold a language back: <code>claude-notes/LEGAL-TRANSLATIONS.md</code>.</li>
+  <li><strong>Translations</strong>: German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish and Simplified Chinese, at <code>/de/terms</code>, <code>/es/privacy</code> and so on, with a language strip on every legal page. <code>/terms?lang=es_MX</code> (the app's own locale names work) forwards to the translation, so the app can send its player's language. <strong>Every translation was made by an AI and has not been reviewed by a lawyer or a native speaker</strong>; each one says so above its text and links the English, the reference. Gauden approved publishing them before that review (15 November 2026). A lawyer's review of the English is planned for January 2027. Notes for the reviewers, and how to hold a language back: <code>claude-notes/LEGAL-TRANSLATIONS.md</code>.</li>
 </ul>
 
 <h2>Deploying</h2>
@@ -5494,8 +5490,8 @@ HTML,
 
 <h2>What Is Open for Launch</h2>
 <ol>
-  <li><strong>The legal business details</strong> are blank until someone fills in <em>Admin &rarr; Settings &rarr; Legal</em> on the server (the same values as the app had).</li>
-  <li><strong>Publishing the translations before their review</strong> is a decision: they go live with the next deploy of this site. Each page tells its reader it is a machine translation and links the English.</li>
+  <li><strong>The legal business details</strong> (<em>Admin &rarr; Settings &rarr; Legal</em> on the server) are blank: Gauden fills them in himself.</li>
+  <li><strong>The translated legal pages go live with the next deploy.</strong> Gauden approved publishing them before review on 15 November 2026; each page tells its reader it is an unreviewed A.I. translation and links the English. The legal and native review is still to follow.</li>
   <li><strong>The apex domain.</strong> The app's legal links point at <code>bluerabbit.io</code>. If the apex still serves the old site, this site's cutover from its subdomain (<code>claude-notes/DEPLOY.md</code>, Part 2) comes first.</li>
   <li><strong>Waitlist or sign-up.</strong> The header and the product page still ask visitors to join the waitlist, while pricing links straight to the app. When public sign-up opens, those calls to action change.</li>
   <li><strong>The home page's waitlist form and Turnstile.</strong> The form in the hero no longer draws the Turnstile widget (removed in commit <code>bce6e98</code>), but <code>Waitlist::store()</code> still asks Turnstile. Wherever both keys are set, every signup from the home page is refused with "We couldn't verify that you're human". Check the server, then either put <code>view('partials/turnstile_widget', ['action' =&gt; 'waitlist'])</code> back in the form, or decide the waitlist goes without it.</li>
@@ -5703,7 +5699,7 @@ HTML,
 <ul>
   <li>A CodeIgniter 4.7 application on PHP 8.2 and MySQL or MariaDB (tables prefixed <code>br_</code>), served at play.bluerabbit.io and on a few corporate servers. Each server is a full checkout with its own <code>.env</code> and its own database.</li>
   <li>It is the successor of the original BLUERABBIT, a WordPress theme. Adventures can be imported from a WordPress install, and the app can run an imported adventure exactly as the WordPress build did (see the switches below).</li>
-  <li>Billing is Stripe (Basic free; Pro monthly or yearly with a 30-day trial that takes a card up front; the refund rule in the Terms). The A.I. features (Cooper, the assistant, and the A.I. review of answers) call Anthropic's Claude with an adventure's own key or the platform's. Email goes through Resend. Bots are kept out of every signed-out form by Cloudflare Turnstile.</li>
+  <li>Billing is Stripe (Basic free; Pro monthly or yearly with a 30-day trial that takes a card up front; the refund rule in the Terms). The A.I. features (Cooper, the assistant, and the A.I. review of answers) call Anthropic's Claude with an adventure's own key, or else the platform-wide key in Sys Config. Cooper is on every plan and works wherever a key is set; for clients BLUERABBIT runs directly, Gauden adds the key. Email goes through Resend. Bots are kept out of every signed-out form by Cloudflare Turnstile.</li>
 </ul>
 
 <h2>How a Request Is Handled</h2>
@@ -5740,7 +5736,7 @@ HTML,
 <ul>
   <li><strong>Legal pages</strong>: the app redirects its <code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> to the addresses in Sys Config, Legal (default: this site), and records the Terms version each person accepts.</li>
   <li><strong>Cooper's documentation</strong>: Cooper answers "how do I" questions from its own copy of <code>bluerabbit.io/docs</code>, refreshed from Sys Config, Cooper, <em>Sync documentation now</em>.</li>
-  <li><strong>Play now</strong>: an open demo can let visitors play as a guest (a throwaway account kept for statistics). Guests can play but cannot talk to anyone, change an account or create content.</li>
+  <li><strong>Play now</strong>: play.bluerabbit.io runs an open demo (Sys Config's Play now setting): visitors play a chosen Adventure as a guest, a throwaway account kept for statistics. Guests can play but cannot talk to anyone, change an account or create content.</li>
 </ul>
 
 <h2>Notifications, in One Paragraph</h2>

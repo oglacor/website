@@ -11,8 +11,10 @@
  * MACHINE TRANSLATIONS, NOT REVIEWED. Every translation was made by an AI
  * (Claude, 2026-11-15) from the English pages (pages/terms.php, privacy.php,
  * refunds.php, version 2026-10-30), reusing the app's own translated words.
- * No lawyer and no native speaker has reviewed them. The notice below tells
- * the reader so and links the English, the reference text. Remove the notice
+ * No lawyer and no native speaker has reviewed them. Gauden approved
+ * publishing them before review on 2026-11-15; the legal and native review is
+ * still to follow. The notice below tells the reader they are unreviewed A.I.
+ * translations and links the English, the reference text. Remove the notice
  * for a language only once its review is done, and record that review in
  * claude-notes/BUILD-STATUS.md.
  *

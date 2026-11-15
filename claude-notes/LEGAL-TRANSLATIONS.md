@@ -3,19 +3,18 @@
 Added 2026-11-15 (batch W1). Gauden, 2026-11-15: "The legal pages you can
 translate. But those should live in bluerabbit.io, not in the app itself."
 
-## Status: MACHINE TRANSLATIONS, NOT REVIEWED
+## Status: MACHINE TRANSLATIONS, NOT REVIEWED, APPROVED FOR PUBLISHING
 
 - **Every translation was made by an AI (Claude) on 2026-11-15.** No lawyer and
   no native speaker has reviewed any of them. Each translated page shows its
   reader a notice saying so, in its language, with a link to the English, which
-  is the reference text. Each view carries a NEEDS LEGAL AND NATIVE REVIEW
-  comment.
+  is the reference text. Each view's header comment says the same.
+- **Gauden approved publishing them on 2026-11-15, before review.** They go live
+  with the next deploy of this site. The legal and native review is still to
+  follow; the notice stays on each page until its language is reviewed.
 - The English itself is a draft "for a lawyer to review"; that review is planned
   for January 2027. Review the English first, then each language against it.
-- The app's own handover (`blue` repo, `docs/claude/website-handover/README.md`)
-  said "do not publish one before that review". The pages are on the site, so
-  they go live with the next deploy: whether to deploy them before the review is
-  Gauden's call. To hold one language back, remove its code from
+- To take a language off the site, remove its code from
   `App\Libraries\Legal::LANGUAGES` (its routes and its link in the language strip
   go with it).
 - Once a language is reviewed: correct its three views, stop showing the notice

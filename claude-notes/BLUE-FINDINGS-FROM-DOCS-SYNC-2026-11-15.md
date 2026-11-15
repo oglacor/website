@@ -10,15 +10,16 @@ documentation; a finding two passes both reported appears once.
 
 ## Docs sentences that exist only because of an app bug
 
-Remove the sentence from `app/Database/Seeds/DocsPageSeeder.php` when the fix lands.
+Remove the sentence from `app/Database/Seeds/DocsPageSeeder.php` when the fix lands. Fixed by the
+app's F4 (`blue@02f0157`) and removed from the docs the same day: a blank item Stock now saves as
+unlimited, and a milestone's QR code counts in the cohort the player plays.
 
 | Docs page | The sentence | The bug |
 |---|---|---|
 | `garden-missions`, `running-the-garden-as-a-gm` | "Get one of your requests solved" counts as the app counts it today | `HelpModel.php` ~200-206 logs `help_solved` with the helper as the actor, so the mission credits the helper, not the asker (2026-09-21 finding 9, still open) |
 | `setting-up-your-skills-catalog` | the Endorsable switch has no effect yet | `skill_endorsable` is saved and imported but never read (2026-09-21 finding 29, still open) |
-| `item-shop-building-an-economy` | blank stock on a consumable or gift card | `ItemModel::saveItem()` saves a blank Stock as 0: the item shows Sold Out under an "Unlimited" placeholder (2026-09-21 finding 7, still open) |
 | `random-encounters` | "Send to a player" asks for a player ID | `script.js` `brFireEncounter()` still uses a browser prompt for a raw player ID |
-| `qr-codes-live-and-hybrid-events`, `adventure-templates-and-cohorts` | for a cohort, use an achievement or task code; hand out the typed code or the cohort's QR | `Qr::milestone()` encodes `/quest-qr/?token=` with no `&adv=`, so a cohort player's scan counts in the template and is refused; achievement Magic Link and unique-code links use `$adv_parent_id` (2026-09-21 finding 13) |
+| `adventure-templates-and-cohorts` | in a cohort, hand out the typed code or the cohort's QR | achievement Magic Link and unique-code links use `$adv_parent_id`, so they redeem into the template (2026-09-21 finding 13) |
 
 ## Player side
 
@@ -36,7 +37,7 @@ Remove the sentence from `app/Database/Seeds/DocsPageSeeder.php` when the fix la
 
 - `partials/step-form.php` 229: the Step Type menu says "Choose Nickname"; `step_helper.php`, the jumper and Cooper say "Choose Display Name" (it saves the display name).
 - `partials/step-form.php`: "Show results after vote?" (~728) is saved but no `step-play` partial reads it; Open Text's "Rich Text Editor" (`use_wp_editor`) has had no effect since every Open Text box became the rich editor; Mistake Message / Maximum attempts (~1167) are shown on Puzzle and SCORM, where no try is ever spent.
-- `TransactionController::payment()` works, but `mech_deadline_cost` / `mech_unlock_cost` have no field in `quests/new.php` or `challenges/new.php`, so buying a missed deadline or an unlock with BLOO can't be set up on new content. Left out of the docs.
+- `TransactionController::payment()` works, but `mech_deadline_cost` / `mech_unlock_cost` had no field in the editors. F4 (`blue@02f0157`) adds the milestone fields; their save lands in a later commit, so the docs leave them out until then.
 - `PlayerModel::assignGuild()`: with the app's rules the guild's own "Auto-assign on login" is ignored, though `guilds/new.php` offers it per guild. Left out of the docs.
 - `AchievementModel::redeemCode()`: with the app's rules `achievement_max` and `achievement_path` are not checked on a magic code, while a GM's grant checks the cap.
 - `partials/tabi-row.php` "Picture" box: `AdventureController::show()` draws the journey picture only where the journey extras are off, so on the app's own adventures the box does nothing.
