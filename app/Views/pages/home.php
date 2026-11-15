@@ -20,6 +20,7 @@
           <form action="<?= site_url('waitlist') ?>" method="post">
             <?= csrf_field() ?>
             <input type="email" name="email" placeholder="you@company.com" value="<?= esc(old('email')) ?>" required>
+            <?= view('partials/turnstile_widget', ['action' => 'waitlist']) ?>
             <button type="submit" class="btn btn-primary">Notify Me</button>
           </form>
           <?php if (session()->getFlashdata('waitlist_error')): ?>
