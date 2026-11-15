@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('assets/css/site.css') ?>">
+<?php foreach (($alternates ?? []) as $hreflang => $href): // a page in several languages (the legal pages) ?>
+<link rel="alternate" hreflang="<?= esc($hreflang, 'attr') ?>" href="<?= esc($href, 'attr') ?>">
+<?php endforeach; ?>
 <?= $this->renderSection('head') ?>
 </head>
 <body>

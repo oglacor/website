@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Libraries\Legal;
 use App\Libraries\Turnstile;
 use App\Models\ContactMessageModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
 
 class Pages extends BaseController
 {
@@ -32,30 +33,55 @@ class Pages extends BaseController
         ]);
     }
 
-    public function terms(): string
+    public function terms(string $lang = 'en')
     {
-        return $this->legalPage('terms', 'Terms of Service');
+        return $this->legalPage('terms', $lang);
     }
 
-    public function privacy(): string
+    public function privacy(string $lang = 'en')
     {
-        return $this->legalPage('privacy', 'Privacy Policy');
+        return $this->legalPage('privacy', $lang);
     }
 
-    public function refunds(): string
+    public function refunds(string $lang = 'en')
     {
-        return $this->legalPage('refunds', 'Refund Policy');
+        return $this->legalPage('refunds', $lang);
     }
 
-    private function legalPage(string $which, string $heading): string
+    /**
+     * One legal document in one language. English is the original view
+     * (pages/terms.php ...); a translation is pages/legal/page.php around
+     * pages/legal/{code}/{which}.php. /terms?lang=es_MX (the app's locale
+     * names work too) sends the reader on to /es/terms.
+     */
+    private function legalPage(string $which, string $lang)
     {
-        return view('pages/' . $which, [
-            'title'     => $heading . ' — BLUERABBIT',
-            'activeNav' => '',
-            'heading'   => $heading,
-            'which'     => $which,
-            'legal'     => Legal::details(),
-        ]);
+        if (! isset(Legal::LANGUAGES[$lang])) {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        if ($lang === 'en') {
+            $asked = Legal::languageFor($this->request->getGet('lang'));
+            if ($asked !== null && $asked !== 'en') {
+                return redirect()->to(Legal::url($which, $asked));
+            }
+        }
+
+        $legal   = Legal::details($lang);
+        $heading = lang('Legal.' . $which, [], $lang);
+        $data    = [
+            'title'      => $heading . ' — BLUERABBIT',
+            'activeNav'  => '',
+            'heading'    => $heading,
+            'which'      => $which,
+            'lang'       => $lang,
+            'htmlLang'   => Legal::LANGUAGES[$lang],
+            'legal'      => $legal,
+            'emailLink'  => Legal::emailLink($legal),
+            'alternates' => Legal::alternates($which),
+        ];
+
+        return view($lang === 'en' ? 'pages/' . $which : 'pages/legal/page', $data);
     }
 
     public function aiAtWork(): string

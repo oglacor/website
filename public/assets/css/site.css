@@ -447,3 +447,17 @@ footer{padding:64px 0 32px; border-top:1px solid var(--border);}
 .legal-nav a{font-family:var(--condensed); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 16px; transition:color .15s, border-color .15s;}
 .legal-nav a:hover{color:var(--white); border-color:var(--border-mid);}
 .legal-nav a.active{color:var(--cyan-text); border-color:var(--border-hi);}
+/* The legal pages' language strip (under the document strip) and, on a translation, the
+   machine-translation notice above the text (2026-11-15). */
+.legal-langs{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px 14px; margin:18px auto 0; max-width:760px;}
+.legal-langs-label{font-family:var(--condensed); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted-2);}
+.legal-langs a{font-size:13px; color:var(--muted); padding:2px 0; border-bottom:1px solid transparent; transition:color .15s, border-color .15s;}
+.legal-langs a:hover{color:var(--white);}
+.legal-langs a.active{color:var(--cyan-text); border-bottom-color:var(--border-hi);}
+.legal-notice{max-width:720px; margin-bottom:28px; padding:14px 18px; border:1px solid rgba(247,203,21,.45); border-left:3px solid var(--yellow); border-radius:var(--radius-sm); background:rgba(247,203,21,.06); color:var(--muted); font-size:14px; line-height:1.6;}
+.legal-notice strong{display:block; margin-bottom:4px; color:var(--yellow); font-family:var(--condensed); text-transform:uppercase; letter-spacing:1px;}
+.legal-notice a{color:var(--cyan-text); text-decoration:underline; text-underline-offset:3px;}
+/* A title that is one long word in its language (Nutzungsbedingungen, КОНФИДЕНЦИАЛЬНОСТИ) breaks
+   rather than pushing the page sideways on a phone; the hero sets lang, so hyphens follow it. */
+.page-hero h1{overflow-wrap:break-word; hyphens:auto;}
+@media (max-width: 480px){ .page-hero h1{font-size:34px;} }

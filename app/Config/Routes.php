@@ -11,6 +11,13 @@ $routes->get('pricing', 'Pages::pricing');
 $routes->get('terms', 'Pages::terms');
 $routes->get('privacy', 'Pages::privacy');
 $routes->get('refunds', 'Pages::refunds');
+// The legal pages' translations, /de/terms, /es/privacy ... (2026-11-15).
+// One alternation built from App\Libraries\Legal::LANGUAGES, so an address
+// in a language that list lacks is an ordinary 404.
+$legalLangs = implode('|', array_map(static fn ($c) => preg_quote($c, '#'), \App\Libraries\Legal::translations()));
+$routes->get('(' . $legalLangs . ')/terms', 'Pages::terms/$1');
+$routes->get('(' . $legalLangs . ')/privacy', 'Pages::privacy/$1');
+$routes->get('(' . $legalLangs . ')/refunds', 'Pages::refunds/$1');
 $routes->get('contact', 'Pages::contact');
 $routes->get('resources/ai-at-work', 'Pages::aiAtWork');
 $routes->post('contact', 'Pages::contactSubmit');
