@@ -1028,3 +1028,119 @@ real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-res
   app, no JS errors, no page scroll and a side gutter at 390px; Admin Settings saves the four
   fields without touching the Resend ones, and all three pages then show the company, law,
   address and mailto). Disposable admin and settings rows removed afterwards.
+
+## 2026-11-15 — Full documentation pass (W1): docs resync, legal pages in 11 languages, developer start-here
+
+**Ask (Gauden, 2026-11-15):** "redact the full documentation for the /website folder to update
+the entire site both the public and the dev sections. Make a note for this as I have someone who
+will help me launch this to the public and since he is a developer he'll need a source to read all
+and check aside from the repo." And: "The legal pages you can translate. But those should live in
+bluerabbit.io, not in the app itself." Synced to the app at **`blue@463a356`**.
+
+**For the developer helping launch: start at `/docs/developer/start-here`** (admin account needed;
+the text is also in `DocsPageSeeder.php`, slug `start-here`).
+
+### What changed (three commits)
+1. **`d4e8741` Legal pages in ten more languages.** de, es (es-MX), fr, it, ja, ko, pt-br, ru, tr,
+   zh-cn at `/{code}/terms|privacy|refunds`; a language strip on every legal page; hreflang
+   alternates; `/terms?lang=es_MX` forwards (the app's locale names work), the hook for the app's
+   `Legal::url()`. **Machine translations, not reviewed** by a lawyer or a native speaker: each page
+   says so to its reader and links the English. Everything about them, per-language reviewer notes
+   and how to hold a language back: `claude-notes/LEGAL-TRANSLATIONS.md`.
+2. **`d132211` Docs resync, 85 public pages.** 9 new (players: playing-as-a-guest, notifications,
+   taking-a-challenge, the-library-study-notes, choosing-your-language; Game Masters:
+   library-study-notes-and-glossary, languages-for-your-players, bulk-uploads-with-csv, prize-draws
+   (Enterprise)), 75 updated, 1 unchanged (your-profile-results). Renumbered: user 0-24, setup 1-60.
+   Marketing: home and product (31 step types, six question kinds, gift cards Enterprise, a
+   languages / views / notifications section), pricing (card-up-front trial, renews until cancelled,
+   Refund Policy link, prize draws and gift cards under Enterprise), the docs hub's blurbs. App
+   findings for the app's sessions: `claude-notes/BLUE-FINDINGS-FROM-DOCS-SYNC-2026-11-15.md`.
+3. **The developer section, 7 pages (this entry's commit).** `start-here` (new),
+   `architecture-overview` and `routes-and-api-reference` (the first build's two DB-only stubs, now
+   rewritten and owned by the seeder), `keeping-the-docs-in-sync` (new),
+   `app-architecture-editions-and-switches` (new), `self-hosting-and-deployment` (updated: cPanel
+   Update from Remote, `server-check`, rehearsal mode, the `.env` lines, the encryption key),
+   `security-model` (new). The app is described in general terms only: no keys, servers, client
+   data or sandbox.
+
+### How it was built
+Three research agents each owned a set of public pages (players; Game Master building; running,
+admin and Enterprise) and wrote complete bodies from the app's code and its dated logs since the
+last sync, describing the public edition with the app's own rules (`WpRules` off) and extras on.
+Two translation agents wrote the legal text in an intermediate format; a one-off converter made the
+views. The orchestrator assembled the seeder (bodies swapped by slug, new pages placed by topic),
+wrote the developer pages, the legal mechanism and the marketing edits.
+
+The last sync's app point `blue@dbb5c05` no longer resolves (the app's history was rewritten on
+2026-10-30); by date it is `blue@0dfb3a8`.
+
+### Verified
+- `php -l` on every touched PHP file. `db:seed DocsPageSeeder` twice: 92 rows (25 / 60 / 7), the
+  second run adds none, unique sort orders, all published.
+- 694 internal links in 92 bodies resolve to published slugs; only the seeder's tags; no client,
+  WordPress or internal term on a public page (one hit: Tremendous's own "Sandbox" mode).
+- Every public docs page 200 with its title and no PHP error; hub 25 / 54 / 6; developer pages
+  302 to `/login` signed out, 404 on the public route, 200 for an admin.
+- Legal: 33 pages 200, notice on the 30 translations only, settings blank and filled (same count of
+  values in every language as the English).
+- Edge headless: legal 507/507 (every language link from every English page, tabs stay in the
+  language, no script error, no horizontal scroll at 390 and 1440, `?lang=` forms); docs and
+  marketing 784/784 over 98 pages at 390 and 1440, developer section signed in through the form.
+- A disposable admin and the legal settings rows were removed afterwards (none existed before).
+  `writable/logs`: no ERROR or CRITICAL.
+- Not done: `migrate --all` on a clean DB (no migration touched).
+
+### To deploy
+cPanel Update from Remote, then `php spark db:seed DocsPageSeeder` (and `php spark cache:clear`).
+Then an app administrator presses Sys Config -> Cooper -> **Sync documentation now**, so Cooper
+reads the new pages (it mirrors up to 120 pages from `/docs`; there are 85).
+
+### Website bug found, NOT fixed (needs Gauden)
+**The home page's waitlist form has no Turnstile widget** (removed in `bce6e98`, 2026-08-17, a
+layout commit) but `Waitlist::store()` still verifies Turnstile. Wherever both Turnstile keys are
+set, every waitlist signup from the home page is refused with "We couldn't verify that you're
+human". Put `view('partials/turnstile_widget', ['action' => 'waitlist'])` back in the form, or
+decide the waitlist goes without Turnstile. Left as is because the removal looked deliberate.
+
+### Questions for Gauden
+Legal and launch:
+1. **Publish the translations before their review?** They go live with the next deploy. The app's
+   handover README said "do not publish one before that review". Each page says it is a machine
+   translation and that the English is "the reference text": that phrase is for the lawyer to
+   confirm too.
+2. The legal business details (Admin -> Settings -> Legal) are blank on this site; the governing
+   law value is printed inside every language's sentence, so it needs a form that reads in all.
+3. Is the site at the apex yet? The app's legal links default to `https://bluerabbit.io/...`.
+4. When public sign-up opens, the header and product page CTAs still say "Join Waitlist".
+5. The app can now send a player's language: `Legal::url()` plus `?lang=<player_lang>`.
+
+Facts to confirm (from the research agents):
+6. Adventure Settings: the code has the pane layout (Basics, Sections, Rules & scoring, Journey &
+   look, Menu, Help & Cooper, Emails, Connections, Players, Danger zone) that the 2026-10-27 sync
+   was told had been reverted. The pages now describe the panes. Confirm.
+7. Plan caps: the pages keep 90/3/50MB and 250/20/200MB; only storage is enforced in the app.
+8. Is Play now (guests) live on play.bluerabbit.io? Mention that Launch Week is playable there?
+9. Which public plans include Cooper, and is there a platform Cooper key on play.bluerabbit.io?
+10. Is the automatic-email scheduled sender running on play.bluerabbit.io?
+11. Is Turnstile on for the hosted app (the pages say so)? Does play.bluerabbit.io keep the New
+    view as its default?
+12. Stripe's portal has no monthly/yearly switch. Intended?
+13. Enterprise: which rules will a new corporate server run (Organizations' Stats tab and Remove
+    Player depend on it)? Is presenting Custom Labels and Images as the white-label branding right?
+
+Wording to approve on public pages:
+14. Sign-ins recorded with network address and browser, kept 12 months; emails in English "for
+    now"; refunds of unused yearly months made by the team on request, ending the plan at once;
+    drand named on the Prize Draws page; "not offered on the self-serve platform, on any plan" for
+    Enterprise features; the guest page saying Cooper doesn't talk to guests.
+
+App product questions (details in the findings file):
+15. Buying a missed deadline or an unlock with BLOO has no price field, so it is left out of the
+    docs.
+16. The Classic menu has no Garden rows.
+17. "Choose Nickname" (the step type menu) vs "Choose Display Name" (everywhere else).
+18. Milestone QR codes and magic links inside cohorts point at the template (the docs carry a
+    caveat).
+19. Magic codes skip an achievement's Max Players.
+20. A guild's "Auto-assign on login" is ignored.
+21. Three editor fields do nothing (left out of the docs).

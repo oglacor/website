@@ -5,7 +5,7 @@
 <div class="page-hero wrap">
   <span class="eyebrow">Admin Only</span>
   <h1>Developer Docs</h1>
-  <p>Architecture, routes, and the data layer for the bluerabbit.io CI4 core.</p>
+  <p>Start with <a href="<?= site_url('docs/developer/start-here') ?>" style="color:var(--cyan-text);">Start Here</a>: what this site is, how to run and deploy it, how its docs map to the app, and what is still open for launch.</p>
 </div>
 
 <div class="wrap" style="padding-bottom:100px;">

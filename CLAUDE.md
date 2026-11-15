@@ -5,6 +5,11 @@ This file is your entry point. Full context, decisions, and rationale live in
 lives in `claude-notes/BUILD-STATUS.md` — read it every session, update it as you finish
 things. This file is the condensed operating manual.
 
+For a human developer, the start-here page is `/docs/developer/start-here` (its text lives in
+`app/Database/Seeds/DocsPageSeeder.php`, slug `start-here`). Keep it current when launch facts,
+the deploy or the docs-to-app mapping change. How a docs sync is done:
+`/docs/developer/keeping-the-docs-in-sync`.
+
 ## What this repo is
 
 The public bluerabbit.io — marketing site, blog, docs. A standalone CodeIgniter 4 app with

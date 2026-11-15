@@ -39,7 +39,9 @@ class DocsPageSeeder extends Seeder
             'how-to-build-a-challenge-or-survey',
             // 2026-09-21 sync: no slugs retired. random-encounters was
             // rewritten in place and kept its slug.
-            // 2026-10-27 and 2026-11-15 syncs: no slugs retired.
+            // 2026-10-27 and 2026-11-15 syncs: no slugs retired. The two
+            // developer pages from the first build (architecture-overview,
+            // routes-and-api-reference) are now owned and rewritten here.
         ])->delete();
 
         $pages = [
@@ -5429,12 +5431,339 @@ HTML,
             // Developer docs — gated to site admins/collaborators
             // ---------------------------------------------------------
             [
-                'title'      => 'Self-Hosting & Deployment',
-                'slug'       => 'self-hosting-and-deployment',
+                'title'      => 'Start Here: bluerabbit.io for Developers',
+                'slug'       => 'start-here',
+                'section'    => 'developer',
+                'sort_order' => 0,
+                'body'       => <<<'HTML'
+<p>This page is for the developer helping launch BLUERABBIT to the public. It is the one place to start: what this site is, how to run it, how its documentation maps to the app, how to deploy it, and what is still open before launch. Everything here can be checked from this repository and the running site, without the app's repository.</p>
+<p><strong>As of 15 November 2026.</strong> The public documentation matches the BLUERABBIT app at its commit <code>463a356</code> (15 November 2026). Each sync, with what changed and how it was checked, is recorded in <code>claude-notes/BUILD-STATUS.md</code>.</p>
+
+<h2>What This Site Is</h2>
+<p>bluerabbit.io is the public website: the marketing pages (home, product, solutions, pricing, contact), the blog, the documentation, the legal pages in eleven languages, and the waitlist. It is its own CodeIgniter 4 application with its own database and its own sign-in.</p>
+<ul>
+  <li><strong>It is not the BLUERABBIT app.</strong> The app (where adventures, players and subscriptions live) runs at play.bluerabbit.io, from a separate repository, with separate accounts. Every "Log in", "Get started" and pricing button on this site links there through one constant, <code>PLAY_APP_URL</code> in <code>app/Config/Constants.php</code>.</li>
+  <li><strong>The two never share sign-in.</strong> Accounts on this site exist only for the people who manage its blog and documentation. Keep it that way: it is a hard rule of this repository.</li>
+  <li><strong>Nothing is sold here.</strong> The pricing page links to account creation; billing happens inside the app.</li>
+</ul>
+
+<h2>How It Is Built</h2>
+<ul>
+  <li>CodeIgniter 4.7 on PHP 8.2, MySQL, plain PHP views (<code>extend()</code> / <code>section()</code> on <code>app/Views/layouts/main.php</code>), one stylesheet (<code>public/assets/css/site.css</code>), no JavaScript framework and no build step.</li>
+  <li>The blog and the documentation live in the database. Blog posts are written in <code>/admin/blog</code>. The documentation is written in <code>app/Database/Seeds/DocsPageSeeder.php</code> and loaded with <code>php spark db:seed DocsPageSeeder</code>.</li>
+  <li>Email goes through Resend, forms are protected by CSRF and Cloudflare Turnstile, and the only cookies are the essential ones (the cookie panel records the visitor's choice; there is no analytics).</li>
+</ul>
+<p>Details: <a href="/docs/developer/architecture-overview">Website Architecture</a> and <a href="/docs/developer/routes-and-api-reference">Website Routes &amp; Admin</a>.</p>
+
+<h2>Running It Locally</h2>
+<ol>
+  <li>Clone the repository into your web root (on Windows with XAMPP: <code>C:\xampp\htdocs\website</code>) and run <code>composer install</code>.</li>
+  <li>Copy <code>env</code> to <code>.env</code>. Without a virtual host the site is browsed at <code>http://localhost/website/public/</code>, and <code>app.baseURL</code> must say exactly that, <code>/public/</code> included, or every stylesheet and link points one folder too high.</li>
+  <li>Create the database <code>bluerabbit_site</code> (MySQL, the credentials in <code>.env</code>).</li>
+  <li><code>php spark migrate --all</code>, then <code>php spark db:seed DatabaseSeeder</code>: the admin account, three sample blog posts and every documentation page. The old blog's 61 posts are a separate, optional import (<code>wp-import/README.md</code>).</li>
+  <li>Open the site. Turnstile and email stay off until their keys are set, which is the safe default.</li>
+</ol>
+<p><strong>Reading this section needs an admin account on this site.</strong> The seeder creates one (see <code>AdminUserSeeder</code>; change its password on any server). To give a collaborator their own: register at <code>/get-started</code>, then set <code>role = 'admin'</code> on their row in the <code>users</code> table; the site has no screen for promoting accounts.</p>
+
+<h2>How the Docs Map to the App</h2>
+<ul>
+  <li><strong>For players</strong> (section <code>user</code>): what a player sees and does in an adventure.</li>
+  <li><strong>For Game Masters</strong> (section <code>setup</code>): building and running adventures, the staff screens, billing and the platform settings.</li>
+  <li><strong>Enterprise</strong> (a <code>setup</code> page whose title ends "(Enterprise)", grouped on its own on the hub): the features only a corporate server has. See <a href="/docs/developer/app-architecture-editions-and-switches">editions</a>.</li>
+  <li><strong>Developer</strong> (this section, admins only): this site, and the app in general terms.</li>
+</ul>
+<p>The public pages describe what a person gets who signs up at play.bluerabbit.io and creates an adventure: the public edition, with the app's own rules and extras on. The app's own reference (its <code>docs/claude/</code> folder and dated logs) is the authority on how the app works; these pages are written from it and from its code. How to bring them up to date: <a href="/docs/developer/keeping-the-docs-in-sync">Keeping the Docs in Step with the App</a>.</p>
+<p><strong>The app reads these docs.</strong> Its Cooper assistant answers questions about BLUERABBIT from its own copy of <code>bluerabbit.io/docs</code>: it follows every <code>/docs/</code> link on the hub (up to 120 pages). After a documentation deploy, an administrator of the app presses <em>Sync documentation now</em> in its Sys Config, Cooper tab.</p>
+
+<h2>The Legal Pages</h2>
+<ul>
+  <li><code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> are the only copies: the app answers its own <code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> with a permanent redirect to the addresses in its Sys Config, Legal pane (default <code>https://bluerabbit.io/terms</code> and so on). This site must answer at those addresses.</li>
+  <li>The app records the Terms version each person agrees to at sign-up and checkout. When the Terms change in substance, bump <code>App\Libraries\Legal::VERSION</code> here and the app's own <code>Legal::VERSION</code> together (both <code>2026-10-30</code>).</li>
+  <li>The business named on them (legal name, address, contact email, governing law) comes from <em>Admin &rarr; Settings &rarr; Legal</em>. Blank fields print neutral wording, so the pages work before they are filled in.</li>
+  <li><strong>Translations</strong>: German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish and Simplified Chinese, at <code>/de/terms</code>, <code>/es/privacy</code> and so on, with a language strip on every legal page. <code>/terms?lang=es_MX</code> (the app's own locale names work) forwards to the translation, so the app can send its player's language. <strong>Every translation was made by an AI and has not been reviewed by a lawyer or a native speaker</strong>; each one says so above its text and links the English, the reference. A lawyer's review of the English is planned for January 2027. Notes for the reviewers, and how to hold a language back: <code>claude-notes/LEGAL-TRANSLATIONS.md</code>.</li>
+</ul>
+
+<h2>Deploying</h2>
+<p>The server holds a Git checkout of this repository, outside the web root, with the domain's document root on its <code>public/</code> folder. A deploy:</p>
+<ol>
+  <li>cPanel &rarr; Git Version Control &rarr; this repository &rarr; <strong>Update from Remote</strong> (a pull from GitHub).</li>
+  <li>In cPanel's Terminal, from the checkout: <code>php spark migrate</code> when a new migration arrived (<code>php spark migrate:status</code> lists them); <code>php spark db:seed DocsPageSeeder</code> when documentation changed (it upserts by slug, safe to re-run); <code>composer install --no-dev -o</code> only when <code>composer.lock</code> changed; then <code>php spark cache:clear</code>.</li>
+  <li>Check the pages you changed, then the app's <em>Sync documentation now</em> if the docs changed.</li>
+</ol>
+<p>A push to GitHub is not a deploy: nothing reaches a server until someone presses Update from Remote. The full runbook, including moving the site to the apex domain, the production <code>.env</code> and Cloudflare, is <code>claude-notes/DEPLOY.md</code>. The app deploys the same way: <a href="/docs/developer/self-hosting-and-deployment">Self-Hosting &amp; Deployment</a>.</p>
+
+<h2>What Is Open for Launch</h2>
+<ol>
+  <li><strong>The legal business details</strong> are blank until someone fills in <em>Admin &rarr; Settings &rarr; Legal</em> on the server (the same values as the app had).</li>
+  <li><strong>Publishing the translations before their review</strong> is a decision: they go live with the next deploy of this site. Each page tells its reader it is a machine translation and links the English.</li>
+  <li><strong>The apex domain.</strong> The app's legal links point at <code>bluerabbit.io</code>. If the apex still serves the old site, this site's cutover from its subdomain (<code>claude-notes/DEPLOY.md</code>, Part 2) comes first.</li>
+  <li><strong>Waitlist or sign-up.</strong> The header and the product page still ask visitors to join the waitlist, while pricing links straight to the app. When public sign-up opens, those calls to action change.</li>
+  <li><strong>The home page's waitlist form and Turnstile.</strong> The form in the hero no longer draws the Turnstile widget (removed in commit <code>bce6e98</code>), but <code>Waitlist::store()</code> still asks Turnstile. Wherever both keys are set, every signup from the home page is refused with "We couldn't verify that you're human". Check the server, then either put <code>view('partials/turnstile_widget', ['action' =&gt; 'waitlist'])</code> back in the form, or decide the waitlist goes without it.</li>
+  <li><strong>Server basics</strong>: the seeded admin password changed; <code>CI_ENVIRONMENT = production</code>; both Turnstile keys set and the secret verified (<code>DEPLOY.md</code>, Part 3); the Resend key in <em>Admin &rarr; Settings</em>; HSTS on at Cloudflare.</li>
+  <li><strong>Pricing</strong>: the page states Basic 90 players, 3 Adventures, 50MB and Pro 250, 20, 200MB at $8 a month or $80 a year. The app enforces only the storage limit today; the player and Adventure numbers are plan allowances. The Stripe prices are set in the app.</li>
+  <li><strong>Client logos</strong> for the home page's trust bar are still generic labels.</li>
+  <li><strong>Open questions</strong> from the latest sync (facts to confirm, wording to approve) are listed in <code>claude-notes/BUILD-STATUS.md</code>, entry of 15 November 2026.</li>
+</ol>
+
+<h2>Read Next</h2>
+<ul>
+  <li><a href="/docs/developer/architecture-overview">Website Architecture</a></li>
+  <li><a href="/docs/developer/routes-and-api-reference">Website Routes &amp; Admin</a></li>
+  <li><a href="/docs/developer/keeping-the-docs-in-sync">Keeping the Docs in Step with the App</a></li>
+  <li><a href="/docs/developer/app-architecture-editions-and-switches">The BLUERABBIT App: Architecture, Editions &amp; Switches</a></li>
+  <li><a href="/docs/developer/self-hosting-and-deployment">Self-Hosting &amp; Deployment (the app)</a></li>
+  <li><a href="/docs/developer/security-model">Security Model: App &amp; Website</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Website Architecture',
+                'slug'       => 'architecture-overview',
                 'section'    => 'developer',
                 'sort_order' => 1,
                 'body'       => <<<'HTML'
-<p>How a BLUERABBIT instance is installed, how schema changes reach a server, and the rule that keeps environments from drifting. This describes the CI4 app (the <code>blue</code> repository); its own <code>CLAUDE.md</code> is the authority if the two ever disagree.</p>
+<p>How bluerabbit.io is put together. It is a standalone CodeIgniter 4 application: its own database, its own sign-in, its own deploy. The BLUERABBIT app is a different application in a different repository; see <a href="/docs/developer/app-architecture-editions-and-switches">The BLUERABBIT App</a>.</p>
+
+<h2>Stack</h2>
+<ul>
+  <li>CodeIgniter 4.7 (<code>codeigniter4/framework ^4.7</code>), PHP 8.2 or later with <code>intl</code>, MySQL or MariaDB.</li>
+  <li>No front-end framework and no build step. All styling is <code>public/assets/css/site.css</code>, built on CSS custom properties (<code>:root</code> tokens); the angular HUD card is the reusable <code>.panel</code> class. JavaScript is small and inline where a page needs it (the cookie panel, Turnstile, the admin's TinyMCE editor).</li>
+  <li>Composer brings only the framework (and PHPUnit and friends for development).</li>
+</ul>
+
+<h2>Where Things Live</h2>
+<ul>
+  <li><code>app/Config/Routes.php</code>: every route, flat. See <a href="/docs/developer/routes-and-api-reference">Website Routes &amp; Admin</a>.</li>
+  <li><code>app/Controllers/</code>: <code>Home</code>, <code>Pages</code> (product, solutions, pricing, contact, the AI-at-work FAQ and the legal pages), <code>Blog</code>, <code>Docs</code>, <code>Auth</code>, <code>Account</code>, <code>Waitlist</code>, and <code>Admin/*</code> (dashboard, blog, docs, waitlist, settings, image upload).</li>
+  <li><code>app/Views/</code>: <code>layouts/main.php</code> (header, footer, cookie panel) and <code>layouts/admin.php</code> on top of it; <code>pages/</code>, <code>blog/</code>, <code>docs/</code>, <code>auth/</code>, <code>admin/</code>, <code>emails/</code> (the branded email frame), <code>errors/</code> (styled 404, 400 and 500 pages) and <code>partials/</code>.</li>
+  <li><code>app/Libraries/</code>: <code>Legal</code> (the legal pages' business details, languages and addresses), <code>ResendMailer</code> (email through Resend's HTTP API, no SDK), <code>Turnstile</code> (server-side verification).</li>
+  <li><code>app/Language/</code>: <code>en/Validation.php</code>, and <code>{code}/Legal.php</code> for the legal pages' interface words in each of the eleven languages.</li>
+  <li><code>app/Database/</code>: seven migrations (one table each) and the seeders.</li>
+  <li><code>claude-notes/</code>: the build log (<code>BUILD-STATUS.md</code>), the deploy runbook (<code>DEPLOY.md</code>) and open content questions. <code>CLAUDE.md</code> and <code>WEBSITE_PROJECT_BRIEF.md</code> at the root hold the rules and the decisions behind them.</li>
+</ul>
+
+<h2>Database</h2>
+<ul>
+  <li><code>blog_posts</code>: posts, drafts and published, with featured images under <code>public/assets/uploads/blog/</code>.</li>
+  <li><code>docs_pages</code>: every documentation page (title, slug, section <code>user</code>, <code>setup</code> or <code>developer</code>, sort order, HTML body, status).</li>
+  <li><code>waitlist_signups</code>: email, source page, subscribed or unsubscribed, when last emailed. Append-only on purpose, so a future customer table can join it.</li>
+  <li><code>contact_messages</code>: the contact form.</li>
+  <li><code>users</code> and <code>password_resets</code>: this site's own accounts (roles <code>user</code> and <code>admin</code>).</li>
+  <li><code>site_settings</code>: key and value pairs set in <em>Admin &rarr; Settings</em>: the Resend key and sender, and the four legal details.</li>
+</ul>
+
+<h2>Content</h2>
+<ul>
+  <li><strong>Blog</strong>: written in <code>/admin/blog</code> with a rich-text editor; the database is the source.</li>
+  <li><strong>Documentation</strong>: <code>DocsPageSeeder.php</code> is the source. It upserts by slug, and deletes the slugs it has retired. A page the seeder owns can be edited in <code>/admin/docs</code>, but the next <code>db:seed DocsPageSeeder</code> overwrites that edit, so change the seeder instead. Bodies are trusted HTML written by admins.</li>
+  <li><strong>The hub</strong> (<code>/docs</code>) lists the <code>user</code> pages, then the <code>setup</code> pages, and puts every <code>setup</code> page whose title ends "(Enterprise)" in its own group. Sort order decides the order within each.</li>
+  <li><strong>Marketing pages</strong> are views in <code>app/Views/pages/</code>, written by hand from the app's real plans and features.</li>
+</ul>
+
+<h2>Sign-in</h2>
+<p>Session-based, on the <code>users</code> table. <code>AuthFilter</code> is registered as <code>auth</code> (any signed-in account, for <code>/account</code>) and <code>auth:admin</code> (role <code>admin</code>, for <code>/admin/*</code> and <code>/docs/developer</code>). Password recovery sends a one-time link by email; the token travels in the query string. Nothing on the public pages links to this sign-in: admins type <code>/login</code>. It shares nothing with the app's accounts, by rule.</p>
+
+<h2>Email</h2>
+<p><code>ResendMailer</code> wraps every message in <code>emails/layout.php</code> (logo, body, footer with an unsubscribe link). The key and the sender address are set in <em>Admin &rarr; Settings</em>, not in code. Sending is best-effort: a waitlist signup succeeds even when no key is set. <code>/admin/waitlist</code> sends a campaign to everyone subscribed.</p>
+
+<h2>The Legal Pages and Their Languages</h2>
+<ul>
+  <li>English: <code>pages/terms.php</code>, <code>privacy.php</code>, <code>refunds.php</code>. Translations: <code>pages/legal/{code}/*.php</code>, drawn inside <code>pages/legal/page.php</code>, which adds the machine-translation notice and the version line.</li>
+  <li><code>App\Libraries\Legal::LANGUAGES</code> lists the languages (address code and HTML language tag); <code>Routes.php</code> builds the translated routes from it. A new language is a row there, its <code>app/Language/{code}/Legal.php</code> and its three views.</li>
+  <li>Every legal page shows the three documents and the eleven languages; the layout adds <code>&lt;link rel="alternate" hreflang&gt;</code> for each.</li>
+  <li>The privacy policy covers both the app and this site: Part 1 the app, Part 2 this site. If the site starts collecting something new, Part 2 changes with it, in every language.</li>
+</ul>
+
+<h2>Conventions That Have Bitten Before</h2>
+<ul>
+  <li>Disable a model's timestamp field with <code>''</code>, never <code>false</code>.</li>
+  <li>Never name a model method <code>get()</code> or <code>set()</code>: the base model owns them.</li>
+  <li>An <code>is_unique[table.field,id,{id}]</code> rule needs its own <code>id</code> rule too.</li>
+  <li>Generated values (tokens, email addresses) go in the query string, not a path segment: the router decodes the address before checking its characters.</li>
+  <li>The global <code>nav{}</code> style hits every <code>&lt;nav&gt;</code>; in-page navigation uses <code>&lt;div role="navigation"&gt;</code>.</li>
+  <li>There are no automated tests for the site's own code. Verify on the running site: every touched route answers 200, forms write what they should, and a real browser shows the page right at desktop and phone widths.</li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Website Routes & Admin',
+                'slug'       => 'routes-and-api-reference',
+                'section'    => 'developer',
+                'sort_order' => 2,
+                'body'       => <<<'HTML'
+<p>Every route is declared, flat, in <code>app/Config/Routes.php</code>. There is no JSON API: every action is a server-rendered page or an ordinary form POST, protected by the CSRF filter that runs on every request.</p>
+
+<h2>Public Pages</h2>
+<ul>
+  <li><code>/</code>: home, with the waitlist form in the hero.</li>
+  <li><code>/product</code>, <code>/solutions</code>, <code>/pricing</code>, <code>/contact</code> (GET and POST), <code>/resources/ai-at-work</code>.</li>
+  <li><code>/blog</code> and <code>/blog/{slug}</code>.</li>
+  <li><code>/docs</code> (the hub) and <code>/docs/{slug}</code> (any <code>user</code> or <code>setup</code> page; a <code>developer</code> slug answers 404 here).</li>
+  <li><code>/waitlist</code> (POST) and <code>/unsubscribe?email=</code>.</li>
+</ul>
+
+<h2>Legal Pages</h2>
+<ul>
+  <li><code>/terms</code>, <code>/privacy</code>, <code>/refunds</code>: the English originals.</li>
+  <li><code>/{code}/terms</code>, <code>/{code}/privacy</code>, <code>/{code}/refunds</code> for <code>de</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>ja</code>, <code>ko</code>, <code>pt-br</code>, <code>ru</code>, <code>tr</code>, <code>zh-cn</code>. Any other code is a 404.</li>
+  <li><code>/terms?lang=</code> (and the same on the other two) forwards to the translation. It accepts this site's codes and the app's locale names (<code>es_MX</code>, <code>pt_BR</code>, <code>zh_CN</code>, <code>ko_KR</code>, ...); an unknown language stays on the English. This is the one hook the app needs to send its player's language.</li>
+</ul>
+
+<h2>This Site's Own Sign-in</h2>
+<ul>
+  <li><code>/login</code> (GET, POST), <code>/logout</code>.</li>
+  <li><code>/get-started</code> (GET, POST): registers an account with the role <code>user</code>. Not linked from any public page.</li>
+  <li><code>/forgot-password</code> and <code>/reset-password?token=</code> (GET, POST).</li>
+  <li><code>/account</code>: any signed-in account (filter <code>auth</code>).</li>
+</ul>
+
+<h2>Gated to Admins (filter <code>auth:admin</code>)</h2>
+<ul>
+  <li><code>/docs/developer</code> and <code>/docs/developer/{slug}</code>: this section. Signed out, it redirects to <code>/login</code>; signed in without the admin role, it is refused.</li>
+  <li><code>/admin</code>: the dashboard (posts, docs, signups, new messages).</li>
+  <li><code>/admin/blog</code>: list, new, edit, publish, delete; <code>/admin/upload-image</code> for the editor's images (the stored type comes from the file's real content, never from its name).</li>
+  <li><code>/admin/docs</code>: the same for documentation pages (remember the seeder overwrites the pages it owns).</li>
+  <li><code>/admin/waitlist</code>: the list and the campaign send.</li>
+  <li><code>/admin/settings</code>: the Resend key and sender, and the Legal details (business name, address, contact email, governing law).</li>
+</ul>
+
+<h2>Forms and Their Protection</h2>
+<ul>
+  <li>Every POST carries a CSRF token (<code>csrf_field()</code> in each form).</li>
+  <li>The forms a signed-out visitor can send (waitlist, contact, login, register, forgot password) are checked by Cloudflare Turnstile when both keys are in <code>.env</code>. With neither key the widget is not drawn and nothing is checked: the safe default for a local copy.</li>
+</ul>
+
+<h2>Links Into the App</h2>
+<p>Every link to the BLUERABBIT app goes through <code>PLAY_APP_URL</code> (<code>app/Config/Constants.php</code>, <code>https://play.bluerabbit.io</code>). If the app moves, that line is the only change. The legal pages also link the app's Subscription and My Account pages under it.</p>
+HTML,
+            ],
+            [
+                'title'      => 'Keeping the Docs in Step with the App',
+                'slug'       => 'keeping-the-docs-in-sync',
+                'section'    => 'developer',
+                'sort_order' => 3,
+                'body'       => <<<'HTML'
+<p>The public documentation describes the BLUERABBIT app, which changes every week. This page is how the two are kept in step: where the pages come from, what they describe, and how a sync is done and checked.</p>
+
+<h2>Where the Pages Come From</h2>
+<ul>
+  <li><code>app/Database/Seeds/DocsPageSeeder.php</code> holds every page the site ships: title, slug, section, sort order and body. Running <code>php spark db:seed DocsPageSeeder</code> upserts each page by slug (safe to re-run) and deletes the slugs listed as retired at the top of the file.</li>
+  <li>A seeded page edited in <code>/admin/docs</code> is overwritten the next time the seeder runs. Change the seeder, or take the page out of it first.</li>
+  <li>The seeder's header names the app commit it was last synced to. Each sync also has its own entry in <code>claude-notes/BUILD-STATUS.md</code>: what changed, what was checked, what is still a question.</li>
+</ul>
+
+<h2>What the Pages Describe</h2>
+<ul>
+  <li>What a person gets who signs up on the public server and creates an adventure: the public edition, with the app's own rules and its extras on (see <a href="/docs/developer/app-architecture-editions-and-switches">editions and switches</a>). Behaviour that exists only for adventures imported from the WordPress build is left out.</li>
+  <li>Corporate-only features are Enterprise: a whole page gets a title ending "(Enterprise)", which puts it in the hub's Enterprise group; a mention inside another page says plainly that it is an Enterprise feature.</li>
+  <li>Only shipped behaviour, checked in the app's code rather than its plans. A sentence that exists only because of a known app bug is listed in <code>claude-notes/BLUE-FINDINGS-FROM-DOCS-SYNC-2026-09-21.md</code> (or the latest sync's entry) and comes out when the fix lands.</li>
+  <li>The app's real labels, in English. Currency names (XP, BLOO, EP) are defaults a Game Master can rename, never presented as fixed.</li>
+</ul>
+
+<h2>What Never Goes on a Public Page</h2>
+<ul>
+  <li>Client names or real people (the running example "Launch Week" is fictional and fine).</li>
+  <li>The app's internals: file paths, class names, batch or ledger ids, the WordPress build, the import and its tooling.</li>
+  <li>Secrets, server names and private subdomains.</li>
+</ul>
+<p>The developer section (this one) may describe architecture, editions, switches, deployment and security in general terms, still without secrets, server credentials or client data.</p>
+
+<h2>Doing a Sync</h2>
+<ol>
+  <li>Find the app commits since the last sync point (<code>git log --oneline &lt;last&gt;..origin/main</code> in the app's repository), and read the app's dated log entries for the same period (its <code>docs/claude/log/INDEX.md</code>). Most batches that only port WordPress's behaviour behind the switches change nothing for the public pages.</li>
+  <li>For each page, check every claim against the app's code and correct, add or remove. New pages get a slug and a sort order next to their topic.</li>
+  <li>Check: <code>php -l</code> on the seeder; seed twice (the second run adds nothing); every page answers 200 with its title; every <code>/docs/</code> link in every body resolves to a published slug; no forbidden word on a public page; one look in a real browser.</li>
+  <li>Record the sync in <code>claude-notes/BUILD-STATUS.md</code> with the app commit, update the seeder's header, commit and push.</li>
+  <li>Deploy (Update from Remote, then <code>php spark db:seed DocsPageSeeder</code>), then ask an app administrator to press <em>Sync documentation now</em> so Cooper reads the new pages.</li>
+</ol>
+
+<h2>Sync History</h2>
+<ul>
+  <li>21 September 2026: app <code>6e5a454</code>, 59 pages to 76.</li>
+  <li>27 October 2026: app <code>dbb5c05</code>, 77 pages. The app's history was rewritten on 30 October 2026, so that hash no longer resolves; by date it sits at the app's <code>0dfb3a8</code>.</li>
+  <li>15 November 2026: app <code>463a356</code>. Every public page reviewed; new player pages (guests, notifications, challenges, the Library, languages), new Game Master pages (the Library, languages, CSV bulk tools, Prize Draws for Enterprise), and this developer section rewritten.</li>
+</ul>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/developer/start-here">Start Here</a></li>
+  <li><a href="/docs/developer/architecture-overview">Website Architecture</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'The BLUERABBIT App: Architecture, Editions & Switches',
+                'slug'       => 'app-architecture-editions-and-switches',
+                'section'    => 'developer',
+                'sort_order' => 4,
+                'body'       => <<<'HTML'
+<p>The BLUERABBIT app, in general terms: enough to understand what the public documentation describes, what a server's settings decide, and where the app's own reference lives. The app is a separate repository; its <code>docs/claude/INDEX.md</code> is the authority whenever this page and the app disagree.</p>
+
+<h2>What It Is</h2>
+<ul>
+  <li>A CodeIgniter 4.7 application on PHP 8.2 and MySQL or MariaDB (tables prefixed <code>br_</code>), served at play.bluerabbit.io and on a few corporate servers. Each server is a full checkout with its own <code>.env</code> and its own database.</li>
+  <li>It is the successor of the original BLUERABBIT, a WordPress theme. Adventures can be imported from a WordPress install, and the app can run an imported adventure exactly as the WordPress build did (see the switches below).</li>
+  <li>Billing is Stripe (Basic free; Pro monthly or yearly with a 30-day trial that takes a card up front; the refund rule in the Terms). The A.I. features (Cooper, the assistant, and the A.I. review of answers) call Anthropic's Claude with an adventure's own key or the platform's. Email goes through Resend. Bots are kept out of every signed-out form by Cloudflare Turnstile.</li>
+</ul>
+
+<h2>How a Request Is Handled</h2>
+<ul>
+  <li><strong>Pages</strong> are ordinary routes. A filter refuses every route that is not listed as public until the person is signed in, and a second filter refuses the corporate-only pages on a public server.</li>
+  <li><strong>Actions</strong> (saving, grading, buying, answering) go through one AJAX dispatcher with a fixed table of actions. An action a player or a non-player character may use must be on that role's allowed list, and every write checks that the person may edit what they name. Anything not listed is refused.</li>
+  <li><strong>Templates and cohorts.</strong> An adventure can be a template with cohorts: the content (milestones, steps, achievements, items, skills, Tabis, encounters, profiles) lives on the template, and each cohort keeps its own players, progress, guilds, tasks and missions.</li>
+</ul>
+
+<h2>Editions: Public and Corporate</h2>
+<p>One codebase, no branches per client. Each server is <strong>public</strong> or <strong>corporate</strong>, set by one <code>.env</code> line (<code>bluerabbit.edition = corporate</code>; unset means public, so a forgotten line fails closed). A public server refuses the corporate-only features on the server itself, not only in the screens:</p>
+<ul>
+  <li>Prize Draws (the lottery), Tremendous gift cards, Microsoft Entra single sign-on, Organizations, the Garden's Business pane, and white-label branding.</li>
+</ul>
+<p>The website presents these as <strong>Enterprise</strong>: the pricing page's Enterprise card and the documentation pages whose title ends "(Enterprise)". Corporate clients with a big enough account run on their own environment; the public product does not share it. The app's Sys Config names the edition a server is running.</p>
+
+<h2>The Per-Adventure Switches</h2>
+<p>Two switches decide how an adventure behaves. Each is a setting on the template (a cohort follows its template), with a server-wide default in <code>.env</code> for adventures that have no setting and for the pages outside any adventure.</p>
+<ul>
+  <li><strong>This app's extras</strong> (Adventure Settings, Rules &amp; scoring): everything this app shows players that the WordPress build never did (tries shown up front, "Read it again", milestone attempts, the Garden's extra tools, My Account's extra tabs, the Library and more). On for every adventure created in the app; an imported adventure starts with it off, so its players see no difference. Server default: <code>bluerabbit.extrasDefault</code> (on unless set).</li>
+  <li><strong>WordPress's rules</strong> (administrators only): which way scores, counts, levels, ranks, challenges, codes and enrolment are worked out. Off for the app's own adventures; on for imported ones, so their numbers come out exactly as before. Server default: <code>bluerabbit.wpRulesDefault</code> (off unless set).</li>
+</ul>
+<p><strong>The public documentation describes extras on and WordPress's rules off</strong>: what someone gets who signs up on the public server and creates an adventure.</p>
+
+<h2>Other Server-Wide Settings Worth Knowing</h2>
+<ul>
+  <li><strong>The view nobody chose</strong>: the app has two ways to get around, the New view (a pause-screen menu) and the Classic view (top bar and taskbar). A player's own choice wins, then the adventure's setting, then <code>bluerabbit.menuDefault</code> (New unless set).</li>
+  <li><strong>Rehearsal mode</strong>: a database that is a copy of real people's data (imported with the rehearsal mark, or any WordPress import without an explicit <code>bluerabbit.rehearsal = off</code>) holds every email, stops the prize draws, gift cards, payments, analytics and A.I., and shows a banner on every page. It exists so a copy can never reach real people. A real server built from an import needs <code>bluerabbit.rehearsal = off</code>; servers the app built itself have no import mark and are unaffected.</li>
+  <li><strong>Languages</strong>: the interface is in English and ten more languages (German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish, Simplified Chinese). A person's own language wins, else the platform's default (Sys Config). Emails stay in English for now.</li>
+  <li><strong>Time</strong>: on an adventure that runs on WordPress's rules, every time the app records is on that adventure's own clock, as WordPress wrote it; the app's own adventures keep the app's conventions.</li>
+</ul>
+
+<h2>Features That Touch the Website</h2>
+<ul>
+  <li><strong>Legal pages</strong>: the app redirects its <code>/terms</code>, <code>/privacy</code> and <code>/refunds</code> to the addresses in Sys Config, Legal (default: this site), and records the Terms version each person accepts.</li>
+  <li><strong>Cooper's documentation</strong>: Cooper answers "how do I" questions from its own copy of <code>bluerabbit.io/docs</code>, refreshed from Sys Config, Cooper, <em>Sync documentation now</em>.</li>
+  <li><strong>Play now</strong>: an open demo can let visitors play as a guest (a throwaway account kept for statistics). Guests can play but cannot talk to anyone, change an account or create content.</li>
+</ul>
+
+<h2>Notifications, in One Paragraph</h2>
+<p>The bell counts only what the platform did that needs the person's attention: a Game Master's mark or validation (with what it paid), a hand-in sent back, a reply to or the closing of one of their requests, an email sent to them. Their own activity is listed but never counted. It is a read model over tables the app already writes; nothing is copied, and "read" is stored as the last item seen, not as a time.</p>
+
+<h2>Performance</h2>
+<p>Every page and the heaviest actions were timed at the volume of the largest programme the platform runs (November 2026): none over one second after the fixes. The one server requirement it produced: the database's buffer pool must hold the whole database with room to spare. The app's <code>tools/server-check.php</code> checks this, among its other lines.</p>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/developer/self-hosting-and-deployment">Self-Hosting &amp; Deployment</a></li>
+  <li><a href="/docs/developer/security-model">Security Model: App &amp; Website</a></li>
+  <li><a href="/docs/developer/keeping-the-docs-in-sync">Keeping the Docs in Step with the App</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Self-Hosting & Deployment',
+                'slug'       => 'self-hosting-and-deployment',
+                'section'    => 'developer',
+                'sort_order' => 5,
+                'body'       => <<<'HTML'
+<p>How a BLUERABBIT app server is installed and updated, and the rule that keeps environments from drifting. This describes the app (its own repository), not this website; the website's deploy is on <a href="/docs/developer/start-here">Start Here</a>. The app's own <code>docs/claude/deployment.md</code> and <code>launch-runbook.md</code> are the authority if the two ever disagree.</p>
 
 <h2>The Rule: Structure Travels, Content Doesn't</h2>
 <p>Only the <strong>schema</strong> (tables, columns, indexes) is kept in step between environments. <strong>Content</strong> (Adventures, milestones, steps, achievements, skills, encounters, tasks, items, profiles, players) belongs to the environment it was made in and stays there. A local test Adventure is a local test Adventure forever.</p>
@@ -5446,35 +5775,113 @@ HTML,
 <h2>Fresh Install: <code>/install</code></h2>
 <p>A new clone builds its own database through the web installer:</p>
 <ol>
-  <li>Clone the repository, point the web server's document root at <code>public/</code>, and run <code>composer install</code>.</li>
+  <li>Clone the repository, point the web server's document root at <code>public/</code>, and run <code>composer install --no-dev --optimize-autoloader</code>.</li>
   <li>Open the site. Every page redirects to <code>/install</code> until the platform has its first account.</li>
   <li>If the database already connects, the installer skips straight to creating the owner account. If the server is reachable but the database is missing, it creates the database where the MySQL account is allowed to, and otherwise tells you where to create it.</li>
   <li>It builds the full schema and creates the owner account as <strong>God</strong> (only a God can grant God, so an installer that made an Admin would leave nobody able to make the next one).</li>
 </ol>
-<p>The installer <strong>merges</strong> the few <code>.env</code> keys it needs rather than replacing the file, and reuses an existing <code>encryption.key</code>. Never regenerate that key on a database that already holds secrets: every stored API key (email, Stripe, Turnstile, SSO, gift cards, Cooper) would be orphaned, silently. If <code>.env</code> isn't writable, the installer shows the file for you to paste and stops there.</p>
-<p>"Installed" means the players table has a row, not merely that tables exist, so running the migrations by hand still leaves the installer available to create the first account. Once an account exists, <code>/install</code> redirects to the login page.</p>
-<p>The installer deliberately doesn't configure Turnstile, SSO or email. Those are set afterwards in Sys Config.</p>
+<p>The installer <strong>merges</strong> the few <code>.env</code> keys it needs rather than replacing the file, and reuses an existing <code>encryption.key</code>. If <code>.env</code> isn't writable, it shows the file for you to paste and stops there. "Installed" means the players table has a row, not merely that tables exist; once an account exists, <code>/install</code> redirects to the login page. The installer deliberately doesn't configure Turnstile, SSO or email: those are set afterwards in Sys Config.</p>
 
-<h2>Getting a Schema Change Live</h2>
-<p>From the project root on the server (the folder that contains <code>public/</code>):</p>
+<h2>Updating a Server</h2>
+<p>The servers are cPanel accounts with a Git checkout per instance. An update:</p>
 <ol>
-  <li><code>php tools/migrate.php</code>: a dry run that reports what's pending and writes nothing.</li>
-  <li><code>php tools/migrate.php --apply</code>: applies the structure changes.</li>
+  <li>cPanel &rarr; Git Version Control &rarr; the instance &rarr; <strong>Update from Remote</strong>.</li>
+  <li>Straight after, in the Terminal, from the folder that contains <code>public/</code>: <code>php tools/migrate.php</code> (a dry run that lists what is pending and writes nothing), then <code>php tools/migrate.php --apply</code> if it listed anything. Since November 2026 the new code reads new columns, so the migration must not wait.</li>
+  <li><code>php tools/server-check.php</code>: read-only, one PASS / WARN / FAIL line per check (PHP and its extensions, folders, <code>.env</code>, the database, the edition, rehearsal mode, the network, the database's memory), each with what to do when it is not PASS. It never prints a secret.</li>
 </ol>
-<p>That's the whole answer. Only if a feature ships optional starting content is there a third step: a per-Adventure seeder the operator runs deliberately, for example <code>php tools/seed-&lt;thing&gt;.php --adventure=N --apply</code>.</p>
-<p>Every <code>tools/</code> script prints the database name and host it connected to before it does anything. Read it before an <code>--apply</code> on production. Credentials come from the server's own <code>.env</code>, which is never part of a deploy. <code>tools/</code> sits outside <code>public/</code>, so none of these scripts can be reached by URL.</p>
+<p>Only if a feature ships optional starting content is there another step: a per-Adventure seeder the operator runs deliberately, for example <code>php tools/seed-&lt;thing&gt;.php --adventure=N --apply</code>. Every <code>tools/</code> script prints the database name and host it connected to before it does anything; read it before an <code>--apply</code> on production. <code>tools/</code> sits outside <code>public/</code>, so none of these scripts can be reached by URL.</p>
 
 <h2>A Push Is Not a Deploy</h2>
-<p>Pushing to <code>main</code> puts code on GitHub and on <strong>no server</strong>. Automatic deploys are parked, and the deploy workflow only runs on demand. Getting a change live is: bring the code onto the server, then run the two migrate commands above. Never report work as "deployed" because it was pushed.</p>
+<p>Pushing to <code>main</code> puts code on GitHub and on <strong>no server</strong>. Automatic deploys are parked. Never report work as "deployed" because it was pushed.</p>
+
+<h2>Before Deploying the November 2026 Release</h2>
+<p>A database that was ever imported from WordPress counts as a <strong>rehearsal copy</strong> unless its <code>.env</code> says <code>bluerabbit.rehearsal = off</code>: it then sends no email, runs no prize draws and calls no A.I. Before updating such a server, add that line (the import leaves a <code>wp-import</code> row in <code>br_data_migrations</code>; <code>server-check</code>'s <code>rehearsal.mode</code> line confirms it either way). Servers the app built itself are not affected.</p>
+
+<h2>The Production <code>.env</code></h2>
+<ul>
+  <li><code>CI_ENVIRONMENT = production</code> (it also turns off the debug toolbar, which lists every route), <code>app.baseURL</code>, <code>app.forceGlobalSecureRequests = true</code>, <code>cookie.secure = true</code> (on by default in production since October 2026), and the database lines.</li>
+  <li><strong>The edition</strong>: only a corporate server sets <code>bluerabbit.edition = corporate</code>, before the deploy that needs it. A public server leaves it unset.</li>
+  <li><strong>The switches</strong>: a public server leaves <code>bluerabbit.menuDefault</code>, <code>bluerabbit.extrasDefault</code> and <code>bluerabbit.wpRulesDefault</code> unset (New view, extras on, the app's own rules). Only a server taking over a WordPress install sets them to WordPress's answers. See <a href="/docs/developer/app-architecture-editions-and-switches">editions and switches</a>.</li>
+  <li><code>.env</code> is gitignored and never part of a deploy; keep it readable by the web server only.</li>
+</ul>
+
+<h2>The Encryption Key</h2>
+<p>Every stored secret (the email provider key, Stripe's secret and webhook keys, the Turnstile secret, the SSO private key, Tremendous and Claude keys) is encrypted under <code>encryption.key</code>. <strong>Never regenerate that key on a database that already holds secrets</strong>, and carry it across when a database moves between servers: a new key leaves every stored secret decrypting to nothing, silently, and email, Cooper, Turnstile, SSO and gift cards simply stop. A server built from a WordPress import is the one exception: it makes its key once, before the first import, and keeps it from then on.</p>
 
 <h2>Files Git Doesn't Own</h2>
 <p><code>.env</code>, <code>writable/</code> and the upload folders (media, QR codes, SCORM) are all gitignored, so updating the code never touches what users uploaded or the server's credentials. Keep it that way.</p>
 
 <h2>Production Checklist</h2>
 <ul>
-  <li>Carry the <code>encryption.key</code> across when moving a database between servers.</li>
-  <li>Set <code>CI_ENVIRONMENT</code> to <code>production</code>, force HTTPS, and mark cookies secure.</li>
-  <li>Firewall the origin so only Cloudflare can reach it.</li>
+  <li>The document root is <code>public/</code> and <code>tools/</code> sits outside it on every instance. The repository's own <code>.htaccess</code> refuses everything outside <code>public/</code> as a backstop, not a substitute.</li>
+  <li>Cloudflare in front with SSL/TLS on Full (strict); HSTS switched on at Cloudflare (the app cannot send it from behind the proxy); the origin firewalled so only Cloudflare's address ranges can reach it.</li>
+  <li><code>php tools/check-production.php https://host --save</code> from outside after every launch or <code>.env</code> change: the HTTPS redirect, HSTS, the hardening headers, the cookie flags and the edition, as the world sees them.</li>
+  <li><code>composer audit</code>, then a sign-in, an email send and one purchase.</li>
+</ul>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/developer/app-architecture-editions-and-switches">The BLUERABBIT App: Architecture, Editions &amp; Switches</a></li>
+  <li><a href="/docs/developer/security-model">Security Model: App &amp; Website</a></li>
+  <li><a href="/docs/developer/start-here">Start Here</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Security Model: App & Website',
+                'slug'       => 'security-model',
+                'section'    => 'developer',
+                'sort_order' => 6,
+                'body'       => <<<'HTML'
+<p>How the app and this website protect their users, in general terms. No keys, no server details and no open findings are written here; the app's repository keeps the detailed review.</p>
+
+<h2>Two Systems, Two Sets of Accounts</h2>
+<p>The app and this website share no sign-in, session or user table, by rule. An account on this site exists only to manage its blog and documentation; it cannot reach the app, and an app account cannot reach this site's admin.</p>
+
+<h2>The App</h2>
+<h3>Who may do what</h3>
+<ul>
+  <li><strong>Protected by default.</strong> Every page needs a signed-in account unless it is on the public list. Every action goes through one dispatcher with a fixed table; an action a player or a non-player character may take must be on that role's allowed list, and every write checks that the person may edit the adventure, cohort or row they name.</li>
+  <li><strong>Editions are enforced on the server.</strong> A public server refuses the corporate-only features in the dispatcher, in a page filter and at each feature's own entry point, for every account, administrators included.</li>
+  <li><strong>Guests</strong> of an open demo can play but are refused every person-to-person tool, every account change and all content creation.</li>
+</ul>
+<h3>Signing in</h3>
+<ul>
+  <li>Passwords of 12 to 50 characters on every path that sets one, stored as one-way hashes.</li>
+  <li>Five failed sign-ins in fifteen minutes for one account from one address lock that pair for fifteen minutes; a completed password reset clears it. The address comes only from Cloudflare's own header, so it cannot be forged.</li>
+  <li>Every sign-in, failure, lock-out and reset is logged with its address and browser, downloadable by administrators, and deleted after twelve months.</li>
+  <li>Public sign-ups confirm their email address through a button on a page (not a bare link, which corporate mail filters open by themselves). Every form a signed-out person can send is checked by Cloudflare Turnstile.</li>
+  <li>Entra single sign-on, on corporate servers, keeps a password route for the platform's top administrators so an identity-provider outage never locks everyone out.</li>
+</ul>
+<h3>Data</h3>
+<ul>
+  <li><strong>Secrets at rest</strong> (email, payment, Turnstile, SSO, gift-card and A.I. keys) are encrypted under the server's encryption key.</li>
+  <li><strong>Personal data</strong>: each person can download everything held about them as one file, and delete their account, which anonymises their identity everywhere, deletes their messages and uploads, and keeps their scores under an anonymous name so leaderboards stay correct. Administrators can do the same for someone.</li>
+  <li><strong>Uploads</strong>: size ceilings per role; SCORM packages are unpacked without anything a server could run; SVG images are cleaned; a file's stored type never comes from its name.</li>
+  <li><strong>Exports</strong>: every CSV cell that a spreadsheet could read as a formula is neutralised.</li>
+  <li><strong>Payments and webhooks</strong>: Stripe holds the cards; incoming webhooks are verified before anything is stored.</li>
+  <li><strong>Copies of real data</strong> run in rehearsal mode, which holds every email and stops every outside call (see <a href="/docs/developer/app-architecture-editions-and-switches">the app's architecture</a>).</li>
+</ul>
+<h3>Reviews</h3>
+<p>In November 2026 the whole range of the app's recent work was reviewed as an attacker would: no critical findings, four high-severity findings (all fixed and proven with real requests), one more found and fixed afterwards, and a list of medium and low items tracked in the app's repository. Ask Gauden for the current state of that list before launch.</p>
+
+<h2>This Website</h2>
+<ul>
+  <li>CSRF tokens on every form, checked by a global filter.</li>
+  <li>Cloudflare Turnstile on the forms a signed-out visitor sends, when both keys are set; a wrong secret is logged as critical, because it would refuse every form.</li>
+  <li>Passwords hashed; password resets by a single-use link valid for 60 minutes, of which only a hash is stored, with the same answer for known and unknown addresses.</li>
+  <li>Admin image uploads store the type detected from the file's content, never the name it arrived with.</li>
+  <li>No analytics, no advertising cookies, no third-party trackers; the cookie panel records the visitor's choice and asks again after twelve months.</li>
+  <li>Secrets live in the server's <code>.env</code> (database, Turnstile) or in <em>Admin &rarr; Settings</em> (Resend), never in the repository. The document root is <code>public/</code>; the repository's <code>.htaccess</code> refuses everything else if a server is ever set up on the repository's root instead.</li>
+</ul>
+
+<h2>Reporting a Problem</h2>
+<p>Send security reports through the <a href="/contact">contact page</a> marked "Security", or to Gauden directly. Don't post details in a public channel.</p>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/developer/self-hosting-and-deployment">Self-Hosting &amp; Deployment</a></li>
+  <li><a href="/docs/developer/architecture-overview">Website Architecture</a></li>
 </ul>
 HTML,
             ],

@@ -1,47 +1,44 @@
-# bluerabbit.io — website rebuild
+# bluerabbit.io — the public website
 
-CodeIgniter 4 rebuild of bluerabbit.io: marketing site, blog, and docs. Built by Claude
-in a cloud sandbox and handed off here — see `claude-notes/BUILD-STATUS.md` for exactly
-what's done and what's next.
+CodeIgniter 4 site for bluerabbit.io: marketing pages, blog, documentation, the legal pages in
+eleven languages, and the waitlist. It is not the BLUERABBIT app (that is play.bluerabbit.io, a
+separate repository with separate accounts).
+
+## Start here
+
+**Developers: read `/docs/developer/start-here` on the running site** (an admin account on this
+site is needed; its text is also in `app/Database/Seeds/DocsPageSeeder.php`, slug `start-here`).
+It covers what the site is, how it is built, running it locally, how the docs map to the app,
+deploying, and what is still open for launch.
+
+Then: `CLAUDE.md` (the rules), `WEBSITE_PROJECT_BRIEF.md` (the decisions), `claude-notes/BUILD-STATUS.md`
+(what was built and verified, newest at the end), `claude-notes/DEPLOY.md` (the server runbook),
+`claude-notes/LEGAL-TRANSLATIONS.md` (the translated legal pages and their review).
 
 ## Setup (XAMPP)
 
-1. **Install dependencies** — this folder ships without `vendor/` (too big to transfer).
-   From this directory:
-   ```
-   composer install
-   ```
-2. **Create the `.env` file**:
-   ```
-   copy env .env
-   ```
-   The defaults already match your usual XAMPP/MySQL conventions (root, no password),
-   assuming this folder is `C:\xampp\htdocs\website`. Adjust `app.baseURL` if you set up
-   a dedicated vhost instead of using the raw `htdocs` path.
-3. **Create the database**: `bluerabbit_site` (matches the default in `.env`).
-4. **Run migrations + seed sample blog posts**:
-   ```
-   php spark migrate --all
-   php spark db:seed BlogPostSeeder
-   ```
-5. Visit `http://localhost/website/` (or your vhost).
+1. `composer install` (this repo ships without `vendor/`).
+2. `copy env .env`. Browsing without a virtual host, `app.baseURL` must be
+   `http://localhost/website/public/` (with `/public/`), or styles and links resolve one folder too high.
+3. Create the database `bluerabbit_site` (MySQL, root with no password by default in `.env`).
+4. `php spark migrate --all`, then `php spark db:seed DatabaseSeeder` (the admin account, sample
+   blog posts and every documentation page).
+5. Visit `http://localhost/website/public/`.
+
+Turnstile and email stay off until their keys are set (`.env` for Turnstile, Admin > Settings for
+Resend), which is the safe default for a local copy.
 
 ## What's here
 
-- Homepage, product/solutions/pricing/contact/login/get-started placeholders, and a
-  working public blog (`/blog`, `/blog/{slug}`) reading from a real `blog_posts` table.
-- The homepage waitlist form is fully wired — posts to `/waitlist`, validates, stores to
-  `waitlist_signups`, and shows a success/error state back in the hero.
-- All styling lives in `public/assets/css/site.css`, pulling the exact HUD palette from
-  the live app's `_variables.scss`.
-
-## What's not built yet
-
-See `claude-notes/BUILD-STATUS.md` for the current state and the prioritized next slice
-(admin blog CRUD, auth + gated `/docs/developer`, Resend waitlist emails, product/pricing
-page content).
+- Home (waitlist in the hero), product, solutions, pricing (links into the app; nothing is sold
+  here), contact, the AI-at-work FAQ.
+- Blog (`/blog`), written in `/admin/blog`.
+- Documentation (`/docs`): the player and Game Master manual and the Enterprise pages, public; the
+  developer section (`/docs/developer`), admins only. Source: `DocsPageSeeder.php`.
+- Legal pages (`/terms`, `/privacy`, `/refunds`) and their translations (`/{code}/terms` ...).
+- This site's own sign-in and admin (`/login`, `/admin`): blog, docs, waitlist campaigns, settings.
 
 ## Framework docs
 
-This is a stock CodeIgniter 4 app — the [user guide](https://codeigniter.com/user_guide/)
-covers routing, views, models, and migrations if you want to extend anything directly.
+A stock CodeIgniter 4 app: the [user guide](https://codeigniter.com/user_guide/) covers routing,
+views, models and migrations.
