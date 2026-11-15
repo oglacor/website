@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <p class="pricing-caveat">Player limits count everyone across all the Adventures on your account. Cooper, the A.I. assistant, is on every plan: it runs on a Claude API key from Anthropic that you add to your Adventure, and for teams we set up directly, we add the key for you. Plan billing (monthly or annual, invoices, cancelling) is handled entirely inside the BLUERABBIT app via Stripe; this page links you to account creation and never processes payment itself. Pro renews until you cancel it, and cancelling keeps Pro to the end of the period you paid for; what can be refunded is in the <a href="<?= site_url('refunds') ?>">Refund Policy</a>. Pricing is subject to change, and the app always shows the current price before you subscribe.</p>
+  <p class="pricing-caveat">Player limits count everyone across all the Adventures on your account. Cooper, the A.I. assistant, is on every plan: it runs on a Claude API key from Anthropic: your adventure's key, your account's key, or the platform's. For teams we set up directly, we add the key for you. Plan billing (monthly or annual, invoices, cancelling) is handled entirely inside the BLUERABBIT app via Stripe; this page links you to account creation and never processes payment itself. Pro renews until you cancel it, and cancelling keeps Pro to the end of the period you paid for; what can be refunded is in the <a href="<?= site_url('refunds') ?>">Refund Policy</a>. Pricing is subject to change, and the app always shows the current price before you subscribe.</p>
 </div>
 
 <div class="cta-band">

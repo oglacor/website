@@ -1145,13 +1145,13 @@ App product questions (details in the findings file):
 15. ~~Buying a missed deadline or an unlock with BLOO~~: documented after the app's F4/F5 (Unlock
     cost and Deadline cost on the milestone editor, Deadline cost on the challenge editor).
 16. ~~The Classic menu has no Garden rows.~~ Added by the app's F5; docs updated.
-17. "Choose Nickname" (the step type menu) vs "Choose Display Name" (everywhere else).
+17. ~~"Choose Nickname" vs "Choose Display Name"~~: the menu says Choose Display Name since F6.
 18. ~~Milestone QR codes inside cohorts~~ fixed in the app's F4 (`blue@02f0157`), docs updated.
     Achievement Magic Links and unique-code links in a cohort still point at the template (the docs
     keep that caveat).
-19. Magic codes skip an achievement's Max Players.
-20. A guild's "Auto-assign on login" is ignored.
-21. Three editor fields do nothing (left out of the docs).
+19. ~~Magic codes skip an achievement's Max Players.~~ Refused at the cap since F6.
+20. ~~A guild's "Auto-assign on login" is ignored.~~ Counted since the app's guild fix and F10.
+21. ~~Three editor fields do nothing.~~ Removed from the step editor by F6.
 
 ### Follow-up, same day: Gauden's answers and the app's F4 applied
 
@@ -1163,7 +1163,7 @@ App product questions (details in the findings file):
 - **Cooper is on every plan** and works whenever a Claude key is set: complete-adventure-settings-
   reference, setting-up-ai-grading-and-gift-cards, understanding-plans-basic-pro-enterprise, the
   pricing page (Basic and Pro cards, the note under them), the product page (the AI card), and the
-  developer pages. **For Gauden, a fact to check:** the app has no account-level key. Cooper uses the
+  developer pages. **For Gauden, a fact to check (superseded the same day by the app's F8, below):** the app had no account-level key. Cooper uses the
   Adventure's own key (or its template's), else the platform-wide key in Sys Config -> Cooper, which
   only a platform administrator sets. So on play.bluerabbit.io a customer's key goes on their
   Adventure (Connections); "your account's key as the fallback" exists only where the customer runs
@@ -1206,3 +1206,54 @@ App product questions (details in the findings file):
 - New app finding: the map's priced-milestone line reads "Puchase quest for:" (in the findings file).
 - Verified: `php -l`; seeded twice; links and content check; the changed pages 200 with their
   titles; Edge headless over every docs page at 390 and 1440.
+
+### Follow-up: the app's F6, guild fix, F7, F8, F9 and F10 applied
+
+App commits `39336fe5` (F6), `f3ab95f4` and `5315392a` (guilds, F10), `def32f81` (F7), `87aab91b` and
+`434f35c9` (F8), `b38efcd4` (F9).
+
+- **F6**: the step menu's Choose Display Name (full-step-library, step-type-quick-reference); a
+  magic code refused at Max Players too ("You are too late!") and the code refusals listing the cap
+  and "Not on your path" (achievements-paths-and-ranks-reward-ladder); the step editor's removed
+  fields gone from the docs (polls always show results; every Open Text box is rich; no tries on
+  Puzzle or SCORM); random-encounters says the draw ignores a card's Chapter (Tabi) and to use the
+  group's condition on that Tabi.
+- **Guilds**: every auto-assign sentence rewritten (achievements-and-guilds, enrolling-players-
+  and-roles, guilds-designing-team-play, complete-adventure-settings-reference): placed the first
+  time the journey opens, however the player joined; marked guilds only if any is marked; the
+  emptiest with room, oldest on a tie; capacity 0 or blank is no limit; none if every guild that
+  takes newcomers is full (Manage Players' Add says so); NPCs too, not GMs or administrators;
+  "You just joined" on the journey.
+- **F7**: a priced milestone in the adventure's own currency, asked on every way in, a QR scan
+  included, with started work kept open (journey-map-guide, designing-milestones-rewards-and-
+  unlocks, how-to-build-a-challenge, qr-codes-live-and-hybrid-events, completing-milestones-and-
+  steps); item Stock blank or 0 unlimited, keys and rewards always unlimited, the sold-out editor
+  (item-shop-building-an-economy); Organizations (Enterprise): the full roster, members with no
+  Adventure, a real Remove, nobody in an Organization's Adventure outside it (roadmap item gone).
+- **F8, a Claude API key on the account**: My Account's A.I. (Cooper) tab
+  (your-account-profile-and-privacy); the key order adventure, template, owner's account, platform
+  (setting-up-ai-grading-and-gift-cards, new "Which Key Pays" section); Cooper outside an adventure
+  (getting-help-support-and-chat); the same in grading-and-ai-assisted-feedback,
+  reviewing-and-grading-submissions-in-bulk, full-step-library (the Open Text check),
+  adventure-templates-and-cohorts, library-study-notes-and-glossary,
+  understanding-plans-basic-pro-enterprise, complete-adventure-settings-reference,
+  platform-settings-and-white-label-branding; pricing and product say "your adventure's key, your
+  account's key, or the platform's". The player page the-library-study-notes names no key, so it
+  needed no change.
+- **F9 / F10**: bulk-uploads-with-csv: `item_stock` blank or 0 is unlimited, keys and rewards always,
+  "(stock: unlimited)" in the report; item-shop-building-an-economy: off Enterprise no gift card
+  settings, and an old gift card says it can't send.
+- **Developer pages**: app-architecture-editions-and-switches (`ACCOUNT_AI_KEY`),
+  routes-and-api-reference (a new section naming the app's actions `br_save_account_ai_key`,
+  `br_test_account_ai_key`, `removePlayerFromOrg`, `encounterSendPicker`, kept apart from this
+  site's own routes), security-model (the account key's storage), self-hosting-and-deployment
+  (`migrate.php --apply` adds `br_players.player_ai_api_key`; until it runs, deleting an account
+  fails).
+
+**For Gauden:** on play.bluerabbit.io, Sys Config -> Plans `use_cooper` must be on for every plan,
+or "every plan includes Cooper" doesn't hold inside adventures (the app checks the adventure
+owner's plan before Cooper answers; a plan with no row counts as on).
+
+Verified: `php -l`; seeded twice (92 rows, none added the second time); links and the content
+check; every changed page 200 with its title; Edge headless over every docs page (developer
+section through the login form as a disposable admin, removed after) at 390 and 1440.

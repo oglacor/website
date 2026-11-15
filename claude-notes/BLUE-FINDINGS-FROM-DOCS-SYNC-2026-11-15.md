@@ -45,6 +45,13 @@ and "quest" where the app says milestone).
 
 ## Game Master side
 
+Fixed since (F6 `39336fe5`, the guild fix `f3ab95f4`, F10 `5315392a`): the Choose Display Name
+label, the three dead step-editor fields and tries on Puzzle / SCORM, guild auto-assign, the magic
+code's cap and path, the encounter Chapter (documented: the draw ignores it), the priced
+milestone fields (F4/F5/F7). Still open below: the Tabi row's Picture box, the extras panel
+naming WordPress.
+
+
 - `partials/step-form.php` 229: the Step Type menu says "Choose Nickname"; `step_helper.php`, the jumper and Cooper say "Choose Display Name" (it saves the display name).
 - `partials/step-form.php`: "Show results after vote?" (~728) is saved but no `step-play` partial reads it; Open Text's "Rich Text Editor" (`use_wp_editor`) has had no effect since every Open Text box became the rich editor; Mistake Message / Maximum attempts (~1167) are shown on Puzzle and SCORM, where no try is ever spent.
 - `TransactionController::payment()` works, but `mech_deadline_cost` / `mech_unlock_cost` had no field in the editors. F4 (`blue@02f0157`) adds the milestone fields; their save lands in a later commit, so the docs leave them out until then.
@@ -56,6 +63,9 @@ and "quest" where the app says milestone).
 - `encounters/new.php` "Chapter (Tabi)": no hint says what tying an encounter to a chapter does.
 
 ## Admin and platform
+
+Fixed since: the Organization's Remove Player (F7 `def32f81`, a real Remove).
+
 
 - `organization/player-org-row-extras.php`: "Remove Player" calls `removePlayerFromOrg()`, which exists nowhere (dead button).
 - `SettingsRegistry.php` 134: `show_anonimize_button` is still drawn in Sys Config, Profile, but nothing reads it since the 2026-10-30 erase work.

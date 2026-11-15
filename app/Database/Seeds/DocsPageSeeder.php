@@ -396,7 +396,7 @@ HTML,
   <li><strong>Locked</strong> — you haven't met what it needs yet (another milestone, an achievement, an item you have to carry, or another condition your GM set), or your GM has locked it for now.</li>
   <li><strong>Needs a higher level</strong> — shown as "Available at level N" on the map and "Level N" in the list.</li>
   <li><strong>Not open yet</strong> — its start date is still ahead ("Available on…" on the map, "Opens…" in the list).</li>
-  <li><strong>Has a price</strong> — your GM has put a price on opening it. The map shows the price in BLOO; buy it from the milestone or the <strong>Unlock</strong> button in its chapter's window, and confirm before anything is spent.</li>
+  <li><strong>Has a price</strong> — your GM has put a price on opening it, in the adventure's own currency. The map shows the price; the milestone's page, the challenge page and a QR scan all ask for it (or use the <strong>Unlock</strong> button in its chapter's window), and you confirm before anything is spent. Work you had already started stays open.</li>
   <li><strong>Closed</strong> — its deadline has passed ("Deadline missed" on the map, "Closed…" in the list). If your GM has set a price for missed deadlines, the map shows <em>Unlock for</em> and the amount, and <strong>Purchase this deadline</strong> on the milestone reopens it for that many BLOO.</li>
   <li><strong>Another path</strong> — it belongs to a path you're not on, so it's greyed out.</li>
 </ul>
@@ -521,7 +521,7 @@ HTML,
 <p>Every answer you give is kept. Your Journal's <strong>My Answers</strong> tab, and the <strong>Your answer</strong> link on a secret you unlocked, open a milestone's read-back: each step that asked you something, the question, and what you answered. See <a href="/docs/my-work-journal-and-history">The Journal</a>.</p>
 
 <h2>Quick-Complete via QR Code</h2>
-<p>Some Milestones carry a scannable QR code that completes them directly, bypassing the normal prerequisite chain entirely. You'll typically see this at in-person events or bootcamp sessions: scan, done, move to the next station. You need to be logged in and enrolled in the adventure; if you scan while signed out, BLUERABBIT keeps the code while you sign in and then records it. A scan always counts in the adventure you're playing (a cohort shares its template's milestone codes), and scanning the same code again doesn't pay out twice.</p>
+<p>Some Milestones carry a scannable QR code that completes them directly, bypassing the normal prerequisite chain entirely. The one thing a scan still asks for is the milestone's price, if it has one; paying on the scan page completes it. You'll typically see this at in-person events or bootcamp sessions: scan, done, move to the next station. You need to be logged in and enrolled in the adventure; if you scan while signed out, BLUERABBIT keeps the code while you sign in and then records it. A scan always counts in the adventure you're playing (a cohort shares its template's milestone codes), and scanning the same code again doesn't pay out twice.</p>
 
 <h2>Related</h2>
 <ul>
@@ -679,7 +679,7 @@ HTML,
 <p>Once you hold a certificate, its showcase cell says which badge it carries (<em>Showing</em> one, or <em>No achievement chosen yet</em>). Click the cell to choose any badge or rank you hold, or drag one onto it from the grid. <strong>Use my rank instead</strong> goes back to your current rank. Paths aren't offered: a path is where you are, not something you won.</p>
 
 <h2>Guilds</h2>
-<p>Guilds are squads that play together inside an adventure. If yours uses them, you'll be placed in one automatically when you join, assigned by your Game Master, or given an invite link that puts you in when you open it.</p>
+<p>Guilds are squads that play together inside an adventure. If yours uses them, you'll be placed in one the first time you open the journey without one ("You just joined" and the guild's name), assigned by your Game Master, or given an invite link that puts you in when you open it.</p>
 
 <h3>Your Guild Page</h3>
 <p>The Guilds page shows <strong>My Guild</strong>: its members, level, average XP and its current position. If the adventure has a leaderboard, every guild is ranked below it — the top five as cards with their place medals, the rest in a table with each guild's members, level, average XP, total XP and BLOO. A search box finds a guild by name across the cards and the whole table.</p>
@@ -978,7 +978,7 @@ HTML,
                 'sort_order' => 16,
                 'body'       => <<<'HTML'
 <p>Everything about you as a person, separate from any one Adventure, lives on <strong>My Account</strong>. Open it from your profile panel (click your picture in the top-right corner, then <strong>Account settings</strong>), or from <strong>My account</strong> in the New view's menu.</p>
-<p>The page has six sections, listed as tabs across the top: <strong>Profile</strong>, <strong>Security</strong>, <strong>Emails</strong>, <strong>Billing</strong>, <strong>Transactions</strong> and <strong>Your data</strong>. Guest accounts from an open demo don't have a My Account page: see <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
+<p>The page has seven sections, listed as tabs across the top: <strong>Profile</strong>, <strong>Security</strong>, <strong>Emails</strong>, <strong>A.I. (Cooper)</strong>, <strong>Billing</strong>, <strong>Transactions</strong> and <strong>Your data</strong>. Guest accounts from an open demo don't have a My Account page: see <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
 
 <h2>Profile</h2>
 <ul>
@@ -1010,6 +1010,9 @@ HTML,
 <p>No subscription? The panel names the plan your account is actually on, such as Basic, with a <strong>View plans &amp; upgrade</strong> button that opens Subscription &amp; Billing.</p>
 <p>Underneath is <strong>Your storage</strong>: a meter showing how much of your plan's file storage you've used and how much is left. It counts the files you upload (pictures, video, audio, your submission uploads and any SCORM packages you add) across every Adventure. If you're ever over your allowance, for example after moving to a smaller plan, you keep everything you've stored but can't upload more until you delete files or upgrade. Administrators have no storage limit.</p>
 <p><strong>Billing History</strong> lists every payment with its date, amount and status, with <strong>View</strong> and <strong>PDF</strong> links to the invoice itself. See <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for what each plan includes, and the <a href="/refunds">refund rules</a>.</p>
+
+<h2>A.I. (Cooper)</h2>
+<p>Your own Claude API key, from Anthropic. In the Adventures you own that have no key of their own, Cooper and the A.I. features (the Open Text check, the A.I. review, study notes and reminder drafts) use it; outside any Adventure, Cooper uses it for you. Usage bills to your Anthropic account. <strong>Save</strong> it, <strong>Replace</strong> it, check it with <strong>Test Key</strong> or <strong>Remove Key</strong>. It's stored encrypted and never shown again: only its last four characters are. The tab also says how to get a key.</p>
 
 <h2>Transactions</h2>
 <p>Your in-game purchase and spending history across every Adventure you've played: the date, the Adventure, the item or kind of transaction (an item bought or used, a challenge attempt), and the amount. This is BLOO and items, not real money. Real payments are under Billing.</p>
@@ -1107,7 +1110,7 @@ HTML,
 <h2>Cooper, the In-App Assistant</h2>
 <p>If your Adventure has <strong>Cooper</strong> switched on, its picture sits in the top-right corner in the New view, its card is at the top of the menu (<strong>Ask</strong>), and in the Classic view it's a quick link above the taskbar. Any of them opens a chat panel. The chat offers starting points such as "What can I do right now?", "How am I doing so far?" and "I'm stuck - where should I look?".</p>
 <p>Cooper runs inside BLUERABBIT and knows the adventure the way you do. It can see what you've done, what's open to you now and what's on your screen, so it can point you to the right milestone, explain where you stand, tell you what opens the next chapter, or find where something was covered. What you haven't reached yet stays hidden from it too: it can name a milestone ahead and say what opens it, but not what's inside. It will guide you, but it won't hand you answers. In an interactive case study it can coach you through a couple of questions.</p>
-<p>Your Adventure may give the assistant a different name, picture and personality, a character from its story for example. It's the same assistant underneath, and the same rules apply however it talks. If you don't see it, the assistant isn't on for this Adventure. On My Adventures, between adventures, it can also answer questions about BLUERABBIT itself, such as how to join an adventure.</p>
+<p>Your Adventure may give the assistant a different name, picture and personality, a character from its story for example. It's the same assistant underneath, and the same rules apply however it talks. If you don't see it, the assistant isn't on for this Adventure. On My Adventures, between adventures, it can also answer questions about BLUERABBIT itself, such as how to join an adventure; there it runs on your own Claude key if you saved one in My Account (<strong>A.I. (Cooper)</strong>), else on the platform's.</p>
 
 <h2>Emailing Support</h2>
 <p>The warning-sign button in the top-right corner (<strong>Email Support</strong> in the New view, <strong>Report a bug</strong> in the Classic top bar), and <strong>Report a problem</strong> in the New view's menu, open a new email in your mail app, addressed to your Adventure's support address. Your Game Master can set that address; if they haven't, it goes to your platform's default support address.</p>
@@ -1638,7 +1641,7 @@ HTML,
 <p>Open <strong>Manage Players</strong> and its <strong>Add Players</strong> tab. It has two ways in, one person at a time or a whole file.</p>
 
 <h3>One at a time</h3>
-<p><strong>Find someone already registered</strong> searches by first name, last name, nickname or email (type at least two characters). Several words narrow the results: "ana lopez" finds people matching both words, rather than every Ana and every Lopez. Each result says whether they're already here and has its own button: <strong>Add</strong> for someone new to this Adventure, <strong>Add back</strong> for someone you removed earlier, or <em>In this adventure</em> if they're already in. You can keep adding without reloading the page, and everyone you add is listed under <strong>Added in this session</strong>.</p>
+<p><strong>Find someone already registered</strong> searches by first name, last name, nickname or email (type at least two characters). Several words narrow the results: "ana lopez" finds people matching both words, rather than every Ana and every Lopez. Each result says whether they're already here and has its own button: <strong>Add</strong> for someone new to this Adventure, <strong>Add back</strong> for someone you removed earlier, or <em>In this adventure</em> if they're already in. You can keep adding without reloading the page, and everyone you add is listed under <strong>Added in this session</strong>. If the Adventure has guilds and every guild that takes newcomers is full, the person gets no guild, and Add says so under their row and in Added in this session.</p>
 <p>Not on the platform yet? Under <strong>Create a new account</strong>, enter their email (the only required field) and, optionally, a nickname, first and last name and password, then press <strong>Create and add</strong>. A free nickname is built from the email and a password is generated if you leave them blank; both are shown to you once the account exists.</p>
 
 <h3>In bulk, from a CSV file</h3>
@@ -1662,7 +1665,7 @@ HTML,
   <li><strong>Max Players per Adventure</strong>, on the Basics pane. If you set it, the link refuses newcomers once that many people are enrolled ("Adventure Full"). It's your own limit for this one Adventure, it's checked only by the link, and adding people yourself isn't blocked by it.</li>
   <li><strong>Someone you removed.</strong> The link doesn't bring them back. They're told they were removed and to ask the Game Master to add them back, which you do with <strong>Activate</strong> on the Inactive tab or <strong>Add back</strong> in the search.</li>
 </ul>
-<p>If the Adventure has guilds and <strong>Assign guilds on login</strong> is set to Yes (Basics pane, Guilds &amp; schedule), a newcomer is also put into the published guild with the fewest members that still has room. Each guild has an enrollment link of its own too; see <a href="/docs/guilds-designing-team-play">Guilds</a>.</p>
+<p>If the Adventure has guilds (<strong>Assign guilds on login</strong> set to Yes, Basics pane, Guilds &amp; schedule), a player without a guild is placed in one the first time they open the journey, however they joined: the adventure's code, Manage Players' Add, a CSV or sign-up. The emptiest guild with room wins; see <a href="/docs/guilds-designing-team-play">Guilds</a> for which guilds take newcomers. Each guild has an enrollment link of its own too.</p>
 
 <h2>Changing Roles and Removing People</h2>
 <p>Switch roles on the <strong>Active</strong> tab of Manage Players: each row has a Player / GM / NPC switch, and the change asks first ("Make GM?", "Make NPC?"). The GM option only appears when your platform allows more than one Game Master. The owner's row can't be changed.</p>
@@ -1738,7 +1741,7 @@ HTML,
 <p>Achievements live on the template, but their QR codes are made per cohort, so a printed code credits the cohort it was made for. To get a cohort's QR code, open the achievement from inside that cohort; the editor tells you which Adventure the code redeems into. A milestone's QR code is simpler still: one printed code serves the template and every cohort, and a scan counts in the cohort the player is playing. A typed magic code works in every cohort and credits whichever Adventure the player redeems it in, but the editor's <strong>Magic Link</strong> and unique-code links point at the template, so in a cohort share the typed code or the cohort's QR instead. See <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes — Live &amp; Hybrid Event Checkpoints</a>.</p>
 
 <h2>The A.I. Key</h2>
-<p>Save your Claude API key once, on the template's <strong>Connections</strong> pane, and every cohort uses it. A cohort's Connections pane says when it's using the template's key; save a key there only if that cohort should use a different one. <strong>Test Key</strong> makes one real call and tells you whose key answered. Cooper uses the same key when an Adventure has one, so its conversations in every cohort are billed to it too. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
+<p>Save your Claude API key once, on the template's <strong>Connections</strong> pane, and every cohort uses it. A cohort's Connections pane says when it's using the template's key (or, with neither, the owner's account key from My Account); save a key there only if that cohort should use a different one. <strong>Test Key</strong> makes one real call and tells you whose key answered. Cooper uses the same key when an Adventure has one, so its conversations in every cohort are billed to it too. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
 
 <h2>Running a Cohort Day to Day</h2>
 <p>A cohort has a full set of staff tools of its own, scoped entirely to its players. In the New view, the menu's <strong>Game master</strong> group for a cohort holds <strong>Build</strong> (Cohort settings, Template settings and Missions &amp; Tasks), <strong>Watch</strong> (Stats, Activity, Player records, Transactions) and <strong>Run</strong> (Players, Manage players, Player requests, Email notifications, Player meta, and Award Blooms when the Garden is on). The Classic menu's Admin Tools column has the same. A GM who only runs one cohort never has to touch the template to do their job. <strong>Template settings</strong> opens the template's Adventure Settings, for someone allowed to edit it.</p>
@@ -2151,7 +2154,7 @@ HTML,
   <li><strong>Level</strong> — the minimum player level to open it.</li>
   <li><strong>XP, BLOO and EP</strong> — what it pays on completion, each field named the way this adventure names it. The EP field is always there, but players only see and spend energy when the adventure's <strong>Energy Points (EP)</strong> switch is on (Adventure Settings → Rules &amp; scoring).</li>
   <li><strong>Start Date</strong> and <strong>Deadline</strong> — date-gate it on either end, in the adventure's own time zone. Before the start date it isn't open yet; after the deadline it has expired. <strong>Hide milestones outside the dates</strong> (Adventure Settings → Basics) decides whether players still see it outside that window.</li>
-  <li><strong>Unlock cost</strong> and <strong>Deadline cost</strong> — prices in BLOO (named the adventure's way). With an unlock cost, players pay that much to open the milestone; 0 makes it free. With a deadline cost, once the deadline passes players can pay that much to reopen it; 0 means it stays closed. The player confirms before anything is spent.</li>
+  <li><strong>Unlock cost</strong> and <strong>Deadline cost</strong> — prices in BLOO (named the adventure's way). With an unlock cost, players pay that much to open the milestone, and it's asked on every way in, a QR scan included; 0 makes it free. Players who had already started it keep access. With a deadline cost, once the deadline passes players can pay that much to reopen it; 0 means it stays closed. The player confirms before anything is spent.</li>
   <li><strong>Optional</strong> — "Doesn't count toward Tabi unlock". A side activity that never holds up its chapter and doesn't count toward a player's journey progress.</li>
   <li><strong>Validate</strong> — "Require validation before awarding". Adds Validate and Invalidate buttons for each submission on the Milestone's Review page. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
 </ul>
@@ -2316,7 +2319,7 @@ HTML,
 
 <h2>Tries</h2>
 <p><strong>Maximum attempts</strong> sits with the Mistake Message. Leave it at 0 for unlimited tries. Any other number limits the tries on that step, and running out fails the whole Milestone: the player is sent to its fail screen and starts a new attempt, with fresh tries. The limit is enforced by the server, so once it's spent even a correct answer is refused.</p>
-<p>It works on <strong>Multiple Choice</strong>, <strong>Keyphrase</strong>, <strong>Cryptex</strong> and <strong>Require Backpack Item</strong>. Each of them tells the player their tries from the first look ("You have 3 tries", then "2 tries left", then a red "Last try"). Only a submitted answer spends one: picking options spends nothing, and an empty answer or the wrong number of picks on a "Choose 2" question is pointed out in the step and not counted. When the last try goes wrong, the step locks, says why, and moves on to the fail screen. The field also shows on Puzzle and SCORM Package, where there's nothing to get wrong, so leave it at 0 there.</p>
+<p>It works on <strong>Multiple Choice</strong>, <strong>Keyphrase</strong>, <strong>Cryptex</strong> and <strong>Require Backpack Item</strong>. Each of them tells the player their tries from the first look ("You have 3 tries", then "2 tries left", then a red "Last try"). Only a submitted answer spends one: picking options spends nothing, and an empty answer or the wrong number of picks on a "Choose 2" question is pointed out in the step and not counted. When the last try goes wrong, the step locks, says why, and moves on to the fail screen.</p>
 
 <h2>Read It Again</h2>
 <p>A question often comes right after the content it asks about. On Multiple Choice, Keyphrase, Cryptex and Open Text steps, <strong>Read it again</strong> opens a panel over the question with the words of the steps before it (the speaker's name and face included), and <strong>Back to the question</strong> returns with the pick, the typed answer and the tries left exactly as they were. It lights up after a wrong answer. A video, audio, gallery or slides step before the question appears as a row with "Watch it again" and the like, which goes back to that step; a chip under the top bar brings the player straight back to the question. Nothing to set up: it follows the order the player actually came through.</p>
@@ -2352,10 +2355,10 @@ HTML,
       <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
       <li><strong>A.I. Reviewer Context</strong>: private: players never see it, and the A.I. is told never to quote it back. Say what a good answer to this question must include. It's optional; without it the A.I. judges whether the answer is a genuine attempt at the prompt. The Milestone's Quest Context goes along with every check too.</li>
     </ul>
-    Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key on the adventure's Connections pane (a cohort uses its template's key). If a check can't run, the answer is let through and staff are told why. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
+    Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key: the adventure's own on its Connections pane (a cohort uses its template's), or else its owner's account key. If a check can't run, the answer is let through and staff are told why. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
   <li><strong>Survey Choice</strong>: a question with options and no correct answer. Choose whether players can pick more than one. With multiple answers on, <strong>Most answers a player can pick</strong> caps how many they tick (0 means no limit): the player sees "Choose up to 3" and the remaining boxes lock at the limit. Stats has a Surveys tab that totals every answer.</li>
   <li><strong>Rating Scale</strong>: a numeric scale with a minimum and maximum you set, plus a label for each end ("Strongly Disagree" to "Strongly Agree"). The tool for pulse checks and confidence self-ratings.</li>
-  <li><strong>Poll</strong>: a question whose results render as live percentage bars the moment the player votes. Use it when seeing what everyone else said is the point.</li>
+  <li><strong>Poll</strong>: a question whose results always render as live percentage bars the moment the player votes. Use it when seeing what everyone else said is the point.</li>
   <li><strong>Upload Image</strong>: the player submits a photo or screenshot, with a <strong>Max File Size (MB)</strong> you set. Use it for anything you need to <em>see</em> to assess.</li>
   <li><strong>Upload Video</strong>: the same, for video. Pitches, demonstrations, language practice, physical technique.</li>
 </ul>
@@ -2381,8 +2384,8 @@ HTML,
   <li><strong>System Message</strong>: narrator text in the system voice, with no character attached. For instructions, transitions, and anything that isn't a person speaking. It never shows a character, even though the editor offers the character settings here too; use Dialogue for a person.</li>
   <li><strong>Win Screen</strong>: a custom success ending, showing this step's Content. It replaces the standard win screen wherever it sits in the list.</li>
   <li><strong>Fail Screen</strong>: a custom fail ending, shown when a player runs out of tries. It replaces the standard fail screen; its button clears the player's answers and starts the Milestone over.</li>
-  <li><strong>Choose Nickname</strong>: asks the player what to call them (your <strong>Question</strong>, "What should we call you?" if you leave it blank) and saves it as their <em>display name</em>, the name other players see: 2 to 50 characters, with its own Save button, and Continue opens once it's saved. It never changes the nickname they sign in with. Almost always in the first Milestone of an Adventure.</li>
-  <li><strong>Choose Avatar</strong>: you define the avatars: <strong>Add avatar</strong> for each one and choose its image. The player picks one of them. Same placement logic as Choose Nickname.</li>
+  <li><strong>Choose Display Name</strong>: asks the player what to call them (your <strong>Question</strong>, "What should we call you?" if you leave it blank) and saves it as their <em>display name</em>, the name other players see: 2 to 50 characters, with its own Save button, and Continue opens once it's saved. It never changes the nickname they sign in with. Almost always in the first Milestone of an Adventure.</li>
+  <li><strong>Choose Avatar</strong>: you define the avatars: <strong>Add avatar</strong> for each one and choose its image. The player picks one of them. Same placement logic as Choose Display Name.</li>
 </ul>
 
 <h2>Pacing: The Only Rule That Matters</h2>
@@ -2460,7 +2463,7 @@ HTML,
   <li><strong>System Message</strong> — narrator text with no character attached.</li>
   <li><strong>Win Screen</strong> — a custom success ending, replacing the standard one.</li>
   <li><strong>Fail Screen</strong> — a custom fail ending for a player who runs out of tries.</li>
-  <li><strong>Choose Nickname</strong> — asks what to call the player and saves it as their display name (never their sign-in nickname).</li>
+  <li><strong>Choose Display Name</strong> — asks what to call the player and saves it as their display name (never their sign-in nickname).</li>
   <li><strong>Choose Avatar</strong> — the player picks from the avatars you define.</li>
 </ul>
 
@@ -2598,7 +2601,7 @@ HTML,
   <li><strong>Create it.</strong> Choose <strong>Challenge</strong> in the menu's Add group (<strong>New Challenge</strong> under Add Mechanics in the Classic view). It appears when the adventure's Challenges section is on. On the General tab give it a Name, Color, Icon and Main Image, then press <strong>Create Challenge</strong> in the bottom bar. The Questions tab reads "Please save the challenge before adding questions" until you do.</li>
   <li><strong>Write your question bank.</strong> The Questions tab lists one row per question, and <strong>Add a question</strong> has a button for each kind: Multiple choice, Put in order, Match the pairs, Sort into groups, Fill the gaps and Click on the picture. Each opens the question in one window (below), and one save writes the whole question.</li>
   <li><strong>Write the explanations.</strong> Every kind has an Explanation, shown on review and only to a player who got that question right. Say why the answer is right, not "well done". Blank is fine.</li>
-  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does, plus a <strong>Deadline cost</strong>: what players can pay in BLOO to reopen the challenge after its deadline (0 keeps it closed). A challenge has no unlock cost.</li>
+  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does, plus a <strong>Deadline cost</strong>: what players can pay in BLOO to reopen the challenge after its deadline (0 keeps it closed). The challenge editor has no Unlock cost field, but an unlock cost set any other way is still asked for on the challenge page and on Start.</li>
   <li><strong>Write the Content.</strong> The <strong>Short Description</strong> is the preview players read when they click the Challenge on the map. The <strong>Success Message</strong> lands on the player's Secrets &amp; Clues page once they pass.</li>
   <li><strong>Set requirements and extra rewards</strong> on the Advanced tab: the <strong>Conditions</strong> drawer for prerequisites, and the Skill, Item and Achievement rewards. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a>; they work the same way here.</li>
   <li><strong>Pick a status and save.</strong> Choose Publish, Draft or Locked (and, if the adventure has paths, who it's <strong>Visible to</strong>) in the bottom bar and press <strong>Update Challenge</strong>.</li>
@@ -2835,7 +2838,7 @@ HTML,
 <p>Some material can't be read: a video's soundtrack, a live session, a module that's all pictures. Each set has a box, <strong>Your own notes for the A.I.</strong>, for a transcript or the key points. It's used the next time those notes are built, on top of the material, and players never see it, only the notes written from it. Pasting a video's transcript there is the way to give a video step real study notes.</p>
 
 <h2>Which Key Pays</h2>
-<p>Building calls the A.I., so it needs a key: the Adventure's own Claude key on the Connections pane of Adventure Settings (a cohort uses its template's), or, when the Adventure has Cooper switched on, the platform's Cooper key. Without either, the Library says so, and notes can still be written by hand, just not built.</p>
+<p>Building calls the A.I., so it needs a key: the Adventure's own Claude key on the Connections pane of Adventure Settings (a cohort uses its template's), else the Adventure owner's account key (My Account → A.I. (Cooper)), or, when the Adventure has Cooper switched on, the platform's Cooper key. Without either, the Library says so, and notes can still be written by hand, just not built.</p>
 
 <h2>The Glossary</h2>
 <p>Every set of notes has its own glossary, so a term two modules both teach shows up twice, and "MFA" sits apart from "Multi-factor authentication". <strong>Compile the glossary</strong> hands every term to the A.I., which joins the ones that are the same entry into one, with one short meaning made from their own words and nothing added. Terms with no twin stay as they are. Read the joined entries, fix any wording, or <strong>Keep apart</strong> two terms that should stay separate, then publish. Players then read one A-to-Z list, and every set of notes shows the joined meaning.</p>
@@ -3016,7 +3019,7 @@ HTML,
   <li><strong>Rewards</strong> — XP and BLOO (and EP, if the adventure uses energy), on badges and paths.</li>
   <li><strong>Branch</strong> — on paths: which branch this path belongs to.</li>
   <li><strong>Available for</strong> — on badges: all paths, or only players on one path.</li>
-  <li><strong>Max Players</strong> — how many players in the adventure can hold it. Leave it blank for no limit; once that many hold it, a Game Master's grant is refused.</li>
+  <li><strong>Max Players</strong> — how many players in the adventure can hold it. Leave it blank for no limit; once that many hold it, both a Game Master's grant and a magic code are refused (the player is told <em>You are too late!</em>).</li>
   <li><strong>Deadline</strong> — on badges. Unique codes stop working after it.</li>
   <li><strong>Secret Message</strong> — shown only to players who have earned it, when they open it on their Achievements page. Redeeming a magic code shows it in the celebration too.</li>
 </ul>
@@ -3043,7 +3046,7 @@ HTML,
   <li><strong>Unique Codes</strong> — press <strong>Create Code</strong> for each one-time code you need. Each can be redeemed once, by one player. The Available, Redeemed and Expired tabs show where every code stands, including who redeemed it and when, and <strong>Show all links</strong> lists every available code's link in one block, ready to paste into a mail merge or a print run.</li>
 </ul>
 <p>Once saved, the Settings tab also shows the achievement's <strong>QR Code</strong>. It's specific to the adventure you opened the achievement from: every cohort built from a template gets its own QR, so open the achievement from that cohort to print the right one. The magic code itself works in any cohort of the template. The <strong>Magic Link</strong> and the unique codes' links, though, always point at the template's own adventure, so for a cohort hand out the typed code or the cohort's QR rather than a link.</p>
-<p>Players redeem a code through the <strong>Magic Code</strong> shortcut (the taskbar's quick link in the Classic view, the menu in the New view), by scanning the QR, or by opening a magic link. Codes work however they're typed, capitals or not. Redeeming opens the celebration panel with the badge and its secret message. A code that can't be redeemed (a deadline that has passed, a code someone already used, a branch the player already chose from) says why in a panel that stays until the player closes it, and the magic link's page lists every reason. A magic link or QR opened on a phone that isn't signed in is kept through the sign-in: once they sign in, the code runs.</p>
+<p>Players redeem a code through the <strong>Magic Code</strong> shortcut (the taskbar's quick link in the Classic view, the menu in the New view), by scanning the QR, or by opening a magic link. Codes work however they're typed, capitals or not. Redeeming opens the celebration panel with the badge and its secret message. A code that can't be redeemed (a deadline that has passed, a code someone already used, an achievement that has reached its Max Players, a branch the player already chose from, or a path-only code when the player hasn't chosen that path: <em>Not on your path</em>) says why in a panel that stays until the player closes it, and the magic link's page lists every reason. A magic link or QR opened on a phone that isn't signed in is kept through the sign-in: once they sign in, the code runs.</p>
 
 <h2>Awarding by Hand</h2>
 <p>The Players tab lists everyone enrolled in the adventure you opened it from. Click a player to award the achievement or take it away, or use <strong>Assign all</strong> / <strong>Remove all</strong>. A player you award it to is told "A Game Master awarded you this achievement" on their next page. <strong>Bulk Upload Players</strong> takes a CSV with a single column of email addresses (<strong>Upload file</strong>), and the tab keeps a record of the last few uploads: how many were assigned, already had it or weren't found, and the result for every address.</p>
@@ -3157,13 +3160,13 @@ HTML,
 <p>Guilds add a team layer on top of individual progress. They're good for cohort-based programs (a bootcamp class, a department-wide rollout) where a bit of friendly competition or shared accountability helps. For a purely self-paced, individual course they're often unnecessary overhead; skip them if there's no real team behind the players. Turn them on with the <strong>Guilds</strong> section in Adventure Settings → Sections.</p>
 
 <h2>Creating Guilds &amp; Setting Capacity</h2>
-<p>Create guilds from Manage Content → Guilds → <strong>Add New Guild</strong>, or from the menu's Add group. The guild editor has four tabs: <strong>Settings</strong>, <strong>Members</strong>, <strong>Roles</strong> and <strong>Assign Players</strong>. On Settings each guild has a <strong>Guild Name</strong>, a <strong>Guild Logo</strong> (required), a <strong>Color</strong>, an optional <strong>Group</strong> and a <strong>Capacity</strong> (0 means no limit). Distinct names, colours and logos make them readable on the leaderboard, and a capacity keeps group sizes even: it caps who can join by the invite link or be placed automatically, while a Game Master assigning by hand may still go over.</p>
+<p>Create guilds from Manage Content → Guilds → <strong>Add New Guild</strong>, or from the menu's Add group. The guild editor has four tabs: <strong>Settings</strong>, <strong>Members</strong>, <strong>Roles</strong> and <strong>Assign Players</strong>. On Settings each guild has a <strong>Guild Name</strong>, a <strong>Guild Logo</strong> (required), a <strong>Color</strong>, an optional <strong>Group</strong> and a <strong>Capacity</strong> (0 means no limit). Distinct names, colours and logos make them readable on the leaderboard, and a capacity keeps group sizes even: it caps who can join by the invite link or be placed automatically, while a Game Master assigning by hand may still go over. A guild's <strong>Auto-assign on login</strong> decides whether it takes newcomers automatically (see below).</p>
 <p>The <strong>Group</strong> sorts a long list into piles, and Manage Guilds can filter by it. It also matters for invite links: a player already in a guild can't use a link to join a second guild in the same group.</p>
 <p>Many guilds at once can come in from a CSV file, with the Upload beside Add New Guild; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
 
 <h2>Putting Players in Guilds</h2>
 <ul>
-  <li><strong>Automatically on joining</strong>: set <strong>Assign guilds on login</strong> to Yes (Adventure Settings → Basics, Guilds &amp; schedule). A new player is placed in whichever published guild has the fewest members and still has room.</li>
+  <li><strong>Automatically</strong>: set <strong>Assign guilds on login</strong> to Yes (Adventure Settings → Basics, Guilds &amp; schedule). A player without a guild is placed the first time they open the journey, whether they joined by the adventure's code, Manage Players' Add, a CSV or sign-up, and the journey tells them "You just joined" and the guild's name. If any guild is marked <strong>Auto-assign on login</strong> (its Settings tab), only the marked guilds take newcomers; if none is marked, any published guild does. The emptiest one with room wins, the oldest on a tie; a capacity of 0 or blank means no limit. If every guild that takes newcomers is full, the player gets none. NPCs without a guild are placed too; GMs and administrators are not.</li>
   <li><strong>From the player CSV</strong>: the enrollment import's Guild column creates or joins a guild by name as players come in. See <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>.</li>
   <li><strong>Into guilds that already exist, by CSV</strong>: on Manage Guilds, <strong>Assign players to a guild</strong>: pick the guild, upload a CSV with one column of email addresses, and press <strong>Assign from file</strong>. A guild's own editor has the same as <strong>Bulk Assign Players (CSV)</strong>. Everyone matched is moved into that guild, replacing any guild they were in. Anyone already in it is left alone, so running the same file twice is safe, and a full guild stops accepting people once it reaches capacity.</li>
   <li><strong>One at a time</strong>: the guild editor's <strong>Assign Players</strong> tab.</li>
@@ -3230,7 +3233,7 @@ HTML,
 <p>Which fields appear depends on the type:</p>
 <ul>
   <li><strong>Cost</strong> (in BLOO) and <strong>Level</strong>, the level a player needs to buy it: for everything sold: consumables, keys, Tabi pieces and gift cards.</li>
-  <li><strong>Stock</strong>: how many the shop can sell, for consumables, Tabi pieces and gift cards. Leave it blank for unlimited, and the shop shows ∞.</li>
+  <li><strong>Stock</strong>: how many the shop can sell, for consumables, Tabi pieces and gift cards. Blank or 0 means unlimited, and the shop shows ∞. Keys and rewards are always unlimited. When an item has sold out, its editor says so and how to restock it; saving without touching Stock keeps it sold out.</li>
   <li><strong>Max per player</strong>: for consumables and gift cards; leave it at 0 for no limit. Keys, Rewards and Tabi pieces are always one per player.</li>
   <li><strong>Display in shop</strong>: Visible or Hidden, for consumables, Tabi pieces and gift cards. A hidden item is kept out of the shop, for things you only want handed out by a Find Item step or by you.</li>
   <li><strong>Group</strong>: a colour category for consumables and gift cards, shown as a badge in the shop. When an item is in a group, its Max per player counts everything the player holds from that group, so you can cap "any two potions" rather than two of each.</li>
@@ -3264,6 +3267,7 @@ HTML,
   <li><strong>Label (optional)</strong>: e.g. "Amazon Gift Card".</li>
   <li><strong>Card Source</strong>: <strong>Adventure default campaign (recommended)</strong>, <strong>A different campaign, just for this item</strong>, or <strong>Specific brands from the catalogue</strong>. A campaign decides which brands the player can choose from, and you curate it in your Tremendous dashboard.</li>
 </ul>
+<p>Off Enterprise, the item editor shows no gift card settings at all, and a gift card made earlier says it can't send.</p>
 <p>The card goes to the player's account email. Before any BLOO is spent, a card that can't be sent (no campaign, no email on file) is refused, and if the send fails nothing is deducted. Every send is listed under <strong>Gift Card Orders</strong> in Manage Items.</p>
 
 <h2>Pricing With BLOO</h2>
@@ -3317,6 +3321,7 @@ HTML,
   <li><strong>On certain days of the week</strong> fires once on each chosen day, by the adventure's time zone. It doesn't accumulate: miss the day, miss the encounter, which is what makes a scheduled beat feel like an event.</li>
 </ul>
 <p>Conditions live on the group, not the card, on purpose. A card with its own gate would turn the draw into a milestone that auto-loads at a set point; the randomness only means something when the group is gated and the card inside it is chance. So make one group per distinct rule set.</p>
+<p>A card also has a <strong>Chapter (Tabi)</strong> field, but the draw ignores it: it doesn't keep a card to that chapter. To keep cards to one chapter, give their group a condition on that Tabi.</p>
 <p><strong>One hand at a time.</strong> If several groups are ready, only the lowest Order deals; the rest wait. And no new hand arrives until the player has finished the encounter they picked, which paces the whole thing without a timer.</p>
 <p>Cards left <strong>Uncategorised</strong> have no conditions and no schedule, so they're always available. They deal a hand of eight, in red if the hand holds any crisis and green otherwise, and only when no authored group is ready. A <strong>Draft</strong> group parks its cards: nothing in it is dealt. Deleting a group moves its cards back to Uncategorised; it never deletes them.</p>
 
@@ -3511,7 +3516,7 @@ HTML,
 <p><strong>Troubleshooting a missing QR code:</strong> if a task's QR code doesn't appear, open Manage Content → Tasks once — that's enough to generate it. A task you've duplicated or copied into a new cohort always gets its own fresh code, so one group's printed code is guaranteed never to work for another group's copy of the same task.</p>
 
 <h2>Milestone QR Codes: Quick-Complete</h2>
-<p>A milestone can also be completed by a scan. Once a milestone is saved, its code appears in the milestone builder beside the Main Image, with <strong>Download QR</strong> for a picture you can print or project. Scanning it completes the milestone outright for the player who scans it and pays its XP and BLOO, plus any item or achievement reward, skipping level requirements, conditions, start dates and deadlines. It's the one completion path in BLUERABBIT deliberately built to skip the rest of the system. The milestone has to be published, a second scan only says it's already completed, and the completion screen offers <strong>Back to the journey!</strong>.</p>
+<p>A milestone can also be completed by a scan. Once a milestone is saved, its code appears in the milestone builder beside the Main Image, with <strong>Download QR</strong> for a picture you can print or project. Scanning it completes the milestone outright for the player who scans it and pays its XP and BLOO, plus any item or achievement reward, skipping level requirements, conditions, start dates and deadlines. It's the one completion path in BLUERABBIT deliberately built to skip the rest of the system, with one exception: an <strong>Unlock cost</strong> is still asked for on the scan page, and paying there completes the scan. The milestone has to be published, a second scan only says it's already completed, and the completion screen offers <strong>Back to the journey!</strong>.</p>
 <p>Because it skips everything, it's not the tool for anything you actually want gated. Reserve it for milestones where "being physically present and scanning" is the whole point.</p>
 
 <h2>One Code Per Cohort</h2>
@@ -4125,10 +4130,10 @@ HTML,
 <p>The same panel decides how a finished milestone nothing marked counts toward a player's average: as full marks, or left out so the average is about marked work only.</p>
 
 <h2>Setting the Bar Before They Submit</h2>
-<p>An Open Text step can require a minimum word count (<strong>Min Words</strong>), so a one-line answer simply can't be sent. The player is told how many words they need and how many they wrote. You never see the half-effort version, and the player gets the feedback immediately rather than waiting for you to bounce it back. <strong>Rich Text Editor</strong> decides whether they write in a formatted editor or a plain box.</p>
+<p>An Open Text step can require a minimum word count (<strong>Min Words</strong>), so a one-line answer simply can't be sent. The player is told how many words they need and how many they wrote. You never see the half-effort version, and the player gets the feedback immediately rather than waiting for you to bounce it back. Every Open Text box is a formatted editor.</p>
 
 <h2>Turning On AI-Assisted Feedback</h2>
-<p>With a Claude API key on the Adventure (see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>), every Open Text step has three A.I. settings:</p>
+<p>With a Claude API key on the Adventure, or on its owner's account (see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>), every Open Text step has three A.I. settings:</p>
 <ul>
   <li><strong>A.I. Validation</strong> (Off or On): the instant check. When it's on, the answer goes to Claude when the player submits it. If it falls short, the player sees why and revises before moving on.</li>
   <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
@@ -4197,7 +4202,7 @@ HTML,
 <p>Search by name or email, filter by status, and choose a page size. <strong>Download CSV</strong> and the A.I. Review panel are there too, and <strong>Every answer</strong> (or a row's link) opens the full Milestone Review. Answers from a cohort you don't run are listed so the numbers add up, but you validate them from that cohort.</p>
 
 <h2>Validate All with A.I.</h2>
-<p>On a milestone with Validate on, in an Adventure with a Claude key, the Milestone Review and the milestone's Validation list have an <strong>A.I. Review</strong> panel showing how many submissions the A.I. has reviewed so far. <strong>Validate All with A.I.</strong> shows you a plan before anything is spent:</p>
+<p>On a milestone with Validate on, in an Adventure with a Claude key (its own, its template's or its owner's account key), the Milestone Review and the milestone's Validation list have an <strong>A.I. Review</strong> panel showing how many submissions the A.I. has reviewed so far. <strong>Validate All with A.I.</strong> shows you a plan before anything is spent:</p>
 <ul>
   <li><strong>The counts</strong>: submissions, already reviewed, to judge, already judged (free), and nothing written.</li>
   <li><strong>What it will judge against</strong>: the milestone's context, then each question's prompt, strictness and reviewer context. A question with no reviewer context is flagged, because without one the A.I. only judges whether an answer is a genuine attempt, not whether it's right. This is the moment to catch that, not afterwards.</li>
@@ -4283,7 +4288,16 @@ HTML,
   <li>Press <strong>Test Key</strong>.</li>
 </ol>
 <p>The key is <strong>stored encrypted</strong>. The page never shows it back: once a key is saved, the box only says so. Leaving the box blank keeps it, pasting a new key replaces the old one, and <strong>Remove Key</strong> deletes it.</p>
-<p><strong>Cooper is on every plan</strong>, Basic included, and works whenever a key is set: your Adventure's own key here, or else the platform's key. For teams BLUERABBIT sets up and runs directly, we add the key for you.</p>
+<p><strong>Cooper is on every plan</strong>, Basic included, and works whenever a key is set. For teams BLUERABBIT sets up and runs directly, we add the key for you.</p>
+<h2>Which Key Pays</h2>
+<p>Every A.I. feature in an Adventure (Cooper, the Open Text check, the A.I. review, the Library's study notes and reminder drafts) looks for a key in this order, and the first it finds pays:</p>
+<ol>
+  <li>the Adventure's own key (Connections);</li>
+  <li>its template's key, for a cohort;</li>
+  <li>the Adventure owner's account key (My Account → <strong>A.I. (Cooper)</strong>);</li>
+  <li>the platform's key.</li>
+</ol>
+<p>So one key saved on your account covers every Adventure you own that has none of its own. The Connections pane says when the owner's account key is the one paying. Outside any Adventure, Cooper uses the person's own account key, then the platform's.</p>
 <p>Text validation runs on Claude Haiku at well under a cent per check; Cooper costs roughly a cent per player question. For bulk runs, Validate All shows you an estimate before it spends anything and a running total afterwards.</p>
 
 <h2>Test Key</h2>
@@ -4296,7 +4310,7 @@ HTML,
 <ul>
   <li>The instant check on Open Text steps that have <strong>A.I. Validation</strong> switched on. It runs with or without a reviewer context: the switch alone decides.</li>
   <li><strong>Validate with A.I.</strong> and <strong>Validate All with A.I.</strong> on the Milestone Review and the Validation queue, which only appear once the Adventure has a key.</li>
-  <li><strong>Cooper</strong> in this Adventure, and the drafts Cooper writes for you (reminder emails, study notes). An Adventure's key takes priority over the platform's Cooper key, so if Cooper starts failing in an Adventure, test this key first.</li>
+  <li><strong>Cooper</strong> in this Adventure, and the drafts Cooper writes for you (reminder emails, study notes). An Adventure's key takes priority over the owner's account key and the platform's, so if Cooper starts failing in an Adventure, test this key first.</li>
 </ul>
 
 <h2>Setting Up Gift Card Rewards (Tremendous)</h2>
@@ -4552,7 +4566,7 @@ HTML,
   <li><strong>Achievements</strong>: Hide Achievements (keep them hidden on the badges page until earned).</li>
   <li><strong>Leaderboard</strong>: how many players it shows (blank means 10), and what players see on it: an explanation of how players are ranked, the level, XP, milestones, BLOO earned and BLOO left columns, each player's own place pinned under the board, and the guild leaderboard. Game Masters always see everything. Fields from Player Meta you mark <em>Show on the leaderboard</em> become extra columns.</li>
   <li><strong>Item Shop</strong>: Purchase Permissions (set <em>Only Players</em> to take the Buy button away from staff) and <strong>Show players their transactions</strong> (a Transactions tab on the shop, backpack and Tabis pages).</li>
-  <li><strong>Guilds</strong>: <strong>Assign guilds on login</strong>, which puts each player into a random guild the first time they log in.</li>
+  <li><strong>Guilds</strong>: <strong>Assign guilds on login</strong>, which places each player without a guild in one the first time they open the journey: the emptiest guild with room, among those marked Auto-assign on login if any are. See <a href="/docs/guilds-designing-team-play">Guilds</a>.</li>
   <li><strong>The Garden</strong>: how many people each player's Garden shows, and a switch for each of its tools. See <a href="/docs/running-the-garden-as-a-gm">Running the Garden as a GM</a>.</li>
   <li><strong>Resources</strong>: whether players can download the slide decks of the milestones they have open or done.</li>
   <li><strong>Schedule</strong>: Days shown, every day or just today.</li>
@@ -4592,7 +4606,7 @@ HTML,
 <p>See <a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a>.</p>
 
 <h2>Help &amp; Cooper</h2>
-<p><strong>Cooper</strong>: the switch for Cooper, the A.I. guide players can ask about this Adventure. Cooper is on every plan. It runs on a Claude API key: the Adventure's own (Connections, below), or else the platform's, so it works whenever a key is set.</p>
+<p><strong>Cooper</strong>: the switch for Cooper, the A.I. guide players can ask about this Adventure. Cooper is on every plan. It runs on a Claude API key: the Adventure's own (Connections, below), its template's, its owner's account key, or else the platform's, so it works whenever a key is set.</p>
 <p><strong>Cooper Context</strong> is the Adventure's knowledge base for Cooper. <strong>Players never see it.</strong> Use it for everything Cooper can't work out from the Adventure itself: what the program is for, who the players are, house rules, dates, who to contact, and the words your organization actually uses. Cooper reads it on every conversation and treats it as authoritative. Write for the assistant, not for the player, and don't put answers, codes or solutions here. Cooper reads the first 100,000 characters.</p>
 <p><strong>Cooper's Character</strong> gives the assistant a different name, face and voice for this Adventure:</p>
 <ul>
@@ -4613,7 +4627,7 @@ HTML,
 <p><strong>Email design</strong>: how every email from this Adventure looks (reminders and the messages you send): the text, header, message and footer colours, and what's around the email. Anything left unset uses the platform design. <strong>Preview</strong> shows the real email, drawn the way it's sent. A cohort's emails use its template's design.</p>
 
 <h2>Connections</h2>
-<p><strong>Claude API key</strong>: one key powers every A.I. feature in this Adventure: validation on Open Text steps, A.I. grading, and Cooper. Paste it and it's saved as soon as you leave the box; it's stored encrypted and never shown back. <strong>Test Key</strong> makes one real call and reports whose key answered, and <strong>Remove Key</strong> clears it. A cohort with no key of its own uses its template's. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
+<p><strong>Claude API key</strong>: one key powers every A.I. feature in this Adventure: validation on Open Text steps, A.I. grading, and Cooper. With no key here (and none on the template), the owner's account key pays, and the pane says so. Paste it and it's saved as soon as you leave the box; it's stored encrypted and never shown back. <strong>Test Key</strong> makes one real call and reports whose key answered, and <strong>Remove Key</strong> clears it. A cohort with no key of its own uses its template's. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
 <p><strong>Tremendous gift cards</strong> (Enterprise only): connects a Tremendous account so Gift Card items send real gift cards.</p>
 
 <h2>Players</h2>
@@ -4623,7 +4637,7 @@ HTML,
 <p><strong>Resets</strong> apply to every player in the Adventure at once, and none can be undone. Each asks for a second click.</p>
 <ul>
   <li><strong>Replay level-up messages</strong>: every player sees the level-up message for the level they're on again.</li>
-  <li><strong>Empty every guild</strong>: everyone leaves their guild; the guilds stay, empty. With Assign guilds on login on, each player is put into a new random guild the next time they log in.</li>
+  <li><strong>Empty every guild</strong>: everyone leaves their guild; the guilds stay, empty. With Assign guilds on login on, each player is placed in a guild again the next time they open the journey.</li>
   <li><strong>Replay the journey tour</strong>, offered when tours start automatically: every player is shown the journey tour again.</li>
 </ul>
 
@@ -4885,6 +4899,7 @@ HTML,
   <li><strong>Guilds</strong>, <strong>Tabis</strong>, <strong>Skills</strong> and <strong>Tasks</strong>: beside each tab's add button.</li>
   <li><strong>Posts</strong> and <strong>Resources</strong>: at the top of each tab's published list.</li>
 </ul>
+<p>For items, <code>item_stock</code> blank or 0 means unlimited, and keys and rewards are always unlimited, as in the item editor; the upload report marks those rows "(stock: unlimited)".</p>
 <p>Only those who can edit the Adventure see the uploads; NPCs don't. Content lands where it belongs: milestones, achievements, items, Tabis, skills, speakers, posts and resources on the template, so every cohort gets them; guilds, tasks and schedule sessions on the Adventure you're in, as a cohort keeps its own.</p>
 
 <h2>Before You Pick a File</h2>
@@ -5081,7 +5096,7 @@ HTML,
 <h2>How Organizations Fit Together</h2>
 <ul>
   <li><strong>An Adventure belongs to exactly one Organization.</strong> The app refuses to attach an Adventure that's already in another one.</li>
-  <li><strong>People reach an Organization through its Adventures.</strong> A person can be part of two Organizations (two clients, one Adventure each) without anything being shared between them.</li>
+  <li><strong>Everyone in an Organization's Adventures is in the Organization.</strong> Nobody can be in one of its Adventures without being in the Organization. A person can be part of two Organizations (two clients, one Adventure each) without anything being shared between them.</li>
   <li><strong>Cohorts follow their template.</strong> A cohort built from a template that sits in an Organization is filed under that same Organization.</li>
 </ul>
 
@@ -5092,7 +5107,9 @@ HTML,
 <p>The Organization's name, logo, brand colour and an About text. Save with <strong>Save Organization</strong>.</p>
 
 <h2>Players</h2>
-<p>Add people to the Organization by email: type it into <strong>Add Players to the org</strong> and choose <strong>Find Player</strong>. Each person's role in the Organization is recorded as <strong>Player</strong>, <strong>GM</strong> or <strong>NPC</strong>, and a search box filters the list. What someone can do inside a particular Adventure still comes from that Adventure's own roster (see <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>).</p>
+<p>Add people to the Organization by email: type it into <strong>Add Players to the org</strong> and choose <strong>Find Player</strong>. Each person's role in the Organization is recorded as <strong>Player</strong>, <strong>GM</strong> or <strong>NPC</strong>, and a search box filters the list. The roster lists everyone in the Organization's Adventures and their cohorts, plus members with no Adventure, such as people who only need to see stats.</p>
+<p><strong>Remove</strong> takes a person out of the Organization and out of every Adventure in it, after a confirmation that names them. Their records are kept. Platform administrators do this.</p>
+<p>What someone can do inside a particular Adventure still comes from that Adventure's own roster (see <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>).</p>
 
 <h2>Adventures</h2>
 <p>Search for an Adventure and attach it to the Organization, or remove one. The search only offers Adventures that aren't in any Organization yet, so there's no way to steal another client's Adventure by accident. Each attached Adventure is listed with its enrollment link and its owner.</p>
@@ -5105,7 +5122,7 @@ HTML,
 <ul>
   <li><strong>Cross-Adventure Stats</strong>: one analytics view across every Adventure in the Organization. Until it lands, use each Adventure's own <a href="/docs/stats-dashboard-guide">Stats page</a>.</li>
   <li><strong>Bulk adding people</strong>, either from an existing Adventure's roster or by CSV, at the Organization level. For now, add people through each Adventure's own CSV import (see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads &amp; Exports with CSV</a>).</li>
-  <li>Removing a person from an Organization, and deleting an Organization.</li>
+  <li>Deleting an Organization.</li>
 </ul>
 
 <h2>Related</h2>
@@ -5232,7 +5249,7 @@ HTML,
 <p>Human verification on every signed-out form, sign-in rate limits, upload limits by role, SVG handling and the sign-in log, plus Single Sign-On with Microsoft Entra ID. These have their own page: <a href="/docs/security-and-single-sign-on">Security &amp; Single Sign-On</a>.</p>
 
 <h2>Cooper</h2>
-<p>The master switch for Cooper, the in-app AI assistant, across every Adventure, the model Cooper runs on, and the platform's Anthropic API key, used only where an Adventure has no key of its own. <strong>Character</strong> sets the platform default for who Cooper is: a name, a picture, a button icon, a greeting and a personality. Each Adventure can override the character on its own Help &amp; Cooper tab. A personality changes the voice, never the rules: whatever it's called, the assistant still won't hand out answers.</p>
+<p>The master switch for Cooper, the in-app AI assistant, across every Adventure, the model Cooper runs on, and the platform's Anthropic API key, the last resort: used only where an Adventure has no key of its own, none on its template and none on its owner's account. <strong>Character</strong> sets the platform default for who Cooper is: a name, a picture, a button icon, a greeting and a personality. Each Adventure can override the character on its own Help &amp; Cooper tab. A personality changes the voice, never the rules: whatever it's called, the assistant still won't hand out answers.</p>
 <p><strong>Documentation index</strong>: Cooper answers questions about BLUERABBIT itself from a local copy of these docs. <strong>Sync documentation now</strong> fetches them again (up to 120 pages, about a minute); run it after the docs change.</p>
 
 <h2>Billing</h2>
@@ -5272,7 +5289,7 @@ HTML,
 </ul>
 <p>Pro raises all three caps; Enterprise removes them. If you're outgrowing Basic, Pro is a self-serve upgrade from Subscription &amp; Billing in the app. No sales conversation is needed.</p>
 <p>Storage is counted per account. See <a href="/docs/billing-and-plans">Billing &amp; Plans</a> for exactly what counts toward it.</p>
-<p>Everything you build with is the same on Basic and Pro: the Journey Builder, every step type, Challenges, the Item Shop, Guilds, the Garden, Stats and its segments, custom player data fields, email campaigns, CSV uploads, every language, and Cooper, the A.I. assistant (it runs on a Claude API key you add to your Adventure; see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>). Pro gives you more room for it, not a different product.</p>
+<p>Everything you build with is the same on Basic and Pro: the Journey Builder, every step type, Challenges, the Item Shop, Guilds, the Garden, Stats and its segments, custom player data fields, email campaigns, CSV uploads, every language, and Cooper, the A.I. assistant (it runs on a Claude API key: your Adventure's, your account's, or the platform's; see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>). Pro gives you more room for it, not a different product.</p>
 
 <h2>Pro to Enterprise: Scale, and a Few Features Only Enterprise Has</h2>
 <p>Enterprise is built around running <strong>many Adventures as one managed relationship</strong>, and the setup work that comes with that at real scale. A handful of features exist only on Enterprise. They are not offered on the self-serve platform, on any plan:</p>
@@ -5631,6 +5648,14 @@ HTML,
   <li>The forms a signed-out visitor can send (waitlist, contact, login, register, forgot password) are checked by Cloudflare Turnstile when both keys are in <code>.env</code>. With neither key the widget is not drawn and nothing is checked: the safe default for a local copy.</li>
 </ul>
 
+<h2>In the App: Actions These Docs Mention</h2>
+<p>Not this site's routes: these are the app's AJAX actions (its one dispatcher, <code>/ajax</code>, with a fixed action table), named here because the documentation describes them.</p>
+<ul>
+  <li><code>br_save_account_ai_key</code> and <code>br_test_account_ai_key</code>: My Account's A.I. (Cooper) tab saves, replaces, removes and tests the account's Claude key.</li>
+  <li><code>removePlayerFromOrg</code>: an Organization's Remove (corporate servers), which takes a person out of the Organization and every Adventure in it.</li>
+  <li><code>encounterSendPicker</code>: the picker behind an encounter's Send to a player.</li>
+</ul>
+
 <h2>Links Into the App</h2>
 <p>Every link to the BLUERABBIT app goes through <code>PLAY_APP_URL</code> (<code>app/Config/Constants.php</code>, <code>https://play.bluerabbit.io</code>). If the app moves, that line is the only change. The legal pages also link the app's Subscription and My Account pages under it.</p>
 HTML,
@@ -5721,7 +5746,7 @@ HTML,
 <h2>The Per-Adventure Switches</h2>
 <p>Two switches decide how an adventure behaves. Each is a setting on the template (a cohort follows its template), with a server-wide default in <code>.env</code> for adventures that have no setting and for the pages outside any adventure.</p>
 <ul>
-  <li><strong>This app's extras</strong> (Adventure Settings, Rules &amp; scoring): everything this app shows players that the WordPress build never did (tries shown up front, "Read it again", milestone attempts, the Garden's extra tools, My Account's extra tabs, the Library and more). On for every adventure created in the app; an imported adventure starts with it off, so its players see no difference. Server default: <code>bluerabbit.extrasDefault</code> (on unless set).</li>
+  <li><strong>This app's extras</strong> (Adventure Settings, Rules &amp; scoring): everything this app shows players that the WordPress build never did (tries shown up front, "Read it again", milestone attempts, the Garden's extra tools, My Account's extra tabs, the Library and more). One of them is server-wide only: <code>ACCOUNT_AI_KEY</code>, My Account's <strong>A.I. (Cooper)</strong> tab, a Claude key on the account that pays for the A.I. in the adventures a person owns with no key of their own (after the adventure's and its template's, before the platform's), and for Cooper outside any adventure. On for every adventure created in the app; an imported adventure starts with it off, so its players see no difference. Server default: <code>bluerabbit.extrasDefault</code> (on unless set).</li>
   <li><strong>WordPress's rules</strong> (administrators only): which way scores, counts, levels, ranks, challenges, codes and enrolment are worked out. Off for the app's own adventures; on for imported ones, so their numbers come out exactly as before. Server default: <code>bluerabbit.wpRulesDefault</code> (off unless set).</li>
 </ul>
 <p><strong>The public documentation describes extras on and WordPress's rules off</strong>: what someone gets who signs up on the public server and creates an adventure.</p>
@@ -5784,7 +5809,7 @@ HTML,
 <p>The servers are cPanel accounts with a Git checkout per instance. An update:</p>
 <ol>
   <li>cPanel &rarr; Git Version Control &rarr; the instance &rarr; <strong>Update from Remote</strong>.</li>
-  <li>Straight after, in the Terminal, from the folder that contains <code>public/</code>: <code>php tools/migrate.php</code> (a dry run that lists what is pending and writes nothing), then <code>php tools/migrate.php --apply</code> if it listed anything. Since November 2026 the new code reads new columns, so the migration must not wait.</li>
+  <li>Straight after, in the Terminal, from the folder that contains <code>public/</code>: <code>php tools/migrate.php</code> (a dry run that lists what is pending and writes nothing), then <code>php tools/migrate.php --apply</code> if it listed anything. Since November 2026 the new code reads new columns, so the migration must not wait. For example, <code>--apply</code> adds <code>br_players.player_ai_api_key</code> (the account's Claude key); until it has run, deleting an account fails.</li>
   <li><code>php tools/server-check.php</code>: read-only, one PASS / WARN / FAIL line per check (PHP and its extensions, folders, <code>.env</code>, the database, the edition, rehearsal mode, the network, the database's memory), each with what to do when it is not PASS. It never prints a secret.</li>
 </ol>
 <p>Only if a feature ships optional starting content is there another step: a per-Adventure seeder the operator runs deliberately, for example <code>php tools/seed-&lt;thing&gt;.php --adventure=N --apply</code>. Every <code>tools/</code> script prints the database name and host it connected to before it does anything; read it before an <code>--apply</code> on production. <code>tools/</code> sits outside <code>public/</code>, so none of these scripts can be reached by URL.</p>
@@ -5853,7 +5878,7 @@ HTML,
 </ul>
 <h3>Data</h3>
 <ul>
-  <li><strong>Secrets at rest</strong> (email, payment, Turnstile, SSO, gift-card and A.I. keys) are encrypted under the server's encryption key.</li>
+  <li><strong>Secrets at rest</strong> (email, payment, Turnstile, SSO, gift-card and A.I. keys) are encrypted under the server's encryption key. That includes a person's own Claude key on their account (<code>br_players.player_ai_api_key</code>): stored encrypted, never sent back to the browser, only its last four characters shown, and removed with the account.</li>
   <li><strong>Personal data</strong>: each person can download everything held about them as one file, and delete their account, which anonymises their identity everywhere, deletes their messages and uploads, and keeps their scores under an anonymous name so leaderboards stay correct. Administrators can do the same for someone.</li>
   <li><strong>Uploads</strong>: size ceilings per role; SCORM packages are unpacked without anything a server could run; SVG images are cleaned; a file's stored type never comes from its name.</li>
   <li><strong>Exports</strong>: every CSV cell that a spreadsheet could read as a formula is neutralised.</li>
