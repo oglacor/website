@@ -12,16 +12,26 @@ documentation; a finding two passes both reported appears once.
 
 Remove the sentence from `app/Database/Seeds/DocsPageSeeder.php` when the fix lands. Fixed by the
 app's F4 (`blue@02f0157`) and removed from the docs the same day: a blank item Stock now saves as
-unlimited, and a milestone's QR code counts in the cohort the player plays.
+unlimited, and a milestone's QR code counts in the cohort the player plays. Fixed by the app's F5
+(`blue@7abefa4`, `17eccd0`) and corrected in the docs the same day: the mission credit, Endorsable,
+Send to a player and the task QR through sign-in (the rows below are kept struck through).
 
 | Docs page | The sentence | The bug |
 |---|---|---|
-| `garden-missions`, `running-the-garden-as-a-gm` | "Get one of your requests solved" counts as the app counts it today | `HelpModel.php` ~200-206 logs `help_solved` with the helper as the actor, so the mission credits the helper, not the asker (2026-09-21 finding 9, still open) |
-| `setting-up-your-skills-catalog` | the Endorsable switch has no effect yet | `skill_endorsable` is saved and imported but never read (2026-09-21 finding 29, still open) |
-| `random-encounters` | "Send to a player" asks for a player ID | `script.js` `brFireEncounter()` still uses a browser prompt for a raw player ID |
+| ~~`garden-missions`, `running-the-garden-as-a-gm`~~ (fixed, F5) | "Get one of your requests solved" counts as the app counts it today | `HelpModel.php` ~200-206 logs `help_solved` with the helper as the actor, so the mission credits the helper, not the asker (2026-09-21 finding 9, still open) |
+| ~~`setting-up-your-skills-catalog`~~ (fixed, F5) | the Endorsable switch has no effect yet | `skill_endorsable` is saved and imported but never read (2026-09-21 finding 29, still open) |
+| ~~`random-encounters`~~ (fixed, F5) | "Send to a player" asks for a player ID | `script.js` `brFireEncounter()` still uses a browser prompt for a raw player ID |
 | `adventure-templates-and-cohorts` | in a cohort, hand out the typed code or the cohort's QR | achievement Magic Link and unique-code links use `$adv_parent_id`, so they redeem into the template (2026-09-21 finding 13) |
 
 ## Player side
+
+Fixed by F5 (`blue@7abefa4`): the Classic menu's Garden rows, the hard-coded currency labels in
+encounter choices and Consequences, Cooper offered to guests, the guest on a Choose Avatar step,
+missions counting a switched-off Garden action, a held Tabi's missing reason, the signed-out task
+scan. Still open below: the Journal explanation, the untranslated strings, the profile-box label.
+New, 2026-11-15: `adventures/milestone-unlock.php` 32 and 49 print "Puchase quest for:" (a typo,
+and "quest" where the app says milestone).
+
 
 - `app/Views/layout/nav.php` (Classic player menu): no Garden, Tasks, Missions, Help board, My skills or Starting point rows; a Classic player has no menu route to the Garden (the New menu has them, `StartMenu.php` 145-164). The docs describe them as New-view rows.
 - `partials/step-play/encounter-choice.php` 73-74, 104 and `ConsequenceModel.php`'s watch list: "BLOO", "Energy", "Coins (BLOO)", "Energy (EP)" hard-coded instead of the adventure's own currency labels.

@@ -116,7 +116,7 @@ HTML,
 <p>Roles are per Adventure, so you can be a player in one and a GM in another. <strong>Admin</strong> and <strong>God</strong> are something else: they're account-wide access levels that a platform admin sets in User Management, not roles inside an Adventure. See <a href="/docs/user-management-and-access-levels">User Management and Access Levels</a>.</p>
 
 <h2>4. Choose Where You Start</h2>
-<p>Many Adventures have two play areas: the <strong>Journey</strong>, the map of milestones, and the <strong>Garden</strong>, your people and your skills. If yours has both, the first time you arrive you're asked <em>Where should we start you?</em> Pick one and that's where BLUERABBIT takes you when you come in. You can change it whenever you like with <strong>Starting point</strong> in the New view's menu. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
+<p>Many Adventures have two play areas: the <strong>Journey</strong>, the map of milestones, and the <strong>Garden</strong>, your people and your skills. If yours has both, the first time you arrive you're asked <em>Where should we start you?</em> Pick one and that's where BLUERABBIT takes you when you come in. You can change it whenever you like with <strong>Starting point</strong> in the menu. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
 
 <h2>5. Your First Look Around</h2>
 <p>The <strong>Journey Map</strong> lays out every milestone in the program. Each node shows whether it's locked, available or finished, depending on what you've already done. Your level, XP, BLOO and, if the Adventure uses Energy, EP are in your profile panel: click your picture in the top-right corner.</p>
@@ -154,7 +154,7 @@ HTML,
 <p>Your progress stays with the guest account. To play under your own name, sign up for an account of your own; it starts fresh.</p>
 
 <h2>What Guests Can Do</h2>
-<p>Almost everything that's about playing: milestones and challenges, earning XP, BLOO and achievements, the Item Shop and your Backpack, choosing a display name on a step that asks for one, uploading a picture on an upload step, reading the Wall, looking around the Garden and working through Tasks and Missions.</p>
+<p>Almost everything that's about playing: milestones and challenges, earning XP, BLOO and achievements, the Item Shop and your Backpack, choosing a display name on a step that asks for one, picking one of the pictures a Choose Avatar step offers (though not uploading your own there), uploading a picture on an upload step, reading the Wall, looking around the Garden and working through Tasks and Missions.</p>
 
 <h2>What's Kept for Real Accounts</h2>
 <p>A guest account isn't really yours, and nobody behind it can be reached, so some things are switched off:</p>
@@ -162,7 +162,7 @@ HTML,
   <li><strong>Your account</strong> — there's no My Account page, so no password, email, picture, language or menu-style settings, and no Delete my account.</li>
   <li><strong>Reaching other people</strong> — no direct messages or connections, no endorsing or gifting Blooms, no asking for or offering help, and no posting on the Wall (<em>Guest accounts can read the wall but not post to it</em>).</li>
   <li><strong>Messaging the Game Master</strong> — the feedback form and My Requests aren't offered.</li>
-  <li><strong>Cooper</strong> — the assistant doesn't talk to guests.</li>
+  <li><strong>Cooper</strong> — the assistant isn't offered to guests at all.</li>
   <li><strong>Other adventures</strong> — a guest plays the demo only: no joining other adventures and no creating your own.</li>
 </ul>
 <p>Most of these simply aren't shown to a guest. Where a button for one is still on screen, pressing it tells you why: <em>Guest accounts can play, but not do this.</em></p>
@@ -231,7 +231,7 @@ HTML,
   <li><strong>Cooper</strong> — the adventure's assistant.</li>
   <li>Up to three <strong>custom links</strong> your GM added — often your organization's own support channel. They open in a new tab; hover one to see what it is.</li>
 </ul>
-<p>The menu's <strong>Adventure Navigation</strong> section lists the parts of the adventure you can visit: Achievements, the Backpack, Guilds, the Item Shop, the Journey, your Journal, the Leaderboard, Magic Code, Posts, Resources, Secrets and clues, the Schedule, Speakers, the Wall and My Requests. You only see the ones your adventure uses. <strong>Adventures</strong> takes you back to your list of adventures, unless your platform sends everyone straight to one. GMs also see <strong>Admin Tools</strong> and <strong>Add Mechanics</strong> sections.</p>
+<p>The menu's <strong>Adventure Navigation</strong> section lists the parts of the adventure you can visit: Achievements, the Backpack, Guilds, the Item Shop, the Journey, your Journal, the Leaderboard, Magic Code, Posts, Resources, Secrets and clues, the Schedule, Speakers, the Wall and My Requests, and, when your adventure has a Garden, the Garden, Tasks, Missions, the Help board, My skills and Starting point. You only see the ones your adventure uses. <strong>Adventures</strong> takes you back to your list of adventures, unless your platform sends everyone straight to one. GMs also see <strong>Admin Tools</strong> and <strong>Add Mechanics</strong> sections.</p>
 
 <h2>Switching Views</h2>
 <p>There are two ways to choose:</p>
@@ -243,7 +243,7 @@ HTML,
 
 <h2>Where You Start: the Journey or the Garden</h2>
 <p>If your adventure has a <a href="/docs/the-garden-overview">Garden</a> as well as a <a href="/docs/journey-map-guide">Journey</a>, you choose which one you land on when you come in. The first time you open the Journey it asks once — <strong>Where should we start you?</strong> — with two options: <strong>The Journey</strong> (the map, your milestones and what is unlocked next) or <strong>The Garden</strong> (your people, your skills and what they need from you). Close it without choosing and you stay on the Journey; it will ask again on a later visit.</p>
-<p>You can change your mind whenever you like: <strong>Starting point</strong>, in the New view's menu, reopens the same dialog and says where you come in now.</p>
+<p>You can change your mind whenever you like: <strong>Starting point</strong>, in the menu of either view, reopens the same dialog and says where you come in now.</p>
 <p>Your starting point is remembered separately for each adventure. It applies the first time you come in during a session; after that, the Journey and Garden buttons take you wherever you ask. An adventure without a Garden has nothing to choose, so you always start on the Journey.</p>
 
 <h2>Map or List</h2>
@@ -346,7 +346,7 @@ HTML,
 <p>Energy is its own switch. If your adventure doesn't use Energy Points you won't see EP anywhere — and there are no encounters either, because energy is what they run on.</p>
 <p>When it's on, you earn EP from milestones, challenges and achievements that pay it, and most reliably from Garden Tasks that pay energy. You spend it on the choices you make inside an encounter.</p>
 <p>Energy has a ceiling that rises with your level: 120 at level 1, 160 at level 2, 220 at level 3, and more from there. Anything you earn above the ceiling is lost, so there's no point hoarding it. When the daily check-in or a task you complete yourself would take you past the ceiling, its celebration counts only the energy you actually kept: at 115 of 120, a task worth 10 shows <em>+5</em>.</p>
-<p><strong>EP never goes below zero.</strong> An encounter option you don't have the energy for is greyed out and marked "Not enough energy". Every encounter is meant to offer at least one option that costs no energy, so running dry is a setback, not a game over. If you ever find nothing you can pick, the step says so and sends you to recover in the Garden.</p>
+<p><strong>EP never goes below zero.</strong> An encounter option you don't have the energy for is greyed out and marked "Not enough" followed by the adventure's name for energy (for example "Not enough EP"). Every encounter is meant to offer at least one option that costs no energy, so running dry is a setback, not a game over. If you ever find nothing you can pick, the step says so and sends you to recover in the Garden.</p>
 
 <h2>When Rewards Arrive</h2>
 <ul>
@@ -396,7 +396,8 @@ HTML,
   <li><strong>Locked</strong> — you haven't met what it needs yet (another milestone, an achievement, an item you have to carry, or another condition your GM set), or your GM has locked it for now.</li>
   <li><strong>Needs a higher level</strong> — shown as "Available at level N" on the map and "Level N" in the list.</li>
   <li><strong>Not open yet</strong> — its start date is still ahead ("Available on…" on the map, "Opens…" in the list).</li>
-  <li><strong>Closed</strong> — its deadline has passed ("Deadline missed" on the map, "Closed…" in the list).</li>
+  <li><strong>Has a price</strong> — your GM has put a price on opening it. The map shows the price in BLOO; buy it from the milestone or the <strong>Unlock</strong> button in its chapter's window, and confirm before anything is spent.</li>
+  <li><strong>Closed</strong> — its deadline has passed ("Deadline missed" on the map, "Closed…" in the list). If your GM has set a price for missed deadlines, the map shows <em>Unlock for</em> and the amount, and <strong>Purchase this deadline</strong> on the milestone reopens it for that many BLOO.</li>
   <li><strong>Another path</strong> — it belongs to a path you're not on, so it's greyed out.</li>
 </ul>
 <p>Your GM can also hide milestones outside their dates entirely, in which case they don't appear at all until they open. Dates and deadlines follow the adventure's own time zone, which your Game Master sets.</p>
@@ -622,7 +623,7 @@ HTML,
 <p>Once you pick, the step shows <em>"You decided"</em> with your choice, and that's final. You're only ever charged once for an encounter, even if you fail the milestone and play it again.</p>
 
 <h2>When You Can't Afford It</h2>
-<p><strong>Energy is a hard limit.</strong> An option that needs more energy than you have is greyed out and marked <em>"Not enough energy"</em>. Encounters are designed to always include at least one option that costs no energy. If you ever find nothing you can pick, the step says <em>"You are out of energy"</em> and offers a <strong>Go and recover</strong> button that takes you to your Tasks. Complete a Task that pays energy, come back, and the encounter will still be waiting.</p>
+<p><strong>Energy is a hard limit.</strong> An option that needs more energy than you have is greyed out and marked <em>"Not enough"</em> followed by the adventure's name for energy (for example <em>"Not enough EP"</em>). Encounters are designed to always include at least one option that costs no energy. If you ever find nothing you can pick, the step says <em>"You are out of energy"</em> and offers a <strong>Go and recover</strong> button that takes you to your Tasks. Complete a Task that pays energy, come back, and the encounter will still be waiting.</p>
 <p><strong>Money isn't.</strong> An option that costs more BLOO than you have is still available, marked with how far under it would put you ("This puts you 180 under"). Choosing it puts you in debt. <a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a> explains what that means. In short, the Item Shop won't sell to you until you've earned your way back.</p>
 
 <h2>How Often They Happen</h2>
@@ -1141,7 +1142,7 @@ HTML,
                 'body'       => <<<'HTML'
 <p>BLUERABBIT has two play areas, not one. The <a href="/docs/journey-map-guide">Journey</a> is your <em>individual</em> progression: milestones, XP, levels, achievements. The <strong>Garden</strong> is your <em>relational</em> progression: a living picture of who you actually work with, and how well you keep those relationships going.</p>
 <p>Where the Journey answers "how am I growing?", the Garden answers "who am I growing with?"</p>
-<p>If your adventure has the Garden switched on, it has its own button in the menu, with Tasks, Missions, the Help board and My skills beside it in the New view. You can also choose to start each visit in the Garden rather than on the Journey. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
+<p>If your adventure has the Garden switched on, it has its own button in the menu, with Tasks, Missions, the Help board and My skills beside it, in both views. You can also choose to start each visit in the Garden rather than on the Journey. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
 
 <h2>What You See</h2>
 <p>The people enrolled in your adventure appear as hexagons with their photo (or initials): other players, NPCs and your Game Masters, arranged in rings around you at the centre. Each adventure has its own Garden, just as it has its own Journey.</p>
@@ -1262,7 +1263,7 @@ HTML,
 
 <h2>Seeing Your Skills</h2>
 <ul>
-  <li><strong>Your Journal</strong> opens on a <strong>Skills</strong> tab when your adventure has a skill catalogue: a chart with each skill in its own colour, a card per skill showing where its points came from, and every skill's description. <strong>My skills</strong> in the New view's menu goes straight there. The <strong>Skill History</strong> tab lists every Bloom you've ever received: when, what it was for, and who gave it. See <a href="/docs/my-work-journal-and-history">My Work: Your Journal</a>.</li>
+  <li><strong>Your Journal</strong> opens on a <strong>Skills</strong> tab when your adventure has a skill catalogue: a chart with each skill in its own colour, a card per skill showing where its points came from, and every skill's description. <strong>My skills</strong> in the menu goes straight there. The <strong>Skill History</strong> tab lists every Bloom you've ever received: when, what it was for, and who gave it. See <a href="/docs/my-work-journal-and-history">My Work: Your Journal</a>.</li>
   <li><strong>Your profile panel</strong> has a Garden section: Blooms earned, where that stands against the adventure (see <a href="/docs/the-garden-overview">The Backdrop</a>), your strongest skill, your connections and your Blooms left to give.</li>
   <li><strong>Anyone's drawer</strong> in the Garden shows the skills they hold and their level in each.</li>
 </ul>
@@ -1346,7 +1347,7 @@ HTML,
 <ul>
   <li>the <strong>Help</strong> panel in the Garden dock (<em>Stuck on something?</em> then <strong>Ask for help — +1 Bloom</strong>)</li>
   <li>your own drawer, opened by clicking your hexagon (<strong>Post request</strong>)</li>
-  <li>the <strong>Help Board</strong> page (<strong>Post request — +1 Bloom</strong>), which also has its own button in the New view's menu</li>
+  <li>the <strong>Help Board</strong> page (<strong>Post request — +1 Bloom</strong>), which also has its own button in the menu</li>
 </ul>
 <p>Every request is <strong>tagged with a skill</strong>. That's required, and it's what lets the right people find it instead of it disappearing into a general feed.</p>
 <p>Asking pays <strong>1 Bloom</strong> in that skill, <strong>once per skill every 24 hours</strong>. You can post more requests in the same skill whenever you need to. They just don't pay again until the 24 hours are up, and the confirmation tells you so.</p>
@@ -1372,7 +1373,7 @@ HTML,
 <p><strong>Ways to help</strong> leads with who's asking and what skill they need, so you can scan the list quickly — click one and it opens as a full card explaining the request on one side and what helping earns you on the other, the same clear layout Tasks and Missions use. Clicking on a teammate opens their drawer with <strong>Message</strong> and <strong>Connect</strong> (or <strong>Accept</strong> / <strong>Connected</strong>) front and centre, followed by their skills, ways to recognise them, what they need help with, and their recent posts.</p>
 
 <h2>The Help Board</h2>
-<p>Follow <strong>Open the Help Board</strong> from the Help panel, or use <strong>Help board</strong> in the New view's menu, for the full page: your own requests with their replies, and every open request in the adventure. Some cards carry a "Matches one of your top skills" badge.</p>
+<p>Follow <strong>Open the Help Board</strong> from the Help panel, or use <strong>Help board</strong> in the menu, for the full page: your own requests with their replies, and every open request in the adventure. Some cards carry a "Matches one of your top skills" badge.</p>
 
 <h2>Direct Messages</h2>
 <p>You can message anyone in your adventure one-to-one, from <strong>Messages</strong> in the dock or the <strong>Message</strong> button in their drawer. Conversations are private between the two of you, belong to the adventure you're both in, and are the same conversations you see in the Wall's Messages tab.</p>
@@ -1451,7 +1452,7 @@ HTML,
 <h2>Where to Find Them</h2>
 <ul>
   <li>The <strong>Tasks</strong> panel in the Garden dock shows a few at a time, with the ones you can do now first, and a <strong>View all</strong> link to the full Tasks page.</li>
-  <li>The Tasks page also has its own button in the New view's menu when your adventure uses Tasks.</li>
+  <li>The Tasks page also has its own button in the menu when your adventure uses Tasks.</li>
   <li>On the Journey map, your Game Master may place a Tasks list, or draw a single Task as a hexagon. Click the hexagon to open the same card. It shows whether the Task is ready, waiting, on the clock or done.</li>
 </ul>
 <p>Your organization may use a different name for Tasks. They work the same way.</p>
@@ -1486,7 +1487,7 @@ HTML,
   <li><strong>Help</strong>: help you offer on someone's request</li>
   <li><strong>Endorse</strong>: endorsements you give</li>
   <li><strong>Ask for help</strong>: help requests you post</li>
-  <li><strong>Get a request solved</strong>: as the app counts it today, this goes up when someone marks your reply as one that helped</li>
+  <li><strong>Get a request solved</strong>: goes up when one of your own requests is solved</li>
   <li><strong>Gift a Bloom</strong>: gifts you give, which still come out of your own 20</li>
   <li><strong>Post on the Wall</strong>: posts you make on the Wall</li>
   <li><strong>Make a connection</strong>: connection requests you accept</li>
@@ -1499,7 +1500,7 @@ HTML,
 </ul>
 
 <h2>Tracking and Rewards</h2>
-<p>The <strong>Missions</strong> panel in the Garden dock shows the Missions you haven't finished first, with a <strong>View all</strong> link to the full Missions page, which also has its own button in the New view's menu.</p>
+<p>The <strong>Missions</strong> panel in the Garden dock shows the Missions you haven't finished first, with a <strong>View all</strong> link to the full Missions page, which also has its own button in the menu.</p>
 <p>When you finish one, its card says "Complete — open Rewards to claim it!" and a reward appears in <strong>Rewards</strong> in the dock. Press <strong>Claim</strong> and the Blooms land, in the skill your Game Master chose. The card then reads "Completed and claimed". Missions pay Blooms, never XP or BLOO.</p>
 
 <h2>What Isn't a Mission</h2>
@@ -2150,6 +2151,7 @@ HTML,
   <li><strong>Level</strong> — the minimum player level to open it.</li>
   <li><strong>XP, BLOO and EP</strong> — what it pays on completion, each field named the way this adventure names it. The EP field is always there, but players only see and spend energy when the adventure's <strong>Energy Points (EP)</strong> switch is on (Adventure Settings → Rules &amp; scoring).</li>
   <li><strong>Start Date</strong> and <strong>Deadline</strong> — date-gate it on either end, in the adventure's own time zone. Before the start date it isn't open yet; after the deadline it has expired. <strong>Hide milestones outside the dates</strong> (Adventure Settings → Basics) decides whether players still see it outside that window.</li>
+  <li><strong>Unlock cost</strong> and <strong>Deadline cost</strong> — prices in BLOO (named the adventure's way). With an unlock cost, players pay that much to open the milestone; 0 makes it free. With a deadline cost, once the deadline passes players can pay that much to reopen it; 0 means it stays closed. The player confirms before anything is spent.</li>
   <li><strong>Optional</strong> — "Doesn't count toward Tabi unlock". A side activity that never holds up its chapter and doesn't count toward a player's journey progress.</li>
   <li><strong>Validate</strong> — "Require validation before awarding". Adds Validate and Invalidate buttons for each submission on the Milestone's Review page. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
 </ul>
@@ -2596,7 +2598,7 @@ HTML,
   <li><strong>Create it.</strong> Choose <strong>Challenge</strong> in the menu's Add group (<strong>New Challenge</strong> under Add Mechanics in the Classic view). It appears when the adventure's Challenges section is on. On the General tab give it a Name, Color, Icon and Main Image, then press <strong>Create Challenge</strong> in the bottom bar. The Questions tab reads "Please save the challenge before adding questions" until you do.</li>
   <li><strong>Write your question bank.</strong> The Questions tab lists one row per question, and <strong>Add a question</strong> has a button for each kind: Multiple choice, Put in order, Match the pairs, Sort into groups, Fill the gaps and Click on the picture. Each opens the question in one window (below), and one save writes the whole question.</li>
   <li><strong>Write the explanations.</strong> Every kind has an Explanation, shown on review and only to a player who got that question right. Say why the answer is right, not "well done". Blank is fine.</li>
-  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does.</li>
+  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does, plus a <strong>Deadline cost</strong>: what players can pay in BLOO to reopen the challenge after its deadline (0 keeps it closed). A challenge has no unlock cost.</li>
   <li><strong>Write the Content.</strong> The <strong>Short Description</strong> is the preview players read when they click the Challenge on the map. The <strong>Success Message</strong> lands on the player's Secrets &amp; Clues page once they pass.</li>
   <li><strong>Set requirements and extra rewards</strong> on the Advanced tab: the <strong>Conditions</strong> drawer for prerequisites, and the Skill, Item and Achievement rewards. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a>; they work the same way here.</li>
   <li><strong>Pick a status and save.</strong> Choose Publish, Draft or Locked (and, if the adventure has paths, who it's <strong>Visible to</strong>) in the bottom bar and press <strong>Update Challenge</strong>.</li>
@@ -3357,7 +3359,7 @@ HTML,
 
 <h2>Running a Deck</h2>
 <ul>
-  <li><strong>Send to a player</strong> fires a card at one player right now, bypassing the draw. It's the only way a weight-0 card is ever used, and it's built for live sessions where the whole room should hit the same beat. It asks for the player's ID, and it's refused if that player is already facing an encounter.</li>
+  <li><strong>Send to a player</strong> fires a card at one player right now, bypassing the draw. It's the only way a weight-0 card is ever used, and it's built for live sessions where the whole room should hit the same beat. It opens a picker of the cohort's players by name, with a search; anyone already facing an encounter is shown as such and can't be sent another.</li>
   <li><strong>Show again</strong> appears on a card players have already faced. A card that can't happen more than once is never dealt again to someone who's seen it, so after a rehearsal the deck can go quiet with nothing on screen to say why. Show again clears that history so the card can be dealt again.</li>
   <li><strong>Reset deck</strong>, in the header whenever anything has been faced, does the same for every card. Hands already dealt stay on the table.</li>
 </ul>
@@ -3517,7 +3519,7 @@ HTML,
 
 <h2>Before the Event</h2>
 <ul>
-  <li><strong>Get everyone enrolled and logged in first.</strong> A phone that isn't logged in goes to the sign-in page when it scans. For an achievement or milestone code that's only a detour: the code is kept for an hour, and once the player signs in it runs. A task's code isn't kept, so after signing in they have to scan it again. A sign-in with <strong>Remember Me</strong> ticked (it is by default) lasts 30 days, so logging in once the day before is enough.</li>
+  <li><strong>Get everyone enrolled and logged in first.</strong> A phone that isn't logged in goes to the sign-in page when it scans. That's only a detour: an achievement, milestone or task code is kept for an hour, and once the player signs in it runs. A sign-in with <strong>Remember Me</strong> ticked (it is by default) lasts 30 days, so logging in once the day before is enough.</li>
   <li><strong>Test every code</strong> with a player account before you print it.</li>
   <li><strong>Put the code where the moment happens:</strong> on the door, at the station, on the last slide of the session.</li>
 </ul>
@@ -3947,7 +3949,7 @@ HTML,
   <li><strong>Image</strong>: optional artwork, shown wherever the skill has room for one. The icon and colour carry it everywhere else.</li>
   <li><strong>Max level</strong>: the ceiling, 40 by default. Use 40 for a proficiency people build over time, and 1 for a skill that works as an unlock gate.</li>
   <li><strong>Status</strong>: Published or Draft.</li>
-  <li><strong>Endorsable</strong>: "Peers can award Blooms in it". This is saved and shown as a badge, but it doesn't currently stop players endorsing or gifting in that skill, so don't rely on it to protect a gate skill.</li>
+  <li><strong>Endorsable</strong>: "Peers can award Blooms in it". Switch it off and players can no longer award or gift Blooms in that skill: the drawer leaves it out, and a try is refused in words. Use it to protect a skill that gates something.</li>
   <li><strong>Description</strong>: what the skill actually means. It appears as a tooltip on skill chips in the Garden and on the player's Skills tab in their Journal, so players genuinely read it.</li>
 </ul>
 <p>The toolbar above the list searches by name, filters to Published or Drafts, and sorts by default order, name, or how many Tasks use each skill.</p>
@@ -4042,7 +4044,7 @@ HTML,
   <li><strong>Help someone</strong>: each help request they reply to, counted when they post the reply, approved or not</li>
   <li><strong>Endorse someone</strong>: each endorsement they give</li>
   <li><strong>Ask for help</strong>: each help request they post</li>
-  <li><strong>Get one of your requests solved</strong>: note that as built, this counts for the helper whose reply is approved, not for the player who asked. Until that changes it rewards having your help approved.</li>
+  <li><strong>Get one of your requests solved</strong>: counts for the player who asked, when a reply to their request is approved as the one that solved it.</li>
   <li><strong>Gift a Bloom</strong>: each Bloom they gift, which comes out of their own 20</li>
   <li><strong>Post on the Wall</strong>: each post they make on the Wall</li>
   <li><strong>Make a connection</strong>: each connection request they accept. The person who accepts is the one credited.</li>

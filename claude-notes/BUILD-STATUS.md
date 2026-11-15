@@ -1138,14 +1138,13 @@ Wording to approve on public pages:
 14. **Approved as written (2026-11-15):** sign-ins recorded with network address and browser, kept
     12 months; emails in English "for now"; refunds of unused yearly months made by the team on
     request; drand named on the Prize Draws page. Still to approve: "not offered on the self-serve
-    platform, on any plan" for Enterprise features; the guest page saying Cooper doesn't talk to
-    guests.
+    platform, on any plan" for Enterprise features. (The guest page now says Cooper isn't offered to
+    guests, which F5 made true.)
 
 App product questions (details in the findings file):
-15. Buying a missed deadline or an unlock with BLOO: the app's F4 (`blue@02f0157`) adds the
-    milestone Unlock cost / Deadline cost fields, but their save lands in a later commit. Still left
-    out of the docs until the lead says so.
-16. The Classic menu has no Garden rows.
+15. ~~Buying a missed deadline or an unlock with BLOO~~: documented after the app's F4/F5 (Unlock
+    cost and Deadline cost on the milestone editor, Deadline cost on the challenge editor).
+16. ~~The Classic menu has no Garden rows.~~ Added by the app's F5; docs updated.
 17. "Choose Nickname" (the step type menu) vs "Choose Display Name" (everywhere else).
 18. ~~Milestone QR codes inside cohorts~~ fixed in the app's F4 (`blue@02f0157`), docs updated.
     Achievement Magic Links and unique-code links in a cohort still point at the template (the docs
@@ -1186,3 +1185,24 @@ App product questions (details in the findings file):
   fields are not documented yet (their save lands later).
 - Verified: `php -l`; seeded (92 rows, second run adds none); 694+ links resolve; content check;
   every changed page 200 with its title; Edge headless over the changed pages at 390 and 1440.
+
+### Follow-up: the app's F5 applied (`blue@7abefa4`, `17eccd0`)
+
+- garden-missions and running-the-garden-as-a-gm: "Get one of your requests solved" now counts
+  for the asker (the caveat is gone).
+- setting-up-your-skills-catalog: Endorsable off now stops awarding and gifting in that skill.
+- random-encounters: Send to a player is a picker by name with a search.
+- qr-codes-live-and-hybrid-events: a signed-out task scan is kept through sign-in, like the others.
+- The Garden, Tasks, Missions, Help board, My skills and Starting point rows are in the Classic menu
+  too (getting-started, finding-your-way-around, skills-and-blooms-explained,
+  help-requests-and-messages, garden-tasks, garden-missions, the-garden-overview).
+- xp-bloo-ep-explained and encounters-the-card-draw: "Not enough" plus the adventure's own energy
+  name.
+- playing-as-a-guest: a guest can pick one of a Choose Avatar step's pictures but not upload one;
+  Cooper isn't offered to guests.
+- Milestone costs documented: designing-milestones-rewards-and-unlocks (Unlock cost, Deadline cost),
+  how-to-build-a-challenge (Deadline cost only), journey-map-guide (a priced milestone, and a missed
+  deadline that can be bought back). Nothing about adventures on WordPress's rules.
+- New app finding: the map's priced-milestone line reads "Puchase quest for:" (in the findings file).
+- Verified: `php -l`; seeded twice; links and content check; the changed pages 200 with their
+  titles; Edge headless over every docs page at 390 and 1440.
