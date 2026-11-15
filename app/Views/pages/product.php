@@ -24,7 +24,7 @@
       <div class="term-card panel yellow">
         <div class="k">BLOO</div>
         <h4>In-Adventure Currency</h4>
-        <p>Spend it in the Item Shop on consumables, keys, collectible Tabi pieces, or real gift cards — and on the choices you make in an encounter. It can dip into debt, but the shop never sells on credit.</p>
+        <p>Spend it in the Item Shop on consumables, keys and collectible Tabi pieces (and, on Enterprise, real gift cards) — and on the choices you make in an encounter. It can dip into debt, but the shop never sells on credit.</p>
       </div>
       <div class="term-card panel purple">
         <div class="k">EP</div>
@@ -70,19 +70,19 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Milestones &amp; Steps</span>
-      <h2>Two content types, 28 step types</h2>
+      <h2>Two content types, 31 step types</h2>
       <p>Milestones are the core content unit — unlocked by level, dates, prerequisites, items, achievements, or any condition you can measure. Each one is built from Steps, played in order.</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card panel cyan">
         <div class="feature-icon">&#9670;</div>
         <h3>Milestones &amp; Challenges</h3>
-        <p>Milestones give players knowledge — content, exercises, submissions, media. Challenges test it, with a question bank, a pass threshold, and limited retries enforced on the server.</p>
+        <p>Milestones give players knowledge — content, exercises, submissions, media. Challenges test it, with six kinds of question (multiple choice, put in order, match the pairs, sort into groups, fill the gaps, click on the picture), a pass threshold, and limited retries enforced on the server.</p>
       </div>
       <div class="feature-card panel yellow">
         <div class="feature-icon">&#9635;</div>
         <h3>Step Library</h3>
-        <p>28 types across six groups: deliver (dialogue, video, audio), validate (multiple choice, keyphrase, cryptex, puzzle, SCORM, case studies), collect (open text, surveys, ratings, polls, uploads), profile (weighted questions and result sheets), flow (branching, jumps, and encounter choices), and special (win and fail screens, nickname, avatar).</p>
+        <p>31 types across six groups: deliver (dialogue, video, audio, image galleries, PDF slides), validate (multiple choice, keyphrase, cryptex, puzzle, SCORM, case studies), collect (open text, surveys, ratings, polls, uploads), profile (weighted questions and result sheets), flow (branching, jumps, choice boards, and encounter choices), and special (win and fail screens, display name, avatar). Steps can limit tries, and players can re-read what came before a question.</p>
       </div>
       <div class="feature-card panel purple">
         <div class="feature-icon">&#10022;</div>
@@ -127,13 +127,28 @@
   <div class="wrap two-col">
     <div>
       <span class="eyebrow">Items &amp; Backpack</span>
-      <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">Five item types, one real economy</h2>
-      <p style="color:var(--muted); font-size:15px;">Consumables, keys, rewards, collectible Tabi pieces, and real gift cards — priced in BLOO, gated by level, found in milestones or bought in the Item Shop, then stored in each player's Backpack. Stock and limits are enforced on the server, so the economy holds up at scale.</p>
+      <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">One real economy</h2>
+      <p style="color:var(--muted); font-size:15px;">Consumables, keys, rewards and collectible Tabi pieces (plus real gift cards on Enterprise) — priced in BLOO, gated by level, found in milestones or bought in the Item Shop, then stored in each player's Backpack. Stock and limits are enforced on the server, so the economy holds up at scale.</p>
     </div>
     <div>
       <span class="eyebrow">Stats Dashboard</span>
       <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">Know what's actually working</h2>
-      <p style="color:var(--muted); font-size:15px;">Funnel views, engagement by any segment you track, real time-in-app, encounter choices, and profile results — so admins can see where players stall out, and fix it before it becomes a pattern.</p>
+      <p style="color:var(--muted); font-size:15px;">Funnel views, engagement by any segment you track, real time-in-app, encounter choices, survey totals and profile results — so admins can see where players stall out, and fix it before it becomes a pattern.</p>
+    </div>
+  </div>
+</div>
+
+<div class="content-section">
+  <div class="wrap two-col">
+    <div>
+      <span class="eyebrow">Every Player, Their Way</span>
+      <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">In their language, in their view</h2>
+      <p style="color:var(--muted); font-size:15px;">The app speaks eleven languages: English, Spanish, Portuguese, French, Italian, German, Russian, Turkish, Japanese, Korean and Chinese. Each person picks theirs in their account. Players also choose how they get around: the New view's pause-screen menu, or the Classic view's top bar and taskbar.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Notifications</span>
+      <h2 style="font-family:var(--condensed); font-weight:700; text-transform:uppercase; font-size:30px; margin:14px 0 18px; letter-spacing:.5px;">Nothing slips past</h2>
+      <p style="color:var(--muted); font-size:15px;">A bell counts what needs a player's attention: a Game Master's grade and what it paid, a hand-in sent back for another try, a reply to one of their requests, an email sent to them. One panel shows the latest, one page keeps the whole history, and the rewards a player earns still land with their own celebration.</p>
     </div>
   </div>
 </div>

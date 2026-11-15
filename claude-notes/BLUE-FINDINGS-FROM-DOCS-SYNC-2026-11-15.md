@@ -1,0 +1,53 @@
+# Findings in the app (`blue`) from the 2026-11-15 docs sync
+
+Written by the W1 docs sync (website), read-only against `blue@463a356`, for the
+app's own sessions to triage. Nothing here was changed in the app. Same purpose
+as `BLUE-FINDINGS-FROM-DOCS-SYNC-2026-09-21.md`; that file's still-open items are
+repeated below where they were re-checked.
+
+Each line: where, and what. Three research passes found them, one per area of the
+documentation; a finding two passes both reported appears once.
+
+## Docs sentences that exist only because of an app bug
+
+Remove the sentence from `app/Database/Seeds/DocsPageSeeder.php` when the fix lands.
+
+| Docs page | The sentence | The bug |
+|---|---|---|
+| `garden-missions`, `running-the-garden-as-a-gm` | "Get one of your requests solved" counts as the app counts it today | `HelpModel.php` ~200-206 logs `help_solved` with the helper as the actor, so the mission credits the helper, not the asker (2026-09-21 finding 9, still open) |
+| `setting-up-your-skills-catalog` | the Endorsable switch has no effect yet | `skill_endorsable` is saved and imported but never read (2026-09-21 finding 29, still open) |
+| `item-shop-building-an-economy` | blank stock on a consumable or gift card | `ItemModel::saveItem()` saves a blank Stock as 0: the item shows Sold Out under an "Unlimited" placeholder (2026-09-21 finding 7, still open) |
+| `random-encounters` | "Send to a player" asks for a player ID | `script.js` `brFireEncounter()` still uses a browser prompt for a raw player ID |
+| `qr-codes-live-and-hybrid-events`, `adventure-templates-and-cohorts` | for a cohort, use an achievement or task code; hand out the typed code or the cohort's QR | `Qr::milestone()` encodes `/quest-qr/?token=` with no `&adv=`, so a cohort player's scan counts in the template and is refused; achievement Magic Link and unique-code links use `$adv_parent_id` (2026-09-21 finding 13) |
+
+## Player side
+
+- `app/Views/layout/nav.php` (Classic player menu): no Garden, Tasks, Missions, Help board, My skills or Starting point rows; a Classic player has no menu route to the Garden (the New menu has them, `StartMenu.php` 145-164). The docs describe them as New-view rows.
+- `partials/step-play/encounter-choice.php` 73-74, 104 and `ConsequenceModel.php`'s watch list: "BLOO", "Energy", "Coins (BLOO)", "Energy (EP)" hard-coded instead of the adventure's own currency labels.
+- `layout/header.php` ~660, the Classic quick link and the menu's Cooper card: Cooper is offered to guests, who are refused only when they send (`Cooper.php` ~2335); the limit is not said up front.
+- Choose Avatar step: `brSaveAvatarStep()` posts `setProfilePicture`, which is in `Access::GUEST_REFUSED`; a guest on an avatar step is refused and the step may not complete.
+- `player/journal.php` 281 and `partials/journal-milestones.php` 155: the staff explanation says the Journey Progress bar counts every milestone, optional ones and other paths included; on the app's own rules (`ProgressionModel::ownJourneyIds()`) it counts required milestones on the player's path in switched-on Tabis.
+- English not through `t()`: `StartMenu.php` 160, 216, 397; `layout/start-menu.php` 128-129; `PersonalData::refusal()`'s sentences.
+- `layout/profile-box.php` 211: the Account settings link says "Picture, nickname, password and language", but the nickname can't be changed there (the display name can).
+- `GardenMissionModel` / `GardenMissionController`: missions that count a switched-off Garden action (talk, help, endorse or gift with its switch off) are still listed to players, who cannot complete them.
+- `partials/tabi-stage.php` 147-153: a Tabi held only by its own requirements shows no reason in its window.
+
+## Game Master side
+
+- `partials/step-form.php` 229: the Step Type menu says "Choose Nickname"; `step_helper.php`, the jumper and Cooper say "Choose Display Name" (it saves the display name).
+- `partials/step-form.php`: "Show results after vote?" (~728) is saved but no `step-play` partial reads it; Open Text's "Rich Text Editor" (`use_wp_editor`) has had no effect since every Open Text box became the rich editor; Mistake Message / Maximum attempts (~1167) are shown on Puzzle and SCORM, where no try is ever spent.
+- `TransactionController::payment()` works, but `mech_deadline_cost` / `mech_unlock_cost` have no field in `quests/new.php` or `challenges/new.php`, so buying a missed deadline or an unlock with BLOO can't be set up on new content. Left out of the docs.
+- `PlayerModel::assignGuild()`: with the app's rules the guild's own "Auto-assign on login" is ignored, though `guilds/new.php` offers it per guild. Left out of the docs.
+- `AchievementModel::redeemCode()`: with the app's rules `achievement_max` and `achievement_path` are not checked on a magic code, while a GM's grant checks the cap.
+- `partials/tabi-row.php` "Picture" box: `AdventureController::show()` draws the journey picture only where the journey extras are off, so on the app's own adventures the box does nothing.
+- `PendingCode.php`: a signed-out `task-qr` scan is not kept through sign-in (enrol, magic link and quest QR are), so a task check-in needs a second scan.
+- `adventures/new.php`, Rules & scoring, "This app's extras": its description names WordPress on a public adventure's settings screen.
+- `encounters/new.php` "Chapter (Tabi)": no hint says what tying an encounter to a chapter does.
+
+## Admin and platform
+
+- `organization/player-org-row-extras.php`: "Remove Player" calls `removePlayerFromOrg()`, which exists nowhere (dead button).
+- `SettingsRegistry.php` 134: `show_anonimize_button` is still drawn in Sys Config, Profile, but nothing reads it since the 2026-10-30 erase work.
+- `config/index.php` Billing tab hint: "Stripe powers the /account subscription page"; the page is `/subscription`.
+- `SettingsRegistry.php` `garden_business` description names a client ("Built for LaunchQuest's random encounters"), shown to admins on corporate servers.
+- `BillingController::portalConfiguration()`: no `subscription_update` feature, so a subscriber can't move between monthly and yearly themselves (a product gap or intended; asked in BUILD-STATUS).

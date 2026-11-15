@@ -5,7 +5,7 @@
 <div class="page-hero wrap">
   <span class="eyebrow">Documentation</span>
   <h1>Docs</h1>
-  <p>Everything below is open to everyone. The architecture &amp; API reference is gated to site admins and collaborators.</p>
+  <p>Everything below is open to everyone. The developer section is gated to site admins and collaborators.</p>
 </div>
 
 <div class="wrap" style="padding-bottom:100px;">
@@ -56,7 +56,7 @@
       <div class="section-head">
         <span class="eyebrow">Scaling Up</span>
         <h2>Enterprise &amp; Organizations</h2>
-        <p>Running more than one Adventure under one account — multi-Adventure Organizations, platform-wide branding, and how the plan tiers actually differ in practice.</p>
+        <p>What Enterprise adds: Organizations for running many Adventures under one account, prize draws, single sign-on, user management and platform-wide branding, and how the plan tiers actually differ in practice.</p>
       </div>
       <div class="feature-grid">
         <?php foreach ($enterpriseDocs as $doc): ?>
@@ -73,8 +73,8 @@
   <div class="split" style="margin-top:60px;">
     <div class="split-card panel">
       <span class="tag tag-locked">Admin Only</span>
-      <h3>Architecture &amp; API</h3>
-      <p>Full technical reference for the CI4 core — routes, models, and the data layer.</p>
+      <h3>Developer Docs</h3>
+      <p>How this site and the BLUERABBIT app are built, run, deployed and secured, and how these docs follow the app.</p>
       <?php if (session()->get('user_role') === 'admin'): ?>
         <a href="<?= site_url('docs/developer') ?>" class="btn btn-primary btn-sm">Open Developer Docs &rarr;</a>
       <?php endif; ?>

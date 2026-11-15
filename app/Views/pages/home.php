@@ -82,7 +82,7 @@
       <div class="feature-card panel green">
         <div class="feature-icon">&#9635;</div>
         <h3>Milestones, Challenges &amp; Steps</h3>
-        <p>28 step types &mdash; dialogue, video, puzzles, SCORM, uploads, branching and encounter choices &mdash; built from reusable primitives.</p>
+        <p>31 step types &mdash; dialogue, video, slides, puzzles, SCORM, uploads, branching, choice boards and encounter choices &mdash; plus challenges with six kinds of question.</p>
       </div>
       <div class="feature-card panel cyan">
         <div class="feature-icon">&#9636;</div>
