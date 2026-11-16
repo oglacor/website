@@ -1350,3 +1350,57 @@ at as rendered; no ERROR or CRITICAL in the site log. No email sent, nothing dep
 
 Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
 Sync documentation now.
+
+### Follow-up (W5): the app's F12 (app through `bc753044`)
+
+App commit `8684360f` (F12, W4's two findings; records `bc753044`). Every claim checked against the
+app's code and words (`tools/server-check.php`: `sc_kind()`, the four env lines on each kind,
+`env.aiCheckModel`, the lottery, uploads and backup lines; `Lottery\Mail::optedOut()` /
+`adventuresFor()` / `render()`; `Notifications::selectWins()` / `fillWins()`; `Tremendous::sendReward()`;
+`EmailRuleModel::preferencesFor()`; `EmailOptoutController`; `email/optout.php`; `player/account.php`;
+`lottery/staff-lottery-mail.php`; the F12 strings in `app/Language/ci4/`), and `server-check --offline`
+run read-only on the app's local checkout ("Kind: this app's own kind"; the four lines PASS;
+`cron.lottery`, `env.lotteryEntryKey` PASS "Not needed"; `uploads.copy` PASS "Nothing to copy";
+`backup.config` FAIL).
+
+- **Player pages**: your-account-profile-and-privacy, Emails: in an Adventure a person plays in with
+  lotteries or leaderboard prizes (Enterprise), its switch also stops the lottery-day emails (entries
+  and results), the switch says so, a lottery won still shows in the notifications, a gift card still
+  comes in its own email. notifications: a lottery won is listed quietly (*You won a lottery*), and
+  turning an adventure's automatic emails off also stops its lottery-day emails.
+- **Game Master pages**: prize-draws, Lottery-Day Emails: a player who stopped the Adventure's
+  automatic emails gets neither email; the panel's count before Send, skipped in the summary; the win
+  in the notifications, the gift card's own email. automatic-emails-and-audience-rules (Players Can
+  Turn These Off) and managing-your-player-roster (Manage Players): the opt-out also stops the
+  lottery-day emails where the Adventure has a lottery.
+- **Developer pages**: app-architecture-editions-and-switches (a new "The lottery-day emails" item
+  from F12's sentence: both rule sets, logged `stopped automatic emails`, the win in the
+  notifications, the gift card from Tremendous; `optedOut()` answers only the day's list, so the GM's
+  count leaves out staff; `adventuresFor()` / `lottery_mail` name them only for a player there, with a
+  lottery or an award, on a corporate server; the two emails carry no stop link of their own; the old
+  "imported rules only" sentence removed); self-hosting-and-deployment (server-check names its kind
+  and why; `--kind=app` / `--kind=unilever` or the importer's `wp-import` row, an unreadable database
+  taken as the takeover kind; on a server this app made the four env lines PASS naming the value, an
+  unknown word WARNs, the one FAIL `bluerabbit.extrasDefault = off` on the public edition; on a server
+  taking over a WordPress install all four required and `env.aiCheckModel` WARN without a line, run
+  with `--kind=unilever` from the first step; on the public edition the lottery lines PASS as not
+  needed and `net.drand` only WARNs, `uploads.copy` nothing to copy, `backup.*` unchanged so
+  `backup.config` FAILs without `/etc/bluerabbit/backup.conf`; the A.I. model line's WARN keyed to
+  the kind, not `wpRulesDefault`; W4's "FAIL by design" removed); start-here and
+  keeping-the-docs-in-sync (the sync point `bc753044`), the seeder's header.
+- **Where F12's proposed sentences were not used word for word** (the code says otherwise):
+  "`env.aiCheckModel` warns without `claude-opus-5-5`": it warns only when the line is missing on the
+  takeover kind (or names an id the check doesn't offer); a Haiku or Sonnet line there PASSes, naming
+  Opus 5.5 as that server's. "report what is set and PASS": a word the app doesn't know is a WARN. The
+  takeover kind also covers a database the check can't read. Not in F12's sentences: `backup.config`
+  still FAILs on a server this app made without the backup settings, so the check exits 1 there.
+
+Verified: `php -l`; seeded twice (92 rows, max id 99 both times, none added; 92 unique sort orders,
+all published); 705 links resolve (702 + the 3 new ones), content check clean (one hit: Tremendous's
+own "Sandbox"); the 5 changed public pages 200, the 4 developer ones 302 signed out and 404 on the
+public route; Edge headless 784/784 over 98 pages at 390 and 1440 (developer section through the
+login form as a disposable admin, removed after with its session files); the changed sections looked
+at as rendered; no ERROR or CRITICAL in the site log. No email sent, nothing deployed.
+
+Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
+Sync documentation now.
