@@ -75,7 +75,17 @@ Fixed since: the Organization's Remove Player (F7 `def32f81`, a real Remove).
 
 ## Found while documenting the A.I. and single sign-on changes (app through `fb40c22b`)
 
-- `player/account.php` Emails tab: the switch's words speak only of "automatic reminders about your progress", but the same switch (`br_email_optouts`) also stops the alert that an A.I. check could not run (`AiOutage::deliver()`). The docs say so. An administrator who is not seated in the adventure has no switch for it there, only the link in the alert.
-- `tools/server-check.php` `env.aiCheckModel`: a WARN on every server whose `.env` does not say `claude-opus-5-5`, with advice for one corporate server, so the public server shows a permanent, expected WARN. The developer page says so.
-- `email/ai-check-alert.php`: "they went through without the check and wait for a person to review them": on a milestone without Validate, nothing waits; the answer is flagged until someone reviews it.
+Fixed by the app's F11 (`blue@46c739bb`, records `84aa881e`) and followed in the docs by W4 the same
+day: the first three items below (kept struck through). Still as designed (F11 left it for Gauden):
+My Account lists only adventures a person is seated in, so an unseated administrator's switch for an
+adventure is the alert's link; the docs say so.
+
+- ~~`player/account.php` Emails tab: the switch's words speak only of "automatic reminders about your progress", but the same switch (`br_email_optouts`) also stops the alert that an A.I. check could not run (`AiOutage::deliver()`). The docs say so. An administrator who is not seated in the adventure has no switch for it there, only the link in the alert.~~ (fixed, F11: the rows, a staff sentence above the list and the stop-emails page name the alert for staff)
+- ~~`tools/server-check.php` `env.aiCheckModel`: a WARN on every server whose `.env` does not say `claude-opus-5-5`, with advice for one corporate server, so the public server shows a permanent, expected WARN. The developer page says so.~~ (fixed, F11: PASS naming the model; WARN only with `bluerabbit.wpRulesDefault = on` and no line, or an id the check does not offer)
+- ~~`email/ai-check-alert.php`: "they went through without the check and wait for a person to review them": on a milestone without Validate, nothing waits; the answer is flagged until someone reviews it.~~ (fixed, F11: `AiCheckFlags::validateShare()` picks one of three sentences)
 - Measured, not a bug: the check's prompt forbids naming the rubric's examples in feedback, but AI3's run still found it in 4 of 39 failed answers and 1 of 31 passed ones. The docs say the A.I. is told to keep the rubric private, not that it never slips.
+
+## Found while following F11 (app through `84aa881e`)
+
+- F11's log says the per-adventure switch "also stops the lottery's emails". Only on an adventure that plays by WordPress's rules: `Lottery\Mail::optedOut()` returns nothing unless `WpRules::on()`, so the app's own adventures send the lottery-day emails to everyone, opted out or not (Gauden's choice of 2026-11-14, per its comment). Neither the switch nor the stop-emails page mentions the lottery on either side. The public docs say nothing about it (the imported rules are left out of them); the developer page says both.
+- `tools/server-check.php` is the Unilever server's checklist (its docblock): on a server the app built itself, `env.edition`, `env.menuDefault`, `env.extrasDefault` and `env.wpRulesDefault` FAIL and it exits 1 (seen on this machine, `--offline`), while the developer page's deploy steps had it run on every update. The developer page now says so. If it should serve play.bluerabbit.io too, it could read the server's kind the way F11's `env.aiCheckModel` does.

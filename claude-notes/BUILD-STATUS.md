@@ -1310,3 +1310,43 @@ disposable admin, removed after).
 
 Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
 Sync documentation now.
+
+### Follow-up (W4): the app's F11 (app through `84aa881e`)
+
+App commit `46c739bb` (F11, W3's three findings; records `84aa881e`). Every claim checked against the
+app's code and words (`EmailRuleModel::preferencesFor()`, `AiOutage::alerts()` / `recipients()` /
+`deliver()`, `AiCheckFlags::validateShare()`, `email/ai-check-alert.php`, `email/optout.php`,
+`player/account.php`, `EmailOptoutController`, `PlayerController::account()`, `Lottery\Mail`,
+`tools/server-check.php`, the F11 strings in `app/Language/ci4/`), and `server-check --offline` run
+read-only on the app's local checkout.
+
+- **Player page** your-account-profile-and-privacy, Emails: F11's sentence in the docs' voice: for an
+  Adventure's staff (owner, Game Master, platform administrator) the switch also stops the alert
+  email, the alert still reaches the notifications, the row says so; an Adventure they're not in
+  isn't listed, so they use the link at the foot of its alert.
+- **Game Master page** grading-and-ai-assisted-feedback, When the A.I. Check Can't Run: the email says
+  whether the answers wait for a review (a milestone with Validate) or were accepted and stay flagged
+  (any other), both in a mixed alert; an administrator not in the Adventure uses the alert's link.
+- **Developer pages**: app-architecture-editions-and-switches (`validateShare()` and its three
+  sentences; a new "The opt-out" item: one switch, two doors, `AiOutage::alerts()`, `ai_alerts`, the
+  unseated administrator, the panel absent where `bluerabbit.extrasDefault` is off, and the lottery-day
+  emails skipped for opted-out players only on an adventure that plays by the imported rules);
+  self-hosting-and-deployment (`env.aiCheckModel`: PASS on a normal server, WARN only on a server set
+  to play by the imported rules with no line, or on an id the check doesn't offer; W3's "a WARN is
+  expected on a server that keeps Haiku" removed; and server-check is that server's checklist, so on
+  the public server its `env.edition`, `env.menuDefault`, `env.extrasDefault` and `env.wpRulesDefault`
+  lines FAIL by design); start-here and keeping-the-docs-in-sync (the sync point `84aa881e`), the
+  seeder's header.
+- **Not in the public docs**: F11's "the same switch also stops the lottery's emails" holds only on
+  adventures that play by WordPress's rules (`Lottery\Mail::optedOut()`); the app's own adventures send
+  them to everyone. Recorded in the findings file.
+
+Verified: `php -l`; seeded twice (92 rows, none added the second time; 92 unique sort orders, all
+published); 702 links resolve, content check clean (one hit: Tremendous's own "Sandbox"); the 6
+changed pages: the 2 public ones 200 with their titles, the 4 developer ones 302 signed out and 404 on
+the public route; Edge headless 784/784 over 98 pages at 390 and 1440 (developer section through the
+login form as a disposable admin, removed after, with its session files); the changed sections looked
+at as rendered; no ERROR or CRITICAL in the site log. No email sent, nothing deployed.
+
+Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
+Sync documentation now.
