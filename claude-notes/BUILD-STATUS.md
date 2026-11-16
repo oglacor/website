@@ -1257,3 +1257,56 @@ owner's plan before Cooper answers; a plan with no row counts as on).
 Verified: `php -l`; seeded twice (92 rows, none added the second time); links and the content
 check; every changed page 200 with its title; Edge headless over every docs page (developer
 section through the login form as a disposable admin, removed after) at 390 and 1440.
+
+### Follow-up (W3): the app's A.I. and single sign-on changes (app through `fb40c22b`)
+
+App commits `7ec3a2aa` (the Open Text check on Claude Haiku 5.5), `e3562ae8` (feedback keeps the
+rubric private and comes in the answer's language), `58dc2a28` (a check that can't run: the player
+told, the answer flagged, staff alerted), `410ece62` (Cooper on Sonnet 5.5; the check's model a
+per-server choice) and `5569e90e` (single sign-on). `9c49b584` measured only. Every claim checked
+against the app's code (`AiModels`, `AiValidator`, `AiOutage`, `AiCheckFlags`, `AiKey`, `Cooper::MODELS`,
+`StepController::validateOpenTextAi()`, the review and validation views, `config/index.php`,
+`adventures/new.php`, `Sso`, `SsoController`, `AuthController`, `login.php`).
+
+- **Player pages**: completing-milestones-and-steps (feedback in the answer's language, the rubric
+  kept private, the line under an answer whose check couldn't run); notifications (the staff alert in
+  the bell); your-account-profile-and-privacy (the Emails switch also stops the alert emails; Remember
+  Me; a single sign-on session ends with the browser).
+- **Game Master pages**: grading-and-ai-assisted-feedback (new section "When the A.I. Check Can't Run":
+  the player's line, the flag on Milestone Review and the Validation list, Mark as reviewed, who is
+  alerted, the 6-hour window, the opt-out; the reviewer-context rule; the review's own failures);
+  reviewing-and-grading-submissions-in-bulk (the badge on the Validation list; a run's errors flagged
+  and alerted); setting-up-ai-grading-and-gift-cards ("Which Model, and What It Costs" replaces "Haiku
+  at well under a cent"; Test Key on the check's model; and a W2 error fixed: **the platform key pays
+  only for Cooper and its drafts, never the Open Text check or the A.I. review** (`AiKey`, `$platform =
+  false`)); full-step-library-choosing-the-right-step, designing-milestones-rewards-and-unlocks (Quest
+  Context kept out of feedback), complete-adventure-settings-reference (Connections names the check's
+  model), activity-logs, languages-for-your-players (the alert is the one email in the recipient's
+  language).
+- **Enterprise pages**: platform-settings-and-white-label-branding (Sys Config -> Cooper: Model with the
+  three 5.5s and their per-question ranges, the new A.I. check model with its per-check costs and the
+  app's own 136-verdict figures); security-and-single-sign-on (a new account's nickname, picture,
+  language and guild; the session ends with the browser; the SSO-1234 reference). The SSO tab
+  described is the app's own: it is what every server with `bluerabbit.extrasDefault` on draws. The
+  WordPress-styled pane appears only where that switch is off (a server taking over a WordPress
+  install); the developer page says so.
+- **Developer pages**: app-architecture-editions-and-switches (the key order; a new "The A.I. Models and
+  Checks" section with `cooper_model`, `ai_check_model`, `bluerabbit.aiCheckModel`, the three alert
+  tables; Sys Config's two screens), self-hosting-and-deployment (`migrate.php --apply` creates the
+  three tables; the `.env` line and server-check's `env.aiCheckModel` WARN), routes-and-api-reference
+  (`br_validate_open_text_ai`, `br_ai_flag_reviewed`, `saveCooperSettings`), security-model (SSO
+  sessions, masked key strings), start-here and keeping-the-docs-in-sync (the sync point), the seeder's
+  header.
+- **Marketing**: product's A.I. card: feedback in the language each player wrote in.
+- Prices quoted only where the app measured them and prints them itself (Sys Config's labels and the
+  Connections help: about $0.0003 / $0.005 / $0.01 a check; Cooper $0.005-$0.03, $0.015-$0.07,
+  $0.0004-$0.002 a question).
+
+Verified: `php -l`; seeded twice (92 rows, none added the second time; unique sort orders); 702 links
+resolve, content check clean (one hit: Tremendous's own "Sandbox"); the 19 changed docs pages and
+product 200 with their titles, developer pages 302 signed out and 404 on the public route; Edge
+headless 784/784 over 98 pages at 390 and 1440 (developer section through the login form as a
+disposable admin, removed after).
+
+Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
+Sync documentation now.

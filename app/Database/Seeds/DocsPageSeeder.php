@@ -9,7 +9,9 @@ use CodeIgniter\Database\Seeder;
  * this after an edit actually refreshes content instead of silently
  * skipping — unlike BlogPostSeeder, which is insert-only.
  *
- * Last synced to the CI4 app (blue) on 2026-11-15, against blue@463a356
+ * Last synced to the CI4 app (blue) on 2026-11-15, against blue@463a356,
+ * then followed the same day through blue@fb40c22b (the app's F4-F10, then
+ * its A.I. model, feedback and outage-alert work and its SSO changes)
  * (previous syncs: 2026-10-27, blue@dbb5c05, a hash the app's 2026-10-30
  * history rewrite removed, by date blue@0dfb3a8; 2026-09-21, blue@6e5a454).
  * See claude-notes/BUILD-STATUS.md for what changed in each pass, and
@@ -292,6 +294,7 @@ HTML,
   <li><strong>A hand-in sent back</strong> — <em>Sent back</em>, with your Game Master's note. Open it to hand it in again.</li>
   <li><strong>A reply to one of your requests</strong> — <em>Reply to your request</em>, with the answer, or <em>Your request was closed</em>.</li>
   <li><strong>An email sent to you</strong> — <em>Email sent to you</em>, with its subject.</li>
+  <li><strong>For an Adventure's owner, its Game Masters and the platform's administrators: an A.I. check that couldn't run</strong> — <em>The A.I. check could not run</em>, with the milestone and step, what failed and how many answers it affected. It opens just those answers on the Milestone Review. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
 </ul>
 
 <h2>What's Listed Quietly</h2>
@@ -515,7 +518,8 @@ HTML,
 <p>Your Game Master can mark a Milestone to load first, such as a briefing you should see before anything else. When you open the adventure you're taken straight into it, but only if you can actually play it yet. Once you've finished it, it stops. An encounter you're in the middle of, or a hand of encounter cards waiting for you to pick, always comes first.</p>
 
 <h2>AI-Assisted Feedback</h2>
-<p>On Open Text steps, if your Game Master has switched it on, pressing <strong>Check Answer</strong> has your response checked against what the question asks (and any private criteria your Game Master wrote) before you continue. If it's sent back, you get feedback to revise against, which is useful for practising a skill rather than just being graded once. After it's accepted you can still reopen your answer with <strong>Edit Content</strong>.</p>
+<p>On Open Text steps, if your Game Master has switched it on, pressing <strong>Check Answer</strong> has your response checked against what the question asks (and any private criteria your Game Master wrote) before you continue. If it's sent back, you get feedback to revise against, which is useful for practising a skill rather than just being graded once. The feedback is written in the language you answered in, and it says what kind of thing is missing (a concrete reason, a situation, more detail) without handing you what your Game Master's private criteria expect: working that out is still yours to do. After it's accepted you can still reopen your answer with <strong>Edit Content</strong>.</p>
+<p>Now and then the check can't run, for example when the A.I. service is busy. You're never held up by it: your answer goes through as if the step had no check, and a line under it says so: <em>The A.I. check could not run on this answer, so it went through without it. Your Game Master can still review it.</em> The answer is flagged for your Game Master to read.</p>
 
 <h2>Reading Your Answers Back</h2>
 <p>Every answer you give is kept. Your Journal's <strong>My Answers</strong> tab, and the <strong>Your answer</strong> link on a secret you unlocked, open a milestone's read-back: each step that asked you something, the question, and what you answered. See <a href="/docs/my-work-journal-and-history">The Journal</a>.</p>
@@ -1004,6 +1008,7 @@ HTML,
 
 <h2>Emails</h2>
 <p>A switch for every Adventure you're seated in. Some adventures send automatic reminders about your progress, for example when you fall behind, or a note when you earn something. Turning an Adventure's switch off stops that Adventure's automatic emails; a message your Game Master writes to you directly still arrives. If an Adventure sends no automatic reminders yet, the switch is still there, and says it will apply if it starts.</p>
+<p>If you run an Adventure, the same switch also stops the emails that tell you an A.I. check couldn't run there (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>). Your notification bell still tells you. The link at the foot of each of those emails turns off the same switch.</p>
 
 <h2>Billing</h2>
 <p>If you pay for a plan, the <strong>Subscription</strong> panel shows your plan and its status (for example Active, Free trial or Payment overdue), when it renews or ends, and a <strong>Manage billing</strong> button that opens the billing portal, where you can update your card or cancel. If your last payment failed, a banner here asks you to update your payment method.</p>
@@ -1019,7 +1024,8 @@ HTML,
 
 <h2>Staying Signed In</h2>
 <p>Sessions last <strong>30 days</strong>. Log in once and you'll stay signed in for a month of ordinary use, rather than being logged out after a couple of hours.</p>
-<p>This is deliberate: most people work through an Adventure across weeks, not in one sitting. If you're on a shared or public computer, log out when you're done (<strong>Log out</strong> in your profile panel or the menu). The long session is a convenience for your own device.</p>
+<p>This is deliberate: most people work through an Adventure across weeks, not in one sitting. If you're on a shared or public computer, untick <strong>Remember Me</strong> on the sign-in page (it's ticked to begin with), and you're signed out when the browser closes; or log out when you're done (<strong>Log out</strong> in your profile panel or the menu). The long session is a convenience for your own device.</p>
+<p>If your organization signs you in with its own work account (single sign-on), that sign-in always lasts until the browser closes.</p>
 
 <h2>Your Data</h2>
 <p><strong>Download my data</strong> gives you one file with everything BLUERABBIT holds about you: your profile, every adventure you joined and what you earned in it, the work and answers you handed in, your messages and uploads, the emails sent to you, your billing and your sign-ins. It's a JSON file, readable in any text editor.</p>
@@ -2181,7 +2187,7 @@ HTML,
 <h2>Content: What Players Read</h2>
 <ul>
   <li><strong>Short Description</strong> — the preview players read when they click the Milestone on the map.</li>
-  <li><strong>Quest Context</strong> — private, for GMs and the A.I. review: the background, the goals and what good work looks like across the whole Milestone. It's sent to the A.I. with every Open Text check, so put question-specific rubrics on each Open Text step instead. Players never see it, except on a Milestone with no steps, where it's shown to them as the question.</li>
+  <li><strong>Quest Context</strong> — private, for GMs and the A.I. review: the background, the goals and what good work looks like across the whole Milestone. It's sent to the A.I. with every Open Text check, so put question-specific rubrics on each Open Text step instead; like those, it's kept out of the feedback the A.I. writes players. Players never see it, except on a Milestone with no steps, where it's shown to them as the question.</li>
   <li><strong>Success Message</strong> — the text of the win screen every Milestone ends on, and what the player finds on their <a href="/docs/certificates-and-secrets-and-clues">Secrets &amp; Clues</a> page once they've finished.</li>
   <li><strong>Failure Message</strong> — the text of the fail screen. It's only reached if something in the Milestone can actually fail: a question with limited tries that runs out, or a step that sends the player there.</li>
 </ul>
@@ -2353,9 +2359,9 @@ HTML,
   <li><strong>Open Text</strong>: free writing to the prompt in the step's Content, with an optional <strong>Min Words</strong>. Players write in a small rich-text box (bold, italic, alignment, links, bullet lists and Add Media for a picture), and the answer is shown back to them formatted, never as raw code. Each Open Text step keeps its own answer, so a Milestone can ask several questions and keep every reply. Set <strong>A.I. Validation</strong> to On and the answer is checked before the player moves on, giving them instant feedback to revise against. Two settings shape the check:
     <ul>
       <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
-      <li><strong>A.I. Reviewer Context</strong>: private: players never see it, and the A.I. is told never to quote it back. Say what a good answer to this question must include. It's optional; without it the A.I. judges whether the answer is a genuine attempt at the prompt. The Milestone's Quest Context goes along with every check too.</li>
+      <li><strong>A.I. Reviewer Context</strong>: private: players never see it, and the A.I. is told to keep it out of the feedback it writes them: no quoting, paraphrasing or translating its examples or expected answers, not even as a hint. Say what a good answer to this question must include. It's optional; without it the A.I. judges whether the answer is a genuine attempt at the prompt. The Milestone's Quest Context goes along with every check too.</li>
     </ul>
-    Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key: the adventure's own on its Connections pane (a cohort uses its template's), or else its owner's account key. If a check can't run, the answer is let through and staff are told why. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
+    The feedback is written in the language the player answered in. Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key: the adventure's own on its Connections pane (a cohort uses its template's), or else its owner's account key. If a check can't run, the answer goes through and the player is told the check didn't run; the answer is flagged for you on the Milestone Review, and the Adventure's owner, its Game Masters and the platform's administrators are alerted. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
   <li><strong>Survey Choice</strong>: a question with options and no correct answer. Choose whether players can pick more than one. With multiple answers on, <strong>Most answers a player can pick</strong> caps how many they tick (0 means no limit): the player sees "Choose up to 3" and the remaining boxes lock at the limit. Stats has a Surveys tab that totals every answer.</li>
   <li><strong>Rating Scale</strong>: a numeric scale with a minimum and maximum you set, plus a label for each end ("Strongly Disagree" to "Strongly Agree"). The tool for pulse checks and confidence self-ratings.</li>
   <li><strong>Poll</strong>: a question whose results always render as live percentage bars the moment the player votes. Use it when seeing what everyone else said is the point.</li>
@@ -4135,12 +4141,21 @@ HTML,
 <h2>Turning On AI-Assisted Feedback</h2>
 <p>With a Claude API key on the Adventure, or on its owner's account (see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>), every Open Text step has three A.I. settings:</p>
 <ul>
-  <li><strong>A.I. Validation</strong> (Off or On): the instant check. When it's on, the answer goes to Claude when the player submits it. If it falls short, the player sees why and revises before moving on.</li>
+  <li><strong>A.I. Validation</strong> (Off or On): the instant check. When it's on, the answer goes to Claude when the player submits it. If it falls short, the player sees why, in the language they answered in, and revises before moving on.</li>
   <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
-  <li><strong>A.I. Reviewer Context</strong>: your private rubric. Say what a good answer to <em>this question</em> must include: key ideas, facts, what to reject. Players never see it, and the A.I. is told never to quote it back. The milestone's own context is sent automatically, so write only what's specific to the question. It's optional: without it, the A.I. judges whether the answer is a genuine attempt at the prompt, not whether it's right.</li>
+  <li><strong>A.I. Reviewer Context</strong>: your private rubric. Say what a good answer to <em>this question</em> must include: key ideas, facts, what to reject. Players never see it. The A.I. is told to keep it out of every word the player reads: never to quote, paraphrase, translate or list its examples, key facts or expected answers, not even one of them as a hint ("such as..."), and never to mention that it exists. It says what kind of thing is missing in general terms instead (a concrete reason, a situation, more detail), so the player still has to work the answer out. The milestone's own context is sent automatically, so write only what's specific to the question. It's optional: without it, the A.I. judges whether the answer is a genuine attempt at the prompt, not whether it's right.</li>
 </ul>
 <p><strong>One rubric, two readers.</strong> The same strictness and reviewer context drive the player's instant check and your second opinion on the review screen, so what a player is held to and what the reviewer is told can't drift apart. Both are used even when the instant check is off, so you can still ask for a second opinion on a finished submission. On the review screen, when a submission covers several Open Text questions, the strictest one sets the bar.</p>
-<p><strong>The check never strands a player.</strong> If it can't run (no key, a rejected key, an unreadable reply) the answer passes. That also means a broken key looks exactly like a pass. Staff who play the milestone see an amber note under their answer saying why the check was skipped, and the skip is written to the <a href="/docs/activity-logs">activity log</a>. Players never see either. Press <strong>Test Key</strong> after saving a key to be sure.</p>
+<h2>When the A.I. Check Can't Run</h2>
+<p><strong>The check never strands a player.</strong> If it can't run (no key, a key Claude refuses, an account out of credit or at its spending limit, the service busy or unreachable, or a reply with no verdict in it), the answer goes through as it would on a step without the check, and the player reads, under their answer and in their own language: <em>The A.I. check could not run on this answer, so it went through without it. Your Game Master can still review it.</em> They're given no technical detail. Staff who play the milestone see the same line with the reason after it, and the skip is written to the <a href="/docs/activity-logs">activity log</a>. Then two more things happen.</p>
+<p><strong>The answer is flagged.</strong> On the Milestone Review, Milestone Data says how many answers on the milestone weren't checked by the A.I., with <strong>Show only these</strong> (and <strong>Show every answer</strong> to go back). Each of those entries carries a <em>Not checked by the A.I.</em> badge, what failed and on which step. A mark, a grade, a comment or <strong>Mark as reviewed</strong> clears it, and so does a later A.I. verdict on the same answer. On the milestone's Validation list the badge sits in the Status cell, with the reason when you point at it. An NPC sees the flags but can't clear them.</p>
+<p><strong>The people who can fix it are told.</strong> The Adventure's owner, its Game Masters and the platform's administrators each get an email, in their own language, and an entry in their notification bell. It says what failed, on which milestone and step, how many answers it affected, and what to do: add or replace a key, check the Claude account's credit and spending limits, wait for a busy service, or read the answers yourself. A link opens just those answers, and for a key or credit problem a second link opens the key's settings. When the key that failed is a template's, the template's owner is told too, since only they can replace it. NPCs aren't told, unless they also own the Adventure or administer the platform.</p>
+<ul>
+  <li><strong>At most one alert every 6 hours</strong> for each cause in an Adventure, with the number of answers since the last one. Answers that fail in between are flagged as usual and counted in the next alert, not emailed one by one.</li>
+  <li>Once the A.I. checks an answer in the Adventure again, the count starts afresh. A missing, refused or unpaid key is the exception to the 6 hours: when it starts failing again after checks had worked, it alerts straight away, because someone changed something.</li>
+  <li>The email follows the same switch as an Adventure's automatic emails: turn that Adventure off in My Account → Emails, or use the link at the foot of the alert, and the bell entry still comes.</li>
+</ul>
+<p>Press <strong>Test Key</strong> after saving a key: it's still the quickest way to know the checks will run.</p>
 
 <h2>Your Review Screen</h2>
 <p>The <strong>Milestone Review</strong> opens from the milestone's <strong>Review</strong> link on Manage Content → Journey, from a row of the <strong>Validation</strong> queue (see <a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a>), or from <strong>Review Milestone</strong> in the milestone builder. <strong>View Milestone</strong> opens the milestone itself, and the way back takes you to the queue you came from. Each submission is a card with the player's name and email, when it was published and last modified, and the full answer as the player wrote it, plus:</p>
@@ -4160,7 +4175,8 @@ HTML,
   <li><strong>Invalidate with this feedback</strong></li>
   <li><strong>Add the feedback without validating</strong></li>
 </ul>
-<p>All three are offered whatever the verdict: the A.I. is a second opinion, not the decision. If the player edits their answer after the check, applying the verdict is refused and you're asked to run the check again, so a grade the A.I. never gave can't be written. Every verdict is saved, and a later Validate All reuses it rather than paying for it twice.</p>
+<p>All three are offered whatever the verdict: the A.I. is a second opinion, not the decision. If the player edits their answer after the check, applying the verdict is refused and you're asked to run the check again, so a grade the A.I. never gave can't be written. Every verdict is saved, and a later Validate All reuses it rather than paying for it twice. The suggested comment follows the same rules as the player's instant check: in the player's language, and nothing from your reviewer context in it.</p>
+<p>If the A.I. can't give a verdict, you're told why, nothing is applied, and the submission is flagged <em>Not checked by the A.I.</em> with "A.I. review" as its step, and alerts go out as above. A verdict on a later try clears the flag.</p>
 
 <h2>Written Feedback</h2>
 <p>Type in <strong>Comment for the player</strong> and press <strong>Save Comment</strong>; the card says <em>Comment Saved</em>. A.I. feedback you accept lands in the same box. The player sees it as "Feedback from your Game Master" when they read back their finished milestone, and in the milestone's details in their Journal. It travels in the review CSV too.</p>
@@ -4169,7 +4185,7 @@ HTML,
 <p>A grade, a validation, or work sent back with Invalidate shows up in the player's notification bell, with what the mark paid, so they know to look without you sending a message. On their next page, the player is also shown what your mark paid them.</p>
 
 <h2>Who Can Grade</h2>
-<p>GMs and admins. An NPC can open the review screen and read every submission and verdict, but can't grade, validate, comment or run the A.I.</p>
+<p>GMs and admins. An NPC can open the review screen and read every submission and verdict, but can't grade, validate, comment, run the A.I. or mark a flagged answer as reviewed.</p>
 
 <p><strong>Where to go next:</strong> <a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a>, once you're grading at cohort scale.</p>
 
@@ -4199,6 +4215,7 @@ HTML,
   <li><strong>Validated</strong>: the milestone counts for this player.</li>
   <li><strong>Reviewed before</strong>: invalidated or marked 0 earlier, and handed in again. It doesn't count until it's validated.</li>
 </ul>
+<p>An answer whose A.I. check couldn't run also carries a <em>Not checked by the A.I.</em> badge in its Status cell; point at it for the reason. Validating or invalidating it from the row clears it, as does anything else that reviews it on the full Milestone Review (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>).</p>
 <p>Search by name or email, filter by status, and choose a page size. <strong>Download CSV</strong> and the A.I. Review panel are there too, and <strong>Every answer</strong> (or a row's link) opens the full Milestone Review. Answers from a cohort you don't run are listed so the numbers add up, but you validate them from that cohort.</p>
 
 <h2>Validate All with A.I.</h2>
@@ -4221,6 +4238,7 @@ HTML,
 
 <h3>Nothing Applied on Doubt</h3>
 <p>An API error, an unreadable reply, or a submission with nothing written is recorded and left for a human, never quietly validated. A temporary error, such as a rate limit, is retried up to three times. Three failures in a row stop the run. An error that would repeat for every submission, like a rejected key, stops it straight away.</p>
+<p>A submission the A.I. couldn't judge because of an error is also flagged <em>Not checked by the A.I.</em> on the Milestone Review and the Validation list, and the Adventure's owner, its Game Masters and the platform's administrators are alerted, at most once every 6 hours for each cause (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>). A verdict on the next run clears the flag.</p>
 
 <h3>How the A.I.'s Grade Is Written</h3>
 <ul>
@@ -4295,13 +4313,16 @@ HTML,
   <li>the Adventure's own key (Connections);</li>
   <li>its template's key, for a cohort;</li>
   <li>the Adventure owner's account key (My Account → <strong>A.I. (Cooper)</strong>);</li>
-  <li>the platform's key.</li>
+  <li>the platform's key, for Cooper and the drafts it writes (study notes, reminder emails) only.</li>
 </ol>
-<p>So one key saved on your account covers every Adventure you own that has none of its own. The Connections pane says when the owner's account key is the one paying. Outside any Adventure, Cooper uses the person's own account key, then the platform's.</p>
-<p>Text validation runs on Claude Haiku at well under a cent per check; Cooper costs roughly a cent per player question. For bulk runs, Validate All shows you an estimate before it spends anything and a running total afterwards.</p>
+<p>So one key saved on your account covers every Adventure you own that has none of its own. The Connections pane says when the owner's account key is the one paying. The Open Text check and the A.I. review never use the platform's key: with none of the first three, they can't run, and the Adventure's staff are told (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>). Outside any Adventure, Cooper uses the person's own account key, then the platform's.</p>
+
+<h2>Which Model, and What It Costs</h2>
+<p>The Open Text check and the A.I. review run on the Claude model the platform's administrators choose: <strong>Claude Haiku 5.5</strong> unless they pick another. On Connections, <strong>How to get a Claude API Key</strong> names the one your platform uses and about what one check costs: around $0.0003 on Haiku 5.5, $0.005 on Sonnet 5.5 or $0.01 on Opus 5.5. Checks are billed to the key found above, so the model decides what checking a cohort costs that key's owner. For bulk runs, Validate All shows you an estimate before it spends anything and a running total afterwards.</p>
+<p>Cooper runs on <strong>Claude Sonnet 5.5</strong> unless the platform chooses Opus 5.5 (the best answers) or Haiku 5.5 (the cheapest). It costs from under a cent to a few cents per player question, depending on its model and the size of the Adventure.</p>
 
 <h2>Test Key</h2>
-<p><strong>Test Key</strong> makes one real round trip to Claude, the same way every check does. It reports which key it used (this Adventure's or its template's) and either how quickly Claude answered or exactly what came back instead. Every A.I. check fails open, so a rejected key looks just like every answer passing. That's why testing after you save is worth the click. Each test is written to the activity log.</p>
+<p><strong>Test Key</strong> makes one real round trip to Claude, on the same model the checks use. It reports which key it used (this Adventure's, its template's or its owner's account key) and either how quickly Claude answered or exactly what came back instead. A check that can't run lets the player's answer through, so a broken key otherwise only shows up as flagged answers and alerts after players have hit it. That's why testing after you save is worth the click. Each test is written to the activity log.</p>
 
 <h2>Cohorts Use Their Template's Key</h2>
 <p>A cohort with no key of its own uses its template's, and its Connections pane says so. Save a key on the template once and every cohort's checks, reviews and Cooper use it. Save a key on a cohort only when you want to override the template's.</p>
@@ -4505,7 +4526,7 @@ HTML,
 <ul>
   <li><strong>Player activity</strong> — entering the Adventure, completing steps and milestones (including by QR code), challenge attempts, purchases and item pickups, achievements earned and magic codes tried (right or wrong), level-ups, encounter draws, profile readings and retakes, and Garden actions such as endorsements, gifts and help requests.</li>
   <li><strong>Staff activity</strong> — edits to milestones, steps, achievements, certificates, Tabis and other content; grades, validations and A.I. reviews; enrolments and role or status changes; imports and exports; A.I. key tests; and milestone resets.</li>
-  <li><strong>Skipped A.I. checks</strong> — when an Open Text check couldn't run (no key, a rejected key), the log says so and why. It's often the first place to look when A.I. validation seems not to be working.</li>
+  <li><strong>Skipped A.I. checks</strong> — when an Open Text check couldn't run (no key, a rejected key, the service busy), the log says so and why. The answer is also flagged on the Milestone Review and the Adventure's staff are alerted (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>); the log is where to look for the full history.</li>
 </ul>
 <p>The list of actions grows as features start logging new things, so the filter is built from whatever is actually in the log.</p>
 
@@ -4627,7 +4648,7 @@ HTML,
 <p><strong>Email design</strong>: how every email from this Adventure looks (reminders and the messages you send): the text, header, message and footer colours, and what's around the email. Anything left unset uses the platform design. <strong>Preview</strong> shows the real email, drawn the way it's sent. A cohort's emails use its template's design.</p>
 
 <h2>Connections</h2>
-<p><strong>Claude API key</strong>: one key powers every A.I. feature in this Adventure: validation on Open Text steps, A.I. grading, and Cooper. With no key here (and none on the template), the owner's account key pays, and the pane says so. Paste it and it's saved as soon as you leave the box; it's stored encrypted and never shown back. <strong>Test Key</strong> makes one real call and reports whose key answered, and <strong>Remove Key</strong> clears it. A cohort with no key of its own uses its template's. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
+<p><strong>Claude API key</strong>: one key powers every A.I. feature in this Adventure: validation on Open Text steps, A.I. grading, and Cooper. With no key here (and none on the template), the owner's account key pays, and the pane says so. Paste it and it's saved as soon as you leave the box; it's stored encrypted and never shown back. <strong>Test Key</strong> makes one real call and reports whose key answered, and <strong>Remove Key</strong> clears it. <strong>How to get a Claude API Key</strong>, under the box, also names the model the Open Text check and the A.I. review run on, with about what a check costs. A cohort with no key of its own uses its template's. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
 <p><strong>Tremendous gift cards</strong> (Enterprise only): connects a Tremendous account so Gift Card items send real gift cards.</p>
 
 <h2>Players</h2>
@@ -4751,7 +4772,7 @@ HTML,
 <ul>
   <li><strong>Your content.</strong> Milestone and step text, posts, resources, item and achievement names, certificates and Cooper Context appear exactly as you wrote them. BLUERABBIT doesn't translate what you author.</li>
   <li><strong>Names you set.</strong> A section you've renamed (say, "Base Camp" for the Journey) and your currency names (XP, BLOO and EP, or whatever you've called them) are yours, and show the same in every language. A section you haven't renamed shows its built-in name in each person's language.</li>
-  <li><strong>Emails.</strong> The emails BLUERABBIT sends are in English for now; a campaign's message is whatever you write.</li>
+  <li><strong>Emails.</strong> The emails BLUERABBIT sends are in English for now; a campaign's message is whatever you write. One exception: the alert that an A.I. check couldn't run reaches each person it goes to (the owner, the Game Masters, the platform's administrators) in their own language.</li>
 </ul>
 
 <h2>Running an Adventure for Several Languages</h2>
@@ -5249,7 +5270,12 @@ HTML,
 <p>Human verification on every signed-out form, sign-in rate limits, upload limits by role, SVG handling and the sign-in log, plus Single Sign-On with Microsoft Entra ID. These have their own page: <a href="/docs/security-and-single-sign-on">Security &amp; Single Sign-On</a>.</p>
 
 <h2>Cooper</h2>
-<p>The master switch for Cooper, the in-app AI assistant, across every Adventure, the model Cooper runs on, and the platform's Anthropic API key, the last resort: used only where an Adventure has no key of its own, none on its template and none on its owner's account. <strong>Character</strong> sets the platform default for who Cooper is: a name, a picture, a button icon, a greeting and a personality. Each Adventure can override the character on its own Help &amp; Cooper tab. A personality changes the voice, never the rules: whatever it's called, the assistant still won't hand out answers.</p>
+<p>The master switch for Cooper, the in-app AI assistant, across every Adventure, and the platform's Anthropic API key, the last resort for Cooper: used only where an Adventure has no key of its own, none on its template and none on its owner's account. The Open Text check and the A.I. review never use it. Two model choices sit here too, each a fixed list that shows about what each choice costs:</p>
+<ul>
+  <li><strong>Model</strong>: what Cooper (and the study notes and reminder drafts it writes) runs on. <strong>Sonnet 5.5</strong>, recommended and the default, about $0.005 to $0.03 per question; <strong>Opus 5.5</strong>, the best answers, about $0.015 to $0.07; <strong>Haiku 5.5</strong>, the cheapest, about $0.0004 to $0.002. The lower figure is a small Adventure, the higher one a large one with a long Cooper Context. The hint shows how each scored when the same test questions were judged blind.</li>
+  <li><strong>A.I. check model</strong>: what the Open Text check and the A.I. review run on. <em>This server's default</em> (Haiku 5.5 unless the server is set up with another), <strong>Haiku 5.5</strong> (the cheapest, about $0.0003 a check), <strong>Sonnet 5.5</strong> (about $0.005) or <strong>Opus 5.5</strong> (the best feedback, about $0.01). Each Adventure's checks are billed to the key it uses (its own, its template's or its owner's), so a pricier model costs that key's owner more. On the same test answers, Haiku 5.5 agreed with the expected verdict 130 times out of 136 and failed 2 good answers; Sonnet 5.5 and Opus 5.5 agreed 134 times and failed none, and Opus wrote the clearest feedback. Test Key on an Adventure uses this model too.</li>
+</ul>
+<p><strong>Character</strong> sets the platform default for who Cooper is: a name, a picture, a button icon, a greeting and a personality. Each Adventure can override the character on its own Help &amp; Cooper tab. A personality changes the voice, never the rules: whatever it's called, the assistant still won't hand out answers.</p>
 <p><strong>Documentation index</strong>: Cooper answers questions about BLUERABBIT itself from a local copy of these docs. <strong>Sync documentation now</strong> fetches them again (up to 120 pages, about a minute); run it after the docs change.</p>
 
 <h2>Billing</h2>
@@ -5422,11 +5448,12 @@ HTML,
 
 <h2>Single Sign-On with Microsoft Entra ID</h2>
 <p>BLUERABBIT supports <strong>SAML Single Sign-On with Microsoft Entra ID</strong> (formerly Azure AD), so your people sign in with their work account instead of a separate password. It's <strong>Enterprise only</strong>, set up per platform together with our team. It's off until then, and while it's off none of the sign-on endpoints exist.</p>
-<p>The SSO tab walks through the setup: <strong>Enable SSO</strong> publishes the service-provider details to hand to your identity team; <strong>Fill in from Entra</strong> takes your tenant and application IDs and fills in the identity provider's values and certificate (several certificates can be held during a key rollover); and the <strong>Sign-in button</strong> can be Microsoft's or your organization's, with your own text, logo and colour. <strong>Recent sign-in events</strong> lists what happened, so a failed sign-in can be traced.</p>
+<p>The SSO tab walks through the setup: <strong>Enable SSO</strong> publishes the service-provider details to hand to your identity team; <strong>Fill in from Entra</strong> takes your tenant and application IDs and fills in the identity provider's values and certificate (several certificates can be held during a key rollover); and the <strong>Sign-in button</strong> can be Microsoft's or your organization's, with your own text, logo and colour. <strong>Recent sign-in events</strong> lists the last 30 single sign-on events, so a failed sign-in can be traced: someone whose sign-in couldn't be completed sees a short page with <strong>Back to sign-in</strong> and a reference such as <em>SSO-1234</em> to send to support, and that number is the event's # in the list.</p>
 <p>Once it's on:</p>
 <ul>
   <li><strong>The login page shows a sign-in button</strong> above the password form.</li>
-  <li><strong>Accounts are created on first sign-in</strong> from the name and email Entra sends, and land in the default Adventure you pick.</li>
+  <li><strong>Accounts are created on first sign-in</strong> from the name and email Entra sends. The nickname is the part of their work sign-in name (or email) before the @, numbered when someone already has it (jane, then jane1); the display name is their first and last name, or that same part when Entra sends no name. They start with the default profile picture and the platform's default language until they choose their own, and land in the default Adventure you pick, placed in one of its guilds if it has guilds (by the same rules as anyone joining).</li>
+  <li><strong>A single sign-on session lasts until the browser closes</strong>, not the 30 days a password sign-in can last.</li>
   <li><strong>Accounts are matched on the work identity, not the email address.</strong> An existing account is tied to its Entra identity only when its email is on one of your <strong>Organization email domains</strong>; <strong>Link existing accounts</strong> does that in advance (preview it first), so people keep their progress. An account on any other domain is never handed to an Entra identity by its email, and an account already linked to a different identity is refused, never guessed.</li>
   <li><strong>Suspended accounts stay out.</strong> Suspending someone in User Management blocks their sign-on too, and doesn't create them a fresh account.</li>
 </ul>
@@ -5452,7 +5479,7 @@ HTML,
                 'sort_order' => 0,
                 'body'       => <<<'HTML'
 <p>This page is for the developer helping launch BLUERABBIT to the public. It is the one place to start: what this site is, how to run it, how its documentation maps to the app, how to deploy it, and what is still open before launch. Everything here can be checked from this repository and the running site, without the app's repository.</p>
-<p><strong>As of 15 November 2026.</strong> The public documentation matches the BLUERABBIT app at its commit <code>463a356</code> (15 November 2026). Each sync, with what changed and how it was checked, is recorded in <code>claude-notes/BUILD-STATUS.md</code>.</p>
+<p><strong>As of 15 November 2026.</strong> The public documentation matches the BLUERABBIT app at its commit <code>463a356</code> (15 November 2026), and has followed it the same day through <code>fb40c22b</code> (the A.I. check's model, feedback and outage alerts; Cooper's models; single sign-on). Each sync, with what changed and how it was checked, is recorded in <code>claude-notes/BUILD-STATUS.md</code>.</p>
 
 <h2>What This Site Is</h2>
 <p>bluerabbit.io is the public website: the marketing pages (home, product, solutions, pricing, contact), the blog, the documentation, the legal pages in eleven languages, and the waitlist. It is its own CodeIgniter 4 application with its own database and its own sign-in.</p>
@@ -5654,6 +5681,9 @@ HTML,
   <li><code>br_save_account_ai_key</code> and <code>br_test_account_ai_key</code>: My Account's A.I. (Cooper) tab saves, replaces, removes and tests the account's Claude key.</li>
   <li><code>removePlayerFromOrg</code>: an Organization's Remove (corporate servers), which takes a person out of the Organization and every Adventure in it.</li>
   <li><code>encounterSendPicker</code>: the picker behind an encounter's Send to a player.</li>
+  <li><code>br_validate_open_text_ai</code>: a player's Open Text check. Its reply carries a <code>tone</code> (<code>success</code>, <code>error</code>, or <code>warn</code> when the check couldn't run) and, in that last case, the player's <code>notice</code> and its line under the answer as <code>notice_html</code>; staff also get the reason.</li>
+  <li><code>br_ai_flag_reviewed</code>: <strong>Mark as reviewed</strong> on an answer flagged "Not checked by the A.I." (staff who may edit the adventure; players and NPCs are refused).</li>
+  <li><code>saveCooperSettings</code>: Sys Config → Cooper, which now also saves <code>ai_check_model</code> (only when the page posts it, so an older page can't clear it).</li>
 </ul>
 
 <h2>Links Into the App</h2>
@@ -5705,6 +5735,7 @@ HTML,
   <li>21 September 2026: app <code>6e5a454</code>, 59 pages to 76.</li>
   <li>27 October 2026: app <code>dbb5c05</code>, 77 pages. The app's history was rewritten on 30 October 2026, so that hash no longer resolves; by date it sits at the app's <code>0dfb3a8</code>.</li>
   <li>15 November 2026: app <code>463a356</code>. Every public page reviewed; new player pages (guests, notifications, challenges, the Library, languages), new Game Master pages (the Library, languages, CSV bulk tools, Prize Draws for Enterprise), and this developer section rewritten.</li>
+  <li>15 November 2026, follow-ups: the app's fixes after that sync (through <code>1da280d9</code>: the account's own Claude key, guilds, priced milestones, item stock), then through <code>fb40c22b</code>: the A.I. check on Claude Haiku 5.5 by default with a per-server model, feedback in the player's language that keeps the rubric private, the player told and staff alerted when a check can't run, Cooper on Sonnet 5.5, and single sign-on's new-account and session rules.</li>
 </ul>
 
 <h2>Related</h2>
@@ -5726,7 +5757,7 @@ HTML,
 <ul>
   <li>A CodeIgniter 4.7 application on PHP 8.2 and MySQL or MariaDB (tables prefixed <code>br_</code>), served at play.bluerabbit.io and on a few corporate servers. Each server is a full checkout with its own <code>.env</code> and its own database.</li>
   <li>It is the successor of the original BLUERABBIT, a WordPress theme. Adventures can be imported from a WordPress install, and the app can run an imported adventure exactly as the WordPress build did (see the switches below).</li>
-  <li>Billing is Stripe (Basic free; Pro monthly or yearly with a 30-day trial that takes a card up front; the refund rule in the Terms). The A.I. features (Cooper, the assistant, and the A.I. review of answers) call Anthropic's Claude with an adventure's own key, or else the platform-wide key in Sys Config. Cooper is on every plan and works wherever a key is set; for clients BLUERABBIT runs directly, Gauden adds the key. Email goes through Resend. Bots are kept out of every signed-out form by Cloudflare Turnstile.</li>
+  <li>Billing is Stripe (Basic free; Pro monthly or yearly with a 30-day trial that takes a card up front; the refund rule in the Terms). The A.I. features (Cooper, the assistant, with the study notes and reminder drafts it writes; the Open Text check and the A.I. review of answers) call Anthropic's Claude with the adventure's own key, else its template's, else its owner's account key, and, for Cooper and its drafts only, else the platform-wide key in Sys Config (see "The A.I. Models and Checks" below). Cooper is on every plan and works wherever a key is set; for clients BLUERABBIT runs directly, Gauden adds the key. Email goes through Resend. Bots are kept out of every signed-out form by Cloudflare Turnstile.</li>
 </ul>
 
 <h2>How a Request Is Handled</h2>
@@ -5755,8 +5786,17 @@ HTML,
 <ul>
   <li><strong>The view nobody chose</strong>: the app has two ways to get around, the New view (a pause-screen menu) and the Classic view (top bar and taskbar). A player's own choice wins, then the adventure's setting, then <code>bluerabbit.menuDefault</code> (New unless set).</li>
   <li><strong>Rehearsal mode</strong>: a database that is a copy of real people's data (imported with the rehearsal mark, or any WordPress import without an explicit <code>bluerabbit.rehearsal = off</code>) holds every email, stops the prize draws, gift cards, payments, analytics and A.I., and shows a banner on every page. It exists so a copy can never reach real people. A real server built from an import needs <code>bluerabbit.rehearsal = off</code>; servers the app built itself have no import mark and are unaffected.</li>
-  <li><strong>Languages</strong>: the interface is in English and ten more languages (German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish, Simplified Chinese). A person's own language wins, else the platform's default (Sys Config). Emails stay in English for now.</li>
+  <li><strong>Languages</strong>: the interface is in English and ten more languages (German, Spanish, French, Italian, Japanese, Korean, Brazilian Portuguese, Russian, Turkish, Simplified Chinese). A person's own language wins, else the platform's default (Sys Config). Emails stay in English for now, except the A.I. check alert (below), written in each recipient's <code>player_lang</code>.</li>
+  <li><strong>Sys Config's screen</strong>: where <code>bluerabbit.extrasDefault</code> is on (every server the app built itself), Sys Config uses the app's own pane names and words, and its SSO tab is the one the public pages describe. A server with it off (one taking over a WordPress install) draws WordPress's pane names, order and words, its Single Sign-On pane included, row by row with WordPress's messages. The settings stored and what single sign-on does are the same on both.</li>
   <li><strong>Time</strong>: on an adventure that runs on WordPress's rules, every time the app records is on that adventure's own clock, as WordPress wrote it; the app's own adventures keep the app's conventions.</li>
+</ul>
+
+<h2>The A.I. Models and Checks</h2>
+<ul>
+  <li><strong>Cooper</strong> runs on Sys Config → Cooper → Model (<code>cooper_model</code> in <code>br_config</code>): <code>claude-sonnet-5-5</code> by default, or <code>claude-opus-5-5</code> or <code>claude-haiku-5-5</code>, at effort medium; the study notes and reminder drafts use the same model. A stored id the list no longer offers (<code>claude-sonnet-5</code>, <code>claude-opus-5</code>, <code>claude-haiku-4-5</code>) is read as its 5.5, so a server that chose one keeps working with nothing to change.</li>
+  <li><strong>The Open Text check and the A.I. review</strong> run on Sys Config → Cooper → A.I. check model (<code>ai_check_model</code>), else the server's <code>bluerabbit.aiCheckModel</code> in <code>.env</code>, else <code>claude-haiku-5-5</code>. Haiku 5.5 is sent at effort medium, Sonnet 5.5 and Opus 5.5 at low, the efforts each was measured at. A blank setting hands back to the server's default; an id the app doesn't offer is ignored, so a typo never reaches Anthropic. Sonnet 5.5 and Opus 5.5 requests ask for Anthropic's server-side fallback; Haiku 5.5's never do. Test Key uses the same model.</li>
+  <li><strong>The feedback</strong> a player reads (the check's reason, the review's suggested comment) comes from one prompt shared by both: written to the player in the language of their answer, never quoting, paraphrasing or translating the Game Master's private criteria, and saying what is missing in general terms.</li>
+  <li><strong>When a check can't run</strong> (no key at any level, a refused key, billing or a spending limit, a rate limit, an overloaded or unreachable service, a refusal, a cut-off, an unreadable reply), the answer goes through, the player is told in their language, and the answer is flagged in <code>br_ai_check_flags</code> until a person reviews the hand-in or a later verdict on it succeeds. An alert (an email and a bell entry of kind <code>ai_alert</code>) goes to every god and admin account, the cohort's owner and its GM seats, and the template's owner when the key that failed was the template's. At most one goes out per cohort and cause every 6 hours (<code>br_ai_check_alerts</code>; each send in <code>br_ai_check_alert_sends</code>), counting the answers since the last. The email respects the person's opt-out for that adventure (<code>br_email_optouts</code>). On a rehearsal copy the A.I. is off, and that refusal is flagged but never alerted. Until <code>tools/migrate.php --apply</code> has created the three tables, nothing is flagged or alerted and everything else works as before.</li>
 </ul>
 
 <h2>Features That Touch the Website</h2>
@@ -5809,7 +5849,7 @@ HTML,
 <p>The servers are cPanel accounts with a Git checkout per instance. An update:</p>
 <ol>
   <li>cPanel &rarr; Git Version Control &rarr; the instance &rarr; <strong>Update from Remote</strong>.</li>
-  <li>Straight after, in the Terminal, from the folder that contains <code>public/</code>: <code>php tools/migrate.php</code> (a dry run that lists what is pending and writes nothing), then <code>php tools/migrate.php --apply</code> if it listed anything. Since November 2026 the new code reads new columns, so the migration must not wait. For example, <code>--apply</code> adds <code>br_players.player_ai_api_key</code> (the account's Claude key); until it has run, deleting an account fails.</li>
+  <li>Straight after, in the Terminal, from the folder that contains <code>public/</code>: <code>php tools/migrate.php</code> (a dry run that lists what is pending and writes nothing), then <code>php tools/migrate.php --apply</code> if it listed anything. Since November 2026 the new code reads new columns, so the migration must not wait. For example, <code>--apply</code> adds <code>br_players.player_ai_api_key</code> (the account's Claude key); until it has run, deleting an account fails. It also creates <code>br_ai_check_flags</code>, <code>br_ai_check_alerts</code> and <code>br_ai_check_alert_sends</code>, without which an A.I. check that can't run is neither flagged nor alerted (the player is still told).</li>
   <li><code>php tools/server-check.php</code>: read-only, one PASS / WARN / FAIL line per check (PHP and its extensions, folders, <code>.env</code>, the database, the edition, rehearsal mode, the network, the database's memory), each with what to do when it is not PASS. It never prints a secret.</li>
 </ol>
 <p>Only if a feature ships optional starting content is there another step: a per-Adventure seeder the operator runs deliberately, for example <code>php tools/seed-&lt;thing&gt;.php --adventure=N --apply</code>. Every <code>tools/</code> script prints the database name and host it connected to before it does anything; read it before an <code>--apply</code> on production. <code>tools/</code> sits outside <code>public/</code>, so none of these scripts can be reached by URL.</p>
@@ -5825,6 +5865,7 @@ HTML,
   <li><code>CI_ENVIRONMENT = production</code> (it also turns off the debug toolbar, which lists every route), <code>app.baseURL</code>, <code>app.forceGlobalSecureRequests = true</code>, <code>cookie.secure = true</code> (on by default in production since October 2026), and the database lines.</li>
   <li><strong>The edition</strong>: only a corporate server sets <code>bluerabbit.edition = corporate</code>, before the deploy that needs it. A public server leaves it unset.</li>
   <li><strong>The switches</strong>: a public server leaves <code>bluerabbit.menuDefault</code>, <code>bluerabbit.extrasDefault</code> and <code>bluerabbit.wpRulesDefault</code> unset (New view, extras on, the app's own rules). Only a server taking over a WordPress install sets them to WordPress's answers. See <a href="/docs/developer/app-architecture-editions-and-switches">editions and switches</a>.</li>
+  <li><strong>The A.I. check's model</strong> (optional): <code>bluerabbit.aiCheckModel</code> is the model the Open Text check and the A.I. review use when Sys Config → Cooper hasn't chosen one: <code>claude-haiku-5-5</code> when unset, else <code>claude-sonnet-5-5</code> or <code>claude-opus-5-5</code>; anything else is read as Haiku 5.5. Sys Config's choice wins over it. On the public server it stays unset: the checks there spend each customer's own key. <code>server-check</code>'s <code>env.aiCheckModel</code> line names what it found and is a WARN unless the line says Opus 5.5 (that line was written for one corporate server), so a WARN there is expected on a server that keeps Haiku; <code>db.aiModels</code> names the model the checks will actually use and where it came from.</li>
   <li><code>.env</code> is gitignored and never part of a deploy; keep it readable by the web server only.</li>
 </ul>
 
@@ -5874,11 +5915,11 @@ HTML,
   <li>Five failed sign-ins in fifteen minutes for one account from one address lock that pair for fifteen minutes; a completed password reset clears it. The address comes only from Cloudflare's own header, so it cannot be forged.</li>
   <li>Every sign-in, failure, lock-out and reset is logged with its address and browser, downloadable by administrators, and deleted after twelve months.</li>
   <li>Public sign-ups confirm their email address through a button on a page (not a bare link, which corporate mail filters open by themselves). Every form a signed-out person can send is checked by Cloudflare Turnstile.</li>
-  <li>Entra single sign-on, on corporate servers, keeps a password route for the platform's top administrators so an identity-provider outage never locks everyone out.</li>
+  <li>Entra single sign-on, on corporate servers, keeps a password route for the platform's top administrators so an identity-provider outage never locks everyone out. Assertions must be signed; unsolicited, replayed, expired or wrongly addressed ones are refused. A single sign-on session ends when the browser closes; a password sign-in lasts 30 days unless the person unticks Remember Me.</li>
 </ul>
 <h3>Data</h3>
 <ul>
-  <li><strong>Secrets at rest</strong> (email, payment, Turnstile, SSO, gift-card and A.I. keys) are encrypted under the server's encryption key. That includes a person's own Claude key on their account (<code>br_players.player_ai_api_key</code>): stored encrypted, never sent back to the browser, only its last four characters shown, and removed with the account.</li>
+  <li><strong>Secrets at rest</strong> (email, payment, Turnstile, SSO, gift-card and A.I. keys) are encrypted under the server's encryption key. That includes a person's own Claude key on their account (<code>br_players.player_ai_api_key</code>): stored encrypted, never sent back to the browser, only its last four characters shown, and removed with the account. When an A.I. check fails, the reason kept for staff has any key-shaped string masked, and an alert names whose key failed, never the key.</li>
   <li><strong>Personal data</strong>: each person can download everything held about them as one file, and delete their account, which anonymises their identity everywhere, deletes their messages and uploads, and keeps their scores under an anonymous name so leaderboards stay correct. Administrators can do the same for someone.</li>
   <li><strong>Uploads</strong>: size ceilings per role; SCORM packages are unpacked without anything a server could run; SVG images are cleaned; a file's stored type never comes from its name.</li>
   <li><strong>Exports</strong>: every CSV cell that a spreadsheet could read as a formula is neutralised.</li>

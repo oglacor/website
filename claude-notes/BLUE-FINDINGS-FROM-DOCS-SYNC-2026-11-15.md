@@ -72,3 +72,10 @@ Fixed since: the Organization's Remove Player (F7 `def32f81`, a real Remove).
 - `config/index.php` Billing tab hint: "Stripe powers the /account subscription page"; the page is `/subscription`.
 - `SettingsRegistry.php` `garden_business` description names a client ("Built for LaunchQuest's random encounters"), shown to admins on corporate servers.
 - `BillingController::portalConfiguration()`: no `subscription_update` feature, so a subscriber can't move between monthly and yearly themselves (a product gap or intended; asked in BUILD-STATUS).
+
+## Found while documenting the A.I. and single sign-on changes (app through `fb40c22b`)
+
+- `player/account.php` Emails tab: the switch's words speak only of "automatic reminders about your progress", but the same switch (`br_email_optouts`) also stops the alert that an A.I. check could not run (`AiOutage::deliver()`). The docs say so. An administrator who is not seated in the adventure has no switch for it there, only the link in the alert.
+- `tools/server-check.php` `env.aiCheckModel`: a WARN on every server whose `.env` does not say `claude-opus-5-5`, with advice for one corporate server, so the public server shows a permanent, expected WARN. The developer page says so.
+- `email/ai-check-alert.php`: "they went through without the check and wait for a person to review them": on a milestone without Validate, nothing waits; the answer is flagged until someone reviews it.
+- Measured, not a bug: the check's prompt forbids naming the rubric's examples in feedback, but AI3's run still found it in 4 of 39 failed answers and 1 of 31 passed ones. The docs say the A.I. is told to keep the rubric private, not that it never slips.
