@@ -992,7 +992,8 @@ real scratch-DB test, edit `.env` and restore it, as the 2026-08-17 password-res
   described a reorganized nine-pane settings layout (search box, autosave, per-adventure label
   overrides, an Options Highlight toggle). Bernardo confirmed (2026-10-27) that reorg was
   reverted on the product side — "a HUGE problem" — so every trace of it was removed from this
-  page rather than left as a dangling, inaccurate description. The page still documents the
+  page rather than left as a dangling, inaccurate description. [Superseded 2026-11-17: Bernardo
+  confirmed the rail, search and autosave layout is the current design.] The page still documents the
   existing General/Cooper/Reset/Ranks/Players/Features/A.I./Tremendous/Quick Links/Images
   structure, unchanged from before this sync.
 - **Verified**: `php -l` clean, `php spark db:seed DocsPageSeeder` ran clean (79 total docs rows:
@@ -1463,12 +1464,14 @@ the bodies into the seeder by slug.
   gradually, Preview as a player, Branch Choice, …). No ERROR or CRITICAL in the site log.
 
 ### Open
-- **Settings layout, waiting on Bernardo:** the screenshots show Adventure Settings as a rail of ten
-  panes with "Find a setting…" and "Changes save as you make them" (and "Highlight the Options
-  button" under Menu). That is on the app's main (`app/Views/adventures/new.php`), and
-  `complete-adventure-settings-reference` already describes it (W1, 2026-11-15), but it resembles
-  the layout reported reverted on 2026-10-27. Settings screenshots were left off that page until
-  confirmed; two section-card shots (Item Shop, Guilds) are used on their own pages.
+- **Settings layout: confirmed by Bernardo (2026-11-17), resolved.** The rail of ten panes, "Find a
+  setting…", autosave and "Highlight the Options button" are the current design; the 2026-10-27
+  revert note further up is superseded. A follow-up commit put five settings figures on
+  `complete-adventure-settings-reference` (the rail with Sections open, the Leaderboard and Wall
+  cards opened, Journey & Look, Email design). It also added two pieces of text checked against
+  `SettingsRegistry`: the Leaderboard card's three lottery switches (Mark prize places, Show round
+  tabs, Show the Biggest Climb, which have no edition tag but do nothing without rounds or awards)
+  and the Emails pane's Font and Text size. Totals are now 635 figures on 73 pages, from 565 images.
 - **App findings for the app's sessions:** Manage Content's "Active this week" can pass 100% (54 of
   51); the Player Progress Report is reachable only by URL and counts GMs and NPCs; a session made
   with the form on a cohort is saved to the template while the schedule reads the cohort; Choice

@@ -7591,6 +7591,10 @@ HTML,
                 'body'       => <<<'HTML'
 <p>Adventure Settings is where an Adventure's own configuration lives. Open it from <strong>Adventure Settings</strong> in the Game Master menu (Admin Tools in the Classic view); inside a cohort, <strong>Cohort Settings</strong> opens the cohort's own and <strong>Template Settings</strong> the template's. Its panes are listed in a rail down the left side of the page (on a narrow window they become a row of tabs across the top); one pane shows at a time. <strong>Find a setting</strong>, above the rail, searches every pane and takes you straight to the row.</p>
 <p><strong>Changes save as you make them.</strong> On an Adventure that already exists, every switch and field saves the moment it changes, and the bar at the bottom says so (<em>All changes saved</em>, or <em>Not saved</em> and why). <strong>Update Adventure</strong> still saves everything at once, and the same bar carries the <strong>Publication status</strong>: Publish, Draft or Trash (trashing asks first, because players lose access straight away). A new Adventure saves everything when you press <strong>Create Adventure</strong>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/c02-settings-cards.webp" alt="Adventure Settings: Find a setting and the rail of ten panes on the left, the Sections pane open with a card per section, and the bar at the bottom with Publication status, Changes save as you make them, Manage Adventure and Update Adventure." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The settings page.</strong> Find a setting and the rail of panes on the left (here Sections is open), and the bar at the bottom: the Publication status, the save state and Update Adventure.</figcaption>
+</figure>
 <p>This page walks every pane. Some have their own guides: <a href="/docs/customizing-currencies-ranks-and-rewards">Customizing Currencies, Ranks &amp; Rewards</a>, <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>, <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a> and <a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a>.</p>
 
 <h2>Basics</h2>
@@ -7615,7 +7619,7 @@ HTML,
 <ul>
   <li><strong>Name</strong>: what players see in the menu and on the page heading. Blank keeps the platform's name.</li>
   <li><strong>Achievements</strong>: Hide Achievements (keep them hidden on the badges page until earned).</li>
-  <li><strong>Leaderboard</strong>: how many players it shows (blank means 10), and what players see on it: an explanation of how players are ranked, the level, XP, milestones, BLOO earned and BLOO left columns, each player's own place pinned under the board, and the guild leaderboard. Game Masters always see everything. Fields from Player Meta you mark <em>Show on the leaderboard</em> become extra columns.</li>
+  <li><strong>Leaderboard</strong>: how many players it shows (blank means 10), and what players see on it: an explanation of how players are ranked, the level, XP, milestones, BLOO earned and BLOO left columns, each player's own place pinned under the board, and the guild leaderboard. Game Masters always see everything. Fields from Player Meta you mark <em>Show on the leaderboard</em> become extra columns. Three more switches, <strong>Mark prize places</strong>, <strong>Show round tabs</strong> and <strong>Show the Biggest Climb</strong>, matter only with the Lottery's rounds and automatic awards (Enterprise; see <a href="/docs/prize-draws">Prize Draws</a>); without them they change nothing.</li>
   <li><strong>Item Shop</strong>: Purchase Permissions (set <em>Only Players</em> to take the Buy button away from staff) and <strong>Show players their transactions</strong> (a Transactions tab on the shop, backpack and Tabis pages).</li>
   <li><strong>Guilds</strong>: <strong>Assign guilds on login</strong>, which places each player without a guild in one the first time they open the journey: the emptiest guild with room, among those marked Auto-assign on login if any are. See <a href="/docs/guilds-designing-team-play">Guilds</a>.</li>
   <li><strong>The Garden</strong>: how many people each player's Garden shows, and a switch for each of its tools. See <a href="/docs/running-the-garden-as-a-gm">Running the Garden as a GM</a>.</li>
@@ -7624,6 +7628,14 @@ HTML,
   <li>The section's own background image, where it has one.</li>
 </ul>
 <p>The currency names, Energy and the rubric live under Rules &amp; scoring; a section's name set here overrides the platform name for this Adventure only.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/c12-settings-leaderboard.webp" alt="The Leaderboard card opened under Sections: Name, Leaderboard Player Limit set to 10, and a switch for each thing players see: the ranking explanation, level, XP, milestones, BLOO earned, BLOO left (off), each player's own place, prize places and round tabs." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A card opened.</strong> The gear on the Leaderboard card opens its settings: the name players read, how many players the board shows, and a switch for each column and extra.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/c13-settings-wall.webp" alt="The Wall / Social card opened under Sections: its Name field set to Wall and its Wall Background image." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A section's own background.</strong> The Wall card has just a name and the Wall Background; any background left unset uses the platform's.</figcaption>
+</figure>
 
 <h2>Rules &amp; Scoring</h2>
 <p><strong>Grading</strong></p>
@@ -7644,6 +7656,10 @@ HTML,
   <li><strong>Backgrounds</strong>: the Default Background, the Journey Background and the My Work Background. The other sections' backgrounds are in their cards. Any you don't set fall back to the platform's.</li>
 </ul>
 <p><strong>Map or List?</strong> A player's first visit opens whichever view the platform's <strong>Default Journey View</strong> names; after that, each player's own last choice sticks.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c30-settings-look.webp" alt="The Journey &amp; Look pane: the Journey panel with Zoom Level, the Names panel with fields for Journey, Journal, Tabis and Secrets and Clues, and the Backgrounds panel starting below." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Journey &amp; Look.</strong> The zoom the map opens at, the names of the Journey, the Journal, the Tabis and Secrets and Clues, and the backgrounds below.</figcaption>
+</figure>
 
 <h2>Menu</h2>
 <ul>
@@ -7674,7 +7690,11 @@ HTML,
 <p><strong>Feedback form</strong>: the switch for the form players use to message the team, and its wording. See <a href="/docs/managing-player-support-requests">Managing Player Support Requests</a>.</p>
 
 <h2>Emails</h2>
-<p><strong>Email design</strong>: how every email from this Adventure looks (reminders and the messages you send): the text, header, message and footer colours, and what's around the email. Anything left unset uses the platform design. <strong>Preview</strong> shows the real email, drawn the way it's sent. A cohort's emails use its template's design.</p>
+<p><strong>Email design</strong>: how every email from this Adventure looks (reminders and the messages you send): the <strong>Font</strong> (system fonts every mail program has) and <strong>Text size</strong>, the text, header, message and footer colours, and what's around the email. Anything left unset uses the platform design. <strong>Preview</strong> shows the real email, drawn the way it's sent. A cohort's emails use its template's design.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b22-design.webp" alt="The Emails pane: font and text size, the text colour, the header background colour with Reset, the header logo and header background image, the message background, and the Preview of a sample email on the right." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Email design.</strong> Each colour shows whether it's yours or the platform design (Reset goes back), the header takes a logo and a background image, and the Preview on the right is drawn the way the email is sent.</figcaption>
+</figure>
 
 <h2>Connections</h2>
 <p><strong>Claude API key</strong>: one key powers every A.I. feature in this Adventure: validation on Open Text steps, A.I. grading, and Cooper. With no key here (and none on the template), the owner's account key pays, and the pane says so. Paste it and it's saved as soon as you leave the box; it's stored encrypted and never shown back. <strong>Test Key</strong> makes one real call and reports whose key answered, and <strong>Remove Key</strong> clears it. <strong>How to get a Claude API Key</strong>, under the box, also names the model the Open Text check and the A.I. review run on, with about what a check costs. A cohort with no key of its own uses its template's. See <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a>.</p>
@@ -8962,7 +8982,7 @@ HTML,
   <li>27 October 2026: app <code>dbb5c05</code>, 77 pages. The app's history was rewritten on 30 October 2026, so that hash no longer resolves; by date it sits at the app's <code>0dfb3a8</code>.</li>
   <li>15 November 2026: app <code>463a356</code>. Every public page reviewed; new player pages (guests, notifications, challenges, the Library, languages), new Game Master pages (the Library, languages, CSV bulk tools, Prize Draws for Enterprise), and this developer section rewritten.</li>
   <li>15 November 2026, follow-ups: the app's fixes after that sync (through <code>1da280d9</code>: the account's own Claude key, guilds, priced milestones, item stock), then through <code>fb40c22b</code>: the A.I. check on Claude Haiku 5.5 by default with a per-server model, feedback in the player's language that keeps the rubric private, the player told and staff alerted when a check can't run, Cooper on Sonnet 5.5, and single sign-on's new-account and session rules; then through <code>84aa881e</code>: the Emails switch and the stop-emails page naming the A.I. check's alert for staff, the alert saying whether the answers wait for a review or were accepted, and <code>server-check</code>'s <code>env.aiCheckModel</code> a PASS on a normal server; then through <code>bc753044</code>: <code>server-check</code> naming the kind of server it checks (<code>--kind=</code>, or the importer's row), its four edition and switch lines reporting on a server this app made, and the lottery-day emails following the Emails switch on both rule sets, with the switch and the stop-emails page naming them where they apply.</li>
-  <li>17 November 2026: screenshots. The app's nineteen showcase sets (the ten feature showcases and the "Add New" series, D1 to D9), as of app <code>ab6cafbe</code>, put 630 figures on 72 pages; every page touched was checked against the app's code again, with the corrections that came out of it. Two new pages: The Leaderboard &amp; the Wall (players) and Manage Content: Every Section (Game Masters). 94 pages.</li>
+  <li>17 November 2026: screenshots. The app's nineteen showcase sets (the ten feature showcases and the "Add New" series, D1 to D9), as of app <code>ab6cafbe</code>, put 635 figures on 73 pages; every page touched was checked against the app's code again, with the corrections that came out of it. Two new pages: The Leaderboard &amp; the Wall (players) and Manage Content: Every Section (Game Masters). 94 pages.</li>
 </ul>
 
 <h2>Related</h2>
