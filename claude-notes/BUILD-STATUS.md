@@ -1404,3 +1404,80 @@ at as rendered; no ERROR or CRITICAL in the site log. No email sent, nothing dep
 
 Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
 Sync documentation now.
+
+## 2026-11-17 — Docs get screenshots: the app's 19 showcase sets, 630 figures on 72 pages
+
+**Ask (2026-11-17):** "Let's get the documentation GRAPHIC!!! … use all the latest screenshots to
+update the website documentation so I can seed the new content. We need a complete and robust
+documentation on site as Unilever wants an scalable solution they can learn and use themselves."
+Source: the claude.ai artifacts of the app's showcase work, the ten feature showcases (Launch Week,
+Garden & Journal, Item Shop, Journey & Builder, Guilds/Leaderboards/Wall, Tabis, Email & Requests,
+Stats & Records, Achievements/Certificates/Rubrics, Languages) and the "Add New" series D1-D9
+(Milestones & Step Types, Challenges, Achievements, Items, Sessions & Speakers, Guilds & the Wall,
+Encounters & Consequences, Posts/Resources/Library, Manage Content). Each artifact publishes its
+captures as `shots/*.jpg`, most with a `captions.md`; the app's log has an entry per set
+(`docs/claude/log/2026-11-1x-*-showcase.md`, app at `blue@ab6cafbe`). Spanish copies ignored.
+
+### What changed
+- **Figures:** 561 WebP files, 25 MB, in `public/assets/docs/<set>/` (19 folders), 630 figures on 72
+  of the 87 public pages. Desktop shots 1600px wide, phone shots 720px; the tall step-editor
+  captures 1200px so their labels stay readable.
+- **Markup and look:** `<figure class="doc-shot">` (+ `doc-shot--phone`, rows in `.doc-shots-row`),
+  styles in `site.css` after `.blog-post .content a`; `docs/show.php` has a `<dialog>` viewer
+  (click a figure for full size, click again to close). The convention is written up on
+  `/docs/developer/keeping-the-docs-in-sync` (new "Screenshots" section, and the sync history).
+- **`php spark docs:shots <folder> <set> [files]`** (`app/Commands/DocsShots.php`): the converter.
+- **Two new pages:** `leaderboards-and-the-wall` (user, 11) and `manage-content-every-section`
+  (setup, 3); sort orders after them shifted by one so each section stays unique (user 0-25,
+  setup 1-61). 94 pages.
+- **Text:** every page touched was re-checked against the app's code, with corrections, among them:
+  the Journey Builder page rebuilt around the Properties panel (the hover bar went on 2026-10-07;
+  five fonts; depth/blur/rotation only on graphics and text; "Order in this layer"; Fixed in the
+  Layers panel); the List view's search and filters; the Step Library with one heading per type
+  (31, editor and player view side by side); Blooms' buttons ("Award", "Gift 1"); "Not enough
+  BLOO"; PA Posts in everyone's Public feed (app `474a5248`); "Available for" on paths only;
+  currency names as the adventure's own; the Encounters stats pane name; "Days shown" under the
+  Schedule card; the Posts layout (Display Style sizes a card on a grid); the CSV page with one
+  section per upload (columns from the app's CSV import kinds).
+- **Blurred before publishing:** localhost links (guild table, guild CSV, magic-link URLs), QA test
+  email addresses (reminder panel, A.I. alert email, account language picker), and the dashboard's
+  "106% of players". Shots showing a test account name or QA email were left out. QR codes in the
+  achievement shots still encode local URLs (not readable as text).
+
+### How it was built
+Nine agents each owned a group of sets and a fixed list of slugs (no page had two writers), read
+the captions and the app's log entry for the set ("noted, not changed" items are not documented as
+working), converted only the shots they used and wrote complete bodies to a scratch folder; an
+integrator applied the cross-page suggestions and illustrated five unowned pages; a script swapped
+the bodies into the seeder by slug.
+
+### Verified
+- `php -l`; `db:seed DocsPageSeeder` twice (94 rows, second run adds none; sort orders unique).
+- Every `<img>` resolves to a file, every image has alt text, every `/docs/` link resolves, no page
+  starts with a figure, no internal word on a public page, no unused image left in the folders.
+- `php spark serve`: all 87 public pages 200, both new pages listed on the hub, the developer page
+  still 302 signed out; sample images served as `image/webp`.
+- Edge headless (CDP): all 72 illustrated pages, 0 images failing to load; the viewer opens and
+  closes; the phone row renders side by side; no horizontal scroll at 390px. Screens looked at.
+- Key concepts from every rewritten passage still present (Strictness, Reviewer Context, Grow
+  gradually, Preview as a player, Branch Choice, …). No ERROR or CRITICAL in the site log.
+
+### Open
+- **Settings layout, waiting on Bernardo:** the screenshots show Adventure Settings as a rail of ten
+  panes with "Find a setting…" and "Changes save as you make them" (and "Highlight the Options
+  button" under Menu). That is on the app's main (`app/Views/adventures/new.php`), and
+  `complete-adventure-settings-reference` already describes it (W1, 2026-11-15), but it resembles
+  the layout reported reverted on 2026-10-27. Settings screenshots were left off that page until
+  confirmed; two section-card shots (Item Shop, Guilds) are used on their own pages.
+- **App findings for the app's sessions:** Manage Content's "Active this week" can pass 100% (54 of
+  51); the Player Progress Report is reachable only by URL and counts GMs and NPCs; a session made
+  with the form on a cohort is saved to the template while the schedule reads the cohort; Choice
+  Board steps show Step Rewards fields that pay nothing (the docs say so in one sentence; remove it
+  with the fix); Main Image is marked required but not enforced; "Assign guilds on login" says
+  random but picks the emptiest guild; the Challenge Success Message hint uses milestone wording;
+  the Zoom Level labels don't match the zoom they open at.
+- Not illustrated (no shots in the sets): setting-up-ai-grading-and-gift-cards,
+  personalising-text-with-player-tokens, the Enterprise pages, adventure templates, billing.
+
+Deploy: Update from Remote; `php spark db:seed DocsPageSeeder`; then the app's Sys Config -> Cooper ->
+Sync documentation now.

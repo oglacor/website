@@ -14,7 +14,8 @@ use CodeIgniter\Database\Seeder;
  * its A.I. model, feedback and outage-alert work and its SSO changes, then
  * F11: the Emails switch and the alert's words for staff, server-check, then
  * F12: server-check's two kinds of server, the lottery-day emails and the
- * Emails switch)
+ * Emails switch); on 2026-11-17 the screenshots from the app's showcase sets
+ * (through blue@ab6cafbe), which live in public/assets/docs/
  * (previous syncs: 2026-10-27, blue@dbb5c05, a hash the app's 2026-10-30
  * history rewrite removed, by date blue@0dfb3a8; 2026-09-21, blue@6e5a454).
  * See claude-notes/BUILD-STATUS.md for what changed in each pass, and
@@ -124,6 +125,15 @@ HTML,
 <p>Many Adventures have two play areas: the <strong>Journey</strong>, the map of milestones, and the <strong>Garden</strong>, your people and your skills. If yours has both, the first time you arrive you're asked <em>Where should we start you?</em> Pick one and that's where BLUERABBIT takes you when you come in. You can change it whenever you like with <strong>Starting point</strong> in the menu. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
 
 <h2>5. Your First Look Around</h2>
+<p>The first time you open an Adventure, everything you've earned just by arriving is celebrated at once: your first level, and a starting rank, a guild or a daily check-in reward if the Adventure gives you one (see <a href="/docs/garden-tasks">Garden Tasks</a> for the check-in).</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/01-celebration-achievement.webp" alt="A congratulations panel: level 1, the New Hire rank, and daily check-in rewards of XP, BLOO and energy" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A first visit.</strong> In the Launch Week example: level 1, the New Hire rank, a place in the Engineering guild and the daily check-in rewards.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/53-journey.webp" alt="A journey map with five stages as islands, side milestones and the player&#039;s progress and leaderboard on the map" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Journey Map.</strong> The Launch Week example: its stages as islands, milestones between them, and your progress and the leaderboard placed on the map.</figcaption>
+</figure>
 <p>The <strong>Journey Map</strong> lays out every milestone in the program. Each node shows whether it's locked, available or finished, depending on what you've already done. Your level, XP, BLOO and, if the Adventure uses Energy, EP are in your profile panel: click your picture in the top-right corner.</p>
 <p>BLUERABBIT has two ways of framing the screen. In the <strong>New</strong> view, the yellow <strong>Options</strong> button at the top left opens a menu with everything in the Adventure. In the <strong>Classic</strong> view, a top bar and a taskbar along the bottom do the same job. Your Game Master picks which one you start with, and you can switch at any time. Both are explained in <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
 <p>Not sure what XP, BLOO and EP mean yet? Start with <a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a>. It's the fastest way to understand how progress works here.</p>
@@ -212,6 +222,11 @@ HTML,
   <li><strong>Profile</strong> — your picture. It opens your profile panel: your level, your XP toward the next level, your progress through the journey, your BLOO balance against everything you've earned (it can dip below zero — see <a href="/docs/xp-bloo-ep-explained">XP, BLOO &amp; EP</a>), your EP if the adventure uses Energy, and your Garden stats if it has a Garden. The panel also links to My Adventures and your account settings, and holds the <strong>Log out</strong> button.</li>
 </ul>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/new-view-corners.webp" alt="The two top corners of the New view: on the left the yellow Options button, the Journey button and the adventure's name; on the right Feedback, the help button, Email Support, My Guild and the player's picture." width="1035" height="104" loading="lazy">
+  <figcaption><strong>The New view's corners.</strong> Top left: <strong>Options</strong>, <strong>Journey</strong> and the adventure's name. Top right: Feedback, <strong>?</strong>, Email Support, My Guild (the shield) and your picture. Cooper's button joins them when the adventure has it switched on.</figcaption>
+</figure>
+
 <h2>The New View's Menu</h2>
 <p><strong>Options</strong> opens the menu over the page like a pause screen. Across the top you'll find your picture, ringed by how much of the journey you've done, with your name, level and rank, your XP toward the next level and your journey progress. If the adventure has Cooper, its card sits beside them: press <strong>Ask</strong> to open the chat. Any links your Game Master added come next, as a row of buttons that each open in a new tab.</p>
 <p>Below that, every part of the adventure you can visit is a button, in five blocks:</p>
@@ -223,6 +238,10 @@ HTML,
   <li><strong>You</strong> — My adventures (when you play more than one), My account, Menu style and Log out.</li>
 </ul>
 <p>You only see the parts your adventure actually uses, and your organization may have renamed some of them. Along the bottom of the menu sit your wallet (your BLOO, and your energy against its ceiling when the adventure uses Energy), a button back to the Journey, and <strong>Continue</strong>, which takes you to your next open milestone. When there's nothing new ahead, Continue says so instead: <em>View older milestones</em> if some are still open behind you, <em>Up to date</em>, or <em>Journey complete</em>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/22-start-menu.webp" alt="The New view's pause-screen menu: the player's picture, level and rank with XP and journey progress bars, then buttons for every part of the adventure, each with a line about it, and the wallet, Journey and View older milestones along the bottom" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The menu, open.</strong> Every button carries a line that's about you: milestones finished, achievements earned, your place on the leaderboard. Keyboard hints sit at the top; the wallet and Continue (here <em>View older milestones</em>) along the bottom.</figcaption>
+</figure>
 <p>The notifications bell and <strong>Close</strong> sit at the top right of the menu. The arrow keys move between buttons, <strong>Enter</strong> opens one and <strong>Esc</strong> closes the menu. Game Masters, NPCs and administrators see the menu as a list of groups instead, with their staff tools below a line.</p>
 
 <h2>The Classic View: Top Bar, Taskbar and Menu</h2>
@@ -252,7 +271,7 @@ HTML,
 <p>Your starting point is remembered separately for each adventure. It applies the first time you come in during a session; after that, the Journey and Garden buttons take you wherever you ask. An adventure without a Garden has nothing to choose, so you always start on the Journey.</p>
 
 <h2>Map or List</h2>
-<p>The Journey has two views, switched with the <strong>Map / List</strong> control — at the bottom-left of the map, and at the top of the page in List view. In the New view's menu, <strong>Journey map</strong> and <strong>Milestone list</strong> take you to each one directly. The map is the designed layout you pan and zoom around; the list is a table of every milestone grouped under its chapter, with its level, rewards and status on one row. Whichever you used last is the one you get next time in that adventure. Both are covered in <a href="/docs/journey-map-guide">The Journey Map</a>.</p>
+<p>The Journey has two views, switched with the <strong>Map / List</strong> control — at the bottom-left of the map, and at the top of the page in List view. In the New view's menu, <strong>Journey map</strong> and <strong>Milestone list</strong> take you to each one directly. The map is the designed layout you pan and zoom around; the list is every chapter in order with its milestones underneath, their rewards and their status, plus a search box and filters by state. Whichever you used last is the one you get next time in that adventure. Both are covered in <a href="/docs/journey-map-guide">The Journey Map</a>.</p>
 
 <h2>Notifications</h2>
 <p>The bell counts what needs your attention: a Game Master's mark on your work, a hand-in sent back to you, a reply to one of your requests, an email sent to you. In the New view it sits at the top of the menu, and the <strong>Options</strong> button shows the count while the menu is closed. In the Classic view it's in the top bar. See <a href="/docs/notifications">Notifications</a>.</p>
@@ -288,7 +307,15 @@ HTML,
   <li><strong>New view</strong> — at the top of the menu, beside Close. While the menu is closed, the yellow <strong>Options</strong> button carries the same count, so you can see something is waiting without opening anything.</li>
   <li><strong>Classic view</strong> — in the top bar, beside Report a bug.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/c01-options-count.webp" alt="The journey map with a count on the yellow Options button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Something is waiting.</strong> With the menu closed, the yellow <strong>Options</strong> button carries the count.</figcaption>
+</figure>
 <p>Press the bell to open a short panel with the latest items. Opening it clears the count. <strong>See all</strong> takes you to the full Notifications page.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/c02-bell.webp" alt="The menu open with the Notifications panel showing a reply to a request, a validated hand-in and recent activity." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The bell's panel.</strong> At the top, the team's reply to a request and a validated hand-in, marked <em>New</em>; below them, the player's own activity, listed quietly with what each milestone paid.</figcaption>
+</figure>
 
 <h2>What Raises the Count</h2>
 <p>Only things BLUERABBIT sends you that need you to look:</p>
@@ -309,6 +336,10 @@ HTML,
   <li><strong>Adventure</strong> — one of your adventures, or <strong>All adventures</strong>.</li>
   <li><strong>Show</strong> — <strong>Everything</strong>, <strong>Needs your attention</strong> or <strong>My activity</strong>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/c03-notifications.webp" alt="The Notifications page filtered to Needs your attention across all adventures." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Notifications page.</strong> Filtered to <em>Needs your attention</em> across every adventure: the answer to a request sits with anything else the Game Masters sent.</figcaption>
+</figure>
 <p>Inside an adventure, the bell shows that adventure's items. Emails sent to you are listed in every adventure, because an email isn't tied to one. Between adventures, on pages like My Adventures, the bell shows everything. Opening the page marks as read what it lists that needed your attention. Most items link to what they're about, such as the milestone that was marked or your requests.</p>
 
 <h2>Notifications and Emails</h2>
@@ -342,6 +373,10 @@ HTML,
   <li>on extra attempts at a challenge that charges for them,</li>
   <li>on the choices you make inside an <a href="/docs/encounters-the-card-draw">encounter</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/13-item-shop.webp" alt="The Item Shop with perks priced in BLOO" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Item Shop.</strong> Where most BLOO gets spent, on perks your organization chooses.</figcaption>
+</figure>
 <p>Your balance is in your profile panel (with everything you've earned beside it), in the New view's menu, and in the Wallet on your Backpack page.</p>
 
 <h2>Going Into Debt</h2>
@@ -353,6 +388,10 @@ HTML,
 <p>When it's on, you earn EP from milestones, challenges and achievements that pay it, and most reliably from Garden Tasks that pay energy. You spend it on the choices you make inside an encounter.</p>
 <p>Energy has a ceiling that rises with your level: 120 at level 1, 160 at level 2, 220 at level 3, and more from there. Anything you earn above the ceiling is lost, so there's no point hoarding it. When the daily check-in or a task you complete yourself would take you past the ceiling, its celebration counts only the energy you actually kept: at 115 of 120, a task worth 10 shows <em>+5</em>.</p>
 <p><strong>EP never goes below zero.</strong> An encounter option you don't have the energy for is greyed out and marked "Not enough" followed by the adventure's name for energy (for example "Not enough EP"). Every encounter is meant to offer at least one option that costs no energy, so running dry is a setback, not a game over. If you ever find nothing you can pick, the step says so and sends you to recover in the Garden.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/35-encounter-choice.webp" alt="An encounter choice with three options priced in BLOO and energy, under the player&#039;s balances" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Prices on every option.</strong> An encounter shows what you hold (here 630 BLOO and 115 energy) and what each option costs or pays before you choose.</figcaption>
+</figure>
 
 <h2>When Rewards Arrive</h2>
 <ul>
@@ -360,6 +399,10 @@ HTML,
   <li><strong>A challenge</strong> pays when you pass it. A later attempt that goes worse never takes it back: your best attempt is the one that counts.</li>
   <li><strong>Milestones and challenges pay once.</strong> Finish a milestone or pass a challenge again and the result card says its rewards were paid the first time. Repeatable Garden Tasks are the exception: they pay every time you do them.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/03-celebration-quest-completed.webp" alt="A milestone result card showing plus 150 XP, plus 30 BLOO and plus 5 EP" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What a milestone paid.</strong> The result card counts up each currency it paid, under your adventure's names for them.</figcaption>
+</figure>
 <p>Whatever you earn is celebrated with the amounts, on the page where it happens or, if it happened while you were elsewhere, on your next page. When a Game Master's mark pays you later, the <a href="/docs/notifications">notifications</a> bell tells you, with what it paid.</p>
 
 <h2>How They Work Together</h2>
@@ -383,16 +426,28 @@ HTML,
                 'body'       => <<<'HTML'
 <p>The Journey is the visual heart of every adventure: a map of milestones laid out by whoever built it — a path, a skill tree, a town to explore. The layout itself is usually part of the story.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a01-journey-opens.webp" alt="A journey map in space: five floating islands joined by a dotted route, milestone hexagons, and live panels for status, progress, help and the leaderboard." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A journey as it opens.</strong> Launch Week, our running example: five islands (Tabis), each a chapter holding its milestones, joined by the route. The player's status card, journey progress, a Help panel and the leaderboard sit right on the map. The Map / List switch and the zoom are at the bottom left.</figcaption>
+</figure>
+
 <h2>Moving Around</h2>
 <p>Drag to pan. Zoom with the mouse wheel, a two-finger pinch, or the <strong>−</strong> and <strong>+</strong> buttons at the bottom-left, which show your zoom level as a live percentage, from 30% up to 200%. The round button beside them recentres the map.</p>
 <p>Click a milestone to see its preview — what it's about and what it pays — and start it from there.</p>
 
 <h2>Map or List</h2>
-<p>The <strong>Map / List</strong> switch sits next to the zoom. In the New view's menu, <strong>Journey map</strong> and <strong>Milestone list</strong> open each one directly. The list shows the whole journey as one table: every milestone under its chapter heading, with its level, rewards and status on a single row, and each chapter's progress on its heading — required milestones, with optional ones (tagged <em>Side quest</em>) counted separately. A chapter you haven't unlocked yet shows only its heading and what to finish to open it, so the list never shows more than the map would.</p>
+<p>The <strong>Map / List</strong> switch sits next to the zoom. In the New view's menu, <strong>Journey map</strong> and <strong>Milestone list</strong> open each one directly. The list shows the whole journey from top to bottom: every chapter drawn the way its window is, with its progress, and its milestones underneath as cards with what they pay and where you stand (finished ones offer <strong>Revisit</strong>). Milestones in no chapter come last. A chapter you haven't unlocked yet shows only what it waits for, so the list never shows more than the map would.</p>
+<p>Above the list, <strong>Find a milestone by name</strong> narrows it as you type (press <strong>/</strong> to jump to the box), and a row of filters — <strong>All</strong>, <strong>Available</strong>, <strong>Awaiting review</strong>, <strong>Completed</strong>, <strong>Locked</strong> and <strong>Side quests</strong>, each with its count — shows one state at a time. A filter only appears when something on your journey is in that state.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a06-journey-list.webp" alt="The List view: a search box, filters for All, Available and Completed with counts, and the first chapter with its progress bar and milestone cards." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The List view.</strong> The search box and the state filters on top, then each chapter with its progress (here a finished one: 4 of 4 required, its badge earned) and its milestones as cards with their rewards and a Revisit button.</figcaption>
+</figure>
+
 <p>Whichever view you used last is the one you get next time in that adventure. On your first visit, the platform's default view decides.</p>
 
 <h2>Depth</h2>
-<p>The map is built in layers. As you pan and zoom, artwork in the background drifts more slowly than the milestones and anything in the foreground moves a little faster, which gives the map real depth. Only the main layer — where the milestones and chapters sit — responds to clicks; everything in front of or behind it is scenery.</p>
+<p>The map is built in layers. As you pan and zoom, artwork in the background drifts more slowly than the milestones and anything in the foreground moves a little faster, which gives the map real depth. Only the main layer — where the milestones and chapters sit — responds to clicks; everything in front of or behind it is scenery. Your GM can also pin a panel or button to the screen itself, so it stays put while the map moves underneath.</p>
 
 <h2>Milestone States</h2>
 <p>Every milestone is in exactly one state for you at any moment. The map and the list word them slightly differently:</p>
@@ -410,27 +465,102 @@ HTML,
 
 <h2>Tabis — Chapters</h2>
 <p>Milestones can be grouped into <strong>Tabis</strong>: chapters that sit on the map as a single tile. Click one to open it. Inside are its milestones, under a progress bar toward the chapter's badge (or toward finishing the stage, if it has no badge) that counts the required milestones you've finished out of the total. Optional side quests are counted on their own line.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a05-tabi-window.webp" alt="A chapter's window open over the map, listing its milestones with their rewards and which are completed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A chapter's window.</strong> Clicking an island opens its Tabi: the chapter's progress at the top, then each milestone with what it pays and whether you've finished it.</figcaption>
+</figure>
+
 <p>A Tabi can be locked. The most common reason is other Tabis: a locked one is greyed out, and if you open it anyway it says <em>Complete these tabis first to unlock this one</em>, listing each chapter still to finish and what's left in it. A Tabi can also wait for things your GM sets on the chapter itself, such as a particular milestone, an achievement, a key item you have to carry, or a level. Some artwork and buttons on the map belong to a chapter, and stay grey and unclickable until that chapter opens.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/e02-window-locked.webp" alt="A locked chapter's window with a padlock, saying 'Complete these tabis first to unlock this one' and naming the chapter and milestones still to do." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A locked chapter says why.</strong> Instead of its milestones, a locked chapter names the chapter you need to finish first and what is still left in it, so a locked stage is never a dead end.</figcaption>
+</figure>
+
 <p>Your GM can switch a Tabi off while it isn't ready. A switched-off chapter disappears completely: it isn't on the map, it isn't in the list, and the menu's <strong>Continue</strong> never points you into it.</p>
 
 <h2>Evolving Tabis</h2>
 <p>A chapter's artwork can change as <em>you</em> progress — a market stall that becomes a shop and then a department store as you level up, finish milestones or earn Blooms. It's drawn from your own progress, so the person next to you may see a different picture in the same spot. Open the chapter to see its scene full size, with a <strong>Next:</strong> line saying what grows it next. Some scenes also fade the longer you've been away.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/a03-window-speak-up.webp" alt="A chapter window showing 66% progress, an island with two of three towers built, and the line 'Next: Get 67% through this Tabi'." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A chapter that grows with you.</strong> Two thirds of the way through, two of the island's three towers are up. The <strong>Next:</strong> line says what grows the scene next; another player at another point in the chapter sees a different island.</figcaption>
+</figure>
+
 <h2>What Else Is on the Map</h2>
-<p>Your GM can place live panels and shortcuts anywhere on the map. The panels show your own information:</p>
+<p>Your GM can place live panels and buttons anywhere on the map. The panels show your own information, so two people looking at the same spot see their own numbers:</p>
 <ul>
   <li><strong>Status</strong> — your picture, level, and your XP and BLOO bars (plus EP, if the adventure uses Energy). Click it to open your profile panel.</li>
   <li><strong>Journey progress</strong> — how far through the whole journey you are.</li>
   <li><strong>Leaderboard</strong> — the top players, in the same order as the Leaderboard page, with medals for the first three. Your own row is highlighted, and if you're further down than the panel shows, your place is pinned at the bottom so you can always find yourself (when your GM shows players their own place).</li>
   <li><strong>Guild leaderboard</strong> — the top guilds by level, ranked on their members' average the way the Guilds page ranks them, with your guild highlighted or pinned the same way.</li>
-  <li><strong>Tasks</strong> — tasks you can do, the ones available right now first.</li>
-  <li><strong>Messages</strong> — opens your direct messages, when your adventure lets players message each other.</li>
-  <li><strong>Help</strong> — open help requests from other players, plus any you've asked yourself.</li>
-  <li><strong>Achievements</strong> and <strong>Backpack</strong> — what you've earned and what you're carrying, with a link to the rest.</li>
-  <li><strong>Task hexagons</strong> — a single task drawn like a milestone. Click one to open the task and finish it without leaving the map.</li>
-  <li><strong>Shortcut buttons</strong> to the Item Shop, your Journal, Achievements or the magic code box.</li>
-  <li>Text, pictures and decoration — some of which link somewhere, opening in a new tab.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a09-widgets-status.webp" alt="Live panels on the map: a status card with level, XP, BLOO and energy, journey progress, a player leaderboard and a guild leaderboard." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Status, progress and leaderboards.</strong> Each panel reads whoever is looking at it. On the leaderboard, your own place is pinned even when you're outside the top rows.</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Tasks</strong> — tasks you can do, the ones available right now first.</li>
+  <li><strong>Messages</strong> — opens your direct messages over the map, when your adventure lets players message each other.</li>
+  <li><strong>Task hexagons</strong> — a single task drawn like a milestone. Click one to open the task and finish it without leaving the map.</li>
+</ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a10-widgets-tasks.webp" alt="A Tasks panel listing repeatable tasks and their rewards, a Messages button, and three task hexagons on the map." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Tasks, Messages and task hexagons.</strong> The Tasks panel lists what you can do now and what's coming back later; each hexagon is one task placed on the map.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a17-task-window.webp" alt="A task's window over the map: what to do, how often, its rewards in XP, BLOO and EP, and how many times it has been done." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A task, opened from its hexagon.</strong> What to do, how often, what it pays, how many times you've done it and when it comes back, all without leaving the journey.</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Help</strong> — ask for help, see the requests you've made, and answer other players' open requests, right from the map.</li>
+  <li><strong>Achievements</strong> and <strong>Backpack</strong> — what you've earned and what you're carrying, with a link to the rest.</li>
+  <li><strong>Posts</strong> and <strong>Resources</strong> — the latest posts or resources, or one your GM picked, to read in place.</li>
+</ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a11-widgets-help.webp" alt="A Help panel with a form to ask for help and a list of colleagues' requests, beside an Achievements panel of badges and a Backpack panel of items." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Help, Achievements and Backpack.</strong> Ask for help or answer a colleague without leaving the map; your badges and items sit beside it.</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Buttons to other parts of the adventure</strong> — your GM can put a button on the map for any page you can reach from the menu: the Journal, Achievements, the Item Shop, the Garden, Guilds, the Wall, the Schedule, My Requests, My Account and more.</li>
+  <li><strong>Glide buttons</strong> — a button that moves the map to another place on it, as if you'd dragged it there yourself. One map can hold several areas this way.</li>
+  <li>Text, pictures and decoration. A picture or a piece of text can link to a web page (opening in a new tab), open a post in a window over the map, or glide the map somewhere else.</li>
+</ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a13-nav-links.webp" alt="A grid of labelled buttons on the map, one for each page: Journal, Achievements, Leaderboard, Item shop, Backpack, Tabis, Garden, Tasks, Guilds, Wall, Posts and more." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A button for every page.</strong> Buttons on the map are often easier to find than the menu. Each uses your adventure's own name for that section.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/a15-post-window.webp" alt="A post titled 'Welcome to Launch Week' open in a window over the journey map." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A picture that opens a post.</strong> Clicking a graphic on the map can open a post in a window over it; close the window and you're back where you were.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<p>The Journey works the same on a phone: drag to pan and pinch to zoom, with the view bar along the bottom. On a small screen the List view is often the quicker way through.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/journey-builder/b01-phone-journey.webp" alt="The journey map on a phone screen." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The map.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/journey-builder/b02-phone-list.webp" alt="The List view on a phone screen, chapters and milestones in order." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The List view.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/journey-builder/b03-phone-tabi.webp" alt="A chapter's window open on a phone screen." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A chapter's window.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>When the Journey Sends You Somewhere Else</h2>
 <p>Now and then, opening the Journey takes you somewhere first:</p>
@@ -468,6 +598,10 @@ HTML,
 <h2>Moving Through the Steps</h2>
 <p>A Milestone opens as a whole, but you play it one Step at a time. The <strong>step bar</strong> along the bottom of the screen holds <strong>Previous</strong> on the left, <strong>Continue</strong> on the right and, in between, where you are (<em>Step 3 of 8</em>) with a segment for every step. Click a segment to jump back to a step you've already been through.</p>
 <p>Some Steps just deliver something and let you move on; others need a correct answer or a response first. While a step is waiting for you, Continue shows a padlock and the bar says what unlocks it, such as <em>Answer correctly to unlock Continue</em> or <em>Send your answer to unlock Continue</em>. If you leave partway through, the Milestone picks up at the step you were on.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/p01-play-briefing.webp" alt="A dialogue step with the step bar along the bottom: Previous, the step count and Continue" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The step bar.</strong> Where you are in the Milestone, with Continue on the right to move on.</figcaption>
+</figure>
 <p>Steps can carry their own XP, BLOO, EP, item or achievement rewards on top of whatever the Milestone itself pays.</p>
 <p>Some Milestones have no steps at all. You'll see a message and a text box: write your response and press <strong>Submit Answer!</strong></p>
 
@@ -489,10 +623,24 @@ HTML,
   <li><strong>Cryptex</strong> — turn each wheel by dragging, scrolling or with the arrow keys until the word is right, then press <strong>Unlock</strong>.</li>
   <li><strong>Keyphrase</strong> — type the answer and submit it.</li>
 </ul>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/19-puzzle.webp" alt="A jigsaw puzzle step with scattered pieces" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A jigsaw.</strong> Drag the pieces together; matching edges click into place.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/17-cryptex.webp" alt="A cryptex lock with letter wheels" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A cryptex.</strong> Turn the wheels to the word, then press Unlock.</figcaption>
+</figure>
+</div>
 
 <h2>Answering, and Tries</h2>
 <p>Picking options or typing costs nothing: an answer only counts when you press the step's button to send it. If you send nothing, the step tells you (<em>Choose an answer first.</em>, <em>Choose 2 options first.</em>, <em>Type your answer first.</em>) and nothing is spent. A multiple-choice question with more than one right answer says how many to pick.</p>
 <p>Some Steps give you a fixed number of tries, and say so from the start: <em>You have 3 tries</em>, then <em>2 tries left</em>, then a red <em>Last try</em>. This applies to multiple choice, keyphrase, cryptex and backpack steps. Run out without getting it right and this attempt at the Milestone is over: the step says so and takes you to its fail screen, where you can start again (see below). You're never left stuck on a step you can't answer.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/14-multiple-choice-hint.webp" alt="A multiple choice step after a wrong answer, with the Game Master&#039;s hint and the tries left" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A wrong answer.</strong> Your Game Master's hint, and how many tries you have left.</figcaption>
+</figure>
 
 <h2>Read It Again</h2>
 <p>When a question asks about something you read a few steps back, you don't have to leave it to check. Multiple choice, keyphrase, cryptex and open text steps have a <strong>Read it again</strong> button under the question. It opens a panel over the question with the words of the steps before it, the speakers' names and faces included. Close it with <strong>Back to the question</strong>: your pick, your typing and your tries left are just as you left them. After a wrong answer the button lights up, as a hint.</p>
@@ -500,14 +648,42 @@ HTML,
 
 <h2>Backpack Steps: Pick the Right Item</h2>
 <p>A backpack step shows your own backpack as a rack. Scroll it past the sight in the middle and press <strong>Use</strong> on whatever sits under it. The step doesn't tell you which item it wants (working that out is the puzzle), and a wrong pick counts as a miss. If your backpack is empty, the step says so and points you to the shop. Gift cards don't appear on the rack.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/20-backpack-item.webp" alt="A backpack step showing the player&#039;s items on a rack with a sight in the middle" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A backpack step.</strong> Scroll the rack and press Use on the item under the sight.</figcaption>
+</figure>
 
 <h2>Choices: Branches and Choice Boards</h2>
 <p>A <strong>Branch Choice</strong> shows the paths you can take as cards. Picking one is permanent and can't be undone, and it decides which milestones and shop items you see from then on. Some branches are <strong>One per guild</strong>: once someone in your guild takes a path, it's closed to the rest of the guild, and its card says who took it (<em>Taken by Ana</em>). If your Game Master has already given you a path in that branch, the step shows it as yours.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/33-branch-choice.webp" alt="A branch choice offering department tracks as cards" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A branch choice.</strong> Each path is a card. Pick carefully: it can't be undone.</figcaption>
+</figure>
 <p>A <strong>Choice Board</strong> offers several activities as face-down cards and asks you to complete some of them, for example two of four. Tap a card to see what's ahead, then <strong>Walk this way</strong> to play that choice. When you finish it you come back to the board, which counts your progress (<em>1 of 2 choices completed</em>). Once you've done enough, the rest close and Continue opens. A choice that plays an online video may say <em>May not play on your network</em>, so you can pick another.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/p02-play-board.webp" alt="A choice board with two face-down cards, one to complete" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A choice board.</strong> Two cards, one to complete. Each card's name and picture tell you what it is.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/p03-play-card-back.webp" alt="The back of a choice card describing what lies ahead, with Walk this way and Turn back" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The back of a card.</strong> What the choice holds, with Walk this way and Turn back.</figcaption>
+</figure>
+</div>
 
 <h2>Open Text and Your Name</h2>
 <p>Each Open Text step keeps its own answer, so a milestone can ask several written questions in a row. Some ask for a minimum number of words. Write your answer and press <strong>Check Answer</strong>; it's marked <em>Submitted!</em> once it's sent, and <strong>Edit Content</strong> reopens it.</p>
 <p>A <strong>Choose Display Name</strong> step asks what we should call you. Type a name and press <strong>Save my name</strong>: it becomes the name other players see. It never changes the nickname you sign in with.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/25-open-text.webp" alt="An open text step with a rich-text answer box and a minimum word count" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Open Text.</strong> Write your answer, then Check Answer.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/02-choose-display-name.webp" alt="A step asking for the name other players will see" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Choose Display Name.</strong> The name colleagues will see.</figcaption>
+</figure>
+</div>
 
 <h2>How a Milestone Ends</h2>
 <p>Every Milestone ends on a win screen or a fail screen, even if your Game Master didn't write one.</p>
@@ -515,7 +691,28 @@ HTML,
   <li><strong>Win</strong> — the last step's <strong>Continue</strong> takes you to the win screen. Press <strong>Finish</strong> and a result card lands, with your rewards counting up. A button names the next open milestone ahead of you, beside <strong>Back to the journey</strong>. If the milestone has to be validated first, the card says <em>Handed in</em> and its rewards arrive once a Game Master validates it; if you'd finished it before, it says its rewards were paid the first time. Anything else you earned, such as an achievement or an item, opens in a celebration panel when you close the card.</li>
   <li><strong>Fail</strong> — you reach the fail screen when you run out of tries on a step, or when a step sends you there. Its button turns over a red card: <em>Attempt 1 is over and its answers were cleared. Try again starts attempt 2.</em> <strong>Try again</strong> reloads the Milestone from the first step as a genuinely fresh run, with your tries back; <strong>Back to the journey</strong> leaves it for later. Your progress everywhere else, and anything you've already earned, stays yours. An encounter choice you already paid for isn't charged again.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/03-celebration-quest-completed.webp" alt="The gold result card for a completed milestone, with the XP, BLOO and EP it paid and a button to the next milestone" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A win.</strong> The result card: what the Milestone paid, a button to the next open milestone, Back to the journey, and Flip card for the details.</figcaption>
+</figure>
 <p>Every run at a milestone is an attempt. From your second one on, the step bar shows <em>Attempt 2</em> beside the step count, and the result cards name the attempt. Leaving and coming back doesn't start a new attempt: an attempt ends only on a win or a fail.</p>
+
+<h2>On a Phone</h2>
+<p>Milestones play the same way on a phone. The step bar stays along the bottom, and a choice board's cards stack.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/launch-week/55-mobile-dialogue.webp" alt="A dialogue step on a phone" width="720" height="1558" loading="lazy">
+  <figcaption><strong>A dialogue.</strong></figcaption>
+</figure>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/launch-week/56-mobile-choice-board.webp" alt="A choice board on a phone with its cards stacked" width="720" height="1558" loading="lazy">
+  <figcaption><strong>A choice board.</strong></figcaption>
+</figure>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/launch-week/57-mobile-poll.webp" alt="Poll results on a phone" width="720" height="1558" loading="lazy">
+  <figcaption><strong>Poll results.</strong></figcaption>
+</figure>
+</div>
 
 <h2>Milestones That Open by Themselves</h2>
 <p>Your Game Master can mark a Milestone to load first, such as a briefing you should see before anything else. When you open the adventure you're taken straight into it, but only if you can actually play it yet. Once you've finished it, it stops. An encounter you're in the middle of, or a hand of encounter cards waiting for you to pick, always comes first.</p>
@@ -557,25 +754,61 @@ HTML,
   <li><strong>What it pays</strong> — its XP and BLOO, and EP if the adventure uses Energy, under your adventure's own names for them.</li>
 </ul>
 <p>Under them is the big button. When you can play, it says <strong>Start!</strong>, with a note saying whether this is a <em>Free attempt</em> or what the <em>Attempt cost</em> is in BLOO. When you can't, it says why instead: <em>Available at Level N</em>, <em>Max Attempts Reached</em>, <em>Requirements not met!</em>, or the date its deadline passed.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p01-intro.webp" alt="A challenge page before starting: its banner, short description, the rules for an attempt and what passing pays, with the Start button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Before you start.</strong> Everything is stated up front: how many questions an attempt draws and how many you need right, the clock, how many attempts are free and what each one after that costs, and what passing pays.</figcaption>
+</figure>
 <p>Press <strong>Start!</strong> and a <em>Get Ready!</em> card warns you that refreshing the page before you finish loses the attempt (a bought attempt is spent too). If the attempt costs more BLOO than you have, it won't start and the card tells you so. Press <strong>Start the challenge</strong> to begin.</p>
 
+<h2>Answering</h2>
+<p>All the questions of the attempt are on one page, one under the other. Down the side, a numbered list names each question (click one to jump to it), and on a timed Challenge the clock sits above the list.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p02-question.webp" alt="An attempt in progress: the clock and a numbered list of five questions down the left, the first question and its four options on the right, and the Submit answers button showing 0 of 5." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An attempt in progress.</strong> The clock counts down the seconds left; the numbered list jumps between questions; <strong>Submit answers</strong> counts how many you've answered.</figcaption>
+</figure>
+
 <h2>Kinds of Question</h2>
-<p>Each question says what it wants, and every one is all or nothing: a question only counts as right when all of it is right.</p>
-<ul>
-  <li><strong>Choice</strong> — pick the right answer. When more than one answer is right, the question says how many to choose.</li>
-  <li><strong>Order</strong> — put the items in the right order, first at the top. Drag them by the handle or use the arrows.</li>
-  <li><strong>Match</strong> — drag each answer onto its match, or tap an answer and then its place.</li>
-  <li><strong>Group</strong> — drop every item into its group, or tap an item and then its group.</li>
-  <li><strong>Gaps</strong> — drag a word into each blank in a sentence, or tap a word and then its blank.</li>
-  <li><strong>Hotspot</strong> — find a number of spots on a picture and tap each one to mark it. A counter shows how many you've marked; tap a mark to take it back, or <strong>Clear</strong> them all.</li>
-</ul>
-<p>A question can also come with a picture, a video or an audio clip. The answers are shuffled for every player, so the right one is never simply first.</p>
+<p>Each question says what it wants, and every one is all or nothing: a question only counts as right when all of it is right. A question can also come with a picture, a video or an audio clip. The answers are shuffled for every player, so the right one is never simply first.</p>
+<p><strong>Choice</strong> — pick the right answer. When more than one answer is right, the question says so, and you must pick every right one and nothing else. A true-or-false question is a choice between two answers.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/46-challenge-multiple.webp" alt="A choice question asking which of four options are red flags in an email, with the instruction to select all that apply." width="1600" height="579" loading="lazy">
+  <figcaption><strong>Choice, several right answers.</strong> "Select all that apply": pick every right answer and nothing else.</figcaption>
+</figure>
+<p><strong>Order</strong> — put the items in the right order, first at the top. Drag them by the handle or use the arrows.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/48-challenge-order.webp" alt="An order question: four steps of handling a security incident, to be dragged into the right order." width="1600" height="579" loading="lazy">
+  <figcaption><strong>Order.</strong> The items arrive shuffled; put them back in the right order.</figcaption>
+</figure>
+<p><strong>Match</strong> — drag each answer onto its match, or tap an answer and then its place. Some answers may match nothing, to make guessing harder.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/49-challenge-match.webp" alt="A match question: four tool names on the left, two already matched to answers on the right, and three answers still waiting below." width="1600" height="579" loading="lazy">
+  <figcaption><strong>Match.</strong> Two answers placed, three still in the tray. Not every answer in the tray has a place.</figcaption>
+</figure>
+<p><strong>Group</strong> — drop every item into its group, or tap an item and then its group.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/50-challenge-group.webp" alt="A group question: items to sort into two groups, safe to share outside the company or confidential." width="1600" height="579" loading="lazy">
+  <figcaption><strong>Group.</strong> Every item belongs in one of the groups.</figcaption>
+</figure>
+<p><strong>Gaps</strong> — drag a word into each blank in a sentence, or tap a word and then its blank. Some words may fit no blank.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/51-challenge-gaps.webp" alt="A gaps question: a sentence about the clean-desk rule with three blanks and a row of words to drag into them." width="1600" height="579" loading="lazy">
+  <figcaption><strong>Gaps.</strong> A sentence with blanks and the words to fill them.</figcaption>
+</figure>
+<p><strong>Hotspot</strong> — find a number of spots on a picture and tap each one to mark it. A counter shows how many you've marked; tap a mark to take it back, or <strong>Clear</strong> them all.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/52-challenge-hotspot.webp" alt="A hotspot question: a photo of a desk on which three security risks must be found and clicked." width="1600" height="776" loading="lazy">
+  <figcaption><strong>Hotspot.</strong> Mark every spot the question asks for, and nothing else.</figcaption>
+</figure>
 
 <h2>The Clock</h2>
 <p>On a timed Challenge a bar counts down as you answer. When it runs out, a <em>Time's up!</em> screen covers the questions; click it and what you've answered so far is handed in.</p>
 
 <h2>Submitting</h2>
 <p>The <strong>Submit answers</strong> button fills up as you answer: it sits beside the questions, at the end of the list, and in a bar along the bottom on a phone. Pressing it opens one full-screen check before anything is final: how many you've answered, a numbered dot for every question (press one to go back to it), a warning for any question left blank (it counts as wrong), and a reminder that your answers lock once you submit. Choose <strong>Submit answers</strong> to hand it in, or <strong>Keep answering</strong> to go back.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p04-submit.webp" alt="The full-screen check before handing in: 5 of 5 answered, a dot for each question, and the Submit answers and Keep answering buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Ready to hand it in?</strong> One last check: every question answered here, so nothing is flagged as blank.</figcaption>
+</figure>
 
 <h2>Your Result</h2>
 <p>A sealed card spins while your answers are graded, then lands:</p>
@@ -583,11 +816,23 @@ HTML,
   <li><strong>Gold</strong> when you pass: <em>Challenge conquered</em>, your score against the pass mark, and the rewards counting up. A button names the next open milestone ahead of you; with nothing open ahead, <strong>Back to the journey</strong>. If you'd passed this Challenge before, the card says its rewards were paid the first time.</li>
   <li><strong>Red</strong> when you don't: <em>Challenge failed</em>, your score, and how many attempts you have left, with <strong>Try again</strong> while you have any.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p05-result.webp" alt="A gold result card: 4 of 5 right, 80 percent, a pass, with the XP, BLOO and Energy it paid and the Review my answers button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A pass.</strong> Four right out of five, when four were needed: the card shows the grade and what the Challenge paid.</figcaption>
+</figure>
 <p>Either way, the card's main button is <strong>Review my answers</strong>. Behind it are your graded questions, each marked right or wrong. The ones you got right come with your Game Master's explanation of why; the ones you got wrong don't, so a retry isn't handed the answers. Anything else the attempt earned, such as an achievement or an item, opens in a celebration panel after the card.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p07-review.webp" alt="The review of an attempt: each question with the answer given, marked right or wrong, and an explanation under the right ones." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Review my answers.</strong> Each question marked right or wrong; the explanation appears only under the ones you got right.</figcaption>
+</figure>
 <p>A Challenge pays once, the first time you pass it, and a later attempt that goes worse never takes that back. A Challenge can cap how many attempts you get, and attempts beyond the free ones can cost BLOO. You can't buy an attempt while your BLOO is below zero.</p>
 
 <h2>Looking Back</h2>
 <p>Every attempt you've made is listed on your Journal's <strong>Challenges</strong> tab: pass or fail, your grade and the date. Click one to see each question, the answer you gave, and whether it was right. It's a good way to learn from a quiz you didn't ace the first time. See <a href="/docs/my-work-journal-and-history">The Journal</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/38-journal-challenge-attempt.webp" alt="A challenge opened from the Journal: two attempts listed on the left, the second Passed at 100% and the first Unfinished, and the passed attempt's questions with the answers given, each marked right" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your attempts, from the Journal.</strong> Every attempt down the left with its result; pick one to read each question and the answer you gave.</figcaption>
+</figure>
 
 <h2>Related</h2>
 <ul>
@@ -608,16 +853,28 @@ HTML,
 <p>Encounters only exist in adventures that use Energy Points. If yours doesn't, nothing on this page will happen to you.</p>
 
 <h2>The Draw</h2>
-<p>When something is due, the next time you open the Journey the screen flashes and a hand of face-down cards is dealt, usually eight. The heading reads <em>"Something just happened."</em> The line under it hints at what's in the hand: <em>"Turn over a card. None of them are good."</em> if every card is a crisis, <em>"Turn over a card. Not all of them are bad."</em> if there's an opportunity in there somewhere.</p>
+<p>When something is due, the next time you open the Journey the screen flashes and a hand of face-down cards is dealt: as many as your Game Master chose, eight unless they changed it. The heading reads <em>"Something just happened."</em> The line under it hints at what's in the hand: <em>"Turn over a card. None of them are good."</em> if every card is a crisis, <em>"Turn over a card. Not all of them are bad."</em> if there's an opportunity in there somewhere.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/p08-hand-dealt.webp" alt="A hand of face-down cards over the Journey under the heading Something just happened, with the line Turn over a card. None of them are good." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A hand is dealt.</strong> Face-down cards over the Journey, in a colour your Game Master chose for this deal. Here every card is a crisis.</figcaption>
+</figure>
 <p>Pick one. It flips over to show what you drew:</p>
 <ul>
   <li><strong>Crisis</strong> — something went wrong and needs dealing with.</li>
   <li><strong>Opportunity</strong> — a chance you can take, usually at a price.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/p09-card-turned.webp" alt="The chosen card turned over, showing its art, the label Crisis, its name and a one-line teaser." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The card turned over.</strong> Its kind, its name and one line about what's happening. The full story is in the milestone it takes you to.</figcaption>
+</figure>
 <p>The hand is fixed the moment it appears. Reloading the page shows the same cards again, so there's no reshuffling until you like the look of one. The cards you didn't pick go back into the deck untouched and may come round another time.</p>
 
 <h2>Locked In Until You Finish</h2>
 <p>Every card leads to a milestone, and turning it over takes you straight there. As the draw screen warns: <em>"Whatever you turn over, you will face it before the journey opens again."</em> Until you finish that milestone, opening the Journey brings you back to it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/p10-locked-in.webp" alt="The encounter's milestone open on its first step: a character on the phone describing the situation." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Into the encounter.</strong> The milestone opens on the situation. From here the Journey stays locked to it until it's done.</figcaption>
+</figure>
 <p>Only the Journey is locked. The Garden, your Tasks and the Item Shop stay open the whole time, which matters, because that's where you recover what an encounter costs. And the milestone always opens for you, even if a setback has dropped you below the level it would normally need. Once it's resolved, it stays open to you, so you can go back and read it again.</p>
 
 <h2>The Choice</h2>
@@ -626,16 +883,50 @@ HTML,
   <li><strong>-200 BLOO</strong> or <strong>+900 BLOO</strong> — what the option costs, or what it pays.</li>
   <li><strong>-20 Energy</strong> or <strong>No energy</strong> — the energy it takes.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/p11-choice-step.webp" alt="An Encounter Choice step: You have 1550 BLOO and 265 Energy above three options, each with a one-line catch and its energy cost." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The decision.</strong> What you have is shown above the options; each option carries its price and, under its name, the catch. Continue stays locked until you choose.</figcaption>
+</figure>
 <p>A choice can do more than move money. It can also add or take away XP (that part isn't shown on the option itself), grant you an achievement that opens a follow-up milestone, or trigger a message about what happened next.</p>
-<p>Once you pick, the step shows <em>"You decided"</em> with your choice, and that's final. You're only ever charged once for an encounter, even if you fail the milestone and play it again.</p>
+<p>When you pick, you're asked once more: <em>"Go with … ? This cannot be undone."</em> Then a panel shows what came of it: the message about what happened next, if there is one, and anything the choice paid you, such as XP, BLOO or an achievement. The step then shows <em>"You decided"</em> with your choice, and that's final. You're only ever charged once for an encounter, even if you fail the milestone and play it again.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/p12-choice-result.webp" alt="A panel after the choice: the outcome message They felt heard and the XP the choice paid." width="1600" height="900" loading="lazy">
+  <figcaption><strong>What came of it.</strong> The outcome message and what the choice paid, in one panel.</figcaption>
+</figure>
 
 <h2>When You Can't Afford It</h2>
 <p><strong>Energy is a hard limit.</strong> An option that needs more energy than you have is greyed out and marked <em>"Not enough"</em> followed by the adventure's name for energy (for example <em>"Not enough EP"</em>). Encounters are designed to always include at least one option that costs no energy. If you ever find nothing you can pick, the step says <em>"You are out of energy"</em> and offers a <strong>Go and recover</strong> button that takes you to your Tasks. Complete a Task that pays energy, come back, and the encounter will still be waiting.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/q04-short-of-energy.webp" alt="An Encounter Choice step where one option is greyed out because the player doesn't have enough energy, while the other two stay open." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An option you can't afford.</strong> Not enough energy for the overnight rebuild, so it's greyed out. The other options stay open: there's no dead end.</figcaption>
+</figure>
 <p><strong>Money isn't.</strong> An option that costs more BLOO than you have is still available, marked with how far under it would put you ("This puts you 180 under"). Choosing it puts you in debt. <a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a> explains what that means. In short, the Item Shop won't sell to you until you've earned your way back.</p>
+<p>Your Game Master may have set up a message for that moment. It arrives on your next page under <em>Heads up!</em>, and it can come back (at most once a day) while you stay below zero.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/q07-in-the-red.webp" alt="A Heads up! panel with the message You're in the red, shown after a choice took the player's BLOO below zero." width="1600" height="900" loading="lazy">
+  <figcaption><strong>In the red.</strong> A debt alert, written by the Game Master, after a choice took this player below zero.</figcaption>
+</figure>
 
 <h2>How Often They Happen</h2>
 <p>Your Game Master decides. Encounters come in groups, and each group has its own rules for when you're ready for it (reaching a certain level, say, or finishing a particular chapter) and how often it comes round. Some come round every few days. Some only happen on particular days of the week, and if you don't visit on that day, that one passes you by.</p>
 <p>You only ever face one hand at a time, and a new one can't arrive until you've finished the encounter you picked. Most encounters happen to each player once; a few recurring pressures can come round again.</p>
+
+<h2>On a Phone</h2>
+<p>It all works the same on a phone: the hand, the cards, and the decision, with the options stacked one above the other.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-encounters/m03-phone-hand.webp" alt="A face-down hand of cards on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A hand waiting.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-encounters/m01-phone-choice.webp" alt="An Encounter Choice step on a phone, the options stacked, one greyed out." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The decision.</strong> The option you can't afford is greyed out.</figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-encounters/m02-phone-result.webp" alt="The result panel on a phone: the outcome message, the XP and a badge." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The result.</strong> What came of it, with what it paid.</figcaption>
+  </figure>
+</div>
 
 <h2>Keeping Track</h2>
 <p>Your BLOO and your energy against its ceiling are always in your profile panel (click your picture) and, in the New view, in the wallet along the bottom of the menu. When you're in debt, your BLOO shows below zero.</p>
@@ -662,8 +953,16 @@ HTML,
   <li><strong>My last achievement</strong> — the latest badge or rank you earned, and when. Until you earn one, it says your first achievement lands here.</li>
   <li><strong>My certificate</strong> — your certificate once you've earned it, with an <strong>Open</strong> button, and the badge it carries. While it's still locked, the cell lists exactly what's missing, for example "Reach level 9 — you're at level 5". See <a href="/docs/certificates-and-secrets-and-clues">Certificates</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a01-achievements-page.webp" alt="The Achievements page: My last achievement and My certificate side by side, above a searchable grid of badges with a count of 5 out of 21." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Achievements page.</strong> The two showcase cells at the top, then every achievement under a count of how many you hold. Earned badges are lit with the day you earned them; the rest are greyed out.</figcaption>
+</figure>
 <p>Below that, every achievement is listed under a count of how many you hold out of the total, in three groups — <strong>Badges</strong>, <strong>Paths</strong> and <strong>Ranks</strong> — with a search box. Anything you've earned shows the date you earned it; anything you haven't is greyed out. Some adventures hide achievements until you've earned them, in which case you only see your own.</p>
 <p>Click one you've earned and it opens as a collectible card — artwork, name and description laid out like a trading card rather than a plain icon. The card also says how rare it is (Common, Uncommon, Rare or Mythic, with the share of players who hold it), when you earned it, and, for a limited one, how many have been claimed. Flip it over to read its secret message, if the Game Master wrote one.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a03-earned-card.webp" alt="An earned badge opened as a collectible card: its artwork, what it paid in XP, BLOO and EP, the day it was earned, and a Flip card button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A badge you hold, opened as its card.</strong> What it paid and the day you earned it. <strong>Flip card</strong> turns it over to its secret message.</figcaption>
+</figure>
 
 <h2>Three Kinds</h2>
 <ul>
@@ -676,37 +975,107 @@ HTML,
 <ul>
   <li><strong>Automatically</strong> — many achievements are awarded the moment your progress meets their conditions: reaching a level, finishing a chapter, earning enough Blooms.</li>
   <li><strong>By finishing a milestone</strong> that awards one.</li>
+  <li><strong>By passing a step</strong> that pays one. It's yours the moment the step is passed, without waiting for the end of the milestone.</li>
+  <li><strong>By passing a challenge</strong> that awards one, or by your result in a <a href="/docs/your-profile-results">profile test</a>, when a trait that comes out on top carries an achievement.</li>
   <li><strong>Through a choice</strong> you make in an <a href="/docs/encounters-the-card-draw">encounter</a>, or a path you pick on a Branch Choice step.</li>
   <li><strong>With a magic code</strong> — type it into <strong>Magic Code</strong> (a button in the New view's menu, or a quick link above the Classic taskbar), scan its QR code, or open the magic link your Game Master shared. Codes work however you type them, in capitals or not. If a code doesn't work, the box says why and stays open until you close it.</li>
+  <li><strong>With a single-use code</strong> your Game Master handed to you: it works once, for one person.</li>
   <li><strong>From your Game Master</strong>, by hand.</li>
 </ul>
 <p>However it arrives, you get the same celebration panel: <em>Congratulations!</em>, what you just did (<em>You just earned an achievement</em>, <em>reached a new rank</em>, <em>leveled up</em>), a card for each thing you earned, and <strong>Close</strong>. If someone else's action earned it for you (a Game Master awarding it, or grading your work), the panel is waiting for you on your next page and says so.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a04-celebration.webp" alt="The Congratulations panel listing two achievements: Culture Carrier, awarded by a Game Master, and Guild Spirit, earned because the guild reached 10 members." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Two achievements, one panel.</strong> One was awarded by the Game Master while the player was elsewhere; the other came from its condition (the guild reached ten members). Each says why it arrived, and <strong>See the card</strong> opens it.</figcaption>
+</figure>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/achievements-certificates/a05-magic-link.webp" alt="The magic link's page: Congratulations, the Stargazer achievement redeemed with a magic code, its secret message, and a Back to home button." width="1600" height="900" loading="lazy">
+    <figcaption><strong>Redeemed by a magic link.</strong> Opening the link (or scanning its QR code) awards the achievement and shows its secret message.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/achievements-certificates/a08-code-used.webp" alt="A panel explaining that a single-use code has already been used." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A code that can't be redeemed.</strong> The panel says why in plain words (here, a single-use code already used) and stays until you close it.</figcaption>
+  </figure>
+</div>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/p04-step-reward.webp" alt="The Congratulations panel for Values Compass, an achievement paid by a step the player just answered correctly." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Paid by a step.</strong> A correct answer earns the step's own achievement there and then, without waiting for the milestone to end.</figcaption>
+</figure>
 
 <h2>The Badge on Your Certificate</h2>
 <p>Once you hold a certificate, its showcase cell says which badge it carries (<em>Showing</em> one, or <em>No achievement chosen yet</em>). Click the cell to choose any badge or rank you hold, or drag one onto it from the grid. <strong>Use my rank instead</strong> goes back to your current rank. Paths aren't offered: a path is where you are, not something you won.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a11-pick-badge.webp" alt="The My certificate cell open as a picker, listing the badges and ranks the player holds." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Choosing what your certificate carries.</strong> Pick any badge or rank you hold, or drag one from the grid onto the cell.</figcaption>
+</figure>
 
 <h2>Guilds</h2>
 <p>Guilds are squads that play together inside an adventure. If yours uses them, you'll be placed in one the first time you open the journey without one ("You just joined" and the guild's name), assigned by your Game Master, or given an invite link that puts you in when you open it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/b03-auto-guild.webp" alt="The arrival panel announcing the player's first level, rank and daily check-in, and that they joined the Customer Success guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Placed in a guild on arrival.</strong> A player with no guild is placed in one the first time they open the journey, and the arrival panel says which.</figcaption>
+</figure>
 
 <h3>Your Guild Page</h3>
 <p>The Guilds page shows <strong>My Guild</strong>: its members, level, average XP and its current position. If the adventure has a leaderboard, every guild is ranked below it — the top five as cards with their place medals, the rest in a table with each guild's members, level, average XP, total XP and BLOO. A search box finds a guild by name across the cards and the whole table.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a01-guilds.webp" alt="The Guilds page: the player's own guild, Engineering, with its members, level and place, beside the ranking of every guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My Guild and the guild ranking.</strong> Your guild's numbers and place on the left; every guild ranked on its members' average on the right. Each card opens its roster.</figcaption>
+</figure>
 <p>Guilds are ranked on their members' <strong>average</strong>, not their total: first by level, then average XP, then average BLOO, and only then by totals. A guild's level comes from its members' average XP, on the same curve players use, so a big guild can't out-rank a small one on headcount alone.</p>
 <p>Only players count. GMs and NPCs who sit in a guild add nothing to its numbers, and neither does anyone who has left the adventure.</p>
 
 <h3>Rosters and Leaders</h3>
 <p>Click any guild, on its card or in the table, to open its roster: every member, best first, with their level, XP, BLOO and the achievements they hold. Players never see anyone's email address on it. A guild can also have a <strong>leader</strong>, appointed by the Game Master, and the roster marks them with a Leader badge. For now it's a title, not a set of extra powers.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a02-roster-mine.webp" alt="A guild roster: each member with level, XP and BLOO, the leader marked, and a grid of the badges and path each member holds." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A guild's roster.</strong> Every member best first, the leader marked, and which badges and path each one holds.</figcaption>
+</figure>
 
 <h3>Joining With an Invite Link</h3>
 <p>A Game Master can share a guild's invite link. Open it while you're enrolled in the adventure and you join that guild, as long as it has room. If you can't join, the page says why: you're already a member, you need to join the adventure first, you already have a guild from the same group, the guild is full, or the link doesn't match a guild.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a04-invite-same-group.webp" alt="An invite link's page explaining that the player is already in a guild from the same group." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An invite the link can't honour.</strong> Guilds come in groups, and you belong to one guild per group, so the page says you're already in one instead of quietly moving you.</figcaption>
+</figure>
 
 <h3>One Seat Per Guild</h3>
 <p>Some Branch Choice steps are <strong>One per guild</strong>: once someone in your guild takes a path, it's closed to everyone else in the guild, and its card says who took it. Your Game Master can also give each member of a guild their path directly, and then the step shows that path as yours. See <a href="/docs/completing-milestones-and-steps">Completing Milestones &amp; Steps</a>.</p>
 
 <h3>Guild Chat on the Wall</h3>
 <p>The Wall has one <strong>Guilds</strong> tab. If you're in a single guild, the tab carries your guild's name and opens straight into its feed. If you're in more than one, it opens a searchable picker; choose a guild and the post button becomes <strong>Post to</strong> that guild.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a14-wall-guild.webp" alt="The Wall's guild tab, named after the player's guild, with a Post to Engineering button above the guild's feed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your guild's channel.</strong> Only its members (and staff) read it, and the button says exactly where a post goes. Nothing posted here reaches the public feed.</figcaption>
+</figure>
 
 <h2>The Leaderboard</h2>
 <p>The Leaderboard page ranks players by level, then XP, milestones completed, BLOO earned and BLOO left, and when all of that is equal, whoever got there first. Your own row is marked <em>You</em>. Where the adventure has guilds, the page can also show the guild ranking. Your Game Master chooses which columns players see.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a05-leaderboard.webp" alt="The leaderboard with the ranking rule written above it and the player's own row, fourth, marked You." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The leaderboard.</strong> The rule it ranks by is written at the top, and your own row is marked <em>You</em>.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a06-leaderboard-guilds.webp" alt="The leaderboard's Guilds view: each guild's members, average XP and average BLOO, with the player's guild marked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Guilds view.</strong> Guilds ranked on their members' averages, with yours marked.</figcaption>
+</figure>
+<p>When your Game Master offers it, a <strong>Custom dates</strong> tab measures the board over the dates you choose instead of the whole adventure: what was gained in that period decides it, so someone who started late can still top a week.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a07-leaderboard-period.webp" alt="The leaderboard on its Custom dates tab, with From and To dates and the board measured over one week." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The board for chosen dates.</strong> Pick a From and To date and the ranking counts only what happened between them.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/achievements-certificates/p01-phone-achievements.webp" alt="The Achievements page on a phone: the latest achievement, the certificate and the badges in a grid." width="720" height="1558" loading="lazy">
+    <figcaption><strong>Achievements on a phone.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/guilds-wall/e02-phone-guilds.webp" alt="The Guilds page on a phone: My Guild first, then the guild ranking." width="720" height="1558" loading="lazy">
+    <figcaption><strong>Guilds on a phone.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>Related</h2>
 <ul>
@@ -718,12 +1087,138 @@ HTML,
 HTML,
             ],
             [
-                'title'      => 'Item Shop & Backpack',
-                'slug'       => 'item-shop-and-backpack',
+                'title'      => 'The Leaderboard & the Wall',
+                'slug'       => 'leaderboards-and-the-wall',
                 'section'    => 'user',
                 'sort_order' => 11,
                 'body'       => <<<'HTML'
-<p>The Item Shop is where BLOO gets spent. Everything you buy, or pick up along the journey, lands in your Backpack. Both share a tab bar with the Tabis page, where chapter collages are pieced together, and, if your Game Master has switched it on, a <strong>Transactions</strong> tab listing what you've bought and received. Your adventure may use its own names for the shop and the backpack.</p>
+<p>Two places show you the rest of your cohort: the <strong>Leaderboard</strong>, where everyone stands, and the <strong>Wall</strong>, the adventure's own feed of posts, guild channels and messages. Your Game Master decides whether each is switched on and may give them other names.</p>
+
+<h2>The Leaderboard</h2>
+<p>The Leaderboard ranks players by level, then XP, milestones completed, BLOO earned and BLOO left, and when all of that is equal, whoever got there first. Where your Game Master leaves the explanation on, that rule is written above the board. The first three places get medals, and your own row is highlighted and marked <em>You</em>. If you're further down than the rows shown, your own place can be pinned under the board, so you always know where you are.</p>
+<p>Your Game Master chooses which columns players see (level, XP, milestones, BLOO earned, BLOO left). An adventure can also add its own profile fields as columns, an office or a department for example, so you can see who's who.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a05-leaderboard.webp" alt="The Leaderboard page: the ranking rule written at the top, then players ranked with medals for the top three, the viewer's row marked You, and columns for office, level, XP, milestones and BLOO earned." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The leaderboard.</strong> The rule that orders it is written at the top, your row is marked <em>You</em>, and the Office column is one of the adventure's own profile fields.</figcaption>
+</figure>
+
+<h3>The Guilds View</h3>
+<p>Where the adventure has guilds, the Leaderboard can also rank them: each guild's members, average XP and average BLOO, ranked on the members' average so a small guild can beat a big one. Your guild is marked. See <a href="/docs/achievements-and-guilds">Achievements &amp; Guilds</a> for the Guilds page itself.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a06-leaderboard-guilds.webp" alt="The Leaderboard's Guilds view: each guild's members, average XP and average BLOO, the viewer's guild marked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Guilds on the leaderboard.</strong> Ranked on the members' average, not their total.</figcaption>
+</figure>
+
+<h3>Custom Dates</h3>
+<p>If your adventure offers it, the <strong>Custom dates</strong> tab beside <strong>Overall</strong> measures the board over any dates you pick: choose <strong>From</strong> and <strong>To</strong> and press <strong>Show</strong>. The board is worked out from everything handed in between those two moments, so it ranks the XP gained, the milestones finished and the BLOO earned in that period. Someone who started late can top a week even while they're behind overall. A <strong>fingerprint</strong> beside the dates lets two people comparing the same period check they're looking at the same numbers.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a07-leaderboard-period.webp" alt="The Leaderboard with Custom dates selected: From and To date fields, a line describing the period with a fingerprint, and columns for XP gained, milestones in the period and BLOO earned." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The leaderboard for chosen dates.</strong> One week only: XP gained and milestones in the period decide it.</figcaption>
+</figure>
+
+<h3>On the Journey</h3>
+<p>Your Game Master can also put the standings on the journey map itself: a leaderboard widget showing the top few players (with your own place highlighted) and a guild ranking, both updating as people play.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a08-journey-leaderboard.webp" alt="The journey map with a leaderboard widget placed on it, listing the top players." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The leaderboard on the journey.</strong> The standings as part of the map, not a separate page.</figcaption>
+</figure>
+
+<h2>The Wall</h2>
+<p>The Wall is your adventure's shared feed. It opens on <strong>Public</strong>, where everyone reads and writes, newest first. Your Game Master's announcements sit among the posts on tinted cards with a megaphone, so they stand out from the conversation. Across the top are the Wall's other tabs:</p>
+<ul>
+  <li><strong>Your guild's channel</strong> — if you're in one guild, the tab carries its name and opens straight into its feed. If you're in more than one, it's a <strong>Guilds</strong> tab with a searchable picker.</li>
+  <li><strong>Messages</strong> — your one-to-one conversations, when your adventure lets players message each other.</li>
+  <li><strong>Activity</strong> — your own activity log (see below).</li>
+</ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a10-wall.webp" alt="The Wall: tabs for Public, the player's guild, Messages and Activity across the top, a box to write a post, and the Public feed with an announcement on a tinted card." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Wall.</strong> Public posts from everyone, the Game Master's announcements on tinted cards with a megaphone, and tabs for your guild's channel, your messages and your activity.</figcaption>
+</figure>
+
+<h3>Posting</h3>
+<p>Write in the box and press <strong>Post</strong>. Your post lands at the top of the feed straight away, with your name and the time, and the box empties for the next one. The feed refreshes by itself every 15 seconds while it's open. If a post is refused (an empty box, for example), the reason shows right under the box and whatever you wrote stays there.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a12-wall-posted.webp" alt="A new post at the top of the Public feed with the player's name and the time, and an empty box above it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A post on the Wall.</strong> It lands on top of the feed at once.</figcaption>
+</figure>
+
+<h3>Your Guild's Channel</h3>
+<p>A guild channel is read only by that guild's members and the adventure's staff. In it the button says exactly where a post goes, for example <strong>Post to Engineering</strong>, and nothing you write there reaches the Public feed.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a14-wall-guild.webp" alt="A guild's channel on the Wall, its tab named after the guild, with a Post to button naming the guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your guild's channel.</strong> Only its members and staff read it.</figcaption>
+</figure>
+
+<h3>Messages</h3>
+<p>The <strong>Messages</strong> tab holds your one-to-one conversations on the left and the open thread on the right. They're the same messages you have in the Garden, so you can reach a colleague without leaving the adventure. See <a href="/docs/help-requests-and-messages">Help Requests and Messages</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a16-wall-messages.webp" alt="The Wall's Messages tab: a list of conversations on the left and an open message thread on the right." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Messages on the Wall.</strong> The same conversations as in the Garden.</figcaption>
+</figure>
+
+<h3>What the Wall Doesn't Do</h3>
+<ul>
+  <li>There are no reactions or comments: posts, guild channels and announcements are what the Wall has.</li>
+  <li>You can't delete your own posts. If you posted something by mistake, ask your Game Master: staff can take any message down.</li>
+  <li>Guest accounts (<a href="/docs/playing-as-a-guest">Play Now</a>) can read the Wall but not post to it.</li>
+</ul>
+<p>Every post you make, in Public or a guild channel, can count toward a Garden mission that asks you to post on the Wall. See <a href="/docs/garden-missions">Garden Missions</a>.</p>
+
+<h2>Your Activity</h2>
+<p>The Wall's <strong>Activity</strong> tab opens a log of what you've done in this adventure: milestones finished, achievements earned, purchases, posts and more, newest first, up to your most recent 500 entries. Search it, filter it by kind of action, and page through it. Staff see the whole adventure's log on the same page; see <a href="/docs/activity-logs">Activity Logs</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a17-activity-mine.webp" alt="The player's own activity log: a searchable, filterable table of actions with their type, detail and time." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My activity.</strong> A searchable log of your own actions in the adventure.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<p>Both work on a phone. The leaderboard keeps its columns in a table you can swipe sideways, so swipe to see the numbers at the far edge.</p>
+
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/guilds-wall/e01-phone-leaderboard.webp" alt="The leaderboard on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The leaderboard.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/guilds-wall/e03-phone-wall.webp" alt="The Wall on a phone, with the box to write in and the feed below." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The Wall.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/guilds-wall/e04-phone-guild.webp" alt="A guild's channel on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A guild channel.</strong></figcaption>
+  </figure>
+</div>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/achievements-and-guilds">Achievements &amp; Guilds</a></li>
+  <li><a href="/docs/help-requests-and-messages">Help Requests and Messages</a></li>
+  <li><a href="/docs/journey-map-guide">The Journey Map</a></li>
+  <li><a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Item Shop & Backpack',
+                'slug'       => 'item-shop-and-backpack',
+                'section'    => 'user',
+                'sort_order' => 12,
+                'body'       => <<<'HTML'
+<p>The Item Shop is where BLOO gets spent. Everything you buy, or pick up along the journey, lands in your Backpack. Both share a tab bar with the Tabis page, where chapter collages are pieced together, and, if your Game Master has switched it on, a <strong>Transactions</strong> tab listing what you've bought and received. Your adventure may use its own names for the shop, the backpack and the currency.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a01-shop.webp" alt="The Item Shop: a grid of item cards, each with a glowing badge, a name, a short description, its level, price and stock, and a Buy button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Item Shop.</strong> Shop, Backpack and Tabis share the tab bar at the top. Every card shows the item's level, its price and how many are left before you buy anything.</figcaption>
+</figure>
 
 <h2>Item Types</h2>
 <ul>
@@ -735,27 +1230,109 @@ HTML,
 </ul>
 
 <h2>Buying</h2>
-<p>Each card shows the item's level, its price and how many are left (or ∞), with a badge for its category or the Tabi it belongs to. The button tells you whether you can buy it:</p>
+<p>Each card shows the item's level, its price and how many are left (or ∞), with a badge for its category or the Tabi it belongs to. The button tells you whether you can buy it, before you click:</p>
 <ul>
   <li><strong>Buy</strong> — go ahead.</li>
   <li><strong>Requires Level N</strong> — you'll need to level up first.</li>
+  <li><strong>Not enough BLOO</strong> (or your adventure's name for it) — the price is more than you have.</li>
   <li><strong>Max owned</strong> — you already hold as many as one player may.</li>
   <li><strong>Sold Out</strong> — there's no stock left.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a02-shop-limits.webp" alt="A row of shop cards: one shows 14 of 20 left, one is greyed out and reads Sold Out, one reads Requires Level 4." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Limits on the card.</strong> Limited stock counts down (14 of 20 left), a sold-out item is greyed out with <em>Sold Out</em>, and an item for a higher level says <em>Requires Level 4</em> on its button.</figcaption>
+</figure>
+
 <p>Not every item is offered to everyone: some only appear for players on a particular path.</p>
 <p>Pressing <strong>Buy</strong> asks you to confirm the price first ("Buy Health Potion for 50 BLOO?"), with <strong>Confirm</strong> and <strong>Cancel</strong>. Confirm, and the item's collectible card turns over, marked <em>Added to your Backpack</em>. If the purchase earned you anything else at the same time, a level or an achievement, the celebration panel follows when you close the card.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a03-buy-confirm.webp" alt="A confirmation box over the shop asking whether to buy the item for its price, with Confirm and Cancel." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Buy, then confirm.</strong> Every purchase asks first, naming the item and its price. Cancel leaves everything as it was.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a04-buy-reveal.webp" alt="The bought item shown as a large collectible card with its badge, name and description, marked as added to the Backpack." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The item arrives.</strong> A purchase turns over as a collectible card that says where the item went. Closing it shows anything else the purchase earned you.</figcaption>
+</figure>
+
 <p><strong>Gift cards</strong> work the same way, with two differences. The confirmation warns you that a real gift card will be sent to your account email, and that the purchase can't be undone. Afterwards, you're told a second email is on its way from the rewards partner with the card itself, and that it can take a few minutes to arrive.</p>
-<p>The shop never sells on credit. If you can't afford something you'll see <em>"Not enough funds"</em>, and that holds even when an encounter has already left you below zero. Two players can't both grab the last one in stock, either: whoever's purchase lands second is told there are none left.</p>
+<p>The shop never sells on credit, and that holds even when an encounter has already left you below zero. Two players can't both grab the last one in stock, either: whoever's purchase lands second is told there are none left. If something changes between looking and buying (the last one sells, or you spend the balance in another tab), the purchase is refused with the reason, which stays on screen until you close it, and nothing is charged.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a08-buy-refused.webp" alt="A panel explaining why a purchase could not go through, with a Close button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>If a purchase fails anyway.</strong> The reason stays on screen until you close it. Nothing is charged.</figcaption>
+</figure>
 
 <h2>Your Backpack</h2>
 <p>At the top, the <strong>Wallet</strong> shows your BLOO balance. Below it is everything you own, grouped into Consumables, Key Items, Tabi pieces (under each Tabi's name) and Rewards, with how many of each you hold.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a09-backpack.webp" alt="The Backpack: a wallet with the BLOO balance beside groups of items, consumables first, each item a small card." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Backpack.</strong> Your wallet, then everything you hold grouped by kind: consumables to use, key items, Tabi pieces and rewards.</figcaption>
+</figure>
+
 <p>Items reach your Backpack in three ways: you buy them, a milestone awards one when you finish it, or you pick one up on a Find Item step. Your Game Master can also buy an item for you, paid from your own BLOO.</p>
 <p><strong>Consumables</strong> have a <strong>Use</strong> button. It asks you to confirm, then a panel tells you the item was redeemed and stays until you close it; the item leaves your Backpack. Nothing is ever used automatically. If you use one by mistake, ask your Game Master: only staff can return a used item to your Backpack.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a15-use-confirm.webp" alt="The Backpack with a confirmation asking whether to use a Team Lunch Voucher." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Using a consumable.</strong> Use asks once more before the item is spent.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/a16-use-done.webp" alt="A panel confirming that the item was redeemed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Redeemed.</strong> The panel stays until you close it. Your Game Master sees the item marked used and can honour it.</figcaption>
+</figure>
+
 <p>Keys, Tabi pieces and Rewards have no button. You hold them; you don't spend them.</p>
-<p>Click an item for a closer look and it opens as a collectible card, the same treatment achievements get, with how rare it is and how many you hold. An item with a secret message is tagged <em>Secret</em> until you've examined its card.</p>
+<p>Click an item for a closer look and it opens as a collectible card, the same treatment achievements get, with how rare it is and how many you hold. An item with a secret message is tagged <em>Secret</em>: open its card and press <strong>Examine</strong> to read it. From then on its tile reads <em>Examined</em>.</p>
+
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/item-shop/a11-card-secret.webp" alt="An item's collectible card with an Examine button." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A card with a secret.</strong> The card invites you to examine it.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/item-shop/a12-card-examined.webp" alt="The same card turned over to show its secret text." width="1600" height="900" loading="lazy">
+    <figcaption><strong>Examined.</strong> The card turns to show what's inside.</figcaption>
+  </figure>
+</div>
 
 <h2>The Tabis Page</h2>
 <p>Each Tabi with collectible pieces has its own board, with a count of how many you've collected. Pieces you hold are shown in full colour and the rest stay greyed out, so you can see the shape of what's missing. Click a piece you hold to open its card.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/c02-tabis.webp" alt="The Tabis page: a Tabi's collage with collected pieces in colour and missing pieces greyed out." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Where Tabi pieces go.</strong> Each Tabi's pieces, collected or still missing.</figcaption>
+</figure>
+
+<h2>Your Transactions</h2>
+<p>When your Game Master has switched it on, a <strong>Transactions</strong> tab sits beside Shop, Backpack and Tabis. It lists what you bought and what you were given, when, and whether you've already used it. It's read-only.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/c01-my-trnx.webp" alt="The player's Transactions tab: a table of items bought and received with dates and whether each was used." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My transactions.</strong> What you bought and received, and what you've already redeemed.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<p>The shop, the backpack and every card work the same on a phone, one card per row, with every limit still on its button.</p>
+
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/item-shop/d01-phone-shop.webp" alt="The Item Shop on a phone, one card per row." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The shop.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/item-shop/d02-phone-backpack.webp" alt="The Backpack on a phone, the wallet first, then items by kind." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The backpack.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/item-shop/d03-phone-card.webp" alt="An item's collectible card full screen on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A card.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>Related</h2>
 <ul>
@@ -770,7 +1347,7 @@ HTML,
                 'title'      => 'Certificates & Secrets and Clues',
                 'slug'       => 'certificates-and-secrets-and-clues',
                 'section'    => 'user',
-                'sort_order' => 12,
+                'sort_order' => 13,
                 'body'       => <<<'HTML'
 <p>Beyond badges and ranks, an Adventure can give you two more things to keep: <strong>certificates</strong> you can print, and <strong>secrets</strong> — bits of story your GM hid inside the milestones you finish.</p>
 
@@ -783,17 +1360,54 @@ HTML,
   <li>The <strong>My certificate</strong> cell at the top shows the first certificate you hold, with an <strong>Open</strong> button. If you don't hold one yet, it shows the next locked one and what it still needs.</li>
   <li>The <strong>Certificates</strong> panel below the achievements lists every certificate you can earn. Earned ones open when you click them. Locked ones show a padlock and a list of what's missing.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a10-certificate-shelf.webp" alt="The Certificates panel at the foot of the Achievements page: two unlocked certificates and two locked ones, each locked one listing what it still needs." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Certificates panel.</strong> Unlocked certificates open with a click. Locked ones carry a padlock and say what's left in your own numbers: "Reach level 5 — you're at level 4". The one tagged <strong>Guild</strong> is made out to your guild.</figcaption>
+</figure>
 <p>A locked certificate tells you exactly what's left, and where you stand when it can work that out: <em>"Reach level 9 — you're at level 5"</em>, or <em>"Complete 12 milestones — you've completed 7"</em>. Every line on that list has to be met before the certificate opens. The hint is written by the same rule that decides the unlock, so the two can't disagree. If you follow a link to a certificate you haven't earned yet, the page says <em>This certificate isn't yours yet</em> and points you back to your Achievements page.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a15-certificate-locked.webp" alt="A certificate opened by its link before the player qualifies: This certificate isn't yours yet, with a Back to Achievements button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A certificate that isn't yours yet.</strong> Opened by its link, it says so and points you back to the Achievements page, where the list of what's left is.</figcaption>
+</figure>
 <p>Your GM can also choose to keep locked certificates out of sight until you've unlocked them. In that case you'll only see the ones you've already earned.</p>
+
+<h3>Certificates Unlocked by the Rubric</h3>
+<p>Some Adventures define what graduating means as a short list of graduation criteria, the <strong>rubric</strong>: how much of each stage you've completed, for example. A certificate can require some or all of them. Your Journal's <strong>Rubric</strong> tab shows where you stand on each criterion, and what is still holding one back. See <a href="/docs/my-work-journal-and-history">The Journal</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a16-maya-rubric.webp" alt="The Journal's Rubric tab: two criteria met and one not yet, with the stage that still has a milestone left." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Where you stand on the rubric.</strong> Two of three criteria met; the third names the stage that still has a milestone open. The certificate that needs all three waits for it.</figcaption>
+</figure>
 
 <h3>Guild Certificates</h3>
 <p>Some certificates go to your guild rather than to you. They're tagged <strong>Guild</strong> on the shelf. A guild certificate reads "Awarded to the team" and carries your guild's name. It prints the guild's combined numbers and member count, worked out from its current members when you open it. The guild's level is the members' average. You'll only be offered a guild certificate if you're in a guild.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/m06-cert-guild.webp" alt="A guild certificate presented to the Engineering guild, with its member count and combined numbers." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A guild's certificate.</strong> Made out to the guild, with its name, member count and combined numbers.</figcaption>
+</figure>
 
 <h3>The Badge on Your Certificate</h3>
 <p>Some certificates print a badge next to your name, and by default it's your current rank. Once you hold a certificate, you can pick a different one from the <strong>My certificate</strong> cell of your Achievements page: click it to choose from the badges and ranks you hold, or drag one onto it from the grid (paths aren't offered). <strong>Use my rank instead</strong> goes back. Levelling up never overrides a badge you picked.</p>
 
 <h3>Printing</h3>
 <p>Open a certificate and press <strong>Print</strong>; to keep a file, choose <em>Save as PDF</em> in your browser's print window. It uses a fixed, print-safe layout (US Letter, landscape), and only the certificate itself goes to paper, not the app around it. Depending on how your GM set it up, it can show a logo, a headline, your name, your badge, a personal paragraph, a few numbers (level, XP, BLOO, energy), the Adventure's name and dates, and a signature. <strong>Show/Hide Achievement</strong> and <strong>Show/Hide Stats</strong> take the badge or the numbers off before you print. If you hold more than one certificate, switch between them from the list above the document.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a13-certificate-rising.webp" alt="A certificate made out to the player, with their level, XP and BLOO, the badge they chose and a signature, under a picker of their certificates and a Print button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your certificate.</strong> Made out to you, with your numbers, the badge you chose and the signer. The list above switches between your certificates.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a14-certificate-print.webp" alt="The print view: only the certificate, sized for a landscape page." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Ready to print.</strong> Only the certificate reaches the page; save it as a PDF from the same window.</figcaption>
+</figure>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/achievements-certificates/p02-phone-shelf.webp" alt="The Certificates panel on a phone, with unlocked and locked certificates." width="720" height="1558" loading="lazy">
+    <figcaption><strong>Certificates on a phone.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/achievements-certificates/p03-phone-certificate.webp" alt="A certificate open on a phone, with its Print button." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A certificate on a phone</strong>, with Print.</figcaption>
+  </figure>
+</div>
 
 <h2>Secrets and Clues</h2>
 <p>Some milestones carry a hidden "success message" — a bit of story or narrative payoff your GM wrote for finishing that milestone, written specifically to be a) hidden until then and b) worth savoring once. Every one you've unlocked gets collected on your <strong>Secrets and Clues</strong> page — a personal scrapbook of the story content you've earned, separate from the milestones themselves and worth a look if you want the narrative in one place rather than scattered across the Journey Map.</p>
@@ -812,7 +1426,7 @@ HTML,
                 'title'      => 'Your Profile Results',
                 'slug'       => 'your-profile-results',
                 'section'    => 'user',
-                'sort_order' => 13,
+                'sort_order' => 14,
                 'body'       => <<<'HTML'
 <p>Some Adventures measure more than what you've learned. They ask questions that build a picture of how you like to play, learn or work. That picture is your <strong>profile</strong>, and it fills in as you answer.</p>
 
@@ -825,6 +1439,10 @@ HTML,
   <li><strong>Pick an answer</strong> — a question with several options. Sometimes you can pick more than one.</li>
   <li><strong>Agree or disagree</strong> — a statement with a row of numbered buttons between two labels, such as "Strongly disagree" and "Strongly agree". Pick one and press <strong>Submit</strong>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/41-profile-agree-scale.webp" alt="An agree-or-disagree profile question: the statement I get energy from meeting new people, buttons 1 to 5 between Strongly disagree and Strongly agree with 5 picked, and a Submit button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>An agree-or-disagree question.</strong> Pick a number between the two labels and press Submit. Continue unlocks once you've answered.</figcaption>
+</figure>
 <p>They might sit in a milestone of their own. They might also be woven into story milestones, so you answer them without noticing they're part of a profile. There are no right or wrong answers, so answer honestly. Each answer counts the moment you submit it, and your reading builds up as you go.</p>
 
 <h2>Your Result</h2>
@@ -835,6 +1453,10 @@ HTML,
   <li><strong>The numbers behind it</strong> — traits measured, how many answers it rests on, and points in play.</li>
   <li><strong>Your full mix</strong> — every trait ranked, with its score, its share and a description.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/42-profile-result.webp" alt="A Profile Result sheet for the Working Style profile: You are most Explorer, 44% of your profile, with its description and a chart of four traits" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A result sheet.</strong> The headline trait with its share and meaning, then the chart of every trait in the profile. The numbers and the full mix follow further down the sheet.</figcaption>
+</figure>
 <p>Some traits are marked <strong>Measured only</strong>. They're scored and charted but never announced as your headline (the HEXAD treats Player and Disruptor this way). You can score highest on one and still get a different headline, and the sheet says so. If none of a profile's traits can be a headline, you get your full mix with no single headline. If you reach the result before answering anything, it tells you nothing has been measured yet.</p>
 <p>A trait can also come with an achievement, awarded when that trait is your headline.</p>
 
@@ -862,7 +1484,7 @@ HTML,
                 'title'      => 'The Journal (My Work): Your Progress & History',
                 'slug'       => 'my-work-journal-and-history',
                 'section'    => 'user',
-                'sort_order' => 14,
+                'sort_order' => 15,
                 'body'       => <<<'HTML'
 <p>The Journal is your full record inside one Adventure: how far you've come, what you've handed in, how your quizzes went, what you've earned, your skills and your profile results. It's called <strong>Journal</strong> in the menu and the page itself is headed <strong>My Work</strong>. Your organization can rename it, so it may carry a different name for you.</p>
 <p>A <strong>Download PDF</strong> button at the top gives you a clean, printable copy of your overview, milestones and achievements to keep or share: in the print window, choose <em>Save as PDF</em>.</p>
@@ -882,13 +1504,30 @@ HTML,
   <li><strong>Rubric</strong> — only when your Adventure has set up Graduation Criteria.</li>
   <li><strong>Profiles</strong> — only when the Adventure measures a profile.</li>
 </ul>
+<p>On a phone the page stacks into one column and the tabs scroll sideways.</p>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/garden-journal/47-mobile-journal.webp" alt="The Journal on a phone: the My Work heading with a Download PDF button, a row of tabs scrolling sideways, and the skills chart." width="720" height="1558" loading="lazy">
+  <figcaption><strong>The Journal on a phone.</strong> The same tabs, scrolling sideways.</figcaption>
+</figure>
 
 <h2>Skills</h2>
 <p>A spider chart of your skills, each in its own colour, all on one scale and always in the same order. With fewer than three skills it draws bars instead. Beside it are four quick facts: your skill points (next to the average for active players), how many skills you've started, your strongest skill, and how many points came from other players through gifts and endorsements.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/29-journal-skills.webp" alt="The Journal's Skills tab: a radar chart of eight skills in their colours, beside quick facts for skill points, skills started, strongest skill and points from other players." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Skills tab.</strong> A radar of every skill in the catalogue, with your total skill points against the cohort's average, your strongest skill, and how much came from other people.</figcaption>
+</figure>
 <p>Click a skill to see what it means, your level out of its maximum, where its points came from, and the three most recent. <strong>See all</strong> opens Skill History filtered to that skill. Below the chart, every skill is listed, ranked, with its description. See <a href="/docs/skills-and-blooms-explained">Skills &amp; Blooms Explained</a> for how skills are earned.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/30-journal-skill-detail.webp" alt="One skill selected under the radar, showing its level, how close it is to the maximum, and a breakdown of where its points came from." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One skill, explained.</strong> Its level, how close it is to mastery, and where its points came from: milestones, endorsements, gifts, help and missions.</figcaption>
+</figure>
 
 <h2>Skill History</h2>
 <p>Every skill point you've received, with where it came from. At the top, <strong>Who has recognised you</strong> shows everyone who chose to give you a point. Below that is a table (When, Skill, Points, How, From) you can search, filter by skill or by source, and sort by date or points.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/31-journal-skill-history.webp" alt="The Skill History tab: the people who recognised the player across the top, then a table of every skill point with its date, skill, points, source and giver." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Skill History.</strong> Every point ever earned, with who gave it and why, searchable and filterable by source.</figcaption>
+</figure>
 
 <h2>Overview</h2>
 <p>Your personal stats dashboard for this Adventure:</p>
@@ -898,36 +1537,88 @@ HTML,
   <li>Your currencies, an XP-over-time chart, and a chart of which kinds of milestones you've completed.</li>
   <li>Progress for every Tabi, your guild's rank and totals, and any SCORM completions.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/32-journal-overview.webp" alt="The Journal's Overview tab: a status card with rank, level and XP and BLOO bars, the engagement gauge, and charts." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Overview tab.</strong> Your status, level and rank, the engagement gauge, and the charts of how you've been doing.</figcaption>
+</figure>
 
 <h2>Journey Progress</h2>
 <p>Your overall percentage, a progress bar and "X of Y milestones". It's the same number as the Journey Map's progress widget and the menu, and the same one any "complete N% of the journey" unlock checks. It counts the required milestones on your own path, leaving out optional side quests and chapters your Game Master has switched off. It rounds down, so it never says 100% while a milestone is left.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/33-journal-progress.webp" alt="The Journey Progress tab with the overall percentage, a progress bar and the count of milestones done, stage by stage." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Journey Progress.</strong> How far through the journey you are, stage by stage.</figcaption>
+</figure>
 
 <h2>Milestones</h2>
 <p>Every milestone on your path, under its Tabi, in one list headed <strong>Milestone Progress</strong>. At the top, two counts: <strong>Required</strong> (done out of the total, and how many of those are open now) and <strong>Optional</strong>. Milestones on paths you're not on aren't listed, because they aren't on your map either.</p>
 <p>Each row shows the milestone's XP, BLOO and, when the adventure uses Energy, EP. The numbers light up in their colour once that milestone has paid you; quiet numbers are what finishing it would pay. Every Tabi heading totals what you've earned of what's on offer, and the list ends with an overall total. These are milestone rewards only, so achievements and tasks, which also pay, aren't in them.</p>
 <p>Each row has a status: <strong>Complete</strong> (green), <strong>In progress</strong> (blue: started, or handed in and awaiting review) or <strong>Not started</strong>. A line under the title says what you left in it ("5 attempts, best 83%", "3 answers") and whether it's awaiting review or not open yet. The buttons are <strong>Details</strong>, <strong>View</strong> and <strong>Edit</strong> while a hand-in hasn't been graded, or a <strong>Graded</strong> tag once it has.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/34-journal-milestones.webp" alt="The Milestones tab: milestones grouped under their Tabi with XP, BLOO and EP for each, totals per Tabi, a status and Details, View and Edit buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Milestones tab.</strong> Every milestone under its Tabi, what it paid (XP, BLOO, energy), the total per Tabi, and a status for each.</figcaption>
+</figure>
 <p><strong>Details</strong> opens a window with everything you left in that milestone. For a challenge, every attempt, newest first: pick one to see each question, what you picked and whether it was right. For any other milestone: your hand-in (its date, grade and your Game Master's feedback), then your answer to every step that asked for one. A case study lists its runs; a SCORM package shows its status, score and dates. A milestone you haven't touched has nothing to open, and steps you haven't reached are counted, never shown.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/35-journal-milestone-detail.webp" alt="The Details window for one milestone, listing the player's answers step by step." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A milestone's details.</strong> Everything you left in it: each attempt, and every answer you gave.</figcaption>
+</figure>
 
 <h2>My Answers</h2>
 <p>The milestones you've handed in, as <strong>Submitted Work</strong>: each with its level, name, rewards and grade. <strong>View answers</strong> reads back everything you wrote and every answer you gave, step by step. <strong>Edit</strong> stays until it's graded; after that it's marked <strong>Graded</strong>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/36-journal-answers.webp" alt="The My Answers tab listing submitted milestones with their rewards, grade and buttons to view the answers." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My Answers.</strong> Everything you wrote or handed in, in one place.</figcaption>
+</figure>
 
 <h2>Challenges</h2>
 <p>Every quiz attempt you've made, as <strong>Challenge Attempts</strong>: pass or fail, your grade and the date. Click an attempt to open it in the Details window, with each question, the answer you picked, and whether it was right. It's a good way to learn from a quiz you didn't ace the first time. See <a href="/docs/taking-a-challenge">Taking a Challenge</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/37-journal-challenges.webp" alt="The Challenges tab listing challenge attempts with pass or fail, the grade and the date." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Challenge attempts.</strong> Each attempt with its score.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/38-journal-challenge-attempt.webp" alt="One challenge attempt opened question by question, marking each answer right or wrong." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One attempt, question by question.</strong> What was asked, what you answered, and whether it was right.</figcaption>
+</figure>
 
 <h2>Case Studies and Achievements</h2>
 <p><strong>Case Studies</strong> lists every run of an interactive case study: how far you got, your score and whether you passed. <strong>Achievements</strong> shows your badges and ranks as a grid; click one you hold to open its collectible card. If the Adventure hides achievements until they're earned, only yours are shown.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/39-journal-casestudies.webp" alt="The Case Studies tab listing a case-study run with its progress, score and result." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Case Studies.</strong> Each run of a case study with its result.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/41-journal-achievements.webp" alt="The Achievements tab: a grid of badges, the earned ones in colour." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Achievements.</strong> The badges and ranks you hold, and the ones still to find.</figcaption>
+</figure>
 
 <h2>Activity</h2>
 <p><strong>My Activity</strong> is your log in this Adventure, newest first: milestones finished, items bought, achievements earned, levels reached and more. Search it, filter it by kind of activity, choose how many rows a page shows, and page through. It's a record, not a to-do list: what needs your attention is on the <a href="/docs/notifications">notifications</a> bell.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/42-journal-activity.webp" alt="The Activity tab: a searchable, filterable log of the player's actions, newest first, with paging." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My Activity.</strong> Your log: search it, filter by kind of activity, and page through.</figcaption>
+</figure>
 
 <h2>Rubric</h2>
 <p>If your Adventure has Graduation Criteria set up, this tab shows exactly where you stand against each one — <strong>met</strong>, <strong>not yet</strong> but still reachable, or <strong>out of reach</strong> — and why. See <a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a> for how a Game Master builds a rubric.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/43-journal-rubric.webp" alt="The Rubric tab listing three graduation criteria, each with the player's standing against it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Rubric tab.</strong> The graduation criteria your adventure judges by, and where you stand on each.</figcaption>
+</figure>
 
 <h2>Profiles</h2>
 <p>If the Adventure measures a profile, this tab holds your sheet for each one, building up as you answer. See <a href="/docs/your-profile-results">Your Profile Results</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/44-journal-profiles.webp" alt="The Profiles tab showing the player's result sheet for a working-style profile." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Profiles.</strong> Your result sheet for each profile the adventure measures: here, a working-style profile from the journey.</figcaption>
+</figure>
 
 <h2>Who Else Can See It</h2>
 <p>Your GM can open any player's Journal to check how they're getting on. There's no self-service reset. If you need to run a milestone again from scratch, ask your GM: an administrator can clear your record of that one milestone.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/50-gm-journal.webp" alt="A player's Journal opened by a Game Master, headed Player Work, with Download PDF and Player Records buttons above the same tabs." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your Journal, as your Game Master sees it.</strong> The same tabs under the heading <em>Player Work</em>, with a way on to your Player Records.</figcaption>
+</figure>
 
 <h2>Related</h2>
 <ul>
@@ -943,7 +1634,7 @@ HTML,
                 'title'      => 'The Library: Study Notes & Glossary',
                 'slug'       => 'the-library-study-notes',
                 'section'    => 'user',
-                'sort_order' => 15,
+                'sort_order' => 16,
                 'body'       => <<<'HTML'
 <p>Some adventures come with study notes: a short, readable summary of each module you've reached, written from the course's own material, plus a glossary of the terms it uses. When your adventure has them, its <strong>Resources</strong> page becomes the <strong>Library</strong>, a place to revise whenever you like. Your adventure may call the page something else.</p>
 
@@ -957,14 +1648,47 @@ HTML,
 
 <h2>Study Notes</h2>
 <p>Each set of notes is a card with the milestone it comes from, how many terms it explains, and where that milestone stands for you: <strong>Done</strong>, <strong>Handed in</strong> (waiting for a mark) or <strong>Open now</strong>. Search them with <strong>Search your notes</strong>, and press <strong>Read the notes</strong> to open one.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m03-resources-notes.webp" alt="The Resources page on its Study notes tab: a card per set of notes with its kind, its milestone, a preview and Read the notes." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Study notes.</strong> One card per set you can read, with its kind (video, slide deck, module, case study) and the milestone it belongs to.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m04-notes-search.webp" alt="Search your notes with a word typed, the cards filtered to the matching sets." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Search your notes.</strong> The cards filter as you type, across titles, milestone names, the notes and their terms.</figcaption>
+</figure>
 <p>An open set shows the notes themselves, the glossary terms that go with them, and a button to go to the milestone. If the milestone has a slide deck you're allowed to keep, <strong>Download the deck</strong> is there too. Every set carries the same reminder: the notes were written by A.I. from that step's material and checked by your Game Master, and the material itself is the final word.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m05-note-open.webp" alt="A set of study notes open in the reader: headings, points and numbered steps, followed by the set's terms and meanings." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A set of notes, open.</strong> Headings, points and steps as written, then the terms of that set.</figcaption>
+</figure>
 <p>You only read notes for what you've reached. Notes for milestones ahead of you stay closed, and the tab just says how many more sets open as you play.</p>
 
 <h2>Glossary</h2>
 <p>Every term from the notes you can read, each with its meaning and where it came from (<strong>From:</strong>). Use <strong>Find a term</strong> to search. New terms arrive with each new set of notes.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m06-glossary.webp" alt="The Glossary tab: terms A to Z, each with its meaning and the notes it comes from." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Glossary.</strong> Every term A to Z, each naming the notes it comes from; the link takes you there.</figcaption>
+</figure>
 
 <h2>Resources and Slide Decks</h2>
 <p>The last tab holds the files. When your Game Master lets players download them, <strong>Slide decks</strong> lists the deck of every milestone you have open or done, each with a <strong>Download</strong> button. Below them are the adventure's resources, with a search box, the same as on any Resources page.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m08-resources-files.webp" alt="The Resources tab: the shelf of resources as book covers in their colours, and the slide decks to download." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Resources.</strong> The shelf your Game Master filled, and the slide decks of the milestones you've reached.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<p>The Library works the same on a phone: the tabs sit at the top, and a set of notes fills the screen.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-posts-library/p01-phone-notes.webp" alt="The Study notes tab on a phone, one card per set of notes." width="720" height="1558" loading="lazy">
+    <figcaption><strong>Study notes.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-posts-library/p02-phone-note.webp" alt="A set of notes open on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>Reading a set.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>The Library and Cooper</h2>
 <p>If your adventure has <a href="/docs/getting-help-support-and-chat">Cooper</a>, the assistant reads the same notes. Ask it where something was covered and it can point you to the module and the notes, within what you've reached.</p>
@@ -982,10 +1706,10 @@ HTML,
                 'title'      => 'Your Account: Profile, Security & Privacy',
                 'slug'       => 'your-account-profile-and-privacy',
                 'section'    => 'user',
-                'sort_order' => 16,
+                'sort_order' => 17,
                 'body'       => <<<'HTML'
 <p>Everything about you as a person, separate from any one Adventure, lives on <strong>My Account</strong>. Open it from your profile panel (click your picture in the top-right corner, then <strong>Account settings</strong>), or from <strong>My account</strong> in the New view's menu.</p>
-<p>The page has seven sections, listed as tabs across the top: <strong>Profile</strong>, <strong>Security</strong>, <strong>Emails</strong>, <strong>A.I. (Cooper)</strong>, <strong>Billing</strong>, <strong>Transactions</strong> and <strong>Your data</strong>. Guest accounts from an open demo don't have a My Account page: see <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
+<p>The page has seven sections, listed down the left side (on a narrow screen, as tabs across the top): <strong>Profile</strong>, <strong>Security</strong>, <strong>Emails</strong>, <strong>A.I. (Cooper)</strong>, <strong>Billing</strong>, <strong>Transactions</strong> and <strong>Your data</strong>. Guest accounts from an open demo don't have a My Account page: see <a href="/docs/playing-as-a-guest">Playing as a Guest</a>.</p>
 
 <h2>Profile</h2>
 <ul>
@@ -999,6 +1723,10 @@ HTML,
   <li><strong>Menu</strong> — <em>Whatever each adventure starts with</em>, <em>Classic: top bar, taskbar and menu</em> or <em>New: the pause-screen menu</em>. Your choice goes with you to every adventure. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</li>
   <li>The optional <strong>Company Name</strong>, <strong>Website URL</strong> and <strong>LinkedIn URL</strong>, and <strong>My Bio</strong>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/k02-account-picker.webp" alt="My Account's Profile tab: the email with its Change button, Player Level 4, the Language list open on eleven languages, the Menu choice and the optional Company Name, Website URL and LinkedIn URL fields" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Profile section.</strong> The sections run down the left. Here the Language list is open, every language named in itself; under it, the Menu choice that follows you to every adventure.</figcaption>
+</figure>
 <p>Changes save as you make them, and there's a <strong>Save</strong> button at the bottom as well.</p>
 <p>Looking for your personality-test results? They live inside the Adventure that measured them, on your Journal's Profiles tab. See <a href="/docs/your-profile-results">Your Profile Results</a>.</p>
 
@@ -1007,10 +1735,18 @@ HTML,
   <li><strong>Password</strong> — enter your current password, then the new one twice (12 to 50 characters), and press <strong>Update Password</strong>.</li>
   <li><strong>Email Address</strong> — enter the new address and your current password, then press <strong>Send Confirmation Link</strong>. The link goes to the <em>new</em> address. Nothing changes until you click it, and it's valid for an hour. If you open it too late, the page says the link has expired and your address hasn't changed, and <strong>Send me a new link</strong> sends a fresh one to the same new address.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/e07-mail-email-change.webp" alt="The Confirm your new email message, sent to the new address, with a Confirm Email Change button and a note that the link expires in 1 hour" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The confirmation email.</strong> It goes to the new address and names it. Nothing changes until <strong>Confirm Email Change</strong> is clicked; ignore the email and your address stays as it was.</figcaption>
+</figure>
 <p>Every sign-in to your account is recorded with the network address and browser it came from, and kept for 12 months, so that misuse can be traced. After 5 failed sign-ins from one network within 15 minutes, signing in to your account is locked there for 15 minutes; resetting your password lifts it straight away.</p>
 
 <h2>Emails</h2>
 <p>A switch for every Adventure you're seated in. Some adventures send automatic reminders about your progress, for example when you fall behind, or a note when you earn something. Turning an Adventure's switch off stops that Adventure's automatic emails; a message your Game Master writes to you directly still arrives. If an Adventure sends no automatic reminders yet, the switch is still there, and says it will apply if it starts.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/a05-account-emails.webp" alt="My Account with the Emails tab selected: an Automatic Emails panel with a ticked switch for the Launch Week Showcase adventure, followed by the A.I. (Cooper) key panel and the Subscription panel" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Automatic Emails.</strong> One switch per adventure, saying what it does right now. Below it on the same page: your own Claude key under A.I. (Cooper), and your plan under Subscription.</figcaption>
+</figure>
 <p>If an Adventure you play in runs lotteries or leaderboard prizes (on an Enterprise platform), its switch also stops its lottery-day emails: the entries email and the results email. That Adventure's switch says so. A lottery you win still shows in your <a href="/docs/notifications">notifications</a>, and a gift card you win still arrives in its own email.</p>
 <p>If you're on an Adventure's staff (its owner, a Game Master or a platform administrator), its switch also stops the email you get when an A.I. check couldn't run there (see <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>); the alert still reaches your notifications. That Adventure's switch says so. An Adventure you're not in isn't listed: use the link at the foot of its alert, which opens a page with the same switch.</p>
 
@@ -1056,7 +1792,7 @@ HTML,
                 'title'      => 'Choosing Your Language',
                 'slug'       => 'choosing-your-language',
                 'section'    => 'user',
-                'sort_order' => 17,
+                'sort_order' => 18,
                 'body'       => <<<'HTML'
 <p>BLUERABBIT speaks 11 languages. Pick yours and the buttons, menus, messages and guided tours all switch to it, in every adventure you play.</p>
 
@@ -1081,16 +1817,54 @@ HTML,
   <li><strong>When you sign up</strong> — the sign-up form has a <strong>Language</strong> field.</li>
   <li><strong>Any time after</strong> — open <a href="/docs/your-account-profile-and-privacy">My Account</a> and change <strong>Language</strong> in the Profile section. The page reloads in the new language straight away.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/k01-signup-picker.webp" alt="The sign-up form with its Language list open, each language written in itself." width="1600" height="900" loading="lazy">
+  <figcaption><strong>At sign-up.</strong> The sign-up form lists all eleven languages, each written in itself, so someone who can't read English still finds theirs. It starts on the platform's default language.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/k02-account-picker.webp" alt="My Account, Profile, with the Language list open." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Any time in My Account.</strong> The same eleven, each in its own words. Your choice goes with you into every adventure.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/k04-account-switched.webp" alt="My Account shown in Spanish after the language was changed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A moment later.</strong> After choosing Español the page reloads in Spanish: every label, hint and button. Your name, your adventures and their content stay as written.</figcaption>
+</figure>
 <p>Your language belongs to your account, not to an adventure: it follows you everywhere. If you've never chosen one, you see the platform's default language.</p>
 
 <h2>What Changes, and What Doesn't</h2>
 <p>Everything BLUERABBIT itself says is translated: the menus and buttons, messages and confirmations, the guided tours, the labels on your Journal and the names of days and months in dates.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/t01-journey-es_MX.webp" alt="The journey map in Spanish: the top bar, status panels and labels translated, the adventure's own art and names unchanged." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The journey in Spanish.</strong> The top bar, the status panels and the labels are in the player's language. The milestones, the art and the texts are the adventure's own.</figcaption>
+</figure>
 <p>What people wrote stays as they wrote it:</p>
 <ul>
   <li><strong>Your adventure's content</strong> — milestones, steps, posts, items, achievements and everything else your Game Master wrote appear in the language they were written in.</li>
   <li><strong>Names your Game Master chose</strong> — if your adventure has renamed its Journey, its sections or its currencies, those names stay exactly as set. XP, BLOO and EP keep their names unless your Game Master renamed them, and the Garden's Blooms are called Blooms in every language.</li>
   <li><strong>Emails</strong> — BLUERABBIT's own emails, such as confirmation links and password resets, are sent in English. An email your Game Master writes arrives in the words they wrote.</li>
+  <li><strong>The text editor's toolbar</strong> — the formatting buttons of the rich-text editor (in My Account, for example) are still in English.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/t14-certificate-es_MX.webp" alt="A printable certificate with its buttons and labels in Spanish and its wording as the Game Master wrote it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A certificate, in Spanish.</strong> BLUERABBIT's own words are translated (Imprimir, LOGRO, NIVEL). The title, the presentation line and the wording are the Game Master's, so they appear exactly as written.</figcaption>
+</figure>
+
+<h2>On a Phone</h2>
+<p>Your language follows you onto a phone the same way.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/languages/p01-phone-menu-ja.webp" alt="The menu on a phone, in Japanese." width="720" height="1558" loading="lazy">
+  <figcaption><strong>日本語.</strong> The menu on a phone.</figcaption>
+</figure>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/languages/p02-phone-shop-de_DE.webp" alt="The item shop on a phone, in German." width="720" height="1558" loading="lazy">
+  <figcaption><strong>Deutsch.</strong> The item shop.</figcaption>
+</figure>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/languages/p04-phone-journal-es_MX.webp" alt="The Journal on a phone, in Spanish." width="720" height="1558" loading="lazy">
+  <figcaption><strong>Español.</strong> The Journal.</figcaption>
+</figure>
+</div>
 
 <h2>Related</h2>
 <ul>
@@ -1105,7 +1879,7 @@ HTML,
                 'title'      => 'Getting Help: Requests, Cooper & Guided Tours',
                 'slug'       => 'getting-help-support-and-chat',
                 'section'    => 'user',
-                'sort_order' => 18,
+                'sort_order' => 19,
                 'body'       => <<<'HTML'
 <p>Stuck, short of time, or not sure where to look? There are several ways to get help inside an Adventure. Which ones you see depends on how your Game Master has set it up.</p>
 
@@ -1113,9 +1887,31 @@ HTML,
 <p>Most adventures have a form for sending the team a message: a bug, a question, an idea, a request for more time. Open it with the speech-bubble button (in the top-right corner in the New view, or among the quick links above the Classic taskbar), or with <strong>Message the game master</strong> in the New view's menu.</p>
 <p>By default the form is titled <em>Send feedback</em> and asks two things: <strong>What is it about?</strong> and <strong>Tell us more</strong>. Your Game Master can reword it for their adventure, for example as a deadline extension request, and can add a date field ("Extension needed until"), which can't be in the past. Every field it shows is required. Press <strong>Send</strong>; if you've left something out, the form says what before anything is sent.</p>
 <p>If your adventure doesn't show the button, the form is switched off there.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/a02-request-filled.webp" alt="The feedback form filled in with a subject and a message, ready to send." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Writing a request.</strong> Nothing is sent until you press <strong>Send</strong>, and an empty field is caught in the form itself, in words, before anything leaves.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/a03-request-sent.webp" alt="The confirmation that a request was sent, with a button to My Requests." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Sent.</strong> The confirmation stays on screen until you close it, and points you to My Requests, where the answer will appear.</figcaption>
+</figure>
 
 <h2>My Requests</h2>
 <p><strong>My Requests</strong> (in the menu) lists every request you've sent in this Adventure with its status: <strong>Pending</strong>, <strong>Read</strong>, <strong>Resolved</strong> or <strong>Dismissed</strong>. Filter the list by All, Pending, Resolved or Dismissed. If an admin writes back, their note appears under your request as <strong>Admin response</strong>, and the <a href="/docs/notifications">notifications</a> bell lets you know. <strong>New Request</strong> opens the same form as the button.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/c04-my-requests-answered.webp" alt="My Requests showing a request marked Resolved, with the Game Master's note under the message." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An answered request.</strong> My Requests shows it <em>Resolved</em>, with the Game Master's note under your message as the Admin response.</figcaption>
+</figure>
+<div class="doc-shots-row">
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/email-requests/f03-phone-request-form.webp" alt="The feedback form on a phone." width="720" height="1558" loading="lazy">
+  <figcaption><strong>On a phone.</strong> The same form, sized for a thumb.</figcaption>
+</figure>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/email-requests/f04-phone-my-requests.webp" alt="My Requests on a phone, with the team's answer." width="720" height="1558" loading="lazy">
+  <figcaption><strong>My Requests on a phone.</strong> Your requests and the team's answers.</figcaption>
+</figure>
+</div>
 
 <h2>Cooper, the In-App Assistant</h2>
 <p>If your Adventure has <strong>Cooper</strong> switched on, its picture sits in the top-right corner in the New view, its card is at the top of the menu (<strong>Ask</strong>), and in the Classic view it's a quick link above the taskbar. Any of them opens a chat panel. The chat offers starting points such as "What can I do right now?", "How am I doing so far?" and "I'm stuck - where should I look?".</p>
@@ -1151,14 +1947,22 @@ HTML,
                 'title'      => 'The Garden — An Overview',
                 'slug'       => 'the-garden-overview',
                 'section'    => 'user',
-                'sort_order' => 19,
+                'sort_order' => 20,
                 'body'       => <<<'HTML'
 <p>BLUERABBIT has two play areas, not one. The <a href="/docs/journey-map-guide">Journey</a> is your <em>individual</em> progression: milestones, XP, levels, achievements. The <strong>Garden</strong> is your <em>relational</em> progression: a living picture of who you actually work with, and how well you keep those relationships going.</p>
 <p>Where the Journey answers "how am I growing?", the Garden answers "who am I growing with?"</p>
 <p>If your adventure has the Garden switched on, it has its own button in the menu, with Tasks, Missions, the Help board and My skills beside it, in both views. You can also choose to start each visit in the Garden rather than on the Journey. See <a href="/docs/finding-your-way-around">Finding Your Way Around</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/22-start-menu.webp" alt="The menu open over the game, with buttons for the Garden, Tasks, Missions, the Help board and My skills below the journey's own buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Garden in the menu.</strong> The Garden's places sit beside the journey's: Garden, Tasks, Missions, Help board and My skills, each with a line saying what it's for.</figcaption>
+</figure>
 
 <h2>What You See</h2>
 <p>The people enrolled in your adventure appear as hexagons with their photo (or initials): other players, NPCs and your Game Masters, arranged in rings around you at the centre. Each adventure has its own Garden, just as it has its own Journey.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/01-garden-map.webp" alt="The Garden: colleagues' photos in hexagons arranged in rings around the player, the nearest in full colour and the outer rings fading to grey." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Garden.</strong> Everyone on the adventure, arranged around you. The people you deal with most sit closest and brightest; people you haven't been in touch with fade towards grey. Each face takes the colour of that person's strongest skill.</figcaption>
+</figure>
 <p>A Garden shows up to 168 people around you, seven full rings; your Game Master can set a different number. In a bigger adventure, the people who matter most to you are the ones shown: your connections and the people you deal with most come first, then the most recently active. Guest players from an open demo come after the adventure's own people.</p>
 <p>Three things about each hexagon are worked out from what actually happens between you:</p>
 <ul>
@@ -1176,7 +1980,15 @@ HTML,
   <li>Either of you can <strong>Disconnect</strong> at any time.</li>
 </ul>
 <p>A connection is pulled to the centre of your Garden, ahead of everyone else, and gets a gold halo around its hexagon. The halo doesn't stop the fading: a connection you haven't spoken to in months greys out like anyone else. The halo says they matter to you. It doesn't mean you're in touch.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/02-garden-zoom.webp" alt="The Garden zoomed in on the inner circle around the player, several hexagons ringed in gold." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The inner circle, up close.</strong> The colleagues you message, help and recognise most sit right around you. The ones ringed in gold are your connections.</figcaption>
+</figure>
 <p>The <strong>Connections</strong> panel lists requests waiting on you (under <em>Waiting on you</em>) and everyone you're connected to.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/09-garden-connections.webp" alt="The Connections panel open over the Garden, with a pending request showing Accept and Dismiss buttons above the list of connections." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Connections panel.</strong> Requests waiting on you, each with Accept and Dismiss, then everyone you're connected to.</figcaption>
+</figure>
 
 <h2>The Backdrop</h2>
 <p>The Garden's background gets richer as your skills grow. It compares your total Blooms with the average for players in your adventure who have earned any, and shows one of five states:</p>
@@ -1188,10 +2000,29 @@ HTML,
   <li><strong>Full bloom</strong>: at or above the average.</li>
 </ul>
 <p>This is independent of how many people you know. A Garden can be bright but empty (strong skills, few relationships) or full but dull (lots of relationships, few skills). Your current state is written out in the Garden section of your profile panel, which opens when you click your picture in the corner of the screen.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/21-profile-box.webp" alt="The profile panel open from the player's picture, showing level and rank above a Garden section with the strongest skill, connections and Blooms left to give." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your profile panel.</strong> Open from your picture on any page: your level and rank, then the Garden half, with your strongest skill, your connections and the Blooms you have left to give.</figcaption>
+</figure>
 
 <h2>Moving Around</h2>
 <p>Drag the canvas to pan. The zoom control shows the current percentage, with <strong>−</strong> and <strong>+</strong> buttons and a <strong>⦾</strong> button that recentres on you. The mouse wheel zooms around your pointer, and you can pinch on a touch screen.</p>
 <p>Click anyone to open their drawer: their skills, recent wall posts, any open help requests, and buttons to message them, connect, endorse them or gift a Bloom. Click your own hexagon to open yours, with your Blooms left to give, a box to ask for help, and your own requests.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/04-garden-person.webp" alt="A colleague's drawer open beside the Garden, showing their skills, how you know each other, and buttons to message, connect, award Blooms and gift a Bloom." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A colleague's drawer.</strong> Their skills and levels, how you know each other, and what you can do for them: message, connect, award Blooms in one of their skills, or gift one from your own allowance.</figcaption>
+</figure>
+<p>On a phone it's the same Garden: drag and pinch to move around, and tap anyone to open their drawer.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/garden-journal/45-mobile-garden.webp" alt="The Garden on a phone screen, hexagons of colleagues filling the view." width="720" height="1558" loading="lazy">
+    <figcaption><strong>On a phone.</strong> Pinch and drag to move around.</figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/garden-journal/46-mobile-person.webp" alt="A colleague's drawer on a phone screen." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A drawer on a phone.</strong> The same card, full width.</figcaption>
+  </figure>
+</div>
 
 <h2>The Dock and Its Panels</h2>
 <p>The canvas is deliberately mostly empty. Everything else sits in a dock at the bottom right:</p>
@@ -1205,6 +2036,10 @@ HTML,
   <li><strong>Messages</strong>: your direct messages, in a bigger, easier-to-navigate window with a clear back button to your conversation list.</li>
   <li><strong>Business</strong> (Enterprise only, when a Game Master switches it on): your balance, your energy against its cap, and how many encounters are still out there. The button shows a <strong>!</strong> if your balance has gone below zero. See <a href="/docs/encounters-the-card-draw">Encounters</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/18-garden-skills-panel.webp" alt="The My Skills panel floating over the Garden with a radar chart of eight skills, and the dock of buttons at the bottom right of the screen." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The dock and a panel.</strong> The dock at the bottom right (Messages, Rewards, Connections, Help, Missions, Skills, Tasks), with badges for counts. Here the Skills panel is open: your radar, total skill points, skills started, your strongest skill and a link to your skills sheet.</figcaption>
+</figure>
 <p>Tasks, Missions, Help, Connections and Business open as floating panels, and can't wander off the edge of your screen if you resize your browser window. Drag a panel by its header to move it, and press <strong>−</strong> to minimise it back to the dock. Your layout is remembered for each adventure on the browser you're using. Rewards, Messages and any help request you open appear as windows on top of everything else. Badges on the dock buttons show counts, such as unread messages and rewards to claim.</p>
 
 <h2>What Your Game Master Can Switch Off</h2>
@@ -1228,6 +2063,10 @@ HTML,
 
 <h2>Rewards You Claim</h2>
 <p>Some Blooms land the moment they're earned: endorsements, gifts, asking for help, and Task rewards. Others wait in <strong>Rewards</strong> until you collect them: a finished Mission, help of yours that someone approved, and Blooms your Game Master awarded to a group. Open Rewards and press <strong>Claim</strong>. Nothing is added to your skills until you do.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/11-garden-rewards.webp" alt="The Rewards window with three rewards waiting, each with a Claim button naming the Blooms and the skill." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Rewards waiting to be claimed.</strong> A reply marked as the one that helped, a finished Mission and a Game Master's award, each with a button such as <em>Claim 2 Blooms (Customer Empathy)</em>.</figcaption>
+</figure>
 
 <h2>How the Journey Feeds the Garden</h2>
 <p>The two halves aren't separate games. Milestones and achievements can award <a href="/docs/skills-and-blooms-explained">Blooms</a> in a skill, and skills are what the Garden runs on. They set your colour, they're what people recognise you for, and they're what help requests are tagged with.</p>
@@ -1247,7 +2086,7 @@ HTML,
                 'title'      => 'Skills & Blooms Explained',
                 'slug'       => 'skills-and-blooms-explained',
                 'section'    => 'user',
-                'sort_order' => 20,
+                'sort_order' => 21,
                 'body'       => <<<'HTML'
 <p>Skills and Blooms are the two ideas the whole Garden rests on. They're simpler than they first look, because they're really the same thing seen from two directions.</p>
 
@@ -1273,6 +2112,10 @@ HTML,
 
 <h2>Instant or Claimed</h2>
 <p>Most Blooms land the moment they're earned. Three kinds wait for you instead: Mission rewards, approved help, and group awards from your Game Master. They arrive in <strong>Rewards</strong> in the Garden dock, each with a button such as <strong>Claim 2 Blooms</strong>. Your skill level only goes up when you press it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/12-garden-claim.webp" alt="A celebration after claiming a reward, showing the number of Blooms and the skill they landed in." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Claiming a reward.</strong> Every claim is celebrated with the number of Blooms and the skill they landed in.</figcaption>
+</figure>
 
 <h2>Seeing Your Skills</h2>
 <ul>
@@ -1281,6 +2124,10 @@ HTML,
   <li><strong>Anyone's drawer</strong> in the Garden shows the skills they hold and their level in each.</li>
 </ul>
 <p>Every grant is recorded permanently with its source. Nothing about your skill levels is guesswork.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/31-journal-skill-history.webp" alt="The Journal's Skill History tab: a row of people who recognised the player above a searchable table of every skill point with its date, skill, points, source and giver." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Skill History in your Journal.</strong> Every point you've earned, with who gave it and why. Search it, or filter it by skill or by source.</figcaption>
+</figure>
 
 <h2>What Blooms Can Unlock</h2>
 <p>Your Game Master can use Blooms as a requirement elsewhere in the adventure: an achievement that's granted once you reach a level in a skill, a Task that completes when you do, or a chapter of the Journey whose artwork grows with your Blooms.</p>
@@ -1300,13 +2147,13 @@ HTML,
                 'title'      => 'Giving Blooms — Endorsements and Gifts',
                 'slug'       => 'giving-blooms-endorsements-and-gifts',
                 'section'    => 'user',
-                'sort_order' => 21,
+                'sort_order' => 22,
                 'body'       => <<<'HTML'
-<p>There are two ways to recognise another player, and they're deliberately different. Click anyone in the Garden to open their drawer, and you'll find both.</p>
+<p>There are two ways to recognise another player, and they're deliberately different. Click anyone in the Garden to open their drawer, and you'll find both under <strong>Recognise them</strong>.</p>
 <p>Your Game Master can switch recognition off for an adventure. Then neither button is offered, though the Blooms you earn from milestones, achievements and Tasks still count. Guest accounts from an open demo can't give Blooms at all.</p>
 
 <h2>Award Blooms (Endorsement)</h2>
-<p>Pick a skill from the list and press <strong>Award Blooms</strong>. This is your everyday recognition: "Maria genuinely helped me with this."</p>
+<p>Under <strong>Award Blooms</strong>, pick one of their skills from the list and press <strong>Award</strong>. This is your everyday recognition: "Maria genuinely helped me with this."</p>
 <ul>
   <li>Worth <strong>2 Blooms</strong> in the skill you choose, straight away</li>
   <li>You can endorse <strong>the same person for the same skill once every 24 hours</strong>. Try again sooner and you'll see "You've already endorsed them for this skill today".</li>
@@ -1314,17 +2161,26 @@ HTML,
   <li>You can't endorse yourself.</li>
 </ul>
 <p>The 24 hours are per person <em>and</em> per skill. You can endorse the same colleague for a different skill on the same day, and endorse as many different people as you like.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/05-garden-award.webp" alt="A colleague's drawer in the Garden after an endorsement, confirming the Blooms awarded in the chosen skill." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Awarding Blooms.</strong> Pick a skill of theirs and press Award: +2 Blooms in that skill, once a day per skill. Their skill grows, the two of you move closer in each other's Garden, and the drawer confirms it on the spot.</figcaption>
+</figure>
+<p>Only the skills your Game Master lets players award are offered. If someone holds a skill that isn't, the drawer says so ("Other players cannot award Blooms in: …"): those skills grow through the adventure itself.</p>
 
 <h2>Gift a Bloom</h2>
 <p>Gifts are the scarce version, and scarcity is the point.</p>
 <ul>
   <li>You start with <strong>20 Blooms to give</strong> in each adventure.</li>
   <li>Each gift is worth <strong>1 Bloom</strong> in the skill you choose, and lands straight away.</li>
-  <li>They go <strong>one at a time</strong>. Press <strong>Gift 1 Bloom</strong> and there's no way to send a batch.</li>
-  <li>Every gift asks you to confirm first, because it can't be undone.</li>
+  <li>They go <strong>one at a time</strong>. Press <strong>Gift 1</strong> and there's no way to send a batch.</li>
+  <li>Every gift asks you to confirm first ("Gift 1 Bloom in … to …? This cannot be undone."), because it can't be undone.</li>
   <li>You can't gift to yourself.</li>
 </ul>
-<p>Your remaining balance shows next to <em>Gift a Bloom</em> in anyone's drawer, in your own drawer under <em>Blooms to give</em>, and in your profile panel. When you run out, the button is replaced by "You're out of Blooms to give right now."</p>
+<p>Your remaining balance shows next to <em>Gift a Bloom</em> in anyone's drawer ("From your own allowance — 20 left"), in your own drawer under <em>Blooms to give</em>, and in your profile panel. When you run out, the button is replaced by "You're out of Blooms to give right now."</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/06-garden-gift.webp" alt="A colleague's drawer with the amber Gift a Bloom row, showing a skill picker, the Gift 1 button and how many gift Blooms are left." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Gifting a Bloom.</strong> The amber row draws on your own small allowance, one Bloom at a time, confirmed first. It shows how many you have left.</figcaption>
+</figure>
 <p>The Gift button is amber and the endorsement button is green, so you never mistake a limited gift for an unlimited endorsement.</p>
 
 <h2>Running Out</h2>
@@ -1350,7 +2206,7 @@ HTML,
                 'title'      => 'Help Requests and Messages',
                 'slug'       => 'help-requests-and-messages',
                 'section'    => 'user',
-                'sort_order' => 22,
+                'sort_order' => 23,
                 'body'       => <<<'HTML'
 <p>The Garden isn't only about recognising work that already happened. It's built to get people talking in the first place.</p>
 <p>Both halves of this page are switches your Game Master controls: help requests can be switched off, and so can direct messages (together with connections). When one is off, it's gone from the Garden, the menu and the Journey map. Guest accounts from an open demo don't get either: a guest can't ask for help, answer someone, or message anyone.</p>
@@ -1359,11 +2215,19 @@ HTML,
 <p>You can ask from three places:</p>
 <ul>
   <li>the <strong>Help</strong> panel in the Garden dock (<em>Stuck on something?</em> then <strong>Ask for help — +1 Bloom</strong>)</li>
-  <li>your own drawer, opened by clicking your hexagon (<strong>Post request</strong>)</li>
+  <li>your own drawer, opened by clicking your hexagon (<strong>Post request — +1 Bloom</strong>)</li>
   <li>the <strong>Help Board</strong> page (<strong>Post request — +1 Bloom</strong>), which also has its own button in the menu</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/03-garden-you.webp" alt="The player's own drawer in the Garden: skill chips with levels, Blooms left to give, and an Ask for help box with a skill picker, a text box and a Post request button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Asking from your own drawer.</strong> Click yourself: your skills and levels, your Blooms left to give, and the Ask for help box. Pick a skill, say what you need, and post it. Your open requests are listed below.</figcaption>
+</figure>
 <p>Every request is <strong>tagged with a skill</strong>. That's required, and it's what lets the right people find it instead of it disappearing into a general feed.</p>
 <p>Asking pays <strong>1 Bloom</strong> in that skill, <strong>once per skill every 24 hours</strong>. You can post more requests in the same skill whenever you need to. They just don't pay again until the 24 hours are up, and the confirmation tells you so.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/24-help-posted.webp" alt="A celebration after posting a help request, showing the Bloom earned and the skill it landed in." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A request posted.</strong> Asking is rewarded too: the celebration shows the Bloom you earned and the skill it landed in.</figcaption>
+</figure>
 
 <h2>Choosing Who Helped</h2>
 <p>Your open requests appear in the Help panel under <em>You asked for</em>, showing either "Waiting for an answer" or how many people have offered to help. Click one to open the conversation.</p>
@@ -1377,20 +2241,44 @@ HTML,
 
 <h2>Answering Someone Else</h2>
 <p>The Help panel's <strong>Ways to help</strong> list shows other people's open requests, with the ones in skills you hold first. Press <strong>Help</strong> on a card to open it, write your answer and press <strong>Offer to help</strong>. You'll also find a person's open requests under <em>Needs help</em> in their drawer.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/13-garden-help-panel.webp" alt="The Help panel floating over the Garden, listing colleagues' open help requests, each with the skill it needs and a Help button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Ways to help.</strong> Other people's open requests, with the ones in skills you hold first. Each card names who's asking and the skill they need.</figcaption>
+</figure>
 <ul>
   <li>You get one reply per request, and you can't reply to your own.</li>
   <li>Your reply shows "Waiting for review" until the asker decides.</li>
   <li>If they approve it, it's marked "Approved — earned Blooms" and a reward appears in your <strong>Rewards</strong>: press <strong>Claim</strong> to collect your 2 Blooms.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/15-garden-help-replied.webp" alt="A colleague's help request open as a card, with the player's new reply added to the thread." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Offering help.</strong> Your reply joins the thread straight away and waits for the asker's review. If they mark it as one that helped, your Blooms arrive in Rewards.</figcaption>
+</figure>
 <p>Offering help is real contact with that person, so their hexagon returns to full colour. It also counts toward any <a href="/docs/garden-missions">Mission</a> that asks you to help someone, as soon as you post it.</p>
 <p><strong>Ways to help</strong> leads with who's asking and what skill they need, so you can scan the list quickly — click one and it opens as a full card explaining the request on one side and what helping earns you on the other, the same clear layout Tasks and Missions use. Clicking on a teammate opens their drawer with <strong>Message</strong> and <strong>Connect</strong> (or <strong>Accept</strong> / <strong>Connected</strong>) front and centre, followed by their skills, ways to recognise them, what they need help with, and their recent posts.</p>
 
 <h2>The Help Board</h2>
 <p>Follow <strong>Open the Help Board</strong> from the Help panel, or use <strong>Help board</strong> in the menu, for the full page: your own requests with their replies, and every open request in the adventure. Some cards carry a "Matches one of your top skills" badge.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/23-help-board.webp" alt="The Help Board page: a form to ask for help in a skill, and the player's own requests listed with their replies." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Help Board.</strong> Ask for help in a skill, and follow your own requests with every reply.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/25-help-board-others.webp" alt="Further down the Help Board, other players' open requests, each labelled with the skill it needs." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Everyone else's requests.</strong> Every open question in the adventure, with the skill each one needs, so anyone can step in.</figcaption>
+</figure>
 
 <h2>Direct Messages</h2>
 <p>You can message anyone in your adventure one-to-one, from <strong>Messages</strong> in the dock or the <strong>Message</strong> button in their drawer. Conversations are private between the two of you, belong to the adventure you're both in, and are the same conversations you see in the Wall's Messages tab.</p>
 <p>Unread messages show a badge on the dock button.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/07-garden-messages.webp" alt="The Messages window listing conversations with colleagues, newest first, unread ones marked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Messages.</strong> Your conversations, newest first, with unread ones marked.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/08-garden-chat.webp" alt="One conversation open in the Messages window, with a back button to the conversation list and a box to reply." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A conversation.</strong> Every message is real contact, so it also brings the two of you closer in the Garden.</figcaption>
+</figure>
 <p>Your Game Master may also place a <em>Help</em> panel or a Messages button on the Journey map, so you can do both without leaving it.</p>
 
 <h2>What Counts as Contact</h2>
@@ -1409,7 +2297,7 @@ HTML,
                 'title'      => 'Garden Tasks',
                 'slug'       => 'garden-tasks',
                 'section'    => 'user',
-                'sort_order' => 23,
+                'sort_order' => 24,
                 'body'       => <<<'HTML'
 <p><strong>Tasks are how you improve yourself.</strong> They're the Garden's mechanic for getting better at something: build a habit, practise a skill, do the thing you said you'd do. They pay out in your own progression: XP, BLOO, energy and skill levels.</p>
 <p>That's the whole difference between the Garden's two mechanics:</p>
@@ -1427,6 +2315,10 @@ HTML,
   <li><strong>Unlimited</strong>: repeat it as often as you like.</li>
   <li><strong>Every …</strong> (for example, <em>Every 1d</em> for once a day): repeatable, with a wait between goes. A countdown ring on the card shows exactly when it's back.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/20-garden-task-card.webp" alt="A Task card open: the instructions on one side, its rewards on the other, and a countdown until it can be done again." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Task card.</strong> What to do on one side, what it pays on the other, and a countdown until you can do it again.</figcaption>
+</figure>
 
 <h2>How a Task Completes</h2>
 <p>Some Tasks you complete yourself. Others notice what you did and complete on their own:</p>
@@ -1461,6 +2353,10 @@ HTML,
   <li>A Task completed by finishing a milestone, or by meeting its requirements, is celebrated on your next page, so it doesn't get lost behind the milestone's own result.</li>
   <li>Energy is counted honestly: if you're near your ceiling, the panel shows only the energy you actually kept.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/28-task-complete.webp" alt="A celebration after completing a Task, listing the XP, BLOO and skill Bloom it paid." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Task done.</strong> The celebration shows exactly what it paid: here XP, BLOO and a Bloom in the Task's skill.</figcaption>
+</figure>
 
 <h2>Where to Find Them</h2>
 <ul>
@@ -1468,6 +2364,14 @@ HTML,
   <li>The Tasks page also has its own button in the menu when your adventure uses Tasks.</li>
   <li>On the Journey map, your Game Master may place a Tasks list, or draw a single Task as a hexagon. Click the hexagon to open the same card. It shows whether the Task is ready, waiting, on the clock or done.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/19-garden-tasks-panel.webp" alt="The Tasks panel floating over the Garden, listing repeatable tasks with what each pays and when each comes back." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Tasks in the Garden dock.</strong> A daily check-in, a weekly coffee chat: what each pays, and when it comes back.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/27-tasks-page.webp" alt="The Tasks page listing every task with its rhythm badge, its rewards and a countdown to the next time it can be done." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Tasks page.</strong> Every Task with its rhythm (every 4 hours, daily, weekly), what it pays, and a countdown to the next time.</figcaption>
+</figure>
 <p>Your organization may use a different name for Tasks. They work the same way.</p>
 
 <h2>Related</h2>
@@ -1482,7 +2386,7 @@ HTML,
                 'title'      => 'Garden Missions',
                 'slug'       => 'garden-missions',
                 'section'    => 'user',
-                'sort_order' => 24,
+                'sort_order' => 25,
                 'body'       => <<<'HTML'
 <p><strong>Missions are how you improve your Garden.</strong> Where a <a href="/docs/garden-tasks">Task</a> makes <em>you</em> better, a Mission makes the <em>relationships around you</em> better. It's a nudge to reach out, connect, and do the social things you might otherwise put off. Missions pay out in <a href="/docs/skills-and-blooms-explained">Blooms</a>.</p>
 <p>The shortest version: <em>helping yourself is a Task. Helping someone else is a Mission.</em></p>
@@ -1494,6 +2398,10 @@ HTML,
 
 <h2>What a Mission Asks of You</h2>
 <p>Some Missions you simply do and then press <strong>Mark done</strong>. Most count what you actually do, and complete on their own when you reach the target. The card says what counts, for example "Message 3 times to complete this automatically", and shows your progress (1/3).</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/17-garden-mission-card.webp" alt="A Mission card open: what to do, the Blooms it pays and in which skill, and a progress count." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Mission card.</strong> What to do, the Blooms it pays and in which skill, and how far along you are.</figcaption>
+</figure>
 <p>What a Mission can count:</p>
 <ul>
   <li><strong>Message</strong>: direct messages you send</li>
@@ -1514,7 +2422,15 @@ HTML,
 
 <h2>Tracking and Rewards</h2>
 <p>The <strong>Missions</strong> panel in the Garden dock shows the Missions you haven't finished first, with a <strong>View all</strong> link to the full Missions page, which also has its own button in the menu.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/16-garden-missions-panel.webp" alt="The Missions panel floating over the Garden, listing missions such as lending a hand twice or gifting three Blooms, with progress counts." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Missions in the Garden dock.</strong> Goals done with other people: lend a hand twice, gift three Blooms, make two connections. Progress counts itself from what you actually do.</figcaption>
+</figure>
 <p>When you finish one, its card says "Complete — open Rewards to claim it!" and a reward appears in <strong>Rewards</strong> in the dock. Press <strong>Claim</strong> and the Blooms land, in the skill your Game Master chose. The card then reads "Completed and claimed". Missions pay Blooms, never XP or BLOO.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/26-missions-page.webp" alt="The Missions page listing every mission with its reward, the player's progress, and which ones are finished and waiting to be claimed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Missions page.</strong> Every Mission meant for you, what it pays, how far along you are, and which ones are finished and waiting to be claimed.</figcaption>
+</figure>
 
 <h2>What Isn't a Mission</h2>
 <ul>
@@ -1588,7 +2504,11 @@ HTML,
   <li><strong>New view</strong>: open the menu. The <strong>Game master</strong> group holds <strong>Build</strong> (Manage content, Adventure settings, the Journey builder and the Duplicator), <strong>Watch</strong> and <strong>Run</strong>. The <strong>Add</strong> group makes something new: a Milestone, Challenge, Achievement, Item, Guild, Post, Resource, Session, Speaker or Encounter, each offered once its section is switched on.</li>
   <li><strong>Classic view</strong>: the same tools are in the menu's <strong>Admin Tools</strong> column (Adventure Settings, Journey Builder, Duplicator, Manage Content and the rest) and its <strong>Add Mechanics</strong> column (New Milestone, New Challenge, New Achievement and so on).</li>
 </ul>
-<p>The steps below name the tool; use whichever menu you have.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a01-staff-menu.webp" alt="The New view's menu for a Game Master, with the Staff block open on Game Master: Build, Watch and Run columns, Manage content first under Build." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Game Master's tools in the New view.</strong> Options (or Ctrl+K) opens the menu; its Staff block holds Build, Watch and Run. Players never see this block.</figcaption>
+</figure>
+<p>The steps below name the tool; use whichever menu you have. <strong>Manage Content</strong> is where everything you make is listed, edited and tidied up; <a href="/docs/manage-content-every-section">Manage Content: Every Section</a> walks through each of its tabs.</p>
 
 <h2>1. Start From Scratch or From a Template</h2>
 <p>On <strong>My Adventures</strong>, <strong>New adventure</strong> gives you an empty adventure to build from zero. <strong>From a template</strong> opens the <strong>Template Library</strong>: the published templates on your platform, each card showing who made it, how many milestones, achievements, items and chapters it holds, and how many adventures already use it. Press <strong>Use this template</strong> to create your adventure from one.</p>
@@ -1597,6 +2517,10 @@ HTML,
 
 <h2>2. Set the Basics</h2>
 <p>Open <strong>Adventure Settings</strong>. It shows one pane at a time, picked from the rail down the side, with a search box over every setting. On <strong>Basics</strong>, give the adventure its name, image, highlight colour, dates and time zone. Then go to <strong>Sections</strong> and switch on what you plan to use: Challenges, the Item Shop, Guilds, Tasks, the Garden and the rest, one card per section with its switch, its name and its background. <strong>Rules &amp; scoring</strong> holds grading, what XP, BLOO and EP are called in this adventure, Energy Points and the ranks. A lot of what follows, from map widgets to menu entries, only appears for sections that are on.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/c02-settings-cards.webp" alt="Adventure Settings with its rail of panes on the left and the Sections pane open: a card per section, each with a gear and an on/off switch." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Adventure Settings → Sections.</strong> The rail on the left picks a pane; "Find a setting…" searches them all. Each section card has its switch, and its gear opens the section's own settings.</figcaption>
+</figure>
 <p>On a saved adventure every control saves the moment you change it, and the bar at the bottom says so. Every pane is described in <a href="/docs/complete-adventure-settings-reference">The Complete Adventure Settings Reference</a>.</p>
 
 <h2>3. Create Milestones and Challenges</h2>
@@ -1615,7 +2539,12 @@ HTML,
 <p>Open the <strong>Journey Builder</strong>. Drag milestones and Tabis to where they belong; new ones all start in the same spot, so at first they may sit on top of each other. The palette along the top adds everything else: graphics, text, live widgets such as a leaderboard or a Tasks panel, single task hexagons and shortcut buttons, each at a depth of your choosing. Positions save when you let go, and <strong>Map centre</strong> sets where the map opens for players. See <a href="/docs/journey-builder-design-palette">The Journey Builder: Designing the Map</a>.</p>
 
 <h2>7. Check It, Then Invite People</h2>
-<p><strong>View journey</strong> in the Journey Builder opens the live map in a new tab. Only milestones with the <strong>Publish</strong> status appear on it; drafts stay out of sight until you publish them. When it looks right, move on to <a href="/docs/enrolling-players-and-roles">enrolling players</a>.</p>
+<p><strong>View journey</strong> in the Journey Builder opens the live map in a new tab. Only milestones with the <strong>Publish</strong> status appear on it; drafts stay out of sight until you publish them. Manage Content's <strong>Journey</strong> tab is the quickest way to check them all at once: every milestone under its Tabi in journey order, with drafts and trash kept apart below.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a04-journey.webp" alt="Manage Content's Journey tab: milestones grouped under their Tabis in journey order, each with level, rewards, Tabi and path, and Bulk Upload and New Milestone in the header." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → Journey.</strong> Every milestone by chapter, with its level, rewards, Tabi and path changeable right in the row.</figcaption>
+</figure>
+<p>When it looks right, move on to <a href="/docs/enrolling-players-and-roles">enrolling players</a>.</p>
 
 <h2>Related</h2>
 <ul>
@@ -1624,6 +2553,241 @@ HTML,
   <li><a href="/docs/tabi-editor">The Tabi Editor</a></li>
   <li><a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a></li>
   <li><a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a></li>
+  <li><a href="/docs/manage-content-every-section">Manage Content: Every Section</a></li>
+</ul>
+HTML,
+            ],
+            [
+                'title'      => 'Manage Content: Every Section',
+                'slug'       => 'manage-content-every-section',
+                'section'    => 'setup',
+                'sort_order' => 3,
+                'body'       => <<<'HTML'
+<p><strong>Manage Content</strong> is where everything an Adventure holds is listed, edited and tidied up: milestones, achievements, items, guilds, Tabis, posts, speakers, encounters, Garden content and the reports on what players did. Each kind of content has its own tab, and most of what you'd change often (a level, a cost, a path, a name) is edited right in the list, without opening an editor. This page goes through every tab.</p>
+
+<h2>Getting There</h2>
+<p>Manage Content is for the Adventure's owner, its Game Masters and administrators. In the New view, open the menu (<strong>Options</strong>, or Ctrl+K): the Staff block's Game Master section has <strong>Build</strong>, and <strong>Manage content</strong> is its first link, beside Adventure settings, the Journey builder and the Duplicator. In the Classic view it's in the menu's Admin Tools column. Players never see either.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a01-staff-menu.webp" alt="The New view's menu for a Game Master with the Staff block open: Build, Watch and Run columns, Manage content first under Build." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The way in.</strong> Build holds Manage content; Watch holds Stats, Activity, Player records and Transactions; Run holds the players, their requests, emails and Award Blooms.</figcaption>
+</figure>
+
+<h2>The Dashboard</h2>
+<p>Manage Content opens on its <strong>Dashboard</strong>. The rail on the left lists the tabs; the dashboard counts what the Adventure holds and flags what needs you.</p>
+<ul>
+  <li><strong>Five tiles</strong>: players enrolled, active this week, average completion, hand-ins awaiting validation and open requests.</li>
+  <li><strong>Worth a look</strong>: what needs attention now.</li>
+  <li><strong>Journey</strong>, <strong>Rewards &amp; economy</strong> and <strong>Community &amp; content</strong>: one row per kind of content, split by status. Each label opens the tab that edits it. A section that's switched off still shows its row when it holds content, marked Off.</li>
+</ul>
+<p>Live, Locked and Hidden milestones all count towards journey and Tabi completion; Drafts and Trash don't.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a02-dashboard.webp" alt="Manage Content's Dashboard: the tab rail on the left, five tiles across the top and a Worth a look panel." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Dashboard.</strong> The tiles, and what's worth a look.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a03-dashboard-sections.webp" alt="The Dashboard's Journey, Rewards and economy, and Community and content sections, one row per kind of content split by status." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One row per kind of content.</strong> Each label opens its tab.</figcaption>
+</figure>
+
+<h2>Which Tabs You'll See</h2>
+<ul>
+  <li><strong>Always</strong>: Dashboard, Journey, Certificates, Tabis, Branches and Requests.</li>
+  <li><strong>Content with its own section</strong>: Achievements, Items (with the Item Shop or the Backpack), Guilds, Blog, Lore and Speakers. These stay in the rail even while their section is switched off, so you can set content up before switching it on.</li>
+  <li><strong>Reports, once there's something to report</strong>: Validation (while a milestone requires it), Challenges (once a challenge has been played), Case Studies, SCORM and Videos (once the Adventure has that kind of step), and the Library (once it has material for study notes).</li>
+  <li><strong>Rubric</strong>, when Graduation Criteria are switched on.</li>
+  <li><strong>Encounters</strong>, <strong>Consequences</strong>, <strong>Skills</strong>, <strong>Tasks</strong> and <strong>Missions</strong>, and <strong>Profiles</strong> when Profile Tests are switched on.</li>
+</ul>
+<p>A tab's name follows your Adventure's own word where you've renamed the section (Journey, Achievements, Challenges, Guilds, Speakers). On Enterprise servers a <strong>Prize Draws</strong> tab manages lotteries (see <a href="/docs/prize-draws">Prize Draws</a>).</p>
+<p><strong>A cohort</strong> shows only what the cohort itself owns: <strong>Requests</strong> (its first tab), Validation, Challenges, SCORM, Guilds, the achievements awarded, Tasks and Missions. Milestones, achievements, items, Tabis and the rest belong to the template, and are managed there. See <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Scaling Cohorts</a>.</p>
+<p><strong>An NPC</strong> sees the Dashboard, Guilds (where they can only appoint a leader), Requests, Validation, Challenges and SCORM, to read rather than change.</p>
+
+<h2>Journey</h2>
+<p>The <strong>Journey Manager</strong> lists every milestone under its Tabi, in journey order (drag a row to change the order). Each row shows its level and rewards, and its Tabi and path can be changed right there. <strong>Bulk Upload</strong> adds milestones from a CSV file and <strong>New Milestone</strong> opens the milestone editor. Search, the type buttons, the chapter and path filters and the sort (journey order, level, title, path, colour) narrow the list.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a04-journey.webp" alt="The Journey Manager: milestones grouped under their Tabis, each row with level, rewards, Tabi and path; Bulk Upload and New Milestone in the header." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Journey.</strong> Every milestone, by chapter.</figcaption>
+</figure>
+<p>A row's actions: <strong>View</strong>, <strong>Edit</strong> (the full editor), <strong>Quick Edit</strong> (its start date and deadline, saved as you change them), <strong>Review</strong> (the players' submissions), <strong>Duplicate</strong>, <strong>Lock</strong> and <strong>Trash</strong>. Drafts wait in their own list below the chapters with Edit, Publish and Trash; trashed milestones below that, with <strong>Restore</strong> and <strong>Delete Forever</strong>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a05-journey-row.webp" alt="One milestone row close up: icon, level, rewards, Tabi and path, and its action bar." width="1600" height="163" loading="lazy">
+  <figcaption><strong>A milestone's row.</strong> Trash, Lock and Publish act at the first click, without a question.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a06-journey-quick-edit.webp" alt="Quick Edit open under a milestone row, with its Start date and Deadline fields." width="1600" height="282" loading="lazy">
+  <figcaption><strong>Quick Edit.</strong> The row's dates, changed in place.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/a10-journey-trash.webp" alt="The Trash list under the Journey Manager, with Restore and Delete Forever on a trashed milestone." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The trash.</strong> Nothing in it is on the journey or counts towards completion. Delete Forever removes a milestone for good.</figcaption>
+</figure>
+<p>See <a href="/docs/how-to-build-a-milestone-step-by-step">How to Build a Milestone, Step by Step</a> and <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+
+<h2>Reports: What Players Did</h2>
+<h3>Validation</h3>
+<p>Shown while any milestone requires validation (a setting on the milestone). Every such milestone is listed in journey order under its Tabi, with how many players submitted, how many are waiting, validated or sent back. <strong>Review</strong> opens a milestone's queue: each player's hand-in and grade, <strong>Validate</strong> or <strong>Invalidate</strong>, <strong>Remind</strong> and <strong>Download CSV</strong>. See <a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b09-validation.webp" alt="The Validation tab: milestones that require validation, each with submitted, pending, validated and sent back counts and a Review button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Validation.</strong> What waits for a Game Master, milestone by milestone.</figcaption>
+</figure>
+<h3>Challenges</h3>
+<p>Totals across the challenges (attempts, completions, pass rate, average grade), then each challenge with its questions, attempts, players, completions, pass rate, average grade and last attempt, and <strong>Download CSV</strong>. <strong>Open report</strong> shows everyone who took one, each attempt and its answers, and how each question went. A player counts as completed once, the first time they pass; the pass rate and grade count submitted attempts only. Challenges themselves are made under Journey.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b01-challenges.webp" alt="The Challenges report: totals across the top, then a row per challenge with attempts, players, completed, pass rate, average grade and last attempt." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Challenges.</strong> How each challenge went.</figcaption>
+</figure>
+<h3>Case Studies, SCORM and Videos</h3>
+<ul>
+  <li><strong>Case Studies</strong>: each case study step with its attempts, players and pass rate. <strong>Review Entries</strong> lists every attempt, with the best attempt per player, <strong>Regrade all</strong> and Download CSV.</li>
+  <li><strong>SCORM</strong>: each package with started, finished, not finished, the average score and whether the milestone holding it was completed; a filter by name, Download CSV, and <strong>Players</strong> for who opened it, how far they got and their score. See <a href="/docs/how-to-add-a-scorm-package">How to Add a SCORM Package</a>.</li>
+  <li><strong>Videos</strong>: each video step with how many players watched and the average share watched; <strong>Review Stats</strong> shows each player. It's analytics only: nothing here changes whether a step counts as done.</li>
+</ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b03-casestudies.webp" alt="The Case Studies tab: each case study step with attempts, players and pass rate." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Case Studies.</strong></figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b05-scorm.webp" alt="The SCORM tab: each package with started, finished, not finished, average score and milestone completed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>SCORM.</strong> A package counts as finished when it reported itself completed or passed.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b07-videos.webp" alt="The Videos tab: each video step with players who watched and the average share watched." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Videos.</strong></figcaption>
+</figure>
+
+<h2>Rewards</h2>
+<h3>Achievements</h3>
+<p>Counts across the top (published, draft, trash), buttons for each path group (All, General, one per branch), search, a filter and a sort; <strong>Upload file</strong>, <strong>Branches</strong> and <strong>New Achievement</strong> in the header. The table groups badges, paths and ranks; each row has its colour, name, magic code (<strong>Generate</strong> one, or take it back), how many times it was awarded and its XP and BLOO (or your Adventure's names for them), edited in place, with Edit, Duplicate and Trash. Below: a summary with <strong>Reorder Achievements</strong>, the drafts, the trash and <strong>Magic Links</strong>, the shareable link for every achievement that has a code. See <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/c01-achievements.webp" alt="The Achievements tab: counts, path buttons, search and filters, and a table of badges, paths and ranks with editable XP and BLOO." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Achievements.</strong> Badges, paths and ranks in one table.</figcaption>
+</figure>
+<h3>Certificates</h3>
+<p>One table per status. Each certificate shows its three pictures (each opens the media library), its name (edited in place), who it's for, its stats and what unlocks it, with Edit, Make draft or Publish, Duplicate and Trash; the trash has Restore and Delete forever. A section with nothing in it says "Nothing here". Deleting a certificate for good removes the rules that gated it too. See <a href="/docs/certificates-authoring">Authoring Certificates</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/c03-certificates.webp" alt="The Certificates tab: a table of certificates with their pictures, names, audience, stats and unlock rules." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Certificates.</strong></figcaption>
+</figure>
+<h3>Rubric</h3>
+<p>Shown when Graduation Criteria are switched on. Each criterion is a measure (average stage completion, the lowest stage's completion, stages completed below a mark, one named stage's completion, completion across all milestones, or the average mark on marked milestones), a comparison and a number, with <strong>Show players where they stand</strong> and its status, all saved in place. <strong>Add criterion</strong> adds one. <strong>What the criteria decide</strong> lists each certificate and the criteria it requires: criteria measure, certificates award.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/c05-rubric.webp" alt="The Rubric tab: graduation criteria, each with a measure, comparison and number, and Show players where they stand." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Rubric.</strong> The graduation criteria, edited in place.</figcaption>
+</figure>
+<h3>Items</h3>
+<p>Every item grouped by type (consumables, keys, rewards, and Tabi pieces with the Tabi they belong to). Each row's level, category, cost and who can buy it (all paths or one) change in place, with <strong>Assign</strong> (give it to a player), Edit and Trash. The header counts published, drafts and trashed, and holds <strong>Upload file</strong> and <strong>New Item</strong>; the type buttons, a path filter, the sort and the search narrow the list. See <a href="/docs/item-shop-building-an-economy">The Item Shop</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/c07-items.webp" alt="The Items tab: items grouped by type with level, category, cost and who can buy them, and Assign, Edit and Trash." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Items.</strong> Trash and Delete act at the first click here.</figcaption>
+</figure>
+
+<h2>Community</h2>
+<h3>Guilds</h3>
+<p><strong>Assign players to a guild</strong> moves everyone in a CSV file of email addresses into the guild you pick. Below, the published guilds, each edited in place (logo, colour, name, group, leader, capacity) with its invite link; drafts and trash follow. See <a href="/docs/guilds-designing-team-play">Guilds — Designing Team Play</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d01-guilds.webp" alt="The Guilds tab: Assign players to a guild, then the published guilds with logo, colour, name, group, leader, capacity and invite link." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Guilds.</strong> Every row action here asks first.</figcaption>
+</figure>
+<h3>Tabis</h3>
+<p>The <strong>Tabi Manager</strong>: every Tabi numbered in order, with its journey picture and map node, colour, level and rewards, and links to edit it, its pieces and places, its scene, its <strong>Prerequisites</strong> and its <strong>Conditions</strong>; <strong>Add Tabi</strong> and Upload file in the header. Prerequisites opens under the row: pick the other Tabis that must be finished before this one opens. See <a href="/docs/tabi-editor">The Tabi Editor</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d02-tabis.webp" alt="The Tabi Manager: each Tabi numbered with its picture, map node, level and rewards, and links to its page, prerequisites and conditions." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Tabis.</strong> The chapters, in order.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d03-tabi-prerequisites.webp" alt="A Tabi's Prerequisites open under its row, the other Tabis offered as buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Tabi's prerequisites.</strong> The Tabis picked must be finished first.</figcaption>
+</figure>
+<h3>Branches</h3>
+<p>A branch groups path achievements so a player chooses one of them: a Branch Choice step offers the group, and a second path from the same branch is refused. Each branch lists its paths; pick another and <strong>Add</strong> puts it in, <strong>Edit</strong> renames the branch, <strong>New Branch</strong> makes a group. See <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d04-branches.webp" alt="The Branches tab: branch groups, each listing its path achievements, with Add and New Branch." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Branches.</strong></figcaption>
+</figure>
+<h3>Speakers</h3>
+<p>The cast: each speaker's portrait, first and last name (edited in place) and how many dialogue lines they speak. A dialogue step names its speaker, so a name fixed here changes every line. Upload file and New Speaker are in the header. Sessions have no tab of their own: they're managed on the Schedule page. See <a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d06-speakers.webp" alt="The Speakers tab: each speaker with portrait, editable first and last name and their number of dialogue lines." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Speakers.</strong></figcaption>
+</figure>
+<h3>Requests</h3>
+<p>What players sent from the feedback form: the total and how many are pending, a search, and filters by status (All, Pending, Read, Resolved, Dismissed). Each card holds the request and the player, a note box, and <strong>Mark Read</strong>, <strong>Resolve</strong> or <strong>Dismiss</strong> (or <strong>Reopen</strong> once it's closed). See <a href="/docs/managing-player-support-requests">Managing Player Support Requests</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d08-requests-pending.webp" alt="The Requests tab filtered to Pending: request cards with the player, the message, an admin note box and Mark Read, Resolve and Dismiss." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Requests, filtered to Pending.</strong> Only what nobody has answered yet.</figcaption>
+</figure>
+
+<h2>Story and Content</h2>
+<h3>Encounters and Consequences</h3>
+<p><strong>Encounters</strong> holds the deck of cards dealt to players: <strong>Reset deck</strong> and <strong>New Encounter</strong> in the header, the groups with their rules (Edit, Preview, Delete, <strong>Add group</strong>), then every encounter with its kind (crisis or opportunity), group, colour, milestone, weight, times faced and availability, edited in place, with Edit, Preview, <strong>Send to a player</strong>, <strong>Show again</strong> (once it's been dealt), Unpublish and Trash. <strong>Consequences</strong> lists what a choice does to a player, each with its effects as badges, with Edit, Delete and <strong>New Consequence</strong>. See <a href="/docs/random-encounters">Random Encounters</a> and <a href="/docs/consequences">Consequences</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/e01-encounters.webp" alt="The Encounters tab: Reset deck and New Encounter, the encounter groups with their rules, and the first encounters below." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Encounters.</strong> The groups first, then the deck.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/e03-consequences.webp" alt="The Consequences tab: each consequence with its effects shown as badges, and Edit and Delete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Consequences.</strong></figcaption>
+</figure>
+<h3>Blog, Lore and the Library</h3>
+<p><strong>Blog</strong> lists the posts and <strong>Lore</strong> the resources, each edited in place (picture, title, style or path, start date) with Edit, Trash and a reorder; see <a href="/docs/posts-and-resources">Posts &amp; Resources</a>. The <strong>Library</strong> lists every step whose material can become study notes, with where its notes stand; see <a href="/docs/library-study-notes-and-glossary">Authoring the Library</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/e06-library.webp" alt="The Library tab: totals, then each source step with its kind, the status of its notes and when they were built." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Library.</strong> Study notes for videos, slide decks, modules and case studies.</figcaption>
+</figure>
+
+<h2>The Garden and Profiles</h2>
+<ul>
+  <li><strong>Skills</strong>: the skills Blooms grow, each with how many tasks use it; <strong>Quick Edit</strong> opens its name, colour, icon and description in place. New Skill and Upload file in the header. See <a href="/docs/setting-up-your-skills-catalog">Setting Up Your Skills Catalog</a>.</li>
+  <li><strong>Tasks</strong>: the recurring tasks with their badges (how often, XP, BLOO, Blooms and skill); Edit opens a task in a drawer with all its settings (basics, trigger, recurrence, rewards). New Task and Upload file in the header. See <a href="/docs/garden-tasks">Garden Tasks</a>.</li>
+  <li><strong>Missions</strong>: each mission with what it counts, its target and the Blooms it pays; Edit and Delete per mission, and <strong>Award Blooms directly</strong> and New Mission in the header. See <a href="/docs/garden-missions">Garden Missions</a>.</li>
+  <li><strong>Profiles</strong> (with Profile Tests on): the scales a Profile Test scores against, with their traits and how many readings were taken. <strong>Add the official HEXAD</strong> adds the standard player-type profile; New Profile makes your own. See <a href="/docs/profile-tests">Profile Tests</a>.</li>
+</ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d09-skills.webp" alt="The Skills tab: each skill with the number of tasks that use it, and Quick Edit, Save and Delete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Skills.</strong></figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d11-tasks.webp" alt="The Tasks tab: recurring tasks with badges for frequency, XP, BLOO, Blooms and skill." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Tasks.</strong></figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d13-missions.webp" alt="The Missions tab: each mission with its counter, target and reward, and Award Blooms directly in the header." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Missions.</strong></figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d15-profiles.webp" alt="The Profiles tab: each profile with its traits and readings taken, Add the official HEXAD and New Profile." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Profiles.</strong></figcaption>
+</figure>
+
+<h2>Row Actions: What Asks First</h2>
+<p>Not every tab confirms the same way, so it's worth knowing which buttons act straight away:</p>
+<ul>
+  <li><strong>At the first click</strong>: Trash, Publish, Lock, Restore and Delete Forever on the <strong>Journey</strong>, <strong>Items</strong> and <strong>Encounters</strong> tabs. A message in the corner says what happened.</li>
+  <li><strong>Asking first, in the button</strong>: on <strong>Guilds</strong>, <strong>Blog</strong>, <strong>Lore</strong>, <strong>Tabis</strong> and <strong>Branches</strong> the first click turns the button into its question (Trash?, Delete forever?), and a second click within a few seconds runs it.</li>
+  <li><strong>Asking on a card</strong>: Achievements and Certificates.</li>
+  <li><strong>Asking with the browser's own confirm</strong>: Skills, Tasks, Missions, Profiles and Consequences.</li>
+</ul>
+<p><strong>Delete forever means for good.</strong> The item leaves every list and every player page, and nothing in the app brings it back. A guild deleted for good releases its members; a certificate takes its rules with it. When in doubt, Trash: the trash can always be restored.</p>
+
+<h2>On a Phone</h2>
+<p>Manage Content works on a phone: the tabs become a strip across the top to swipe, and the tiles and filters stack. Requests is the tab you're most likely to answer from on the go.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/manage-content/p01-phone-dashboard.webp" alt="Manage Content's Dashboard on a phone, with the tabs as a strip across the top and the tiles stacked." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The Dashboard.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/manage-content/p02-phone-journey.webp" alt="The Journey Manager on a phone, with Bulk Upload and New Milestone, then the search and filters stacked above the milestones." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The Journey list.</strong></figcaption>
+  </figure>
+</div>
+
+<h2>Related</h2>
+<ul>
+  <li><a href="/docs/building-your-first-adventure">Building Your First Adventure</a></li>
+  <li><a href="/docs/bulk-uploads-with-csv">Bulk Uploads &amp; Exports with CSV</a></li>
+  <li><a href="/docs/gm-toolkit-duplicator-reports-and-bulk-actions">GM Toolkit: Duplicator, Player Records &amp; Resets</a></li>
+  <li><a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a></li>
+  <li><a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Scaling Cohorts</a></li>
 </ul>
 HTML,
             ],
@@ -1631,7 +2795,7 @@ HTML,
                 'title'      => 'Enrolling Players & Assigning Roles',
                 'slug'       => 'enrolling-players-and-roles',
                 'section'    => 'setup',
-                'sort_order' => 3,
+                'sort_order' => 4,
                 'body'       => <<<'HTML'
 <p>Everyone in an Adventure holds one role in it, and there are three ways to bring people in: add them yourself, import a CSV, or share the enrollment link. All of it happens on <strong>Manage Players</strong>; the Players pane of Adventure Settings only shows the counts and a button to open it. For the day-to-day tools once people are in, see <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>.</p>
 
@@ -1679,6 +2843,10 @@ HTML,
 
 <h2>Changing Roles and Removing People</h2>
 <p>Switch roles on the <strong>Active</strong> tab of Manage Players: each row has a Player / GM / NPC switch, and the change asks first ("Make GM?", "Make NPC?"). The GM option only appears when your platform allows more than one Game Master. The owner's row can't be changed.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r13-manage-players.webp" alt="Manage Players on its Active tab: each person's row with Journal and Records buttons, a Player / GM / NPC role switch and a Remove button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Roles on Manage Players.</strong> The Active tab, filtered to players. Each row's Player / GM / NPC switch changes the role; Remove moves the person to Inactive with their progress kept.</figcaption>
+</figure>
 <p>Removing someone asks first too: press <strong>Remove</strong>, then confirm. It doesn't delete their progress. They move to the <strong>Inactive</strong> tab, and <strong>Activate</strong> brings them back with everything intact. A GM can't be removed directly ("GMs can't be removed"); switch them to Player first. Platform administrators can't be removed from an Adventure.</p>
 
 <h2>Related</h2>
@@ -1694,7 +2862,7 @@ HTML,
                 'title'      => 'Adventure Templates & Scaling Cohorts',
                 'slug'       => 'adventure-templates-and-cohorts',
                 'section'    => 'setup',
-                'sort_order' => 4,
+                'sort_order' => 5,
                 'body'       => <<<'HTML'
 <p>If you run the same program again and again (a monthly new-hire class, a bootcamp that restarts every term, the same training for several departments), build it once as a <strong>template</strong> and run each group as a <strong>cohort</strong> of it. The content lives on the template and every cohort reads it live. Each cohort keeps its own players, guilds and progress.</p>
 
@@ -1779,7 +2947,7 @@ HTML,
                 'title'      => 'Billing & Plans',
                 'slug'       => 'billing-and-plans',
                 'section'    => 'setup',
-                'sort_order' => 5,
+                'sort_order' => 6,
                 'body'       => <<<'HTML'
 <p>Billing lives entirely inside the app. This website never takes payment; it only points you to the app. The Terms of Service, the Privacy Policy and the Refund Policy you agree to in the app are published here: <a href="/terms">Terms</a>, <a href="/privacy">Privacy</a> and <a href="/refunds">Refunds</a>.</p>
 
@@ -1850,25 +3018,35 @@ HTML,
                 'title'      => 'The Journey Builder: Designing the Map',
                 'slug'       => 'journey-builder-design-palette',
                 'section'    => 'setup',
-                'sort_order' => 6,
+                'sort_order' => 7,
                 'body'       => <<<'HTML'
-<p>The Journey Builder is where you design the map itself. Your milestones and Tabis are already on it once you've made them; the builder is where you arrange them and add everything else players will see — artwork, labels, live panels, shortcuts — at the depth you want. Open the <strong>Journey builder</strong> from the menu: it's under Build in the Game master group of the New view, and in the Admin Tools column of the Classic view. In an adventure made from a template, the map belongs to the template, so design it there.</p>
+<p>The Journey Builder is where you design the map itself. Your milestones and Tabis are already on it once you've made them; the builder is where you arrange them and add everything else players will see — artwork, labels, live panels, buttons — at the depth you want. Open the <strong>Journey builder</strong> from the menu: it's under Build in the Game master group of the New view, and in the Admin Tools column of the Classic view. In an adventure made from a template, the map belongs to the template, so design it there.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c01-builder-opens.webp" alt="The Journey Builder: a toolbar of menus above the map canvas, with Tabis, milestones and widgets on it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Journey Builder.</strong> The toolbar places things (graphics, text, tasks, widgets, Tabis, buttons), chooses the working layer, opens the Layers panel and moves the map centre. Everything on the canvas drags, resizes and, for artwork, rotates.</figcaption>
+</figure>
 
 <h2>The Palette</h2>
-<p>The toolbar along the top is a palette of things to place. Everything you add lands on the canvas ready to drag, resize and arrange.</p>
+<p>The toolbar along the top is a palette of things to place.</p>
 <ul>
-  <li><strong>Add Graphic</strong> — drops an empty frame; use its <strong>Set image</strong> button to choose the picture. Fill in the optional <strong>Link URL</strong> first and players can click the graphic to open that link in a new tab.</li>
+  <li><strong>Add Graphic</strong> — drops an empty frame on the canvas; click it to pick the image from the media library. Fill in the optional <strong>Link URL</strong> first and players can click the graphic to open that link in a new tab.</li>
   <li><strong>Add Text</strong> — real words on the map, with an optional link. Text stays sharp at any zoom and can be edited later, so use it rather than pictures of words.</li>
   <li><strong>Add Task</strong> — pick one of the adventure's tasks by name and it lands as a hexagon bound to that task. Only there when Tasks is switched on.</li>
   <li><strong>Add Widget</strong> — a live panel that shows each player their own information.</li>
-  <li><strong>Add Point</strong> — an invisible marker you can drop anywhere on the map purely as a destination, useful for a spot that doesn't need its own graphic. See "Naming Elements and Gliding to a Place" below.</li>
   <li><strong>Active Tabis</strong> — <strong>Show on the map</strong>: tick which Tabis appear as chapters. See "Switching a Tabi Off" below.</li>
-  <li><strong>Nav Links</strong> — a button that takes players to another part of the adventure.</li>
+  <li><strong>Nav Links</strong> — "Send players somewhere": a button to any part of the adventure, plus the two ways of moving around the map itself, <strong>A point to glide to</strong> and <strong>Glide to a place</strong>. See "Nav Links" and "Naming Elements and Gliding to a Place" below.</li>
   <li><strong>Working layer</strong> and <strong>Layers</strong> — for working with depth, below.</li>
-  <li><strong>Map centre</strong> — lights up a marker you drag to where the map opens for players when they arrive on the journey. Until you move it, the map opens where it always has.</li>
+  <li><strong>Map centre</strong> — where the map opens for players. See "Where the Map Opens" below.</li>
   <li><strong>View journey</strong> — opens the live map in a new tab.</li>
 </ul>
-<p>The widget and link menus only offer what the adventure has switched on in Adventure Settings → Sections, so you can't place a shortcut into a feature players can't use.</p>
+<p>The widget and link menus only offer what the adventure has switched on in its settings, so you can't place a button into a feature players can't use.</p>
+<p>Whatever you add lands in the middle of the view you're looking at, at the top of its layer, and flashes once so you can see what just arrived. If an add is refused, the builder says why.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c11-add-lands.webp" alt="A newly added leaderboard widget highlighted in the middle of the builder's view." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Adding an element.</strong> A Leaderboard picked from Add Widget lands in the middle of the view, ready to drag into place and resize from a corner.</figcaption>
+</figure>
 
 <h2>Widgets</h2>
 <p>A widget reads whoever is looking at it, so two players see different numbers in the same spot.</p>
@@ -1880,7 +3058,15 @@ HTML,
   <li><strong>Messages</strong> — a button that opens the player's direct messages.</li>
   <li><strong>Ways to help</strong> (needs The Garden) — open help requests, plus the player's own.</li>
   <li><strong>Achievements</strong> (needs Achievements) and <strong>Backpack</strong> (needs Backpack) — badges earned and items carried.</li>
+  <li><strong>Posts</strong> and <strong>Resources</strong> — see "Posts &amp; Resources Feed Widgets" below.</li>
 </ul>
+<p>Enterprise servers also offer a Lottery widget (an Enterprise feature; see <a href="/docs/prize-draws">Prize Draws</a>).</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c06-menu-widget.webp" alt="The Add Widget menu open, listing Status, Journey progress, Leaderboard, Guild leaderboard, Tasks, Messages, Ways to help, Achievements, Backpack, Posts and Resources." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Add Widget.</strong> Every kind of live panel the adventure allows. A widget whose feature is off isn't offered.</figcaption>
+</figure>
+
 <p>Widgets are drawn at their real size in the builder, filled with stand-in data. Drag the corner handle to size one: unlike a graphic, which keeps its image's proportions, a widget takes whatever height you give it. The widgets that show a list also have a length, named after what they count:</p>
 <ul>
   <li>Leaderboard — <strong>Players shown</strong>, 5 by default</li>
@@ -1889,73 +3075,168 @@ HTML,
   <li>Ways to help — <strong>Requests shown</strong>, 3</li>
   <li>Achievements — <strong>Badges shown</strong>, 12</li>
   <li>Backpack — <strong>Items shown</strong>, 12</li>
+  <li>Posts — <strong>Posts shown</strong>, 3; Resources — <strong>Resources shown</strong>, 3</li>
 </ul>
 <p>Any number up to 50 works; clear the field to go back to the default. The Achievements and Backpack panels say how many more there are beyond what fits. A tall Achievements panel beside a short Tasks list is exactly what this is for.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c19-props-widget.webp" alt="A leaderboard widget selected in the builder, its properties showing Which widget, Players shown and the Base or Fixed layer choice." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A widget's properties.</strong> Which widget it is (switch it to another in place), how many rows it shows, and whether it sits on the map (Base) or stays fixed to the screen while the map moves.</figcaption>
+</figure>
+
 <h2>Task Hexagons</h2>
-<p>A task hexagon is one task drawn like a milestone. Where the Tasks widget lists several tasks in one panel, hexagons let you lay a routine out as a map: one per task, placed where it happens in the story. Players click one to open the task and complete it without leaving the Journey. The hexagon keeps its shape when you resize it, and its bar has a <strong>Task</strong> picker if you want to point it at a different task. If its task is deleted, the hexagon stays on the map drawn as unavailable, so you can find it and remove it.</p>
+<p>A task hexagon is one task drawn like a milestone. Where the Tasks widget lists several tasks in one panel, hexagons let you lay a routine out as a map: one per task, placed where it happens in the story. Players click one to open the task and complete it without leaving the Journey. The hexagon keeps its shape when you resize it, and its properties have a <strong>Task</strong> picker if you want to point it at a different task. If its task is deleted, the hexagon stays on the map drawn as unavailable, so you can find it and remove it.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c21-props-task.webp" alt="A task hexagon selected in the builder with its properties panel showing the Task picker." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A task hexagon.</strong> It names its task and can be switched to another; on the map it reads like a milestone, in the task's own colour and state.</figcaption>
+</figure>
 
 <h2>Text</h2>
-<p>A text object has its words, an optional link, a font and a size. The three fonts are <strong>Normal</strong>, <strong>Normal Condensed</strong> and <strong>Special</strong>. Size is in pixels, from 8 to 200; leave it blank for the default of 28. Enter starts a new line, and the text saves when you click away (or press Ctrl+Enter, Cmd+Enter on a Mac). Resizing a text object sets where it wraps; its height is whatever the words need.</p>
+<p>A text object has its words, an optional link, a font, a size and a colour. There are five fonts: <strong>Normal</strong>, <strong>Normal Condensed</strong>, <strong>Preospe</strong> (the display face), <strong>Hecolle (LCD mono)</strong> and <strong>Arsegzone</strong>. Size is in pixels, from 8 to 200; leave it blank for the default of 28. Colour is any colour you pick, with <strong>Default</strong> to go back to white. Enter starts a new line, and the text saves when you click away (or press Ctrl+Enter, Cmd+Enter on a Mac). Resizing a text object sets where it wraps; its height is whatever the words need.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c18-props-text.webp" alt="A text element selected in the builder, its properties showing the words, the font, the size and the colour." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Text properties.</strong> Real words on the map, in one of five fonts, any size and colour. Like a graphic, text can link somewhere, open a post or glide the map.</figcaption>
+</figure>
 
 <h2>Nav Links</h2>
-<p>Put a button to any of the adventure's player-facing sections right where it belongs in the story, instead of leaving players to find it in the menu — not just the Item Shop, Magic Code and Journal, but any of the 24 sections the platform offers: the Journal, Achievements, Leaderboard, Item Shop, Backpack, Tabis, the Garden, Tasks, Missions, Guilds, Help Board, Wall, Posts, Resources, the Event Schedule, Speakers, Cooper, My Account and more. Each option is offered only when that feature is actually on, and each uses your platform's own name for that section.</p>
+<p>Put a button to any of the adventure's player-facing sections right where it belongs in the story, instead of leaving players to find it in the menu. The Nav Links menu is grouped: <strong>Move around the map</strong> (a point to glide to, and a Glide button), <strong>Your progress</strong> (Journal, Achievements, Leaderboard, Secrets and clues, Magic Code), <strong>Shop and inventory</strong> (Item shop, Backpack, Tabis), <strong>The Garden and people</strong> (Garden, Tasks, Missions, Help Board, Guilds, Wall), <strong>Reading and events</strong> (Posts, Resources, Schedule, Speakers), <strong>Getting help</strong> (Cooper, Feedback, My Requests) and <strong>Account and menu</strong> (My Account, Adventures, Options). Each option is offered only when that feature is actually on, and each uses your adventure's own name for that section. On Enterprise servers the Lottery and Prize rules buttons are offered too (an Enterprise feature).</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c08-menu-nav-1.webp" alt="The Nav Links menu headed 'Send players somewhere', with groups Move around the map, Your progress and Shop and inventory." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Nav Links.</strong> A point and a Glide button first, then a button for every page a player can reach, grouped by what it's for.</figcaption>
+</figure>
+
+<p>A placed nav link's properties say where it goes (switch it to another page in place), its size, and whether it sits on the map or stays fixed to the screen.</p>
 
 <h2>Posts &amp; Resources Feed Widgets</h2>
-<p>Two widgets put your news feed right on the map: a <strong>Posts feed</strong> and a <strong>Resources feed</strong>. Point either one at a single post or resource to show it in place, or leave it open to show the newest items as a scrollable list — handy for in-world instructions or announcements players read without leaving the Journey.</p>
+<p>Two widgets put your news feed right on the map: a <strong>Posts</strong> widget and a <strong>Resources</strong> widget. In its properties, <strong>Shows</strong> points either one at a single post or resource to show it in place, or leaves it on the whole feed to show the newest items as a scrollable list — handy for in-world instructions or announcements players read without leaving the Journey.</p>
 
-<h2>Arranging Things</h2>
-<p>Hover over an object and its control bar appears above it. Double-click any element to open it in the Layers panel docked at the side instead, where the map stays fully visible while you work.</p>
+<h2>The Properties Panel</h2>
+<p>Double-click anything on the canvas, or pick it in the <a href="#layers-panel">Layers panel</a>, and its properties open in the panel docked at the side, where the map stays fully visible while you work. On the canvas itself you only drag:</p>
 <ul>
   <li><strong>Move</strong> — drag the object. Positions save when you let go; there's no Save button.</li>
-  <li><strong>Size</strong> — drag the corner handle. Most elements resize freely now, rather than being locked to their original proportions; hold Shift to keep the proportions. Milestones and task hexagons always keep their shape. <strong>Reset Size</strong> on any image returns it to its natural size.</li>
-  <li><strong>Rotate</strong> — graphics, text, widgets, nav links and task hexagons have a rotate handle to drag, with a one-click <strong>Reset</strong> back to zero.</li>
-  <li><strong>Opacity and colour</strong> — graphics and text can be faded, even down to fully invisible (handy for an invisible clickable "hotspot" over a piece of background art), and text can take its own colour.</li>
-  <li><strong>Animation</strong> — give any graphic a slow spin, clockwise or counter-clockwise, as a simple way to draw the eye to something on the map.</li>
-  <li><strong>Stacking</strong> — <strong>Bring forward</strong> and <strong>Send back</strong> decide what draws on top. The number between them is the object's position within its depth, counting from 1.</li>
-  <li><strong>Type</strong> — on a placed graphic, widget, nav link or task hexagon, the dropdown switches it to another of those kinds without losing its place.</li>
-  <li><strong>Duplicate</strong> and <strong>Remove</strong>.</li>
-  <li><strong>Locked with Tabi</strong> — tie an object to a Tabi and, while that Tabi is still locked for a player, the object shows greyed out and can't be clicked. Useful for a signpost or shortcut that belongs to a chapter. The picker appears once the adventure has Tabis.</li>
-  <li><strong>Shown from level / Hidden from level</strong> — show or hide any element, not just milestones, once a player reaches a given level. Set either or both to make something appear for a window of levels only. If an element has a level rule, a small tag on it says so directly in the builder, so you're never left guessing why a test player can't see something.</li>
+  <li><strong>Size</strong> — drag the corner handle. Most elements resize freely; hold Shift to keep the proportions. Milestones and task hexagons always keep their shape.</li>
+  <li><strong>Rotate</strong> — graphics and text have a rotate handle to drag. Panels and buttons a player presses don't turn.</li>
+</ul>
+<p>The panel shows only the groups that apply to what you picked:</p>
+<ul>
+  <li><strong>Name</strong> — what the Layers panel and the glide pickers call it. Players never see it. Leave it blank to keep the automatic name.</li>
+  <li><strong>Widget</strong> or <strong>Link</strong> — switch a widget to another widget, or a nav link to another page, without losing its place.</li>
+  <li><strong>Image</strong> — <strong>Change image</strong> opens the media library; <strong>Restore original</strong> puts back the picture's own size and takes off any rotation.</li>
+  <li><strong>Text</strong> — the words, font, size and colour.</li>
+  <li><strong>Content</strong> — how many rows a widget shows, which task a hexagon opens, which post or resource a reading widget shows.</li>
+  <li><strong>Link</strong> (graphics and text) — a web address to open when clicked, <em>or</em> a place on the map to glide to, <em>or</em> a post to open in a window over the map. If the element sits on a layer players can't click, the panel warns you that the link won't work there.</li>
+  <li><strong>Depth &amp; order</strong> — its layer, its order within that layer, and blur. See "Depth" below.</li>
+  <li><strong>Appearance</strong> (graphics and text) — rotation and opacity, faded even to fully invisible (handy for an invisible clickable "hotspot" over a piece of background art); graphics also take an <strong>Animation</strong>, a slow spin clockwise or counter-clockwise, to draw the eye.</li>
+  <li><strong>Who sees it</strong> — see below.</li>
+  <li><strong>Link to this spot</strong> — see "Naming Elements and Gliding to a Place".</li>
+  <li><strong>Duplicate</strong> and <strong>Delete</strong>.</li>
 </ul>
 
-<h2>Showing or Hiding by Achievement</h2>
-<p>Beyond the level rule, any element you place on the map — a graphic, a Tabi, a milestone node — can also be shown only to players holding a specific achievement, or hidden from players holding a different one. Combine it with the level rule freely; both apply together. As a GM or admin, you'll still see a hidden element yourself, dimmed, with a plain-language note explaining why ("Shown from level 2; only to holders of Pilot"). Players never see it at all. This is also the recommended way to build "staff-only" content on the map: give your staff an achievement and gate the content to holders of it, rather than needing a separate staff flag.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c14-props-graphic.webp" alt="A satellite graphic selected on the canvas, with the properties panel open at the side showing Name, Image, Link and Depth and order." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A graphic's properties.</strong> Its name, its image, and its link: here the satellite glides the map to the Prove It island instead of opening a web address or a post.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c15-props-graphic-depth.webp" alt="The Depth and order and Appearance groups of a graphic's properties: five layer buttons, order in this layer, blur, rotation, opacity and animation." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Depth, order and appearance.</strong> Five layers from Deep to Fixed, the order within the layer, blur, then rotation, opacity and animation.</figcaption>
+</figure>
+
+<h2>Who Sees It: Level, Achievement and Tabi Rules</h2>
+<p>The <strong>Who sees it</strong> group works on any element you place:</p>
+<ul>
+  <li><strong>Show from level</strong> and <strong>Hide from level</strong> — show or hide it once a player reaches a given level. Set both to make something appear for a window of levels only.</li>
+  <li><strong>Only for holders of</strong> and <strong>Hidden from holders of</strong> — show it only to players holding a particular achievement, or hide it from players holding another. Combine these with the level rule freely; both apply together.</li>
+  <li><strong>Greyed out until a Tabi opens</strong> — tie it to a Tabi and, while that Tabi is still locked for a player, the element shows greyed out and can't be clicked. Useful for a signpost or button that belongs to a chapter. It appears once the adventure has Tabis.</li>
+</ul>
+<p>An element with a rule wears a small tag on the canvas saying so, so you're never left guessing why a test player can't see something. As a GM or admin, you'll still see a hidden element yourself, dimmed, with a plain-language note explaining why ("Shown from level 2; only to holders of Pilot"). Players never see it at all. This is also the recommended way to build "staff-only" content on the map: give your staff an achievement and show the content only to holders of it, rather than needing a separate staff flag.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c16-props-graphic-who.webp" alt="The Who sees it group: Show from level, Hide from level, Only for holders of, Hidden from holders of and Greyed out until a Tabi opens, above Duplicate and Delete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Who sees it.</strong> Level rules, achievement rules, and greying an element until a Tabi opens.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c17-who-sees-it-rule.webp" alt="A spinning comet on the builder canvas wearing a tag that says it shows from level 4." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A rule, tagged on the canvas.</strong> This comet shows from level 4. Players below level 4 don't see it on their map.</figcaption>
+</figure>
 
 <h2>Naming Elements and Gliding to a Place</h2>
-<p>Every element you place can now have a real name (shown in pickers and layer lists), instead of just a filename or a snippet of its text. Give your important landmarks a name once, and renaming your content later won't change it.</p>
-<p>A <strong>Point</strong> (see the Palette, above) is an invisible marker you can drop anywhere on the map purely as a destination. A <strong>Glide button</strong> — or any graphic or text element — can be set to glide the camera smoothly to any named point, Tabi, milestone, or other element on the map when clicked, instead of opening a link or a post.</p>
-<p>Every placed element, Tabi and milestone also has a <strong>Link to this spot</strong> button that copies a direct URL — opening that link (or typing it in) glides a player's map straight to that location when they land on the journey. Handy for pointing players at something specific from an email or announcement. One thing to keep in mind: if the destination is hidden from a player by a level or achievement rule, the glide link simply does nothing for them — give the button or link the same visibility rule as its destination if you want it to always work.</p>
+<p>Every element you place can have a real name (shown in the Layers panel and the glide pickers), instead of just a filename or a snippet of its text. Give your important landmarks a name once, and renaming your content later won't change it.</p>
+<p><strong>A point to glide to</strong> (under Nav Links → Move around the map) is a named place on the map that players never see, there purely as a destination. A <strong>Glide to a place</strong> button — or any graphic or text element — can be set to glide the camera smoothly to any point, Tabi, milestone or other element on the map when clicked, as if the player had dragged the map there. A Glide button has two settings: where it glides to, and what the button says.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c22-props-point.webp" alt="A point selected in the builder, shown as a ring with its name, with its properties showing its name and a Link to this spot field with a Copy link button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A point to glide to.</strong> A named place players never see. Like every element, it has its own link to copy and share.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c24-props-glide.webp" alt="A Glide button's properties: Glides the map to, set to a named point, and The button says." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Glide button.</strong> Where it glides the map, and what the button says. One map can hold several areas, joined by Glide buttons.</figcaption>
+</figure>
+
+<p>Every placed element, Tabi and milestone also has <strong>Link to this spot</strong> with a <strong>Copy link</strong> button: opening the journey with that link glides a player's map straight to that place. Handy for pointing players at something specific from an email or announcement. An element fixed to the screen has no spot to glide to, so it has no link. One thing to keep in mind: if the destination is hidden from a player by a level or achievement rule, the glide does nothing for them — give the button or link the same visibility rule as its destination if you want it to always work.</p>
 
 <h2>Depth</h2>
-<p>Everything on the map sits at one of four depths, and each moves at its own speed when a player pans or zooms — that's what gives the map its parallax:</p>
+<p>Everything on the map sits on one of five layers, and each moves at its own speed when a player pans or zooms — that's what gives the map its parallax:</p>
 <ul>
   <li><strong>Deep</strong> (Deep background) — moves the slowest.</li>
   <li><strong>Back</strong> (Background).</li>
-  <li><strong>Base</strong> — moves with the map. The only depth players can click.</li>
+  <li><strong>Base</strong> — moves with the map. Players can click things here.</li>
   <li><strong>Front</strong> (Foreground) — moves slightly faster than the map, for things nearer than the milestones.</li>
+  <li><strong>Fixed</strong> (Fixed to the screen) — pinned to the screen itself rather than the map: it stays in the same corner or edge as players pan and zoom. Players can click things here too. Useful for a button or panel you want always in view.</li>
 </ul>
-<p>Behind all four, the grid backdrop drifts slowest of all.</p>
-<p>A fifth option, <strong>Fixed</strong>, pins an element to the screen itself rather than the map — it stays in the same corner or edge as players pan and zoom around, instead of scrolling away. Useful for a decoration, button or link you want always on screen, like a persistent call-to-action.</p>
-<p>Graphics, text, widgets, nav links and task hexagons have a <strong>Depth</strong> row in their bar: press Deep, Back, Base or Front to move the object there, and it lands at the bottom of that depth's stack. Anything a player needs to click — a linked graphic or text, a widget, a nav link, a task hexagon — has to stay on Base, because the other depths are decoration only.</p>
+<p>Behind them all, the grid backdrop drifts slowest of all.</p>
+<p>Graphics and text can go on any of the five: press Deep, Back, Base, Front or Fixed in their <strong>Depth &amp; order</strong> group. Widgets, nav links and task hexagons are things players press, so they choose only between <strong>Base</strong> and <strong>Fixed</strong>. A linked graphic or text needs to stay on Base or Fixed too, because the other layers are decoration only; the panel warns you if a link is on a layer players can't click. <strong>Order in this layer</strong> sets what draws on top within a layer, with − and + buttons: higher numbers sit in front.</p>
+<p>Graphics and text also have a <strong>Blur</strong> field, in pixels from 0 (sharp) to 40. A little blur on something in the background sells distance.</p>
 <ul>
-  <li><strong>A milestone is always on Base</strong>, whatever you do. It has no depth buttons.</li>
-  <li><strong>A Tabi that holds milestones is always on Base</strong>, because its milestones can only be reached through it; its bar shows the lock and how many milestones it holds instead of depth buttons. A Tabi with no milestones is scenery and can go at any depth.</li>
+  <li><strong>A milestone is always on Base</strong>, whatever you do. Its panel has its order on Base, a link to edit it (in a new tab, so nothing in the builder is lost) and its own Link to this spot.</li>
+  <li><strong>A Tabi that holds milestones is always on Base</strong>, because its milestones can only be reached through it. A Tabi with no milestones is scenery and can go at any depth. A Tabi's panel also says whether its name shows, and links to its settings, its pieces and its evolving scene.</li>
   <li>If you file a milestone into a Tabi that's sitting at another depth — from the Tabi editor, Manage Content or the milestone's own builder — the Tabi snaps back to Base, and a message tells you it moved.</li>
+  <li>A point is a place on the map, so it's always on Base.</li>
 </ul>
-<p>The builder pans and zooms like the player's map: drag the empty canvas to pan (hold <strong>Space</strong> to pan from over an object), use the wheel, a pinch or the zoom buttons to zoom, and <strong>Back to 100%, on the map centre</strong> returns you to the starting view. The depths don't drift apart while you work, so all four line up exactly as they will at the player's starting view. Open <strong>View journey</strong> to see them move.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c25-props-tabi.webp" alt="A Tabi selected in the builder, its properties showing its order on Base, whether its name shows, and links to its settings, pieces and evolving scene." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Tabi on the canvas.</strong> A Tabi with milestones stays on Base so players can open it; its panel links to the Tabi's own editors.</figcaption>
+</figure>
+
+<p>The builder pans and zooms like the player's map: drag the empty canvas to pan (hold <strong>Space</strong> to pan from over an object), use the wheel, a pinch or the zoom buttons to zoom, and <strong>Back to 100%, on the map centre</strong> returns you to the starting view. The layers don't drift apart while you work, so they all line up exactly as they will at the player's starting view. Open <strong>View journey</strong> to see them move.</p>
+
+<h2>Working Layer</h2>
+<p><strong>Working layer</strong> lets you edit one depth at a time. Choose a layer and everything on the other depths stays visible but ghosted, and stops taking clicks — so you can work over a busy canvas without grabbing the wrong thing. <strong>Everything</strong> puts it back.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c27-working-layer-front.webp" alt="The builder with the working layer set to Foreground: blurred planets and asteroids are selectable and everything else is ghosted." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Working on one layer.</strong> With Foreground chosen, the blurred decoration in front of the map can be grabbed; everything else is ghosted and ignores clicks.</figcaption>
+</figure>
+
+<h2 id="layers-panel">The Layers Panel</h2>
+<p><strong>Layers</strong> opens a side panel listing everything on the journey, front to back, grouped by depth — Fixed to the screen, Foreground, Base, Background, Deep background — with a count for each and a note saying which ones players can click. Each row names the element (its own name, or an automatic one) with a thumbnail, its kind and any blur. Its job is finding what the canvas makes hard to reach: something ghosted, buried under three other objects, or scrolled off the edge. Click a row, or double-click the element on the map, to edit it; its properties open right there. Drag a row by its grip to change the order. Milestones, and Tabis that hold milestones, show as locked to Base.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c12-layers-panel.webp" alt="The Layers panel docked at the right, grouping elements under Fixed to the screen, Foreground and Base, each row with a grip, a thumbnail and a name." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Layers panel.</strong> Everything on the journey by depth, front to back. Click a row to edit it; drag it by its grip to reorder.</figcaption>
+</figure>
+
+<h2>Where the Map Opens</h2>
+<p><strong>Map centre</strong> is a mode, not an object: press it and a marker appears, and wherever you drop the marker is where every player's map opens when they arrive on the journey. Until you move it, the map opens where it always has.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c28-map-centre.webp" alt="The builder in Map centre mode, with a marker on the canvas showing where players' maps open." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Map centre.</strong> Only the marker moves in this mode; drop it where you want players to start.</figcaption>
+</figure>
 
 <h2>Switching a Tabi Off</h2>
 <p>Unticking a Tabi in <strong>Active Tabis</strong> takes it out of the journey for players, everywhere at once: it has no tile on the map, it isn't a stage in the List view, a link to its window opens nothing, the menu's <strong>Continue</strong> never points into it, and its milestones are refused to a player who opens one by its address. Its milestones also leave every player's progress bars and percentages, so a switched-off chapter never leaves players looking at a bar they can't finish. A Tabi that waits for the switched-off one still counts it, so hiding a stage never re-locks the next one. Tick it again and everything is back. You still see a switched-off Tabi in the builder.</p>
 
-<h2>Blur</h2>
-<p>Beside its depth, each graphic, text, widget, nav link and task hexagon has a <strong>Blur</strong> field, in pixels from 0 (sharp) to 40. A little blur on something in the background sells distance. Milestones and Tabis don't take blur.</p>
-
-<h2>Working Layer</h2>
-<p><strong>Working layer</strong> lets you edit one depth at a time. Choose <strong>Deep background</strong>, <strong>Background</strong>, <strong>Base</strong> or <strong>Foreground</strong> and everything at the other depths stays visible but ghosted, and stops taking clicks — so you can work over a busy canvas without grabbing the wrong thing. <strong>Everything</strong> puts it back.</p>
-
-<h2>The Layers Panel</h2>
-<p><strong>Layers</strong> opens a side panel listing everything on the journey, front to back, grouped by depth — Foreground, Base, Background, Deep background — with a count for each and a note saying which one players can click. Its job is finding what the canvas makes hard to reach: something ghosted, buried under three other objects, or scrolled off the edge. Click a row to find it on the canvas, and use its depth buttons to move it. Milestones, and Tabis that hold milestones, show as locked to Base, and any blur is listed next to the object's type.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/c07-menu-tabis.webp" alt="The Active Tabis menu open in the builder, with a Show on the map checkbox for each Tabi." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Active Tabis.</strong> One tick per Tabi decides whether it's on the map as a chapter.</figcaption>
+</figure>
 
 <h2>Related</h2>
 <ul>
@@ -1970,7 +3251,7 @@ HTML,
                 'title'      => 'The Tabi Editor',
                 'slug'       => 'tabi-editor',
                 'section'    => 'setup',
-                'sort_order' => 7,
+                'sort_order' => 8,
                 'body'       => <<<'HTML'
 <p>A <strong>Tabi</strong> is a chapter of the journey. It's a tile on the map that opens onto a group of milestones, a collectable picture players assemble from pieces, or the journey's background art: one of the three, never two. This page covers setting one up, from its settings and unlock rules to the full-page editor where you arrange its frame and pieces.</p>
 
@@ -1980,7 +3261,12 @@ HTML,
   <li><strong>Node</strong> draws the Tabi on the journey map as a chapter holding its milestones. It's the same switch as the Journey Builder's Active Tabis menu.</li>
   <li><strong>Background</strong> makes it the journey's background instead (see <a href="/docs/evolving-tabis-scene-builder">Evolving Tabis</a>). A Tabi that holds milestones or pieces can't become one, and the tab says why.</li>
 </ul>
-<p>Under each row are <strong>Edit Tabi</strong> (its settings page), <strong>Frame and pieces</strong> (the Tabi editor, below), <strong>Evolving scene</strong> (straight to the Scene Builder), <strong>Prerequisites</strong>, <strong>Conditions</strong> and <strong>Trash</strong>. The bar above the list searches by name, filters to chapters, collections or backgrounds, and sorts. When the adventure has no Tabis yet, the Journey Builder's Active Tabis menu and the empty journey both link to creating one. Many Tabis at once can come in from a CSV file; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+<p>Under each row are <strong>Edit Tabi</strong> (its settings page), <strong>Frame and pieces</strong> (the Tabi editor, below), <strong>Evolving scene</strong> (straight to the Scene Builder), <strong>Prerequisites</strong>, <strong>Conditions</strong> and <strong>Trash</strong>. The bar above the list searches by name, filters to chapters, collections or backgrounds (a filter appears for each kind the adventure has), and sorts by the default order, name or level. When the adventure has no Tabis yet, the Journey Builder's Active Tabis menu and the empty journey both link to creating one. Many Tabis at once can come in from a CSV file, using the upload above the list; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g01-tabi-manager.webp" alt="The Tabi Manager: a CSV upload, a search and sort bar, and rows for each Tabi with picture, colour, level, width, height, the Node and Background boxes, and buttons for Edit Tabi, Frame and pieces, Evolving scene, Prerequisites, Conditions and Trash." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Tabis tab.</strong> Every Tabi in journey order, edited in place, with a way into each of its editors under the row.</figcaption>
+</figure>
 
 <h2>Settings</h2>
 <p><strong>Edit Tabi</strong> opens its settings page. A brand-new Tabi shows only its settings: prerequisites, milestones, pieces and the scene all attach to a Tabi that exists, so give it a name and press <strong>Create Tabi</strong> first. After that the page has <strong>Settings</strong>, <strong>Prerequisites</strong>, <strong>Milestones</strong>, <strong>Pieces</strong> and <strong>Scene</strong>, and <strong>Update Tabi</strong> saves the settings.</p>
@@ -1989,26 +3275,55 @@ HTML,
   <li><strong>Background</strong>: the artwork behind the Tabi on the journey map.</li>
   <li><strong>Colour</strong>.</li>
   <li><strong>Level</strong>: where the Tabi sits in the journey's order. It sorts chapters; it doesn't gate them.</li>
-  <li><strong>What this Tabi is</strong>: <strong>A chapter on the journey map</strong> draws it on the map and groups its milestones under it; <strong>A collectable, built from pieces</strong> makes it a collectable Tabi instead; <strong>The journey background</strong> fills the screen behind the map.</li>
+  <li><strong>What this Tabi is</strong>: <strong>A chapter on the journey map</strong> draws it on the map and groups its milestones under it; <strong>A collectable, built from pieces</strong> makes it a collectable Tabi instead; <strong>The journey background</strong> fills the screen behind the map, evolves with its scene, and takes no clicks.</li>
   <li><strong>Name on the journey map</strong>: Shown or Hidden. Hide the label under a chapter when its artwork already says what it is.</li>
   <li><strong>Status</strong>: Published or Draft.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g05-settings-kind.webp" alt="A Tabi's settings page with the 'What this Tabi is' choice: a chapter on the journey map, a collectable built from pieces, or the journey background." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Three kinds of Tabi.</strong> A chapter groups milestones on the map; a collectable is built from pieces players gather; a background fills the screen behind the map.</figcaption>
+</figure>
+
 <p>Position isn't typed in here. Drag the Tabi into place in the <a href="/docs/journey-builder-design-palette">Journey Builder</a>; its size is set there by dragging an edge, on the Tabis tab, or in the Tabi editor's Frame panel.</p>
 
 <h2>Prerequisites</h2>
-<p>Tick other Tabis and this one stays locked until every ticked Tabi is finished; leave them all unticked and it's open from the start. Press <strong>Save prerequisites</strong>: this section saves on its own. The same ticks are under the row's <strong>Prerequisites</strong> on the Tabis tab, where each one saves as you tick it. A player who opens a locked chapter sees which chapters to finish first.</p>
+<p>Tick other Tabis and this one stays locked until every ticked Tabi is finished; leave them all unticked and it's open from the start. Press <strong>Save prerequisites</strong>: this section saves on its own, and a confirmation says so. The same ticks are under the row's <strong>Prerequisites</strong> on the Tabis tab, where each one saves as you tick it.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g06-prerequisites.webp" alt="A Tabi's Prerequisites section with one earlier Tabi ticked and a confirmation that the prerequisites were saved." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One stage opens the next.</strong> Prove It now waits for Watch &amp; Learn: one tick, then Save prerequisites.</figcaption>
+</figure>
+
+<p>A player who opens a locked chapter sees which chapters to finish first, and what's still left in each:</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/e02-window-locked.webp" alt="A player's view of a locked chapter: a padlock, 'Complete these tabis first to unlock this one', and the earlier chapter with the milestones still to do." width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A player who hasn't finished Watch &amp; Learn opens Prove It and is told exactly what's missing.</figcaption>
+</figure>
 
 <h2>Conditions: What the Tabi Itself Waits For</h2>
 <p>A Tabi can also wait for things other than Tabis. The row's <strong>Conditions</strong> button opens its drawer:</p>
 <ul>
   <li><strong>Milestones in this Tabi</strong>: tick to file a milestone in or out. Each tick saves immediately.</li>
   <li><strong>Requires these milestones completed</strong>, <strong>Requires these achievements</strong> and <strong>Requires this key item</strong>: the player must have finished, hold or be carrying each one you tick.</li>
-  <li><strong>Threshold conditions</strong>: numbers such as level, journey completion % or milestones completed. Leave a box blank to skip it.</li>
+  <li><strong>Threshold conditions</strong>: numbers such as level, journey completion %, milestones completed or items bought. Leave a box blank to skip it.</li>
 </ul>
 <p>Press <strong>Save Conditions</strong>. Until a player meets every rule, the Tabi stays locked for them, on the map and in the List view, and the menu's Continue doesn't lead into it. Staff always pass. For rules on one milestone rather than a whole chapter, gate the milestone itself with <a href="/docs/conditions-when-things-unlock">Conditions</a>.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g03-conditions.webp" alt="The Conditions drawer on a Tabi: milestones in this Tabi, required milestones, achievements and key item, and threshold boxes." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Conditions drawer.</strong> Beyond the Tabis before it, a stage can wait for milestones, achievements, a key item or a threshold.</figcaption>
+</figure>
+
 <h2>Milestones</h2>
-<p>This section lists what's filed under the Tabi, with each milestone's level, type and status, and a <strong>Remove</strong> button to take one out. <strong>Add an existing milestone</strong> offers any milestone that isn't in a Tabi yet; <strong>New milestone</strong> and <strong>New challenge</strong> start fresh ones. You can also choose the Tabi from the <strong>Tabi</strong> dropdown on a milestone's own Mechanics tab, or tick it in the Conditions drawer above.</p>
+<p>This section lists what's filed under the Tabi, in journey order, with each milestone's level, type and status, and a <strong>Remove</strong> button to take one out. <strong>Add an existing milestone</strong> offers any milestone that isn't in a Tabi yet; <strong>New milestone</strong> and <strong>New challenge</strong> start fresh ones. You can also choose the Tabi from the <strong>Tabi</strong> dropdown on a milestone's own Mechanics tab, or tick it in the Conditions drawer above.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g07-milestones.webp" alt="A Tabi's Milestones section listing six milestones with level, type and status and a Remove button each." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The milestones a chapter groups.</strong> In journey order, each removable here; milestones not yet in a chapter can be added from below.</figcaption>
+</figure>
+
 <p>A player finishes the Tabi by finishing its milestones. What counts:</p>
 <ul>
   <li>Milestones, challenges and profile tests that aren't marked <strong>Optional</strong>. Optional ones are extras and don't count.</li>
@@ -2020,15 +3335,56 @@ HTML,
 <p>When a player opens a chapter, it starts with a progress bar: the milestones they've finished out of the chapter's total. To point that bar at a badge, create an achievement with a <strong>Complete This Tabi</strong> condition for this Tabi. The bar then reads <em>Working towards</em> with the achievement's name and artwork, and <em>Stage complete</em> when they get there, while the achievement itself is awarded by its condition. Without one, the bar reads <em>Progress towards this stage</em>. See <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a>.</p>
 
 <h2>Pieces</h2>
-<p>A collectable Tabi is built from <strong>pieces</strong>: items of the <strong>Tabi Piece</strong> type that point at this Tabi. <strong>New piece</strong> opens the item editor: set the type to Tabi Piece and choose this Tabi. Pieces can be sold in the Item Shop, where each is labelled as part of its Tabi, or handed out as rewards. Manage Items lists them too, under their own Tabi Pieces filter, each with a link to its Tabi. Players see their collection on the <strong>Tabis</strong> page of the Item Shop section, and a piece they hold opens its card. See <a href="/docs/item-shop-building-an-economy">Building an Item Shop Economy</a>.</p>
+<p>A collectable Tabi is built from <strong>pieces</strong>: items of the <strong>Tabi Piece</strong> type that point at this Tabi. Its art is the board players fill in, and it has no milestones of its own.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g09-settings-collectable.webp" alt="The settings of a collectable Tabi called The Star Chart, with its board artwork." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A collectable Tabi.</strong> The Star Chart's art is the board; players fill it by gathering its pieces.</figcaption>
+</figure>
+
+<p>The <strong>Pieces</strong> section lists them, each with its price. <strong>New piece</strong> opens the item editor: set the type to Tabi Piece and choose this Tabi in the item's Tabi section, which also links into the Tabi editor to place the piece on the board. Pieces can be sold in the Item Shop, where each is labelled as part of its Tabi, handed out as milestone rewards, or assigned to a player by a Game Master. Manage Items lists them too, under their own Tabi Pieces filter, each with a link to its Tabi. See <a href="/docs/item-shop-building-an-economy">Building an Item Shop Economy</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g10-pieces-tab.webp" alt="A collectable Tabi's Pieces section listing six pieces, each with a picture and a price." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Its pieces.</strong> Six pieces, each an item of the Tabi Piece type with its own price.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g15-piece-item-tabi.webp" alt="An item's edit page, Tabi section, naming the collectable it fills with a link into the Tabi editor." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A piece is an item.</strong> On the item's own page, its Tabi section names the collectable it fills and opens the Tabi editor to place it.</figcaption>
+</figure>
+
+<p>Players see their collections on the <strong>Tabis</strong> page of the Item Shop section: pieces they hold are lit, the rest stay faint so they can see the shape of what's missing, and a piece they hold turns over to show its card. Completing a collection has no moment of its own: the last piece arrives with its card like any other, and the count on the Tabis page turns green. Finishing a set doesn't pay anything by itself.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/a07-tabis-page.webp" alt="A player's Tabis page showing The Star Chart board with two of six constellation pieces lit and the rest faint." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The player's side.</strong> Two of six pieces lit; the outlines of the missing ones stay faint.</figcaption>
+</figure>
 
 <h2>The Tabi Editor: Frame and Pieces</h2>
-<p><strong>Open the Tabi editor</strong> (or <strong>Frame and pieces</strong> on the Tabis tab) opens a full page built on the same pan-and-zoom canvas as the Journey Builder: drag on the art to select, drag outside it or hold Space to pan, and use the wheel to zoom. Changes save as you make them, and the page says "All changes saved".</p>
+<p><strong>Open the Tabi editor</strong> (or <strong>Frame and pieces</strong> on the Tabis tab) opens a full page built on the same pan-and-zoom canvas as the Journey Builder: drag on the art to select, drag outside it or hold Space to pan, and use the wheel to zoom. The board is the canvas and the pieces are the objects. Changes save as you make them, and the page says "All changes saved".</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g11-tabi-editor.webp" alt="The Tabi editor: a star chart board with six constellation pieces placed on it, and a Layers list on the right naming each piece and how many players hold it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Tabi editor.</strong> Each piece sits where the board shows its faint outline. The Layers list names every piece and how many players hold it.</figcaption>
+</figure>
+
 <ul>
-  <li><strong>Pieces</strong>: drag, resize, turn (Shift for 15° steps), mirror, straighten and restack them; align their edges or centres, spread them with even gaps, and snap to the frame and to each other (hold Alt to move freely). <strong>Add a piece</strong> creates a new one in the middle of the Tabi. The <strong>Layers</strong> list shows them front to back, and a piece can be locked so it can't be picked on the art. Undo and redo are Ctrl+Z and Ctrl+Shift+Z.</li>
+  <li><strong>Pieces</strong>: drag, resize, turn (Shift for 15° steps), mirror, straighten and restack them; align their edges or centres, spread them with even gaps, and snap to the frame and to each other (hold Alt to move freely). Shift-click adds a piece to the selection. The <strong>Layers</strong> list shows them front to back with how many players hold each, and a piece can be locked so it can't be picked on the art. Undo and redo are Ctrl+Z and Ctrl+Shift+Z.</li>
+  <li><strong>Add piece</strong>: pick a picture from the media library, give it a name and a price, and it lands in the middle of the board, ready to place.</li>
   <li><strong>Frame</strong>, shown when nothing is selected: the Tabi's <strong>Width</strong> and <strong>Height</strong>, the same box as its node on the journey map and the frame its evolving scene is composed in, with <strong>Match the art</strong> (keep the width, make the height match the picture) and <strong>Square</strong>. Then how the art fills it: <strong>Size</strong> (fit inside, fill and crop, stretch, fit the width, fit the height, or actual size), <strong>Repeat</strong> (no repeat, or tiled several ways) and <strong>Position</strong>, one of nine spots. A Tabi you've never set keeps the old look, a square with the art stretched to it, until you pick a size.</li>
   <li><strong>Preview</strong> shows it as players do: cut to the frame, no handles.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g12-tabi-editor-piece.webp" alt="One constellation piece selected in the Tabi editor, with handles to move, resize and turn it and a toolbar for mirror, snap, undo and redo." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A piece, selected.</strong> Drag to move, pull a corner to size, turn or mirror it; Snap lines it up with the frame and the other pieces.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g13-tabi-editor-add.webp" alt="The Add a piece form in the Tabi editor: a picture, a name and a price." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Add a piece.</strong> A picture, a name and a price in the adventure's currency.</figcaption>
+</figure>
 
 <h2>Scene</h2>
 <p>The <strong>Scene</strong> section holds the Tabi's evolving artwork (the table of what grows, and when), with <strong>Open Scene Builder</strong> to place the art inside the Tabi's frame. That's covered in <a href="/docs/evolving-tabis-scene-builder">Evolving Tabis &amp; the Scene Builder</a>.</p>
@@ -2046,9 +3402,14 @@ HTML,
                 'title'      => 'Evolving Tabis & the Scene Builder',
                 'slug'       => 'evolving-tabis-scene-builder',
                 'section'    => 'setup',
-                'sort_order' => 8,
+                'sort_order' => 9,
                 'body'       => <<<'HTML'
 <p>A Tabi can carry artwork that changes as the player looking at it progresses: a lemonade stand at level 1, a food truck at level 3, a restaurant at level 5. Two players open the same chapter and see different pictures, each drawn from their own progress. This page covers authoring it.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/a02-speak-up-66.webp" alt="An island on the journey map with two towers built and a third pad empty, spotlights and a small audience around them." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A scene on the map.</strong> Speak Up, two thirds done for this player: two towers up and the third pad waiting. Its spotlight follows the player's level and the audience the Blooms colleagues have sent them, so no two players see quite the same island.</figcaption>
+</figure>
 
 <h2>The Idea: a Table</h2>
 <p>A scene is a table.</p>
@@ -2057,6 +3418,11 @@ HTML,
   <li><strong>Each step along the row</strong> is one value of that condition plus the artwork for it: Level 1 → a stand, Level 5 → a restaurant.</li>
 </ul>
 <p>For each row, the player sees the artwork of the highest step they've reached. A step with no value set is always shown, which makes it the starting picture every new player sees. Rows are independent of each other, so an add-on — a sign that appears once a player has 10 Blooms — is simply a row with one step.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g17-scene-table.webp" alt="The scene table: rows named Code tower and Product tower, each growing with This Tabi's completion %, with steps at percentages and artwork for each." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Rows and steps.</strong> Each row is one thing that evolves and what it grows with; here two towers grow with the chapter's completion %. Each step along the row is a value and its artwork.</figcaption>
+</figure>
 
 <h2>What a Row Can Grow With</h2>
 <ul>
@@ -2080,8 +3446,13 @@ HTML,
 </ul>
 <p>The guild conditions depend on teammates too, so a whole guild can watch one scene grow together. The two peer conditions count only the Blooms players chose to give each other — gifts and endorsements — not Blooms paid out by the adventure or awarded by staff. See <a href="/docs/skills-and-blooms-explained">Skills &amp; Blooms</a>.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g18-scene-table-2.webp" alt="More scene rows: On air growing when a Tabi is finished, Spotlights growing with player level at 2 and 4, and The audience growing with Blooms received from colleagues at 5 and 15." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Other conditions in one scene.</strong> "On air" appears when the chapter is finished, the spotlights follow the player's level, and the audience grows with Blooms received from colleagues.</figcaption>
+</figure>
+
 <h2>Growing Gradually</h2>
-<p>On a numeric row, every step except the last has a <strong>Grow gradually</strong> checkbox. Tick it and the artwork fills in between that step's value and the next one, instead of appearing all at once: with steps at level 3 and level 5, a level-4 player sees it half drawn. Choose which way it fills — Up, Down, Left or Right.</p>
+<p>On a numeric row, every step except the last has a <strong>Grow gradually</strong> checkbox. Tick it and the artwork fills in between that step's value and the next one, instead of appearing all at once: with steps at level 3 and level 5, a level-4 player sees it half drawn. Choose which way it fills — Up, Down, Left or Right. The preview grid further down shows towers rising this way.</p>
 
 <h2>Building the Table</h2>
 <p>Open the Tabi's settings (<strong>Edit Tabi</strong>, see <a href="/docs/tabi-editor">The Tabi Editor</a>) and go to its <strong>Scene</strong> section, or press <strong>Evolving scene</strong> on the Tabi's row in Manage Content. A scene is created the first time you open the Scene Builder; there's nothing to set up beforehand. Then:</p>
@@ -2092,8 +3463,19 @@ HTML,
 </ol>
 <p>Rows and steps save as you change them. <strong>Remove row</strong> deletes a whole row, and each step has its own remove button. In the Scene Builder, <strong>Edit the table</strong> opens the same table over the canvas.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g08-scene-tab.webp" alt="A Tabi's Scene section: Open Scene Builder and Add a row buttons, the Show the scene on the journey map setting, and the first rows of the table with Grow gradually ticked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Scene section of a Tabi's settings.</strong> The table, with <strong>Open Scene Builder</strong>, <strong>Add a row</strong> and the switch for showing the scene on the map.</figcaption>
+</figure>
+
 <h2>The Scene Builder</h2>
 <p>The Scene Builder is where you place the artwork. Its canvas is the journey itself: the rest of the map — other Tabis, graphics, widgets and milestones — is drawn as fixed placeholders at their real positions, so you design against what will actually surround the scene. None of it can be changed from here; only this Tabi is yours to edit. The canvas pans and zooms like the Journey Builder's: drag empty space to pan and use the wheel or a pinch to zoom.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g16-scene-builder.webp" alt="The Scene Builder: a Tabi's frame on the journey with its size label, every stage of its scene shown ghosted, a toolbar along the top and a Preview as a player panel on the right." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Scene Builder.</strong> The Tabi's frame in place on the journey, with every stage of its scene. Stages the pretend player wouldn't see yet are ghosted, so the whole design can be arranged at once.</figcaption>
+</figure>
+
 <ul>
   <li><strong>The frame is the Tabi.</strong> All of a scene's artwork lives inside the Tabi's frame and is clipped to it, exactly as it is on the map and in the chapter's panel. The frame's shape, and how the Tabi's own art fills it, are set in the Tabi editor's Frame panel.</li>
   <li><strong>Drag the label above the frame</strong> to move the Tabi on the journey, and <strong>drag an edge</strong> to resize it. Both change the real Tabi. Resizing doesn't move or scale the artwork; whatever falls past the new edge is clipped.</li>
@@ -2102,8 +3484,18 @@ HTML,
 </ul>
 <p>Artwork whose image can't be found shows a placeholder instead of vanishing, so you can select it and choose new artwork.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/g19-scene-stage.webp" alt="One stage of a tower selected in the Scene Builder, with the selection bar below it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A stage, selected.</strong> A tower as it rises through the last third of the chapter, drawn bottom-up. The bar below sets its artwork, its stacking order, and opens its row.</figcaption>
+</figure>
+
 <h2>Preview as a Player</h2>
-<p>Your own account has probably reached none of your later steps, which would leave you placing art you can't see. The <strong>Preview as a player</strong> panel lets you set a pretend player's level, XP, this Tabi's %, journey %, guild level, guild members and milestones completed; with <strong>Ghost inactive</strong> on, the canvas ghosts whatever that player wouldn't see. The panel can be dragged out of the way by its header.</p>
+<p>Your own account has probably reached none of your later steps, which would leave you placing art you can't see. The <strong>Preview as a player</strong> panel lets you set a pretend player's level, XP, this Tabi's %, journey %, guild level, guild members, milestones completed and the achievements they hold; with <strong>Ghost inactive</strong> on, the canvas ghosts whatever that player wouldn't see, and with it off, it shows exactly what they'd see. The panel can be dragged out of the way by its header. Blooms received from colleagues aren't among the things the preview can pretend.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/scene-preview-grid.webp" alt="Four views of the same island in the Scene Builder preview: empty pads; one tower half built with a spotlight; one tower finished and a second half built; all three towers lit with two spotlights." width="1600" height="1213" loading="lazy">
+  <figcaption><strong>The same scene, previewed four ways.</strong> Top left: 0% of the chapter at level 1, three empty pads. Top right: 16% at level 2, the first tower rising (Grow gradually) and one spotlight. Bottom left: 50%, the first tower finished and the second half way up. Bottom right: 100% at level 4, all three towers on air and both spotlights.</figcaption>
+</figure>
 
 <h2>Scene Settings</h2>
 <p>Two settings in the same panel apply to the whole scene:</p>
@@ -2114,6 +3506,16 @@ HTML,
 
 <h2>What Players See</h2>
 <p>When a player opens the chapter, the scene is shown full size, with a <strong>Next:</strong> line underneath naming what grows it next — "Reach level 5", for example. The scene stays hidden while the chapter is locked, so it can't give away what's inside. On the map, if you've turned it on, the scene sits over the Tabi's tile at the Tabi's depth. Staff see a scene as far as their own account has reached, not fully grown, so use the preview to check the later steps.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/a03-window-speak-up.webp" alt="A player's chapter window: progress at 66%, the island scene at full size with two towers, and 'Next: Get 67% through this Tabi'." width="1600" height="900" loading="lazy">
+  <figcaption><strong>In the chapter's window.</strong> The scene at full size, and the <strong>Next:</strong> line: one more milestone takes this player past 67%, where the third tower starts.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/tabis/m09-speak-up-100.webp" alt="The finished island on the journey map: three lit towers with a broadcast between them, two crossing spotlights and a full audience." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Finished.</strong> The same island once the chapter is done and the player has reached level 4: every row at its last step.</figcaption>
+</figure>
 
 <h2>Background Tabis</h2>
 <p>A Tabi doesn't have to be a clickable spot on the map. Set its <strong>What this Tabi is</strong> setting to <strong>The journey background</strong> (or tick <strong>Background</strong> on its row in Manage Content), instead of a chapter or a collectable. A background Tabi has no node on the map at all — instead, its Scene Builder art fills the entire screen behind the journey, scaled to cover and centred, and evolves the same way any Scene Builder art does as the player progresses. It takes no clicks, and it's never locked.</p>
@@ -2133,7 +3535,7 @@ HTML,
                 'title'      => 'Designing Milestones — Rewards & Unlock Rules',
                 'slug'       => 'designing-milestones-rewards-and-unlocks',
                 'section'    => 'setup',
-                'sort_order' => 9,
+                'sort_order' => 10,
                 'body'       => <<<'HTML'
 <p>A <strong>Milestone</strong> is the unit of design in BLUERABBIT: the thing you're actually placing on the Journey Map. Before you touch a single Step, decide what you're building and what it takes to unlock and complete it.</p>
 <p><em>Examples in this guide are drawn from a single running example. See <a href="/docs/meet-launch-week-example-adventure">Meet "Launch Week"</a> for the adventure referenced throughout.</em></p>
@@ -2147,7 +3549,11 @@ HTML,
 <p>If you're not sure, ask whether a player could plausibly fail. If yes, it's a Challenge. If they just need to go through it, it's a Milestone.</p>
 
 <h2>The Basics</h2>
-<p>The builder's <strong>Basic</strong> tab holds the Milestone's Name, Color, Icon and <strong>Main Image</strong> (required), which is the badge that represents it on the map. It also holds <strong>Autoload?</strong>. Once the Milestone is saved, its check-in QR code appears beside the Main Image with a <strong>Download QR</strong> button; see <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes</a>.</p>
+<p>The builder's <strong>Basic</strong> tab holds the Milestone's Name, Color, Icon and <strong>Main Image</strong>, which is the badge that represents it on the map. It also holds <strong>Autoload?</strong>. Only the Name is needed to save. Once the Milestone is saved, its check-in QR code appears beside the Main Image with a <strong>Download QR</strong> button; see <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b02-filled-basic.webp" alt="The Basic section filled in: name, colour, icon and main image, with Autoload off" width="1200" height="967" loading="lazy">
+  <figcaption><strong>Basic, filled in.</strong> A name, a colour, an icon and a main image picked from the media library. Autoload stays off, so players open it themselves.</figcaption>
+</figure>
 
 <h2>Autoload: "Do This First"</h2>
 <p>Set <strong>Autoload?</strong> to Yes and a player who opens the adventure is taken straight into this Milestone instead of landing on the map. Use it for an onboarding briefing, a debrief that has come due, or the follow-up an encounter set up. The priority is fixed:</p>
@@ -2168,6 +3574,10 @@ HTML,
   <li><strong>Optional</strong> — "Doesn't count toward Tabi unlock". A side activity that never holds up its chapter and doesn't count toward a player's journey progress.</li>
   <li><strong>Validate</strong> — "Require validation before awarding". Adds Validate and Invalidate buttons for each submission on the Milestone's Review page. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b03-filled-mechanics.webp" alt="The Mechanics section filled in: Tabi, level 1, 120 XP and 40 BLOO, no dates or costs" width="1200" height="827" loading="lazy">
+  <figcaption><strong>Mechanics, filled in.</strong> In the Choose Your Path Tabi, open from level 1, paying 120 XP and 40 BLOO; no dates, no unlock cost, not optional, no validation.</figcaption>
+</figure>
 
 <h2>Setting the Unlock Requirements</h2>
 <p>Everything that gates a Milestone beyond its level and dates lives in one place: the <strong>Conditions</strong> drawer on the <strong>Advanced</strong> tab. It slides in from the right and holds:</p>
@@ -2177,6 +3587,14 @@ HTML,
   <li><strong>Requires this key item</strong> — the player must be carrying it</li>
   <li><strong>Threshold conditions</strong> — numbers such as level, XP or journey completion %. These are the same conditions achievements and Tabi scenes use. Leave a box blank to skip it.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c02-conditions.webp" alt="The Conditions drawer listing milestones to require" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Conditions drawer.</strong> Milestones to finish first, at the top.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c05-conditions-more.webp" alt="The lower half of the Conditions drawer with one box per threshold and Save Conditions" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Thresholds.</strong> Further down: one box per threshold (Level, XP, Journey Completion % and the rest), then Save Conditions.</figcaption>
+</figure>
 <p>The drawer saves on its own with <strong>Save Conditions</strong>, and it stays disabled until the Milestone has been saved once. A player has to meet everything you set; an empty drawer means "available from day one", so nothing is locked unless you lock it. See <a href="/docs/conditions-when-things-unlock">Conditions — When Things Unlock</a> for how thresholds work across the app.</p>
 
 <h2>Rewards: XP, BLOO, and Beyond</h2>
@@ -2186,6 +3604,14 @@ HTML,
   <li><strong>Achievement Reward</strong> — the same, for an achievement.</li>
   <li><strong>Skill Reward (Garden)</strong> — adds one Bloom (one level) in the chosen Skill on completion, which feeds the player's Garden. It needs a Skill catalogue first; see <a href="/docs/setting-up-your-skills-catalog">Setting Up Your Skills Catalog</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b05-item-reward-drawer.webp" alt="The Item Reward drawer showing the adventure&#039;s items as cards" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Item Reward.</strong> The adventure's published rewards, keys and Tabi pieces as cards. Achievement Reward works the same way.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c01-saved-rewards.webp" alt="The Advanced section showing a skill reward, an item reward, no achievement and the Conditions button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Advanced section, saved.</strong> What was picked: a Skill for the Garden, an item, no achievement, and Conditions.</figcaption>
+</figure>
 <p>The two reward drawers are saved when you press <strong>Update Milestone</strong>. Individual Steps can pay out on their own too. Keep the XP curve roughly consistent across Milestones of similar effort, or levelling will feel arbitrary to players comparing notes.</p>
 
 <h2>Content: What Players Read</h2>
@@ -2196,6 +3622,10 @@ HTML,
   <li><strong>Failure Message</strong> — the text of the fail screen. It's only reached if something in the Milestone can actually fail: a question with limited tries that runs out, or a step that sends the player there.</li>
 </ul>
 <p>Leave either message blank and standard wording is used.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b04-filled-content.webp" alt="The Content section with a short description, the private quest context and a success message" width="1200" height="1564" loading="lazy">
+  <figcaption><strong>Content, filled in.</strong> The Short Description players read on the map, the private Quest Context for Game Masters and the A.I., and a Success Message. The Failure Message stays blank: nothing in this Milestone can fail.</figcaption>
+</figure>
 
 <h2>Attempts</h2>
 <p>A Milestone is played in attempts, like a Challenge. A player's attempt starts when they open it and carries on if they leave and come back; it ends when they finish it or fail it. Failing clears that attempt's answers, and the fail card says so: "Attempt 1 is over and its answers were cleared. Try again starts attempt 2." From the second attempt on, the step bar shows the attempt number beside the step count. There's no limit on how many attempts a player gets; the limits live on individual steps, as <strong>Maximum attempts</strong>. See <a href="/docs/full-step-library-choosing-the-right-step">The Full Step Library</a>.</p>
@@ -2223,6 +3653,10 @@ HTML,
 
 <h2>Reuse</h2>
 <p><strong>Duplicate</strong> in the bottom bar copies a Milestone with all of its Steps (or a Challenge with all of its questions) into the same adventure or a different one (<strong>Select destination</strong>), so a well-built Milestone becomes a template you reuse rather than rebuild. To create many Milestones at once from a spreadsheet, see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c03-duplicate-overlay.webp" alt="The Duplicate window for a milestone, choosing a destination adventure" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Duplicate.</strong> Copy the whole Milestone, steps included, into this adventure or another one you run.</figcaption>
+</figure>
 
 <p><strong>Where to go next:</strong> <a href="/docs/how-to-build-a-milestone-step-by-step">How to Build a Milestone, Step by Step</a> — the actual authoring flow, start to finish.</p>
 
@@ -2239,16 +3673,37 @@ HTML,
                 'title'      => 'How to Build a Milestone, Step by Step',
                 'slug'       => 'how-to-build-a-milestone-step-by-step',
                 'section'    => 'setup',
-                'sort_order' => 10,
+                'sort_order' => 11,
                 'body'       => <<<'HTML'
-<p>The end-to-end flow for getting one piece of content from an idea to a node players can actually reach on the map.</p>
+<p>The end-to-end flow for getting one piece of content from an idea to a node players can actually reach on the map. The screenshots follow one real build from the <a href="/docs/meet-launch-week-example-adventure">Launch Week</a> example: <em>Your First Customer Call</em>, a briefing followed by a Choice Board of two activities.</p>
 
 <h2>1. Decide What You're Making</h2>
 <p>Provide knowledge, or test it. Providing it means a <strong>Milestone</strong>; testing it means a <strong>Challenge</strong>. Everything below is the Milestone route. See <a href="/docs/how-to-build-a-challenge">How to Build a Challenge</a> for the other one.</p>
 
 <h2>2. Create the Milestone and Save It</h2>
 <p>Choose <strong>Milestone</strong> in the menu's Add group (<strong>New Milestone</strong> under Add Mechanics in the Classic view), or use the button on Manage Content's Journey tab. On the <strong>Basic</strong> tab give it a Name, Color, Icon and Main Image, then press <strong>Create Milestone</strong> in the bottom bar.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/a00-entry-staff-menu.webp" alt="The menu&#039;s Staff block with Add open, offering New milestone first, then a card for each switched-on section" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Add, in the menu's Staff block.</strong> <em>Make something new for this adventure</em>: New milestone comes first, then a card for each section the adventure has switched on.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/a00-entry-manage-journey.webp" alt="Manage Content&#039;s Journey tab listing milestones by Tabi, with New Milestone at the top" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Or from Manage Content.</strong> The Journey tab lists the adventure's milestones grouped by Tabi, with New Milestone at the top.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/a01-empty-basic.webp" alt="An empty New Milestone editor on its Basic section, with the section menu on the left and the bottom bar" width="1200" height="967" loading="lazy">
+  <figcaption><strong>A new milestone, on Basic.</strong> The menu on the left jumps between Basic, Mechanics, Content, Steps and Advanced; the bottom bar keeps who can see it, its status and Create Milestone in reach. The <strong>?</strong> at the top runs a guided tour of the editor.</figcaption>
+</figure>
+<p>Only the Name is needed to save: <strong>Create Milestone</strong> without one is refused, and says why. The save answers in a panel named after the Milestone, which tells you the next thing to do is add a step; closing it opens the new Milestone in its editor.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b08-created.webp" alt="The panel shown after Create Milestone, saying the milestone was created and that the next thing to do is add a step" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Created.</strong> The panel stays until you close it; the Milestone then opens in its editor, ready for steps.</figcaption>
+</figure>
 <p>Save before going any further. The Steps tab reads "Save the milestone first" until the Milestone exists, and the Conditions drawer stays disabled, because every Step and every condition attaches to a Milestone that already exists. A saved Milestone with no steps says so on its Steps tab: until you add one, players who open it find nothing to do.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d01-no-steps-yet.webp" alt="A saved milestone&#039;s Steps section with no steps yet and an Add Step button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>No steps yet.</strong> The Steps section says what that means for players; Add Step starts the first one.</figcaption>
+</figure>
 
 <h2>3. Build the Steps the Player Will Follow</h2>
 <p>This is the real work, and where the design happens. A Milestone is a sequence of Steps, and each Step has a <strong>type</strong> that decides what the player does at that moment: read a character's dialogue, watch a video, page through slides, answer a question correctly, upload something, pick a path. There are 31 types in six groups, and picking the right one is most of what makes a Milestone good rather than flat.</p>
@@ -2258,25 +3713,75 @@ HTML,
   <li><strong>Fill it in</strong>: the admin-only Label (so you can find it later), whether the step is Required, the type's own settings, an optional Background, and any Step Rewards it should pay out on its own. Text goes in the same rich-text editor every box uses.</li>
   <li><strong>Save Step</strong> to save it, or <strong>Cancel</strong>. The <strong>?</strong> button in the editor's header runs a short guided tour of it.</li>
 </ol>
-<p>Each row in the step list has Duplicate, Edit and Delete buttons, and rows can be dragged to reorder at any time. A SCORM, case study or video row also links to its own report.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d02-new-step-drawer.webp" alt="The Edit Step drawer for a new step, asking for a step type before saving" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A new step.</strong> It has no type yet, and the editor asks you to choose one before saving.</figcaption>
+</figure>
+<p>Each row in the step list shows its order, its type and its Label, with Duplicate, Edit and Delete buttons. <strong>Duplicate</strong> copies the step, with everything in it, to the end of the list. Drag a row by its bar to reorder; the new order is saved the moment you let go. <strong>Delete</strong> removes the step at once, without asking first, so be sure before you press it. A SCORM, case study or video row also links to its own report.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d04-steps-list.webp" alt="A milestone&#039;s eight steps in order, each with its type, choice and label, and Duplicate, Edit and Delete buttons" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The step list.</strong> Each row's type, the choice it plays in (on a Choice Board milestone) and its Label. Below: Add Step and Paste a question set.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d12-reorder-drag.webp" alt="A step row being dragged to a new place, with a gap where it will land" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Reordering.</strong> Drag a row by its bar; a gap opens where it will land.</figcaption>
+</figure>
 
 <h3>Dialogue: Pick a Speaker From the Cast</h3>
 <p>A Dialogue step's <strong>Who is speaking</strong> menu lists the adventure's speakers. Pick one and the name and portrait come from the cast, so a character looks the same on every line and a new portrait updates all of them at once. Choose <strong>Custom — set a name and portrait below</strong> for a one-off character. See <a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d05-step-dialogue.webp" alt="A Dialogue step with a speaker picked from the cast, standing on the left, and its words" width="1200" height="1204" loading="lazy">
+  <figcaption><strong>A briefing.</strong> A Dialogue spoken by a character from the cast, on the left of the scene. On a Choice Board milestone the <strong>Choice</strong> field appears; All choices means everyone plays it.</figcaption>
+</figure>
+
+<h3>Example: a Briefing, Then a Choice Board</h3>
+<p><em>Your First Customer Call</em> has eight steps: a briefing everyone plays, then a <strong>Choice Board</strong> with two choices. Each choice starts with a step whose Label and Background become the card's name and picture, asks one question, and ends on its own Win Screen.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d06-step-choice-board.webp" alt="The Choice Board step with choices to complete set to 1 and the two choices it found" width="1200" height="1119" loading="lazy">
+  <figcaption><strong>The board.</strong> Choices to complete is 1, so one card finishes the Milestone. Below, the choices it found and whether each ends on its own Win Screen.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d07-step-choice-first.webp" alt="The first step of Choice 1, whose label and background become the card" width="1200" height="1204" loading="lazy">
+  <figcaption><strong>A choice's first step.</strong> Its Label is the name on the card; its Background is the card's picture.</figcaption>
+</figure>
+</div>
 
 <h3>Profile Questions in Bulk</h3>
 <p>When the adventure has a profile, the Steps tab also offers <strong>Paste a question set</strong>. Write the questions in a text editor, paste them in, press <strong>Check it</strong>, then <strong>Add these questions</strong>. They're added after the steps already there; nothing is replaced. See <a href="/docs/profile-tests">Profile Tests</a>.</p>
 
-<p>Full detail on every type is in <a href="/docs/full-step-library-choosing-the-right-step">The Full Step Library</a>, and there's a one-screen lookup in the <a href="/docs/step-type-quick-reference">Step Type Quick Reference</a>.</p>
+<p>Full detail on every type, with what the player sees and its editor, is in <a href="/docs/full-step-library-choosing-the-right-step">The Full Step Library</a>, and there's a one-screen lookup in the <a href="/docs/step-type-quick-reference">Step Type Quick Reference</a>.</p>
 <p><em>A note on pacing:</em> alternate the groups. A run of four Deliver steps reads like a slide deck; a run of four Validate steps reads like an exam. Deliver, then ask; deliver, then ask.</p>
 
 <h2>4. Write the Endings</h2>
-<p>Every Milestone already ends on a win screen, and has a fail screen for players who run out of tries, so you don't need to add either as a Step. Their text comes from the <strong>Success Message</strong> and <strong>Failure Message</strong> on the Content tab, with standard wording if you leave them blank. When a player presses <strong>Finish</strong>, the result lands as a gold card with what the Milestone paid counting up (or <em>Handed in</em>, when its rewards wait for a Game Master's mark), and any item or achievement it gave follows once the card closes. A fail lands as a red card with <strong>Try again</strong> and <strong>Back to the journey</strong>. Add a Win Screen or Fail Screen step only when you want a custom ending: it replaces the standard one wherever it sits in the list.</p>
+<p>Every Milestone already ends on a win screen, and has a fail screen for players who run out of tries, so you don't need to add either as a Step. Their text comes from the <strong>Success Message</strong> and <strong>Failure Message</strong> on the Content tab, with standard wording if you leave them blank. When a player presses <strong>Finish</strong>, the result lands as a gold card with what the Milestone paid counting up (or <em>Handed in</em>, when its rewards wait for a Game Master's mark), and any item or achievement it gave follows once the card closes. A fail lands as a red card with <strong>Try again</strong> and <strong>Back to the journey</strong>. Add a Win Screen or Fail Screen step only when you want a custom ending: it replaces the standard one wherever it sits in the list. On a Choice Board, each choice can end on its own Win Screen, so the player who took it sees its own ending.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d10-step-win.webp" alt="A Win Screen step set to Choice 2" width="1200" height="937" loading="lazy">
+  <figcaption><strong>A Win Screen for one choice.</strong> Set to the same choice as the steps it ends.</figcaption>
+</figure>
 
 <h2>5. Set the Requirements and Rewards</h2>
 <p>Level, dates and the XP/BLOO/EP payout are on the Mechanics tab. The Advanced tab has the <strong>Conditions</strong> drawer (prerequisite milestones, achievements, a key item, number thresholds) and the <strong>Item Reward</strong>, <strong>Achievement Reward</strong> and <strong>Skill Reward</strong> choices. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/b05-item-reward-drawer.webp" alt="The Item Reward drawer showing the adventure&#039;s published items as cards" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Item Reward.</strong> The adventure's published rewards, keys and Tabi pieces as cards; the one you pick is given on completion.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c02-conditions.webp" alt="The Conditions drawer for a saved milestone, listing milestones to require" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Conditions.</strong> Open once the Milestone is saved: milestones to finish first, achievements to hold, a key item and thresholds. Nothing set means everyone at its level can open it.</figcaption>
+</figure>
 
 <h2>6. Update the Milestone</h2>
 <p>Press <strong>Update Milestone</strong>. The Conditions drawer saves itself with its own button; everything else, including the two reward drawers, is saved here. The save answers in a panel that stays until you close it, and if something is missing it lists every reason.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c01-saved-rewards.webp" alt="The Advanced section of a saved milestone showing its skill reward, item reward and conditions" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Once saved.</strong> The Advanced section shows what you picked: a Skill for the Garden, the item, no achievement, and Conditions ready to edit.</figcaption>
+</figure>
+<p>The editor works on a phone too: the sections stack and the bottom bar keeps the status and Update Milestone in reach.</p>
+<figure class="doc-shot doc-shot--phone">
+  <img src="/assets/docs/milestones-steps/m01-phone-editor.webp" alt="The milestone editor on a phone, with sections stacked" width="720" height="1558" loading="lazy">
+  <figcaption><strong>On a phone.</strong> The same editor, stacked.</figcaption>
+</figure>
 
 <h2>7. Play It, Then Check the Results</h2>
 <p>Once the Milestone is saved, the builder's header carries two links, each opening in a new tab:</p>
@@ -2284,6 +3789,16 @@ HTML,
   <li><strong>View Milestone</strong>: the play page, exactly as players see it. As a Game Master you can open it whatever its gating says, and the top bar carries a staff-only <strong>Jump to a step</strong> menu: skip to any step or ending past its locks, or press <strong>Edit steps</strong> to go back to the editor.</li>
   <li><strong>Review Content</strong>: every player's submission for this Milestone, where you grade, validate, leave feedback the player can see, and export or import grades as CSV. See <a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a>.</li>
 </ul>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/p02-play-board.webp" alt="The player&#039;s view of the Choice Board: two cards, one to complete" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Played.</strong> The board as a player meets it: two cards, one to complete.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/p03-play-card-back.webp" alt="The back of a choice card describing what the choice holds" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The back of a card.</strong> What the choice holds, before the player commits.</figcaption>
+</figure>
+</div>
 
 <h2>8. Put It on the Map</h2>
 <p>Two ways, and most Adventures use both:</p>
@@ -2291,6 +3806,10 @@ HTML,
   <li><strong>Group it into a Tabi</strong>: pick one in the Mechanics tab's <strong>Tabi</strong> menu. A Tabi is a chapter on the Journey Map that holds a set of Milestones, and it can carry its own prerequisites and conditions so a whole region unlocks at once. See <a href="/docs/tabi-editor">The Tabi Editor</a>.</li>
   <li><strong>Use the Journey Builder</strong>: drag the Milestone into the exact position you want on the canvas, and resize it if it deserves more visual weight than its neighbours. Milestones always sit on the Base layer, the one players can click. See <a href="/docs/journey-builder-design-palette">The Journey Builder</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/w03-journey-tabi-row.webp" alt="A Tabi&#039;s window on the journey listing the new milestone with what it pays, ready to start" width="1600" height="900" loading="lazy">
+  <figcaption><strong>In its Tabi.</strong> Players reach the new Milestone through its Tabi's window on the journey, with what it pays.</figcaption>
+</figure>
 
 <h2>9. Repeat</h2>
 <p>Add as many Milestones as the program needs, grouped into as many Tabis as the shape of the content calls for. Build one end-to-end first and play it yourself before mass-producing the rest: pacing problems are much cheaper to find in the first Milestone than in the twelfth. If the titles and rewards of the rest already sit in a spreadsheet, the Journey tab's <strong>Bulk Upload</strong> creates them in one go; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
@@ -2308,10 +3827,14 @@ HTML,
                 'title'      => 'The Full Step Library — Choosing the Right Step for the Moment',
                 'slug'       => 'full-step-library-choosing-the-right-step',
                 'section'    => 'setup',
-                'sort_order' => 11,
+                'sort_order' => 12,
                 'body'       => <<<'HTML'
 <p>Steps are the moment-to-moment content inside a Milestone: the thing a player is actually looking at. A Milestone can chain as many as you like, in order, and each one can carry its own reward on top of whatever the Milestone pays out.</p>
-<p>There are <strong>31 Step types</strong>, and the builder's <strong>Step Type</strong> menu groups them into six groups by what they ask of the player. That grouping is the useful way to think about pacing, so it's how this page is organised.</p>
+<p>There are <strong>31 Step types</strong>, and the builder's <strong>Step Type</strong> menu groups them into six groups by what they ask of the player. That grouping is the useful way to think about pacing, so it's how this page is organised. Each type below shows two pictures from the <a href="/docs/meet-launch-week-example-adventure">Launch Week</a> example: what the player sees, and the same step in its editor.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d03-step-type-list.webp" alt="The Step Type menu opened out, listing all 31 step types in six groups" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Step Type menu.</strong> All 31 types in their six groups: Deliver, Validate, Collect, Profile, Flow and Special. The Profile group is only offered once the adventure has a profile.</figcaption>
+</figure>
 
 <h2>What Every Step Has</h2>
 <p>Whatever type you pick, each Step shares the same frame:</p>
@@ -2322,81 +3845,453 @@ HTML,
   <li><strong>Step Rewards</strong>: XP, BLOO, EP (named the way this adventure names them), an Item Reward and/or an Achievement Reward, granted on completion.</li>
   <li><strong>Mistake Message</strong> and <strong>Maximum attempts</strong>: on the types that can be answered wrongly. See Tries below.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d02-new-step-drawer.webp" alt="The Edit Step drawer for a new step, before a step type is chosen" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A new step.</strong> Add Step opens the step editor in a drawer. Until you choose a Step Type it asks you to pick one before saving; the <strong>?</strong> button in its header runs a short tour of the drawer.</figcaption>
+</figure>
 <p>A player moves through the steps with the step bar along the bottom of the screen: <strong>Previous</strong>, the step count (and the attempt number from a second attempt on), and <strong>Continue</strong>, which stays locked with a line saying what opens it until the step is done.</p>
 
 <h2>Every Milestone Ends on a Win or a Fail</h2>
 <p>You never have to author an ending. The last step's <strong>Continue</strong> takes the player to a win screen, and <strong>Finish</strong> there completes the Milestone: the result lands as a gold card with what it paid counting up. A player who runs out of tries lands on a fail screen, and its red card ends that attempt: their answers for the Milestone are cleared, <strong>Try again</strong> starts the next attempt from the top, and rewards they've already earned stay theirs. The two screens use the Milestone's Success Message and Failure Message, or standard wording if those are blank. The Win Screen and Fail Screen step types (under Special) replace them when you want something custom.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/03-celebration-quest-completed.webp" alt="The gold result card for a completed milestone, showing the XP, BLOO and EP it paid" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The result card.</strong> Finishing a Milestone lands this card with what it paid, under the adventure's own names for its currencies, and a button to the next open milestone beside Back to the journey.</figcaption>
+</figure>
 
 <h2>Tries</h2>
 <p><strong>Maximum attempts</strong> sits with the Mistake Message. Leave it at 0 for unlimited tries. Any other number limits the tries on that step, and running out fails the whole Milestone: the player is sent to its fail screen and starts a new attempt, with fresh tries. The limit is enforced by the server, so once it's spent even a correct answer is refused.</p>
 <p>It works on <strong>Multiple Choice</strong>, <strong>Keyphrase</strong>, <strong>Cryptex</strong> and <strong>Require Backpack Item</strong>. Each of them tells the player their tries from the first look ("You have 3 tries", then "2 tries left", then a red "Last try"). Only a submitted answer spends one: picking options spends nothing, and an empty answer or the wrong number of picks on a "Choose 2" question is pointed out in the step and not counted. When the last try goes wrong, the step locks, says why, and moves on to the fail screen.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/14-multiple-choice-hint.webp" alt="A multiple choice step after a wrong answer, showing the Game Master&#039;s mistake message and the tries left" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A wrong answer.</strong> The step shows your Mistake Message and the tries left, right where the player is looking.</figcaption>
+</figure>
 
 <h2>Read It Again</h2>
 <p>A question often comes right after the content it asks about. On Multiple Choice, Keyphrase, Cryptex and Open Text steps, <strong>Read it again</strong> opens a panel over the question with the words of the steps before it (the speaker's name and face included), and <strong>Back to the question</strong> returns with the pick, the typed answer and the tries left exactly as they were. It lights up after a wrong answer. A video, audio, gallery or slides step before the question appears as a row with "Watch it again" and the like, which goes back to that step; a chip under the top bar brings the player straight back to the question. Nothing to set up: it follows the order the player actually came through.</p>
 
 <h2>Deliver — Auto-Complete on View</h2>
 <p>Content the player receives. Nothing to get right; they read, watch, or listen and continue.</p>
-<ul>
-  <li><strong>Dialogue</strong>: a character speaks. Set the <strong>Character Position</strong> (no one, just describing the scene; on the left; or on the right) and <strong>Who is speaking</strong>: a speaker from the adventure's cast, or <strong>Custom</strong> with a Character Name and Character Image (best at 9:16). Naming a speaker means the name and portrait follow the cast; see <a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a>. The workhorse of narrative pacing.</li>
-  <li><strong>Video</strong>: plays a video file you upload. Watch time is tracked per player, and Manage Content grows a Videos tab once the adventure has a video step. See <a href="/docs/case-study-and-video-reporting">Case Study &amp; Video Reporting</a>.</li>
-  <li><strong>Audio</strong>: plays an audio file in a player widget. Good for language work, podcast-style briefings, or anything voice-led.</li>
-  <li><strong>Gallery</strong>: up to seven pictures that fill the step, cut apart on a slant and laid out by how many there are. Players open any of them full screen and zoom in to search it, which makes it good for a scene to study or a set of exhibits.</li>
-  <li><strong>Slides (PDF)</strong>: a deck saved as a PDF (PowerPoint, Keynote, Google Slides and Canva can all export one). Players go through it a slide at a time and can zoom into any slide, and reaching the last slide completes the step. Animations, transitions and embedded video aren't kept.</li>
-  <li><strong>Find Item</strong>: the player is handed the item you choose (<strong>Item to grant</strong>), which lands in their Backpack. A reward beat with no test attached, and the natural setup for a later <em>Require Backpack Item</em> step.</li>
-</ul>
+
+<h3>Dialogue</h3>
+<p>A character speaks. Set the <strong>Character Position</strong> (no one, just describing the scene; on the left; or on the right) and <strong>Who is speaking</strong>: a speaker from the adventure's cast, or <strong>Custom</strong> with a Character Name and Character Image (best at 9:16). Naming a speaker means the name and portrait follow the cast; see <a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a>. The workhorse of narrative pacing.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/05-dialogue.webp" alt="A dialogue step: a character from the cast speaks, with the player&#039;s name in the line" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A speaker from the cast, with the player's name worked into the line.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t01-type-dialogue.webp" alt="The Dialogue step editor with Character Position, Who is speaking and Content" width="1200" height="1373" loading="lazy">
+  <figcaption><strong>The editor.</strong> Character Position, Who is speaking (from the cast) and the Content.</figcaption>
+</figure>
+</div>
+
+<h3>Video</h3>
+<p>Plays a video file you upload. Watch time is tracked per player, and Manage Content grows a Videos tab once the adventure has a video step. See <a href="/docs/case-study-and-video-reporting">Case Study &amp; Video Reporting</a>.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/08-video.webp" alt="A video step playing inside the milestone" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The video plays inside the step.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t02-type-video.webp" alt="The Video step editor with the video file and the Study notes in the Library section" width="1200" height="1181" loading="lazy">
+  <figcaption><strong>The editor.</strong> The Video File, and Study notes in the Library written from it (see <a href="/docs/library-study-notes-and-glossary">the Library</a>).</figcaption>
+</figure>
+</div>
+
+<h3>Audio</h3>
+<p>Plays an audio file in a player widget. Good for language work, podcast-style briefings, or anything voice-led.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/09-audio.webp" alt="An audio step with its built-in player" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A built-in player that shows the clip's length before it plays.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t03-type-audio.webp" alt="The Audio step editor with its audio file" width="1200" height="907" loading="lazy">
+  <figcaption><strong>The editor.</strong> Just the Audio File.</figcaption>
+</figure>
+</div>
+
+<h3>Gallery</h3>
+<p>Up to seven pictures that fill the step, cut apart on a slant and laid out by how many there are. Players open any of them full screen and zoom in to search it, which makes it good for a scene to study or a set of exhibits.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/10-gallery.webp" alt="A gallery step: pictures cut apart on a slant to fill the step" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The pictures fill the step; any one opens full screen.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t04-type-gallery.webp" alt="The Gallery step editor with its gallery images, up to seven" width="1200" height="1026" loading="lazy">
+  <figcaption><strong>The editor.</strong> Gallery Images, up to seven.</figcaption>
+</figure>
+</div>
+
+<h3>Slides (PDF)</h3>
+<p>A deck saved as a PDF (PowerPoint, Keynote, Google Slides and Canva can all export one). Players go through it a slide at a time and can zoom into any slide, and reaching the last slide completes the step. Animations, transitions and embedded video aren't kept.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/11-slides.webp" alt="A slides step showing one slide of a PDF deck" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> One slide at a time; Continue opens at the last one.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t05-type-slides.webp" alt="The Slides step editor with the PDF and the Study notes in the Library section" width="1200" height="1044" loading="lazy">
+  <figcaption><strong>The editor.</strong> The PDF, with how to export one, and Study notes in the Library.</figcaption>
+</figure>
+</div>
+
+<h3>Find Item</h3>
+<p>The player is handed the item you choose (<strong>Item to grant</strong>), which lands in their Backpack. A reward beat with no test attached, and the natural setup for a later <em>Require Backpack Item</em> step.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/12-find-item.webp" alt="A find item step handing the player an item for their backpack" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The item, and Grab the item and continue.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t06-type-find-item.webp" alt="The Find Item step editor with Content and Item to grant" width="1200" height="1191" loading="lazy">
+  <figcaption><strong>The editor.</strong> Content and Item to grant.</figcaption>
+</figure>
+</div>
 
 <h2>Validate — The Player Must Answer Correctly</h2>
 <p>Continue stays locked until they get it right. Each of these can carry a Mistake Message for wrong attempts.</p>
-<ul>
-  <li><strong>Multiple Choice</strong>: a question, an optional question image, and your options. Tick the box beside each correct answer, and choose whether players may select more than one (<strong>Allow multiple answers?</strong>). The fastest comprehension check there is.</li>
-  <li><strong>Keyphrase</strong>: the player types a word or phrase. You supply a <strong>Prompt / Question</strong> and a comma-separated list of <strong>Accepted Answers</strong> (any match passes) and decide whether case matters. Excellent for in-person events: put the phrase on a slide, a poster, or a physical prop.</li>
-  <li><strong>Cryptex</strong>: the same accepted-answers idea rendered as a combination lock the player turns. Its wheels hold A–Z and 0–9, so spaces, accents and punctuation are ignored ("Da Vinci" needs 7 wheels); set the <strong>Wheel Count</strong> (up to 20) and the editor warns you if no accepted answer fits it. Reach for it when the answer <em>should</em> feel like cracking something open.</li>
-  <li><strong>Puzzle</strong>: a jigsaw cut from an image you upload, on a grid of <strong>Columns</strong> and <strong>Rows</strong> you choose. <strong>Turned pieces</strong> starts the pieces rotated so players tap one to turn it, and <strong>Show the picture</strong> keeps a small copy in a corner, like the box lid; each makes it easier or harder. Low information density, high engagement: a change of pace, not a knowledge check.</li>
-  <li><strong>Require Backpack Item</strong>: a Prompt, the Required Item, and whether to consume it on use. The player sees their own backpack as a scrolling rack and presses <strong>Use</strong> on whatever sits under the sight. Nothing on the page says which item you want, so it's a real puzzle rather than a confirmation, and a wrong pick is a miss that tells them to check their backpack or visit the Item Shop. An empty backpack gets a pointer to the Item Shop, if the adventure has one. This is what turns the Item Shop and Find Item steps into a real progression mechanic rather than decoration.</li>
-  <li><strong>SCORM Package</strong>: upload a SCORM 1.2 .zip and it runs inside the Step. The step is done when the package reports itself completed or passed, a player who leaves partway resumes where they left off, and the score the package reports is kept for the SCORM report. The step bar offers <strong>Full screen</strong>. Use it to fold in content you already built in another authoring tool instead of rebuilding it. The same panel can replace the package. See <a href="/docs/scorm-packages-concept">SCORM Packages</a>.</li>
-  <li><strong>Case Study (HTML)</strong>: embeds a self-contained interactive HTML activity by its Launch URL. You set the <strong>Total Questions</strong> and the <strong>Pass Score</strong>; the activity reports its own result back and the Step completes when the player clears the bar, while a run below it on a required step offers Try again. A page with no quiz (a list of course links, a reading) works too: set Required? to No and players get Continue straight away. Every attempt is kept, pass or fail, with per-question detail you can read on Manage Content's Case Studies tab. This is the way in for bespoke, custom-built exercises.</li>
-</ul>
+
+<h3>Multiple Choice</h3>
+<p>A question, an optional question image, and your options. Tick the box beside each correct answer, and choose whether players may select more than one (<strong>Allow multiple answers?</strong>). The fastest comprehension check there is.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/15-multiple-choice.webp" alt="A multiple choice question and its options" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The question and its options.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t07-type-multiple-choice.webp" alt="The Multiple Choice step editor with the correct option ticked, a mistake message and maximum attempts set to 2" width="1200" height="1508" loading="lazy">
+  <figcaption><strong>The editor.</strong> Options with the right one ticked, a Mistake Message, and Maximum attempts set to 2.</figcaption>
+</figure>
+</div>
+
+<h3>Keyphrase</h3>
+<p>The player types a word or phrase. You supply a <strong>Prompt / Question</strong> and a comma-separated list of <strong>Accepted Answers</strong> (any match passes) and decide whether case matters. Excellent for in-person events: put the phrase on a slide, a poster, or a physical prop.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/16-keyphrase.webp" alt="A keyphrase step with a box to type the answer" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A prompt and a box to type the answer.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t08-type-keyphrase.webp" alt="The Keyphrase step editor with accepted answers and case sensitivity" width="1200" height="1247" loading="lazy">
+  <figcaption><strong>The editor.</strong> Prompt, Accepted Answers (comma-separated), Case sensitive?, Mistake Message and Maximum attempts.</figcaption>
+</figure>
+</div>
+
+<h3>Cryptex</h3>
+<p>The same accepted-answers idea rendered as a combination lock the player turns. Its wheels hold A–Z and 0–9, so spaces, accents and punctuation are ignored ("Da Vinci" needs 7 wheels); set the <strong>Wheel Count</strong> (up to 20) and the editor warns you if no accepted answer fits it. Reach for it when the answer <em>should</em> feel like cracking something open.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/17-cryptex.webp" alt="A cryptex lock with letter wheels spelling ORBIT" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> Wheels of letters and numbers; turn them to the word and press Unlock.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t09-type-cryptex.webp" alt="The Cryptex step editor with accepted answers and wheel count" width="1200" height="1266" loading="lazy">
+  <figcaption><strong>The editor.</strong> Accepted Answers and Wheel Count. Save Step refuses answers that don't fit the wheels, and says so.</figcaption>
+</figure>
+</div>
+
+<h3>Puzzle</h3>
+<p>A jigsaw cut from an image you upload, on a grid of <strong>Columns</strong> and <strong>Rows</strong> you choose. <strong>Turned pieces</strong> starts the pieces rotated so players tap one to turn it, and <strong>Show the picture</strong> keeps a small copy in a corner, like the box lid; each makes it easier or harder. Low information density, high engagement: a change of pace, not a knowledge check.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/19-puzzle.webp" alt="A jigsaw puzzle step with scattered pieces" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A jigsaw cut from the step's picture.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t10-type-puzzle.webp" alt="The Puzzle step editor with image, columns, rows, turned pieces and show the picture" width="1200" height="1100" loading="lazy">
+  <figcaption><strong>The editor.</strong> Puzzle Image, Columns, Rows, Turned pieces and Show the picture.</figcaption>
+</figure>
+</div>
+
+<h3>Require Backpack Item</h3>
+<p>A Prompt, the Required Item, and whether to consume it on use. The player sees their own backpack as a scrolling rack and presses <strong>Use</strong> on whatever sits under the sight. Nothing on the page says which item you want, so it's a real puzzle rather than a confirmation, and a wrong pick is a miss that tells them to check their backpack or visit the Item Shop. An empty backpack gets a pointer to the Item Shop, if the adventure has one. This is what turns the Item Shop and Find Item steps into a real progression mechanic rather than decoration.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/20-backpack-item.webp" alt="A backpack step showing the player&#039;s items on a rack with a sight in the middle" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> Their own backpack as a rack; Use on the item under the sight.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t11-type-backpack-item.webp" alt="The Require Backpack Item step editor with prompt, required item and consume on use" width="1200" height="1233" loading="lazy">
+  <figcaption><strong>The editor.</strong> Prompt, Required Item and Consume item on use?, with a Mistake Message and Maximum attempts.</figcaption>
+</figure>
+</div>
+
+<h3>SCORM Package</h3>
+<p>Upload a SCORM 1.2 .zip and it runs inside the Step. The step is done when the package reports itself completed or passed, a player who leaves partway resumes where they left off, and the score the package reports is kept for the SCORM report. The step bar offers <strong>Full screen</strong>. Use it to fold in content you already built in another authoring tool instead of rebuilding it. The same panel can replace the package. See <a href="/docs/scorm-packages-concept">SCORM Packages</a>.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/21-scorm.webp" alt="A SCORM 1.2 course running inside a step" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The package runs inside the step.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t12-type-scorm.webp" alt="The SCORM Package step editor with the uploaded package and Study notes in the Library" width="1200" height="1058" loading="lazy">
+  <figcaption><strong>The editor.</strong> The SCORM 1.2 .zip, and Study notes in the Library, which a new package writes by itself.</figcaption>
+</figure>
+</div>
+
+<h3>Case Study (HTML)</h3>
+<p>Embeds a self-contained interactive HTML activity by its Launch URL. You set the <strong>Total Questions</strong> and the <strong>Pass Score</strong>; the activity reports its own result back and the Step completes when the player clears the bar, while a run below it on a required step offers Try again. A page with no quiz (a list of course links, a reading) works too: set Required? to No and players get Continue straight away. Every attempt is kept, pass or fail, with per-question detail you can read on Manage Content's Case Studies tab. This is the way in for bespoke, custom-built exercises.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/22-case-study.webp" alt="An interactive case study running inside a step" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The case study runs inside the step; its result is graded against your pass mark.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t13-type-case-study-html.webp" alt="The Case Study step editor with launch URL, pass score and total questions" width="1200" height="1128" loading="lazy">
+  <figcaption><strong>The editor.</strong> Launch URL, Pass Score and Total Questions.</figcaption>
+</figure>
+</div>
 
 <h2>Collect — The Player Submits, With No Right or Wrong</h2>
 <p>You're gathering something, not grading it. Use these for reflection, feedback, evidence, and opinion.</p>
+
+<h3>Open Text</h3>
+<p>Free writing to the prompt in the step's Content, with an optional <strong>Min Words</strong>. Players write in a small rich-text box (bold, italic, alignment, links, bullet lists and Add Media for a picture), and the answer is shown back to them formatted, never as raw code. Each Open Text step keeps its own answer, so a Milestone can ask several questions and keep every reply. Set <strong>A.I. Validation</strong> to On and the answer is checked before the player moves on, giving them instant feedback to revise against. Two settings shape the check:</p>
 <ul>
-  <li><strong>Open Text</strong>: free writing to the prompt in the step's Content, with an optional <strong>Min Words</strong>. Players write in a small rich-text box (bold, italic, alignment, links, bullet lists and Add Media for a picture), and the answer is shown back to them formatted, never as raw code. Each Open Text step keeps its own answer, so a Milestone can ask several questions and keep every reply. Set <strong>A.I. Validation</strong> to On and the answer is checked before the player moves on, giving them instant feedback to revise against. Two settings shape the check:
-    <ul>
-      <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
-      <li><strong>A.I. Reviewer Context</strong>: private: players never see it, and the A.I. is told to keep it out of the feedback it writes them: no quoting, paraphrasing or translating its examples or expected answers, not even as a hint. Say what a good answer to this question must include. It's optional; without it the A.I. judges whether the answer is a genuine attempt at the prompt. The Milestone's Quest Context goes along with every check too.</li>
-    </ul>
-    The feedback is written in the language the player answered in. Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key: the adventure's own on its Connections pane (a cohort uses its template's), or else its owner's account key. If a check can't run, the answer goes through and the player is told the check didn't run; the answer is flagged for you on the Milestone Review, and the Adventure's owner, its Game Masters and the platform's administrators are alerted. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</li>
-  <li><strong>Survey Choice</strong>: a question with options and no correct answer. Choose whether players can pick more than one. With multiple answers on, <strong>Most answers a player can pick</strong> caps how many they tick (0 means no limit): the player sees "Choose up to 3" and the remaining boxes lock at the limit. Stats has a Surveys tab that totals every answer.</li>
-  <li><strong>Rating Scale</strong>: a numeric scale with a minimum and maximum you set, plus a label for each end ("Strongly Disagree" to "Strongly Agree"). The tool for pulse checks and confidence self-ratings.</li>
-  <li><strong>Poll</strong>: a question whose results always render as live percentage bars the moment the player votes. Use it when seeing what everyone else said is the point.</li>
-  <li><strong>Upload Image</strong>: the player submits a photo or screenshot, with a <strong>Max File Size (MB)</strong> you set. Use it for anything you need to <em>see</em> to assess.</li>
-  <li><strong>Upload Video</strong>: the same, for video. Pitches, demonstrations, language practice, physical technique.</li>
+  <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
+  <li><strong>A.I. Reviewer Context</strong>: private: players never see it, and the A.I. is told to keep it out of the feedback it writes them: no quoting, paraphrasing or translating its examples or expected answers, not even as a hint. Say what a good answer to this question must include. It's optional; without it the A.I. judges whether the answer is a genuine attempt at the prompt. The Milestone's Quest Context goes along with every check too.</li>
 </ul>
+<p>The feedback is written in the language the player answered in. Both settings are also used when you ask the A.I. for a second opinion on the finished submission, even if the player-side check is off. The check needs an Anthropic API key: the adventure's own on its Connections pane (a cohort uses its template's), or else its owner's account key. If a check can't run, the answer goes through and the player is told the check didn't run; the answer is flagged for you on the Milestone Review, and the Adventure's owner, its Game Masters and the platform's administrators are alerted. See <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/25-open-text.webp" alt="An open text step with a rich-text answer box and a minimum word count" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The prompt, a rich-text box and the word minimum.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t14-type-open-text.webp" alt="The Open Text step editor with min words, A.I. validation, strictness and reviewer context" width="1200" height="1446" loading="lazy">
+  <figcaption><strong>The editor.</strong> Content, Min Words, A.I. Validation, A.I. Strictness and the private A.I. Reviewer Context.</figcaption>
+</figure>
+</div>
+
+<h3>Survey Choice</h3>
+<p>A question with options and no correct answer. Choose whether players can pick more than one. With multiple answers on, <strong>Most answers a player can pick</strong> caps how many they tick (0 means no limit): the player sees "Choose up to 3" and the remaining boxes lock at the limit. Stats has a Surveys tab that totals every answer.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/26-survey-choice.webp" alt="A survey choice step reading Choose up to 2, with two options ticked" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> "Choose up to 2", counting as they tick.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t15-type-survey-choice.webp" alt="The Survey Choice step editor with allow multiple answers and most answers a player can pick" width="1200" height="1367" loading="lazy">
+  <figcaption><strong>The editor.</strong> Question, Allow multiple answers?, Most answers a player can pick and the Options.</figcaption>
+</figure>
+</div>
+
+<h3>Rating Scale</h3>
+<p>A numeric scale with a minimum and maximum you set, plus a label for each end ("Strongly Disagree" to "Strongly Agree"). The tool for pulse checks and confidence self-ratings.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/27-rating-scale.webp" alt="A rating scale from 1 to 10 with a label at each end" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A 1 to 10 scale with a label at each end.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t16-type-survey-rating.webp" alt="The Rating Scale step editor with min, max and their labels" width="1200" height="1037" loading="lazy">
+  <figcaption><strong>The editor.</strong> Question, Min, Max and a label for each end.</figcaption>
+</figure>
+</div>
+
+<h3>Poll</h3>
+<p>A question whose results always render as live percentage bars the moment the player votes. Use it when seeing what everyone else said is the point.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/28-poll.webp" alt="Poll results shown as percentage bars after voting" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> After voting, how the cohort voted, as a share of the votes per option.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t17-type-survey-poll.webp" alt="The Poll step editor with a question and options" width="1200" height="1176" loading="lazy">
+  <figcaption><strong>The editor.</strong> Question and Options.</figcaption>
+</figure>
+</div>
+
+<h3>Upload Image</h3>
+<p>The player submits a photo or screenshot, with a <strong>Max File Size (MB)</strong> you set. Use it for anything you need to <em>see</em> to assess.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/29-upload-image.webp" alt="An upload image step stating the size limit before a file is picked" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The prompt, with the size limit stated before they pick a file.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t18-type-upload-image.webp" alt="The Upload Image step editor with prompt and max file size" width="1200" height="965" loading="lazy">
+  <figcaption><strong>The editor.</strong> Prompt and Max File Size (MB).</figcaption>
+</figure>
+</div>
+
+<h3>Upload Video</h3>
+<p>The same, for video. Pitches, demonstrations, language practice, physical technique.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/30-upload-video.webp" alt="An upload video step" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A video upload, for you to review.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t19-type-upload-video.webp" alt="The Upload Video step editor with prompt and max file size" width="1200" height="965" loading="lazy">
+  <figcaption><strong>The editor.</strong> Prompt and Max File Size (MB).</figcaption>
+</figure>
+</div>
 
 <h2>Profile — Weighted Toward a Trait</h2>
 <p>This group appears in the Step Type menu once the adventure has a published profile (built under Manage Content, Profiles). All three ask which <strong>Profile</strong> the step belongs to, so one Milestone can carry questions for more than one, mixed in with story steps. Players never see the weights. See <a href="/docs/profile-tests">Profile Tests</a>.</p>
-<ul>
-  <li><strong>Weighted Options</strong>: a question whose options each carry a weight per trait, in a table with one column per trait (leave a cell at 0 for a trait an answer says nothing about). You choose whether the player can pick more than one; every picked option adds its own weights.</li>
-  <li><strong>Agree / Disagree Scale</strong>: a statement the player rates, which scores toward one trait. Set the lowest and highest value (1 and 7 by default) and a label for each end. Write the statement so agreeing means <em>more</em> of the trait: the score is added as given.</li>
-  <li><strong>Profile Result</strong>: shows the player their sheet for that profile: the dominant trait, the chart, and what every trait means. It never shows their answers back to them. Place it wherever the reading belongs, including a later Milestone; it reads everything the player has answered for that profile anywhere in the adventure.</li>
-</ul>
+
+<h3>Weighted Options</h3>
+<p>A question whose options each carry a weight per trait, in a table with one column per trait (leave a cell at 0 for a trait an answer says nothing about). You choose whether the player can pick more than one; every picked option adds its own weights.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/40-profile-weighted-options.webp" alt="A profile question with options and no visible weights" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A question and its options; the weights stay hidden.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t20-type-trait-choice.webp" alt="The Weighted Options step editor with a table of options and one weight column per trait" width="1200" height="1380" loading="lazy">
+  <figcaption><strong>The editor.</strong> Profile, Question, Can the player pick more than one? and a weight per trait for every option.</figcaption>
+</figure>
+</div>
+
+<h3>Agree / Disagree Scale</h3>
+<p>A statement the player rates, which scores toward one trait. Set the lowest and highest value (1 and 7 by default) and a label for each end. Write the statement so agreeing means <em>more</em> of the trait: the score is added as given.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/41-profile-agree-scale.webp" alt="A statement to rate from disagree to agree" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A statement to rate between the two labels.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t21-type-trait-scale.webp" alt="The Agree / Disagree Scale step editor with statement, trait and scale values" width="1200" height="1233" loading="lazy">
+  <figcaption><strong>The editor.</strong> Profile, Statement, Scores toward, and the values and labels at each end.</figcaption>
+</figure>
+</div>
+
+<h3>Profile Result</h3>
+<p>Shows the player their sheet for that profile: the dominant trait, the chart, and what every trait means. It never shows their answers back to them. Place it wherever the reading belongs, including a later Milestone; it reads everything the player has answered for that profile anywhere in the adventure.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/42-profile-result.webp" alt="A profile result: the dominant trait, a chart and what each trait means" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> Their dominant trait, the chart and what every trait means.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t22-type-profile-result.webp" alt="The Profile Result step editor with content and the profile to show" width="1200" height="1279" loading="lazy">
+  <figcaption><strong>The editor.</strong> Content and the Profile to read.</figcaption>
+</figure>
+</div>
 
 <h2>Flow — Routing &amp; Branching</h2>
-<ul>
-  <li><strong>Jump to Step</strong>: buttons you draw, each with a Label, an optional image, and a <strong>Jump to</strong> destination among this Milestone's other steps. The player sees them as "Choose one option", and picking one takes them straight there. Add the other steps first so there's somewhere to jump to. A button whose destination you later delete simply goes to the next step.</li>
-  <li><strong>Branch Choice</strong>: the player picks one of the paths in a branch, and that choice is permanent and mutually exclusive: taking one closes the others. This is how you build "choose your track" moments. Branches are set up on Manage Content's <strong>Branches</strong> tab (or on the achievement), then picked here. Tick <strong>One per guild</strong> and a path one member of a guild holds is closed to the rest of that guild, so a team fills its roles once each. See <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</li>
-  <li><strong>Choice Board</strong>: listed as "Choice Board (do some of the choices)". The board offers up to six choices as cards, and the Milestone finishes once the player has completed the number you set in <strong>Choices to complete</strong> ("2 of 4"); once they have, the others close. Use it when not every player can or should do every activity. Once a Milestone has a board, every other step gets a <strong>Choice</strong> setting: <strong>All choices (every player)</strong>, for steps everyone plays before or after the board, or the choice it belongs to. End each choice with a Win Screen set to the same choice (or the built-in ending is used), and give a choice's first step a Background and a Label, which become the card's picture and name. The board's panel in the editor lists the choices it found and what each one is missing. A Milestone with a board pays its XP and BLOO once, whichever choices were made, and its steps pay no rewards of their own; set its grading to completion rather than a percentage.</li>
-  <li><strong>Encounter Choice</strong>: listed as "Encounter Choice (costs money + energy)". A situation in the step's Content, then priced options, each a numbered card in three blocks. <em>What the player reads</em>: the <strong>Button text</strong> (an option without it isn't saved) and a one-line <strong>Description</strong>, the catch. <em>What it costs and pays</em>: <strong>Costs</strong> and <strong>Pays</strong> in BLOO, <strong>Costs Energy</strong>, and an XP change that can be negative and can cost a level. <em>What happens after</em>: <strong>Then grant an achievement</strong> (which is how a follow-up Milestone gets unlocked) and <strong>Then say a message</strong> (a <a href="/docs/consequences">Consequence</a>). BLOO can go below zero, which is the setback. Energy can't, so an option the player can't afford the energy for is disabled: always leave one option that costs 0 energy, or a player with an empty tank is stuck. See <a href="/docs/random-encounters">Random Encounters</a>.</li>
-</ul>
+
+<h3>Jump to Step</h3>
+<p>Buttons you draw, each with a Label, an optional image, and a <strong>Jump to</strong> destination among this Milestone's other steps. The player sees them as "Choose one option", and picking one takes them straight there. Add the other steps first so there's somewhere to jump to. A button whose destination you later delete simply goes to the next step.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/31-jump-to-step.webp" alt="A jump to step with three option buttons" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> "Choose one option": each button leads to its own step.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t23-type-jump-to-step.webp" alt="The Jump to Step editor with buttons, each with a label and a jump to destination" width="1200" height="1335" loading="lazy">
+  <figcaption><strong>The editor.</strong> Buttons, each with its Label and a Jump to step.</figcaption>
+</figure>
+</div>
+
+<h3>Branch Choice</h3>
+<p>The player picks one of the paths in a branch, and that choice is permanent and mutually exclusive: taking one closes the others. This is how you build "choose your track" moments. Branches are set up on Manage Content's <strong>Branches</strong> tab (or on the achievement), then picked here. Tick <strong>One per guild</strong> and a path one member of a guild holds is closed to the rest of that guild, so a team fills its roles once each. See <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/33-branch-choice.webp" alt="A branch choice offering department tracks as cards" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The branch's paths as cards; the pick is permanent.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t24-type-branch-choice.webp" alt="The Branch Choice step editor with content, branch and one per guild" width="1200" height="1260" loading="lazy">
+  <figcaption><strong>The editor.</strong> Content, the Branch to choose from, and One per guild.</figcaption>
+</figure>
+</div>
+
+<h3>Choice Board</h3>
+<p>Listed as "Choice Board (do some of the choices)". The board offers up to six choices as cards, and the Milestone finishes once the player has completed the number you set in <strong>Choices to complete</strong> ("2 of 4"); once they have, the others close. Use it when not every player can or should do every activity. Once a Milestone has a board, every other step gets a <strong>Choice</strong> setting: <strong>All choices (every player)</strong>, for steps everyone plays before or after the board, or the choice it belongs to. End each choice with a Win Screen set to the same choice (or the built-in ending is used), and give a choice's first step a Background and a Label, which become the card's picture and name. The board's panel in the editor lists the choices it found and what each one is missing. A Milestone with a board pays its XP and BLOO once, whichever choices were made, and its steps pay no rewards of their own (the Step Rewards fields still show on its steps, but nothing is paid from them); set its grading to completion rather than a percentage.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/34-choice-board.webp" alt="A choice board offering three activity cards, two to complete" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A card per choice and how many to complete (two of three here).</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t31-type-choice-board.webp" alt="The Choice Board step editor with choices to complete and the choices it found" width="1200" height="1043" loading="lazy">
+  <figcaption><strong>The editor.</strong> Choices to complete, and the choices the board found: each one's steps and whether it ends on its own Win Screen.</figcaption>
+</figure>
+</div>
+
+<h3>Encounter Choice</h3>
+<p>Listed as "Encounter Choice (costs money + energy)". A situation in the step's Content, then priced options, each a numbered card in three blocks. <em>What the player reads</em>: the <strong>Button text</strong> (an option without it isn't saved) and a one-line <strong>Description</strong>, the catch. <em>What it costs and pays</em>: <strong>Costs</strong> and <strong>Pays</strong> in BLOO, <strong>Costs Energy</strong>, and an XP change that can be negative and can cost a level. <em>What happens after</em>: <strong>Then grant an achievement</strong> (which is how a follow-up Milestone gets unlocked) and <strong>Then say a message</strong> (a <a href="/docs/consequences">Consequence</a>). BLOO can go below zero, which is the setback. Energy can't, so an option the player can't afford the energy for is disabled: always leave one option that costs 0 energy, or a player with an empty tank is stuck. See <a href="/docs/random-encounters">Random Encounters</a>.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/35-encounter-choice.webp" alt="An encounter choice with three priced options and the player&#039;s BLOO and energy shown above them" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The situation, what they hold, and each option's price; Continue stays locked until they choose.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t25-type-encounter-choice.webp" alt="The Encounter Choice step editor with three option cards, each with text, costs, pays, XP and follow-ups" width="1200" height="2844" loading="lazy">
+  <figcaption><strong>The editor.</strong> Each option's Button text and Description, its costs and pay, its XP change, and the achievement or message that follows.</figcaption>
+</figure>
+</div>
 
 <h2>Special</h2>
-<ul>
-  <li><strong>System Message</strong>: narrator text in the system voice, with no character attached. For instructions, transitions, and anything that isn't a person speaking. It never shows a character, even though the editor offers the character settings here too; use Dialogue for a person.</li>
-  <li><strong>Win Screen</strong>: a custom success ending, showing this step's Content. It replaces the standard win screen wherever it sits in the list.</li>
-  <li><strong>Fail Screen</strong>: a custom fail ending, shown when a player runs out of tries. It replaces the standard fail screen; its button clears the player's answers and starts the Milestone over.</li>
-  <li><strong>Choose Display Name</strong>: asks the player what to call them (your <strong>Question</strong>, "What should we call you?" if you leave it blank) and saves it as their <em>display name</em>, the name other players see: 2 to 50 characters, with its own Save button, and Continue opens once it's saved. It never changes the nickname they sign in with. Almost always in the first Milestone of an Adventure.</li>
-  <li><strong>Choose Avatar</strong>: you define the avatars: <strong>Add avatar</strong> for each one and choose its image. The player picks one of them. Same placement logic as Choose Display Name.</li>
-</ul>
+
+<h3>System Message</h3>
+<p>Narrator text in the system voice, with no character attached. For instructions, transitions, and anything that isn't a person speaking. It never shows a character, even though the editor offers the character settings here too; use Dialogue for a person.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/07-system-message.webp" alt="A system message from Mission Control with no character shown" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The message in the system voice, with no character.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t26-type-system.webp" alt="The System Message step editor with content and character settings" width="1200" height="1585" loading="lazy">
+  <figcaption><strong>The editor.</strong> The Content, plus character settings the player's screen doesn't use.</figcaption>
+</figure>
+</div>
+
+<h3>Win Screen</h3>
+<p>A custom success ending, showing this step's Content. It replaces the standard win screen wherever it sits in the list. In a Milestone with a Choice Board, each choice can end on its own.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/37-win-screen.webp" alt="A custom win screen in the Game Master&#039;s words" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> Your ending, in your words.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t27-type-win.webp" alt="The Win Screen step editor with its content" width="1200" height="1097" loading="lazy">
+  <figcaption><strong>The editor.</strong> The Content shown on the win.</figcaption>
+</figure>
+</div>
+
+<h3>Fail Screen</h3>
+<p>A custom fail ending, shown when a player runs out of tries. It replaces the standard fail screen; its button clears the player's answers and starts the Milestone over.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/39-fail-screen.webp" alt="A custom fail screen explaining what went wrong" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> What went wrong, and a fresh start.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t28-type-fail.webp" alt="The Fail Screen step editor with its content" width="1200" height="1097" loading="lazy">
+  <figcaption><strong>The editor.</strong> The Content of the fail screen.</figcaption>
+</figure>
+</div>
+
+<h3>Choose Display Name</h3>
+<p>Asks the player what to call them (your <strong>Question</strong>, "What should we call you?" if you leave it blank) and saves it as their <em>display name</em>, the name other players see: 2 to 50 characters, with its own Save button, and Continue opens once it's saved. It never changes the nickname they sign in with. Almost always in the first Milestone of an Adventure.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/02-choose-display-name.webp" alt="A step asking the player to type the name colleagues will see" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> A box for the name colleagues will see.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t29-type-choose-nickname.webp" alt="The Choose Display Name step editor with its question" width="1200" height="906" loading="lazy">
+  <figcaption><strong>The editor.</strong> The Question asked above the box.</figcaption>
+</figure>
+</div>
+
+<h3>Choose Avatar</h3>
+<p>You define the avatars: <strong>Add avatar</strong> for each one and choose its image. The player picks one of them. Same placement logic as Choose Display Name.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/04-choose-avatar.webp" alt="A step offering a row of avatars to pick from" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The avatars you offered.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t30-type-choose-avatar.webp" alt="The Choose Avatar step editor with avatar options" width="1200" height="916" loading="lazy">
+  <figcaption><strong>The editor.</strong> Add avatar for each option and choose its image.</figcaption>
+</figure>
+</div>
 
 <h2>Pacing: The Only Rule That Matters</h2>
 <p>Alternate the groups. Deliver something, then ask for something. A run of Deliver steps reads like a slide deck; a run of Validate steps reads like an exam. The Milestones players remember alternate every two or three Steps.</p>
@@ -2418,9 +4313,13 @@ HTML,
                 'title'      => 'Step Type Quick Reference',
                 'slug'       => 'step-type-quick-reference',
                 'section'    => 'setup',
-                'sort_order' => 12,
+                'sort_order' => 13,
                 'body'       => <<<'HTML'
 <p>A fast lookup for all 31 Step types available inside a Milestone, grouped the way the builder's Step Type menu groups them. See <a href="/docs/full-step-library-choosing-the-right-step">The Full Step Library</a> for the fuller explanation of each.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/d03-step-type-list.webp" alt="The Step Type menu opened out, listing all 31 step types in six groups" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Step Type menu</strong> in the step editor, opened out: the same six groups as below.</figcaption>
+</figure>
 
 <h2>Deliver — auto-completes on view</h2>
 <ul>
@@ -2491,7 +4390,7 @@ HTML,
                 'title'      => 'Speakers & the Dialogue Cast',
                 'slug'       => 'speakers-and-dialogue-cast',
                 'section'    => 'setup',
-                'sort_order' => 13,
+                'sort_order' => 14,
                 'body'       => <<<'HTML'
 <p>A recurring character shouldn't have to be retyped on every line. Forty lines of the same mentor used to mean forty chances to spell her name differently or pick last week's portrait, and changing that portrait meant editing all forty. <strong>Speakers</strong> fix that: a Dialogue step names a speaker from the adventure's cast, and the name and portrait are read from the cast every time the line is shown.</p>
 
@@ -2502,6 +4401,14 @@ HTML,
   <li><strong>Custom — set a name and portrait below</strong> keeps the old behaviour: type a name and choose an image for this line only. Use it for a one-off character who never speaks again.</li>
 </ul>
 <p><strong>Character Position</strong> (on the left, on the right, or no one) still belongs to the step, so the same speaker can stand on either side of the scene. If the adventure has no cast yet, the menu says so and links to <strong>Add a speaker</strong>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t01-type-dialogue.webp" alt="The Edit Step drawer for a Dialogue step: Character Position set to On the left, Who is speaking set to Dana Okoye with her portrait previewed and the note Name and portrait come from the Speakers page, then the line itself" width="1200" height="1373" loading="lazy">
+  <figcaption><strong>A Dialogue step naming a speaker.</strong> Pick Dana Okoye from <strong>Who is speaking</strong> and her name and portrait are previewed from the Speakers page; the step only keeps where she stands and what she says.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/06-dialogue-second-speaker.webp" alt="A Dialogue step as a player sees it: a robot character named Nova on the left with a name tag, speaking a two-paragraph line, with Previous and Continue buttons" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What players see.</strong> The speaker's portrait and name tag beside the line, on the side the step chose.</figcaption>
+</figure>
 <p>Only Dialogue steps show a speaker. System Message steps are narrator text and never display a character.</p>
 
 <h2>Change It Once, Every Line Follows</h2>
@@ -2515,15 +4422,23 @@ HTML,
   <li>how many lines they speak (the number of steps that name them), or "No lines yet"</li>
   <li><strong>Edit</strong> for everything else about the speaker, <strong>View</strong> for their public speaker page, and <strong>Trash</strong></li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/a09-speakers-manage.webp" alt="Manage Content's Speakers tab: a row per speaker with portrait, editable first and last name, company, the number of dialogue lines, and Edit, View and Trash." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → Speakers.</strong> The cast in every status, with how many dialogue lines each speaks. Upload Speakers and New Speaker sit in the header; the search, the With dialogue and Not used yet buttons, Status and the sort narrow the list.</figcaption>
+</figure>
 <p>Click a speaker's picture right in this list (<strong>Change picture</strong>, or <strong>Add a picture</strong> when there's none) to open the Media Manager and swap it directly — no need to go into Edit just to change a photo.</p>
 <p>The toolbar searches the cast, filters to <strong>With dialogue</strong> or <strong>Not used yet</strong> or by status, and sorts by name or by lines of dialogue.</p>
 <p><strong>Trashing a speaker doesn't silence them.</strong> Lines that already name them keep speaking; the speaker just stops being offered on new steps. The Trash button's tooltip tells you how many lines that affects, and trashed speakers sit in their own Trashed section with Restore and Delete Forever.</p>
 
 <h2>What a Speaker Holds</h2>
-<p>The speaker editor has a <strong>Speaker Picture</strong> (required), First Name and Last Name, Company, Website, LinkedIn and a Speaker Bio, plus an optional <strong>Connect to Player</strong> link to a user account. Dialogue only uses the name and picture; the company, links and bio appear on the speaker's own page.</p>
+<p>The speaker editor has a <strong>Speaker Picture</strong>, First Name (the one field the save requires) and Last Name, Company, Website, LinkedIn and a Speaker Bio, plus an optional <strong>Connect to Player</strong> link to a staff account (an administrator, Game Master or NPC). A connected speaker's name, picture, bio, company and links come from that person's own profile wherever it has them, and win over what's typed in the editor. Dialogue only uses the name and picture; the company, links and bio appear on the speaker's own page. Once saved, the editor's bar adds <strong>Preview</strong>, which opens that page.</p>
 
 <h2>Speakers Also Run the Event Schedule</h2>
 <p>The same cast is the speaker list for your <a href="/docs/event-schedule-concept">event schedule</a>. When you build a session you tick which speakers are on it, the schedule shows who's speaking at each session, and each speaker's page lists the sessions they're in. When the adventure's Speakers section is on (Adventure Settings → Sections), players also get a Speakers page in the menu. So one speaker record can narrate your story and headline your live session. See <a href="/docs/how-to-build-an-event-schedule">How to Build an Event Schedule</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p08-player-speaker-page.webp" alt="A speaker's page as a player sees it: picture, name, company, About and the sessions she speaks at." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A speaker's page.</strong> The bio under About, then every published session the speaker is on.</figcaption>
+</figure>
 
 <h2>Templates, Cohorts and Duplicating</h2>
 <p>Speakers belong to the template adventure, so every cohort shares the same cast and a portrait changed on the template changes it everywhere. When you duplicate a Milestone within the same adventure family, its lines keep their speakers. Duplicate it into an unrelated adventure and the speaker links are cleared, because that adventure has its own cast; re-pick the speakers there.</p>
@@ -2541,7 +4456,7 @@ HTML,
                 'title'      => 'Challenges — Concept',
                 'slug'       => 'challenges-concept',
                 'section'    => 'setup',
-                'sort_order' => 14,
+                'sort_order' => 15,
                 'body'       => <<<'HTML'
 <p>A <strong>Challenge</strong> is the other thing you can place on the Journey Map alongside a Milestone. Where a Milestone <em>provides</em> knowledge, a Challenge <em>tests</em> it.</p>
 
@@ -2551,14 +4466,18 @@ HTML,
 <h2>Six Kinds of Question</h2>
 <p>A question isn't only multiple choice. Each one is one of six kinds, and a Challenge can mix them freely:</p>
 <ul>
-  <li><strong>Multiple choice</strong>: players pick the right option, or every right option. With several options marked correct, they must pick exactly those.</li>
+  <li><strong>Multiple choice</strong>: players pick the right option, or every right option. With several options marked correct, they must pick exactly those. A true-or-false question is a multiple choice with two options.</li>
   <li><strong>Put in order</strong>: players drag the items into the right order.</li>
   <li><strong>Match the pairs</strong>: players drag each answer onto its prompt. Extra answers can fit nowhere, to make guessing harder.</li>
   <li><strong>Sort into groups</strong>: players drop every item into its group.</li>
   <li><strong>Fill the gaps</strong>: players drag words into the blanks of a sentence. Extra words fit no blank.</li>
   <li><strong>Click on the picture</strong>: players mark every area you drew on a picture, and nothing else.</li>
 </ul>
-<p>Every question is all or nothing: it counts as right only when the whole answer is right. Players get the options, items and answers shuffled, so the right one never sits where you typed it first. Every kind works by mouse, touch and keyboard.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q18-gallery-list.webp" alt="A challenge's Questions section listing seven questions, each labelled with its kind, above a row of six Add a question buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One challenge, every kind.</strong> Each row in the Questions section is labelled with its kind (two multiple-choice questions here: one with a single right answer, one with several). The <strong>Add a question</strong> buttons along the bottom start a new question of each kind.</figcaption>
+</figure>
+<p>Every question is all or nothing: it counts as right only when the whole answer is right. Players get the options, items and answers shuffled, so the right one never sits where you typed it first. Every kind works by mouse, touch and keyboard. To see each kind from the player's side, see <a href="/docs/taking-a-challenge">Taking a Challenge</a>.</p>
 
 <h2>Attempts &amp; Retries</h2>
 <p>Three settings decide how often a player can try:</p>
@@ -2567,6 +4486,10 @@ HTML,
   <li><strong>Free Attempts</strong>: how many attempts cost nothing.</li>
   <li><strong>Attempt Cost</strong>: the BLOO charged for each attempt after the free ones. A player who can't afford the next attempt can't start it.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/f14-filled-mechanics.webp" alt="The Challenge Mechanics settings filled in: a 300-second time limit, 5 questions to display, 4 answers to win, 3 max chances, 2 free attempts and an attempt cost of 20 BLOO." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A real assessment.</strong> Five minutes on the clock, five questions drawn per attempt with four needed to pass, three chances in all, the first two free and 20 BLOO for the third.</figcaption>
+</figure>
 <p>Together they're what makes a Challenge a real assessment rather than something a player can brute-force by retrying indefinitely for free.</p>
 
 <h2>Enforced by the Server, Not the Browser</h2>
@@ -2579,6 +4502,10 @@ HTML,
 
 <h2>Per-Question Explanations</h2>
 <p>Each question has an optional <strong>Explanation</strong>, shown during the review and <strong>only for questions the player got right</strong>. Handing the reasoning to someone who got it wrong would hand them the answer, and there's a retry. Write why the answer is right, the idea you want them to take away, not "well done": the score already says that. Left blank, nothing shows.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/p07-review.webp" alt="A player's review of an attempt: each question with their answer marked right or wrong, and the Game Master's explanation under the right ones." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Explanations on review.</strong> A player's graded attempt: your explanation shows under each question they got right, and nowhere else.</figcaption>
+</figure>
 
 <h2>Rewards and Grading</h2>
 <p>A passed Challenge pays its XP, BLOO and EP, plus any Item, Achievement or Skill reward you set. If the adventure gives rewards After Grading, a Challenge's BLOO is scaled by the player's best score on it. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a> for the grading settings.</p>
@@ -2594,6 +4521,7 @@ HTML,
 <h2>Related</h2>
 <ul>
   <li><a href="/docs/how-to-build-a-challenge">How to Build a Challenge</a></li>
+  <li><a href="/docs/taking-a-challenge">Taking a Challenge</a> — the player's side</li>
   <li><a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones — Rewards &amp; Unlock Rules</a></li>
   <li><a href="/docs/conditions-when-things-unlock">Conditions — When Things Unlock</a></li>
 </ul>
@@ -2603,37 +4531,124 @@ HTML,
                 'title'      => 'How to Build a Challenge',
                 'slug'       => 'how-to-build-a-challenge',
                 'section'    => 'setup',
-                'sort_order' => 15,
+                'sort_order' => 16,
                 'body'       => <<<'HTML'
 <p>Step-by-step. See <a href="/docs/challenges-concept">Challenges — Concept</a> if you haven't decided whether you want a Challenge or a Milestone, and <a href="/docs/how-to-build-a-milestone-step-by-step">How to Build a Milestone</a> for the other route.</p>
 
 <ol>
-  <li><strong>Create it.</strong> Choose <strong>Challenge</strong> in the menu's Add group (<strong>New Challenge</strong> under Add Mechanics in the Classic view). It appears when the adventure's Challenges section is on. On the General tab give it a Name, Color, Icon and Main Image, then press <strong>Create Challenge</strong> in the bottom bar. The Questions tab reads "Please save the challenge before adding questions" until you do.</li>
-  <li><strong>Write your question bank.</strong> The Questions tab lists one row per question, and <strong>Add a question</strong> has a button for each kind: Multiple choice, Put in order, Match the pairs, Sort into groups, Fill the gaps and Click on the picture. Each opens the question in one window (below), and one save writes the whole question.</li>
+  <li><strong>Create it.</strong> Choose <strong>Challenge</strong> in the menu's Add group (<strong>New Challenge</strong> under Add Mechanics in the Classic view). It appears when the adventure's Challenges section is on. On the General tab give it a Name, Color, Icon and Main Image, then press <strong>Create Challenge</strong> in the bottom bar. Only the name is needed to save: without it the save is refused and a panel lists what to fix. The Questions tab reads "Please save the challenge before adding questions" until you do.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/f01-new-empty.webp" alt="The New Challenge form open on its General section: name, colour, icon and main image, with tabs for Mechanics, Content, Questions and Advanced down the side." width="1600" height="900" loading="lazy">
+      <figcaption><strong>A new challenge.</strong> The form opens on General. The tabs down the side jump to Mechanics, Content, Questions and Advanced; the bar at the bottom holds who sees it, its status and Create Challenge.</figcaption>
+    </figure>
+    <p>Once it's created, a panel says what comes next: add the questions, then set <strong>Questions to display</strong> and <strong>Answers to win</strong> and update the challenge. Until you do, both stay at 0, which means the whole bank is shown and one right answer passes it. Close the panel and the page becomes the challenge's editor.</p>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/q01-created-next.webp" alt="A panel confirming the challenge was created and saying to add its questions, then set Questions to display and Answers to win." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Created, and what to do next.</strong> The panel stays until you close it.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Write your question bank.</strong> The Questions tab lists one row per question, and <strong>Add a question</strong> has a button for each kind: Multiple choice, Put in order, Match the pairs, Sort into groups, Fill the gaps and Click on the picture. Each opens the question in one window (below), and one save writes the whole question.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/b02-questions-empty.webp" alt="The Questions section of a saved challenge: the Bulk Upload box, an empty list and one Add a question button per kind." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Questions, once the challenge is saved.</strong> Bulk Upload for a CSV of multiple-choice questions, the list (empty for now) and one button per kind of question.</figcaption>
+    </figure>
+  </li>
   <li><strong>Write the explanations.</strong> Every kind has an Explanation, shown on review and only to a player who got that question right. Say why the answer is right, not "well done". Blank is fine.</li>
-  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does, plus a <strong>Deadline cost</strong>: what players can pay in BLOO to reopen the challenge after its deadline (0 keeps it closed). The challenge editor has no Unlock cost field, but an unlock cost set any other way is still asked for on the challenge page and on Start.</li>
-  <li><strong>Write the Content.</strong> The <strong>Short Description</strong> is the preview players read when they click the Challenge on the map. The <strong>Success Message</strong> lands on the player's Secrets &amp; Clues page once they pass.</li>
-  <li><strong>Set requirements and extra rewards</strong> on the Advanced tab: the <strong>Conditions</strong> drawer for prerequisites, and the Skill, Item and Achievement rewards. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a>; they work the same way here.</li>
-  <li><strong>Pick a status and save.</strong> Choose Publish, Draft or Locked (and, if the adventure has paths, who it's <strong>Visible to</strong>) in the bottom bar and press <strong>Update Challenge</strong>.</li>
+  <li><strong>Set the Challenge Mechanics</strong> on the Mechanics tab: <strong>Time Limit</strong> in seconds (blank for none), <strong>Questions to display</strong>, <strong>Answers to win</strong>, <strong>Max Chances</strong> (0 for unlimited), <strong>Free Attempts</strong>, and the <strong>Attempt Cost</strong> in BLOO for each attempt after those. The same tab carries the Tabi, Level, XP/BLOO/EP reward, Start Date and Deadline, Optional and Validate, just as a Milestone does, plus a <strong>Deadline cost</strong>: what players can pay in BLOO to reopen the challenge after its deadline (0 keeps it closed). The challenge editor has no Unlock cost field, but an unlock cost set any other way is still asked for on the challenge page and on Start. When you save, Questions to display and Answers to win are kept within the questions the challenge has.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/f14-filled-mechanics.webp" alt="The Mechanics tab filled in: deadline cost, Optional and Validate, then Challenge Mechanics with a 300-second time limit, 5 questions to display, 4 answers to win, 3 max chances, 2 free attempts and a 20 BLOO attempt cost." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Mechanics.</strong> Five minutes on the clock, five questions drawn per attempt with four to pass, three chances, the first two free and 20 BLOO after that.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Write the Content.</strong> The <strong>Short Description</strong> is the preview players read when they click the Challenge on the map. The <strong>Success Message</strong> lands on the player's Secrets &amp; Clues page once they pass.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/f08-content.webp" alt="The Content tab with the Short Description and the message fields." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Content.</strong> The Short Description (up to 200 characters) is what players read before they start.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Set requirements and extra rewards</strong> on the Advanced tab: the <strong>Conditions</strong> drawer for prerequisites, and the Skill, Item and Achievement rewards. See <a href="/docs/designing-milestones-rewards-and-unlocks">Designing Milestones</a>; they work the same way here. Conditions need the challenge saved first, and save on their own with <strong>Save Conditions</strong>.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/f10-advanced.webp" alt="The Advanced tab: a Skill Reward and three drawers, Item Reward, Achievement Reward and Conditions." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Advanced.</strong> All optional: a skill reward, and drawers for an item, an achievement and the conditions.</figcaption>
+    </figure>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/b10-drawer-conditions.webp" alt="The Conditions drawer open: milestones a player must have finished before the challenge opens." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Conditions.</strong> What a player needs before the challenge opens: milestones finished, achievements held, a key item, or thresholds.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Pick a status and save.</strong> Choose Publish, Draft or Locked (and, if the adventure has paths, who it's <strong>Visible to</strong>) in the bottom bar and press <strong>Update Challenge</strong>. On a saved challenge the bar also has <strong>Duplicate</strong>, which copies it with its questions into this adventure or another one you run.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-challenges/f11-bottom-bar.webp" alt="The bottom bar: Visible to path, Publication status, Cancel and Create Challenge." width="1600" height="662" loading="lazy">
+      <figcaption><strong>The bottom bar.</strong> Who sees it (all paths, or one path or rank) and its status: Publish, Draft (players don't see it), Locked (they see it closed) or Trash.</figcaption>
+    </figure>
+  </li>
   <li><strong>Place it on the Journey Map</strong>, into a Tabi, or positioned directly in the Journey Builder.</li>
 </ol>
 <p>The header's <strong>View Challenge</strong> opens it as players see it, and <strong>Review Challenge answers</strong> opens its report in a new tab: players' attempts and how each question went.</p>
 
 <h2>The Question Window</h2>
 <p>Every question has a <strong>Question Text</strong>, optional <strong>Media</strong> (a picture, a video or a sound shown above the question) and an <strong>Explanation</strong>. Then each kind asks for its own answer:</p>
-<ul>
-  <li><strong>Multiple choice</strong>: add <strong>Answer Options</strong> with <strong>Add Option</strong> and tick <strong>Correct</strong> on every right one. With more than one ticked, players must pick all of them. An option can carry its own picture.</li>
-  <li><strong>Put in order</strong>: write the items in the right order; drag a row by its handle to move it. Players get them shuffled.</li>
-  <li><strong>Match the pairs</strong>: each pair is a prompt (what players see) and its answer (what they drag onto it). <strong>Extra answers</strong>, optional, match no prompt.</li>
-  <li><strong>Sort into groups</strong>: name two or more groups (a group can show a picture as well as its name), then add the items to sort and choose each one's group. Every item belongs to a group.</li>
-  <li><strong>Fill the gaps</strong>: write the text and put <code>___</code> where each blank goes ("Water boils at ___ degrees at ___ level."). Give every blank its word; give one blank two words and either is right. Extra words fit no blank and make guessing harder.</li>
-  <li><strong>Click on the picture</strong>: choose a picture, then drag on it to draw each area players must find. Drag an area to move it and its corner to resize it. Players must mark every area once, and nothing else.</li>
-</ul>
-<p>Press <strong>Create question</strong> (or <strong>Update question</strong>). A question that isn't finished still saves, so you can come back to it: its row says <strong>Incomplete</strong> and its window lists why players can't get it right yet. Each row also has <strong>Edit</strong>, <strong>Duplicate</strong> (the copy goes at the end of the list) and <strong>Trash</strong> (players stop getting it; answers already given stay in the reports). Esc or Cancel closes the window.</p>
+<p><strong>Multiple choice</strong>: add <strong>Answer Options</strong> with <strong>Add Option</strong> and tick <strong>Correct</strong> on every right one. With more than one ticked, players must pick all of them. An option can carry its own picture. For a true-or-false question, give it two options.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q03-single.webp" alt="The multiple-choice question window: the question text, a picture above it, four answer options with one ticked Correct, and the Explanation." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Multiple choice.</strong> One option ticked Correct, so players pick one. The picture sits above the question; the Explanation shows on review to players who got it right.</figcaption>
+</figure>
+<p><strong>Put in order</strong>: write the items in the right order; drag a row by its handle to move it. Players get them shuffled.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q06-order.webp" alt="The Put in order question window: items written in the right order, each with a drag handle." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Put in order.</strong> Write the items in the order that's right; players get them shuffled.</figcaption>
+</figure>
+<p><strong>Match the pairs</strong>: each pair is a prompt (what players see) and its answer (what they drag onto it). <strong>Extra answers</strong>, optional, match no prompt.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q08-match.webp" alt="The Match the pairs question window: prompts on the left, their answers on the right, and extra answers below." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Match the pairs.</strong> Each row is a prompt and its answer; extra answers fit no prompt.</figcaption>
+</figure>
+<p><strong>Sort into groups</strong>: name two or more groups (a group can show a picture as well as its name), then add the items to sort and choose each one's group. Every item belongs to a group.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q10-group.webp" alt="The Sort into groups question window: two named groups and a list of items, each assigned to a group." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Sort into groups.</strong> The groups first, then each item with the group it belongs in.</figcaption>
+</figure>
+<p><strong>Fill the gaps</strong>: write the text and put <code>___</code> where each blank goes ("Water boils at ___ degrees at ___ level."). Give every blank its word; give one blank two words and either is right. Extra words fit no blank and make guessing harder.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q12-gaps.webp" alt="The Fill the gaps question window: question text with two blanks, a preview of the blanks, and a word for each blank." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Fill the gaps.</strong> The editor counts the blanks in your text and previews them; give each one its word.</figcaption>
+</figure>
+<p><strong>Click on the picture</strong>: choose a picture (a picture only, not a video or a sound), then drag on it to draw each area players must find. Drag an area to move it and its corner to resize it, and name each area for the reports. Players must mark every area once, and nothing else.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q17-hotspot.webp" alt="The Click on the picture question window: a photo of a desk with two areas drawn on it, each named." width="1600" height="1500" loading="lazy">
+  <figcaption><strong>Click on the picture.</strong> Two areas drawn on the picture and named. Players must find both.</figcaption>
+</figure>
+<p>Press <strong>Create question</strong> (or <strong>Update question</strong>). A question that isn't finished still saves, so you can come back to it: its row says <strong>Incomplete</strong> and its window lists why players can't get it right yet. Each row also has <strong>Edit</strong>, <strong>Duplicate</strong> (the copy goes at the end of the list) and <strong>Trash</strong> (players stop getting it; answers already given stay in the reports). Esc or Cancel closes the window. There's no order to set: every attempt shuffles the questions it draws.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/q16-incomplete-row.webp" alt="The questions list with one row flagged Incomplete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An unfinished question.</strong> Its row is flagged <strong>Incomplete</strong>; hover the flag for what's missing.</figcaption>
+</figure>
 <p>A bank of multiple-choice questions can also come in from a CSV file: <strong>Bulk Upload</strong> on a saved Challenge's Questions tab. See <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
 
 <h2>What the Player Gets</h2>
-<p>A player presses <strong>Start!</strong> (the panel beside it says whether the attempt is free or what it costs), answers, and presses <strong>Submit answers</strong>, which asks once more on a full-screen check that counts their answers and flags any blanks. The attempt lands as a card, gold for a pass and red for a fail, then opens the review: the graded questions with your explanations on the ones they got right, and a bottom bar with <strong>Back to the journey</strong> and, after a fail, <strong>Try again</strong>. Costs, the attempt cap and grading are enforced by the server, and the answer key is never sent to the player's browser.</p>
+<p>A player presses <strong>Start!</strong> (the panel beside it says whether the attempt is free or what it costs), answers, and presses <strong>Submit answers</strong>, which asks once more on a full-screen check that counts their answers and flags any blanks. The attempt lands as a card, gold for a pass and red for a fail, then opens the review: the graded questions with your explanations on the ones they got right, and a bottom bar with <strong>Back to the journey</strong> and, after a fail, <strong>Try again</strong>. Costs, the attempt cap and grading are enforced by the server, and the answer key is never sent to the player's browser. <a href="/docs/taking-a-challenge">Taking a Challenge</a> shows every screen.</p>
+
+<h2>Seeing How It Went</h2>
+<p><strong>Review Challenge answers</strong> (in the editor's header) opens the challenge's report: how many have completed it, players, attempts, pass rate and average grade, then every player's best attempt, with a search, a filter by result and a CSV download.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/r01-report.webp" alt="A challenge report: completion, players, attempts, pass rate and average grade at the top, then each player's best attempt." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The challenge's report.</strong> The totals, then one row per player with their best attempt.</figcaption>
+</figure>
+<p>Under it, <strong>Results by question</strong> shows how often each question was answered right; for multiple choice, how many picked each option, and for the other kinds, the right answer and how many got it. That's where a question that's unclear, or simply too hard, shows up.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/r02-report-questions.webp" alt="Results by question: each question with the share of players who got it right and how many picked each option." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Results by question.</strong> Each question's success rate, and how the answers spread across the options.</figcaption>
+</figure>
+<p>Click a player to open their attempt question by question: their answer beside the right one, marked correct or not.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/r03-report-attempt.webp" alt="One player's attempt, question by question, with their answer beside the correct one." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One attempt.</strong> Each answer given, beside the right one.</figcaption>
+</figure>
+<p>For every challenge at once, Manage Content's <strong>Challenges</strong> tab lists each published challenge on the journey with its questions (how many are shown out of the bank, and how many it takes to pass), attempts, players, completions, pass rate, average grade and last attempt, with a filter, <strong>Download CSV</strong> and <strong>Open report</strong> on each. Pass rate and grade count submitted attempts only: a challenge someone opened and walked away from shows as unfinished, not as a fail. Drafts aren't listed there; open them from the Journey Manager.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/r04-manage-challenges.webp" alt="Manage Content's Challenges tab: each challenge with its questions, attempts, players, completions, pass rate, average grade and last attempt." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → Challenges.</strong> Every published challenge and how it's going, with Open report on each row.</figcaption>
+</figure>
 
 <h2>Sizing the Question Bank</h2>
 <p>Write more questions than you show. A bank of fifteen with five shown per attempt means a retry is a genuinely different test, which is what makes limited retries fair rather than a memory exercise. Leave <strong>Questions to display</strong> blank (or set it higher than the bank) and every question is shown. An <strong>Answers to win</strong> higher than the number shown is treated as "all of them".</p>
@@ -2641,6 +4656,7 @@ HTML,
 <h2>Related</h2>
 <ul>
   <li><a href="/docs/challenges-concept">Challenges — Concept</a></li>
+  <li><a href="/docs/taking-a-challenge">Taking a Challenge</a> — the player's side</li>
   <li><a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a></li>
   <li><a href="/docs/gm-toolkit-duplicator-reports-and-bulk-actions">GM Toolkit</a> — copying a Challenge, questions and all, into another adventure</li>
   <li><a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a></li>
@@ -2651,12 +4667,16 @@ HTML,
                 'title'      => 'Profile Tests — Profiles, Traits & Weighted Questions',
                 'slug'       => 'profile-tests',
                 'section'    => 'setup',
-                'sort_order' => 16,
+                'sort_order' => 17,
                 'body'       => <<<'HTML'
 <p>A Profile Test measures something about a player rather than testing what they know: a player type, a working style, a team role. You define the scale once and weight ordinary questions toward its traits. Each player then gets a character sheet that fills in as they answer. The official Marczewski HEXAD is built in and installs in one click.</p>
 
 <h2>Switching It On</h2>
 <p>Turn on <strong>Profile Tests</strong> on the Sections pane of Adventure Settings. That adds a <strong>Profiles</strong> tab to Manage Content and a Profiles section to Stats.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d15-profiles.webp" alt="Manage Content's Profiles tab with one profile, Working Style, tagged 4 traits, 9 questions in 3 milestones and 2 taken, and the Add the official HEXAD and New Profile buttons" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Profiles tab.</strong> Each profile with how many traits it has, how many questions are weighted toward it and in how many milestones, and how many players have taken it. <strong>Add the official HEXAD</strong> and <strong>New Profile</strong> sit at the top.</figcaption>
+</figure>
 
 <h2>The Pieces</h2>
 <ul>
@@ -2695,6 +4715,18 @@ HTML,
   <li><strong>Agree / Disagree Scale</strong> — one statement, answered on a numbered scale (1 to 7 unless you change it) between two labels such as "Strongly disagree" and "Strongly agree". The value picked goes to the one trait you choose. Write every statement so that agreeing means <em>more</em> of the trait: the score is added as given, so a reversed statement scores backwards.</li>
   <li><strong>Profile Result — show the sheet</strong> — no question, just the player's character sheet for the profile you choose.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t20-type-trait-choice.webp" alt="The Edit Step drawer for a Weighted Options step: the Profile picker set to Working Style, the question, Can the player pick more than one set to one answer, and four options each with a weight in the EXP, BUI, CON and ANA trait columns" width="1200" height="1380" loading="lazy">
+  <figcaption><strong>Weighted Options in the editor.</strong> The step names its profile, then each answer gets a weight in one column per trait. Here "Sketch three wild ideas" adds 3 to Explorer and 1 to Builder; a 0 says the answer means nothing for that trait.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/40-profile-weighted-options.webp" alt="A Weighted Options question as a player sees it: one question with several answers to choose from." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Weighted Options, as the player sees it.</strong> An ordinary-looking question. The weights behind each answer stay on the server.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/41-profile-agree-scale.webp" alt="An Agree / Disagree Scale question as a player sees it: one statement and a numbered scale between two labels." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Agree / Disagree Scale, as the player sees it.</strong> One statement, one numbered scale; the value picked goes to the trait you chose.</figcaption>
+</figure>
 <p>Each of these steps names its own <strong>Profile</strong>, so one milestone can carry questions for more than one scale and each is scored separately. Because questions are just steps, you can give a test a milestone of its own. You can also scatter the questions through story milestones, so players answer them without noticing they're being profiled.</p>
 
 <h2>How a Reading Is Scored</h2>
@@ -2704,6 +4736,10 @@ HTML,
 
 <h2>Placing the Result</h2>
 <p>Put a Profile Result step wherever the reading belongs: right after the questions, at the end of a later milestone, or in a milestone of its own. It reads everything the player has answered for that profile anywhere in the Adventure, so it works even when the questions are spread across the journey. A player who reaches it before answering anything is told nothing has been measured yet, rather than shown an empty chart.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/42-profile-result.webp" alt="A Profile Result step: a four-trait Working Style profile with the headline Explorer at 44 percent, its description, and a polar-area chart of all four traits." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Profile Result step.</strong> A four-trait profile drawn as a polar-area chart: the headline trait with its share of the profile and what it means, above the player's full mix.</figcaption>
+</figure>
 <p>Players can always find their reading again on their Journal's <strong>Profiles</strong> tab, which appears as soon as the Adventure has a published profile.</p>
 
 <h2>Pasting a Question Set</h2>
@@ -2752,60 +4788,99 @@ HTML,
                 'title'      => 'Posts & Resources',
                 'slug'       => 'posts-and-resources',
                 'section'    => 'setup',
-                'sort_order' => 17,
+                'sort_order' => 18,
                 'body'       => <<<'HTML'
 <p><strong>Posts</strong> and <strong>Resources</strong> are the adventure's reading material. They aren't played like milestones and they don't sit on the Journey: players open them from the menu, read them, and move on. A Post is an article or a notice; a Resource is reference material — an article, or a file or link to download.</p>
-<p>They appear in the menu when the adventure has the <strong>Blog</strong> and <strong>Lore / Resources</strong> sections switched on (Adventure Settings → Sections), under the names Posts and Resources unless you've renamed them. Create them from the menu's Add group (<strong>Post</strong> and <strong>Resource</strong>; <strong>New Post</strong> and <strong>New Resource</strong> under Add Mechanics in the Classic view).</p>
+<p>They appear in the menu when the adventure has the <strong>Blog</strong> and <strong>Lore / Resources</strong> sections switched on (Adventure Settings → Sections), under the names Posts and Resources unless you've renamed them. Create them from the menu's Add group (<strong>Post</strong> and <strong>Resource</strong>; <strong>New Post</strong> and <strong>New Resource</strong> under Add Mechanics in the Classic view), or with <strong>New post</strong> on the Posts page.</p>
 
 <h2>Writing a Post</h2>
 <ul>
-  <li><strong>Post Headline</strong>, and a <strong>Secondary Headline</strong> shown under it.</li>
-  <li><strong>Post Image</strong> — required.</li>
-  <li><strong>Level</strong> — the level a player needs to reach.</li>
-  <li><strong>Display Style</strong> — how the post presents (below).</li>
-  <li><strong>Start Date</strong> — optional; the post isn't available before it.</li>
-  <li><strong>Content</strong> — the article itself, in the rich-text editor. Player tokens work here, so a post can greet each reader by name; see <a href="/docs/personalising-text-with-player-tokens">Personalising Text</a>.</li>
-  <li>In the bottom bar: <strong>Visible to path</strong> (<strong>All paths</strong>, or a single path) and the publication status, <strong>Publish</strong>, <strong>Draft</strong> or <strong>Trash</strong>.</li>
+  <li><strong>Post Headline</strong>, and a <strong>Secondary Headline</strong> (up to 200 characters) shown under it. The headline is the one field the save requires.</li>
+  <li><strong>Post Image</strong> — a picture from the media library: the post's card on the Posts page and the header of the post itself.</li>
+  <li><strong>Level</strong> — the level a player needs to reach (1 to 99).</li>
+  <li><strong>Display Style</strong> — how the post presents on the Posts page (below).</li>
+  <li><strong>Start Date</strong> — optional; it dates the post, and the post isn't available before it.</li>
+  <li><strong>Content</strong> — the article itself, in the rich-text editor (Visual and Code tabs, Add Media for pictures). Player tokens work here, so a post can greet each reader by name; see <a href="/docs/personalising-text-with-player-tokens">Personalising Text</a>.</li>
+  <li>In the bottom bar: <strong>Visible to path</strong> (<strong>All paths</strong>, or a single path) and the publication status, <strong>Publish</strong>, <strong>Draft</strong> or <strong>Trash</strong>. The list also offers the adventure's ranks, but players are matched on the paths they hold, so pick a path.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/a09-filled.webp" alt="The New Post form filled in: headline, a picture from the media library, level 1, News Highlight style, a start date and a secondary headline." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A post, filled in.</strong> Headline, picture, level, Display Style, start date and the secondary headline that becomes the line under the title.</figcaption>
+</figure>
+<p>A post sends no notification. Players reach it from the menu, from a Posts widget or a linked graphic on the Journey Map, or from the Posts page.</p>
 
 <h2>The Four Display Styles</h2>
+<p>The Posts page is a news-style front page: a grid of cards, each with its picture filling the card and the words on a shade at its foot. The Display Style sets a card's size in that grid.</p>
 <ul>
-  <li><strong>Text on Right</strong> — the default. Image on the left, words on the right.</li>
-  <li><strong>Text on Left</strong> — the same two panes, words first.</li>
-  <li><strong>News Highlight</strong> — one full-width image with the headline laid over its foot.</li>
-  <li><strong>Headline</strong> — no image at all, by design: the style for a short notice.</li>
+  <li><strong>Headline</strong> — the largest card, two columns wide and two rows tall: the one to lead with.</li>
+  <li><strong>News Highlight</strong> — a wide card, two columns across one row.</li>
+  <li><strong>Text on Right</strong> (the default) and <strong>Text on Left</strong> — a standard card, one column.</li>
 </ul>
-<p>On a narrow screen the two-pane styles stack. A post with no image shows in the Headline style whatever you picked.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/a04-display-style.webp" alt="The Display Style list open on the post form, offering Text on Right, Text on Left, News Highlight and Headline." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Display Style.</strong> The same choice can be changed later, right in Manage Content's Blog list.</figcaption>
+</figure>
+<p>A post with no picture gets a card of words alone. On a narrow screen the grid becomes a single column.</p>
 
 <h2>Writing a Resource</h2>
 <ul>
-  <li><strong>Resource Name</strong>.</li>
+  <li><strong>Resource Name</strong> — the one field the save requires.</li>
   <li><strong>Style</strong> — <strong>Resource</strong> (the default) or <strong>Article</strong>.</li>
   <li><strong>Level</strong>.</li>
-  <li><strong>File or Link</strong> — paste a URL, or press <strong>Select file</strong> to pick one from the media library.</li>
+  <li><strong>File or Link</strong> — paste a URL, or press <strong>Select file</strong> to pick one from the media library (a PDF, a document or a picture).</li>
   <li><strong>Content</strong>.</li>
   <li><strong>Image</strong> — one of twelve ready-made book covers, or your own.</li>
-  <li><strong>Color</strong> — the accent on its card.</li>
+  <li><strong>Color</strong> — the accent on its card (amber if you don't pick one).</li>
   <li>In the bottom bar: <strong>Visible to path</strong> (all paths, or one) and the publication status, <strong>Publish</strong>, <strong>Draft</strong> or <strong>Trash</strong>. A draft stays out of the Resources page until you publish it.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/c07-filled.webp" alt="The New Resource form filled in: a name, the Article style, level 1, a file chosen from the media library and its content." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A resource, filled in.</strong> Name, Style, Level, File or Link and the content.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/c03-new-bottom.webp" alt="The Image field with twelve book covers and a slot for an uploaded picture, and the Color palette below it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Image and Color.</strong> A book cover from the shelf or a picture of your own, and the tint for its card.</figcaption>
+</figure>
 
 <h2>How a Resource Becomes a Download</h2>
-<p>A resource with the <strong>Resource</strong> style and a <strong>File or Link</strong> is a download: its card's button reads <strong>Download</strong> and opens the file or link in a new tab, and its reading page carries a Download button above the content. With no file or link — or with the <strong>Article</strong> style — it's an article, and <strong>Read</strong> opens the reading page. The Resources page shows them as a grid of cards, each with the start of its content.</p>
+<p>A resource with the <strong>Resource</strong> style and a <strong>File or Link</strong> is a download: its card's button reads <strong>Download</strong> and opens the file or link in a new tab, and its reading page carries a Download button above the content. With no file or link — or with the <strong>Article</strong> style — it's an article, and <strong>Read</strong> opens the reading page. On an Article, whatever is in File or Link is printed under the title as its subtitle, as plain text, so put a file you want downloaded on a Resource-style entry. The Resources page shows them as a grid of cards, each with the start of its content.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m10-resource-download.webp" alt="A Resource-style entry open for a player, with a Download button above its content." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Resource-style entry.</strong> Download opens the file in a new tab; the address itself isn't printed.</figcaption>
+</figure>
 <p>When the adventure has study notes in its <a href="/docs/library-study-notes-and-glossary">Library</a>, the Resources page becomes the player's Library, with <strong>Study notes</strong>, <strong>Glossary</strong> and <strong>Resources</strong> tabs. Your resources stay on the Resources tab exactly as described here.</p>
 
 <h2>The Posts Front Page</h2>
-<p>Posts have a proper front page now — a news-feed style list of everything published, rather than a bare list — and opening one gives a rebuilt, cleaner article view. A Game Master can also link a graphic or text element placed on the Journey Map directly to a Post: clicking it opens the article in an overlay window right there on the map, without leaving the journey. See <a href="/docs/journey-builder-design-palette">The Journey Builder</a>.</p>
+<p>Posts have a proper front page: the news-style grid described above, twelve to a page, in the order you set in Manage Content. A post above a player's level is still listed, locked: its picture blurred and its line saying when it opens. Staff see every published post, each card naming its path, plus <strong>Manage posts</strong> and <strong>New post</strong>. A Game Master can also link a graphic or text element placed on the Journey Map directly to a Post: clicking it opens the article in an overlay window right there on the map, without leaving the journey. See <a href="/docs/journey-builder-design-palette">The Journey Builder</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m01-posts.webp" alt="The Posts page: a grid of post cards in different sizes, each with its picture, date, headline and secondary headline." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Posts page.</strong> A News Highlight runs two columns wide, a Headline post takes the largest card, and the others take one column each.</figcaption>
+</figure>
 
 <h2>The Reading View</h2>
-<p>Posts and resources open on the same kind of page: the image and headline in the chosen style, the level and path as badges, the date it was posted, then the content. A <strong>Back to Posts</strong> (or Resources) link returns to the list. GMs also get <strong>Edit</strong> and <strong>All Posts</strong> buttons at the foot of the page.</p>
+<p>Posts and resources open on the same kind of page: a link back to the list at the top, the picture, the date and the path, the title and the secondary headline, then the content in a comfortable reading column. Under a post, <strong>Keep reading</strong> offers three more. Staff also get <strong>Edit</strong> and <strong>Trash</strong> at the top of the page.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m02-post-read.webp" alt="A post open for reading: its date, headline, picture and content." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Reading a post.</strong> Its date, headline, picture and content; more posts follow under Keep reading.</figcaption>
+</figure>
 
 <h2>Managing Them</h2>
-<p>Manage Content has a <strong>Blog</strong> tab and a <strong>Lore</strong> tab. Each lists what's published with its style, path and (for posts) start date, a search box, and <strong>Edit</strong> and <strong>Trash</strong> on every row. <strong>Reorder Posts</strong> and <strong>Reorder Resources</strong> set the order players see. Trashed ones sit in their own list below, with Restore and Delete. Both tabs also take a CSV file to add many at once; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+<p>Manage Content has a <strong>Blog</strong> tab and a <strong>Lore</strong> tab. Each lists what's published, and the columns save the moment you change them: the picture (click it to swap), the title, the style, the path and, for posts, the start date. Every row has <strong>Edit</strong> and <strong>Trash</strong>. <strong>Reorder Posts</strong> and <strong>Reorder Resources</strong> let you drag rows into the order players see. Both tabs also take a CSV file to add many at once; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/b01-style-in-place.webp" alt="Manage Content's Blog list with a post's Display Style being changed in its row and a confirmation shown." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Editing in place.</strong> Changing a post's style in the Blog list saves at once and says so.</figcaption>
+</figure>
+<p><strong>Trash asks first</strong>: the button turns into "Are you sure?" and a second click within a few seconds moves the post to the trash. Trashed ones sit in their own list below, with <strong>Restore</strong> (published again) and <strong>Delete</strong>, which asks the same way and removes the post for good, with no undo.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/b06-trashed.webp" alt="The Trashed Blog Entries list with Restore and Delete on each trashed post." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Trashed posts.</strong> Restore puts a post back on the Posts page; Delete removes it for good.</figcaption>
+</figure>
+<p><strong>Drafts aren't listed in these tabs</strong>: the Blog and Lore lists show published and trashed entries only. To come back to a draft, keep its editor's address (it appears in your browser after the first save), or publish it.</p>
 
 <h2>Who Can Read What</h2>
 <p>Posts and resources are gated the way milestones are:</p>
 <ul>
-  <li><strong>Level</strong> — a post gated to a level a player hasn't reached yet is listed as locked, with the level they need, rather than simply left out — so players always know there's more ahead. Opened directly before then, the page says <em>You need to be Level N to open this post.</em></li>
+  <li><strong>Level</strong> — a post gated to a level a player hasn't reached yet is listed as locked, with the level they need, rather than simply left out — so players always know there's more ahead. Opened directly before then, the page says <em>You need to be Level N to open this post.</em> A resource above the player's level is left out of the Resources page until they reach it.</li>
   <li><strong>Start date</strong> (Posts) — before it, the page says the post isn't available yet and gives the date. If the adventure hides milestones by date (any option other than <strong>Never</strong> in its time settings), future posts are also left out of the list until then.</li>
   <li><strong>Path</strong> — a post or resource set to one path doesn't appear for players on another, and they can't open it at all.</li>
 </ul>
@@ -2821,6 +4896,7 @@ HTML,
   <li><a href="/docs/announcements-keeping-an-adventure-alive">Announcements</a> — other ways to keep players informed</li>
   <li><a href="/docs/customizing-taskbar-and-branding">Customizing Your Taskbar &amp; Branding</a> — the Posts and Resources backgrounds</li>
   <li><a href="/docs/library-study-notes-and-glossary">Authoring the Library: Study Notes &amp; Glossary</a></li>
+  <li><a href="/docs/manage-content-every-section">Manage Content: Every Section</a></li>
 </ul>
 HTML,
             ],
@@ -2828,7 +4904,7 @@ HTML,
                 'title'      => 'Authoring the Library: Study Notes & Glossary',
                 'slug'       => 'library-study-notes-and-glossary',
                 'section'    => 'setup',
-                'sort_order' => 18,
+                'sort_order' => 19,
                 'body'       => <<<'HTML'
 <p>The <strong>Library</strong> gives players something to revise from: study notes and a glossary for every module, slide deck, case study and video in the Adventure, written by the A.I. from that material alone, never from its questions or answers. You read and correct every set before players see it. Players find the published notes on their Resources page, and Cooper teaches and quizzes from them.</p>
 
@@ -2836,25 +4912,63 @@ HTML,
 <p>Every step that carries material is a source: a <strong>SCORM Package</strong>, a <strong>Slides (PDF)</strong> deck, a <strong>Case Study (HTML)</strong> and a <strong>Video</strong>. Each source gets its own set of notes, with its own short glossary of the terms it uses. An Adventure with none of those steps yet has nothing to build; add one as a step and it shows up in the Library.</p>
 
 <h2>The Library Tab</h2>
-<p>Open <strong>Manage Content</strong> and its <strong>Library</strong> tab. It lists every source with its kind and where its notes stand: none yet, a draft waiting for you to read it, published, or <strong>Material changed</strong> when the step's material changed after the notes were written. From there:</p>
+<p>Open <strong>Manage Content</strong> and its <strong>Library</strong> tab. Counters at the top say how many sources there are and how many sets are published, drafts or have no notes yet. Below, it lists every source with its kind and where its notes stand: <strong>No notes yet</strong>, <strong>Writing…</strong>, <strong>Could not build</strong>, <strong>Draft</strong> or <strong>Published</strong>, and a warning when the step's material changed after the notes were written. From there:</p>
 <ul>
-  <li><strong>Build notes</strong> writes a source's notes, and <strong>Build again</strong> rewrites them after the material changes. <strong>Build every missing note</strong> does the whole list in one go.</li>
-  <li><strong>Edit</strong> opens a set of notes to read and correct. Notes are plain text: start a line with <code>## </code> for a heading, <code>- </code> for a point or <code>1. </code> for a numbered step, and leave a blank line between paragraphs. The same window holds the set's glossary terms (<strong>Add a term</strong>, or remove one).</li>
-  <li><strong>Publish</strong> and <strong>Make draft</strong>. A draft is seen only by staff; published notes are read by players and Cooper.</li>
+  <li><strong>Build notes</strong> writes a source's notes, and <strong>Build again</strong> rewrites them after the material changes. <strong>Build every missing note</strong> works down the whole list, one source at a time. An Adventure builds at most three sets at once, with an hourly limit on top.</li>
+  <li><strong>Edit</strong> opens a set of notes to read and correct (below).</li>
+  <li><strong>Publish</strong> and <strong>Make draft</strong>. A draft is seen only by staff; published notes are read by players and Cooper. Publishing a set with no notes in it is refused: write or build them first.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d08-drafts-and-published.webp" alt="The Library tab listing four sources, a video, a slide deck, a SCORM module and a case study, two published and two drafts, with Publish and Make draft on the rows." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → Library.</strong> One row per source. Drafts offer Publish; published sets offer Make draft. The counters above move as you go.</figcaption>
+</figure>
 <p>The step editor of each source carries the same thing in small: a <strong>Study notes in the Library</strong> panel saying where its notes stand, with Build notes and a link to read and publish them. When you upload or replace a SCORM package, its notes are written for you as a draft.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d11-step-panel-published.webp" alt="The Study notes in the Library panel inside a step's editor, reading Published: players and Cooper read these notes, with a Build again button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>In the step editor.</strong> The panel follows the notes: here they're published, and Build notes has become Build again.</figcaption>
+</figure>
+
+<h2>The Edit Window</h2>
+<p>One window holds everything about a set of notes, saved with one <strong>Save</strong>:</p>
+<ul>
+  <li><strong>Title</strong> — up to 200 characters; left empty, it's the step's title.</li>
+  <li><strong>Study notes</strong> — plain text: start a line with <code>## </code> for a heading, <code>- </code> for a point or <code>1. </code> for a numbered step, and leave a blank line between paragraphs.</li>
+  <li><strong>Glossary</strong> — the set's terms, each with what it means (<strong>Add a term</strong>, or remove one), up to 60 per set.</li>
+  <li><strong>Your own notes for the A.I.</strong> — below.</li>
+  <li><strong>Status</strong> — Draft or Published.</li>
+</ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d05-edit-filled.webp" alt="The notes edit window with a title, three short sections of study notes, and key points under Your own notes for the A.I., status Draft." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The edit window.</strong> These notes were written by hand, the way you'd write or correct a built set. Save answers "Notes saved as a draft." or "Notes saved and published."</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d06-edit-glossary.webp" alt="The Glossary part of the edit window with terms and their meanings, and Add a term." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A set's own glossary.</strong> The material's terms, acronyms and roles, each with its meaning.</figcaption>
+</figure>
 
 <h2>Your Own Notes for the A.I.</h2>
 <p>Some material can't be read: a video's soundtrack, a live session, a module that's all pictures. Each set has a box, <strong>Your own notes for the A.I.</strong>, for a transcript or the key points. It's used the next time those notes are built, on top of the material, and players never see it, only the notes written from it. Pasting a video's transcript there is the way to give a video step real study notes.</p>
 
 <h2>Which Key Pays</h2>
-<p>Building calls the A.I., so it needs a key: the Adventure's own Claude key on the Connections pane of Adventure Settings (a cohort uses its template's), else the Adventure owner's account key (My Account → A.I. (Cooper)), or, when the Adventure has Cooper switched on, the platform's Cooper key. Without either, the Library says so, and notes can still be written by hand, just not built.</p>
+<p>Building calls the A.I., so it needs a key: the Adventure's own Claude key on the Connections pane of Adventure Settings (a cohort uses its template's), else the Adventure owner's account key (My Account → A.I. (Cooper)), or, when the Adventure has Cooper switched on, the platform's Cooper key. Without either, the Library says so in red and offers <strong>Edit</strong> only: notes can still be written by hand, just not built. The step editor's Build notes answers with the same warning.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d01-library-tab.webp" alt="The Library tab on an adventure with no A.I. key: a red line explaining that notes can't be built, and Edit on every row." width="1600" height="900" loading="lazy">
+  <figcaption><strong>No key that pays.</strong> The red line says what to do (add a key under Adventure Settings → Connections, or switch Cooper on); until then, Edit lets you write the notes yourself.</figcaption>
+</figure>
 
 <h2>The Glossary</h2>
-<p>Every set of notes has its own glossary, so a term two modules both teach shows up twice, and "MFA" sits apart from "Multi-factor authentication". <strong>Compile the glossary</strong> hands every term to the A.I., which joins the ones that are the same entry into one, with one short meaning made from their own words and nothing added. Terms with no twin stay as they are. Read the joined entries, fix any wording, or <strong>Keep apart</strong> two terms that should stay separate, then publish. Players then read one A-to-Z list, and every set of notes shows the joined meaning.</p>
+<p>Every set of notes has its own glossary, so a term two modules both teach shows up twice, and "MFA" sits apart from "Multi-factor authentication". The <strong>Glossary</strong> panel under the table counts the terms across all the notes and says whether they've been compiled. <strong>Compile the glossary</strong> hands every term to the A.I., which joins the ones that are the same entry into one, with one short meaning made from their own words and nothing added. Terms with no twin stay as they are. It's offered only when a key can pay, and needs at least two terms. Read the joined entries, fix any wording, or <strong>Keep apart</strong> two terms that should stay separate, then publish. Players then read one A-to-Z list, and every set of notes shows the joined meaning.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/d10-glossary-panel.webp" alt="The Glossary panel under the Library table, reading 11 terms across the notes, not compiled yet." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Glossary panel.</strong> How many terms the notes hold, and whether they've been compiled. A compile lands as a draft to review and publish, like notes.</figcaption>
+</figure>
 
 <h2>What Players See</h2>
 <p>Once there are published notes, the Resources page becomes the player's Library, with three tabs: <strong>Study notes</strong>, one card for every module, deck and case study they've reached, with a search box over all of them; <strong>Glossary</strong>, the A-to-Z list with a box to find a term; and <strong>Resources</strong>, the files and articles described in <a href="/docs/posts-and-resources">Posts &amp; Resources</a>. A set of notes opens to a player once its milestone is open to them; until then it simply isn't there, so the Library never hints at what's ahead. A joined glossary entry shows only once the player can read every set of notes it joins.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/m03-resources-notes.webp" alt="A player's Resources page on the Study notes tab: a card for each published set of notes with its kind, milestone and a preview." width="1600" height="900" loading="lazy">
+  <figcaption><strong>What players read.</strong> A card for every published set of notes on a milestone open to them; drafts and notes for locked milestones aren't shown or named.</figcaption>
+</figure>
 <p>Players read the notes on the Resources page, so the <strong>Lore / Resources</strong> section has to be switched on (Adventure Settings → Sections). With it off, the Library tab warns you; Cooper still uses the published notes.</p>
 
 <h2>Templates and Cohorts</h2>
@@ -2867,6 +4981,7 @@ HTML,
   <li><a href="/docs/scorm-packages-concept">SCORM Packages — Concept</a></li>
   <li><a href="/docs/the-library-study-notes">The Library: Study Notes &amp; Glossary</a> — what players see</li>
   <li><a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a> — the Claude key</li>
+  <li><a href="/docs/manage-content-every-section">Manage Content: Every Section</a></li>
 </ul>
 HTML,
             ],
@@ -2874,7 +4989,7 @@ HTML,
                 'title'      => 'Conditions — When Things Unlock',
                 'slug'       => 'conditions-when-things-unlock',
                 'section'    => 'setup',
-                'sort_order' => 19,
+                'sort_order' => 20,
                 'body'       => <<<'HTML'
 <p>A <strong>condition</strong> is a rule about a player's progress: "reach level 5", "finish the Week 1 Tabi", "complete 3 milestones within 7 days". BLUERABBIT has one conditions engine, and the same rules drive several different things. Learn to write them in one place and you can write them anywhere.</p>
 
@@ -2932,6 +5047,10 @@ HTML,
 <h2>Writing Conditions</h2>
 <p>Achievements, certificates, tasks and encounter groups all use the same row editor. Add a condition row, pick a type from <strong>Select a condition...</strong>, then fill in what that type needs: a milestone, Tabi or Skill picker for the types that name one, a threshold, and the optional window. Remove a row with its trash button, and save. A certificate's rows save with the certificate, from its bottom bar.</p>
 <p>The milestone and Tabi Conditions drawer is simpler: tick the milestones, achievements and key item it needs, then one number box per threshold type, with no pickers and no windows. The types that need a picker aren't offered there. Leave a box blank to skip it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c05-conditions-more.webp" alt="The threshold section of a milestone&#039;s Conditions drawer: one number box per threshold type" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A milestone's thresholds.</strong> One box per type, no pickers, no windows; blank boxes are skipped.</figcaption>
+</figure>
 <p>Evolving Tabi scenes have their own row-and-stage editor, built on the same engine; see <a href="/docs/evolving-tabis-scene-builder">Evolving Tabis &amp; the Scene Builder</a>.</p>
 
 <h2>When Conditions Are Checked</h2>
@@ -2958,7 +5077,7 @@ HTML,
                 'title'      => 'Branching & Prerequisites — Building Non-Linear Adventures',
                 'slug'       => 'branching-and-prerequisites-non-linear-adventures',
                 'section'    => 'setup',
-                'sort_order' => 20,
+                'sort_order' => 21,
                 'body'       => <<<'HTML'
 <p>Not every Adventure needs to be a straight line. BLUERABBIT gives you three related tools for building forks and gates: a milestone's <strong>Conditions</strong> drawer, which decides when it opens; <strong>paths</strong>, which decide who it's for; and the <strong>Branch Choice</strong> step, which lets a player pick their path.</p>
 
@@ -2971,6 +5090,10 @@ HTML,
   <li><strong>Threshold conditions</strong> — numbers: Level, XP, Journey Completion %, Milestones Completed, Tabis Completed, Item Shop Transactions, Items Consumed, Achievements Earned, Guild Level, Guild Members, and the three Blooms totals. Leave a box blank to skip it.</li>
 </ul>
 <p>Every rule you set must be met, and until it is the player sees the milestone as locked. You can stack as many as you like — this is the tool for "you can't get here without having done that", whether "that" is content, an item, recognition or raw progress. The drawer has its own <strong>Save Conditions</strong> button and saves separately from Update Milestone.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/c02-conditions.webp" alt="A milestone&#039;s Conditions drawer, listing the milestones that can be required" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Conditions drawer.</strong> Tick what must come first; thresholds sit further down.</figcaption>
+</figure>
 
 <h2>Conditions Beyond Milestones</h2>
 <p>Those thresholds are one face of a single conditions engine. The same engine decides when achievements auto-grant, when certificates unlock, when a condition-triggered Garden Task completes, when an encounter group is ready, and how an evolving Tabi scene grows. A whole Tabi can carry the same drawer too, from <strong>Conditions</strong> on its row in Manage Content, so a chapter stays shut until a player meets it. It's the general tool for "unlock this when X is true", wherever X is something a player's progress can show.</p>
@@ -2981,7 +5104,21 @@ HTML,
 
 <h2>The Branch Choice Step</h2>
 <p>A <strong>Branch Choice</strong> step asks the player to pick one of the paths in a branch: "pick your role", "pick your specialization". The choice is <em>permanent and mutually exclusive</em>. Taking one path closes the others for good, which is what makes it feel like a real decision rather than a menu. From that point on, everything limited to a path is filtered by what they chose.</p>
+<div class="doc-shots-row">
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/33-branch-choice.webp" alt="A branch choice offering department tracks as cards" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The branch's paths as cards.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t24-type-branch-choice.webp" alt="The Branch Choice step editor with content, branch and one per guild" width="1200" height="1260" loading="lazy">
+  <figcaption><strong>The step's editor.</strong> The Branch it offers, and One per guild.</figcaption>
+</figure>
+</div>
 <p>Branches are set up in one place and referenced by the step. Manage Content's <strong>Branches</strong> tab (<strong>Branch Groups</strong>) lists every branch with the achievements in it and the Branch Choice steps that offer it: <strong>New Branch</strong> creates one, <strong>Edit</strong> renames it, <strong>Add</strong> puts a path achievement that isn't in a branch yet into it, <strong>Remove</strong> takes one out, and <strong>Delete</strong> removes an empty branch (it's refused while a Branch Choice step still uses it, and says so). Nothing reloads. You can also give an achievement its <strong>Branch</strong> in the achievement editor, creating one on the spot with <strong>New Branch</strong>, and the Achievements tab shows each achievement's branch and filters by it. Then add the Branch Choice step that points at the branch.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/d04-branches.webp" alt="Manage Content's Branches tab: a Department Track branch holding five path achievements, used by 3 Branch Choice steps, with an Edit button, a remove button on each path and a picker to add another path" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Branches tab.</strong> One branch, Department Track, with its five paths and how many Branch Choice steps offer it. Add a path from the picker under it, or take one out with its ×.</figcaption>
+</figure>
 <p>The rule holds everywhere, not just in the step: a player can never hold two achievements from the same branch, whether the second would have come from a GM's grant, a magic code, a milestone reward, a condition or an encounter choice.</p>
 
 <h2>One Per Guild, and Roles a Coach Gives</h2>
@@ -3007,7 +5144,7 @@ HTML,
                 'title'      => 'Achievements, Paths & Ranks — Designing Your Reward Ladder',
                 'slug'       => 'achievements-paths-and-ranks-reward-ladder',
                 'section'    => 'setup',
-                'sort_order' => 21,
+                'sort_order' => 22,
                 'body'       => <<<'HTML'
 <p>Achievements are how you recognize progress beyond raw XP: a visible marker of what someone has actually done. As a GM you're designing three distinct tools here, not one.</p>
 
@@ -3018,26 +5155,59 @@ HTML,
   <li><strong>Rank</strong> — a title tied to level. Use ranks when progress itself is the reward (Bronze/Silver/Gold, Associate/Senior/Lead): something that visibly upgrades as a player advances.</li>
 </ul>
 <p>Create them from Manage Content → Achievements → <strong>New Achievement</strong>, or from the menu's Add group. The editor has four tabs: <strong>Settings</strong>, <strong>Codes</strong>, <strong>Conditions</strong> and <strong>Players</strong>. Unique codes, awarding players and conditions all need the achievement saved first.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a02-new-empty.webp" alt="The New Achievement form, empty, with a rail on the left for Settings, Codes, Conditions and Players and a bar at the bottom with the publication status and Create Achievement." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A new achievement.</strong> The rail on the left jumps between the four parts; the bar at the bottom holds the publication status and <strong>Create Achievement</strong>.</figcaption>
+</figure>
+<p>Only two things are required: a <strong>Name</strong> and the <strong>Achievement Badge</strong> image. Everything else has a default. Saving without them lists every missing field at once, in a panel that stays until you close it. Once created, the page reopens as the achievement's editor with every tab unlocked.</p>
 
 <h2>The Achievements Tab</h2>
 <p>Manage Content's <strong>Achievements</strong> tab groups everything by type (badges, paths, ranks) with counts for Published, Drafts and Trashed, buttons to show all, general ones or one path's, a search, and a <strong>Branch</strong> filter. Each row shows the achievement's branch as a pill that links to it on the Branches tab, how many times it's been awarded, and its magic code, which you can edit in place: <strong>Generate a new code</strong>, or <strong>Put the saved code back</strong>. Edit, Duplicate and Trash are on every row, <strong>Reorder Achievements</strong> sets the order players see, and drafts and trashed achievements have tables of their own below. A whole set of achievements can come in from a CSV file with <strong>Upload file</strong>; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a01-manage-list.webp" alt="Manage Content's Achievements tab: a table of badges with their art, colour, magic code, holders and rewards, and a New Achievement button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every achievement in one table.</strong> Art, colour, magic code, how many hold it and what it pays, with Edit, Duplicate and Trash on each row.</figcaption>
+</figure>
+<p><strong>Duplicate</strong> asks first, then makes a draft named "[COPY] - " and the original's name: same art, rewards, type and message, no holders, and no magic code until you save it (a new one is generated then). <strong>Trash</strong> asks too; a trashed achievement disappears from players' pages and from every picker, and can be restored from the trash.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/g04-duplicated.webp" alt="The Achievements tab after a duplicate, with the Drafts count up by one and the copy named [COPY] - Feedback Loop." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A copy, as a draft.</strong> Rename it, give it its own art and publish it when it's ready.</figcaption>
+</figure>
 
 <h2>Settings</h2>
 <ul>
-  <li><strong>Name</strong>, <strong>Type</strong> (Badge, Rank or Path), <strong>Achievement Badge</strong> (the image, required) and <strong>Color</strong>.</li>
+  <li><strong>Name</strong>, <strong>Type</strong> (Badge, Rank or Path), <strong>Achievement Badge</strong> (the image, required) and <strong>Color</strong>. The form shows only the fields the chosen type uses.</li>
   <li><strong>Skill Reward (Garden)</strong> — a Bloom in one of your skills, paid when it's earned.</li>
-  <li><strong>Rewards</strong> — XP and BLOO (and EP, if the adventure uses energy), on badges and paths.</li>
-  <li><strong>Branch</strong> — on paths: which branch this path belongs to.</li>
-  <li><strong>Available for</strong> — on badges: all paths, or only players on one path.</li>
-  <li><strong>Max Players</strong> — how many players in the adventure can hold it. Leave it blank for no limit; once that many hold it, both a Game Master's grant and a magic code are refused (the player is told <em>You are too late!</em>).</li>
+  <li><strong>Rewards</strong> — XP and BLOO (and EP, if the adventure uses energy), on badges and paths. The fields carry this adventure's own names for its points.</li>
+  <li><strong>Branch</strong> — on paths: which branch this path belongs to. <strong>New Branch</strong> names a new one, created when you save.</li>
+  <li><strong>Available for</strong> — on paths: all paths, or only players who hold another path.</li>
+  <li><strong>Max Players</strong> — on badges: how many players in the adventure can hold it. Leave it blank for no limit; once that many hold it, both a Game Master's grant and a magic code are refused (the player is told <em>You are too late!</em>).</li>
   <li><strong>Deadline</strong> — on badges. Unique codes stop working after it.</li>
   <li><strong>Secret Message</strong> — shown only to players who have earned it, when they open it on their Achievements page. Redeeming a magic code shows it in the celebration too.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a04-type-options.webp" alt="The Type list open on the achievement form, offering Badge, Rank and Path." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Type decides the form.</strong> A badge is earned, a rank comes with a level, a path is one choice in a branch.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/t01-badge.webp" alt="A badge's full settings: art, colour, skill reward, max players, rewards, deadline and secret message." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A badge, fully set up.</strong> Art and colour, a Garden skill it grants, a cap on holders, what it pays, a deadline for its codes and a secret message.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a08-cap-rewards-deadline.webp" alt="The Max Players field, three reward fields named Experience Points, BLOO Credits and Energy, and a Deadline field with its calendar open." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Cap, rewards and deadline.</strong> The reward fields are named the way this adventure names its points.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/t07-path-form.webp" alt="A path's settings: the Branch selector with Department Track picked and a New Branch button, and the Available for list." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A path.</strong> Pick its branch (or name a new one) and, optionally, limit it to holders of another path. Paths keep their rewards; there's no cap or deadline.</figcaption>
+</figure>
 
 <h2>Ways an Achievement Is Awarded</h2>
 <ul>
   <li><strong>Auto-Grant Conditions</strong> (Conditions tab) — awarded the moment a player's progress satisfies every condition. The celebration explains why ("You reached Level 5!"). Leave it empty for an achievement that's only awarded some other way. See <a href="/docs/conditions-when-things-unlock">Conditions — When Things Unlock</a>.</li>
   <li><strong>A milestone's Achievement Reward</strong> — the drawer in the milestone builder. Offers badges and paths.</li>
+  <li><strong>A step's Achievement Reward</strong> — in the step editor, beside Item Reward. It's paid the moment the step is passed, and the player sees it celebrated on their answer.</li>
+  <li><strong>A challenge's Achievement Reward</strong> — the same drawer in the challenge editor, paid to whoever passes.</li>
+  <li><strong>A profile trait</strong> — on a profile test's trait, <strong>Award this achievement when it wins</strong>: a player whose strongest trait it is earns it when their reading is stored. See <a href="/docs/profile-tests">Profile Tests</a>.</li>
   <li><strong>An encounter choice</strong> — an Encounter Choice option's <strong>Then grant</strong>.</li>
   <li><strong>A Branch Choice step</strong> — for paths.</li>
   <li><strong>The rank ladder</strong> — for ranks, by level (below).</li>
@@ -3045,9 +5215,37 @@ HTML,
   <li><strong>By hand</strong> — the Players tab (below).</li>
 </ul>
 <p>Most achievements should fire automatically: set the rule once and forget it. Reserve manual grants for genuinely human moments, like a standout contribution or something that happened in a live session, that no rule can detect.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a11-condition-types.webp" alt="The Conditions tab with a row's condition list open, showing every kind of condition, and a first row set to Blooms Given to Others, at least 3, within the last 14 days." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Auto-Grant Conditions.</strong> Each row is one condition, and a player must meet all of them. Counters can look at a rolling window, here the last 14 days.</figcaption>
+</figure>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/w02-milestone-reward-drawer.webp" alt="The milestone builder's Achievement Reward drawer listing the adventure's published achievements." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A milestone's reward.</strong> One pick from the adventure's published achievements.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/w04-step-reward.webp" alt="The step editor's Achievement Reward set to Values Compass, beside Item Reward." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A step's reward.</strong> Paid when the step is passed, not when the milestone ends.</figcaption>
+  </figure>
+</div>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/w06-challenge-reward.webp" alt="The challenge editor's Achievement Reward drawer with Ready for Liftoff picked." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A challenge's reward.</strong> Paid to whoever passes the challenge.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/w07-trait-reward.webp" alt="A profile test trait with the setting Award this achievement when it wins." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A profile trait's reward.</strong> Earned when the trait comes out on top for a player.</figcaption>
+  </figure>
+</div>
 
 <h2>Branches Hold on Every Path In</h2>
 <p>A player can never hold two achievements from the same branch, and that's enforced on every way an achievement can arrive: manual grants, Assign all, CSV uploads, magic codes, milestone rewards, QR completions, Auto-Grant Conditions, encounter choices, and a coach's seat on the guild editor's Roles tab. A refused single grant tells you "Player already has an achievement from this branch"; bulk grants skip those players and tell you how many were skipped. Which achievements make up a branch is managed on Manage Content's <strong>Branches</strong> tab; see <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/t09-branches.webp" alt="Manage Content's Branches tab listing each branch and the paths in it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Branches tab.</strong> Each branch and its paths; a player holds one path per branch.</figcaption>
+</figure>
 
 <h2>Magic Codes and QR Codes</h2>
 <p>The Codes tab gives you two kinds of code:</p>
@@ -3055,17 +5253,59 @@ HTML,
   <li><strong>Magic Code</strong> — one code anyone in the adventure can use. Each player can redeem it once. Type your own or press <strong>Generate</strong>; the <strong>Magic Link</strong> beside it redeems the code in one click.</li>
   <li><strong>Unique Codes</strong> — press <strong>Create Code</strong> for each one-time code you need. Each can be redeemed once, by one player. The Available, Redeemed and Expired tabs show where every code stands, including who redeemed it and when, and <strong>Show all links</strong> lists every available code's link in one block, ready to paste into a mail merge or a print run.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a15-magic-code-saved.webp" alt="The Codes tab with a saved magic code, its Magic Link and its QR code." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One magic code, one link, one QR.</strong> Each player earns it once, however often they use it.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a16-unique-codes.webp" alt="The Unique Codes list with Available, Redeemed and Expired tabs, a Create Code button and Show all links." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Single-use codes.</strong> Each works once, for one player; the tabs show which are still available and who used the rest.</figcaption>
+</figure>
 <p>Once saved, the Settings tab also shows the achievement's <strong>QR Code</strong>. It's specific to the adventure you opened the achievement from: every cohort built from a template gets its own QR, so open the achievement from that cohort to print the right one. The magic code itself works in any cohort of the template. The <strong>Magic Link</strong> and the unique codes' links, though, always point at the template's own adventure, so for a cohort hand out the typed code or the cohort's QR rather than a link.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a14-qr-code.webp" alt="The achievement editor showing its QR code beside the badge art, with a note naming the adventure the code redeems into." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The achievement's QR code.</strong> The editor names the adventure the code redeems into, so you know you're printing the right cohort's.</figcaption>
+</figure>
 <p>Players redeem a code through the <strong>Magic Code</strong> shortcut (the taskbar's quick link in the Classic view, the menu in the New view), by scanning the QR, or by opening a magic link. Codes work however they're typed, capitals or not. Redeeming opens the celebration panel with the badge and its secret message. A code that can't be redeemed (a deadline that has passed, a code someone already used, an achievement that has reached its Max Players, a branch the player already chose from, or a path-only code when the player hasn't chosen that path: <em>Not on your path</em>) says why in a panel that stays until the player closes it, and the magic link's page lists every reason. A magic link or QR opened on a phone that isn't signed in is kept through the sign-in: once they sign in, the code runs.</p>
 
 <h2>Awarding by Hand</h2>
 <p>The Players tab lists everyone enrolled in the adventure you opened it from. Click a player to award the achievement or take it away, or use <strong>Assign all</strong> / <strong>Remove all</strong>. A player you award it to is told "A Game Master awarded you this achievement" on their next page. <strong>Bulk Upload Players</strong> takes a CSV with a single column of email addresses (<strong>Upload file</strong>), and the tab keeps a record of the last few uploads: how many were assigned, already had it or weren't found, and the result for every address.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a18-players-grid.webp" alt="The Players tab: a searchable grid of enrolled players, with Assign all, Remove all and Bulk Upload Players." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Players tab.</strong> Click a player to award it; click again to take it back.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/e02-csv.webp" alt="A bulk upload's record: a one-column CSV of emails, with what happened to each address." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Awarding a list by CSV.</strong> Each address is matched to an enrolled player, and the upload's record says what happened to every one.</figcaption>
+</figure>
 <p>In a cohort, who holds an achievement is the cohort's own: its Manage Content has an Achievements tab that opens a drawer per achievement with its holders, Add, Remove and a CSV upload. See <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Cohorts</a>.</p>
 <p>To see and manage who holds what across a whole cohort, use <strong>Player Records</strong> (linked from the Players tab as <strong>Open in Player Records</strong>): filter, then remove one, a selection, or everything matching. Removing an achievement also takes away the XP, BLOO and Bloom it paid, and frees the player's pick if it was a path. If its Auto-Grant Conditions are still met, the engine will award it again the next time that player's progress is recalculated, so change the conditions first if you mean it to stay gone.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g13-records-achievements.webp" alt="Player Records' Achievements view: how many players hold each achievement, with Award an achievement, Players and Remove from all." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Player Records → Achievements.</strong> Who holds what across the cohort, with tools to award to several people or remove from all.</figcaption>
+</figure>
 
 <h2>Designing a Rank Ladder</h2>
 <p>Ranks don't use Auto-Grant Conditions. They're awarded by the adventure's <strong>rank ladder</strong>, the <strong>Ranks</strong> panel of Adventure Settings → Rules &amp; scoring: each row pairs a <strong>Level</strong> with a Rank achievement. Create the Rank achievements first; the ladder only lists published ones. A rank's own Conditions tab says which level currently awards it, with a link to <strong>Edit the rank ladder</strong>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/t04-rank-ladder.webp" alt="The Ranks panel: Title before the first rank, then rows pairing levels 1, 3, 5 and 7 with rank achievements, and an Add Rank button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The rank ladder.</strong> Each row pairs a level with a rank; <strong>Add Rank</strong> adds a rung. The title players carry before their first rank is set here too.</figcaption>
+</figure>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/t03-rank-unassigned.webp" alt="A new rank's editor saying no level awards it yet, with a link to the rank ladder." width="1600" height="900" loading="lazy">
+    <figcaption><strong>Not on the ladder yet.</strong> A rank with no level says nothing will award it.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-achievements/t06-rank-assigned.webp" alt="The rank's editor reading Currently granted at Level 7." width="1600" height="900" loading="lazy">
+    <figcaption><strong>On the ladder.</strong> The editor names the level that grants it.</figcaption>
+  </figure>
+</div>
 <p>When a player reaches a level, they receive every rank at or below it and a level-up message showing the new rank's badge; the highest becomes their current rank. You can still grant a rank by hand, but not to a player below its level: the grant is refused, and bulk grants skip those players. Removing a rank is always allowed.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/e03-rank-refused.webp" alt="A panel refusing to give a level 7 rank to a level 2 player, explaining why." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A rank can't be given early.</strong> The refusal stays on screen until you close it, and the player's card stays unlit.</figcaption>
+</figure>
 <p>Decide the tier count up front. Three to five works for most programs; beyond that the distinctions stop feeling meaningful. Space the levels so players can always see the next rung.</p>
 
 <h2>Badge &amp; Color Design Tips</h2>
@@ -3084,10 +5324,14 @@ HTML,
                 'title'      => 'Authoring Certificates',
                 'slug'       => 'certificates-authoring',
                 'section'    => 'setup',
-                'sort_order' => 22,
+                'sort_order' => 23,
                 'body'       => <<<'HTML'
 <p>A certificate is the printable thing a player takes away from an Adventure. It's content the Adventure carries, like milestones and achievements, and an Adventure can carry as many as you like: one for finishing, one for reaching a level, one for a guild, one for a single achievement. Each has its own wording, look and numbers, and each unlocks on its own conditions.</p>
 <p>You'll find them on the <strong>Certificates</strong> tab of Manage Content.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g18-manage-certificates.webp" alt="Manage Content's Certificates tab: four certificates with who each is for, the numbers it prints and what unlocks it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every certificate and what unlocks it.</strong> Who each one is for (a player or a guild), the numbers it prints and its conditions, with Edit, Preview, Duplicate and Make draft on each row.</figcaption>
+</figure>
 
 <h2>Creating a Certificate</h2>
 <p>Press <strong>New certificate</strong>. The editor has four sections, and a live <strong>Preview</strong> of the real certificate, filled in with sample numbers, follows every change before you save.</p>
@@ -3103,6 +5347,10 @@ HTML,
   <li><strong>Achievement on the certificate</strong>: <strong>None</strong> (the text takes the full width), <strong>The one each player chooses</strong> (see The Display Badge below), or <strong>One achievement this certificate is for</strong>: pick it, and the certificate always carries that achievement and only players who have earned it get the certificate.</li>
   <li><strong>Order</strong>: lowest first, where an Adventure has several.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g19-cert-settings.webp" alt="The certificate editor's Settings section: headline, title, subtitle, line before the name, Presented to, Stats to show and Achievement on the certificate, with the live preview beside it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A certificate's words.</strong> Headline, title, subtitle, who it's presented to, which numbers to print and which achievement it carries.</figcaption>
+</figure>
 
 <h3>Design</h3>
 <ul>
@@ -3111,9 +5359,17 @@ HTML,
   <li><strong>Background image</strong>: <strong>Fill the certificate</strong> or <strong>Show the whole picture</strong>, a <strong>Blend mode</strong> that mixes it with the background colour (Multiply darkens, Screen lightens, Luminosity tints), and <strong>Image filters</strong> (opacity, brightness, contrast, saturation, grayscale, sepia, hue shift and blur). <strong>Reset colours and filters</strong> starts the design over.</li>
 </ul>
 <p>The preview says so when it has shrunk the text to fit the page.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g20-cert-design.webp" alt="The Design section: colours, logo and signature placement, a background picture with fit, blend mode and filters, and the live preview of the certificate on the right." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Design, with a live preview.</strong> The preview on the right is the real certificate, redrawn as you change anything.</figcaption>
+</figure>
 
 <h3>Content</h3>
 <p>The body of the certificate. <strong>Placeholders</strong> let one wording serve every recipient: <code>{name}</code> (the player or the guild, whichever it's for), <code>{first_name}</code>, <code>{last_name}</code>, <code>{guild_name}</code>, <code>{adventure_title}</code>, <code>{level}</code>, <code>{xp}</code>, <code>{bloo}</code>, <code>{ep}</code>, <code>{members}</code>, <code>{start_date}</code>, <code>{end_date}</code> and <code>{today}</code>. The player tokens work here too, such as <code>{{ player.first }}</code> or <code>{{ progress.level }}</code>; see <a href="/docs/personalising-text-with-player-tokens">Player Tokens</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g21-cert-content.webp" alt="The Content section: the certificate's body text with placeholders, and the list of placeholders available." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The body and its placeholders.</strong> One wording serves every player: the placeholders fill in each recipient's name and numbers.</figcaption>
+</figure>
 
 <h3>Conditions</h3>
 <p><strong>When this certificate unlocks</strong> has two choices. <strong>Open — available from the beginning</strong>: every player has it from the moment they start. <strong>Earned — unlocked by meeting conditions</strong>: add conditions with <strong>Add Condition</strong>, and the certificate stays locked until the player meets <strong>all</strong> of them. A certificate for one achievement can stay Open (the achievement alone unlocks it) or add conditions on top.</p>
@@ -3125,16 +5381,55 @@ HTML,
 
 <h2>Requiring Rubric Criteria</h2>
 <p>When the adventure uses Graduation Criteria, a condition row can be <strong>Meet Rubric Criteria</strong>, with a tick for each criterion (see <a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a>). A player only qualifies once every ticked criterion reads "met", which lets you build graduated certificates: a "Graduation" certificate needing two lighter criteria, and a tougher "Distinction" certificate needing those plus a third.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g22-cert-conditions-rubric.webp" alt="A certificate's conditions: Earned, with a Meet Rubric Criteria row ticking all three criteria." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Unlocked by the rubric.</strong> This certificate asks for all three criteria. A certificate with no conditions is open to everyone from the start.</figcaption>
+</figure>
+
+<h3>Writing the Rubric</h3>
+<p>Switch on <strong>Graduation Criteria</strong> (Adventure Settings → Rules &amp; scoring → Grading) and Manage Content gains a <strong>Rubric</strong> tab, where the criteria are written. A criterion is one measurable sentence: a measure, a comparison (<em>at least</em> or <em>at most</em>) and a number. <strong>Add criterion</strong> adds one. The measures are:</p>
+<ul>
+  <li><strong>Completion</strong>, read from required milestones done: <strong>Average stage completion</strong>, <strong>Lowest stage completion</strong>, <strong>Stages completed below a mark</strong> ("no more than N stages below X%"), <strong>Completion of one named stage</strong>, and <strong>Completion across all milestones</strong>.</li>
+  <li><strong>Marks</strong>: <strong>Average mark on marked milestones</strong>, the only measure that reads grades. A marked milestone not yet marked counts as 0.</li>
+</ul>
+<p>The tab opens with <strong>What the rubric counts</strong>: how many stages and required milestones it measures (the same set the Tabi progress bars count; optional side quests and optional challenges never count, so adding them can only help) and how many carry a mark. Each criterion has a description, <strong>Show players where they stand</strong> (untick it and players read "a rubric criterion" instead of its words), and <strong>In force</strong>: a criterion that isn't in force is kept as a draft and counts toward nobody's graduation until you switch it on. Under each one, <strong>Required by</strong> names the certificates that need it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g24-rubric-editor.webp" alt="Manage Content's Rubric tab: What the rubric counts (6 stages, 32 required milestones, 1 that carries a mark), then two criteria with their measure, comparison, number, description and In force switch." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The rubric.</strong> What it counts on top, then each criterion: "Average stage completion at least 75%", "Stages completed below a mark: at most 1 below 50%". Each names the certificate that requires it.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g25-criterion-metrics.webp" alt="A new criterion with its measure list open: the completion measures and the marks measure, and the In force box unticked." width="1600" height="421" loading="lazy">
+  <figcaption><strong>Choosing what a criterion measures.</strong> The hint under the list explains the chosen measure. With <strong>In force</strong> unticked, the criterion is saved as a draft.</figcaption>
+</figure>
+<p>At the foot of the tab, <strong>What the criteria decide</strong> lists each certificate and the criteria it requires, so you can see at a glance which certificates the rubric gates. Criteria measure; certificates award: a criterion never awards anything on its own. The rubric is written on the template, and every cohort is judged by its template's criteria. Your cohort's standing against it is on the Stats page's Rubric pane, and each player's on their Journal's Rubric tab.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g27-criteria-decide.webp" alt="What the criteria decide: each certificate with the criteria it requires, or requires no criteria." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Which certificates the rubric decides.</strong> One certificate needs all three criteria; the others are unlocked by their own conditions.</figcaption>
+</figure>
 
 <h2>Guild Certificates</h2>
 <p>Set <strong>Presented to</strong> to <strong>The player's guild</strong> and the certificate is made out to the team. It carries the guild's name and logo and prints the guild's numbers plus its member count. Those numbers are <strong>worked out live from the members</strong> when the certificate is opened: totals for XP, BLOO and energy, and the members' average for level, so one strong member can't speak for everyone. Players who aren't in a guild aren't shown guild certificates at all, rather than seeing one locked forever.</p>
 <p>Conditions are checked for the player opening the certificate. The guild conditions ("Your guild reaches level 5", "Your guild reaches 8 members") are the natural fit here.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/achievements-certificates/g23-cert-conditions-guild.webp" alt="A guild certificate's conditions: Earned, with a Guild Members condition set to 5." width="1600" height="900" loading="lazy">
+    <figcaption><strong>A guild condition.</strong> This guild certificate unlocks once the player's guild has five members.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/achievements-certificates/m06-cert-guild.webp" alt="The printed guild certificate with the guild's name, member count and combined numbers." width="1600" height="900" loading="lazy">
+    <figcaption><strong>As the guild receives it.</strong> The guild's name, its member count and its combined numbers.</figcaption>
+  </figure>
+</div>
 
 <h2>The Display Badge</h2>
 <p>With <strong>The one each player chooses</strong>, the certificate prints the badge the player has chosen to be represented by, or their current rank if they haven't chosen. Players pick it on their Achievements page, from the badges and ranks they hold (paths are left out). It's stored separately from their rank, so levelling up never overrides their choice.</p>
 
 <h2>Printing</h2>
 <p>Every certificate prints on one page, US Letter landscape, and only the certificate itself reaches paper. Its dates are the Adventure's Start and End dates from the Basics pane of Adventure Settings. On their certificate's page players can show or hide the achievement and the stats, then press <strong>Print</strong>; their browser's print window can also save it as a PDF.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/m05-cert-graduate.webp" alt="A graduation certificate with a dark design, a background picture and gold accents, made out to a player." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A different look from the same editor.</strong> A dark design with a background picture and gold accents, unlocked by meeting every rubric criterion.</figcaption>
+</figure>
 
 <h2>Managing Certificates</h2>
 <p>The Certificates tab lists Published, Drafts and Trash. Each row shows its logo, signature and background as small pictures you can change or remove right there, its name (edit it in place), who it's for, which stats it prints, and what unlocks it: "Earn" an achievement, how many conditions, or open from the start. You can search, filter to player or guild certificates, and sort. Each row has:</p>
@@ -3164,13 +5459,38 @@ HTML,
                 'title'      => 'Guilds — Designing Team Play',
                 'slug'       => 'guilds-designing-team-play',
                 'section'    => 'setup',
-                'sort_order' => 23,
+                'sort_order' => 24,
                 'body'       => <<<'HTML'
 <h2>Should This Adventure Use Guilds?</h2>
-<p>Guilds add a team layer on top of individual progress. They're good for cohort-based programs (a bootcamp class, a department-wide rollout) where a bit of friendly competition or shared accountability helps. For a purely self-paced, individual course they're often unnecessary overhead; skip them if there's no real team behind the players. Turn them on with the <strong>Guilds</strong> section in Adventure Settings → Sections.</p>
+<p>Guilds add a team layer on top of individual progress. They're good for cohort-based programs (a bootcamp class, a department-wide rollout) where a bit of friendly competition or shared accountability helps. For a purely self-paced, individual course they're often unnecessary overhead; skip them if there's no real team behind the players. Turn them on with the <strong>Guilds</strong> section in Adventure Settings → Sections. The same card renames them for players (blank keeps "Guilds"; an adventure can call them teams or houses), sets the Guilds page's background, and holds <strong>Assign guilds on login</strong> (see below).</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/f01-settings-guilds.webp" alt="The Guilds card in Adventure Settings, Sections: the on/off switch, the name players read, Assign guilds on login and the background." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Switching guilds on.</strong> Adventure Settings → Sections → Guilds: on or off for the whole adventure, the name players read, automatic placement and the page's background.</figcaption>
+</figure>
 
 <h2>Creating Guilds &amp; Setting Capacity</h2>
-<p>Create guilds from Manage Content → Guilds → <strong>Add New Guild</strong>, or from the menu's Add group. The guild editor has four tabs: <strong>Settings</strong>, <strong>Members</strong>, <strong>Roles</strong> and <strong>Assign Players</strong>. On Settings each guild has a <strong>Guild Name</strong>, a <strong>Guild Logo</strong> (required), a <strong>Color</strong>, an optional <strong>Group</strong> and a <strong>Capacity</strong> (0 means no limit). Distinct names, colours and logos make them readable on the leaderboard, and a capacity keeps group sizes even: it caps who can join by the invite link or be placed automatically, while a Game Master assigning by hand may still go over. A guild's <strong>Auto-assign on login</strong> decides whether it takes newcomers automatically (see below).</p>
+<p>Create guilds from Manage Content → Guilds → <strong>Add New Guild</strong>, or from the menu's Add group. On Settings each guild has a <strong>Guild Name</strong>, a <strong>Guild Logo</strong> (from the media library; any square image works), a <strong>Color</strong>, an optional <strong>Group</strong> and a <strong>Capacity</strong> (0 means no limit). Distinct names, colours and logos make them readable on the leaderboard, and a capacity keeps group sizes even: it caps who can join by the invite link or be placed automatically, while a Game Master assigning by hand may still go over. A guild's <strong>Auto-assign on login</strong> decides whether it takes newcomers automatically (see below).</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/a02-new-empty.webp" alt="The empty New Guild form: Guild Name, Guild Logo marked required, Color, then Auto-assign on login, Group and Capacity, with Publish, Cancel and Create Guild in the bottom bar." width="1600" height="900" loading="lazy">
+  <figcaption><strong>New Guild.</strong> The form opens on Guild Settings. The bar at the bottom holds the publication status (Publish, Draft or Trash), Cancel and Create Guild.</figcaption>
+</figure>
+
+<p>The name and the logo are the only required fields. Create Guild without them is refused, with both reasons listed in a panel that stays until you close it.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/a03-refused.webp" alt="A panel listing two errors: guild name is required, please add a logo for the guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Nothing is saved without a name and a logo.</strong> Every reason is listed at once.</figcaption>
+</figure>
+
+<p>Once saved, the form becomes <strong>Edit Guild</strong>, with four parts on the rail at the left: <strong>Settings</strong>, <strong>Members</strong> (with a count), <strong>Roles</strong> and <strong>Assign Players</strong>. Settings now also shows the guild's <strong>Enrollment Link</strong> and <strong>Bulk Assign Players (CSV)</strong>, and the bottom bar offers Duplicate beside Update Guild.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/a09-edit-top.webp" alt="The Edit Guild page with a left rail listing Settings, Members, Roles and Assign Players." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Edit Guild: four parts.</strong> Members, Roles and Assign Players appear once the guild exists.</figcaption>
+</figure>
+
 <p>The <strong>Group</strong> sorts a long list into piles, and Manage Guilds can filter by it. It also matters for invite links: a player already in a guild can't use a link to join a second guild in the same group.</p>
 <p>Many guilds at once can come in from a CSV file, with the Upload beside Add New Guild; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
 
@@ -3179,37 +5499,126 @@ HTML,
   <li><strong>Automatically</strong>: set <strong>Assign guilds on login</strong> to Yes (Adventure Settings → Basics, Guilds &amp; schedule). A player without a guild is placed the first time they open the journey, whether they joined by the adventure's code, Manage Players' Add, a CSV or sign-up, and the journey tells them "You just joined" and the guild's name. If any guild is marked <strong>Auto-assign on login</strong> (its Settings tab), only the marked guilds take newcomers; if none is marked, any published guild does. The emptiest one with room wins, the oldest on a tie; a capacity of 0 or blank means no limit. If every guild that takes newcomers is full, the player gets none. NPCs without a guild are placed too; GMs and administrators are not.</li>
   <li><strong>From the player CSV</strong>: the enrollment import's Guild column creates or joins a guild by name as players come in. See <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>.</li>
   <li><strong>Into guilds that already exist, by CSV</strong>: on Manage Guilds, <strong>Assign players to a guild</strong>: pick the guild, upload a CSV with one column of email addresses, and press <strong>Assign from file</strong>. A guild's own editor has the same as <strong>Bulk Assign Players (CSV)</strong>. Everyone matched is moved into that guild, replacing any guild they were in. Anyone already in it is left alone, so running the same file twice is safe, and a full guild stops accepting people once it reaches capacity.</li>
-  <li><strong>One at a time</strong>: the guild editor's <strong>Assign Players</strong> tab.</li>
-  <li><strong>By link</strong>: once a guild is saved, its editor shows an <strong>Enrollment Link</strong>. A player of the adventure who opens it joins that guild, as long as it has room and they're not already in a guild of the same group; they're told which of those happened.</li>
+  <li><strong>One at a time</strong>: the guild editor's <strong>Assign Players</strong> tab lists everyone in the adventure, 50 to a page, with a search by name or email; <strong>Assign</strong> adds them at once. Unlike the CSV, it <em>adds</em> a guild rather than moving the player: they keep any guild they were already in, and the guild's Group and Capacity aren't checked. To move someone this way, also use <strong>Remove</strong> on their old guild's Members tab.</li>
+  <li><strong>By link</strong>: once a guild is saved, its editor shows an <strong>Enrollment Link</strong>. A player of the adventure who opens it joins that guild, as long as it has room and they're not already in a guild of the same group; they're told which of those happened. A link opened while signed out waits through sign-in, then puts them in.</li>
 </ul>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/b03-auto-guild.webp" alt="The arrival panel on the journey listing a new player's first level, rank and daily check-in, and that they joined a guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Placed in a guild on arrival.</strong> With Assign guilds on login on, a newcomer's arrival panel says which guild they joined.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b05-csv-assigned.webp" alt="Manage Content, Guilds: the Assign players to a guild box with a guild picked, a CSV chosen and a line counting the players moved in." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A CSV of emails moves people in.</strong> Pick the guild, choose the file, Assign from file. The line under the box counts what happened.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b01-assign-search.webp" alt="The Assign Players tab: a searchable list of the adventure's players, rows already in the guild marked In Guild, the others with Assign." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Assign Players.</strong> A row already in this guild reads <em>In Guild</em>; the others offer Assign. No Update Guild is needed for members.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b03-still-in-ops.webp" alt="The Members tab of another guild, still listing the player who was just assigned elsewhere, each row with a Remove button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Assign adds; it doesn't move.</strong> The player assigned to the new guild is still a member of her old one. Remove takes her out.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/b01-joined.webp" alt="A page confirming that the player joined the guild through its invite link." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Joining by an invite link.</strong> The link puts the player straight into the guild and says so. A full guild, a wrong link or a second guild in the same group each get their own message instead.</figcaption>
+</figure>
+
 <h2>Guild Leaders</h2>
-<p>Each guild can have a leader, chosen from its members in the <strong>Leader</strong> column on Manage Guilds (or set back to <strong>No leader</strong>). The roster marks the leader with a badge. It's a title for now, with no extra powers attached.</p>
+<p>Each guild can have a leader, chosen from its members in the <strong>Leader</strong> column on Manage Guilds (or set back to <strong>No leader</strong>). The choice saves at once and the roster marks the leader with a badge. It's a title for now, with no extra powers attached.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b09-leader.webp" alt="The Leader column on Manage Content, Guilds, opened on one guild to list only its own members." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A leader, from the guild's members.</strong> The list offers only the guild's own members.</figcaption>
+</figure>
+
 <p>Appointing a leader is the one guild change an NPC can make. Everything else on Manage Guilds is view-only for them.</p>
 
 <h2>Roles: Who Holds Which Path</h2>
-<p>When a guild is a crew with roles to fill (a facilitator, a scribe, a timekeeper), make the roles the paths of a branch and let the guild's members pick them with a Branch Choice step set to <strong>One per guild</strong>, so each role is taken once per guild. The guild editor's <strong>Roles</strong> tab shows who in the guild holds each path, and lets a coach give a path to a member directly; the step then shows it to them as their choice. See <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</p>
+<p>When a guild is a crew with roles to fill (a facilitator, a scribe, a timekeeper), make the roles the paths of a branch and let the guild's members pick them with a Branch Choice step set to <strong>One per guild</strong>, so each role is taken once per guild. The guild editor's <strong>Roles</strong> tab shows who in the guild holds each path, and who has <em>No path yet</em>, and lets a coach give a path to a member directly; the step then shows it to them as their choice. The × beside a name takes the path back, after asking. See <a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b07-roles.webp" alt="The Roles tab: for each branch, the paths with the guild members who hold each, and a No path yet line." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Roles: who holds each path.</strong> For each branch, which member holds each path, and who still has none.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/b08-role-given.webp" alt="The Roles tab after a path was given: the member's name now listed under that path." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A path given.</strong> The member's journey now follows that path, exactly as if they'd chosen it at the Branch Choice step.</figcaption>
+</figure>
 
 <h2>Open Rosters</h2>
 <p>Guilds are public within an adventure. On the Guilds page, clicking a guild's card or row opens its roster: its players, best first, each with their level, XP, BLOO and the achievements they hold, the leader marked. Staff see more in the same roster: each member's engagement, journey progress, last sign-in and every milestone. Players never see anyone's email address.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/c02-gm-roster.webp" alt="A guild's roster opened by a Game Master: members with level, XP and BLOO, and a grid of which badges and path each member holds." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A roster, for staff.</strong> Who holds which badge and which path, member by member: where a coach spots who needs a nudge.</figcaption>
+</figure>
+
+<p>When the adventure uses Graduation Criteria, staff also see an <strong>On track</strong> figure for every guild on the Guilds page: how many of its players currently meet everything the rubric asks for. It's staff-only on purpose: in a small guild it would publish one person's standing. Staff have no guild of their own, so the page's My Guild card stays empty for them.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/c01-gm-guilds.webp" alt="The Guilds page as a Game Master sees it, with an On track count on each guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Guilds, as the Game Master sees them.</strong> The On track line counts each guild's players who meet the rubric right now.</figcaption>
+</figure>
+
 <h2>Standings: Averages, Levels and Who Counts</h2>
 <p>Guilds are ranked on their members' <em>average</em>, so a 40-person guild can't out-rank a 6-person one on headcount alone. The order is the guild's level first, then average XP, average BLOO, total XP and total BLOO. A guild's <strong>level</strong> comes from its members' average XP, on the same curve players use. On the Guilds page (with the Leaderboard section on) the top five show as cards, each with its place, and the rest as a table, 20 a page, with each guild's members, level, average XP, total XP and BLOO, and a search box. A player's own guild has a card of its own that reads from the same row, so the two never disagree. The guild leaderboard widget on the Journey uses the same ranking.</p>
+<p>The Leaderboard page can show the guilds too: <strong>Show the guild leaderboard</strong>, in the Leaderboard's card under Adventure Settings → Sections, adds a Guilds view ranked on the same averages.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a06-leaderboard-guilds.webp" alt="The Leaderboard page's Guilds view: each guild's members, average XP and average BLOO, the player's own guild marked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Guilds on the leaderboard.</strong> Each guild's members, average XP and average BLOO, ranked on the average. A player's own guild is marked.</figcaption>
+</figure>
+
 <p><strong>Only players count.</strong> A GM or NPC sitting in a guild adds nothing to its totals, member count, average or level, and neither does anyone who has left the adventure. That matters beyond the leaderboard, because <strong>Guild Level</strong> and <strong>Guild Members</strong> are condition types: a GM in a guild can't hold back a scene stage or a badge for the whole team.</p>
 
 <h2>Managing Guilds at Scale</h2>
-<p>An import with a Guild column can create hundreds of guilds. Manage Guilds lists Published, Drafts and Trash as tables of their own, each with a select-all box and its own bulk bar: tick the ones you want and use <strong>Move to draft</strong> or <strong>Move to trash</strong> (or Publish and Restore) rather than working row by row. Each row also has <strong>Duplicate</strong>. Trashed guilds can be restored, deleted for good one by one, or cleared at once with <strong>Empty trash</strong>. Deleting a guild for good releases its members, so they can be assigned to another guild afterwards.</p>
+<p>An import with a Guild column can create hundreds of guilds. Manage Guilds lists Published, Drafts and Trash as tables of their own. In the Published table every guild is a row you can edit in place: click its logo or colour to change it, and its Name, Group, Leader and Capacity save the moment they change; the member count sits in amber beside the capacity. Above the table, search by name or group, filter by Group (all, no group, or one group) and sort by Default order, Name, Members or Capacity.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/c01-table.webp" alt="Manage Content, Guilds: the Published table with a search, a Group filter, a sort, and a row per guild with logo, colour, name, link, group, leader, capacity and action buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every published guild, editable in place.</strong> Logo, colour, name, invite link, group, leader and capacity in one row, with Edit, Duplicate, Move to draft and Move to trash.</figcaption>
+</figure>
+
+<p>Each row's actions are <strong>Edit</strong>, <strong>Duplicate</strong>, <strong>Move to draft</strong> and <strong>Move to trash</strong>. None runs on the first click: the button turns into its question ("Duplicate?", "To draft?", "Trash?") and runs only if you click it again within a few seconds. Each table also has a select-all box and its own bulk bar: tick the ones you want and use <strong>Move to draft</strong> or <strong>Move to trash</strong> (or Publish and Restore) rather than working row by row.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/c04-ask-first.webp" alt="A guild row whose action button has turned into a question waiting for a second click." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every row action asks first.</strong> Left alone, the button goes back.</figcaption>
+</figure>
+
+<p>A draft guild keeps its members but is hidden from players. Trashed guilds can be restored, deleted for good one by one, or cleared at once with <strong>Empty trash</strong>. Deleting a guild for good releases its members, so they can be assigned to another guild afterwards.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/d04-trash.webp" alt="The Trash table for guilds with Edit, Restore, Move to draft and Delete forever, an Empty trash button and a note about what deleting means." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Trash.</strong> Restore, move to draft, or delete forever, row by row or for every ticked row. The note says what deleting means for the members.</figcaption>
+</figure>
 
 <h2>Guilds Everywhere Else</h2>
 <ul>
-  <li><strong>The Wall</strong> has one Guilds tab. A player in a single guild goes straight into its feed; anyone in several guilds, and staff, get a searchable picker. See <a href="/docs/announcements-keeping-an-adventure-alive">Announcements</a>.</li>
+  <li><strong>The Wall</strong> has one Guilds tab. A player in a single guild goes straight into its feed; anyone in several guilds, and staff, get a searchable picker. See <a href="/docs/announcements-keeping-an-adventure-alive">Announcements</a> and, for the player's side, <a href="/docs/leaderboards-and-the-wall">The Leaderboard &amp; the Wall</a>.</li>
   <li><strong>Conditions</strong> can use Guild Level and Guild Members, so a whole team can unlock a badge or grow an evolving Tabi scene together.</li>
   <li><strong>Certificates</strong> can be issued to a guild. See <a href="/docs/certificates-authoring">Certificates, for GMs</a>.</li>
   <li><strong>Sessions</strong> on the Event Schedule can be limited to one guild.</li>
 </ul>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/e05-guild-picker.webp" alt="The Wall's Guilds tab for staff: a searchable picker listing every published guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every guild has a channel.</strong> Staff open any guild's channel from a searchable picker. A new guild gets its channel the moment it's published.</figcaption>
+</figure>
+
 <h2>Running a Guild Leaderboard Moment</h2>
-<p>Guild standings are most motivating when they're actually visible, not just theoretically trackable. Call them out in a live session, screen-share the leaderboard at a kickoff, or post an <a href="/docs/announcements-keeping-an-adventure-alive">announcement</a> when the standings shift. A leaderboard nobody looks at doesn't do anything.</p>
+<p>Guild standings are most motivating when they're actually visible, not just theoretically trackable. Call them out in a live session, screen-share the leaderboard at a kickoff, or post an <a href="/docs/announcements-keeping-an-adventure-alive">announcement</a> when the standings shift. You can also put them on the map itself: the Journey Builder's Leaderboard and Guild leaderboard widgets show the standings right on the journey and update as people play (see <a href="/docs/journey-builder-design-palette">The Journey Builder</a>). A leaderboard nobody looks at doesn't do anything.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a09-journey-widgets.webp" alt="Two widgets on the journey map side by side: the top players and the guild ranking." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Player and guild widgets on the map.</strong> The guild ranking widget uses the same order as the Guilds page.</figcaption>
+</figure>
 
 <h2>Related</h2>
 <ul>
@@ -3218,6 +5627,7 @@ HTML,
   <li><a href="/docs/conditions-when-things-unlock">Conditions — When Things Unlock</a></li>
   <li><a href="/docs/branching-and-prerequisites-non-linear-adventures">Branching &amp; Prerequisites</a> — One per guild and Roles</li>
   <li><a href="/docs/achievements-and-guilds">Achievements &amp; Guilds (player view)</a></li>
+  <li><a href="/docs/leaderboards-and-the-wall">The Leaderboard &amp; the Wall (player view)</a></li>
 </ul>
 HTML,
             ],
@@ -3225,10 +5635,21 @@ HTML,
                 'title'      => 'The Item Shop — Building an In-Adventure Economy',
                 'slug'       => 'item-shop-building-an-economy',
                 'section'    => 'setup',
-                'sort_order' => 24,
+                'sort_order' => 25,
                 'body'       => <<<'HTML'
-<p>The Item Shop turns BLOO from a score into an economy: a reason to keep earning it beyond the number going up. As the GM, you decide what's for sale. Turn it on with the <strong>Item Shop</strong> section in Adventure Settings → Sections (it covers the shop, the backpack and item rewards); with it off, players see "The item shop is now closed!".</p>
+<p>The Item Shop turns BLOO from a score into an economy: a reason to keep earning it beyond the number going up. As the GM, you decide what's for sale. Turn it on with the <strong>Item Shop</strong> section in Adventure Settings → Sections (it covers the shop, the backpack and item rewards); with it off, players see "The item shop is now closed!". The same card holds the shop's name, its background, <strong>Purchase Permissions</strong> (whether staff may buy too, or only players) and <strong>Show players their transactions</strong>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b01-settings.webp" alt="The Item Shop card in Adventure Settings, Sections: the on/off switch, the name, Purchase Permissions, Show players their transactions and the background." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The shop's settings.</strong> One card under Sections holds the switch, the shop's name, who may buy, whether players see their own transactions, and the background.</figcaption>
+</figure>
+
 <p>Create items from Manage Content → Items → <strong>New Item</strong>, from the menu's Add group, or from the <strong>Add new item</strong> button at the bottom of the shop. A whole catalogue can come in from a CSV file; see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g02-new-empty.webp" alt="The empty New Item form: Item Settings with the name, the Type tiles and the Item Badge, a left rail with Settings and Tabi Placement, and a bar at the bottom with Publication status, Cancel and Create Item." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A new item.</strong> Item Settings opens with the name, the type (Consumable is chosen by default) and the Item Badge. The bar at the bottom holds the publication status, Cancel and Create Item.</figcaption>
+</figure>
 
 <h2>The Item Types</h2>
 <ul>
@@ -3239,8 +5660,30 @@ HTML,
   <li><strong>Gift Card</strong> (Enterprise only): a real gift card, emailed to the player when they buy it. See Gift Cards below.</li>
 </ul>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g03-type-picker.webp" alt="The Type tiles: Consumable, Key, Reward and Tabi Piece." width="728" height="224" loading="lazy">
+  <figcaption><strong>The type.</strong> Picking a type shows only the fields that type uses. Gift Card appears here only on Enterprise, once a gift-card account is connected.</figcaption>
+</figure>
+
+<p>Where the other types do their work:</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g28-key-condition.webp" alt="A milestone's Conditions drawer with Requires this key item open, listing the adventure's key items." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Where a key opens something.</strong> A milestone's Conditions → <em>Requires this key item</em> (Tabis have the same condition). Only players carrying that key can open the milestone, and the key isn't used up.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g27-reward-drawer.webp" alt="A milestone's Advanced drawer with Item Reward open, listing the adventure's items by type." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Paying an item for a milestone.</strong> A milestone's Advanced → Item Reward: the item picked goes to every player who finishes it. This is how Rewards, and many Tabi pieces, are handed out.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g26-tabi-piece-placement.webp" alt="A Tabi piece's Tabi Placement section naming its Tabi, with a button to place it in the Tabi editor." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A Tabi piece's Tabi.</strong> Tabi Placement names the Tabi whose collection the piece belongs to; once the piece is saved, a button opens the Tabi editor to place it on the art.</figcaption>
+</figure>
+
 <h2>Item Settings</h2>
-<p>Which fields appear depends on the type:</p>
+<p><strong>Name</strong> and <strong>Item Badge</strong> are required: the badge is the item's picture everywhere (the shop card, the backpack, its window and your lists), picked from the media library. Shop cards crop it to a circle, so a square picture with its subject centred works best. Which other fields appear depends on the type:</p>
 <ul>
   <li><strong>Cost</strong> (in BLOO) and <strong>Level</strong>, the level a player needs to buy it: for everything sold: consumables, keys, Tabi pieces and gift cards.</li>
   <li><strong>Stock</strong>: how many the shop can sell, for consumables, Tabi pieces and gift cards. Blank or 0 means unlimited, and the shop shows ∞. Keys and rewards are always unlimited. When an item has sold out, its editor says so and how to restock it; saving without touching Stock keeps it sold out.</li>
@@ -3248,26 +5691,126 @@ HTML,
   <li><strong>Display in shop</strong>: Visible or Hidden, for consumables, Tabi pieces and gift cards. A hidden item is kept out of the shop, for things you only want handed out by a Find Item step or by you.</li>
   <li><strong>Group</strong>: a colour category for consumables and gift cards, shown as a badge in the shop. When an item is in a group, its Max per player counts everything the player holds from that group, so you can cap "any two potions" rather than two of each.</li>
   <li><strong>Available for</strong>: all paths, or only players on one path.</li>
-  <li><strong>Description</strong>: what the item is for. Player tokens work here.</li>
+  <li><strong>Description</strong>: what the item is for, with Add Media for pictures or video. Player tokens work here.</li>
 </ul>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g10-numbers.webp" alt="The item's number fields: Display in shop, Level, Cost, Stock, Max per player, Group and Available for." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Level, cost, stock and limits.</strong> Stock is for the whole cohort (blank or 0 is unlimited); Max per player is per person.</figcaption>
+</figure>
+
+<p>A save without a name or a badge is refused, with every reason listed at once in a panel that stays until you close it. Nothing is saved.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g16-refused.webp" alt="A panel listing the errors: please add an item name, please add an image for the item." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Saved without a name or a badge.</strong> Every missing thing is listed at once.</figcaption>
+</figure>
+
+<h2>Saving, Preview and Duplicate</h2>
+<p><strong>Create Item</strong> confirms the save and opens the item in its editor. From then on the bar at the bottom also offers <strong>Preview</strong> (the item's window exactly as players get it in the shop) and <strong>Duplicate</strong>, with <strong>Update Item</strong> to save changes.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g20-edit-top.webp" alt="The Edit Item page for a consumable, with Preview, Duplicate and Update Item in the bottom bar." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The item in its editor.</strong> Once saved, the bar gains Preview and Duplicate.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g21-preview.webp" alt="The Preview window: the item's badge, name, type, description, price and required level." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Preview.</strong> The item's window as players see it: badge, name, type, description, price and level.</figcaption>
+</figure>
+
+<p>Duplicate asks first ("Make a copy?"). The copy is named "[COPY] - …" and keeps the original's status, so a copy of a published item is in the shop straight away: rename it, or set it to Draft, before players find it.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g34-duplicate-confirm.webp" alt="A confirmation asking Make a copy?" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Duplicate.</strong> It asks first, then opens the copy in its own editor.</figcaption>
+</figure>
+
 <h2>What the Shop Enforces</h2>
-<p>Every purchase is checked on the server: the level, the stock, the per-player (or per-group) limit, and whether the player can afford it. <strong>The shop never sells on credit.</strong> Encounters can push a player's BLOO below zero, but the shop still refuses anything they can't afford, so debt stays a setback rather than a loophole.</p>
+<p>Every purchase is checked on the server: the level, the stock, the per-player (or per-group) limit, and whether the player can afford it. The shop card says <em>Requires Level N</em>, <em>Not enough BLOO</em>, <em>Max owned</em> or <em>Sold Out</em> on its button before anyone clicks. <strong>The shop never sells on credit.</strong> Encounters can push a player's BLOO below zero, but the shop still refuses anything they can't afford, so debt stays a setback rather than a loophole.</p>
 <p>Stock and caps are race-safe. Two players buying the last unit at the same moment can't both get it, and a double-click can't buy past a cap: the purchase that lands second is told there are none left. Refunding a purchase frees its stock again.</p>
 
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b02-gm-shop.webp" alt="The Item Shop as a Game Master sees it, with the same cards and an Add new item button at the foot." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The shop, as staff see it.</strong> When Purchase Permissions lets staff buy, their own balance applies like anyone's. <strong>Add new item</strong> at the foot of the page opens the editor.</figcaption>
+</figure>
+
 <h2>Managing Items</h2>
-<p>Manage Content's <strong>Items</strong> tab lists everything by type (keys, rewards, consumables, Tabi pieces and, where they exist, gift cards), with a search, a path filter and a sort. Each Tabi piece links to its Tabi. Drafts and trashed items have their own panels below.</p>
+<p>Manage Content's <strong>Items</strong> tab counts what's published, in draft and in the trash, and lists everything by type (keys, rewards, consumables, Tabi pieces and, where they exist, gift cards), with a search, type buttons, a path filter and a sort (Default order, Name, Level or Cost). Each Tabi piece links to its Tabi. Level, Category (consumables only), Cost and Available to can be changed right in the row and save as soon as they change. Each row has <strong>Assign</strong>, <strong>Edit</strong> and <strong>Trash</strong>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g01-manage-items.webp" alt="Manage Content, Items: counts of published, draft and trashed items, the CSV upload, New Item, a search, type buttons, a path filter, a sort, and a row per item with Assign, Edit and Trash." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Items in Manage Content.</strong> Every item in one list, with its type, level, category, cost and the paths it's available to.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g30-sort-cost.webp" alt="The items list sorted by cost, with level, category, cost and available-to fields editable in each row." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Sorting and editing in the row.</strong> Sorted by cost. A change to a row's level, category, cost or path saves on its own.</figcaption>
+</figure>
+
+<p>Drafts and trashed items have their own panels below: Drafts with Edit, Publish and Trash; Trash with <strong>Restore</strong> and <strong>Delete</strong>. On this list, Trash, Publish, Restore and Delete act on a single click without asking, and Delete is for good, so take care in the trash panel.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g38-trash.webp" alt="The Trash panel listing a trashed item with Restore and Delete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The trash.</strong> Restore puts an item back as published; Delete removes it for good. Neither asks first.</figcaption>
+</figure>
 
 <h2>Buying on a Player's Behalf</h2>
-<p>For a player who can't work the shop themselves, use <strong>Assign</strong> on the item's row in Manage Items, then pick the player. It's a real purchase at the normal price, paid from the player's own BLOO, with the same stock and per-player limits; a free grant would distort your economy. The one thing it skips is the level requirement.</p>
+<p>For a player who can't work the shop themselves, use <strong>Assign</strong> on the item's row in Manage Items. The page shows the item's stock left and its max per player, then every player in the adventure with a search by name or email; click a player to assign it. It's a real purchase at the normal price, paid from the player's own BLOO, with the same stock and per-player limits; a free grant would distort your economy. The one thing it skips is the level requirement.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/a01-assign-page.webp" alt="The Assign page: the item with its stock left and max per player, a note that the cost is charged to the player, and a searchable list of players." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Assign to a player.</strong> The note says it plainly: assigning charges the item's cost to the player and counts toward stock and their limit.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/a03-assigned.webp" alt="A confirmation that the item was assigned to the chosen player." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Assigned.</strong> The item is in the player's backpack and its cost came off their balance.</figcaption>
+</figure>
+
+<h2>One Item's Page: Who Holds It</h2>
+<p>Each item has a page of its own for staff, opened from the shop or from Transactions: its card, then every player who holds it, when they got it and what they paid. Each row has <strong>Mark as used</strong> (consumables), <strong>Return item</strong> on a used one, and <strong>Delete and refund</strong>.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/a04-item-page.webp" alt="An item's page for staff: the item's card and a table of the players who own it, with dates, prices and actions." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Who owns it.</strong> Every holder, when they got it and what they paid, with the actions to honour or refund.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/a06-used-row.webp" alt="A used row on the item's page with Return item, and a lock in place of the refund button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Used: no refund.</strong> Return item puts a used item back in the player's backpack. The lock explains why it can't be refunded: the player already had the use of it.</figcaption>
+</figure>
+
+<p>Staff can also open any player's backpack, with their balance: click the player's name on the Transactions page. It answers "what do I have?" without asking anyone for a screenshot.</p>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b21-gm-backpack.webp" alt="A player's Backpack opened by a Game Master, showing the player's balance and items." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A player's backpack.</strong> Opened by staff from the player's name on Transactions.</figcaption>
+</figure>
 
 <h2>Transactions</h2>
-<p>The <strong>Transactions</strong> page (in the menu's Watch column for staff) lists every item a player has bought or been given in the adventure, with quick filters for new and used items, a search, filters by item and by player, and a running total spent. Each row has:</p>
+<p>The <strong>Transactions</strong> page (in the menu's Watch column for staff) lists every item a player has bought or been given in the adventure, items still to honour first, with quick filters for new and used items, a search, filters by item and by player, and a running total spent. Each row has:</p>
 <ul>
   <li><strong>Use</strong>: mark the item used for the player.</li>
   <li><strong>Return</strong>: undo a use and put the item back in their backpack. Only staff can do this; players can't un-use their own items.</li>
-  <li><strong>Delete and refund</strong>: take the purchase off their record, which gives the BLOO back. Something the player already had the use of (an item they've used, a gift card already sent) shows a lock instead.</li>
+  <li><strong>Delete and refund</strong>: take the purchase off their record, which gives the BLOO back. It asks first, then lets you add an optional reason, which is kept in the activity log. Something the player already had the use of (an item they've used, a gift card already sent) shows a lock instead.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b13-trnx.webp" alt="The Transactions page: filters, a search, and a table of every purchase and reward with player, item, date and status, with the total spent at the foot." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Transactions.</strong> Every purchase and reward in the adventure: who, what, when and whether it has been redeemed, with the total spent at the foot.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b16-trnx-used.webp" alt="Transactions filtered to used items, each row with a lock instead of the refund button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Used items.</strong> Filtered to used items only. A used item can't be refunded, so nobody gets a perk and their BLOO back.</figcaption>
+</figure>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/item-shop/b18-trnx-refund.webp" alt="A confirmation before deleting and refunding a purchase." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Delete and refund.</strong> It asks first. Removing a purchase gives its BLOO back.</figcaption>
+</figure>
+
 <p>Switch on <strong>Show players their transactions</strong> (in the Item Shop's card on Adventure Settings → Sections) and each player gets a Transactions tab on the shop, backpack and Tabis pages listing what they bought and received. Player Records shows the same purchases per cohort, with filters, bulk removal and a way to restore removed ones.</p>
 
 <h2>Gift Cards (Enterprise)</h2>
@@ -3292,6 +5835,7 @@ HTML,
   <li><a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading &amp; Gift Card Rewards</a></li>
   <li><a href="/docs/random-encounters">Random Encounters</a></li>
   <li><a href="/docs/stats-dashboard-guide">The Stats Dashboard</a></li>
+  <li><a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a></li>
 </ul>
 HTML,
             ],
@@ -3299,7 +5843,7 @@ HTML,
                 'title'      => 'Random Encounters — Card Draws, Crises & Opportunities',
                 'slug'       => 'random-encounters',
                 'section'    => 'setup',
-                'sort_order' => 25,
+                'sort_order' => 26,
                 'body'       => <<<'HTML'
 <p>An encounter is the world acting on a player who was expecting an ordinary session: the fridge dies two hours before service, a big client calls with an offer. Each encounter is a <strong>card</strong>, either a crisis or an opportunity, and each card points at a milestone. When it's time, the player is dealt a hand of face-down cards on the Journey and turns one over. That locks them into the card's milestone until they finish it, and inside it an <strong>Encounter Choice</strong> step makes them decide what to do, with the price of every option shown up front.</p>
 <p>Encounters are an optional layer. A straightforward adventure without any is a completely valid, often clearer, design. Reach for them when you want the program to push back.</p>
@@ -3325,15 +5869,27 @@ HTML,
   <li><strong>Status</strong> — Published or Draft.</li>
   <li><strong>When the player is ready</strong> — the group's <a href="/docs/conditions-when-things-unlock">conditions</a>. Every rule must be true before the group can deal at all. Leave it empty and it's available from the start.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g30-group-curveballs.webp" alt="The group form filled in: a red group dealing three cards per hand, first in order, whenever it still has cards, published, with one condition, Level at least 5." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A group.</strong> Three cards per hand in red, dealt whenever it still has cards, but only to players at level 5 or above.</figcaption>
+</figure>
 <p>Conditions and schedule answer different questions. The conditions say the player is <em>ready</em> for this kind of thing (level 5, the Week 2 Tabi finished); the schedule says how often it then happens.</p>
 <ul>
   <li><strong>Every so often</strong> waits at least that long after the group last came round for that player, then fires on their next visit. It accumulates: a player who was away comes back to it waiting.</li>
   <li><strong>On certain days of the week</strong> fires once on each chosen day, by the adventure's time zone. It doesn't accumulate: miss the day, miss the encounter, which is what makes a scheduled beat feel like an event.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g32-group-weekdays.webp" alt="A group set to deal two cards On certain days of the week, with Tuesday and Thursday ticked." width="1600" height="900" loading="lazy">
+  <figcaption><strong>On certain days of the week.</strong> Two cards, on Tuesdays and Thursdays only. A player who doesn't visit that day finds nothing waiting the next morning.</figcaption>
+</figure>
 <p>Conditions live on the group, not the card, on purpose. A card with its own gate would turn the draw into a milestone that auto-loads at a set point; the randomness only means something when the group is gated and the card inside it is chance. So make one group per distinct rule set.</p>
 <p>A card also has a <strong>Chapter (Tabi)</strong> field, but the draw ignores it: it doesn't keep a card to that chapter. To keep cards to one chapter, give their group a condition on that Tabi.</p>
 <p><strong>One hand at a time.</strong> If several groups are ready, only the lowest Order deals; the rest wait. And no new hand arrives until the player has finished the encounter they picked, which paces the whole thing without a timer.</p>
 <p>Cards left <strong>Uncategorised</strong> have no conditions and no schedule, so they're always available. They deal a hand of eight, in red if the hand holds any crisis and green otherwise, and only when no authored group is ready. A <strong>Draft</strong> group parks its cards: nothing in it is dealt. Deleting a group moves its cards back to Uncategorised; it never deletes them.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g35-groups-table.webp" alt="The Groups table: each group with when it is ready, how often it comes round, cards per hand and how many cards it holds, with Preview, Edit and Delete." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The groups at a glance.</strong> Each row reads its rules back: when it's ready, how often, how many cards per hand and how many cards it holds.</figcaption>
+</figure>
 
 <h2>Cards: Crises and Opportunities</h2>
 <p><strong>New Encounter</strong> opens the card editor:</p>
@@ -3346,10 +5902,27 @@ HTML,
   <li><strong>Not before</strong> / <strong>Not after</strong> — a date window, by the adventure's time zone. Use it instead of scheduling ("the supplier price hike arrives in week 6"), and to retire a card without unpublishing it.</li>
   <li><strong>The Card</strong> — the <strong>Teaser</strong> (one line; the full situation belongs in the milestone), a <strong>Card image</strong> and a <strong>Colour</strong>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g21-encounter-filled.webp" alt="The encounter editor filled in: name, Kind Crisis, its chapter, the milestone it loads, draw weight 2, Published, and Can happen more than once off." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A card's settings.</strong> A crisis that loads the milestone of the same name, a little more likely than the others (weight 2), and once per player.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g22-card-filled.webp" alt="The Card section of the encounter editor: the teaser, the card image and a red frame colour." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Card.</strong> What the player sees the moment it flips: the teaser, the art and the frame colour.</figcaption>
+</figure>
+<p>Only the name is required to save. The bottom bar has <strong>Preview</strong> and <strong>Create Encounter</strong>; once created, the page becomes the card's editor, with <strong>Update Encounter</strong>.</p>
 <p>Assign a card to a group from the <strong>Group</strong> dropdown on its row in Manage Content. Each row also edits art, name, kind, colour and weight in place, and calls out anything that would stop it working: "No milestone — cannot fire", "staff-fired only", a date window that hasn't opened or has passed, and how many players have already faced it. The header sums it up: how many cards can be dealt right now, how many are scheduled, how many are past their window, and how many cannot fire. Trashed cards can be restored or deleted for good.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g28-encounters-list.webp" alt="Manage Content's Encounters tab with five cards, each row editable in place, with Preview, Send to a player, Show again, Unpublish and Trash under it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The deck.</strong> Five cards, each row editable in place: name, kind, group, colour, milestone and draw weight, with what it can do underneath.</figcaption>
+</figure>
 
 <h2>Preview a Hand</h2>
 <p><strong>Preview</strong> shows you what a draw looks like without anything happening. It's on every group's row (a sample hand from that group), on every card's row (a sample hand that always includes that card) and in the encounter editor's bottom bar, where it uses the form as you have it, unsaved changes and all, so you can see a card before you create it. The real overlay opens with its mood and the group's hand size, and a bar to <strong>Flip all</strong>, <strong>Turn all back</strong>, <strong>Deal again</strong> or close it (Esc works too); click a card to turn it over and back. The preview draws from every card in the group, drafts and weight-0 cards included, and says how many cards the group has and how many could be dealt to a player today. Nothing is recorded: no player is dealt anything and no price is charged.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g37-group-preview-flipped.webp" alt="A preview of a group's hand with all three cards turned over, and the bar with Flip all, Deal again and close." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A sample hand, turned over.</strong> Preview deals the way a real hand is dealt, in the group's colour; <strong>Deal again</strong> draws another. Nothing happens to anyone.</figcaption>
+</figure>
 
 <h2>The Draw and the Lock</h2>
 <p>A hand is dealt on the player's next Journey visit. The cards are a weighted sample of the group's eligible cards, with no duplicates, and the hand is saved the moment it's dealt, so reloading shows the same cards rather than a reshuffle. The player turns one over; the others go back in the pool untouched.</p>
@@ -3358,11 +5931,20 @@ HTML,
 
 <h2>The Encounter Choice Step</h2>
 <p>Add an <strong>Encounter Choice</strong> step to the milestone (it's in the Flow group) and use <strong>Add Option</strong> for each choice. Each option is a numbered card in three blocks, every field explained where you fill it in:</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g38-choice-options.webp" alt="An Encounter Choice step in the milestone's step editor, with its numbered options and the reminder that BLOO can go below zero but energy cannot." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The decision, inside the milestone.</strong> Each option is a button the player can press, with its price written on it.</figcaption>
+</figure>
 <ul>
   <li><strong>What the player reads</strong>: the <strong>Button text</strong> ("Call a technician"; an option without it isn't saved) and an optional <strong>Description</strong>, one line with the catch ("Cheaper, but it is a patch, not a fix.").</li>
-  <li><strong>What it costs and pays</strong>: <strong>Costs</strong> BLOO, <strong>Pays</strong> BLOO, <strong>Costs Energy</strong>, and an XP change, signed: positive pays XP, negative takes it away, and losing enough costs a level. The BLOO and XP fields carry this adventure's names for them. Leave 0 for none.</li>
+  <li><strong>What it costs and pays</strong>: <strong>Costs BLOO</strong>, <strong>Pays BLOO</strong>, <strong>Costs EP</strong>, and an <strong>XP</strong> change, signed: positive pays XP, negative takes it away, and losing enough costs a level. The fields carry this adventure's own names for BLOO, EP and XP. Leave 0 for none.</li>
   <li><strong>What happens after</strong>: <strong>Then grant an achievement</strong> — require that achievement on a follow-up milestone and you've built a consequence chain: "the tech patched it for 200, but you still need a new fridge". <strong>Then say a message</strong> — a <a href="/docs/consequences">consequence</a> set to "After a specific choice", which pops up right after the choice.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g39-choice-option.webp" alt="One option in detail: its button text and description, what it costs and pays in BLOO, energy and XP, and an achievement and a message for afterwards." width="1600" height="708" loading="lazy">
+  <figcaption><strong>One option.</strong> "Present from your phone": the button text and its catch, 30 EP and +80 XP, then an achievement and a message for afterwards. Every field carries its own explanation.</figcaption>
+</figure>
+<p>When the player chooses, the browser asks them to confirm, and then one panel shows the message and anything the choice paid them (BLOO, XP, the achievement).</p>
 <p>The player sees what they have, and every option's BLOO and energy price, before choosing. The XP change isn't shown on the option, so mention it in the description if you want the player to weigh it. Prices are charged on the server from your settings, and only once per encounter, even if the player fails the milestone and plays it again.</p>
 <p><strong>The economy rule: BLOO can go negative, energy can't.</strong></p>
 <ul>
@@ -3378,7 +5960,19 @@ HTML,
   <li><strong>Show again</strong> appears on a card players have already faced. A card that can't happen more than once is never dealt again to someone who's seen it, so after a rehearsal the deck can go quiet with nothing on screen to say why. Show again clears that history so the card can be dealt again.</li>
   <li><strong>Reset deck</strong>, in the header whenever anything has been faced, does the same for every card. Hands already dealt stay on the table.</li>
 </ul>
-<p>On the Stats page, the <strong>Random Encounters</strong> panel reports each encounter split by choice: how many players took each option, and what it cost them in total and per player. Only currently enrolled players are counted, so a GM testing a card doesn't move the numbers. See <a href="/docs/stats-dashboard-guide">The Stats Dashboard</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/q01-send-picker.webp" alt="The Send to a player picker: the cohort's players by name with a search box." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Send to a player.</strong> Pick anyone in the cohort; their next Journey visit takes them into the encounter. The send skips the draw, the groups, the conditions and the schedule.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/s04-show-again.webp" alt="The Show again confirmation explaining that it forgets who has already faced the card, so it can be dealt afresh." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Show again.</strong> It asks first: who faced the card is forgotten, and their choices drop out of the stats for it.</figcaption>
+</figure>
+<p>On the Stats page, the <strong>Encounters</strong> pane lists every card with its kind, how many of the enrolled players have faced it, how many resolved it, and its average cost. Click one to see what they chose: each option with how many players took it and what it cost them in total and per player. Only currently enrolled players are counted, so a GM testing a card doesn't move the numbers. See <a href="/docs/stats-dashboard-guide">The Stats Dashboard</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/s02-stats-encounters.webp" alt="The Encounters pane of the Stats page: five encounters with their kind, faced out of enrolled players, resolved and average cost." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Stats → Encounters.</strong> Every card, how many faced and resolved it, and what it cost on average.</figcaption>
+</figure>
 
 <h2>Designing Good Encounters</h2>
 <ul>
@@ -3387,6 +5981,7 @@ HTML,
   <li><strong>Pair every energy cost with a way back.</strong> Encounters spend energy; Garden Tasks restore it.</li>
   <li><strong>Add a debt message.</strong> A consequence that fires when BLOO falls below zero tells the player what just happened and what to do about it.</li>
   <li><strong>Use them sparingly.</strong> Too many and they stop feeling like events and start feeling like interruptions.</li>
+  <li><strong>Watch repeatable cards in an always-on group.</strong> A group set to "Whenever it still has cards" deals the next hand as soon as the last encounter is resolved, so a card that can happen more than once comes back on every Journey visit.</li>
 </ul>
 
 <h2>Related</h2>
@@ -3403,7 +5998,7 @@ HTML,
                 'title'      => 'Consequences — Messages When Something Happens',
                 'slug'       => 'consequences',
                 'section'    => 'setup',
-                'sort_order' => 26,
+                'sort_order' => 27,
                 'body'       => <<<'HTML'
 <p>A consequence is a message that lands on a player when something happens to them: "You've gone into debt", "You're halfway there", "The tech got there in time. The fridge lives, for now." It's how the game reacts out loud. A consequence only delivers a message; it never changes anyone's balance.</p>
 
@@ -3414,7 +6009,12 @@ HTML,
 </ul>
 
 <h2>Creating One</h2>
-<p>Manage Content → Consequences → <strong>New Consequence</strong> opens the form:</p>
+<p>Manage Content → Consequences → <strong>New Consequence</strong> opens the form. Before you've made any, the empty list suggests the most useful first one: a debt alert.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g03-consequences-empty.webp" alt="Manage Content's Consequences tab with no consequences yet, suggesting a debt alert as the first one, and the New Consequence button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → Consequences.</strong> Empty, with a suggestion for where to start.</figcaption>
+</figure>
+<p>The form asks for:</p>
 <ul>
   <li><strong>Title</strong> and <strong>Message</strong> — what the player reads.</li>
   <li><strong>Fires</strong> — When a state is crossed, or After a specific choice.</li>
@@ -3423,8 +6023,16 @@ HTML,
   <li><strong>Icon</strong> and <strong>Colour</strong> — typed names, e.g. <code>warning</code> and <code>amber</code>.</li>
   <li><strong>Only once per player</strong> — on by default.</li>
 </ul>
-<p>A state consequence can watch: <strong>Coins (BLOO)</strong>, <strong>Energy (EP)</strong>, <strong>Level</strong>, <strong>XP</strong>, <strong>Journey completion %</strong>, <strong>Milestones completed</strong>, <strong>Tabis completed</strong>, <strong>Total Blooms</strong> or <strong>Guild level</strong>.</p>
-<p>Press <strong>Save consequence</strong>. The list reads each one back in a line ("Coins (BLOO) is at or below -1"), and you can filter it by kind.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g09-consequence-debt.webp" alt="A consequence filled in as a debt alert: When a state is crossed, watching BLOO, is at or below -1, tone Danger, with a warning icon in red." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A debt alert.</strong> Fires when BLOO is at or below -1, in the Danger tone. <strong>Only once per player</strong> is off here, so it repeats, at most once a day, while the player stays in debt.</figcaption>
+</figure>
+<p>A state consequence can watch: <strong>BLOO</strong>, <strong>EP</strong> and <strong>XP</strong> (under your adventure's own names for them), <strong>Level</strong>, <strong>Journey completion %</strong>, <strong>Milestones completed</strong>, <strong>Tabis completed</strong>, <strong>Total Blooms</strong> or <strong>Guild level</strong>.</p>
+<p>Press <strong>Save consequence</strong>. The list reads each one back in a line ("BLOO is at or below -1"), and you can filter it by kind.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g12-consequences-list.webp" alt="The Consequences list with twelve rows: three state triggers and nine outcome messages, each with its trigger, what it watches and its tone." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A working set.</strong> Three that watch a state (the debt alert among them) and nine outcome messages for encounter choices. <strong>Edit</strong> opens one; the bin deletes it.</figcaption>
+</figure>
 
 <h2>How Often It Fires</h2>
 <ul>
@@ -3434,15 +6042,29 @@ HTML,
 </ul>
 
 <h2>How It Reaches the Player</h2>
-<p>State consequences are checked every time a player's progress is recalculated: on their own page loads, and whenever anything changes their numbers, including someone else's action, such as a GM grading their work. The message is held for them and shown on their next page load, in the same panel as rewards, styled by its tone. It's removed once shown, so a refresh can't replay it.</p>
+<p>State consequences are checked every time a player's progress is recalculated: on their own page loads, and whenever anything changes their numbers, including someone else's action, such as a GM grading their work. The message is held for them and shown on their next page load, in the same panel as rewards, styled by its tone. It's removed once shown, so a refresh can't replay it. A Good news message, or one that arrives beside something the player earned, sits under <em>Congratulations!</em>; any other tone arrives under <em>Heads up!</em>.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-encounters/q07-in-the-red.webp" alt="A Heads up! panel with the Danger message You're in the red." width="1600" height="900" loading="lazy">
+    <figcaption><strong>Danger.</strong> The debt alert, under <em>Heads up!</em>.</figcaption>
+  </figure>
+  <figure class="doc-shot">
+    <img src="/assets/docs/add-encounters/p01-launch-lead.webp" alt="A Congratulations panel with a Good news message for reaching level 5, beside an achievement just earned." width="1600" height="900" loading="lazy">
+    <figcaption><strong>Good news.</strong> A level-5 message, beside an achievement earned at the same time.</figcaption>
+  </figure>
+</div>
 <p>A choice consequence appears straight away, as part of the result of the choice.</p>
 
 <h2>Recipes</h2>
 <ul>
-  <li><strong>Debt alert</strong> — When a state is crossed · Coins (BLOO) · is at or below · <strong>-1</strong>. Use -1 rather than 0, or it fires for a player who has simply spent down to exactly nothing.</li>
+  <li><strong>Debt alert</strong> — When a state is crossed · BLOO · is at or below · <strong>-1</strong>. Use -1 rather than 0, or it fires for a player who has simply spent down to exactly nothing.</li>
   <li><strong>Encouragement</strong> — Journey completion % · is at or above · 50, with a Good news tone.</li>
   <li><strong>A choice's outcome</strong> — After a specific choice, then pick it in the option's <strong>Then say a message</strong>. This is where the story of what happened next goes: "Patched, not fixed."</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/g11-consequence-manual.webp" alt="A consequence set to After a specific choice: only the title, message, tone, icon and colour remain, with no number to watch." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An outcome message.</strong> Set to "After a specific choice", there's nothing to watch: it fires when an Encounter Choice option names it.</figcaption>
+</figure>
 
 <h2>Consequences vs Conditions</h2>
 <p>They look alike but answer opposite questions. A <a href="/docs/conditions-when-things-unlock">condition</a> asks "has the player climbed high enough?" and grants something permanent: an achievement, a certificate, a scene stage. A consequence can also ask "has the player fallen below?", and it's momentary, which is why it can watch spendable numbers like BLOO and energy that conditions can't.</p>
@@ -3465,13 +6087,17 @@ HTML,
                 'title'      => 'Customizing Currencies, Ranks & Rewards',
                 'slug'       => 'customizing-currencies-ranks-and-rewards',
                 'section'    => 'setup',
-                'sort_order' => 27,
+                'sort_order' => 28,
                 'body'       => <<<'HTML'
 <p>The companion how-to for <a href="/docs/xp-bloo-ep-explained">Understanding XP, BLOO &amp; EP</a>. This is where you change what the three currencies are called, whether energy exists at all, and what happens as players level up. All of it is on the <strong>Rules &amp; scoring</strong> pane of Adventure Settings.</p>
 
 <h2>Renaming XP, BLOO &amp; EP</h2>
 <p>The <strong>Points &amp; currencies</strong> panel gives each currency a name and a short name: <strong>Experience points</strong> and its <strong>Short name</strong>, <strong>Currency</strong> and its short name, and <strong>Energy points</strong> and its short name. Short names appear next to numbers, long names in sentences. The defaults are Experience Points / XP, Bloo Coins / BLOO, and Energy Points / EP.</p>
 <p>Relabel XP as "Skill Points" / "SP" to fit a corporate training theme, or BLOO as "Guild Coin" for a more game-like Adventure. The mechanics underneath never change, only what players see them called: the new names follow wherever the numbers appear, from the editors' reward fields to the shop and certificates. A cohort can give its currencies names of its own in its Cohort Settings.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a08-cap-rewards-deadline.webp" alt="An achievement's reward fields labelled Experience Points, BLOO Credits and Energy, the names this adventure gave its currencies." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The new names follow the numbers.</strong> An achievement's reward fields, labelled with this adventure's own names for its points.</figcaption>
+</figure>
 <p>In the <strong>Ranks</strong> panel, <strong>Title before the first rank</strong> is what a player's rank reads until they earn one: "Explorer", "Recruit", whatever fits your theme. Write it in the singular.</p>
 
 <h2>Turning Energy On or Off</h2>
@@ -3484,6 +6110,10 @@ HTML,
   <li>Create the ranks first, as achievements with the type <strong>Rank</strong>. If none exist yet, the panel offers <strong>Create the first rank</strong>.</li>
   <li>For each rung, fill in a row with a <strong>Level</strong> and the Rank achievement it awards. <strong>Add Rank</strong> adds another row.</li>
 </ol>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/t04-rank-ladder.webp" alt="The Ranks panel of Rules &amp; scoring: Title before the first rank, then rows pairing levels 1, 3, 5 and 7 with rank achievements, and Add Rank." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Ranks panel.</strong> The title before the first rank, then one row per rung: a level and the rank it awards.</figcaption>
+</figure>
 <p>The ladder is level-based and nothing else: a Rank achievement doesn't use Auto-Grant Conditions. When a player reaches a rung's level they receive that rank (and any lower ones they'd skipped) with a level-up message showing its badge, and the highest becomes their current rank. A GM can grant a rank by hand, but not to a player below its level. Ranks belong to the template, so every cohort shares one ladder. More on designing the ladder in <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a>.</p>
 
 <h2>A Practical Approach</h2>
@@ -3502,7 +6132,7 @@ HTML,
                 'title'      => 'QR Codes — Live & Hybrid Event Checkpoints',
                 'slug'       => 'qr-codes-live-and-hybrid-events',
                 'section'    => 'setup',
-                'sort_order' => 28,
+                'sort_order' => 29,
                 'body'       => <<<'HTML'
 <p>A QR code is how something that happens in a room counts inside an Adventure. A player scans a printed or projected code with their phone, and the Adventure records it. BLUERABBIT has three kinds of QR code, and each does a different job: an achievement code awards a badge, a task code completes a repeatable task, and a milestone code completes a milestone outright.</p>
 
@@ -3513,6 +6143,14 @@ HTML,
   <li>A player who already holds the achievement is told so, and nothing is awarded twice. Branches still hold: nobody can earn two achievements from the same branch. Any refusal says why in a panel that stays until the player closes it.</li>
   <li>An earned achievement can be one of a milestone's conditions, so the badge scanned at the door can be what opens the next piece of content.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-achievements/a14-qr-code.webp" alt="An achievement's editor with its QR code beside the badge art, and a note naming the adventure the code redeems into." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An achievement's QR code.</strong> It appears once the achievement is saved, with the badge in the middle and the name of the adventure it redeems into.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/a05-magic-link.webp" alt="The page a player sees after scanning: Congratulations, the achievement redeemed with a magic code, its secret message, and a Back to home button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees after scanning.</strong> The achievement is theirs, with its secret message, and one button takes them back.</figcaption>
+</figure>
 <p>For one-time unique codes and handing out links in bulk, see <a href="/docs/achievements-paths-and-ranks-reward-ladder">Achievements, Paths &amp; Ranks</a>.</p>
 
 <h2>Task QR Codes: Repeatable Check-Ins</h2>
@@ -3560,22 +6198,61 @@ HTML,
                 'title'      => 'The Event Schedule: Sessions & Speakers — Concept',
                 'slug'       => 'event-schedule-concept',
                 'section'    => 'setup',
-                'sort_order' => 29,
+                'sort_order' => 30,
                 'body'       => <<<'HTML'
 <p>Not every part of an Adventure needs to be a milestone. The <strong>Schedule</strong> is a separate, informational layer for anything tied to a time and a place (live sessions, workshops, who's speaking), sitting alongside the Journey Map rather than gating progress on it.</p>
 
 <h2>Sessions</h2>
-<p>A session is a scheduled block (a workshop, a live Q&amp;A, an orientation walkthrough) with a title, a start and end time, a description and, for in-person or hybrid programs, a room. Players see sessions grouped by day, and clicking one opens its details in a window over the schedule: the date and time, the room, who's speaking and the full description.</p>
+<p>A session is a scheduled block (a workshop, a live Q&amp;A, an orientation walkthrough) with a title, a start and end time, a description and, for in-person or hybrid programs, a room. Players see sessions grouped by day, one panel per day, each session with its picture, its speakers, its time and time zone, its room and the start of its description.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p02-player-schedule.webp" alt="A player's schedule: one panel per day, each session card with a speaker's picture, title, speakers, time, room and the start of its description." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The schedule, as a player sees it.</strong> One panel per day. A session's picture is its first speaker's; the room shows as a tag. Sessions limited to another guild or path simply aren't there.</figcaption>
+</figure>
+<p>Clicking a session opens its details in a window over the schedule: the date and time, the room, who's speaking (each name opens that speaker's page), a button to the milestone or challenge it's attached to, and the full description.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p04-player-session.webp" alt="A session's window open over the schedule, showing its title, date and time, room, speakers, a button to its challenge and its description." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A session's window.</strong> The speakers link to their pages, and the button opens the challenge this session is attached to.</figcaption>
+</figure>
 <p>Sessions don't unlock, block or reward anything on their own. Two optional settings make them more than a list:</p>
 <ul>
   <li><strong>Attach a milestone or challenge</strong>, and the session's details carry a button that opens it.</li>
   <li><strong>Limit who sees it</strong> to players on one path (or holding one rank), or to one guild. Anyone outside it doesn't see the session at all, so the Engineering track never sees the Sales workshop.</li>
 </ul>
-<p>An adventure setting, <strong>Schedule days shown</strong>, decides whether players see every day's sessions or only today's. A long program doesn't have to be typed in one session at a time: the Schedule page takes a CSV file of sessions, and the Speakers tab one of speakers (see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>).</p>
+<p>The players' menu keeps the next session in view: the Schedule row reads <strong>Next:</strong> with the title and time of the first upcoming session that player can see, or "No sessions coming up".</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p01-player-menu.webp" alt="A player's menu with the Schedule row showing the next session and its time, and the Speakers row with how many speakers there are." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The schedule in a player's menu.</strong> "Next:" names the next session this player can see; Speakers shows how many there are.</figcaption>
+</figure>
+<p>The Schedule section's own settings include <strong>Days shown</strong>, which decides whether players see every day's sessions or only today's. A long program doesn't have to be typed in one session at a time: the Schedule page takes a CSV file of sessions, and the Speakers tab one of speakers (see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>).</p>
 
 <h2>Speakers</h2>
 <p>A speaker is a person with a picture, a name, a company, links and a short bio. Attach speakers to sessions and players can open a speaker's page to read about them and see every session they're in. With the Speakers section on, players also get a Speakers page listing everyone.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p07-player-speakers.webp" alt="The Speakers page: a card per speaker with picture, name, bio, website and LinkedIn icons, and a button to their page." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Speakers page.</strong> Every published speaker in alphabetical order, with their bio and, when set, website and LinkedIn icons.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/p08-player-speaker-page.webp" alt="One speaker's page with her picture, name, company, an About panel and the list of sessions she speaks at." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A speaker's page.</strong> Picture, name and company, About (the bio), and every published session they speak at with its date and time.</figcaption>
+</figure>
 <p>Speakers are also the adventure's <strong>cast</strong>. A Dialogue step can name a speaker as the character talking, and the name and portrait are read from the speaker every time the line appears. So the facilitator who runs your live session can be the same character who guides players through the milestones, and changing their portrait once updates every line they speak. Manage Content has a <strong>Speakers</strong> tab listing the cast, with how many dialogue lines each one has. See <a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a>.</p>
+
+<h2>On a Phone</h2>
+<p>The schedule, a session and a speaker's page all work on a phone: the days stack, and a session's window fills the screen.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-sessions-speakers/m01-phone-schedule.webp" alt="The schedule on a phone, with day panels stacked and session cards showing time, room and speakers." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The schedule.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-sessions-speakers/m02-phone-session.webp" alt="A session's window on a phone, with its speakers and the button to its challenge." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A session.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/add-sessions-speakers/m03-phone-speaker.webp" alt="A speaker's page on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A speaker.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>In Launch Week</h2>
 <p>The in-person orientation day gets three sessions on the schedule (a welcome talk, a benefits walkthrough and a team-lunch block), each with a room listed, so the schedule doubles as the day's agenda. The CEO who gives the welcome talk is a speaker, and she's the same character who welcomes new hires in the first milestone's dialogue.</p>
@@ -3593,26 +6270,91 @@ HTML,
                 'title'      => 'How to Build an Event Schedule',
                 'slug'       => 'how-to-build-an-event-schedule',
                 'section'    => 'setup',
-                'sort_order' => 30,
+                'sort_order' => 31,
                 'body'       => <<<'HTML'
 <p>Step by step. See <a href="/docs/event-schedule-concept">The Event Schedule — Concept</a> for what sessions and speakers are for.</p>
 
 <ol>
-  <li><strong>Switch the sections on.</strong> In Adventure Settings → Sections, turn on <strong>Schedule</strong>, and <strong>Speakers</strong> too if you want players to have a Speakers page. The Schedule then appears in your players' menu, and <strong>Session</strong> and <strong>Speaker</strong> appear in your menu's Add group (<strong>New Session</strong> and <strong>New Speaker</strong> under Add Mechanics in the Classic view).</li>
-  <li><strong>Add your speakers first.</strong> Open Manage Content's <strong>Speakers</strong> tab and press <strong>New Speaker</strong>. Give the speaker a picture and a first and last name, and add a company, website, LinkedIn and a short bio if you have them. <strong>Connect to Player</strong> optionally links the speaker to a staff member's account, and fills in the name, picture, bio and links from that account's profile wherever the profile has them. Press <strong>Create Speaker</strong>. Add each person once and reuse them in every session and dialogue line they appear in.</li>
-  <li><strong>Create a session.</strong> Choose <strong>Session</strong> in the Add group and give it a title, a <strong>Session Start</strong> and a <strong>Session End</strong> (both required), a <strong>Session Description</strong>, and a room under <strong>Room Information</strong> if it's in person.</li>
-  <li><strong>Tick its speakers.</strong> The Speakers list appears once the adventure has at least one.</li>
-  <li><strong>Link it and limit it, if you want to.</strong> <strong>Attach to Quest</strong> links a milestone or challenge, which players can then open from the session's details. In the bottom bar, <strong>Visible to path</strong> limits the session to one path or rank, and <strong>Visible to guild</strong> to one guild. Each of these appears only when the adventure has paths or guilds to pick from.</li>
-  <li><strong>Publish it.</strong> Leave the status in the bottom bar on Publish (or Draft to keep it out of sight) and press <strong>Create Session</strong>. Repeat for every session, or upload the whole program at once with <strong>Upload Schedule</strong> on the Schedule page (see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>).</li>
-  <li><strong>Check the Schedule.</strong> Sessions appear grouped by day; click one to open its details. As a GM you'll see an edit button on each session, and an <strong>Edit</strong> button inside its details.</li>
+  <li><strong>Switch the sections on.</strong> In Adventure Settings → Sections, turn on <strong>Schedule</strong>, and <strong>Speakers</strong> too if you want players to have a Speakers page. The Schedule then appears in your players' menu, and <strong>Session</strong> and <strong>Speaker</strong> appear in your menu's Add group (<strong>New Session</strong> and <strong>New Speaker</strong> under Add Mechanics in the Classic view). A section switched off loses its page, its menu row and its Add button for everyone; its content is kept.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/c02-settings-cards.webp" alt="Adventure Settings, Sections pane: a card per section with its switch, Schedule and Speakers among them, both on." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Adventure Settings → Sections.</strong> Every section is a card with its switch; the gear opens that section's own settings. Schedule and Speakers are on here.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Add your speakers first.</strong> Open Manage Content's <strong>Speakers</strong> tab and press <strong>New Speaker</strong>, or choose <strong>Speaker</strong> in your menu's Add group. Give the speaker a picture from the media library, a first name (the one field the save insists on) and a last name, and add a company, website, LinkedIn and a short bio if you have them. <strong>Company</strong> is free text, so a job title fits there too; website and LinkedIn become icons on the speaker's card. Press <strong>Create Speaker</strong>. Add each person once and reuse them in every session and dialogue line they appear in.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/a05-speaker-filled.webp" alt="The New Speaker form filled in for a guest speaker: picture, first and last name, company line, website and LinkedIn." width="1600" height="900" loading="lazy">
+      <figcaption><strong>A guest speaker, filled in.</strong> Picture, name and the line under her name. Connect to Player is left on None, because this speaker has no account.</figcaption>
+    </figure>
+    <p><strong>Connect to Player</strong> optionally links the speaker to a staff account (administrators, Game Masters and NPCs). Picking one saves at once and reloads the form with that person's own name, picture, bio, company and links, which win over anything typed, wherever their profile has them. Leave it on <strong>None</strong> for a guest with no account.</p>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/a08-speaker-connected.webp" alt="Edit Speaker for a speaker connected to a Game Master's account, her name and picture filled in from her profile." width="1600" height="900" loading="lazy">
+      <figcaption><strong>A speaker who is connected to an account.</strong> Her name, picture and company come from her own profile, so her speaker page stays current when she edits it.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Create a session.</strong> Choose <strong>Session</strong> in the Add group. Everything is on one page: a <strong>Title</strong>, a <strong>Session Description</strong> (rich text; the schedule's card shows its first 200 characters, the session's window all of it), a <strong>Session Start</strong> and a <strong>Session End</strong> (both required, each with a date and time picker), and a room under <strong>Room Information</strong> if it's in person. Times are read on the adventure's clock, and the schedule shows each session's time zone.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b01-session-empty.webp" alt="An empty New Session form with Title, Session Description, Session Start and End, Room Information, Attach to Quest and Speakers, and a bar along the bottom." width="1600" height="900" loading="lazy">
+      <figcaption><strong>New Session.</strong> One page of fields; who sees it, the status and Create Session sit in the bar along the bottom.</figcaption>
+    </figure>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b04-session-start-picker.webp" alt="The Session Start field with its date and time picker open." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Session Start and End.</strong> Both are required. Saving without a title, a start or an end is refused with every missing field listed at once.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Tick its speakers.</strong> Every published speaker appears as a chip; pick one or several, and a picked chip lights up. The first speaker's picture becomes the session's picture on the schedule. The list appears once the adventure has at least one speaker.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b06-session-speakers.webp" alt="The Speakers field of a session: a chip for each published speaker, two of them picked and lit." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Speakers on a session.</strong> All of them link to their speaker pages from the session's window.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Link it and limit it, if you want to.</strong> <strong>Attach to Quest</strong> links one published milestone [Q] or challenge [C], which players can then open from the session's details. In the bottom bar, <strong>Visible to path</strong> limits the session to one path or rank, and <strong>Visible to guild</strong> to one guild; set both and a player needs the path and the guild. Each of these appears only when the adventure has paths or guilds to pick from.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b05-session-attach.webp" alt="Room Information filled in and the Attach to Quest list open, offering milestones marked Q and challenges marked C." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Room Information and Attach to Quest.</strong> The room shows as a tag on the session's card; the attached milestone or challenge gets a button in the session's window.</figcaption>
+    </figure>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b07-session-path.webp" alt="The bottom bar of the session form with the Visible to path list open, offering All paths or one path or rank." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Visible to path.</strong> Only players who hold the path see the session, on the schedule and in the menu's "Next:" line. Visible to guild works the same way for one guild.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Publish it.</strong> Leave the status in the bottom bar on Publish (or Draft to keep it out of sight) and press <strong>Create Session</strong>. The session reopens in its editor, where <strong>Update Session</strong> saves changes and <strong>Duplicate</strong> makes a copy. Repeat for every session, or upload the whole program at once with <strong>Upload Schedule</strong> on the Schedule page (see <a href="/docs/bulk-uploads-with-csv">Bulk Uploads with CSV</a>).
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b10-session-created.webp" alt="Edit Session after the first save, with the message that the session was created and Duplicate in the bottom bar." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Created.</strong> The session reopens as Edit Session; the bar now has Duplicate and Update Session.</figcaption>
+    </figure>
+  </li>
+  <li><strong>Check the Schedule.</strong> Sessions appear grouped by day; click one to open its details. As a GM you'll see an edit pencil on each session, and an <strong>Edit</strong> button inside its details. The Schedule page is also where you manage sessions: there's no separate list of them in Manage Content.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b19-schedule-gm.webp" alt="The schedule as a Game Master sees it, with an edit pencil on every session card and Upload Schedule at the top." width="1600" height="900" loading="lazy">
+      <figcaption><strong>The schedule, for a Game Master.</strong> A pencil on every card opens its editor, and Upload Schedule adds sessions from a CSV file.</figcaption>
+    </figure>
+  </li>
 </ol>
 
 <h2>Good to Know</h2>
 <ul>
-  <li><strong>It's content, not mechanics.</strong> A session pays no XP or BLOO and gates nothing. If attendance should count, put a QR code in the room (see <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes</a>).</li>
-  <li><strong>On the day itself</strong>, set <strong>Schedule days shown</strong> to "Just today" (Adventure Settings → Basics, Guilds &amp; schedule), and players see only today's sessions. "Show all days" brings back the full calendar.</li>
-  <li><strong>A limited session is hidden from everyone outside it, staff included.</strong> To check a path- or guild-only session, look at the Schedule from an account that qualifies.</li>
-  <li><strong>To remove a session</strong>, open it, set its status to Trash and press <strong>Update Session</strong>.</li>
+  <li><strong>It's content, not mechanics.</strong> A session pays no XP or BLOO and gates nothing, and players can't sign up or check in to it. If attendance should count, attach a milestone with a check-in step, or put a QR code in the room (see <a href="/docs/qr-codes-live-and-hybrid-events">QR Codes</a>).</li>
+  <li><strong>On the day itself</strong>, open the Schedule card's settings (the gear on its card in Adventure Settings → Sections) and set <strong>Days shown</strong> to "Just today": players then see only the sessions that start today, on the adventure's clock. "Show all days" brings back the full calendar. The same card renames the section and sets the Schedule page's background. On a cohort, the setting is <strong>Schedule days shown</strong>, in the cohort's own settings.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/c03-settings-schedule-card.webp" alt="The Schedule card's settings opened: Name, Days shown with Show all days or Just today, and Schedule Background." width="1600" height="900" loading="lazy">
+      <figcaption><strong>The Schedule card's settings.</strong> Name (what players see in the menu and the page heading), Days shown and the Schedule Background. The Speakers card has a Name only.</figcaption>
+    </figure>
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/c04-schedule-just-today.webp" alt="The schedule with Days shown set to Just today, listing a single day's session." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Just today.</strong> Only today's published sessions, handy during a live event.</figcaption>
+    </figure>
+  </li>
+  <li><strong>A limited session is hidden from everyone outside it, staff included.</strong> To check a path- or guild-only session, look at the Schedule from an account that qualifies, or open it from its own editor link.</li>
+  <li><strong>Drafts aren't listed anywhere.</strong> The Schedule shows published sessions only, so keep the editor's address of a draft (shown in your browser after the first save) to come back to it.</li>
+  <li><strong>Duplicate</strong> in the editor's bar asks first, then makes "[COPY] - <em>title</em>" with everything copied, its status included: a copy of a published session is published too, at the same time, so it shows twice on the schedule until you change it or trash it.
+    <figure class="doc-shot">
+      <img src="/assets/docs/add-sessions-speakers/b12-session-duplicate.webp" alt="The question asked before a session is duplicated." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Duplicate asks first.</strong> Continue then opens the copy in its own editor.</figcaption>
+    </figure>
+  </li>
+  <li><strong>To remove a session</strong>, open it, set its status to Trash and press <strong>Update Session</strong>. It leaves the schedule and every speaker page.</li>
+  <li><strong>A speaker's page lists every published session they speak at</strong>, including one limited to a path or guild the reader isn't in. Keep that in mind before attaching a speaker to a confidential session.</li>
   <li><strong>Renaming a speaker</strong> on the Speakers tab updates every dialogue line they speak. Trashing one stops them being offered for new lines, but the lines they already have keep their name and portrait.</li>
 </ul>
 
@@ -3621,6 +6363,7 @@ HTML,
   <li><a href="/docs/event-schedule-concept">The Event Schedule — Concept</a></li>
   <li><a href="/docs/speakers-and-dialogue-cast">Speakers &amp; the Dialogue Cast</a></li>
   <li><a href="/docs/qr-codes-live-and-hybrid-events">QR Codes — Live &amp; Hybrid Event Checkpoints</a></li>
+  <li><a href="/docs/bulk-uploads-with-csv">Bulk Uploads &amp; Exports with CSV</a></li>
   <li><a href="/docs/complete-adventure-settings-reference">The Complete Adventure Settings Reference</a></li>
 </ul>
 HTML,
@@ -3629,7 +6372,7 @@ HTML,
                 'title'      => 'SCORM Packages — Concept',
                 'slug'       => 'scorm-packages-concept',
                 'section'    => 'setup',
-                'sort_order' => 31,
+                'sort_order' => 32,
                 'body'       => <<<'HTML'
 <p>If you already have e-learning content built in another authoring tool, you don't have to rebuild it inside BLUERABBIT from scratch. The <strong>SCORM Package</strong> step type runs it inside a milestone.</p>
 
@@ -3643,6 +6386,10 @@ HTML,
   <li><strong>The score.</strong> A score the package reports is kept, as a percentage, and handed back to the package when the player returns. You'll find it on Manage Content's SCORM tab and in the player's Journal.</li>
   <li><strong>Study notes.</strong> When the adventure can build notes, uploading a package writes draft study notes from it for the <a href="/docs/library-study-notes-and-glossary">Library</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b05-scorm.webp" alt="Manage Content's SCORM tab: each package with how many players started, finished and did not finish, the average score and whether the milestone holding it was completed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Content → SCORM.</strong> Every package in the adventure with started, finished, not finished, the average score and milestone completion. A package counts as finished when it reported itself completed or passed.</figcaption>
+</figure>
 
 <h2>What It Doesn't Decide</h2>
 <p>The score is recorded, not enforced: the step is done when the package says completed or passed, whatever the score, and a package that reports "failed" leaves the step open until the player gets through it. If a pass mark matters, set it inside the package so it reports "failed" below it, or follow the package with a <a href="/docs/challenges-concept">Challenge</a> that tests the same material.</p>
@@ -3666,7 +6413,7 @@ HTML,
                 'title'      => 'How to Add a SCORM Package',
                 'slug'       => 'how-to-add-a-scorm-package',
                 'section'    => 'setup',
-                'sort_order' => 32,
+                'sort_order' => 33,
                 'body'       => <<<'HTML'
 <p>Step by step. See <a href="/docs/scorm-packages-concept">SCORM Packages — Concept</a> for when a package is the right call.</p>
 
@@ -3693,7 +6440,12 @@ HTML,
 <ul>
   <li><strong>One starting point.</strong> BLUERABBIT launches the first item listed in the package's manifest, so a course exported as several separate SCOs plays only the first one, or doesn't install at all. Export it as a single SCO.</li>
   <li><strong>Completed or passed.</strong> The step completes when the package reports either. The score it reports is kept and shown on Manage Content's SCORM tab and in the player's Journal, but it doesn't decide completion.</li>
-  <li><strong>Who finished.</strong> The step's row in the milestone builder links to its <strong>Completions</strong>: who started the package and who finished it.</li>
+  <li><strong>Who finished.</strong> The step's row in the milestone builder links to its <strong>Completions</strong>: who started the package and who finished it. Manage Content's <strong>SCORM</strong> tab has the same report for every package in the adventure, with the totals, a filter by name and <strong>Download CSV</strong>; <strong>Players</strong> on a package's row opens its completions.
+    <figure class="doc-shot">
+      <img src="/assets/docs/manage-content/b06-scorm-players.webp" alt="SCORM Completions for one package: totals for started, finished, not finished and milestone completed, then a table of players with email, status, score, finish date and milestone." width="1600" height="900" loading="lazy">
+      <figcaption><strong>A package's completions.</strong> Who opened it, whether they finished, their score, when, and whether the milestone holding it is complete. Search by name or email, narrow to a status, or download the list as a CSV.</figcaption>
+    </figure>
+  </li>
   <li><strong>No learner name.</strong> The package isn't told the player's name, so a course that greets the learner by name will show a blank there.</li>
   <li><strong>"Reset all players' progress"</strong> clears everyone's saved place in the package. It's offered to platform administrators only, asks you to confirm, and can't be undone.</li>
   <li><strong>Templates.</strong> A SCORM step on a template is shared by every cohort, like the rest of its content: one upload serves them all, a replacement reaches them all at once, and a reset clears saved progress in every cohort.</li>
@@ -3712,18 +6464,34 @@ HTML,
                 'title'      => 'Announcements — Keeping an Adventure Alive Between Sessions',
                 'slug'       => 'announcements-keeping-an-adventure-alive',
                 'section'    => 'setup',
-                'sort_order' => 33,
+                'sort_order' => 34,
                 'body'       => <<<'HTML'
 <h2>The Wall</h2>
 <p>The <strong>Wall</strong> is your Adventure's shared message board. It's in the menu when the Wall's card is switched on under Sections in Adventure Settings (where you can also rename it and give it a background), and it has four channels:</p>
 <ul>
   <li><strong>Public</strong> — everyone enrolled reads and posts here. This is where announcements for the whole cohort belong.</li>
   <li><strong>Guilds</strong> — one tab for every guild channel. It opens a searchable picker; choose a guild and the post button becomes <em>Post to</em> that guild. A player in exactly one guild goes straight into its channel. Players only see guilds they belong to; staff see them all.</li>
-  <li><strong>System</strong> — the staff channel, seen only by GMs, NPCs and admins.</li>
+  <li><strong>System</strong> — seen only by GMs, NPCs and admins: every announcement made with PA Post, listed on its own.</li>
   <li><strong>Messages</strong> — private one-to-one conversations. Players can also start one from someone's Garden profile.</li>
 </ul>
-<p><strong>Watch out for PA Post.</strong> On the Public tab, staff see two buttons: <strong>Post</strong> and <strong>PA Post</strong>. PA Post publishes to System, which players can't see. For anything players need to read, press <strong>Post</strong>.</p>
-<p>GMs and admins can remove any post with its trash button, and the feed refreshes by itself while it's open. Every post also counts for a Garden mission that asks players to post on the Wall. Guest players (from a platform's Play now) can read the Wall but not post to it.</p>
+<p><strong>Post or PA Post.</strong> On the Public tab, staff see two buttons. <strong>Post</strong> adds an ordinary message to the conversation. <strong>PA Post</strong> publishes an announcement: it appears in everyone's Public feed on a tinted card with a megaphone, so it stands out from the conversation, and the System tab keeps your announcements together in one list.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/d02-gm-pa.webp" alt="The Wall's Public tab for a Game Master, with Post and PA Post buttons and an announcement on a tinted card at the top of the feed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An announcement on the Wall.</strong> The Game Master's Public tab: the composer with <strong>Post</strong> and <strong>PA Post</strong>, the tabs across the top, and a PA Post at the top of the feed on its tinted megaphone card, above the players' messages, each with a bin for the Game Master.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/d03-gm-system.webp" alt="The Wall's System tab: three announcements from two Game Masters, newest first, each with its date and a trash button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The System tab.</strong> Staff only: every PA Post in one list, newest first, whoever on the staff made it.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/d04-gm-guild-picker.webp" alt="The Guilds tab for a Game Master: a searchable picker listing every guild's channel." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every guild's channel.</strong> Staff can read every guild's channel. The Guilds tab is a searchable picker; choose a guild and the button becomes <em>Post to</em> that guild.</figcaption>
+</figure>
+<p>GMs and admins can remove any post with its trash button, after a confirmation; it goes to the Adventure's trash, so it can be restored. The feed refreshes by itself while it's open. Every post also counts for a Garden mission that asks players to post on the Wall. Guest players (from a platform's Play now) can read the Wall but not post to it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/e07-trash-ask.webp" alt="A Send to the trash? confirmation over a guild channel, saying the post can be restored from the trash later, with Send to trash and Cancel buttons" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Removing a post.</strong> The bin asks first, and a removed post goes to the trash, where it can be restored.</figcaption>
+</figure>
 <p>The activity logs that used to sit on the Wall have a page of their own; the Wall's <strong>Activity</strong> tab takes you there. See <a href="/docs/activity-logs">Activity Logs</a>.</p>
 
 <h2>What Belongs in an Announcement</h2>
@@ -3750,12 +6518,16 @@ HTML,
                 'title'      => 'Email Campaigns to Your Players — Concept',
                 'slug'       => 'email-campaigns-to-players-concept',
                 'section'    => 'setup',
-                'sort_order' => 34,
+                'sort_order' => 35,
                 'body'       => <<<'HTML'
 <p><strong>Not to be confused with:</strong> this is about emailing people already enrolled in one of your Adventures. It's a separate system from bluerabbit.io's own waitlist emails on the marketing site. Different audience, different tool, so don't mix the two up when someone asks "did the email go out?"</p>
 
 <h2>What a Campaign Is</h2>
 <p>A campaign is a one-time email to some or all of the people enrolled in an Adventure, written once and personalised for each recipient with merge tags. You write and send it from <strong>Email Notifications</strong> in the Game Master menu (Admin Tools in the Classic view), on its <strong>Compose</strong> tab. The page also has an <strong>Automatic</strong> tab for <a href="/docs/automatic-emails-and-audience-rules">rules that send by themselves</a> and a <strong>Send Log</strong>. Email has to be set up for the platform first; until it is, the page says so, though a Dry Run still works.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b01-compose.webp" alt="The Compose tab of Email Notifications, with the sender, subject and message editor." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Compose.</strong> Who the email goes out on behalf of, the subject, and a full editor with media. Merge tags such as <code>{{first_name}}</code> and <code>{{completion}}</code> fill in for each person.</figcaption>
+</figure>
 
 <h2>Who Receives It</h2>
 <p>Choose one of three audiences under <strong>Recipients</strong>:</p>
@@ -3764,6 +6536,10 @@ HTML,
   <li><strong>Selected players only</strong>: picked by hand from a searchable grid of avatar cards, or in bulk with <strong>Select from a CSV</strong>: upload a file with email addresses in its first column and everyone in this Adventure it names is selected (it tells you who it couldn't find).</li>
   <li><strong>Players matching rules</strong>: a guild, a profile field, an achievement, an item, a milestone, progress and more, the same rules automatic emails use. Who gets it is worked out when you press Send, and the count shows before you do. <strong>Use as a selection</strong> turns today's matches into a list you can adjust by hand.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b03-audience.webp" alt="Recipients set to players matching rules: members of one guild who are under 75% of the journey, with a live count." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Players matching rules.</strong> Here, the Engineering guild's members who have finished less than 75% of the journey. The count of who matches is worked out live, and the list is fixed the moment you press Send.</figcaption>
+</figure>
 <p>Email Notifications works from inside a cohort too, and lists that cohort's own players: its campaigns, send log and CSV exports are entirely its own. You don't need to go through the template to reach a cohort's roster.</p>
 <p>Want a reusable email that finds the right players and writes itself, ready to send with one press of <strong>Run now</strong>? See <a href="/docs/automatic-emails-and-audience-rules">Automatic Emails &amp; Audience Rules</a>. Need to chase the players who still owe you work on one milestone? The review pages have their own <a href="/docs/reviewing-and-grading-submissions-in-bulk">Remind players</a>.</p>
 
@@ -3775,15 +6551,35 @@ HTML,
   <li><strong>Guild</strong>: <code>{{guild_name}}</code>, <code>{{members}}</code>, <code>{{guild_completion}}</code></li>
   <li><strong>Adventure</strong>: <code>{{adventure_title}}</code>, <code>{{adventure_url}}</code> (the link back to the Adventure's map), <code>{{assistant_name}}</code> (your Cooper's name), <code>{{start_date}}</code>, <code>{{end_date}}</code>, <code>{{today}}</code>, <code>{{site_name}}</code></li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b02-merge-tags.webp" alt="The merge tag list under the message editor, grouped into Player, Progress, Guild and Adventure." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The merge tags.</strong> Grouped by who the person is, their progress, their guild and the Adventure, each with a short description. A click puts the tag where your cursor is.</figcaption>
+</figure>
 <p>The XP, BLOO and EP tags carry your Adventure's own names for them. Write <code>{{tag | fallback text}}</code> to show something else when a value is blank, which is handy for a player who hasn't earned an achievement yet. Misspell a tag and BLUERABBIT tells you before the campaign sends, rather than mailing it out broken. Preview and "View the email" always show a real player's numbers, so you see exactly what a recipient will get. These tags are separate from the <code>{{ player.nickname }}</code>-style tokens used in step content; see <a href="/docs/personalising-text-with-player-tokens">Personalising Text with Player Tokens</a>.</p>
 
 <h2>How It Looks</h2>
 <p>Every email from the Adventure uses its <strong>email design</strong> (Adventure Settings → Emails): the colours of the header, message and footer, and what's around the email. Anything you leave unset uses the platform design. <strong>On behalf of</strong> chooses who the campaign appears to come from: the <strong>Adventure owner</strong> or <strong>Me</strong>. Their name goes on the email and replies go to their address.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/e01-mail-campaign.webp" alt="A Game Master's check-in email as a player receives it, with the Adventure's logo in the header and the player's level and progress filled in." width="1600" height="900" loading="lazy">
+  <figcaption><strong>As it arrives.</strong> A hand-written check-in in the player's inbox: the Adventure's own header and logo from its email design, and her level, journey share and the button back to the journey filled in for her.</figcaption>
+</figure>
 
 <h2>Delivery You Can Trust</h2>
 <p>Pressing Send opens a live console that prints every address as it goes out, ten at a time. What's still pending is worked out from what has actually been sent, so nothing is lost if the tab closes or the connection drops: you can close the tab and come back, and BLUERABBIT picks up exactly where it stopped, so nobody is ever emailed twice. The campaign also waits in the Send Log with a <strong>Resume Sending</strong> button. If another window is already sending it, the console waits for that one instead of doubling up.</p>
 <p><strong>Dry Run</strong> runs the whole send, line by line, without delivering a single email, so you can check your recipient list and content first.</p>
 <p>A message that fails on a temporary error is retried automatically. Anything that still fails can go again with <strong>Retry failed</strong>, which never re-sends to people who already got it. The <strong>Send Log</strong> lists every campaign with Target / Sent / Failed / Missing counts, tabs to see exactly who's in each group with the reason for each failure, a CSV export per tab, and "View the email" for any recipient.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b07-send-log.webp" alt="The Send Log listing past campaigns with their date, subject, sender and sent, failed and missing counts." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Send Log.</strong> Every email this Adventure sent: when, the subject, who sent it, how many people it was for, and how many were sent, failed or are still missing. Emails made by an automatic rule carry the rule's name, and one waiting for approval says so.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b08-log-detail.webp" alt="One campaign's results: 51 targeted, 50 sent and 1 failed, with tabs for each group and a Retry failed button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One email's results.</strong> A day-one welcome to everyone: who sent it and on whose behalf, then 51 targeted, 50 sent, 1 failed. The tabs split the list, each downloads as a CSV, and <strong>Retry failed</strong> puts the failures back in line.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b10-log-view.webp" alt="View the email: a sent campaign redrawn for one recipient, with a band naming whose copy it is." width="1600" height="900" loading="lazy">
+  <figcaption><strong>View the email.</strong> The email exactly as it went out, drawn for one recipient, with a band saying whose copy you're looking at. Everyone got their own details.</figcaption>
+</figure>
 
 <h2>Good Use Cases</h2>
 <ul>
@@ -3811,17 +6607,37 @@ HTML,
                 'title'      => 'How to Send an Email Campaign',
                 'slug'       => 'how-to-send-an-email-campaign',
                 'section'    => 'setup',
-                'sort_order' => 35,
+                'sort_order' => 36,
                 'body'       => <<<'HTML'
 <ol>
   <li>Open <strong>Email Notifications</strong> in the Game Master menu (Admin Tools in the Classic view) and stay on <strong>Compose</strong>. The header shows how many eligible recipients the Adventure has.</li>
   <li>Choose who it's sent <strong>on behalf of</strong>: the Adventure owner, or you. Their name goes on the email and replies go to their address.</li>
   <li>Write a <strong>Subject</strong> and your <strong>Message</strong>. Personalise either with the merge tags: click one to put it where the cursor is.</li>
-  <li>Choose <strong>Recipients</strong>: <em>All enrolled players</em>, <em>Selected players only</em>, or <em>Players matching rules</em>. For a selection, search by name or email and click cards to select them; <strong>Select all shown</strong> and <strong>Clear</strong> help with large groups, your selection holds as you page through, and <strong>Select from a CSV</strong> picks everyone whose address is in a file. For rules, add them and check the count of who matches right now.</li>
-  <li>Press <strong>Preview</strong>. The email opens in a new tab in the Adventure's email design, filled in with a real player's details. There's no test send, so this is your one real look before it goes out.</li>
+  <li>Choose <strong>Recipients</strong>: <em>All enrolled players</em>, <em>Selected players only</em>, or <em>Players matching rules</em>. For a selection, search by name or email and click cards to select them; <strong>Select all shown</strong> and <strong>Clear</strong> help with large groups, your selection holds as you page through, and <strong>Select from a CSV</strong> picks everyone whose address is in a file. For rules, add them and check the count of who matches right now.
+    <figure class="doc-shot">
+      <img src="/assets/docs/email-requests/b04-picker.webp" alt="Selected players only: a searchable grid of player cards with some ticked and the count of selected players." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Picking by hand.</strong> Search, tick cards, or upload a CSV of addresses (each is matched to a player, and anyone it can't find is listed). The count of who is ticked stays on screen.</figcaption>
+    </figure>
+  </li>
+  <li>Press <strong>Preview</strong>. The email opens in a new tab in the Adventure's email design, filled in with a real player's details: the first one you ticked when picking by hand, otherwise the first player on the roster. There's no test send, so this is your one real look before it goes out.
+    <figure class="doc-shot">
+      <img src="/assets/docs/email-requests/b05-preview.webp" alt="The email preview in a new window, with a real player's details in every merge tag." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Preview.</strong> Drawn by the same code that sends it, with a real player's details in every merge tag, so you see the exact email rather than a template.</figcaption>
+    </figure>
+  </li>
   <li>Not sure yet? Press <strong>Dry Run</strong> first: it runs the whole send without emailing anyone, so you can double-check the recipient list and content.</li>
-  <li>Press <strong>Send email</strong> and confirm. Keep the tab open while the live console runs; it prints each address as it's processed, sent or failed. Leaving asks first, and stops the send until you resume it.</li>
-  <li>If the tab closed or the connection dropped, open the <strong>Send Log</strong> and press <strong>Resume Sending</strong>. If anything failed, the Send Log lists each one with the reason, and <strong>Retry failed</strong> sends them again.</li>
+  <li>Press <strong>Send email</strong> and confirm. Keep the tab open while the live console runs; it prints each address as it's processed, with what happened to it: sent, failed, or skipped with the reason, and a last line that counts them. Leaving asks first, and stops the send until you resume it.
+    <figure class="doc-shot">
+      <img src="/assets/docs/email-requests/b06-send-console.webp" alt="The Sending Emails console listing each recipient's address with its result and a final Done line." width="1600" height="900" loading="lazy">
+      <figcaption><strong>The send screen.</strong> The list is locked in, then every address is printed as it's handled, with a running count and progress bar. In this example every address is on a domain reserved for tests, which BLUERABBIT never mails, so each line reads <em>Skipped</em> with its reason; real addresses read <em>Sent</em> or <em>Failed</em>.</figcaption>
+    </figure>
+  </li>
+  <li>If the tab closed or the connection dropped, open the <strong>Send Log</strong> and press <strong>Resume Sending</strong>. If anything failed, the Send Log lists each one with the reason, and <strong>Retry failed</strong> sends them again.
+    <figure class="doc-shot">
+      <img src="/assets/docs/email-requests/b09-log-failed.webp" alt="The Failed tab of one campaign in the Send Log, giving the reason a message could not be delivered." width="1600" height="900" loading="lazy">
+      <figcaption><strong>Why one failed.</strong> The Failed tab gives the reason in the mail provider's own words (here, a full mailbox), so you know whether a retry will help.</figcaption>
+    </figure>
+  </li>
 </ol>
 <p>In Launch Week, two campaigns go out: a kickoff welcome the Sunday before Monday's start, and a Week Two nudge on Wednesday of Week One, sent to the players who haven't made their Path choice yet (a rule on the Path achievement finds them).</p>
 
@@ -3837,27 +6653,68 @@ HTML,
                 'title'      => 'Automatic Emails & Audience Rules',
                 'slug'       => 'automatic-emails-and-audience-rules',
                 'section'    => 'setup',
-                'sort_order' => 36,
+                'sort_order' => 37,
                 'body'       => <<<'HTML'
 <p>Beyond one-off campaigns, you can set up <strong>rules</strong> that find the right players and write their email for you: "remind anyone who hasn't logged in for 5 days," "congratulate anyone who just earned the Pilot achievement," "nudge anyone falling behind pace." They're on the <strong>Automatic</strong> tab of Email Notifications. A rule lives on your Adventure's template, so every cohort you run from it uses the same rule for its own players; the tab's <strong>Where the rules run</strong> lists those cohorts.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b12-rules.webp" alt="The list of automatic email rules, each with its audience, subject, schedule, limit and last result." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The rules.</strong> Each rule shows who it's for, its subject, when it's checked, how often one person can get it, and what happened last time. Here one rule asks first, one sends by itself, and a draft waits switched off.</figcaption>
+</figure>
 
 <h2>Who a Rule Matches</h2>
 <p>Pick from guild membership, a profile field, an achievement or path, an item held, a milestone completed, level, XP, how much of the journey is completed, the last visit, the pace schedule, or how a player compares with their guild. Each condition can be negated ("is not"), and you combine several with "every rule below" or "any rule below". Each condition shows how many players it alone lets through, and the rule shows how many match right now. Staff are left out unless you tick <strong>Include GMs and NPCs</strong>. Who matches is worked out again every day, so people come and go from the list as they progress.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b14-rule-edit.webp" alt="Editing a rule's audience: players the pace schedule says are behind, with the number who match right now." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Editing a rule: who gets it.</strong> Players the pace schedule says are behind, with the schedule's expectation spelled out and the number who match right now.</figcaption>
+</figure>
 <p>The same rules are also a one-off audience: on Compose, choose <strong>Players matching rules</strong>.</p>
 
 <h2>The Pace Schedule</h2>
 <p>Set simple checkpoints like "by the end of week 2, players should be at level 5 and 40% done." Weeks count from the Adventure's start date, and nobody counts as behind until that week has actually passed. The schedule belongs to the template.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b13-pace.webp" alt="The pace schedule: an expected level and share of the journey for the end of each week, and below it a table of cohorts." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The pace schedule.</strong> Where players should be by the end of each week: a level and a share of the journey. It drives the "behind the pace" condition and the <code>{{expected_level}}</code> tag. Below it, each cohort the rules run in, with how many emails wait for approval and how many people have stopped automatic emails.</figcaption>
+</figure>
 
 <h2>When It Sends: Run Now</h2>
 <p><strong>Today, a rule sends when you press Run now.</strong> Sending on a daily schedule isn't switched on for the hosted platform yet, so a rule never goes out on its own: open the Automatic tab when you want it, press <strong>Who gets it today</strong> to see the list, then <strong>Run now</strong>. The email is made for today's matches and sent from your browser, line by line, like any campaign. A rule runs only once a day for each cohort.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b16-rule-check.webp" alt="Who gets it today: the players a rule would email today by name, and those left out with the reason." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Who gets it today.</strong> Before you trust a rule: who it would email today, by name, and who is left out and why (stopped automatic emails, emailed too recently by this rule, already had an automatic email today).</figcaption>
+</figure>
 <p>Each rule also keeps the settings it will use once scheduled sending is on: the hour it is <strong>checked daily from</strong> (in the Adventure's time zone), <strong>at most once every</strong> N days per player (0 means each player gets it only once, ever), and an optional <strong>First day</strong> and <strong>Last day</strong>. The "once every N days" limit already applies when you run a rule by hand, and a player who matches several rules on the same day gets only <strong>one automatic email</strong>, so nobody's inbox gets flooded.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b15-rule-when.webp" alt="Editing a rule: the email editor, then the hour, the repeat limit, the first and last day, and the approval choice." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Editing a rule: the email and when.</strong> The same editor and merge tags as Compose, then the hour, at most once every so many days per player, the first and last day, and whether the rule asks for approval or sends by itself.</figcaption>
+</figure>
 
 <h2>Sends Straight Away, or Asks First</h2>
 <p>You choose per rule. When you run a rule that <strong>asks first</strong>, it builds today's list and waits under <strong>Waiting for approval</strong>, showing who is on it and the email itself. <strong>Approve &amp; send</strong> sends it; <strong>Turn down</strong> sends nothing. A rule set to <strong>Send by itself</strong> sends as soon as you run it. A new rule always starts in ask-first mode; switch it once you trust what it sends. Each rule can be switched off without deleting it, and deleting one keeps everything it already sent in the Send Log.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b11-auto.webp" alt="The Automatic tab with a list waiting for approval, showing who is on it and the Approve and send and Turn down buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Waiting for approval.</strong> A run of the "behind the pace" rule has put today's list up for approval: who is on it, the email itself, and <strong>Approve &amp; send</strong> or <strong>Turn down</strong>. Nothing goes out until someone approves it.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b18-approval-email.webp" alt="The automatic email waiting for approval, drawn for the first person on the list, with a stop link at its foot." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The email being approved.</strong> Drawn for the first person on the list, with their own level and journey share filled in. At the foot is the line every automatic email carries: this is an automatic reminder, and how to stop them.</figcaption>
+</figure>
 <p><strong>What ran here</strong> lists, day by day, what each rule matched, how many were on the list and what happened.</p>
 
 <h2>Players Can Turn These Off</h2>
 <p>Every automatic email ends with a link to stop automatic emails, and players can also switch automatic emails on or off per Adventure from <strong>My Account → Emails</strong>. Manage Players marks anyone who has: <em>Stopped automatic emails</em>. This never affects a campaign you send by hand. It does stop the Adventure's lottery-day emails, where it has a lottery (see <a href="/docs/prize-draws">Prize Draws</a>); a lottery a player wins still shows in their notifications.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/e03-mail-automatic.webp" alt="An automatic pace reminder as a player receives it, with the expected level, their own progress and a stop link at the foot." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An automatic email, as it arrives.</strong> The pace reminder for one player: the level the schedule expected, their own level and share of the journey, their guild's average, and the link to stop automatic emails at the foot.</figcaption>
+</figure>
+<p>The stop link opens a page with a button and does nothing by itself, so a company mail filter that opens links can't unsubscribe anyone. It stops that Adventure's automatic emails only, says that a Game Master writing by hand will still reach them, and once pressed offers to start them again.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/d01-optout.webp" alt="The Stop automatic emails page with a single button, explaining that hand-written emails will still arrive." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Stop automatic emails?</strong> The page behind the link: one button, and a plain note that it covers this Adventure's automatic emails only.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/a05-account-emails.webp" alt="My Account, Emails: one switch per Adventure for its automatic emails." width="1600" height="900" loading="lazy">
+  <figcaption><strong>My Account → Emails.</strong> One switch per Adventure for its automatic emails. The page says that a Game Master writing by hand still reaches the player.</figcaption>
+</figure>
 
 <h2>Merge Tags for Rules</h2>
 <p><code>{{expected_level}}</code> and <code>{{expected_completion}}</code> (from the pace schedule) and <code>{{guild_completion}}</code> (the player's guildmates' average progress) are especially useful here, alongside the usual set. See <a href="/docs/email-campaigns-to-players-concept">Email Campaigns to Your Players</a> for the full list.</p>
@@ -3874,7 +6731,7 @@ HTML,
                 'title'      => 'Personalising Text with Player Tokens',
                 'slug'       => 'personalising-text-with-player-tokens',
                 'section'    => 'setup',
-                'sort_order' => 37,
+                'sort_order' => 38,
                 'body'       => <<<'HTML'
 <p>You can drop a player's own details straight into the text you write, so a dialogue step reads "Nice work, Sam — you're level 6" rather than something generic. These are called <strong>tokens</strong>.</p>
 
@@ -3947,10 +6804,14 @@ HTML,
                 'title'      => 'Setting Up Your Skills Catalog',
                 'slug'       => 'setting-up-your-skills-catalog',
                 'section'    => 'setup',
-                'sort_order' => 38,
+                'sort_order' => 39,
                 'body'       => <<<'HTML'
 <p>Skills are yours to define, per adventure. Everything in the <a href="/docs/the-garden-overview">Garden</a> runs off this catalogue: hexagon colours, help request tags, endorsements, gifts, Task and Mission rewards. It's worth setting up deliberately before players arrive.</p>
 <p>You'll find it on the <strong>Skills</strong> tab of Manage Content. Press <strong>New Skill</strong> to add one.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/51-gm-manage-skills.webp" alt="The Skills tab of Manage Content: a list of skills, each with Max 40 and Endorsable badges, a count of tasks, and Quick Edit, Save and Delete buttons; a CSV upload and New Skill button at the top." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Skills tab.</strong> Each skill in its colour, with its maximum level, whether players can award it, and how many Tasks pay into it. Quick Edit opens the rest; the CSV upload and <em>New Skill</em> sit at the top.</figcaption>
+</figure>
 
 <h2>One Catalogue for a Template and Its Cohorts</h2>
 <p>The skill catalogue belongs to the template adventure, and every cohort made from it shares it. Editing the Skills tab from a cohort edits the template's catalogue, so the change shows in every cohort at once. Players' levels are separate: each cohort keeps its own. See <a href="/docs/adventure-templates-and-cohorts">Adventure Templates &amp; Cohorts</a>.</p>
@@ -4000,7 +6861,7 @@ HTML,
                 'title'      => 'Running the Garden as a GM',
                 'slug'       => 'running-the-garden-as-a-gm',
                 'section'    => 'setup',
-                'sort_order' => 39,
+                'sort_order' => 40,
                 'body'       => <<<'HTML'
 <p>Once your <a href="/docs/setting-up-your-skills-catalog">skills catalogue</a> exists, the Garden largely runs itself: players endorse, gift, ask for help, answer each other and connect. This page covers the levers you hold.</p>
 <p>The Garden and Tasks are each a section you switch on per adventure, with their cards under <strong>Sections</strong> in Adventure Settings. See <a href="/docs/complete-adventure-settings-reference">the settings reference</a>. Everything here is authored by GMs and admins. NPCs can see it but not change it.</p>
@@ -4027,6 +6888,10 @@ HTML,
 
 <h2>Authoring Tasks</h2>
 <p>Tasks live on the <strong>Tasks</strong> tab of Manage Content. Press <strong>New Task</strong>, or <strong>Edit</strong> on an existing one, and the form opens in a side drawer.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/53-gm-manage-tasks.webp" alt="The Tasks tab of Manage Content listing four tasks, each with badges for how it completes, how often it repeats and what it pays, plus Edit and Delete; a CSV upload and New Task button at the top." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Tasks tab.</strong> Each Task's badges say how it completes (daily login, manual), its rhythm (every 4 hours, every 7 days, unlimited) and what it pays, including Blooms in a skill.</figcaption>
+</figure>
 <ul>
   <li><strong>Basics</strong>: title, status (Published or Draft), instructions, and a look: a colour, an icon and an optional image. These are what the Task looks like as a hexagon on the Journey. Leave the colour blank and it follows the skill the Task teaches.</li>
   <li><strong>Trigger</strong> (<em>Completes when…</em>): the player marks it done (a button, or a QR scan), finishes any milestone, finishes one specific milestone, logs in each day, or meets a set of conditions. Condition Tasks use the same condition rows as achievements, and a counter can carry a "within N days" window. See <a href="/docs/conditions-when-things-unlock">Conditions</a>.</li>
@@ -4040,6 +6905,10 @@ HTML,
 
 <h2>Authoring Missions</h2>
 <p>Missions live on the <strong>Missions</strong> tab of Manage Content. Press <strong>New Mission</strong>, or <strong>Edit</strong> on an existing one. The form has four parts.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/52-gm-manage-missions.webp" alt="The Missions tab of Manage Content listing seven missions, each with badges for how it completes, its audience and its Bloom reward, with Award Blooms directly and New Mission buttons at the top." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Missions tab.</strong> Each Mission shows how it completes (marked done, or counted automatically), who it's for (everyone, guilds…) and what it pays, in Blooms and a skill. <em>Award Blooms directly</em> is here too.</figcaption>
+</figure>
 <h3>Basics</h3>
 <p>Title, status (Published or Draft) and instructions. Only published Missions reach players.</p>
 <h3>Who sees this mission?</h3>
@@ -4095,14 +6964,22 @@ HTML,
   <li>Press <strong>Send</strong> and confirm. It can't be undone.</li>
 </ol>
 <p>Each matched player gets the award in their Rewards, with your note, and the Blooms land when they claim it. The page lists recent awards: what, to how many players, and who sent them.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/48-gm-award-blooms.webp" alt="The Award Blooms page: skill, amount and a note for players, an audience of guilds, a Preview audience result of 14 players, a Send button, and a list of recent awards." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Award Blooms to a group.</strong> A skill, an amount and a note players will read; the audience (here, guilds); <em>Preview audience</em> says how many players match before you send. Recent awards are listed below.</figcaption>
+</figure>
 
 <h2>Granting Skills Directly</h2>
-<p>For one player, open their drawer in the Garden. Under <strong>GM: Award skill points</strong>, pick a skill and an amount and press <strong>Grant</strong>. Use this for things the system can't see: excellent work in a workshop, leadership during a live event, something that happened off-platform.</p>
+<p>For one player, open their drawer in the Garden. Under <strong>GM tools</strong>, at <strong>Award skill points</strong>, pick a skill and an amount and press <strong>Grant</strong>. Use this for things the system can't see: excellent work in a workshop, leadership during a live event, something that happened off-platform.</p>
 <p>A direct grant lands straight away and isn't limited to once a day. It's recorded with you as the giver, so it appears in the player's Skill History like any other Bloom.</p>
 
 <h2>Gift Bloom Balances</h2>
 <p>Every player starts with 20 Blooms to give in each adventure, set up automatically the first time their balance is needed. There's no roster setup step.</p>
-<p>In a player's drawer, <strong>GM: Reset gift Blooms</strong> sets their balance to the number you enter when you press <strong>Set balance</strong>. It sets the number rather than adding to it. This is the <em>only</em> way gift Blooms are replenished: there's no automatic refill. If you're running a long adventure, plan a periodic top-up, or tell players their 20 are meant to last.</p>
+<p>In a player's drawer, under <strong>GM tools</strong>, <strong>Reset their gift Blooms</strong> sets their balance to the number you enter when you press <strong>Set balance</strong>. It sets the number rather than adding to it. This is the <em>only</em> way gift Blooms are replenished: there's no automatic refill. If you're running a long adventure, plan a periodic top-up, or tell players their 20 are meant to last.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/49-gm-garden-card.webp" alt="A player's drawer in the Garden as a Game Master sees it: the usual Recognise them section, then a GM tools section with Award skill points and a Grant button, and Reset their gift Blooms with a Set balance button." width="1600" height="900" loading="lazy">
+  <figcaption><strong>A player's drawer, as a Game Master.</strong> The same drawer players see, plus <em>GM tools</em>: grant skill points directly, and set the player's gift allowance.</figcaption>
+</figure>
 
 <h2>What to Watch</h2>
 <ul>
@@ -4125,7 +7002,7 @@ HTML,
                 'title'      => 'Grading & AI-Assisted Feedback — Reviewing Player Submissions',
                 'slug'       => 'grading-and-ai-assisted-feedback',
                 'section'    => 'setup',
-                'sort_order' => 40,
+                'sort_order' => 41,
                 'body'       => <<<'HTML'
 <h2>What Needs Grading, and What Doesn't</h2>
 <p>Most Step types need nothing from you. Content steps complete on their own, answer-checked steps mark themselves against the answers you set, and survey-style steps collect responses with no right or wrong. Challenges grade themselves too. A Game Master's actual review time goes on <strong>Open Text</strong> steps and the written submissions they produce.</p>
@@ -4141,6 +7018,10 @@ HTML,
 
 <h2>Setting the Bar Before They Submit</h2>
 <p>An Open Text step can require a minimum word count (<strong>Min Words</strong>), so a one-line answer simply can't be sent. The player is told how many words they need and how many they wrote. You never see the half-effort version, and the player gets the feedback immediately rather than waiting for you to bounce it back. Every Open Text box is a formatted editor.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/25-open-text.webp" alt="A player's Open Text step: the prompt, a formatted answer box with a written reply, the note Minimum 30 words required and a Check Answer button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What the player sees.</strong> The prompt, the answer box with its formatting bar, the minimum under it, and <strong>Check Answer</strong>. Continue stays locked until the answer is sent.</figcaption>
+</figure>
 
 <h2>Turning On AI-Assisted Feedback</h2>
 <p>With a Claude API key on the Adventure, or on its owner's account (see <a href="/docs/setting-up-ai-grading-and-gift-cards">Setting Up AI Grading</a>), every Open Text step has three A.I. settings:</p>
@@ -4149,11 +7030,19 @@ HTML,
   <li><strong>A.I. Strictness</strong>: Lenient (only reject blank or unrelated answers), Standard (a genuine, on-topic attempt passes) or Strict (every part of the prompt must be engaged with).</li>
   <li><strong>A.I. Reviewer Context</strong>: your private rubric. Say what a good answer to <em>this question</em> must include: key ideas, facts, what to reject. Players never see it. The A.I. is told to keep it out of every word the player reads: never to quote, paraphrase, translate or list its examples, key facts or expected answers, not even one of them as a hint ("such as..."), and never to mention that it exists. It says what kind of thing is missing in general terms instead (a concrete reason, a situation, more detail), so the player still has to work the answer out. The milestone's own context is sent automatically, so write only what's specific to the question. It's optional: without it, the A.I. judges whether the answer is a genuine attempt at the prompt, not whether it's right.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/milestones-steps/t14-type-open-text.webp" alt="The Edit Step drawer for an Open Text step: the prompt, Min Words set to 30, A.I. Validation, A.I. Strictness set to Standard and the A.I. Reviewer Context box" width="1200" height="1446" loading="lazy">
+  <figcaption><strong>An Open Text step's grading settings.</strong> Min Words, then the three A.I. settings under the prompt. The Reviewer Context box is private: its hint reminds you that players never see it and that the milestone's own context is sent for you.</figcaption>
+</figure>
 <p><strong>One rubric, two readers.</strong> The same strictness and reviewer context drive the player's instant check and your second opinion on the review screen, so what a player is held to and what the reviewer is told can't drift apart. Both are used even when the instant check is off, so you can still ask for a second opinion on a finished submission. On the review screen, when a submission covers several Open Text questions, the strictest one sets the bar.</p>
 <h2>When the A.I. Check Can't Run</h2>
 <p><strong>The check never strands a player.</strong> If it can't run (no key, a key Claude refuses, an account out of credit or at its spending limit, the service busy or unreachable, or a reply with no verdict in it), the answer goes through as it would on a step without the check, and the player reads, under their answer and in their own language: <em>The A.I. check could not run on this answer, so it went through without it. Your Game Master can still review it.</em> They're given no technical detail. Staff who play the milestone see the same line with the reason after it, and the skip is written to the <a href="/docs/activity-logs">activity log</a>. Then two more things happen.</p>
 <p><strong>The answer is flagged.</strong> On the Milestone Review, Milestone Data says how many answers on the milestone weren't checked by the A.I., with <strong>Show only these</strong> (and <strong>Show every answer</strong> to go back). Each of those entries carries a <em>Not checked by the A.I.</em> badge, what failed and on which step. A mark, a grade, a comment or <strong>Mark as reviewed</strong> clears it, and so does a later A.I. verdict on the same answer. On the milestone's Validation list the badge sits in the Status cell, with the reason when you point at it. An NPC sees the flags but can't clear them.</p>
 <p><strong>The people who can fix it are told.</strong> The Adventure's owner, its Game Masters and the platform's administrators each get an email, in their own language, and an entry in their notification bell. The email says what happened to those answers: on a milestone with Validate on, they went through without the check and wait for a person to review them, as every hand-in there does; on any other milestone they were accepted without the check, and each stays flagged until a person reviews it. An alert that covers both kinds says both. It also says what failed, on which milestone and step, how many answers it affected, and what to do: add or replace a key, check the Claude account's credit and spending limits, wait for a busy service, or read the answers yourself. A link opens just those answers, and for a key or credit problem a second link opens the key's settings. When the key that failed is a template's, the template's owner is told too, since only they can replace it. NPCs aren't told, unless they also own the Adventure or administer the platform.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/e04-mail-ai-alert.webp" alt="An email titled The A.I. check could not run, in the Adventure's email design, saying what failed, how many answers were affected, on which milestones and steps, and what to do" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The alert a Game Master gets.</strong> What failed (here, Claude limiting how many checks the key can send at once), how many answers it affected so far, a link to each milestone and step, and what to do about it.</figcaption>
+</figure>
 <ul>
   <li><strong>At most one alert every 6 hours</strong> for each cause in an Adventure, with the number of answers since the last one. Answers that fail in between are flagged as usual and counted in the next alert, not emailed one by one.</li>
   <li>Once the A.I. checks an answer in the Adventure again, the count starts afresh. A missing, refused or unpaid key is the exception to the 6 hours: when it starts failing again after checks had worked, it alerts straight away, because someone changed something.</li>
@@ -4206,12 +7095,16 @@ HTML,
                 'title'      => 'Reviewing & Grading Submissions in Bulk',
                 'slug'       => 'reviewing-and-grading-submissions-in-bulk',
                 'section'    => 'setup',
-                'sort_order' => 41,
+                'sort_order' => 42,
                 'body'       => <<<'HTML'
 <p>For grading at real scale (a full cohort's worth of answers on one milestone) you have more than one card at a time: the <strong>Validation</strong> queue, <strong>Validate All with A.I.</strong>, a CSV round-trip for grading in a spreadsheet, and reminders for the players who still owe you work. The basics of the Milestone Review are in <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>.</p>
 
 <h2>The Validation Queue</h2>
-<p>Manage Content's <strong>Validation</strong> tab is your review queue: <strong>Milestones to validate</strong>, every milestone across the whole Adventure that needs a GM's eyes, with how many are pending. Each row counts its <strong>Submitted</strong>, <strong>Pending</strong> (handed in and waiting for you), <strong>Unanswered</strong>, <strong>Graded</strong> and <strong>Validated</strong> players. Search by name, filter to milestones with something pending, and sort in journey order, by name or by most pending. Opened on a template, the queue covers the template and its cohorts.</p>
+<p>Manage Content's <strong>Validation</strong> tab is your review queue: <strong>Milestones to validate</strong>, every milestone across the whole Adventure that needs a GM's eyes, with how many are pending. Each row counts its <strong>Submitted</strong>, <strong>Pending</strong> (handed in and waiting for you), <strong>Unanswered</strong>, <strong>Graded</strong> (when the Adventure uses a grade scale) and <strong>Validated</strong> players. Search by name, filter to milestones with something pending, and sort in journey order, by name or by most pending. Opened on a template, the queue covers the template and its cohorts.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b09-validation.webp" alt="Manage Content's Validation tab listing two milestones to validate, with their Submitted, Pending, Unanswered and Validated counts and a Review button on each row" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Validation queue.</strong> Every milestone that needs a Game Master's eyes, in journey order, with its Tabi and its counts. The amber number is what's waiting for you; <strong>Review</strong> opens that milestone's list. This Adventure has no grade scale, so there's no Graded column.</figcaption>
+</figure>
 <p><strong>Review</strong> on a row opens that milestone's list: every player who answered, with their status and grade and <strong>Validate</strong> or <strong>Invalidate</strong> on the row, quick to work through. A grade above 0 validates the answer; a grade of 0 invalidates it. Each status is explained on the page:</p>
 <ul>
   <li><strong>Pending</strong>: handed in and waiting for you.</li>
@@ -4273,7 +7166,15 @@ HTML,
 <p>Every cell is written so a spreadsheet never runs a player's text as a formula. Only those who can edit the Adventure can upload a reviewed file.</p>
 
 <h2>Reminding Players Who Still Owe Work</h2>
-<p><strong>Remind players</strong>, on the Milestone Review and the milestone's Validation list, emails the players whose work on that milestone isn't validated yet, and nobody else: <em>Waiting for review</em> (handed in), <em>Sent back</em>, or both. Pick the recipients from the list (search, All or None), choose who it's sent <strong>on behalf of</strong> (replies go to that person), and write a subject and message, with merge tags for the player and the milestone's name and link. Cooper can write a first draft for you in the Adventure's voice. <strong>Preview</strong>, <strong>Dry run</strong> and <strong>Send</strong> work as an <a href="/docs/how-to-send-an-email-campaign">email campaign</a> does, and the send appears in Email Notifications' Send Log. The last message is kept for the milestone, so the next reminder starts from it.</p>
+<p><strong>Remind players</strong>, on the Milestone Review and the milestone's Validation list, emails the players whose work on that milestone isn't validated yet, and nobody else: <em>Waiting for review</em> (handed in), <em>Sent back</em>, or both. Pick the recipients from the list (search, or the <strong>All</strong>, <strong>Sent back</strong>, <strong>Waiting for review</strong> and <strong>None</strong> buttons), choose who it's sent <strong>on behalf of</strong> (replies go to that person), and write a subject and message, with merge tags for the player and the milestone's name and link. When the Adventure has a Claude key, Cooper can write a first draft for you in the Adventure's voice. <strong>Preview</strong>, <strong>Dry run</strong> and <strong>Send</strong> work as an <a href="/docs/how-to-send-an-email-campaign">email campaign</a> does, and the send appears in Email Notifications' Send Log. The last message is kept for the milestone, so the next reminder starts from it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b20-remind-window.webp" alt="The Remind players to complete work window: eight ticked recipients each tagged Handed in again or Waiting for review, the All, Sent back, Waiting for review and None buttons, the Send on behalf of picker and a subject with a merge tag" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Remind players to complete work.</strong> Only players whose work here isn't validated are listed, each with where they stand. The subject's <code>[[quest_name]]</code> becomes the milestone's name in every email.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b21-remind-preview.webp" alt="Preview of a reminder email in the Adventure's email design: a greeting, a note that the 30-Second Pitch hasn't been validated yet, and a link back to the milestone" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The reminder as a player gets it.</strong> Preview shows the email in the Adventure's own design, with the merge tags filled in and a link straight back to the milestone.</figcaption>
+</figure>
 <p>Prefer your own mail tool? <strong>Download pending emails</strong> gives the same players' addresses, one per line.</p>
 
 <h2>Other Tools on the Review Screen</h2>
@@ -4297,7 +7198,7 @@ HTML,
                 'title'      => 'Setting Up AI Grading & Gift Card Rewards',
                 'slug'       => 'setting-up-ai-grading-and-gift-cards',
                 'section'    => 'setup',
-                'sort_order' => 42,
+                'sort_order' => 43,
                 'body'       => <<<'HTML'
 <p>How the A.I. reads and grades answers is covered in <a href="/docs/grading-and-ai-assisted-feedback">Grading &amp; AI-Assisted Feedback</a>. This page is the settings walkthrough for the two connections on the <strong>Connections</strong> pane of Adventure Settings: a Claude API key for A.I. grading (every plan), and a Tremendous account for real gift cards (<strong>Enterprise only</strong>).</p>
 
@@ -4378,12 +7279,20 @@ HTML,
                 'title'      => 'Reading the Stats Dashboard',
                 'slug'       => 'stats-dashboard-guide',
                 'section'    => 'setup',
-                'sort_order' => 43,
+                'sort_order' => 44,
                 'body'       => <<<'HTML'
 <p>Stats is where you see how a whole cohort is doing: who's active, where people stall, what they earn, buy and answer, and how long they actually spend. Open it from <strong>Stats</strong> in the Game Master menu (Admin Tools in the Classic view; NPCs find it under Surveillance). GMs, NPCs and admins see the full dashboard. Only players are counted, so staff testing the Adventure don't skew the numbers.</p>
 
 <h2>Finding Your Way Around Stats</h2>
 <p>Stats is organized into panes you switch between from a rail down the side: <strong>Overview</strong>, <strong>Engagement</strong>, <strong>Rubric</strong>, <strong>Achievements</strong>, <strong>Encounters</strong>, <strong>Profiles</strong>, <strong>Surveys</strong>, <strong>Item purchases</strong>, <strong>Cooper</strong> and <strong>Players</strong>. Panes for features you haven't turned on don't appear (Rubric needs Graduation Criteria, Encounters needs Energy Points, Profiles needs Profile Tests). A panel that's still fetching its numbers shows a spinner over itself rather than a blank space. <strong>Download PDF</strong>, at the foot of the rail, turns every pane except Players into a clean, print-ready report with a cover page and table of contents; in the print window, choose "Save as PDF".</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g01-overview.webp" alt="The Stats page open on its Overview pane, with the pane rail on the left and headline figures, time in app, the Milestone Funnel and XP distribution on the right." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Stats page.</strong> The rail on the left switches panes; Download PDF sits at its foot. The Overview answers "how is the cohort doing?" on one screen: the headline figures, time in app, the Milestone Funnel and how XP is spread.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g22-pdf-chapter.webp" alt="A page of the Stats PDF: the Overview chapter printed on white, with its headline figures, time in app and the milestone funnel as a table." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Stats page as a PDF.</strong> Each pane prints as its own chapter, laid out for paper, after a cover page and a table of contents.</figcaption>
+</figure>
 
 <h2>Overview</h2>
 <p>Five headline figures: <strong>Total Players</strong>, <strong>Active 7d</strong> (enrolled players active in the last 7 days), average XP against the XP available, overall <strong>Completion</strong>, and <strong>Have Logged In</strong>, the share of the roster that has signed in at all.</p>
@@ -4394,6 +7303,14 @@ HTML,
 
 <h3>Milestone Funnel</h3>
 <p>A chart of enrolled players against completions per milestone, eight milestones at a time. It's usually the fastest way to spot a confusing or too-difficult milestone. <strong>Details</strong> opens <strong>Milestone Funnel Details</strong>, its own page: the whole funnel at once, scrollable, and narrowed with the <strong>View</strong> filter to All Milestones, a single Tabi or a single level. It also shows how many are enrolled and what share have logged in and been active in the last 7 days.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g03-funnel.webp" alt="Milestone Funnel Details: every milestone in journey order as a bar, coloured by chapter, with how many players finished each." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Milestone Funnel Details.</strong> Every milestone in journey order, coloured by chapter, with how many players have finished it. The point where the bars drop is where people stop.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g04-funnel-chapter.webp" alt="The Milestone Funnel narrowed with the View menu to one chapter, showing completions falling milestone by milestone." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One chapter's funnel.</strong> The View menu narrows the funnel to a single Tabi (here, the Prove It chapter) or a single level, so you can see exactly which milestone inside it loses people.</figcaption>
+</figure>
 
 <h3>Activity</h3>
 <ul>
@@ -4401,19 +7318,39 @@ HTML,
   <li><strong>Daily Active Users</strong>: the last 30 days by default. Set a date range and press Apply, or reset it to the last 30 days.</li>
   <li><strong>Tabi Completion Rate</strong>: how far the cohort is through each chapter.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g02-daily-active.webp" alt="Daily Active Users for a chosen date range, with the date pickers and Apply button, and the Tabi Completion Rate chart below it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Daily Active Users and Tabi Completion Rate.</strong> Pick two dates and press Apply; the round button goes back to the last 30 days. Below, how far the cohort has got through each chapter.</figcaption>
+</figure>
 
 <h2>Engagement</h2>
 <ul>
   <li><strong>Engagement Overview</strong>: the cohort's average engagement score out of 100, and how many players are On Fire, Active, Moderate, Cooling Off, Dormant or have Never Logged In.</li>
   <li><strong>Engagement Breakdown</strong>: the average of each part of that score, each explained on the panel: Recency, Frequency (milestones in the last 30 days), Completion, Progression (level against the top level) and Economy (Item Shop activity).</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g05-engagement.webp" alt="The Engagement pane: the cohort's average engagement score, players counted by engagement band, and the five parts of the score." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Engagement pane.</strong> The average score out of 100, how many players sit in each band from On Fire to Dormant, and the five parts the score is built from.</figcaption>
+</figure>
 <h3>Engagement by Segment</h3>
 <p>The <strong>Workforce Engagement</strong> panel splits the cohort by any Player Meta field you've marked for Stats in the Player Meta Manager: department, region, whatever your roster carries. Pick the field under <strong>Break down by</strong> to see each group's size, average engagement score and average completion. It also says what share of players have data for that field. With no field marked yet, the panel says so and links to the Player Meta Manager. See <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a> for setting fields up.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g06-segments.webp" alt="Workforce Engagement broken down by an Office field: each office with its number of people, average engagement score and average completion." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Engagement by segment.</strong> Broken down by an Office field: each office's size, average engagement score and how much of the journey it has done.</figcaption>
+</figure>
 <h3>Profile Leaderboard</h3>
 <p>Below it, the same fields rank the groups against each other (department, location, cohort, whatever you set up in Player Meta) rather than a fixed set of categories, with a completion bar under each group's figure, the share of the group that has logged in, and a total row. It opens on whichever field actually has the most groups to compare, so you're not staring at a two-row table.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g07-profile-leaderboard.webp" alt="The Profile Leaderboard ranking four offices by completion and average XP, with logins, recent activity and a total row for the whole cohort." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Profile Leaderboard.</strong> Groups ranked against each other instead of people: each office's completion, average XP, logins and recent activity, with the whole cohort as the last row.</figcaption>
+</figure>
 
 <h2>The Rubric: Pass/Fail Criteria</h2>
-<p>Switch on <strong>Graduation Criteria</strong> (Adventure Settings → Rules &amp; scoring → Grading) to build a rubric: plain-language rules like "70% average across all stages" or "no more than 2 stages below 70%." Each criterion shows as <strong>met</strong>, <strong>at risk</strong>, <strong>out of reach</strong>, or <strong>pending</strong> for every player. Tie criteria to a certificate (a "Graduation" certificate might require two criteria, a "Distinction" certificate three) and players see exactly where they stand in their Journal's Rubric tab, with an "On track for" column on your roster. See <a href="/docs/certificates-authoring">Authoring Certificates</a>.</p>
+<p>Switch on <strong>Graduation Criteria</strong> (Adventure Settings → Rules &amp; scoring → Grading) to build a rubric, written on Manage Content's <strong>Rubric</strong> tab: plain-language rules like "70% average across all stages" or "no more than 2 stages below 70%." Each criterion shows as <strong>met</strong>, <strong>at risk</strong>, <strong>out of reach</strong>, or <strong>pending</strong> for every player. Tie criteria to a certificate (a "Graduation" certificate might require two criteria, a "Distinction" certificate three) and players see exactly where they stand in their Journal's Rubric tab, with an "On track for" column on your roster. See <a href="/docs/certificates-authoring">Authoring Certificates</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g08-rubric.webp" alt="The Rubric pane: three graduation criteria with how many players meet each one across the cohort." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The rubric across the cohort.</strong> Each criterion with how many players meet it, so you can see who is ready for a certificate and what is holding the rest back.</figcaption>
+</figure>
 
 <h2>Drill-Downs</h2>
 <p>Each of these is a searchable, sortable table with a page size. Click a row to open the detail:</p>
@@ -4423,16 +7360,64 @@ HTML,
   <li><strong>Profiles</strong>: for each profile, its traits, questions, how many players have a reading, their average answers, and the most common headline. The detail shows the cohort average per trait and what people came out as. See <a href="/docs/profile-tests">Profile Tests</a>.</li>
   <li><strong>Item purchases</strong>: purchases and total currency spent per item. The detail lists each purchase by player, date and amount.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g10-achievement-detail.webp" alt="The Achievements pane with one achievement opened: a side panel lists the players who have it, each with the date they earned it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An achievement's detail.</strong> The table counts holders against the cohort; opening a row lists the people who have it, with the date each earned it.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-encounters/s02-stats-encounters.webp" alt="The Encounters pane of the Stats page: five encounters with their kind, how many faced each out of the enrolled players, how many resolved it and the average cost" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Encounters.</strong> Every card with its kind, how many faced and resolved it, and what it cost on average. Open a row for <strong>What they chose</strong>.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g13-items.webp" alt="The Item purchases pane: every shop item with how many were bought, by how many players, and the total currency spent." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Item purchases.</strong> Every item in the shop with how many were bought, by how many people and what they spent. Open a row to see who bought it and when.</figcaption>
+</figure>
 
 <h2>Surveys</h2>
 <p>Every answer to every <strong>Survey Choice</strong>, <strong>Poll</strong> and <strong>Rating Scale</strong> step, totalled per question, in journey order. Quiz questions with a right answer aren't here. Each card shows how many picked each option, as a share of the players who answered, or the average on a rating scale. Where players could choose more than one answer, the card says the percentages can add up to more than 100%. <strong>See who answered</strong> lists the players behind each answer, and who hasn't answered yet. Search filters the cards by question, answer or milestone, and <strong>Download CSV</strong> gives one row per player with a column per question. Each cohort sees its own players' answers.</p>
 <p>No survey steps yet? The tab says so and tells you which steps to add.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g11-surveys.webp" alt="The Surveys pane: cards for survey, poll and rating-scale questions, each showing how the cohort answered." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Survey results.</strong> One card per question, in journey order: the share who picked each option, or the average on a rating scale. Download CSV gives every answer.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g12-survey-detail.webp" alt="See who answered, opened on one question: each player's answer listed by name." width="1600" height="900" loading="lazy">
+  <figcaption><strong>See who answered.</strong> The people behind each answer to one question, by name, and who hasn't answered yet.</figcaption>
+</figure>
 
 <h2>Cooper</h2>
 <p>First, <strong>Cooper Usage</strong> for this Adventure. Then how the in-app assistant is being used across <strong>every Adventure you manage</strong>: questions asked, conversations, players reached (of how many enrolled), questions per conversation and the share of enrolled players who've asked something, with charts of questions per Adventure, the busiest hours and the last 30 days, and a table per Adventure with the last time it was used. It shows counts only, never what anyone asked, and counts players only. If Cooper isn't switched on for an Adventure, it says so rather than showing zeroes.</p>
 
 <h2>Players</h2>
-<p>The full roster in one table: search across everyone, choose 30, 60, 120 or 500 per page, and sort every player by XP, BLOO, completion (of the required milestones open now, or of the whole journey) and last active. Click a player to load their personal dashboard in the panel below: the same Overview they see in their own Journal, with their engagement, charts, milestone and Tabi progress, achievements and guild.</p>
+<p>The full roster in one table: search across everyone by name or email, choose 30, 60, 120 or 500 per page, and sort every player by XP, BLOO, completion (of the required milestones open now, or of the whole journey) and last active. When the Adventure has a rubric, the <strong>On track for</strong> column names the certificate each player is on track for, or says <em>Not on track</em> and which stages are holding them back.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g15-players.webp" alt="The Players pane: the cohort ranked by XP, with BLOO, completion of the open and whole journey, last active, and an On track for column." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Every player in one table.</strong> XP, BLOO, completion of what is open now and of the whole journey, last active, and On track for: a certificate, or Not on track with the stages below the bar.</figcaption>
+</figure>
+<p>Click a player to load their personal dashboard in the panel below: the same Overview they see in their own Journal, with their engagement, charts, milestone and Tabi progress, achievements and guild.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g17-player-head.webp" alt="One player's record opened under the table: name, rank, level, engagement score, last login and last milestone, XP and BLOO, and the rubric as it stands for them." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One player's record.</strong> Level and place in the cohort, engagement score, last login and last milestone, the currencies, and each rubric criterion as it stands for this person.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g18-player-charts.webp" alt="XP Over Time and Completion by Type charts for one player." width="1600" height="900" loading="lazy">
+  <figcaption><strong>XP over time and completion by type.</strong> When the player earned their XP, and how their finished work splits between milestones and challenges.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g20-player-achievements.webp" alt="One player's chapter progress, achievements held and not yet earned, and their guild." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Chapters, achievements and guild.</strong> Progress through each Tabi, the achievements the player holds (lit) and has yet to earn (grey), and their guild.</figcaption>
+</figure>
+<p>Stats works on a phone too: the rail becomes a row of tabs across the top, and the panels stack one under another.</p>
+<div class="doc-shots-row">
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/stats-records/p03-overview.webp" alt="The Stats Overview on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>The Overview on a phone.</strong></figcaption>
+  </figure>
+  <figure class="doc-shot doc-shot--phone">
+    <img src="/assets/docs/stats-records/p04-player.webp" alt="One player's record from the Stats page on a phone." width="720" height="1558" loading="lazy">
+    <figcaption><strong>A player's record on a phone.</strong></figcaption>
+  </figure>
+</div>
 
 <h2>Challenge and SCORM Reports</h2>
 <p>Manage Content also has two dedicated reporting tabs, shown whenever your Adventure actually has that kind of content:</p>
@@ -4441,6 +7426,22 @@ HTML,
   <li><strong>SCORM</strong>: every package you've uploaded, with how many players started it, finished it, haven't finished it, or completed the milestone it's attached to. Opens a per-player report, including players who never opened the package at all. Also CSV-exportable.</li>
 </ul>
 <p>Both tabs' summary tiles re-total themselves as you filter or search: type part of a title and the counts update to match just what's showing.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r18-challenges.webp" alt="The Challenges tab of Manage Content: totals across all challenges at the top, then each challenge with attempts, players, completions, pass rate and average grade." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Challenge results.</strong> Every challenge with its attempts, players, completions, pass rate and average grade, and the totals at the top.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r19-challenge-report.webp" alt="One challenge's report: every player who took it, with each attempt's grade, time taken and result." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One challenge, every player.</strong> Each player's attempts with grade, time taken and whether they passed.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r20-attempt.webp" alt="One challenge attempt opened: each question with the player's answer marked, and whether it was correct." width="1600" height="900" loading="lazy">
+  <figcaption><strong>One attempt, answer by answer.</strong> Each question, the answer the player gave, and whether it was right.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r21-questions.webp" alt="The Questions tab of a challenge report: how often each question was answered correctly across the cohort." width="1600" height="900" loading="lazy">
+  <figcaption><strong>How each question went.</strong> The share of the cohort that got each question right, so the hard ones stand out.</figcaption>
+</figure>
 
 <h2>Where a Grade Comes From</h2>
 <p>A milestone's score follows one clear order: a reviewer's manual grade first, then a challenge's best attempt, then the average of its required scored steps, and finally plain completion. You'll always see which of these produced the number on a player's row.</p>
@@ -4468,12 +7469,20 @@ HTML,
                 'title'      => 'Case Study & Video Reporting',
                 'slug'       => 'case-study-and-video-reporting',
                 'section'    => 'setup',
-                'sort_order' => 44,
+                'sort_order' => 45,
                 'body'       => <<<'HTML'
 <p>Two step types produce more than a done-or-not-done: interactive case studies and videos. Each has its own report under Manage Content, so you can read what players actually did in a case study and see who really watched a video.</p>
 
 <h2>Case Studies</h2>
 <p>A <strong>Case Studies</strong> tab appears in Manage Content once the Adventure has a case-study step. Its <strong>Case Study Steps</strong> table lists every case-study step with its milestone, how many attempts there are, how many players have tried it and how many passed. Search by name, filter to ones that have been attempted or that nobody has tried yet, and sort by name, players or attempts. <strong>Review Entries</strong> opens the step's report.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b03-casestudies.webp" alt="Manage Content's Case Studies tab: a Case Study Steps table with two case-study steps, their milestones, attempts, players and pass rate, and a Review Entries button on each" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Case Studies tab.</strong> One row per case-study step. The three buttons beside the search show all of them, the ones attempted, or the ones nobody has tried yet.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/24-case-study-result.webp" alt="A player's result screen at the end of the case study The Delayed Launch: 4 / 4, Launch saved, and a Try the case again button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>What a run ends with, on the player's side.</strong> The result the case study reports here is what its entries record as the attempt's Score.</figcaption>
+</figure>
 
 <h3>Case Study Entries</h3>
 <p>The <strong>Case Study Entries</strong> page opens with the step's totals (attempts, players and passes) and keeps every attempt: the passes, the ones that failed, the ones in progress and the ones people walked away from. Each row shows:</p>
@@ -4484,6 +7493,11 @@ HTML,
   <li><strong>Score</strong> and <strong>Date</strong>.</li>
 </ul>
 <p><strong>Best attempt per player</strong> is ticked when the page opens, so you see one row per person (their graded run with the most right answers); untick it to see every attempt. Find a player by name or email, sort by any column, and choose how many to show per page. Click a row to open the attempt question by question: each answer the player gave, marked right or wrong, with free-text notes shown as notes rather than marked.</p>
+<p>Players see the same detail for their own runs, in the Case Studies tab of their <a href="/docs/my-work-journal-and-history">Journal</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/garden-journal/40-journal-casestudy-run.webp" alt="One case-study run opened question by question: the score, 4 of 4 correct, each decision marked Correct, and a free-text note shown as a Note" width="1600" height="900" loading="lazy">
+  <figcaption><strong>One run, question by question.</strong> Each decision with the answer given and whether it was right; the last row is a free-text note, shown as a note and never marked.</figcaption>
+</figure>
 <p><strong>Regrade all</strong>, for whoever can edit the Adventure, re-scores every attempt from the answers already stored, without the activity having to report anything again. Use it after you've corrected the case study's answers.</p>
 
 <h3>Exporting</h3>
@@ -4497,6 +7511,10 @@ HTML,
   <li><strong>% Watched</strong>: as a share of the video's length. It caps at 100%, so someone who rewatched doesn't read as an error.</li>
   <li><strong>Last Watched</strong></li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/manage-content/b07-videos.webp" alt="Manage Content's Videos tab: a Video Steps table listing four video steps with their milestones, players watched and average share watched, each with a Review Stats button" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Videos tab.</strong> Every published video step with how many players watched it and the average share watched. <strong>Review Stats</strong> opens the per-player numbers.</figcaption>
+</figure>
 <p>Every column sorts, and <strong>Download CSV</strong> exports the list. Time is counted only while the video is actually playing and the tab is in front, so it measures watching rather than leaving a video open. It's analytics only: watch time never changes whether a video step counts as done.</p>
 
 <h2>Who Can See and Export</h2>
@@ -4514,7 +7532,7 @@ HTML,
                 'title'      => 'Activity Logs',
                 'slug'       => 'activity-logs',
                 'section'    => 'setup',
-                'sort_order' => 45,
+                'sort_order' => 46,
                 'body'       => <<<'HTML'
 <p>Every Adventure keeps an activity log: a running record of what players and staff do inside it. It's the place to answer "did they actually do that?", "who changed this?" and "when did it happen?". It has its own page, <strong>Adventure Activity</strong>, reached from <strong>Activity</strong> in the Game Master menu (Admin Tools in the Classic view) or from the <strong>Activity</strong> tab on the Wall. The Wall is for conversation, so the audit table doesn't sit among its channels.</p>
 
@@ -4524,6 +7542,10 @@ HTML,
   <li><strong>Everyone</strong> — the whole Adventure's log, with a Player column. Only staff (GMs, NPCs and admins) see this tab.</li>
 </ul>
 <p>Your own view shows your most recent 500 entries, and the Everyone view the Adventure's most recent 1,000.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/guilds-wall/a17-activity-mine.webp" alt="A player's My Activity view: a search box, an All actions filter, a page size and 169 entries, with rows such as Post on the wall, Use of an item and Purchase of an item, each with its type, detail and when" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A player's own view.</strong> My Activity lists what this player did: Wall posts, items bought and used, and so on, newest first. <strong>Back to the Wall</strong> returns to the conversation.</figcaption>
+</figure>
 
 <h2>What Gets Logged</h2>
 <p>Most of what happens in an Adventure leaves an entry, for example:</p>
@@ -4541,6 +7563,10 @@ HTML,
   <li><strong>All actions</strong> is an exact filter by action, listing every action in the log with how many entries it has. Use it when free text is too loose.</li>
   <li><strong>Page size</strong> — 25, 50, 100 or 250 per page, with a jump menu for long logs.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r17-activity.webp" alt="The Everyone view of Adventure Activity, filtered to one action: each row shows the player, the action, the type, the detail and when it happened." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Everyone's activity, filtered by action.</strong> The action filter set to completions: each row names the player, the action, the type (a milestone shows as <code>quest</code>), the detail and when. <strong>Back to the Wall</strong> returns to the Wall.</figcaption>
+</figure>
 
 <h2>Good to Know</h2>
 <ul>
@@ -4561,7 +7587,7 @@ HTML,
                 'title'      => 'The Complete Adventure Settings Reference',
                 'slug'       => 'complete-adventure-settings-reference',
                 'section'    => 'setup',
-                'sort_order' => 46,
+                'sort_order' => 47,
                 'body'       => <<<'HTML'
 <p>Adventure Settings is where an Adventure's own configuration lives. Open it from <strong>Adventure Settings</strong> in the Game Master menu (Admin Tools in the Classic view); inside a cohort, <strong>Cohort Settings</strong> opens the cohort's own and <strong>Template Settings</strong> the template's. Its panes are listed in a rail down the left side of the page (on a narrow window they become a row of tabs across the top); one pane shows at a time. <strong>Find a setting</strong>, above the rail, searches every pane and takes you straight to the row.</p>
 <p><strong>Changes save as you make them.</strong> On an Adventure that already exists, every switch and field saves the moment it changes, and the bar at the bottom says so (<em>All changes saved</em>, or <em>Not saved</em> and why). <strong>Update Adventure</strong> still saves everything at once, and the same bar carries the <strong>Publication status</strong>: Publish, Draft or Trash (trashing asks first, because players lose access straight away). A new Adventure saves everything when you press <strong>Create Adventure</strong>.</p>
@@ -4680,18 +7706,22 @@ HTML,
                 'title'      => 'Managing Your Player Roster',
                 'slug'       => 'managing-your-player-roster',
                 'section'    => 'setup',
-                'sort_order' => 47,
+                'sort_order' => 48,
                 'body'       => <<<'HTML'
 <p>Companion to <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>. This covers the day-to-day tools for a roster once people are in. They live on a few screens in the Game Master menu (Admin Tools in the Classic view).</p>
 
 <h2>Manage Players</h2>
 <p><strong>Manage Players</strong> is the working list of the Adventure's people, in three tabs:</p>
 <ul>
-  <li><strong>Active</strong>: everyone enrolled, Game Masters and NPCs included, searchable by name, nickname, email or ID, filterable by role (Players, GMs, NPCs), with a choice of how many per page.</li>
+  <li><strong>Active</strong>: everyone enrolled, Game Masters and NPCs included, searchable by name, nickname, email or ID, filterable by role (Players, GMs, NPCs) and by guild, with a choice of how many per page.</li>
   <li><strong>Inactive</strong>: people you've removed. Their progress is kept and comes back if you press <strong>Activate</strong>.</li>
   <li><strong>Add Players</strong>: the CSV import (with a <strong>Download CSV Template</strong> built for this Adventure and a guide to every column) and <strong>Add Players One by One</strong>. See <a href="/docs/enrolling-players-and-roles">Enrolling Players</a> and <a href="/docs/bulk-uploads-with-csv">Bulk Uploads &amp; Exports with CSV</a>.</li>
 </ul>
 <p>Every row has <strong>Journal</strong>, which opens that player's Journal in a new tab, and <strong>Records</strong>, which opens their entries in Player Records (below). Where the platform lets Game Masters reset passwords, a <strong>Password</strong> button sets a new one. A player who has asked not to get automatic emails from this Adventure is marked <em>Stopped automatic emails</em>; emails you write by hand still reach them, but its lottery-day emails, where it has a lottery, don't. The header links to Player Records for the whole Adventure. NPCs see this page view-only.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r13-manage-players.webp" alt="Manage Players on its Active tab: a search box, role, guild and page-size filters, and a row per person with Journal and Records buttons, a Player / GM / NPC switch and Remove." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Manage Players.</strong> The Active tab with its search and its role, guild and page-size filters. Each row has Journal and Records, the Player / GM / NPC switch and Remove; the header holds Recalculate all players and Player Records.</figcaption>
+</figure>
 
 <h2>Removing a Player</h2>
 <p>Press <strong>Remove</strong> and the button changes to <em>Remove?</em>. Press it again to confirm; nothing happens on the first click. The player moves straight to Inactive. <strong>Activate</strong> uses the same two-click confirm.</p>
@@ -4716,6 +7746,10 @@ HTML,
   <li>It lists players only until you press <strong>Show GMs &amp; NPCs</strong>.</li>
   <li><strong>Export CSV</strong> downloads it, with email addresses included even though they aren't shown on screen.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r11-spreadsheet.webp" alt="The Players spreadsheet: one row per person with level, XP, BLOO, last login and profile fields, then a tick column for every milestone grouped by chapter colour." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Players spreadsheet.</strong> One row per person: level, currencies, last login and the Player Meta fields (here Office and Job title), then a tick for every milestone, grouped by Tabi colour. A column header sorts; Export CSV downloads it.</figcaption>
+</figure>
 
 <h2>Player Meta: Your Own Profile Fields</h2>
 <p>Player Meta is a catalogue of fields <em>you</em> define for this Adventure: department, region, job title, grade, homeroom, whatever your program needs. Nothing is fixed, and another Adventure's fields never appear in yours. Manage it in the <strong>Player Meta Manager</strong>. Its header counts the players, the live fields and how much is filled in, and it has three tabs:</p>
@@ -4724,23 +7758,61 @@ HTML,
   <li><strong>Fields</strong>: <strong>Add field</strong> gives a field a label and a type: Text, Choice list or Number (for a choice list, one option per line). Each field shows how many people have it filled in and where it's shown. Drag a field by its handle to reorder: the first four live fields are the Players columns.</li>
   <li><strong>Import CSV</strong>: fill in many profiles at once (below).</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r14-meta.webp" alt="The Player Meta Manager on its Players tab: the header counts players, live fields and how much is filled in; each player row shows their field values and a completeness meter." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Player Meta Manager.</strong> The header counts players, live fields and how much is filled in. On the Players tab, the first live fields are the columns, with a meter for how complete each profile is.</figcaption>
+</figure>
 <p>Two switches on each field decide where it appears:</p>
 <ul>
   <li><strong>Stats</strong>: lets you break engagement down by this field on the Stats page. Choice lists chart best.</li>
   <li><strong>Leaderboard</strong>: prints the field beside every player's name, where their whole cohort sees it. It's a separate switch on purpose: grouping people in a staff report isn't the same decision as publishing it. At most two fields are shown, the first two in your order.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r15-meta-fields.webp" alt="The Fields tab: an Office choice-list field shown in Stats and on the Leaderboard, and a Job title text field kept for records only, each with how many people have it filled in." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Fields tab.</strong> Office is a choice list with both switches on (Stats and Leaderboard); Job title is free text kept for records only. Each field shows its type, how many people have it filled in, and whether it is Live.</figcaption>
+</figure>
 <p>A field is <strong>Live</strong>, or <strong>Draft</strong> to hide it from the roster and the player editor. A field's key is fixed when you create it, so you can rename its label safely: imports and Stats keep matching it. Deleting a field deletes every value recorded against it.</p>
 <p><strong>The CSV round-trips.</strong> Start from <strong>Download the roster (CSV)</strong>: its headings are exactly the names the importer looks for. Fill it in, choose the file (or drop it on the page) and press <strong>Preview</strong>: each row is matched by email to someone already in this Adventure, nobody is added or removed, and nothing is written until you press <strong>Commit import</strong>. Columns are matched by heading in any order; Email is required, leave out any column you aren't changing, and a blank cell clears that value. The same fields also work as columns in a player import on Manage Players.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r16-meta-export.webp" alt="The Player Meta export opened in a spreadsheet: one row per person with their id, name, email and a column for each profile field." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The roster export, opened in a spreadsheet.</strong> One row per person with every field, under the same headings the importer reads back. Edit it and import it again.</figcaption>
+</figure>
 
 <h2>Player Records</h2>
 <p><strong>Player Records</strong> is where you manage what players have earned and done in this Adventure, in four tabs:</p>
 <ul>
-  <li><strong>Achievements</strong>: who holds each one, with <strong>Remove from all</strong>, plus <strong>Award an achievement…</strong> to give one to a player.</li>
+  <li><strong>Achievements</strong>: who holds each one, with <strong>Holders</strong>, <strong>Remove from all</strong>, plus <strong>Award an achievement…</strong> to give one to a player.</li>
   <li><strong>Transactions</strong>: purchases and spends. A removed transaction can be restored: switch the view to <em>Removed transactions</em>.</li>
   <li><strong>Milestone Submissions</strong>: removing one is the full milestone reset for that player, so only administrators can do it. GMs get links to review instead.</li>
   <li><strong>Challenge Attempts</strong>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r01-records.webp" alt="Player Records on its Achievements tab: four tabs with their counts, an Award an achievement to player picker, and each achievement with its number of holders and Holders, Remove from all and Players tab buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Player Records.</strong> Four tabs: Achievements, Transactions, Milestone Submissions and Challenge Attempts. The Achievements tab counts the holders of each achievement, with the award picker above.</figcaption>
+</figure>
+<p>To award an achievement by hand, pick it under <strong>Award an achievement…</strong>, pick the player under <strong>…to player</strong>, and press <strong>Award</strong>. The page comes back with "Achievement awarded", and the player's totals are recalculated with it.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r03-award-form.webp" alt="The award form filled in: an achievement and a player chosen, ready to press Award." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Awarding by hand.</strong> Choose the achievement and the person, then Award. Useful for something earned outside the app.</figcaption>
+</figure>
 <p>Every tab filters by player, by what the record is about, by status and by search. Remove one row, a selection, or everything matching the filter; each asks for a second click, and the players affected have their totals recalculated. NPCs see the page read-only. In a cohort it shows only that cohort's own records, never the template's.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r05-transactions.webp" alt="The Transactions tab: every purchase and reward across the cohort, with filters for player, item and kind, and a Remove button on each row." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Transactions.</strong> Every purchase and reward across the cohort, filterable by player, item and kind. Removing one refunds it and recalculates the player.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r08-submissions-mateo.webp" alt="The Milestone Submissions tab filtered to one player: each milestone they handed in, with its date and a link to review it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Filtered to one person.</strong> The filter narrows any tab to one player, one milestone, a status or a search: here, everything one player has handed in, each with a link to review it.</figcaption>
+</figure>
+<p><strong>Removing an achievement can't be undone.</strong> The holder's record is deleted and the player recalculated without it, unlike a transaction, which you can restore. The confirmation asks once, on the button itself.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r09-remove-confirm.webp" alt="The holders list filtered to one player and one achievement, with the row's Remove button turned into a Remove? confirmation." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Taking an achievement back.</strong> Filtered to one player and one achievement; the row's Remove has turned into <em>Remove?</em> and waits for the second click. Remove selected and Remove all act on the ticked rows or everything matching.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r10-removed.webp" alt="Player Records after the removal: a message confirms one record removed, and the player's totals are recalculated." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Removed and recalculated.</strong> "1 record removed": the achievement is gone from that player's record and their XP and BLOO are worked out again without it.</figcaption>
+</figure>
 <p>In an achievement's own editor, the Players tab is a true toggle: click someone who holds it to take it back, or someone who doesn't to award it. The player is told a Game Master awarded it on their next page.</p>
 
 <h2>Related</h2>
@@ -4756,7 +7828,7 @@ HTML,
                 'title'      => 'Languages for Your Players',
                 'slug'       => 'languages-for-your-players',
                 'section'    => 'setup',
-                'sort_order' => 48,
+                'sort_order' => 49,
                 'body'       => <<<'HTML'
 <p>BLUERABBIT speaks 11 languages: English, Chinese (Simplified), French, German, Italian, Japanese, Korean, Portuguese (Brazil), Russian, Spanish and Turkish. Each person sees the app in their own language, so one cohort can mix them freely. This page covers who decides which language someone sees, and what is and isn't translated.</p>
 
@@ -4766,17 +7838,43 @@ HTML,
   <li><strong>Your roster file.</strong> The player CSV import has a <strong>Language</strong> column (<code>en_US</code>, <code>es_MX</code>, <code>pt_BR</code>…), so a cohort arrives already in the right languages. Blank uses the platform default. See <a href="/docs/bulk-uploads-with-csv">Bulk Uploads &amp; Exports with CSV</a>.</li>
   <li><strong>The platform default.</strong> Anyone who hasn't picked a language sees the platform's <strong>Default language</strong> (Sys Config → Profile), which is also the language of the sign-in page. Platform administrators can also set a person's language in Manage Users.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/k03-account-switching.webp" alt="My Account just after choosing Español, with the confirmation already shown in Spanish." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Switching, from the player's side.</strong> A player picks Español in My Account, and the confirmation (¡Perfil actualizado!) is already in Spanish before the page reloads.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/g04-sys-default-language.webp" alt="Sys Config's Profile section with the Default language list open, shown in Spanish." width="1600" height="410" loading="lazy">
+  <figcaption><strong>The platform default.</strong> Sys Config → Profile → <strong>Default language</strong> (administrators only), shown here in Spanish. It's what visitors, the sign-in page and anyone who hasn't chosen see; each person's own choice wins over it.</figcaption>
+</figure>
 <p>There's no language setting per Adventure: the language belongs to the person, not the program.</p>
 
 <h2>What Is Translated</h2>
 <p>Everything BLUERABBIT itself says: menus and buttons, the Journey and every step's controls, messages, celebrations and errors, the Garden, the guided tours, dates written with day and month names, and the Game Master's own screens (Manage Content, Adventure Settings, Stats and the rest). Plurals follow each language's own rules.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/g01-builder-es.webp" alt="The Journey Builder with its toolbar, menus and panels in Spanish." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Your own screens, too.</strong> A Game Master building the journey in Spanish: the toolbar, the element menus, the layers and properties.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/d01-ru-plurals.webp" alt="The menu in Russian, with counts using the right plural form for each number." width="1600" height="612" loading="lazy">
+  <figcaption><strong>Plurals, done properly.</strong> Russian has three plural forms, and every count picks the right one for its number (3 ресурса, 4 спикера, 10 предметов).</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/d02-ja-player-card.webp" alt="A player card in Japanese, with sentences built around the level and XP numbers." width="1600" height="158" loading="lazy">
+  <figcaption><strong>Sentences built for each language.</strong> Japanese composes its own sentences around the numbers. XP, BLOO and EP stay as the Adventure names them.</figcaption>
+</figure>
 
 <h2>What Stays as You Wrote It</h2>
 <ul>
   <li><strong>Your content.</strong> Milestone and step text, posts, resources, item and achievement names, certificates and Cooper Context appear exactly as you wrote them. BLUERABBIT doesn't translate what you author.</li>
   <li><strong>Names you set.</strong> A section you've renamed (say, "Base Camp" for the Journey) and your currency names (XP, BLOO and EP, or whatever you've called them) are yours, and show the same in every language. A section you haven't renamed shows its built-in name in each person's language.</li>
+  <li><strong>A few things BLUERABBIT writes once.</strong> The rich-text editor's own toolbar is still in English, and a Garden reward's title (such as "Mission complete: …") is written in English when the reward is created.</li>
   <li><strong>Emails.</strong> The emails BLUERABBIT sends are in English for now; a campaign's message is whatever you write. One exception: the alert that an A.I. check couldn't run reaches each person it goes to (the owner, the Game Masters, the platform's administrators) in their own language.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/languages/t03-choice-board-ja.webp" alt="A milestone being played in Japanese: the step bar, buttons and instructions translated, the story text as written." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The frame translates, your content doesn't.</strong> A milestone played in Japanese: the step bar, the buttons and BLUERABBIT's own instructions are in Japanese; the story text and the card titles are the Adventure's own, in English as they were written.</figcaption>
+</figure>
 
 <h2>Running an Adventure for Several Languages</h2>
 <p>Because the frame translates itself and your content doesn't, the simplest setup for a mixed group is content written in the language everyone shares. If your players don't share one, keep one Adventure (or one template) per language: build it once, copy it with <strong>Duplicate</strong> on Manage Adventures, and translate the copy's content (see <a href="/docs/gm-toolkit-duplicator-reports-and-bulk-actions">GM Toolkit</a>). A template's cohorts all share its content, so they share its language too.</p>
@@ -4795,7 +7893,7 @@ HTML,
                 'title'      => 'Customizing Your Taskbar & Adventure Branding',
                 'slug'       => 'customizing-taskbar-and-branding',
                 'section'    => 'setup',
-                'sort_order' => 49,
+                'sort_order' => 50,
                 'body'       => <<<'HTML'
 <p>Three panes of <strong>Adventure Settings</strong> control what an Adventure's frame offers and how it looks: <strong>Menu</strong> (which menu players start with, and its buttons), <strong>Journey &amp; Look</strong> (names and the main backgrounds) and the section cards under <strong>Sections</strong> (each section's own name and background). None of them changes how anything plays.</p>
 
@@ -4805,6 +7903,11 @@ HTML,
   <li><strong>Classic</strong>: a top bar, and a taskbar along the bottom with the <strong>OPTIONS</strong> button. Pressing it opens the menu, and a row of shortcut buttons appears just above the bar; OPTIONS then reads <strong>CLOSE</strong>.</li>
   <li><strong>New</strong>: the content gets the whole screen. A yellow <strong>Options</strong> button in the top-left corner opens a pause-screen menu (players can also press Ctrl+K, or Cmd+K on a Mac), beside a <strong>Journey</strong> button. The other controls sit in the top-right corner: Feedback, Cooper, the help button, Email Support, the player's guild and profile.</li>
 </ul>
+
+<figure class="doc-shot">
+  <img src="/assets/docs/journey-builder/new-view-corners.webp" alt="The two top corners of the New view: the yellow Options button, the Journey button and the adventure's name on the left; Feedback, help, Email Support, My Guild and the player's picture on the right." width="1035" height="104" loading="lazy">
+  <figcaption><strong>The New view's corners, as a player sees them.</strong> This adventure has Cooper switched off, so its button isn't among them.</figcaption>
+</figure>
 <p>Under <strong>Menu → Menu style</strong>, <strong>Players start with the classic menu</strong> picks the one players get. It's only a starting point: each player can switch between Classic and New in My Account (or from the New menu's Settings), and their own choice wins. <a href="/docs/finding-your-way-around">Finding Your Way Around</a> covers both from the player's side.</p>
 
 <h2>The Options Button</h2>
@@ -4858,7 +7961,7 @@ HTML,
                 'title'      => 'GM Toolkit: Duplicator, Player Records & Resets',
                 'slug'       => 'gm-toolkit-duplicator-reports-and-bulk-actions',
                 'section'    => 'setup',
-                'sort_order' => 50,
+                'sort_order' => 51,
                 'body'       => <<<'HTML'
 <p>The tools a GM reaches for once an Adventure is built: copying content, copying whole Adventures, moving a player on, fixing one player's run of a milestone, managing records, and finding things fast.</p>
 
@@ -4887,13 +7990,21 @@ HTML,
 <p>This is for administrators, not GMs, because it deletes part of a player's record. Removing a submission in Player Records runs the same reset.</p>
 
 <h2>Player Records</h2>
-<p><strong>Player Records</strong> manages what players hold in this Adventure: achievements (with Award and Remove from all), transactions (removable and restorable), milestone submissions and challenge attempts. Every tab filters by player, subject, status and search, and removes one row, a selection or everything matching. See <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>.</p>
+<p><strong>Player Records</strong> manages what players hold in this Adventure: achievements (with Award and Remove from all), transactions (removable and restorable), milestone submissions and challenge attempts. Every tab filters by player, subject, status and search, and removes one row, a selection or everything matching. Removing an achievement can't be undone; a removed transaction can be restored. See <a href="/docs/managing-your-player-roster">Managing Your Player Roster</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/r01-records.webp" alt="Player Records on its Achievements tab: four tabs with their counts, an award picker, and each achievement with its number of holders and Holders, Remove from all and Players tab buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Player Records.</strong> Achievements, Transactions, Milestone Submissions and Challenge Attempts, each a tab with its count. Here, the holders of each achievement, with Award above.</figcaption>
+</figure>
 
 <h2>Finding Things in Manage Content</h2>
 <p>Every tab of Manage Content has the same header and toolbar: a search box plus whichever filters make sense for that tab. Type buttons appear only for types the Adventure actually has (item types; badge, rank or path; encounter kinds; task triggers; and so on), and guilds filter by group instead. Every filter combines with the others. Items and guilds you've set to draft have their own Drafts list. The Requests tab keeps its own status filters, and the Dashboard tab, first in the row, shows what the Adventure holds and whether it's running.</p>
 
 <h2>The Milestone Funnel</h2>
 <p>On the Stats page's Overview, <strong>Details</strong> beside the Milestone Funnel opens the full funnel: a drop-off chart you can narrow to one Tabi or one level, beside how many players are enrolled, what share have logged in, and what share were active in the last 7 days. It's the fastest way to spot the one milestone that's quietly losing everyone. See <a href="/docs/stats-dashboard-guide">Reading the Stats Dashboard</a>.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/stats-records/g04-funnel-chapter.webp" alt="Milestone Funnel Details narrowed with the View menu to one chapter, showing completions falling milestone by milestone." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The funnel, narrowed to one chapter.</strong> Each bar is a milestone and how many players finished it. The View menu switches between all milestones, one Tabi and one level.</figcaption>
+</figure>
 
 <h2>Related</h2>
 <ul>
@@ -4908,7 +8019,7 @@ HTML,
                 'title'      => 'Bulk Uploads & Exports with CSV',
                 'slug'       => 'bulk-uploads-with-csv',
                 'section'    => 'setup',
-                'sort_order' => 51,
+                'sort_order' => 52,
                 'body'       => <<<'HTML'
 <p>Building forty milestones, sixty questions or a whole catalogue of skills one form at a time is slow. Most managers in Manage Content take a <strong>CSV upload</strong> instead: one row per thing, added in one go. The same idea runs the other way too: rosters, grades and reports come out as CSV files you can open in any spreadsheet. This page lists every upload and every export, and the rules they share.</p>
 
@@ -4923,7 +8034,6 @@ HTML,
   <li><strong>Guilds</strong>, <strong>Tabis</strong>, <strong>Skills</strong> and <strong>Tasks</strong>: beside each tab's add button.</li>
   <li><strong>Posts</strong> and <strong>Resources</strong>: at the top of each tab's published list.</li>
 </ul>
-<p>For items, <code>item_stock</code> blank or 0 means unlimited, and keys and rewards are always unlimited, as in the item editor; the upload report marks those rows "(stock: unlimited)".</p>
 <p>Only those who can edit the Adventure see the uploads; NPCs don't. Content lands where it belongs: milestones, achievements, items, Tabis, skills, speakers, posts and resources on the template, so every cohort gets them; guilds, tasks and schedule sessions on the Adventure you're in, as a cohort keeps its own.</p>
 
 <h2>Before You Pick a File</h2>
@@ -4938,6 +8048,10 @@ HTML,
 
 <h2>The Row-by-Row Report</h2>
 <p>After the upload, a report stays on the page until you close it: <em>N added, M refused</em>, then every refused row with its spreadsheet row number and the reason (<em>Row 12: the milestone title is empty</em>). A row whose name was already there is added anyway, and marked so; blank lines are skipped. <strong>Reload to see them</strong> shows what was added.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/b04-csv-done.webp" alt="The report under the Blog tab's upload box after two posts were uploaded: Posts uploaded, a line per row added, and Reload to see them." width="1600" height="900" loading="lazy">
+  <figcaption><strong>An upload's report.</strong> One line per row added or turned away, with the reason; the new rows appear in the table after a reload.</figcaption>
+</figure>
 <ul>
   <li><strong>Every row is added as a new one</strong>, even if one with the same name exists. Fix the refused rows and upload a file with only those: sending the whole file again adds the good rows twice.</li>
   <li><strong>A file over the row limit is refused whole</strong>, so nothing is half-imported. Split it.</li>
@@ -4945,7 +8059,75 @@ HTML,
   <li>The browser checks the file first: no file, not a .csv, or over 2 MB is refused before anything is sent.</li>
 </ul>
 
-<h2>Uploads That Work on People</h2>
+<p>The sections below give each upload's columns, in order, one content type at a time.</p>
+
+<h2>Posts</h2>
+<p>Manage Content → Blog, <strong>Upload file</strong>. Up to 150 rows. Columns: <code>quest_title</code> (the post headline, required, up to 255 characters), <code>quest_secondary_headline</code> (up to 200), <code>quest_content</code>, <code>mech_badge</code> (the picture's web address), <code>quest_style</code> (<code>text-right</code>, <code>text-left</code>, <code>news-highlight</code> or <code>headline</code>; <code>text-right</code> when blank), <code>mech_level</code> (1 to 99, 1 when blank), <code>mech_start_date</code> and <code>achievement_id</code> (a path). Every row is added as a published post. <strong>Download the template</strong> gives a file with an example row.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/b03-csv-columns.webp" alt="The Blog tab's Upload file box with its limits, the columns in order and Download the template." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Posts from a CSV.</strong> The limits and the columns are listed before you pick a file.</figcaption>
+</figure>
+
+<h2>Resources</h2>
+<p>Manage Content → Lore, <strong>Upload file</strong>. Up to 150 rows. Columns: <code>quest_title</code> (the resource name, required), <code>quest_style</code> (<code>resource</code> or <code>article</code>; <code>resource</code> when blank), <code>mech_level</code>, <code>quest_secondary_headline</code> (the file or link, a web address), <code>quest_content</code>, <code>mech_badge</code> (a picture's web address, or a book cover by name, <code>book-1</code> to <code>book-12</code>), <code>quest_color</code> (amber when blank) and <code>achievement_id</code> (a path). Every row is added as a published resource.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-posts-library/e01-lore-csv.webp" alt="The Lore tab's Upload file box listing the resource columns, with one resource uploaded." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Resources from a CSV.</strong> Here one row added a Resource-style entry with its PDF.</figcaption>
+</figure>
+
+<h2>Speakers</h2>
+<p>Manage Content → Speakers, <strong>Upload Speakers</strong>. Up to 100 rows. Columns: <code>speaker_first_name</code>, <code>speaker_last_name</code>, <code>speaker_bio</code>, <code>speaker_picture</code> (a picture's web address), <code>speaker_company</code>, <code>speaker_website</code> and <code>speaker_linkedin</code>. Each row needs a first or a last name. Speakers land on the template, so every cohort shares the cast.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/a10-speakers-csv.webp" alt="The Speakers tab's Upload Speakers box with the CSV limits and columns listed." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Speakers from a CSV.</strong> Every row is added as a new speaker.</figcaption>
+</figure>
+
+<h2>Schedule Sessions</h2>
+<p>On the Schedule page itself, <strong>Upload Schedule</strong>. Up to 100 rows. Columns: <code>session_title</code>, <code>session_description</code>, <code>session_start</code> and <code>session_end</code> (all four required), <code>session_room</code>, then the ids of a milestone or challenge to attach (<code>quest_id</code>), a speaker (<code>speaker_id</code>), a path (<code>achievement_id</code>) and a guild (<code>guild_id</code>). Every row is added as a new session.</p>
+<p>The <code>speaker_id</code> column is kept, but the schedule and the speaker pages don't show it: after an upload, tick each session's speakers in its editor.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/b20-schedule-csv.webp" alt="The Schedule page's Upload Schedule box with the session columns in order." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Upload Schedule.</strong> The columns, in order, and what must be filled.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-sessions-speakers/b21-schedule-csv-report.webp" alt="The report after a schedule upload, listing the session it added." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The schedule upload's report.</strong> What was added, and every refused row with its reason.</figcaption>
+</figure>
+
+<h2>Achievements</h2>
+<p>Manage Content → Achievements, in the header. Up to 150 rows. Columns: <code>achievement_name</code> (required, up to 255 characters), <code>achievement_badge</code> (the badge picture, required), <code>achievement_color</code>, <code>achievement_code</code> (its magic code; blank makes a new random one), <code>achievement_content</code>, <code>achievement_display</code> (<code>badge</code>, <code>path</code> or <code>rank</code>), the XP, EP and BLOO it pays (<code>achievement_xp</code>, <code>achievement_ep</code>, <code>achievement_bloo</code>), <code>achievement_max</code> and <code>achievement_order</code>. Achievements land on the template. To hand an existing achievement to a list of people instead, see <a href="#uploads-that-work-on-people">Awarding an achievement</a> below.</p>
+
+<h2>Items</h2>
+<p>Manage Content → Items, in the header. Up to 150 rows. Columns: <code>item_author</code> (the id of someone in this Adventure, or blank), <code>item_name</code> (required, up to 150 characters), <code>item_description</code>, <code>item_cost</code> (in BLOO), <code>item_type</code> (<code>consumable</code>, <code>key</code>, <code>reward</code> or <code>tabi-piece</code>; <code>gift-card</code> and <code>ticket</code> are Enterprise types), <code>item_badge</code>, <code>item_stock</code>, <code>item_player_max</code>, <code>item_level</code>, <code>item_category</code>, <code>item_order</code>, <code>tabi_id</code> (the Tabi a piece belongs to, an id in this Adventure, or blank) and <code>item_status</code> (<code>publish</code>, <code>draft</code> or <code>trash</code>). Numbers left blank are 0.</p>
+<p><code>item_stock</code> blank or 0 means unlimited, and keys and rewards are always unlimited, as in the item editor; the upload report marks those rows "(stock: unlimited)".</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g31-csv-columns.webp" alt="Manage Content's Items tab with the CSV notes open: the limits, the thirteen columns in order with what each takes, and that item_name must be filled" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Items from a CSV.</strong> The notes under the header list every column in order, with its default when blank. The cost column carries the Adventure's own name for BLOO.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-items/g32-csv-report.webp" alt="The report after an item upload: Items uploaded correctly, 2 added, 0 refused, a line per row, the stock: unlimited note and Reload to see them" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The item upload's report.</strong> Two rows added, each named by its row number, with the "(stock: unlimited)" note for an item with no stock set.</figcaption>
+</figure>
+
+<h2>Challenge Questions</h2>
+<p>In a challenge's editor, on the Questions tab, once the challenge is saved. Up to 150 rows. Columns: <code>question</code>, <code>correct</code> and <code>decoy1</code> (all three required), then <code>decoy2</code> and <code>decoy3</code>. Each row becomes a multiple-choice question with one right answer among the decoys; other question types are made in the editor.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/b03-bulk-notes.webp" alt="The CSV upload on a challenge's Questions tab: the limits and the five columns, question, correct, decoy1, decoy2 and decoy3" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Questions from a CSV.</strong> Five columns: the question, the right answer and up to three decoys.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-challenges/b04-bulk-report.webp" alt="The report after a question upload on a challenge's Questions tab: 3 questions uploaded correctly, 3 added, 0 refused, a line per row, and Reload to see them" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The question upload's report.</strong> Three rows in, none refused; <strong>Reload to see them</strong> adds them to the question list below.</figcaption>
+</figure>
+
+<h2>Guilds</h2>
+<p>Manage Content → Guilds, <strong>Upload file</strong> beside Add New Guild. Up to 150 rows. Columns: <code>guild_name</code> (required, up to 255 characters), <code>guild_logo</code> (a web address, required), <code>guild_color</code> (a colour name like <code>blue</code> or a code like <code>#1c8ca6</code>; deep orange when blank), <code>guild_group</code>, <code>guild_capacity</code> (a number, 0 or more; blank is 0), <code>assign_on_login</code> (<code>1</code> for yes or <code>0</code> for no; blank is 0) and <code>guild_status</code> (<code>publish</code> or <code>draft</code>; publish when blank). Guilds land on the Adventure you're in, since a cohort keeps its own. <strong>Download the template</strong> gives a file with an example row.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/add-guilds/c03-csv-columns.webp" alt="Manage Content's Guilds tab with the CSV notes open: the seven guild columns in order, what must be filled and Download the template, above the Assign players to a guild box" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Guilds from a CSV.</strong> The columns, what must be filled and the template, with the separate <strong>Assign players to a guild</strong> upload just below.</figcaption>
+</figure>
+
+<h2 id="uploads-that-work-on-people">Uploads That Work on People</h2>
 <p>These take an email address per row and act on people already enrolled, or enrol them:</p>
 <ul>
   <li><strong>The player roster</strong>: Manage Players → Add Players → <strong>Bulk import from CSV</strong>, with a <strong>Download CSV Template</strong> built for this Adventure. Columns: Email (required: an existing account is enrolled, a new one is created), Nickname, Password, First Name, Last Name or a single Name, Language (such as <code>en_US</code> or <code>es_MX</code>), Guild, and one column per Player Meta field. The whole file is read in your browser and imported row by row, with no row limit, and checked against the roster when it finishes. Comma, semicolon and tab separated files all work here. Passwords follow the platform's rule (12 to 50 characters). See <a href="/docs/enrolling-players-and-roles">Enrolling Players &amp; Assigning Roles</a>.</li>
@@ -4955,6 +8137,10 @@ HTML,
   <li><strong>Picking email recipients</strong>: on Email Notifications, <strong>Select from a CSV</strong> selects everyone in this Adventure whose address is in the file's first column.</li>
   <li><strong>Grading</strong>: the Milestone Review's <strong>Upload Reviewed CSV</strong> reads back grades, validation and comments. See <a href="/docs/reviewing-and-grading-submissions-in-bulk">Reviewing &amp; Grading Submissions in Bulk</a>.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/achievements-certificates/g12-bulk-upload.webp" alt="An achievement's Players tab: the Upload a CSV of email addresses box and the What each upload did record listing the results of earlier uploads" width="1600" height="900" loading="lazy">
+  <figcaption><strong>Awarding an achievement from a list.</strong> Upload a file of email addresses; the record below keeps what happened to every address on each run.</figcaption>
+</figure>
 
 <h2>Exports</h2>
 <p>Everything you can download as a CSV:</p>
@@ -4981,7 +8167,7 @@ HTML,
                 'title'      => 'Managing Player Support Requests',
                 'slug'       => 'managing-player-support-requests',
                 'section'    => 'setup',
-                'sort_order' => 52,
+                'sort_order' => 53,
                 'body'       => <<<'HTML'
 <p>The GM side of the messages players send with the feedback form (see <a href="/docs/getting-help-support-and-chat">Getting Help</a>). They land in <strong>Player Requests</strong> in the Game Master menu (Admin Tools in the Classic view), which is also the Requests tab of Manage Content.</p>
 
@@ -4994,11 +8180,19 @@ HTML,
   <li><strong>First field</strong> (default <em>What is it about?</em>) and <strong>Message field</strong> (default <em>Tell us more</em>).</li>
   <li><strong>Date field</strong>: blank by default, which leaves the date out. Give it a label, such as <em>Extension needed until</em>, and the form asks for a date too; the label and the date open the message you receive.</li>
 </ul>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/a01-request-form.webp" alt="The Send feedback form open over a player's journey, with the What is it about and Tell us more fields." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The form with its defaults.</strong> The speech-bubble button opens it over whatever page the player is on. With no date label set, it asks two things. It goes to the Adventure's Game Masters, not to other players.</figcaption>
+</figure>
 <p>Anything left blank uses the default shown in grey. A request needs every field filled in; if something's missing the player is told inside the form, and a sent request is confirmed with a panel pointing them to My Requests. Only people enrolled in the Adventure can send one, and guests can't.</p>
 <p>Setting the form up for deadline extensions? Title it "Deadline extension request", ask "Which module" and "Why do you need more time", and set the date field to "Extension needed until".</p>
 
 <h2>Reading the Queue</h2>
 <p>The page's title shows the total and how many are pending. Each request is a card: the player's picture, name and email, the subject, when it was sent, its status and the full message. Use the search box to find a player or a subject, and the status buttons to narrow the list: <strong>All</strong>, <strong>Pending</strong>, <strong>Read</strong>, <strong>Resolved</strong> and <strong>Dismissed</strong>, each with its count. Every request is listed, and the counts follow each change you make.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b23-requests.webp" alt="Player Requests: request cards newest first, with status filters and their counts." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Player Requests.</strong> Every message players sent the team, newest first, with the status filters and their counts. The newest request sits at the top, Pending, with who sent it, when and what they asked.</figcaption>
+</figure>
 
 <h2>Acting on a Request</h2>
 <ul>
@@ -5008,6 +8202,14 @@ HTML,
   <li><strong>Reopen</strong>: puts a resolved or dismissed request back to Pending.</li>
 </ul>
 <p>Before you press one, you can type an <strong>Admin note</strong> in the box on the card. It's saved with the status change, and the player sees it on their My Requests page as the admin response. Tell them yes, no, or what happens next. Your answer also lights up the player's notification bell, so they don't have to keep checking.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b24-request-answer.webp" alt="A request card with an admin note typed in, above the Mark Read, Resolve and Dismiss buttons." width="1600" height="900" loading="lazy">
+  <figcaption><strong>Answering with a note.</strong> Write the note the player will read, then close the request in one go with Mark Read, Resolve or Dismiss.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/email-requests/b26-requests-resolved.webp" alt="The Resolved filter: answered requests, each with the team's note and who closed it." width="1600" height="900" loading="lazy">
+  <figcaption><strong>The Resolved filter.</strong> Each answered request with the team's note and who closed it: a record of what players asked and what they were told.</figcaption>
+</figure>
 <p>A request is only a message. Resolving it doesn't change any dates by itself; granting an extension is up to you.</p>
 
 <h2>A Rhythm That Works</h2>
@@ -5026,7 +8228,7 @@ HTML,
                 'title'      => 'Meet "Launch Week" — Our Running Example Adventure',
                 'slug'       => 'meet-launch-week-example-adventure',
                 'section'    => 'setup',
-                'sort_order' => 53,
+                'sort_order' => 54,
                 'body'       => <<<'HTML'
 <p>Several pages in this manual reference the same fictional adventure, so examples stay consistent instead of jumping between unrelated scenarios each time.</p>
 
@@ -5049,6 +8251,17 @@ HTML,
   <li>A roster loaded from one CSV file, with each new hire's department as a Player Meta field the Stats page can break results down by</li>
 </ul>
 
+<h2>The Launch Week in the Screenshots</h2>
+<p>Screenshots throughout this manual come from a showcase build of Launch Week, set up to hold one of everything so each feature can be shown working. The company is <strong>Novalane</strong>, the player is <strong>Maya</strong>, a new hire, and the Game Master is <strong>Jordan</strong>; everyone in it is fictional. Its journey has five stages, each holding one milestone for every step type in a group (Make It Yours, Watch &amp; Learn, Prove It, Speak Up and Choose Your Path), plus the profile questions as milestones of their own and one challenge with every kind of question. It is built from the same parts as the brief above, arranged for showing rather than for onboarding.</p>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/53-journey.webp" alt="The showcase journey: five stages as islands, side milestones and the challenge, with the player&#039;s progress and the leaderboard on the map" width="1600" height="900" loading="lazy">
+  <figcaption><strong>The showcase journey.</strong> Five stages, side milestones and the challenge, with Maya's progress, the leaderboard and peer help placed on the map.</figcaption>
+</figure>
+<figure class="doc-shot">
+  <img src="/assets/docs/launch-week/54-stage-prove-it.webp" alt="A stage&#039;s window listing its milestones with rewards and status" width="1600" height="900" loading="lazy">
+  <figcaption><strong>A stage.</strong> Opening a stage lists its milestones, what each pays, and which are done.</figcaption>
+</figure>
+
 <p>The full build, in order, is documented in <a href="/docs/worked-example-two-week-onboarding-adventure">Worked Example — Building a Two-Week Onboarding Adventure End to End</a>. Other pages in this manual reference Launch Week in passing to illustrate a specific feature in context.</p>
 
 <h2>Related</h2>
@@ -5062,7 +8275,7 @@ HTML,
                 'title'      => 'Worked Example — Building a Two-Week Onboarding Adventure End to End',
                 'slug'       => 'worked-example-two-week-onboarding-adventure',
                 'section'    => 'setup',
-                'sort_order' => 54,
+                'sort_order' => 55,
                 'body'       => <<<'HTML'
 <p>Everything above in one build. This walks through designing "Launch Week", a two-week new-hire onboarding Adventure for a mid-sized company, touching nearly every feature covered in this guide in the order a Game Master would actually reach for them.</p>
 
@@ -5113,7 +8326,7 @@ HTML,
                 'title'      => 'Organizations: Managing Multiple Adventures at Scale (Enterprise)',
                 'slug'       => 'organizations-managing-multiple-adventures',
                 'section'    => 'setup',
-                'sort_order' => 55,
+                'sort_order' => 56,
                 'body'       => <<<'HTML'
 <p><strong>Enterprise only.</strong> An Organization groups one client's Adventures and people under a single name. It's built for a customer running several programs, departments or cohorts who wants them filed together rather than as unrelated Adventures. Organizations aren't offered on the self-serve platform, on any plan: they come with an Enterprise setup (see <a href="/docs/understanding-plans-basic-pro-enterprise">How Plan Tiers Actually Differ</a>).</p>
 
@@ -5161,7 +8374,7 @@ HTML,
                 'title'      => 'Prize Draws (Enterprise)',
                 'slug'       => 'prize-draws',
                 'section'    => 'setup',
-                'sort_order' => 56,
+                'sort_order' => 57,
                 'body'       => <<<'HTML'
 <p><strong>Enterprise only.</strong> Prize Draws turn effort into chances at a real prize. Players collect <strong>tickets</strong> (earned by playing, bought in the shop, or given by staff) and each <strong>lottery</strong> enters the tickets held when it closes, then picks its winners in a way anyone can check afterwards. Prize Draws aren't offered on the self-serve platform, on any plan; see <a href="/docs/understanding-plans-basic-pro-enterprise">How Plan Tiers Actually Differ</a>.</p>
 
@@ -5234,7 +8447,7 @@ HTML,
                 'title'      => 'Platform Settings & White-Label Branding (Enterprise)',
                 'slug'       => 'platform-settings-and-white-label-branding',
                 'section'    => 'setup',
-                'sort_order' => 57,
+                'sort_order' => 58,
                 'body'       => <<<'HTML'
 <p><strong>Enterprise.</strong> Beyond each Adventure's own settings there's a platform-wide console, <strong>Sys Config</strong>, that shapes how BLUERABBIT looks and behaves across every Adventure on your platform. Only platform administrators (the God and Admin access levels) can open it; a GM running one Adventure never sees it. On the self-serve platform our own team holds this console, so platform-wide branding is something you get with an Enterprise setup.</p>
 
@@ -5306,7 +8519,7 @@ HTML,
                 'title'      => 'How Plan Tiers Actually Differ (Enterprise)',
                 'slug'       => 'understanding-plans-basic-pro-enterprise',
                 'section'    => 'setup',
-                'sort_order' => 58,
+                'sort_order' => 59,
                 'body'       => <<<'HTML'
 <p>Prices and billing mechanics are covered in <a href="/docs/billing-and-plans">Billing &amp; Plans</a>. This page is about what actually changes as you move up a tier.</p>
 
@@ -5348,7 +8561,7 @@ HTML,
                 'title'      => 'User Management & Access Levels (Enterprise)',
                 'slug'       => 'user-management-and-access-levels',
                 'section'    => 'setup',
-                'sort_order' => 59,
+                'sort_order' => 60,
                 'body'       => <<<'HTML'
 <p><strong>Enterprise.</strong> <strong>Manage Users</strong> is the platform administrator's view of every account on the platform: who they are, what they can do, what they're paying for, and which Adventures they're in. Only God and Admin accounts can open it.</p>
 
@@ -5420,7 +8633,7 @@ HTML,
                 'title'      => 'Security & Single Sign-On (Enterprise)',
                 'slug'       => 'security-and-single-sign-on',
                 'section'    => 'setup',
-                'sort_order' => 60,
+                'sort_order' => 61,
                 'body'       => <<<'HTML'
 <p><strong>Enterprise.</strong> Platform administrators control how people sign in and what can be uploaded, from the <strong>Security</strong> and <strong>SSO</strong> tabs of Sys Config. Single Sign-On is an Enterprise-only feature; the rest of this page also describes the protections every BLUERABBIT account gets on the self-serve platform.</p>
 
@@ -5496,7 +8709,7 @@ HTML,
 <h2>How It Is Built</h2>
 <ul>
   <li>CodeIgniter 4.7 on PHP 8.2, MySQL, plain PHP views (<code>extend()</code> / <code>section()</code> on <code>app/Views/layouts/main.php</code>), one stylesheet (<code>public/assets/css/site.css</code>), no JavaScript framework and no build step.</li>
-  <li>The blog and the documentation live in the database. Blog posts are written in <code>/admin/blog</code>. The documentation is written in <code>app/Database/Seeds/DocsPageSeeder.php</code> and loaded with <code>php spark db:seed DocsPageSeeder</code>.</li>
+  <li>The blog and the documentation live in the database. Blog posts are written in <code>/admin/blog</code>. The documentation is written in <code>app/Database/Seeds/DocsPageSeeder.php</code> and loaded with <code>php spark db:seed DocsPageSeeder</code>; its screenshots are files in <code>public/assets/docs/</code>, so they arrive with the code (see <a href="/docs/developer/keeping-the-docs-in-sync">Keeping the Docs in Step with the App</a>).</li>
   <li>Email goes through Resend, forms are protected by CSRF and Cloudflare Turnstile, and the only cookies are the essential ones (the cookie panel records the visitor's choice; there is no analytics).</li>
 </ul>
 <p>Details: <a href="/docs/developer/architecture-overview">Website Architecture</a> and <a href="/docs/developer/routes-and-api-reference">Website Routes &amp; Admin</a>.</p>
@@ -5725,6 +8938,15 @@ HTML,
 </ul>
 <p>The developer section (this one) may describe architecture, editions, switches, deployment and security in general terms, still without secrets, server credentials or client data.</p>
 
+<h2>Screenshots</h2>
+<ul>
+  <li>Figures are files in <code>public/assets/docs/&lt;set&gt;/</code>, one folder per screenshot set, as WebP, committed with the code. <code>php spark docs:shots &lt;folder&gt; &lt;set&gt; [file.jpg …]</code> converts JPEG or PNG captures: landscape to 1600px wide, phone shots to 720px, quality 80 (about 60KB a screen).</li>
+  <li>A figure is a <code>&lt;figure class="doc-shot"&gt;</code> holding an <code>img</code> (root-relative <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code>, <code>loading="lazy"</code>) and a <code>figcaption</code> that opens with a short bold title. Phone shots add <code>doc-shot--phone</code>; two or three side by side go in a <code>&lt;div class="doc-shots-row"&gt;</code>. Clicking a figure opens it full size.</li>
+  <li>A body never starts with a figure: the hub's excerpt is taken from the start of the body.</li>
+  <li>The screenshots come from the app's showcase adventure, a copy of the fictional Launch Week. Before a capture goes on a public page, look for local addresses, test accounts, internal ids and real people, and blur them (or leave the shot out). A visible app bug is left out too.</li>
+  <li>A screenshot goes stale with its screen: when a sync changes what a page says about a screen, retake or remove the figure in the same pass.</li>
+</ul>
+
 <h2>Doing a Sync</h2>
 <ol>
   <li>Find the app commits since the last sync point (<code>git log --oneline &lt;last&gt;..origin/main</code> in the app's repository), and read the app's dated log entries for the same period (its <code>docs/claude/log/INDEX.md</code>). Most batches that only port WordPress's behaviour behind the switches change nothing for the public pages.</li>
@@ -5740,6 +8962,7 @@ HTML,
   <li>27 October 2026: app <code>dbb5c05</code>, 77 pages. The app's history was rewritten on 30 October 2026, so that hash no longer resolves; by date it sits at the app's <code>0dfb3a8</code>.</li>
   <li>15 November 2026: app <code>463a356</code>. Every public page reviewed; new player pages (guests, notifications, challenges, the Library, languages), new Game Master pages (the Library, languages, CSV bulk tools, Prize Draws for Enterprise), and this developer section rewritten.</li>
   <li>15 November 2026, follow-ups: the app's fixes after that sync (through <code>1da280d9</code>: the account's own Claude key, guilds, priced milestones, item stock), then through <code>fb40c22b</code>: the A.I. check on Claude Haiku 5.5 by default with a per-server model, feedback in the player's language that keeps the rubric private, the player told and staff alerted when a check can't run, Cooper on Sonnet 5.5, and single sign-on's new-account and session rules; then through <code>84aa881e</code>: the Emails switch and the stop-emails page naming the A.I. check's alert for staff, the alert saying whether the answers wait for a review or were accepted, and <code>server-check</code>'s <code>env.aiCheckModel</code> a PASS on a normal server; then through <code>bc753044</code>: <code>server-check</code> naming the kind of server it checks (<code>--kind=</code>, or the importer's row), its four edition and switch lines reporting on a server this app made, and the lottery-day emails following the Emails switch on both rule sets, with the switch and the stop-emails page naming them where they apply.</li>
+  <li>17 November 2026: screenshots. The app's nineteen showcase sets (the ten feature showcases and the "Add New" series, D1 to D9), as of app <code>ab6cafbe</code>, put 630 figures on 72 pages; every page touched was checked against the app's code again, with the corrections that came out of it. Two new pages: The Leaderboard &amp; the Wall (players) and Manage Content: Every Section (Game Masters). 94 pages.</li>
 </ul>
 
 <h2>Related</h2>
